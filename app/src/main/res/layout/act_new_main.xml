@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/rl_act_new" android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:background="@mipmap/setting" android:layout_width="23.0dip" android:layout_height="23.0dip" android:layout_margin="12.0dip" android:onClick="setting" />
+    <TextView android:textSize="18.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:text="@string/my_device" android:layout_centerHorizontal="true" />
+    <Button android:background="@mipmap/device_add" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_margin="12.0dip" android:layout_alignParentRight="true" android:onClick="add" />
+    <Button android:background="@mipmap/fresh" android:visibility="gone" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="60.0dip" android:layout_alignParentRight="true" android:onClick="fresh" />
+    <RelativeLayout android:id="@id/rl_act_new_main" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="45.0dip">
+        <ImageView android:id="@id/iv_act_new_main" android:background="@mipmap/device_bg" android:layout_width="fill_parent" android:layout_height="220.0dip" android:scaleType="centerCrop" />
+        <ImageView android:id="@id/btn_act_new_main_camera" android:background="@mipmap/photo_graph" android:layout_width="30.0dip" android:layout_height="23.0dip" android:layout_margin="10.0dip" android:layout_alignBottom="@id/iv_act_new_main" android:onClick="seletedPic" />
+        <ImageView android:id="@id/iv_acti_neww_main_weather" android:layout_width="50.0dip" android:layout_height="45.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_alignTop="@id/iv_act_new_main" />
+        <TextView android:textColor="#ffffffff" android:id="@id/tv_act_new_main_wendu_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="8.0dip" android:layout_below="@id/iv_acti_neww_main_weather" />
+        <TextView android:textSize="30.0dip" android:textColor="#ffffffff" android:id="@id/tv_act_new_main_wendu_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_toRightOf="@id/iv_acti_neww_main_weather" android:layout_alignTop="@id/iv_act_new_main" />
+        <ImageView android:id="@id/iv_act_new_main_piker" android:background="@mipmap/area_1" android:layout_width="13.0dip" android:layout_height="15.0dip" android:layout_marginTop="6.0dip" android:layout_below="@id/tv_act_new_main_wendu_2" android:layout_alignLeft="@id/tv_act_new_main_wendu_2" />
+        <TextView android:textColor="#ffffffff" android:id="@id/tv_act_new_main_city" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_toRightOf="@id/iv_act_new_main_piker" android:layout_below="@id/tv_act_new_main_wendu_2" />
+    </RelativeLayout>
+    <com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout android:id="@id/refresh_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_act_new_main"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/refresh_head" />
+        <com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView android:id="@id/tv_act_new_main" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="#00000000" android:cacheColorHint="#00000000" android:divider="@color/gray" android:dividerHeight="1.0dip" />
+        <include layout="@layout/load_more" />
+    </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>
+</RelativeLayout>

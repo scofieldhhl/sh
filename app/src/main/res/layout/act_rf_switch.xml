@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_rf_1" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="20.0dip" android:onClick="onClick">
+        <ImageView android:background="@mipmap/icon_rf_switch" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="20.0dip" />
+        <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/switch_rf_1" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_rf_2" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="1.0dip" android:onClick="onClick">
+        <ImageView android:background="@mipmap/icon_rf2_switch" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="20.0dip" />
+        <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/switch_rf_2" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_switch_1" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="1.0dip" android:onClick="onClick">
+        <ImageView android:background="@mipmap/icon_switch_1" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="20.0dip" />
+        <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/switch_1" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_switch_2" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="1.0dip" android:onClick="onClick">
+        <ImageView android:background="@mipmap/icon_switch_2" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="20.0dip" />
+        <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/switch_2" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_switch_4" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginTop="1.0dip" android:onClick="onClick">
+        <ImageView android:background="@mipmap/icon_switch_4" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="20.0dip" />
+        <TextView android:textSize="18.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/switch_4" />
+    </LinearLayout>
+</LinearLayout>

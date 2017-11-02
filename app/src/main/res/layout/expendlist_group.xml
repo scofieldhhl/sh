@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="70.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="55.0dip">
+        <ImageView android:id="@id/img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:text="张三" android:layout_toRightOf="@id/img" android:layout_centerVertical="true" />
+        <ImageView android:gravity="right" android:id="@id/ic_down_show" android:background="@mipmap/act_color_down" android:layout_width="18.0dip" android:layout_height="12.0dip" android:layout_marginRight="20.0dip" android:text="4/17" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/ic" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="20.0dip" android:layout_centerVertical="true" />
+        <TextView android:background="#ffd9d9d9" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

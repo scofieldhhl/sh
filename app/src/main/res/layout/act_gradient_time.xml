@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff9f9f9" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <View android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_marginTop="50.0dip">
+        <View android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="130.0dip" />
+        <View android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="170.0dip" />
+        <com.ex.ltech.led.my_view.MyTimePickerView android:id="@id/tp_gradient_time" android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_marginTop="25.0dip" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</LinearLayout>

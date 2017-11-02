@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:melove="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/acti_title_view" />
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="changeHead">
+        <ImageView android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <ImageView android:id="@id/user_acti_guide" android:background="@mipmap/set_4" android:visibility="gone" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:text="@string/headic" android:layout_toRightOf="@id/user_acti_guide" android:layout_centerVertical="true" />
+        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <com.ex.ltech.led.my_view.MLImageView android:id="@id/iv_acti_user_head" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginRight="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" melove:shape_type="round" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="changeName">
+        <ImageView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <ImageView android:id="@id/user_acti_about" android:background="@mipmap/set_3" android:visibility="gone" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:layout_marginLeft="40.0dip" android:text="@string/niname" android:layout_toRightOf="@id/user_acti_about" android:layout_centerVertical="true" />
+        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:id="@id/tv_acti_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="changePsd">
+        <ImageView android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <ImageView android:id="@id/user_acti_verson_up" android:background="@mipmap/set_2" android:visibility="gone" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:text="@string/ch_psd" android:layout_toRightOf="@id/user_acti_verson_up" android:layout_centerVertical="true" />
+        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="logOut">
+        <ImageView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <ImageView android:id="@id/user_acti_about4" android:background="@mipmap/set_1" android:visibility="gone" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:layout_marginLeft="40.0dip" android:text="@string/log_out" android:layout_toRightOf="@id/user_acti_about4" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:background="#ffe8e8e8" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</LinearLayout>

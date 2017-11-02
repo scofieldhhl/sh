@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/acti_title_view" />
+    <TextView android:background="#ffd5d5d5" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="50.0dip" />
+    <com.zhy.android.percent.support.PercentRelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="61.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <GridView android:gravity="center" android:id="@id/gv_act_repeat_day" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:stretchMode="columnWidth" android:columnWidth="90.0dip" android:numColumns="2" app:layout_heightPercent="75%h" />
+        <RelativeLayout android:background="#ffffffff" android:padding="20.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="1.0dip" android:layout_below="@id/gv_act_repeat_day" android:layout_centerHorizontal="true" android:onClick="diy" app:layout_heightPercent="25%h">
+            <ImageView android:id="@id/ic" android:background="@mipmap/n_rc_diy" android:clickable="false" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="15.0sp" android:textColor="#ff000000" android:id="@id/name" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/rc_diy" android:layout_below="@id/ic" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+</RelativeLayout>

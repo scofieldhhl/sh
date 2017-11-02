@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <ScrollView android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <LinearLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/iv_readme_info_page_1" android:background="@mipmap/readme_1" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="584.0dip" />
+            <ImageView android:id="@id/iv_readme_info_page_2" android:background="@mipmap/readme_2" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="1833.0dip" />
+            <ImageView android:id="@id/iv_readme_info_page_3" android:background="@mipmap/readme_3" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="1673.0dip" />
+            <ImageView android:id="@id/iv_readme_info_page_4" android:background="@mipmap/readme_4" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="946.0dip" />
+            <ImageView android:id="@id/iv_readme_info_page_5" android:background="@mipmap/readme_5" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="1040.0dip" />
+            <ImageView android:id="@id/iv_readme_info_page_6" android:background="@mipmap/readme_6" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="993.0dip" />
+            <ImageView android:id="@id/iv_readme_info_page_7" android:background="@mipmap/readme_7" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="959.0dip" />
+        </LinearLayout>
+    </ScrollView>
+    <ImageView android:id="@id/iv_readme_info_page_8" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip" android:src="@mipmap/wel_ic" android:scaleType="centerCrop" />
+</RelativeLayout>

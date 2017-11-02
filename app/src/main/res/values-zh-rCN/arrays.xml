@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="smssdk_country_group_a">
+        <item>阿尔巴尼亚,355,108,276</item>
+        <item>阿尔及利亚,213,50,603</item>
+        <item>阿富汗,93,45,412</item>
+        <item>阿根廷,54,27,722</item>
+        <item>阿拉伯联合酋长国,971,180,424|430|431</item>
+        <item>阿鲁巴岛,297,100,363</item>
+        <item>阿曼,968,178,422</item>
+        <item>阿塞拜疆,994,189,400</item>
+        <item>埃及,20,5,602</item>
+        <item>埃塞俄比亚,251,82,636</item>
+        <item>爱尔兰,353,106,272</item>
+        <item>爱沙尼亚,372,115,248</item>
+        <item>安道尔,376,119,213</item>
+        <item>安哥拉,244,77,631</item>
+        <item>安圭拉岛,1264,195,365</item>
+        <item>安提瓜和巴布达,1268,196,344</item>
+        <item>奥地利,43,16,232</item>
+        <item>澳大利亚,61,33,505</item>
+        <item>澳门,853,165,455</item>
+    </string-array>
+    <string-array name="smssdk_country_group_b">
+        <item>巴巴多斯,1246,194,342</item>
+        <item>巴布亚新几内亚,675,153,537</item>
+        <item>巴哈马群岛,1242,193,364</item>
+        <item>巴拉圭,595,146,744</item>
+        <item>巴勒斯坦领土,970,179,425</item>
+        <item>巴林,973,182,426</item>
+        <item>巴拿马,507,138,714</item>
+        <item>巴西,55,28,724</item>
+        <item>白俄罗斯,375,118,257</item>
+        <item>百慕大群岛,1441,200,350</item>
+        <item>保加利亚,359,112,284</item>
+        <item>贝宁,229,62,616</item>
+        <item>比利时,32,9,206</item>
+        <item>冰岛,354,107,274</item>
+        <item>波多黎各,1787,208,330</item>
+        <item>波兰,48,22,260</item>
+        <item>波斯尼亚和黑塞哥维那,387,127,218</item>
+        <item>玻利维亚,591,142,736</item>
+        <item>伯利兹,501,132,702</item>
+        <item>博茨瓦纳,267,97,652</item>
+        <item>不丹,975,184,402</item>
+        <item>布基纳法索,226,59,613</item>
+        <item>布隆迪,257,88,642</item>
+    </string-array>
+    <string-array name="smssdk_country_group_c">
+        <item>朝鲜,850,163,467</item>
+        <item>赤道几内亚,240,73,627</item>
+    </string-array>
+    <string-array name="smssdk_country_group_d">
+        <item>丹麦,45,19,238</item>
+        <item>德国,49,23,262</item>
+        <item>东帝汶,670,151,514</item>
+        <item>多哥,228,61,615</item>
+        <item>多米尼加共和国,1809,209,370</item>
+        <item>多米尼克,1767,206,366</item>
+    </string-array>
+    <string-array name="smssdk_country_group_e">
+        <item>俄罗斯,7,4,250</item>
+        <item>厄瓜多尔,593,144,740</item>
+    </string-array>
+    <string-array name="smssdk_country_group_f">
+        <item>法国,33,10,208</item>
+        <item>法罗群岛,298,101,288</item>
+        <item>法属波利尼西亚,689,161,547</item>
+        <item>法属圭亚那,594,145,742</item>
+        <item>菲律宾,63,35,515</item>
+        <item>斐济,679,156,542</item>
+        <item>芬兰,358,111,244</item>
+        <item>佛得角,238,71,625</item>
+    </string-array>
+    <string-array name="smssdk_country_group_g">
+        <item>冈比亚,220,53,607</item>
+        <item>刚果共和国,242,75,629</item>
+        <item>刚果民主共和国,243,76,630</item>
+        <item>哥伦比亚,57,30,732</item>
+        <item>哥斯达黎加,506,137,712</item>
+        <item>格林纳达,1473,201,352</item>
+        <item>格陵兰岛,299,102,290</item>
+        <item>格鲁吉亚,995,190,282</item>
+        <item>古巴,53,26,368</item>
+        <item>瓜德罗普岛,590,141,340</item>
+        <item>关岛,1671,204,535</item>
+        <item>圭亚那,592,143,738</item>
+    </string-array>
+    <string-array name="smssdk_country_group_h">
+        <item>哈萨克斯坦,7,3,401</item>
+        <item>海地,509,140,372</item>
+        <item>韩国,82,40,450</item>
+        <item>荷兰,31,8,204</item>
+        <item>荷属安的列斯群岛,599,150,362</item>
+        <item>黑山共和国,382,124,297</item>
+        <item>洪都拉斯,504,135,708</item>
+    </string-array>
+    <string-array name="smssdk_country_group_i">
+        <item>芬兰,358,111,244</item>
+    </string-array>
+    <string-array name="smssdk_country_group_j">
+        <item>基里巴斯,686,159,545</item>
+        <item>吉布提,253,84,638</item>
+        <item>吉尔吉斯斯坦,996,191,437</item>
+        <item>几内亚,224,57,611</item>
+        <item>几内亚-比绍,245,78,632</item>
+        <item>加拿大,1,1,302</item>
+        <item>加纳,233,66,620</item>
+        <item>加蓬,241,74,628</item>
+        <item>柬埔寨,855,166,456</item>
+        <item>捷克共和国,420,129,230</item>
+        <item>津巴布韦,263,93,648</item>
+    </string-array>
+    <string-array name="smssdk_country_group_k">
+        <item>喀麦隆,237,70,624</item>
+        <item>卡塔尔,974,183,427</item>
+        <item>开曼群岛,1345,199,346</item>
+        <item>科摩罗,269,99,654</item>
+        <item>科特迪瓦,225,58,612</item>
+        <item>科威特,965,175,419</item>
+        <item>克罗地亚,385,125,219</item>
+        <item>肯尼亚,254,85,639</item>
+        <item>库克群岛,682,157,548</item>
+    </string-array>
+    <string-array name="smssdk_country_group_l">
+        <item>拉脱维亚,371,114,247</item>
+        <item>莱索托,266,96,651</item>
+        <item>老挝,856,167,457</item>
+        <item>黎巴嫩,961,171,415</item>
+        <item>立陶宛,370,113,246</item>
+        <item>利比里亚,231,64,618</item>
+        <item>利比亚,218,52,606</item>
+        <item>列支敦士登,423,131,295</item>
+        <item>留尼汪岛，法国,262,92,647</item>
+        <item>卢森堡,352,105,270|294</item>
+        <item>卢旺达,250,81,635</item>
+        <item>罗马尼亚,40,14,226</item>
+    </string-array>
+    <string-array name="smssdk_country_group_m">
+        <item>马达加斯加,261,91,646</item>
+        <item>马尔代夫,960,170,472</item>
+        <item>马耳他,356,109,278</item>
+        <item>马拉维,265,95,650</item>
+        <item>马来西亚,60,32,502</item>
+        <item>马里,223,56,610</item>
+        <item>马其顿,389,128,294</item>
+        <item>马提尼克,596,147,340</item>
+        <item>毛里求斯,230,63,617</item>
+        <item>毛里塔尼亚,222,55,609</item>
+        <item>美国,1,2,310|311|312|313|314|315|316</item>
+        <item>蒙古,976,185,428</item>
+        <item>蒙特塞拉特岛,1664,203,354</item>
+        <item>孟加拉国,880,168,470</item>
+        <item>秘鲁,51,24,716</item>
+        <item>密克罗尼西亚,691,162,550</item>
+        <item>摩尔多瓦,373,116,259</item>
+        <item>摩洛哥,212,49,604</item>
+        <item>摩纳哥,377,120,212</item>
+        <item>莫桑比克,258,89,643</item>
+        <item>墨西哥,52,25,334</item>
+    </string-array>
+    <string-array name="smssdk_country_group_n">
+        <item>纳米比亚,264,94,649</item>
+        <item>南非,27,6,655</item>
+        <item>南苏丹,211,48,659</item>
+        <item>尼泊尔,977,186,429</item>
+        <item>尼加拉瓜,505,136,710</item>
+        <item>尼日尔,227,60,614</item>
+        <item>尼日利亚,234,67,621</item>
+        <item>挪威,47,21,242</item>
+    </string-array>
+    <string-array name="smssdk_country_group_o">
+        <item>芬兰,358,111,244</item>
+    </string-array>
+    <string-array name="smssdk_country_group_p">
+        <item>葡萄牙,351,104,268</item>
+    </string-array>
+    <string-array name="smssdk_country_group_q">
+        <item>芬兰,358,111,244</item>
+    </string-array>
+    <string-array name="smssdk_country_group_r">
+        <item>日本,81,39,441|440</item>
+        <item>瑞典,46,20,240</item>
+        <item>瑞士,41,15,228</item>
+    </string-array>
+    <string-array name="smssdk_country_group_s">
+        <item>萨尔瓦多,503,134,706</item>
+        <item>萨摩亚,685,158,549</item>
+        <item>塞尔维亚,381,123,220</item>
+        <item>塞拉利昂,232,65,619</item>
+        <item>塞内加尔,221,54,608</item>
+        <item>塞浦路斯,357,110,280</item>
+        <item>塞舌尔,248,79,633</item>
+        <item>沙特阿拉伯,966,176,420</item>
+        <item>圣多美和普林西比,239,72,626</item>
+        <item>圣基茨和尼维斯,1869,211,356</item>
+        <item>圣卢西亚,1758,205,358</item>
+        <item>圣马力诺,378,121,292</item>
+        <item>圣皮埃尔和密克隆岛,508,139,308</item>
+        <item>圣文森特和格林纳丁斯,1784,207,360</item>
+        <item>斯里兰卡,94,46,413</item>
+        <item>斯洛伐克,421,130,231</item>
+        <item>斯洛文尼亚,386,126,293</item>
+        <item>斯威士兰,268,98,653</item>
+        <item>苏丹,249,80,634</item>
+        <item>苏里南,597,148,746</item>
+        <item>索马里,252,83,637</item>
+    </string-array>
+    <string-array name="smssdk_country_group_t">
+        <item>塔吉克斯坦,992,187,436</item>
+        <item>台湾,886,169,466</item>
+        <item>泰国,66,38,520</item>
+        <item>坦桑尼亚,255,86,640</item>
+        <item>汤加,676,154,539</item>
+        <item>特克斯和凯科斯群岛,1649,202,376</item>
+        <item>特立尼达，多巴哥,1868,210,374</item>
+        <item>突尼斯,216,51,605</item>
+        <item>土耳其,90,43,286</item>
+        <item>土库曼斯坦,993,188,438</item>
+    </string-array>
+    <string-array name="smssdk_country_group_u">
+        <item>芬兰,358,111,244</item>
+    </string-array>
+    <string-array name="smssdk_country_group_v">
+        <item>芬兰,358,111,244</item>
+    </string-array>
+    <string-array name="smssdk_country_group_w">
+        <item>瓦努阿图,678,155,541</item>
+        <item>危地马拉,502,133,704</item>
+        <item>维尔京群岛，美国,1284,197,332</item>
+        <item>维尔京群岛，英国,1340,198,348</item>
+        <item>委内瑞拉,58,31,734</item>
+        <item>文莱,673,152,528</item>
+        <item>乌干达,256,87,641</item>
+        <item>乌克兰,380,122,255</item>
+        <item>乌拉圭,598,149,748</item>
+        <item>乌兹别克斯坦,998,192,434</item>
+    </string-array>
+    <string-array name="smssdk_country_group_x">
+        <item>西班牙,34,11,214</item>
+        <item>希腊,30,7,202</item>
+        <item>香港,852,164,454</item>
+        <item>新加坡,65,37,525</item>
+        <item>新喀里多尼亚,687,160,546</item>
+        <item>新西兰,64,36,530</item>
+        <item>匈牙利,36,12,216</item>
+        <item>叙利亚,963,173,417</item>
+    </string-array>
+    <string-array name="smssdk_country_group_y">
+        <item>牙买加,1876,212,338</item>
+        <item>亚美尼亚,374,117,283</item>
+        <item>也门,967,177,421</item>
+        <item>伊拉克,964,174,418</item>
+        <item>伊朗,98,47,432</item>
+        <item>以色列,972,181,425</item>
+        <item>意大利,39,13,222</item>
+        <item>印度,91,44,404|405|406</item>
+        <item>印度尼西亚,62,34,510</item>
+        <item>英国,44,18,234|235</item>
+        <item>约旦,962,172,416</item>
+        <item>越南,84,41,452</item>
+    </string-array>
+    <string-array name="smssdk_country_group_z">
+        <item>赞比亚,260,90,645</item>
+        <item>泽西,44,17,234</item>
+        <item>乍得,235,68,622</item>
+        <item>直布罗陀,350,103,266</item>
+        <item>智利,56,29,730</item>
+        <item>中非共和国,236,69,623</item>
+        <item>中国,86,42,460|461</item>
+    </string-array>
+    <string-array name="strs_air_brand">
+        <item>美的(Midea)</item>
+        <item>东芝(Toshiba)</item>
+        <item>海尔(Haier)</item>
+        <item>格力(Gree)</item>
+        <item>志高(Chigo)</item>
+        <item>奥克斯(Oaks)</item>
+        <item>春兰(Chunlan)</item>
+        <item>LG(LG)</item>
+        <item>TCL(TCL)</item>
+        <item>三星(Samsung)</item>
+        <item>小三星(Small Samsung)</item>
+        <item>三洋(Sanyo)</item>
+        <item>三凌重工(Sanling Heavy Industries)</item>
+        <item>三凌机电(Sanling Electrical)</item>
+        <item>长虹(Changhong)</item>
+        <item>松下(Panasonic)</item>
+        <item>乐声(Sound of music)</item>
+        <item>内田(Uchida)</item>
+        <item>海信(Hisense)</item>
+        <item>新科(Shinco)</item>
+        <item>日立(Hitachi)</item>
+        <item>华凌(Hualing)</item>
+        <item>科龙(Kelon)</item>
+        <item>华宝(Warburg)</item>
+        <item>威力(Might)</item>
+        <item>长岭(Changling)</item>
+        <item>迎燕(Ying Yan)</item>
+        <item>蓝波(Blue Wave)</item>
+        <item>玉兔(Rabbit)</item>
+        <item>开利(Carrier)</item>
+        <item>东宝(Toho)</item>
+        <item>高路华(Gaoluhua)</item>
+        <item>澳柯玛(Aucma)</item>
+        <item>胜风1(Shengfeng)</item>
+        <item>扬子(Yangzi)</item>
+        <item>惠而浦(Whirlpool)</item>
+        <item>大金(Daikin)</item>
+        <item>汇丰(HSBC)</item>
+        <item>东芝2(Toshiba)</item>
+        <item>伊莱克斯(Electrolux)</item>
+        <item>熊猫(Panda)</item>
+        <item>上凌(Ling on)</item>
+        <item>天元(Tianyuan)</item>
+        <item>其它品牌(Other brands)</item>
+        <item>百合(Lily)</item>
+        <item>SimpLlcrty(SimpLlcrty)</item>
+        <item>大宇(Daewoo)</item>
+        <item>冠远(Clarent)</item>
+        <item>科朗(Colones)</item>
+        <item>南风(Southwind)</item>
+        <item>群达(Kunda)</item>
+        <item>先科(Yushchenko)</item>
+        <item>新飞(Freenet)</item>
+        <item>胜风2(Shengfeng)</item>
+        <item>泰国(Thailand)</item>
+        <item>格兰仕(Glanz)</item>
+        <item>乐华(Leroy)</item>
+        <item>富士通(Fujitsu)</item>
+        <item>约克(York)</item>
+        <item>麦克维尔(McQuay)</item>
+        <item>三垦(sanken)</item>
+        <item>宝立创(polytron)</item>
+        <item>夏普(SHARP)</item>
+        <item>镇堡(ZHEN BAO)</item>
+        <item>万宝(WANBAO)</item>
+        <item>樱花(YINGHUA)</item>
+        <item>全部品牌(ALL brands)</item>
+    </string-array>
+    <array name="strs_dc_type" />
+    <string-array name="strs_dvd_brand">
+        <item>步步高(BBK)</item>
+        <item>金正(Kim)</item>
+        <item>TCL(TCL)</item>
+        <item>长虹(Changhong)</item>
+        <item>创维(Skyworth)</item>
+        <item>大宇(Da Yu)</item>
+        <item>东芝(T0SHIBA)</item>
+        <item>飞利浦(Philips)</item>
+        <item>海尔(Haier)</item>
+        <item>海信(Hisense)</item>
+        <item>杰科(Deko)</item>
+        <item>康佳(Konka)</item>
+        <item>奇声(Qisheng)</item>
+        <item>日立(Hitachi)</item>
+        <item>三星(Samsung)</item>
+        <item>三洋(Sanyo)</item>
+        <item>松下(Panasonic)</item>
+        <item>索尼(Sony)</item>
+        <item>万利达(Malata)</item>
+        <item>夏普(Sharp)</item>
+        <item>夏新(Amoi)</item>
+        <item>先科(Yushchenko)</item>
+        <item>新科(Shinco)</item>
+        <item>其它品牌(Other brands)</item>
+        <item>爱华(Aiwa)</item>
+        <item>宝立创(Polytron)</item>
+        <item>三垦(sanken)</item>
+        <item>LG(LG)</item>
+        <item>有用(ADVANTE)</item>
+        <item>先行(ADVANCE)</item>
+        <item>东盟(AICO)</item>
+        <item>爱子(AIKO)</item>
+        <item>阿基拉(AKIRA)</item>
+        <item>ALLSONIC(ALLSONIC)</item>
+        <item>亚马逊(AMAZONE)</item>
+        <item>岚(ARASHI)</item>
+        <item>晨曦(ASAKI)</item>
+        <item>ASATRON(ASATRON)</item>
+        <item>AZAYAKA(AZAYAKA)</item>
+        <item>古巴(BCA)</item>
+        <item>BDXBB(BDXBB)</item>
+        <item>蓝天(BLUESKY)</item>
+        <item>意大利(BOMBA)</item>
+        <item>BRATRON/BRAVIA(BRATRON/BRAVIA)</item>
+        <item>系统(CAESAR)</item>
+        <item>加州(CALIFORNIA)</item>
+        <item>科比(COBY)</item>
+        <item>加利福(CMC)</item>
+        <item>水晶(CRYSTAL)</item>
+        <item>CYBERGREEN(CYBERGREEN)</item>
+        <item>赛博(CYBERTRON)</item>
+        <item>DAEWO(DAEWO)</item>
+        <item>大建(DAIKEN)</item>
+        <item>泰达(DAITA)</item>
+        <item>DELTRONIC(DELTRONIC)</item>
+        <item>卫星(DIGISAT)</item>
+        <item>视频(DVD VIDEO)</item>
+        <item>直投式(DVS)</item>
+        <item>发电(ELECTRIC)</item>
+        <item>精英(ELITE)</item>
+        <item>存储器(EPROM)</item>
+        <item>专家(EXPERT)</item>
+        <item>延长(EXTEND)</item>
+        <item>一线(FIRSTLINE)</item>
+        <item>前(FRONT)</item>
+        <item>FUJIELECTRIC(FUJIELECTRIC)</item>
+        <item>富士山(FUJIYAMA)</item>
+        <item>伽玛(GAMMA)</item>
+        <item>富瑞驰(FURICHI)</item>
+        <item>车(GEM)</item>
+        <item>综合(GMC)</item>
+        <item>高斯(GNG)</item>
+        <item>HANNOCHS(HANNOCHS)</item>
+        <item>HATEH(HATEH)</item>
+        <item>秘密(HIMITSU)</item>
+        <item>HITARO(HITARO)</item>
+        <item>霍伊(HOYE)</item>
+        <item>现代(HYUNDAI)</item>
+        <item>一番(ICHIBAN)</item>
+        <item>ICHICO(ICHICO)</item>
+        <item>ICHITECH(ICHITECH)</item>
+        <item>Iluv(Iluv)</item>
+        <item>振新(INNOVO)</item>
+        <item>日本(JAPAN)</item>
+        <item>胜利(JVC)</item>
+        <item>胜利VCD(JVC VCD )</item>
+        <item>金子(KANEKO)</item>
+        <item>河内(KAWACHI )</item>
+        <item>圆锥形(KCL)</item>
+        <item>KENDWAY(KENDWAY)</item>
+        <item>坑(KENG)</item>
+        <item>建伍(KENWOOD)</item>
+        <item>小泉(KOIZUMI)</item>
+        <item>键传模(KTM)</item>
+        <item>枪骑兵(LANCER)</item>
+        <item>集成(LSI)</item>
+        <item>福星(LUCKY STAR)</item>
+        <item>马司尼(MARUNI)</item>
+        <item>MARUSHIN(MARUSHIN)</item>
+        <item>矩阵(MATRIX)</item>
+        <item>松井(MATSUI)</item>
+        <item>松日(MATSUNICHI)</item>
+        <item>万朗(MAXTRON)</item>
+        <item>马亚卡(MAYAKA)</item>
+        <item>宏大(MEGA)</item>
+        <item>水户(MITO)</item>
+        <item>MITOCHIBA(MITOCHIBA)</item>
+        <item>三越(MITSUKOSHI)</item>
+        <item>群(MULTIFACE)</item>
+        <item>中井(NAKAI)</item>
+        <item>NANAOTECH(NANAOTECH)</item>
+        <item>御台场(ODAIBA)</item>
+        <item>OKAIDO(OKAIDO)</item>
+        <item>装甲(PANZER)</item>
+        <item>PARDIO(PARDIO)</item>
+        <item>铂矿(PLATINUM)</item>
+        <item>先锋(PIONEER)</item>
+        <item>接线器(PLUS)</item>
+        <item>护眼(POLYVISION)</item>
+        <item>昆腾(QUANTUM)</item>
+        <item>皇家(ROYAL)</item>
+        <item>燐子(RINRE)</item>
+        <item>代号(ROVER)</item>
+        <item>SASUKI(SASUKI)</item>
+        <item>SHASUGI(SHASUGI)</item>
+        <item>SIEKO(SIEKO)</item>
+        <item>SGK(SGK)</item>
+        <item>白银(SILVER/SKYDRIVE)</item>
+        <item>SINYOKU(SINYOKU)</item>
+        <item>SOUGAU(SOUGAU)</item>
+        <item>美裕(STARPLUS)</item>
+        <item>斯特尔(STELLE)</item>
+        <item>SUNSONIC(SUNSONIC)</item>
+        <item>饱和(SUPERSAT)</item>
+        <item>大正(TAISHO)</item>
+        <item>海人草(TANAKA)</item>
+        <item>TEKYO(TEKYO)</item>
+        <item>TICSONIC(TICSONIC)</item>
+        <item>花床(TORI)</item>
+        <item>联合(UNIFY)</item>
+        <item>UNISAT(UNISAT)</item>
+        <item>VEGATRON(VEGATRON)</item>
+        <item>毒(VENON)</item>
+        <item>沃尔(VIAR)</item>
+        <item>维玛(VIMA)</item>
+        <item>维尔康姆(VIOCOM)</item>
+        <item>VIOTEC(VIOTEC)</item>
+        <item>VISHIBA(VISHIBA)</item>
+        <item>维特纶(VITRON)</item>
+        <item>世界之星(WORLDSTAR)</item>
+        <item>X-PERT(X-PERT)</item>
+        <item>YAMASTAR(YAMASTAR)</item>
+        <item>吉川(YOSHIKAWA)</item>
+        <item>荣代(YUNDAI)</item>
+        <item>ZYREX(ZYREX)</item>
+        <item>流动(DVD MOBIL)</item>
+        <item>PORTABLE(PORTABLE)</item>
+        <item>华录(Hua Lu)</item>
+        <item>Marantz(Marantz)</item>
+        <item>0PP0(0PP0)</item>
+        <item>山水(Landscape)</item>
+    </string-array>
+    <string-array name="strs_fans_brand">
+        <item>美的(Midea)</item>
+        <item>长城(Changcheng)</item>
+        <item>格力(Gree)</item>
+        <item>艾美特(Emmett)</item>
+        <item>科龙(Kelon)</item>
+        <item>澳柯玛(Aucma)</item>
+        <item>小天鹅(Little Swan)</item>
+        <item>骆驼(Camel)</item>
+        <item>小行星(Asteroid)</item>
+        <item>华生(Hua Sheng)</item>
+        <item>先锋(Pioneer)</item>
+        <item>桑普(Samp)</item>
+        <item>中联(Vanda)</item>
+        <item>永生(Eternal life)</item>
+        <item>联创(Linkage)</item>
+        <item>丝雨(Drizzle)</item>
+        <item>时丰(Shifeng)</item>
+        <item>灿坤(Tsann)</item>
+        <item>荣事达(Rongshida)</item>
+        <item>钻石(Diamond)</item>
+        <item>新的(Xinde)</item>
+        <item>其它(Other)</item>
+    </string-array>
+    <string-array name="strs_iptv_brand">
+        <item>烽火(beacon)</item>
+        <item>华为(Huawei)</item>
+        <item>斯达康(UTS)</item>
+        <item>同洲(states)</item>
+        <item>中兴(ZTE)</item>
+        <item>大亚(Daya)</item>
+        <item>长虹(Changhong)</item>
+    </string-array>
+    <array name="strs_light_type" />
+    <string-array name="strs_pjt_brand">
+        <item>爱普生(Epson)</item>
+        <item>东芝(Toshiba)</item>
+        <item>夏普(Sharp)</item>
+        <item>松下(Panasonic)</item>
+        <item>方正(Fangzheng)</item>
+        <item>富士通(Fujitsu)</item>
+        <item>日立(Hitachi)</item>
+        <item>索尼(Sony)</item>
+        <item>三洋(Sanyo)</item>
+        <item>奥图码(Optoma)</item>
+        <item>NEC(NEC)</item>
+        <item>三菱(Mitsubishi)</item>
+        <item>富可视(InFocus)</item>
+        <item>中宝(Zhongbao)</item>
+        <item>瑞诚(Rui Cheng)</item>
+        <item>some(some)</item>
+        <item>惠普(HP)</item>
+        <item>戴尔(Dell)</item>
+        <item>佳能(Canon)</item>
+        <item>宏基(Acer)</item>
+        <item>明基(BenQ)</item>
+        <item>先峰(Pioneer)</item>
+        <item>晨星(Morningstar)</item>
+        <item>宝丽莱(The Polaroid)</item>
+        <item>爱其(Aiqi)</item>
+        <item>LG(LG)</item>
+        <item>拍得丽(PREMIER)</item>
+        <item>飞利浦(Philips)</item>
+        <item>优派(ViewSonic)</item>
+        <item>其它品牌</item>
+    </string-array>
+    <string-array name="strs_stb_brand">
+        <item>北京(Beijing)</item>
+        <item>广东(Guangdong)</item>
+        <item>广西(Guangxi)</item>
+        <item>上海/东方有线(Shanghai / Oriental Cable)</item>
+        <item>天津(Tianjin)</item>
+        <item>重庆(Chongqing)</item>
+        <item>辽宁(LIAONING)</item>
+        <item>江苏(JIANGSU)</item>
+        <item>湖北(Hubei)</item>
+        <item>四川(Sichuan)</item>
+        <item>陕西(Shaanxi)</item>
+        <item>浙江(Zhejiang)</item>
+        <item>湖南(Hunan)</item>
+        <item>山东(Shandong)</item>
+        <item>安徽(Anhui)</item>
+        <item>贵州(Guizhou)</item>
+        <item>黑龙江(Heilongjiang)</item>
+        <item>山西(Shanxi)</item>
+        <item>内蒙(Inner Mongolia)</item>
+        <item>云南(Yunnan)</item>
+        <item>河南(Henan)</item>
+        <item>海南(Hainan)</item>
+        <item>吉林(Jilin)</item>
+        <item>河北(Hebei)</item>
+        <item>福建(Fujian)</item>
+        <item>新疆(Xinjiang)</item>
+        <item>江西(Jiangxi)</item>
+        <item>东太(East Pacific)</item>
+        <item>其它城市(Other regions)</item>
+        <item>中星九号(Star on the 9th)</item>
+        <item>甘肃(Gansu)</item>
+        <item>香港(Hong Kong)</item>
+        <item>台湾(Taiwan)</item>
+        <item>华为机顶盒(Huawei STB)</item>
+        <item>长虹机顶盒(Changhong STB)</item>
+        <item>康佳机顶盒(Konka STB)</item>
+        <item>中兴机顶盒(ZTE STB)</item>
+        <item>九洲机顶盒(Jiuzhou STB)</item>
+        <item>摩托罗拉机顶盒(Motorola STB)</item>
+        <item>创维机顶盒(Skyworth STB)</item>
+        <item>海信机顶盒(Hisense STB)</item>
+        <item>海尔机顶盒(Haier STB)</item>
+        <item>高斯贝尔机顶盒(GOSPELL STB)</item>
+        <item>海美迪机顶盒(Hoi Mei Di STB)</item>
+        <item>开博尔机顶盒(Open Bor STB)</item>
+        <item>天柏机顶盒(DVN STB)</item>
+        <item>大显机顶盒(Daxian STB)</item>
+        <item>乐视机顶盒(Music as STB)</item>
+        <item>斯达康机顶盒(Starcom STB)</item>
+        <item>银河机顶盒(Galaxy STB)</item>
+        <item>九联(Nine joint)</item>
+        <item>歌华高清机顶盒(Gehua STB)</item>
+        <item>天威机顶盒(Tianwei STB)</item>
+        <item>夏华机顶盒(Hua Xia STB)</item>
+        <item>佳创机顶盒(Jia Chong STB)</item>
+        <item>佳彩机顶盒(Jia Cai STB)</item>
+        <item>金网通机顶盒(Gold Netcom STB)</item>
+        <item>聚友网络(Juyou Network)</item>
+        <item>美如画机顶盒(U.S. picturesque STB)</item>
+        <item>东方广视(East WideSight)</item>
+        <item>松下机顶盒(Panasonic STB)</item>
+        <item>上广电机顶盒(SVA STB)</item>
+        <item>北广机顶盒(BBEF STB)</item>
+        <item>全景机顶盒(Panoramic STB)</item>
+        <item>航科机顶盒(Air Division STB)</item>
+        <item>力合机顶盒(Leaguer STB)</item>
+        <item>百胜机顶盒(Yum STB)/MATRIX</item>
+        <item>MATRIX(MATRIX)</item>
+        <item>浪潮机顶盒(Wave)</item>
+        <item>深圳天威视讯(TOPWAY)</item>
+        <item>北京歌华有线(Gehua)</item>
+        <item>户户通(Huhutong)</item>
+        <item>小米盒子(Millet box)</item>
+    </string-array>
+    <string-array name="strs_tv_brand">
+        <item>长虹(Changhong)</item>
+        <item>康佳(Konka)</item>
+        <item>TCL(TCL)</item>
+        <item>厦华(Prima)</item>
+        <item>创维(SKYWORTH)</item>
+        <item>海信(Hisense)</item>
+        <item>海尔(Haier)</item>
+        <item>金星(JINXING)</item>
+        <item>熊猫(PANDA)</item>
+        <item>索尼(sony)</item>
+        <item>松下(Panasonic)</item>
+        <item>乐声(Panasonic)</item>
+        <item>东芝(TOSHIBA)</item>
+        <item>日立(HITACHI)</item>
+        <item>夏普(SHARP)</item>
+        <item>声宝(Sampo)</item>
+        <item>飞利浦(Philips)</item>
+        <item>三星(SAMSUNG)</item>
+        <item>三洋(SANYO)</item>
+        <item>日电(Xinhua)</item>
+        <item>西湖(XIHU)</item>
+        <item>北京(BEIJING)</item>
+        <item>高路华(CONROWA)</item>
+        <item>乐华(ROWA)</item>
+        <item>东宝TCBO_东凌TOS</item>
+        <item>福日(Furi)</item>
+        <item>LG(LG)</item>
+        <item>百乐(Tupper)</item>
+        <item>长城(CHANGCHENG)</item>
+        <item>黄河(Yellow River)</item>
+        <item>黄山(Huangshan)</item>
+        <item>其它(Other)</item>
+        <item>三垦(sanken)</item>
+        <item>宝立创(Polytron)</item>
+        <item>爱华(Aiwa)</item>
+        <item>清华同方(Tongfang)</item>
+    </string-array>
+</resources>

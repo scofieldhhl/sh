@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:melove="http://schemas.android.com/apk/res-auto">
+    <com.ex.ltech.led.my_view.MLImageView android:textSize="17.0dip" android:id="@id/iv_act_device_rename" android:background="@mipmap/device_light" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="20.0dip" android:layout_centerVertical="true" melove:shape_type="round" />
+    <TextView android:textSize="15.0dip" android:gravity="center_vertical" android:id="@id/tv_act_device_name" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_marginLeft="90.0dip" android:layout_marginRight="100.0dip" android:text="asdad" android:layout_centerVertical="true" />
+    <TextView android:textSize="17.0dip" android:id="@id/tv_act_device_del" android:background="@mipmap/change_ic" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="17.0dip" android:gravity="center_vertical" android:id="@id/tv_act_device_rename" android:background="@mipmap/device_rename" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="60.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="17.0dip" android:gravity="center_vertical" android:id="@id/tv_act_device_share" android:background="@mipmap/share_black" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="60.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

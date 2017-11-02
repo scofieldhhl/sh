@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff5f5f5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/ft_title_view" layout="@layout/ft_title_view" />
+    <Button android:id="@id/btn_refresh" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刷新" />
+    <LinearLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
+        <RelativeLayout android:id="@id/rl_home" android:background="@drawable/geo_fencing_home" android:clickable="true" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_margin="20.0dip">
+            <TextView android:textSize="25.0dip" android:textColor="@color/white" android:id="@id/tv_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="25.0dip" android:text="@string/home_scenes" />
+            <ImageView android:id="@id/iv_home" android:background="@mipmap/more_go_back" android:layout_width="135.0dip" android:layout_height="30.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/tv_home" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/white" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="20.0dip" android:text="回家模式状态" android:layout_below="@id/iv_home" />
+            <Button android:textColor="@color/white" android:id="@id/btn_home_on_off" android:background="@drawable/geo_fencing_home_start" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="40.0dip" android:layout_marginRight="30.0dip" android:text="启动" android:layout_alignParentRight="true" />
+            <ImageView android:background="@mipmap/split_line" android:layout_width="4.0dip" android:layout_height="90.0dip" android:layout_marginTop="40.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/btn_home_on_off" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
+        <RelativeLayout android:id="@id/rl_leave_home" android:background="@drawable/geo_fencing_leave_home" android:clickable="true" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_margin="20.0dip">
+            <TextView android:textSize="25.0dip" android:textColor="@color/white" android:id="@id/tv_leave_home" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="25.0dip" android:text="@string/out_home_scenes" />
+            <ImageView android:id="@id/iv_leave_home" android:background="@mipmap/more_go_back" android:layout_width="135.0dip" android:layout_height="30.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/tv_leave_home" />
+            <TextView android:textSize="20.0sp" android:textColor="@color/white" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="20.0dip" android:text="回家模式" android:layout_below="@id/iv_leave_home" />
+            <Button android:textColor="@color/white" android:id="@id/btn_leave_home_on_off" android:background="@drawable/geo_fencing_leave_home_start" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="40.0dip" android:layout_marginRight="30.0dip" android:text="启动" android:layout_alignParentRight="true" />
+            <ImageView android:background="@mipmap/split_line" android:layout_width="4.0dip" android:layout_height="90.0dip" android:layout_marginTop="40.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/btn_leave_home_on_off" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

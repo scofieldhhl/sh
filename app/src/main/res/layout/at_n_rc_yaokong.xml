@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="13.0dip" android:textColor="#ff434343" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:layout_marginTop="15.0dip" />
+    <TextView android:textSize="19.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:text="@string/yaokongqi" android:layout_centerHorizontal="true" />
+    <ImageView android:background="@mipmap/h_remote_add" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_margin="12.0dip" android:layout_alignParentRight="true" android:onClick="add" />
+    <ImageView android:background="@mipmap/ir_more" android:visibility="gone" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="45.0dip" android:layout_alignParentRight="true" android:onClick="more" />
+    <Button android:id="@id/btn_edit" android:background="@mipmap/plug_edit" android:visibility="gone" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="60.0dip" android:layout_alignParentRight="true" android:onClick="edit" />
+    <TextView android:background="#ff9b9b9b" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="50.0dip" />
+    <RelativeLayout android:id="@id/rl_m_scene" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageView android:background="@mipmap/n_rc_n_scene" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="20.0dip" android:layout_centerVertical="true" />
+            <TextView android:textSize="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:text="@string/m_scene" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/m_scene_arrow" android:background="@mipmap/n_rc_down" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/m_scene_arrow_click" android:clickable="true" android:layout_width="60.0dip" android:layout_height="50.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:background="#ff9b9b9b" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="50.0dip" />
+        <HorizontalScrollView android:id="@id/horizontalScrollView" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+                <GridView android:gravity="center" android:id="@id/horizontal_grid" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchMode="spacingWidthUniform" android:numColumns="auto_fit" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+    <com.ex.ltech.hongwai.view.dslv.DragSortListView android:id="@id/lv" android:background="#ffefefef" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_m_scene" />
+    <GridView android:gravity="center" android:id="@id/gv_act_yk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="351.0dip" android:stretchMode="columnWidth" android:columnWidth="90.0dip" android:numColumns="2" android:layout_below="@id/iv_frag_sys_inside_all_seleted" />
+    <ImageView android:background="@mipmap/h_remote_back" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_margin="10.0dip" android:onClick="back" />
+    <RelativeLayout android:id="@id/pop" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="hidePop">
+        <LinearLayout android:orientation="vertical" android:background="@mipmap/pop_ir_more" android:clickable="true" android:layout_width="146.0dip" android:layout_height="65.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="43.0dip" android:layout_alignParentRight="true">
+            <RelativeLayout android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="12.0dip" android:id="@id/tv_on" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/zzz_onoff" android:layout_centerVertical="true" />
+                <com.zcw.togglebutton.ToggleButton android:id="@id/zzz_swich" android:layout_width="35.0dip" android:layout_height="18.0dip" android:layout_toRightOf="@id/tv_on" android:layout_centerVertical="true" app:onColor="#ff51d368" />
+            </RelativeLayout>
+            <TextView android:background="#ff8a8a8a" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentBottom="true" />
+            <RelativeLayout android:layout_gravity="center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="10.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="12.0dip" android:gravity="center" android:id="@id/version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/zzz_onoff" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:background="#ff666666" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+</RelativeLayout>

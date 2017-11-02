@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.indris.material.RippleView android:id="@id/back" android:background="@mipmap/yk_back" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginLeft="10.0dip" android:layout_alignParentLeft="true" app:layout_widthPercent="8%w" app:layout_heightPercent="8%w" app:layout_marginTopPercent="3%w" />
+    <TextView android:textSize="20.0sp" android:textColor="@color/black" android:ellipsize="end" android:gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="title" android:maxEms="8" android:singleLine="true" android:layout_centerHorizontal="true" app:layout_marginTopPercent="4%w" />
+    <com.indris.material.RippleView android:id="@id/setting" android:background="@mipmap/new_rc_set" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" app:layout_widthPercent="8%w" app:layout_heightPercent="8%w" app:layout_marginTopPercent="3%w" />
+    <TextView android:textSize="18.0dip" android:textColor="#fff82525" android:id="@id/tv_setting" android:padding="5.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" app:layout_marginTopPercent="3%w" />
+    <RelativeLayout android:id="@id/rl_tips" android:background="#ffffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="30.0dip" app:layout_marginTopPercent="14%w">
+        <TextView android:textSize="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/save_rc_tips" android:layout_centerVertical="true" />
+        <Button android:id="@id/close_tips" android:background="@mipmap/n_rc_cha" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_bottom_view" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <RelativeLayout android:id="@id/rl_last" android:clickable="true" android:layout_width="100.0dip" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+            <ImageView android:background="@mipmap/rc_last" android:clickable="false" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" android:layout_centerVertical="true" />
+            <TextView android:textSize="11.0dip" android:id="@id/tv_last" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:text="111" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_seleted" android:background="@mipmap/rc_seleted_this" android:clickable="true" android:layout_width="100.0dip" android:layout_height="40.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <ImageView android:background="@mipmap/n_rc_seleted_lib" android:clickable="false" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="15.0dip" android:layout_centerVertical="true" />
+            <TextView android:textColor="#ffffffff" android:id="@id/tv_seleted" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:text="@string/use_this" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/rl_next" android:clickable="true" android:layout_width="100.0dip" android:layout_height="50.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <ImageView android:background="@mipmap/rc_next" android:clickable="false" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="11.0dip" android:id="@id/tv_next" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="45.0dip" android:text="111" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</com.zhy.android.percent.support.PercentRelativeLayout>

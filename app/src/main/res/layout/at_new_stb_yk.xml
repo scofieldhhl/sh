@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff5f5f5" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/at_base_yk" />
+    <com.zhy.android.percent.support.PercentRelativeLayout android:id="@id/rl_parent" android:paddingTop="50.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.ex.ltech.led.my_view.NoScrollViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <ImageView android:id="@id/page_index" android:background="@mipmap/tv_p_1" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+</RelativeLayout>

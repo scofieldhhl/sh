@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageView android:background="@mipmap/icon_bright" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="20.0dip" />
+            <SeekBar android:id="@id/sb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:maxHeight="3.0dip" android:progressDrawable="@drawable/seekbar_define_style" android:minHeight="3.0dip" android:thumb="@mipmap/thumb_2" />
+        </LinearLayout>
+        <View android:background="#ffb8b8b8" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/layout_cancel" android:layout_width="fill_parent" android:layout_height="30.0dip">
+            <TextView android:textSize="18.0sp" android:textColor="#ff9b9b9b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="收起" />
+            <ImageView android:background="@mipmap/n_rc_down" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_acti_timing_fragment_colcolor" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <Button android:layout_gravity="center_vertical" android:background="@mipmap/brightness" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="10.0dip" />
+        <com.ex.ltech.led.my_view.MySeekBar android:layout_gravity="center_vertical" android:id="@id/msb_color_acti_timing_fragment_col" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0" android:layout_centerInParent="true" />
+        <Button android:layout_gravity="center_vertical" android:background="@mipmap/white_light" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="10.0dip" />
+        <SeekBar android:layout_gravity="center_vertical" android:id="@id/sb_acti_timing_fragment_col" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:maxHeight="5.0dip" android:max="100" android:progress="30" android:indeterminate="false" android:progressDrawable="@drawable/seekbar_define_style_5" android:minHeight="5.0dip" android:thumb="@mipmap/thumb_2" android:layout_weight="1.0" android:layout_centerInParent="true" />
+    </LinearLayout>
+    <com.ex.ltech.led.my_view.SimpleColorPickerView android:id="@id/cp_acti_timing_fragment_col" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/ll_acti_timing_fragment_colcolor" />
+    <RelativeLayout android:id="@id/rl_bottom_view" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginBottom="20.0dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/sub" android:background="@mipmap/kt_stub" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_centerVertical="true" />
+        <SeekBar android:id="@id/sb" android:layout_width="260.0dip" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:maxHeight="3.0dip" android:progress="100" android:progressDrawable="@drawable/seekbar_define_style" android:minHeight="3.0dip" android:thumb="@mipmap/thumb_2" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:background="@mipmap/kt_add" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

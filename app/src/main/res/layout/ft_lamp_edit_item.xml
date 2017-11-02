@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/iv_icon" android:background="@mipmap/rgb_light_105" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" />
+    <TextView android:id="@id/tv_lamp_name_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="27.0dip" android:text="客厅的灯" android:layout_toRightOf="@id/iv_icon" />
+    <ImageButton android:id="@id/ib_lamp_chose" android:background="@mipmap/h_timing_choose_n" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="27.0dip" android:layout_marginRight="20.0dip" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+    <ImageButton android:id="@id/ib_lamp_offline" android:background="@mipmap/prompt_105" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="23.0dip" android:layout_marginRight="15.0dip" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+    <ImageView android:background="@mipmap/dimming_left_icon" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="55.0dip" />
+    <SeekBar android:id="@id/sb_detail_play_progress" android:layout_width="350.0dip" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:layout_marginTop="70.0dip" android:layout_marginRight="45.0dip" android:maxHeight="2.0dip" android:progressDrawable="@drawable/seekbar_define_style_6" android:minHeight="2.0dip" android:thumb="@mipmap/thumb_2" />
+    <ImageView android:background="@mipmap/dimming_right_icon" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="52.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" />
+</RelativeLayout>

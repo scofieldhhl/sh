@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffe5e5e5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="70.0dip">
+        <Button android:id="@id/btn_acti_color_son_light_1" android:background="@mipmap/light_11" android:layout_width="23.0dip" android:layout_height="28.0dip" />
+        <Button android:id="@id/btn_acti_color_son_light_2" android:background="@mipmap/light_22" android:layout_width="23.0dip" android:layout_height="28.0dip" android:layout_marginLeft="45.0dip" />
+        <Button android:id="@id/btn_acti_color_son_light_3" android:background="@mipmap/light_33" android:layout_width="23.0dip" android:layout_height="28.0dip" android:layout_marginLeft="45.0dip" />
+        <Button android:id="@id/btn_acti_color_son_light_4" android:background="@mipmap/light_44" android:layout_width="23.0dip" android:layout_height="28.0dip" android:layout_marginLeft="45.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_marginTop="50.0dip">
+        <com.zcw.togglebutton.ToggleButton android:id="@id/tb_acti_color_son_swc_1" android:layout_width="45.0dip" android:layout_height="20.0dip" android:layout_marginLeft="5.0dip" />
+        <com.zcw.togglebutton.ToggleButton android:id="@id/tb_acti_color_son_swc_2" android:background="@mipmap/light_22" android:layout_width="45.0dip" android:layout_height="20.0dip" android:layout_marginLeft="27.0dip" />
+        <com.zcw.togglebutton.ToggleButton android:id="@id/tb_acti_color_son_swc_3" android:background="@mipmap/light_33" android:layout_width="45.0dip" android:layout_height="20.0dip" android:layout_marginLeft="27.0dip" />
+        <com.zcw.togglebutton.ToggleButton android:id="@id/tb_acti_color_son_swc_4" android:background="@mipmap/light_44" android:layout_width="45.0dip" android:layout_height="20.0dip" android:layout_marginLeft="27.0dip" />
+    </LinearLayout>
+    <Button android:id="@id/btn_acti_color_son_dwon" android:background="@mipmap/act_color_down" android:layout_width="40.0dip" android:layout_height="30.0dip" android:layout_margin="10.0dip" android:layout_alignParentRight="true" />
+</RelativeLayout>

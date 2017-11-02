@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:background="@color/c7" android:layout_width="fill_parent" android:layout_height="50.0dip" />
+    <TextView android:background="@mipmap/device_ic" android:clickable="true" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_margin="12.0dip" android:onClick="back" />
+    <TextView android:textSize="15.0dip" android:textColor="#ff434343" android:id="@id/tv_ct_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="50.0dip" android:layout_marginTop="17.0dip" android:text="@string/yaokong" />
+    <TextView android:textSize="18.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:text="@string/color" android:layout_centerHorizontal="true" />
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+        <TextView android:background="@mipmap/ct_change_color" android:clickable="true" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:onClick="changeCol" />
+        <TextView android:id="@id/add_bt" android:background="@mipmap/ct_add" android:visibility="gone" android:clickable="true" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_margin="12.0dip" android:layout_alignParentRight="true" android:onClick="add" />
+    </LinearLayout>
+    <com.ex.ltech.led.my_view.SimpleColorPickerView android:id="@id/color" android:layout_width="fill_parent" android:layout_height="250.0dip" android:layout_marginTop="50.0dip" android:layout_below="@id/ll_acti_timing_fragment_colcolor" />
+    <RelativeLayout android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_marginTop="300.0dip">
+        <ImageView android:background="#ffdedede" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <ImageView android:id="@id/sub" android:background="@mipmap/kt_stub" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="30.0dip" />
+        <SeekBar android:id="@id/sb" android:layout_width="260.0dip" android:layout_height="wrap_content" android:layout_marginTop="33.0dip" android:maxHeight="3.0dip" android:progress="100" android:progressDrawable="@drawable/seekbar_define_style" android:minHeight="3.0dip" android:thumb="@mipmap/thumb_2" android:layout_centerHorizontal="true" />
+        <ImageView android:background="@mipmap/kt_add" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" />
+        <TextView android:textColor="#ff000000" android:id="@id/precent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <ImageView android:background="#ffdedede" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="65.0dip" />
+        <HorizontalScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="60.0dip">
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="10.0dip">
+                <GridView android:gravity="center" android:id="@id/grid" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchMode="spacingWidthUniform" android:numColumns="auto_fit" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+    <ImageView android:background="@color/c7" android:layout_width="fill_parent" android:layout_height="68.0dip" android:layout_alignParentBottom="true" />
+    <ImageView android:id="@id/off" android:background="@mipmap/all_off" android:layout_width="70.0dip" android:layout_height="88.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="off" />
+    <TextView android:background="@mipmap/ct_time" android:clickable="true" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="20.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:onClick="goTime" />
+    <RelativeLayout android:id="@id/act_gray_layer" android:background="#50666666" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <ImageButton android:id="@id/on" android:background="@mipmap/all_on_off" android:layout_width="70.0dip" android:layout_height="88.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="on" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_pop" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="40.0dip" android:layout_marginRight="20.0dip" android:onClick="hidePopWindow">
+        <RelativeLayout android:background="@mipmap/msg_bg" android:layout_width="110.0dip" android:layout_height="110.0dip" android:layout_alignParentRight="true">
+            <ImageView android:background="#ffdbdbdb" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+            <TextView android:textColor="#ff000000" android:padding="10.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/add_panel" android:layout_centerHorizontal="true" android:onClick="addPanel" />
+            <TextView android:textColor="#ff000000" android:padding="10.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="@string/add_rc" android:layout_centerHorizontal="true" android:onClick="addRc" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_add_panel" android:background="#80000000" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:onClick="hideAddPanelDialog">
+        <RelativeLayout android:orientation="vertical" android:background="@mipmap/add_rc_bg" android:layout_width="320.0dip" android:layout_height="160.0dip" android:layout_centerInParent="true">
+            <Button android:id="@id/button2" android:background="@mipmap/ic_panel_4" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_marginRight="30.0dip" android:layout_alignTop="@id/button" android:layout_alignParentRight="true" android:onClick="addPanel2" />
+            <Button android:id="@id/button" android:background="@mipmap/ic_panel_3" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="22.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:onClick="addPanel1" />
+            <TextView android:id="@id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="@string/add_panel_5" android:layout_below="@id/button" android:layout_alignLeft="@id/button" />
+            <TextView android:id="@id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/add_panel_6" android:layout_below="@id/button2" android:layout_alignRight="@id/button2" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/rl_add_rc" android:background="#80000000" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" android:onClick="hideAddRcDialog">
+        <RelativeLayout android:orientation="vertical" android:background="@mipmap/add_rc_bg" android:layout_width="320.0dip" android:layout_height="160.0dip" android:layout_centerInParent="true">
+            <Button android:id="@id/rcbutton2" android:background="@mipmap/add_rc_1" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_marginRight="30.0dip" android:layout_alignTop="@id/rcbutton" android:layout_alignParentRight="true" android:onClick="addRc2" />
+            <Button android:id="@id/rcbutton" android:background="@mipmap/add_rc_3" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_marginLeft="32.0dip" android:layout_marginTop="22.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:onClick="addRc1" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:text="@string/add_rc_3" android:layout_below="@id/rcbutton" android:layout_alignLeft="@id/rcbutton" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:text="@string/add_rc_4" android:layout_below="@id/rcbutton2" android:layout_alignRight="@id/rcbutton2" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

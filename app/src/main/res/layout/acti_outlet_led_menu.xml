@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <TextView android:background="#ffb2b2b2" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="30.0dip" />
+    <RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <ImageView android:background="@mipmap/outlet_led_on" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="20.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:text="@string/led" android:layout_centerVertical="true" />
+        <com.zcw.togglebutton.ToggleButton android:id="@id/tb_act_outlet_led_menu" android:background="@mipmap/device_next" android:layout_width="60.0dip" android:layout_height="25.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:background="#ffb2b2b2" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:background="#ffb2b2b2" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="30.0dip" />
+    <RelativeLayout android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:onClick="goXiaoLed">
+        <ImageView android:id="@id/iv_act_outlet_led_menu_led" android:background="@mipmap/outlet_led_off" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="20.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="20.0dip" android:id="@id/tv_act_outlet_led_menu_led" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="80.0dip" android:text="@string/xiao_led" android:layout_centerVertical="true" />
+        <ImageView android:background="@mipmap/device_next" android:layout_width="10.0dip" android:layout_height="14.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:background="#ffb2b2b2" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

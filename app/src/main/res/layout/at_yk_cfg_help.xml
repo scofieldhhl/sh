@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <com.zhy.android.percent.support.PercentRelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <ImageView android:id="@id/iv_help" android:layout_width="0.0dip" android:layout_height="0.0dip" android:scaleType="center" app:layout_widthPercent="100%w" app:layout_heightPercent="100%w" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <TextView android:textColor="#ff646464" android:gravity="center" android:id="@id/tv_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="110.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:padding="3.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="75.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="onSeleted">
+        <TextView android:id="@id/tv_seleted" android:background="@mipmap/h_timing_choose_n" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_centerVertical="true" />
+        <TextView android:id="@id/tv_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/lamp_blink" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:gravity="center" android:id="@id/tv_next" android:background="@drawable/gray_shape" android:clickable="true" android:layout_width="280.0dip" android:layout_height="43.0dip" android:layout_marginBottom="30.0dip" android:text="@string/cfg" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="onNext" />
+</RelativeLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:background="#ffefefef" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <RelativeLayout android:id="@id/rl_search" android:background="@drawable/shap13" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="5.0dip">
+            <EditText android:textSize="14.0dip" android:textColor="#ff858585" android:id="@id/et_search" android:background="@null" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="@string/search_brand" android:drawableLeft="@mipmap/n_rc_search_bt" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <ListView android:id="@id/lv_at_yk_type" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#ffffffff" android:divider="#ffececee" android:layout_below="@id/rl_search" />
+        <com.ex.ltech.led.my_view.SideBar android:id="@id/sideBar" android:layout_width="30.0dip" android:layout_height="fill_parent" android:layout_below="@id/rl_search" android:layout_alignParentRight="true" />
+        <TextView android:textSize="50.0sp" android:textColor="@android:color/white" android:gravity="center" android:id="@id/text_az" android:background="#ff959595" android:visibility="gone" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <TextView android:textColor="#fffc353e" android:id="@id/location" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:drawableLeft="@mipmap/location_ic" android:drawableRight="@mipmap/n_rc_go2" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="seletedLoaction" />
+    </RelativeLayout>
+</RelativeLayout>

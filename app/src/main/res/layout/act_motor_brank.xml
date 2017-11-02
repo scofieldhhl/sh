@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_1" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginTop="20.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_1" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_2" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_2" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_3" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_3" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_4" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_4" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_5" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_5" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_6" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_6" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_7" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_7" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/layout_rf_8" android:background="@color/white" android:clickable="true" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/motor_brank_8" android:layout_centerVertical="true" />
+        <TextView android:background="#ff636363" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:background="@mipmap/n_rc_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

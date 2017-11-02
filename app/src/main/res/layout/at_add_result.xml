@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <TextView android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="50.0dip" />
+    <RelativeLayout android:id="@id/rl_fail" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <ImageView android:background="@mipmap/add_fail" android:layout_width="130.0dip" android:layout_height="130.0dip" android:layout_marginTop="30.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="19.0dip" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="190.0dip" android:text="@string/add_fail_2" />
+        <TextView android:textColor="#ff555555" android:background="#ff4c4c4c" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginTop="240.0dip" android:layout_marginRight="20.0dip" android:text="@string/add_fail_2" />
+        <TextView android:textSize="15.0dip" android:textColor="#ff555555" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="250.0dip" android:text="@string/add_fail_3" />
+        <TextView android:background="#ff4c4c4c" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginTop="275.0dip" android:layout_marginRight="20.0dip" android:text="@string/add_fail_2" />
+        <TextView android:textSize="15.0dip" android:textColor="#ff555555" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="285.0dip" android:text="@string/add_fail_4" />
+        <TextView android:background="#ff4c4c4c" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginTop="310.0dip" android:layout_marginRight="20.0dip" android:text="@string/add_fail_2" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff555555" android:id="@id/t3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="320.0dip" android:text="@string/add_fail_5" />
+        <TextView android:background="#ff4c4c4c" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="8.0dip" android:text="@string/add_fail_2" android:layout_below="@id/t3" />
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:background="@drawable/shap17" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/add_fail_6" android:layout_alignParentBottom="true" android:onClick="reConfig" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/rl_ok" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ImageView android:background="@mipmap/add_success" android:layout_width="150.0dip" android:layout_height="150.0dip" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="22.0dip" android:textColor="#ff000000" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="170.0dip" android:text="@string/add_ok_2" android:layout_centerHorizontal="true" />
+            <TextView android:textColor="#ff555555" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="220.0dip" android:text="@string/add_ok_3" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:background="@drawable/shap18" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/add_ok_4" android:layout_alignParentBottom="true" android:onClick="ok" />
+    </RelativeLayout>
+</RelativeLayout>

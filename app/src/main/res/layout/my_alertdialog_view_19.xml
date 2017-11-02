@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/shap4" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textSize="18.0dip" android:textColor="#ff000000" android:gravity="center" android:id="@id/title" android:paddingTop="10.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/off_line_title1" />
+        <TextView android:textColor="#ff000000" android:gravity="center" android:paddingBottom="10.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/off_line_title2" />
+        <TextView android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TextView android:textColor="#ff1b77d2" android:gravity="center" android:id="@id/yes" android:padding="10.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/refresh_lv" />
+        <TextView android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TextView android:textColor="#ff1b77d2" android:gravity="center" android:id="@id/no" android:padding="10.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cancel" />
+    </LinearLayout>
+</RelativeLayout>

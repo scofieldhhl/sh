@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="#ffffffff" android:layout_width="260.0dip" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.indris.material.RippleView android:textColor="#ff000000" android:gravity="center" android:id="@id/rv_my_alertdialog_1" android:layout_width="186.0dip" android:layout_height="35.0dip" android:text="@string/take_photo" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.1" ripple:hover="true" />
+        <TextView android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <com.indris.material.RippleView android:textColor="#ff000000" android:gravity="center" android:id="@id/rv_my_alertdialog_2" android:layout_width="186.0dip" android:layout_height="35.0dip" android:text="@string/grallry" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.1" ripple:hover="true" />
+        <TextView android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <com.indris.material.RippleView android:textColor="#ff000000" android:gravity="center" android:id="@id/rv_my_alertdialog_3" android:layout_width="186.0dip" android:layout_height="35.0dip" android:text="@string/reset_photo" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.1" ripple:hover="true" />
+    </LinearLayout>
+</RelativeLayout>

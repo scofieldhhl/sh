@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/acti_title_view" />
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="280.0dip" android:layout_marginLeft="60.0dip" android:layout_marginTop="100.0dip" android:layout_marginRight="60.0dip" android:layout_marginBottom="50.0dip" android:layout_centerHorizontal="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageButton android:id="@id/open" android:background="@drawable/selector_rf_up" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/open_motor" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <ImageButton android:id="@id/stop" android:background="@drawable/selector_rf_stop" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/stop" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <ImageButton android:id="@id/close" android:background="@drawable/selector_rf_down" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/close_motor" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="#fff4f4f4" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_alignParentBottom="true" />
+    <TextView android:background="#ff123123" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentBottom="true" />
+    <com.zhy.android.percent.support.PercentLinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="70.0dip" android:layout_alignParentBottom="true">
+        <com.ex.ltech.hongwai.view.ImageTextButton2 android:id="@id/shine" android:layout_width="0.0dip" android:layout_height="0.0dip" app:bt_drawable="@mipmap/light" app:bt_drawable_press="@mipmap/light_press" app:bt_name="@string/open_light" app:layout_widthPercent="25%w" app:layout_heightPercent="25%w" />
+        <com.ex.ltech.hongwai.view.ImageTextButton2 android:id="@id/wind_dry" android:layout_width="0.0dip" android:layout_height="0.0dip" app:bt_drawable="@mipmap/wind_dry" app:bt_drawable_press="@mipmap/wind_dry_press" app:bt_name="@string/wind_dry" app:layout_widthPercent="25%w" app:layout_heightPercent="25%w" />
+        <com.ex.ltech.hongwai.view.ImageTextButton2 android:id="@id/hot_dry" android:layout_width="0.0dip" android:layout_height="0.0dip" app:bt_drawable="@mipmap/hot_dry" app:bt_drawable_press="@mipmap/hot_dry_press" app:bt_name="@string/hot_dry" app:layout_widthPercent="25%w" app:layout_heightPercent="25%w" />
+        <com.ex.ltech.hongwai.view.ImageTextButton2 android:id="@id/clear" android:layout_width="0.0dip" android:layout_height="0.0dip" app:bt_drawable="@mipmap/clear" app:bt_drawable_press="@mipmap/clear_press" app:bt_name="@string/clear" app:layout_widthPercent="25%w" app:layout_heightPercent="25%w" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+</RelativeLayout>

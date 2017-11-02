@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <ImageView android:id="@id/iv_act_outlet_plus" android:background="@mipmap/outlet_off" android:layout_width="280.0dip" android:layout_height="280.0dip" android:layout_marginTop="70.0dip" android:layout_centerHorizontal="true" android:onClick="outlet" />
+    <TextView android:id="@id/tv_act_outlet_timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/iv_act_outlet_plus" android:layout_centerHorizontal="true" />
+    <TextView android:background="@mipmap/plug_timing_bt" android:layout_width="13.0dip" android:layout_height="13.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/tv_act_outlet_timer" android:layout_below="@id/iv_act_outlet_plus" />
+    <ImageView android:id="@id/outlet_null" android:background="@mipmap/outlet_time" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginBottom="20.0dip" android:layout_alignParentBottom="true" android:layout_centerInParent="true" android:onClick="outletTime" />
+    <ImageView android:background="@mipmap/plug_switch_bt_cn" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:layout_toLeftOf="@id/outlet_null" android:layout_alignParentBottom="true" android:onClick="outletSwitch" />
+    <ImageView android:id="@id/iv_act_outlet_little_light" android:background="@mipmap/plug_nightlight_off_bt_cn" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginLeft="20.0dip" android:layout_marginBottom="20.0dip" android:layout_toRightOf="@id/outlet_null" android:layout_alignParentBottom="true" android:onClick="outletLed" />
+</RelativeLayout>

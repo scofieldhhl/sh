@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:melove="http://schemas.android.com/apk/res-auto">
+    <ImageView android:textSize="18.0dip" android:id="@id/space" android:padding="3.0dip" android:visibility="gone" android:layout_width="10.0dip" android:layout_height="5.0dip" />
+    <TextView android:textSize="12.0dip" android:textColor="#ffa9a9a9" android:id="@id/tv_online_status" android:paddingLeft="12.0dip" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/space" />
+    <TextView android:background="#6fcecece" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_below="@id/tv_online_status" />
+    <RelativeLayout android:paddingLeft="20.0dip" android:paddingTop="7.0dip" android:paddingRight="20.0dip" android:paddingBottom="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/tv_online_status">
+        <com.ex.ltech.led.my_view.MLImageView android:id="@id/iv_device" android:background="@mipmap/device_light" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginRight="20.0dip" melove:shape_type="round" />
+        <com.ex.ltech.led.my_view.ColorSeletedView android:id="@id/iv_mode" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="10.0dip" android:layout_toRightOf="@id/iv_device" android:layout_below="@id/tv_device_name" />
+        <TextView android:textSize="15.0dip" android:id="@id/tv_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_toRightOf="@id/iv_mode" android:layout_below="@id/tv_device_name" />
+        <ImageView android:background="@mipmap/device_next" android:layout_width="15.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/off_line_lay" android:background="#ffffffff" android:visibility="gone" android:layout_width="150.0dip" android:layout_height="60.0dip" android:layout_toRightOf="@id/iv_device" />
+        <TextView android:textSize="19.0dip" android:id="@id/tv_device_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="asd" android:layout_toRightOf="@id/iv_device" />
+    </RelativeLayout>
+    <TextView android:background="#6fcecece" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+</RelativeLayout>

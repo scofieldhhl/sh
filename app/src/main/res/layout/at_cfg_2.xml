@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <ImageView android:id="@id/iv_device_top" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="220.0dip" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/iv_device" android:layout_width="200.0dip" android:layout_height="200.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="10.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="18.0dip" android:textColor="#ff000000" android:gravity="center_horizontal" android:id="@id/info1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/iv_device" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="15.0dip" android:textColor="#ff000000" android:gravity="center" android:id="@id/info2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_below="@id/iv_device" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="15.0dip" android:textColor="#fffc5433" android:gravity="center" android:id="@id/indicatori_light_status" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="20.0dip" android:text="@string/indicatori_light_status" android:layout_below="@id/info2" android:layout_centerHorizontal="true" android:onClick="goReset" />
+        <ImageView android:id="@id/center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+        <RelativeLayout android:padding="3.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="75.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="lampBlinkSeleted">
+            <TextView android:id="@id/tv_lamp_blink_seleted" android:background="@mipmap/h_timing_choose_n" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_centerVertical="true" />
+            <TextView android:id="@id/tv_lamp_blink" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/lamp_blink" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <ImageView android:id="@id/iv_bottom_left" android:background="@mipmap/n_rc_cancel" android:visibility="gone" android:layout_width="112.0dip" android:layout_height="34.0dip" android:layout_marginBottom="30.0dip" android:layout_toLeftOf="@id/center" android:layout_alignParentBottom="true" android:onClick="cancel" />
+        <ImageView android:id="@id/iv_bottom_right" android:background="@mipmap/next_gray_1" android:layout_width="280.0dip" android:layout_height="43.0dip" android:layout_marginBottom="30.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="next" />
+        <TextView android:textSize="12.0dip" android:textColor="#ffa1a1a1" android:id="@id/info3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginBottom="40.0dip" android:text="@string/rgb_new_info" android:layout_above="@id/iv_bottom_right" />
+    </RelativeLayout>
+</RelativeLayout>

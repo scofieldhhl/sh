@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="300.0dip" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="@drawable/shap4" android:layout_width="280.0dip" android:layout_height="220.0dip" android:layout_centerInParent="true">
+        <TextView android:textSize="21.0dip" android:textColor="@color/black" android:id="@id/tv_my_edit_alertdialog_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/rename_device" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="15.0dip" android:textColor="@color/black" android:id="@id/tv_my_edit_alertdialog_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:text="@string/rename_device" android:layout_below="@id/tv_my_edit_alertdialog_msg" />
+        <TextView android:textSize="12.0dip" android:textColor="@color/black" android:id="@id/tv_my_edit_alertdialog_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="25.0dip" android:text="@string/rename_device" android:layout_below="@id/tv_my_edit_alertdialog_tips" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <Button android:textColor="#ffff1100" android:gravity="center" android:id="@id/rv_my_edit_alertdialog_cancle" android:background="@drawable/alertdialog_btn_sure_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/cancel" android:layout_weight="1.0" />
+            <Button android:textColor="#ffff1100" android:gravity="center" android:id="@id/rv_my_edit_alertdialog_ok" android:background="@drawable/alertdialog_btn_cancle_bg_right" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/yes" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

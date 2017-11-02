@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:melove="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:paddingLeft="20.0dip" android:paddingTop="7.0dip" android:paddingRight="20.0dip" android:paddingBottom="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/tv_online_status">
+        <TextView android:textSize="19.0dip" android:gravity="center_vertical" android:id="@id/tv_sensor_room" android:layout_width="wrap_content" android:layout_height="100.0px" android:text="roomName" />
+    </RelativeLayout>
+</RelativeLayout>

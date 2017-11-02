@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentRelativeLayout android:background="@drawable/white_round_conner" android:layout_width="fill_parent" android:layout_height="200.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="24.0sp" android:textColor="@color/black" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="25.0dip" android:layout_above="@id/layout_edit" android:layout_centerHorizontal="true" />
+    <com.zhy.android.percent.support.PercentRelativeLayout android:id="@id/layout_edit" android:background="#fff2f2f2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginBottom="25.0dip" android:layout_above="@id/divider_line" android:layout_centerHorizontal="true" app:layout_widthPercent="80%w" app:layout_heightPercent="20%h">
+        <ImageView android:id="@id/iv_cancel" android:background="@mipmap/del2" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginRight="5.0dip" android:scaleType="fitCenter" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:layout_widthPercent="50%h" app:layout_heightPercent="50%h" />
+        <EditText android:textColor="#ffb8b8b8" android:id="@id/et_content" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/iv_cancel" />
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+    <View android:id="@id/divider_line" android:background="#fff2f2f2" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" android:layout_above="@id/layout_button" />
+    <LinearLayout android:id="@id/layout_button" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_alignParentBottom="true" app:layout_heightPercent="20%h">
+        <Button android:textColor="#ff4dbdff" android:id="@id/btn_cancel" android:background="@drawable/white_left_round_conner" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/cancel" android:layout_weight="1.0" />
+        <View android:background="#fff2f2f2" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+        <Button android:textColor="#ff4dbdff" android:id="@id/btn_ok" android:background="@drawable/white_right_round_conner" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/save" android:layout_weight="1.0" />
+    </LinearLayout>
+</com.zhy.android.percent.support.PercentRelativeLayout>

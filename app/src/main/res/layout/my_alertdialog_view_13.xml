@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/bg" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="18.0dip" android:textColor="#ff737373" android:gravity="center" android:id="@id/learning" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" android:text="@string/learn_key_ok_tips" />
+    <ImageView android:background="#ff959595" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="115.0dip" />
+    <TextView android:textSize="17.0dip" android:textColor="#ff737373" android:gravity="center" android:id="@id/cancel" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="115.0dip" android:text="OK" />
+</RelativeLayout>

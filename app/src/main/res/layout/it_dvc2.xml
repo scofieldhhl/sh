@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_it_device_parent" android:layout_width="90.0dip" android:layout_height="90.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ligth_status_bg" android:background="#fff5f5f5" android:clickable="false" android:longClickable="false" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/group_bg" android:background="@drawable/shap9" android:clickable="false" android:longClickable="false" android:layout_width="62.0dip" android:layout_height="62.0dip" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/center" android:clickable="false" android:longClickable="false" android:layout_width="57.0dip" android:layout_height="57.0dip" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/iv_ic" android:background="@mipmap/yk_add" android:clickable="false" android:longClickable="false" android:layout_width="57.0dip" android:layout_height="57.0dip" android:layout_centerInParent="true" />
+    <ImageView android:id="@id/del" android:background="@mipmap/d_edit_105" android:longClickable="false" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="-20.0dip" android:layout_marginTop="10.0dip" android:layout_toRightOf="@id/center" />
+    <ImageView android:id="@id/rl_off_light_layer" android:background="@drawable/shap5" android:clickable="false" android:longClickable="false" android:layout_width="57.0dip" android:layout_height="57.0dip" android:layout_alignTop="@id/center" android:layout_centerInParent="true" />
+    <TextView android:textSize="10.0dip" android:textColor="#ff000000" android:id="@id/name" android:longClickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="83.0dip" android:text="123" android:singleLine="true" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:clickable="false" android:longClickable="false" android:layout_width="90.0dip" android:layout_height="90.0dip" android:layout_centerInParent="true">
+        <ImageView android:id="@id/group_inner1" android:background="@mipmap/red_piont" android:clickable="false" android:longClickable="false" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" />
+        <ImageView android:id="@id/group_inner2" android:background="@mipmap/red_piont" android:clickable="false" android:longClickable="false" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="49.0dip" android:layout_marginTop="20.0dip" />
+        <ImageView android:id="@id/group_inner3" android:background="@mipmap/red_piont" android:clickable="false" android:longClickable="false" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="52.0dip" android:layout_centerHorizontal="true" />
+        <ImageView android:background="@mipmap/red_piont" android:visibility="gone" android:clickable="false" android:longClickable="false" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="55.0dip" android:layout_marginTop="55.0dip" />
+    </RelativeLayout>
+</RelativeLayout>

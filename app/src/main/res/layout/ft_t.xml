@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.ex.ltech.onepiontfive.main.widget.EasySlidingTabs android:id="@id/easy_sliding_tabs" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" app:easyIndicatorColor="#ffff0033" app:easyUnderlineColor="#ffdddddd" app:easyTabTextColor="#ffa6a6a6" app:easySelectedTagTextColor="#ffff0033" />
+    <com.ex.ltech.led.my_view.NoScrollViewPager android:id="@id/easy_vp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:layout_below="@id/easy_sliding_tabs" />
+    <Button android:id="@id/back" android:background="@mipmap/device_ic" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:onClick="back" />
+    <Button android:id="@id/menu" android:background="@mipmap/plug_more" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:onClick="menu" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

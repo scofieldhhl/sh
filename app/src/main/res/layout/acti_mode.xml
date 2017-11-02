@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/rl_acti_mode_parent" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/acti_title_view" />
+    <TextView android:textColor="#ff000000" android:id="@id/tv_acti_mode_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="88" android:layout_toRightOf="@id/btn_acti_mode_menu" />
+    <RelativeLayout android:background="@mipmap/mode_title_bg" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_marginTop="50.0dip" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_acti_mode_3" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_marginTop="50.0dip" android:layout_below="@id/tv_acti_mode_progress">
+        <Button android:layout_gravity="center_vertical" android:background="@mipmap/ic_progress_low" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" />
+        <SeekBar android:layout_gravity="center_vertical" android:id="@id/sb_acti_mode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="30" android:progressDrawable="@drawable/seekbar_style" android:minHeight="5.0dip" android:thumb="@mipmap/thumb_2" android:layout_weight="1.0" android:layout_centerInParent="true" />
+        <Button android:layout_gravity="center_vertical" android:background="@mipmap/ic_progress_height" android:visibility="gone" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" />
+        <com.indris.material.RippleView android:layout_gravity="center_vertical" android:id="@id/btn_acti_mode_play" android:background="@mipmap/music_paly" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="5.0dip" android:onClick="sendModes" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.8" ripple:hover="true" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/ll_choseall" android:layout_width="100.0dip" android:layout_height="25.0dip" android:layout_below="@id/ll_acti_mode_3" android:layout_alignParentRight="true" android:onClick="seletedAll">
+        <TextView android:textColor="#ff4a4a4a" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/all_s" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_frag_sys_inside_all_seleted" android:background="@mipmap/ic_no_all_seleted" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="120.0dip" android:layout_height="40.0dip" android:layout_below="@id/ll_acti_mode_3" android:layout_alignParentLeft="true" android:onClick="seletedAll">
+        <Button android:id="@id/btn_del_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="del" android:layout_weight="1.0" />
+        <Button android:id="@id/btn_refresh_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刷新" android:layout_weight="1.0" />
+    </LinearLayout>
+    <com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout android:id="@id/refresh_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_act_new_main"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <include layout="@layout/refresh_head" />
+        <com.ex.ltech.led.my_view.pullfresh.PullableGridView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@color/gray" android:dividerHeight="1.0dip" />
+        <include layout="@layout/load_more" />
+    </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>
+    <GridView android:gravity="center" android:id="@id/gv_act_mode" android:background="#ffe5e5e5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:horizontalSpacing="1.0px" android:verticalSpacing="1.0px" android:stretchMode="columnWidth" android:columnWidth="90.0dip" android:numColumns="3" android:layout_below="@id/ll_choseall" />
+    <LinearLayout android:gravity="center" android:id="@id/ll_acti_mode_bottom" android:background="#ffe5e5e5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <Button android:id="@id/btn_acti_mode_add" android:background="@mipmap/add_music" android:layout_width="45.0dip" android:layout_height="45.0dip" />
+    </LinearLayout>
+</RelativeLayout>

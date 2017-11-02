@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/rl_title" android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="50.0dip" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+        <com.indris.material.RippleView android:id="@id/btn_title_view_menu" android:background="@mipmap/yk_back" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_alignParentLeft="true" ripple:rippleColor="#ffe0e0e0" ripple:alphaFactor="0.8" ripple:hover="true" />
+        <TextView android:textSize="15.0dip" android:textColor="#ffb2aea8" android:id="@id/tv_title_device_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:maxEms="8" android:singleLine="true" android:layout_toRightOf="@id/btn_title_view_menu" android:layout_centerVertical="true" />
+        <TextView android:textSize="20.0sp" android:textColor="@color/black" android:ellipsize="end" android:gravity="center" android:id="@id/tv_title_view_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="title" android:maxEms="8" android:singleLine="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <com.indris.material.RippleView android:id="@id/btn_title_view_edit" android:background="@mipmap/yk_labe" android:clickable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:onClick="seletedBrand" ripple:rippleColor="#ffe0e0e0" ripple:alphaFactor="0.8" ripple:hover="true" />
+        <TextView android:textSize="16.0sp" android:textColor="#ffff9100" android:id="@id/tv_title_view_edit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <RelativeLayout android:id="@id/rl_at_projection_1" android:background="#ffbababa" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:background="@mipmap/tv_ctrl_bg" android:layout_width="200.0dip" android:layout_height="200.0dip" android:layout_centerInParent="true" />
+            <ImageView android:textSize="25.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/ok" android:clickable="true" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_centerInParent="true" android:onClick="ok" />
+            <ImageView android:textColor="#ffffffff" android:id="@id/up" android:clickable="true" android:layout_width="45.0dip" android:layout_height="65.0dip" android:layout_marginBottom="10.0dip" android:layout_above="@id/ok" android:layout_centerHorizontal="true" android:onClick="up" />
+            <ImageView android:textColor="#ffffffff" android:gravity="center" android:id="@id/left" android:clickable="true" android:layout_width="65.0dip" android:layout_height="45.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/ok" android:layout_centerVertical="true" android:onClick="left" />
+            <ImageView android:textColor="#ffffffff" android:gravity="center" android:id="@id/right" android:clickable="true" android:layout_width="65.0dip" android:layout_height="45.0dip" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/ok" android:layout_centerVertical="true" android:onClick="right" />
+            <ImageView android:textColor="#ffffffff" android:gravity="center" android:id="@id/down" android:clickable="true" android:layout_width="45.0dip" android:layout_height="65.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/ok" android:layout_centerHorizontal="true" android:onClick="down" /> />
+</RelativeLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.ex.ltech.led.my_view.NoScrollViewPager android:id="@id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/page_index" android:background="@mipmap/tv_p_1" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

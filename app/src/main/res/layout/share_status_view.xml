@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/bg" android:background="#fff8f8f8" android:layout_width="fill_parent" android:layout_height="130.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageView" android:background="@mipmap/share_ok" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_centerInParent="true" />
+    <TextView android:textSize="16.0dip" android:textColor="#ff000000" android:id="@id/tv_share_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="分享成功" android:layout_below="@id/imageView" android:layout_centerHorizontal="true" />
+</RelativeLayout>

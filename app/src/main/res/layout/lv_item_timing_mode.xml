@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:melove="http://schemas.android.com/apk/res-auto">
+    <com.ex.ltech.led.my_view.MLImageView android:id="@id/iv_acti_timing_list_item_1" android:clickable="false" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_centerVertical="true" melove:shape_type="round" />
+    <TextView android:textSize="20.0dip" android:id="@id/tv_acti_timing_list_item_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="阿斯顿去" android:singleLine="true" android:layout_toRightOf="@id/iv_acti_timing_list_item_1" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/iv_acti_timing_list_item_3" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginRight="20.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

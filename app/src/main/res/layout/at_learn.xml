@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/acti_title_view" />
+    <RelativeLayout android:orientation="vertical" android:id="@id/info" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <ImageView android:id="@id/iv_center" android:background="@mipmap/yk_lean" android:layout_width="150.0dip" android:layout_height="232.0dip" android:layout_marginTop="80.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="310.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:textColor="#ff595959" android:id="@id/info3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="@string/learn_yk2" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="25.0dip" android:textColor="#ff000000" android:id="@id/info4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="@string/learn_yk7" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="25.0dip" android:textColor="#ff000000" android:id="@id/info5" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="100.0dip" android:text="@string/learn_yk8" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="15.0dip" android:textColor="#ff8a8a8a" android:id="@id/info6" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="145.0dip" android:text="123123asas8" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="25.0dip" android:textColor="#ff000000" android:id="@id/last" android:background="@mipmap/device_last" android:visibility="gone" android:clickable="true" android:layout_width="20.0dip" android:layout_height="30.0dip" android:layout_marginLeft="50.0dip" android:layout_marginTop="143.0dip" android:onClick="lastTest" />
+        <TextView android:textSize="25.0dip" android:textColor="#ff000000" android:id="@id/next" android:background="@mipmap/device_next" android:visibility="gone" android:clickable="true" android:layout_width="20.0dip" android:layout_height="30.0dip" android:layout_marginTop="143.0dip" android:layout_marginRight="50.0dip" android:layout_alignParentRight="true" android:onClick="nextTest" />
+        <TextView android:textSize="25.0dip" android:textColor="#ff000000" android:id="@id/on" android:background="@mipmap/learn_on" android:visibility="gone" android:layout_width="80.0dip" android:layout_height="91.0dip" android:layout_marginTop="130.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <TextView android:textColor="#ff000000" android:id="@id/info1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/learn_yk1" android:layout_centerHorizontal="true" />
+        <TextView android:textColor="#ff000000" android:id="@id/info10" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/learn_yk0" android:layout_centerHorizontal="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/info2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_centerHorizontal="true">
+            <TextView android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/learn_yk3" android:layout_centerHorizontal="true" />
+            <TextView android:textColor="#ffff1a00" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/learn_yk4" android:layout_centerHorizontal="true" />
+            <TextView android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/learn_yk5" android:layout_centerHorizontal="true" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/learn_again" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="400.0dip" android:layout_centerHorizontal="true">
+            <TextView android:id="@id/again" android:background="@mipmap/learnmore" android:clickable="true" android:layout_width="100.0dip" android:layout_height="40.0dip" android:onClick="again" />
+            <TextView android:id="@id/hand_cfg" android:background="@mipmap/learnhand" android:clickable="true" android:layout_width="100.0dip" android:layout_height="40.0dip" android:onClick="handCfg" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/save" android:background="#ffe9e9e9" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_alignParentBottom="true">
+            <TextView android:background="#ffc7c7c7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <TextView android:textSize="22.0dip" android:textColor="#ff000000" android:id="@id/info8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/learn_yk9" android:layout_centerHorizontal="true" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="75.0dip" android:layout_centerHorizontal="true">
+                <TextView android:background="@mipmap/learnno" android:clickable="true" android:layout_width="100.0dip" android:layout_height="40.0dip" android:onClick="no" />
+                <TextView android:background="@mipmap/learnyes" android:clickable="true" android:layout_width="100.0dip" android:layout_height="40.0dip" android:onClick="yes" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

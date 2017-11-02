@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/bg" android:background="#00000000" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:id="@id/nul" android:layout_width="300.0dip" android:layout_height="15.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <TextView android:textColor="#ffff3825" android:gravity="center" android:id="@id/del" android:background="@drawable/shap" android:layout_width="300.0dip" android:layout_height="50.0dip" android:text="@string/del" android:layout_above="@id/nul" android:layout_centerHorizontal="true" android:onClick="del" />
+    <TextView android:textColor="#ff000000" android:gravity="center" android:id="@id/rename" android:background="@drawable/shap" android:layout_width="300.0dip" android:layout_height="50.0dip" android:layout_marginBottom="15.0dip" android:text="@string/rename" android:layout_above="@id/del" android:layout_centerHorizontal="true" android:onClick="rename" />
+</RelativeLayout>

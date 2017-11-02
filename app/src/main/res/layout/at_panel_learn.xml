@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:background="#fff9f9f9" layout="@layout/acti_title_view" />
+    <TextView android:background="#ffdedede" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="50.0dip" />
+    <TextView android:textColor="#ff000000" android:gravity="center" android:id="@id/textView6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0dip" android:text="@string/header_learn" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="50.0dip" android:textColor="#fff05e5f" android:id="@id/sec" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="120.0dip" android:text="60" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="20.0dip" android:textColor="#ff8f8f8f" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="148.0dip" android:text="S" android:layout_toRightOf="@id/sec" />
+    <TextView android:id="@id/info" android:layout_width="320.0dip" android:layout_height="wrap_content" android:layout_marginTop="390.0dip" android:text="@string/add_panel_info2" android:layout_centerHorizontal="true" />
+    <TextView android:gravity="center" android:id="@id/info2" android:visibility="gone" android:layout_width="320.0dip" android:layout_height="wrap_content" android:layout_marginTop="450.0dip" android:text="@string/add_rc_info3" android:layout_centerHorizontal="true" />
+    <ImageView android:id="@id/iv" android:background="@mipmap/ic_panel2_learn_front" android:layout_width="320.0dip" android:layout_height="320.0dip" android:layout_marginTop="120.0dip" android:layout_centerHorizontal="true" />
+</RelativeLayout>

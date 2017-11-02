@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="190.0dip" android:layout_height="100.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <com.indris.material.RippleView android:id="@id/btn_color_act_pop_photo" android:background="@mipmap/phone_pop" android:layout_width="190.0dip" android:layout_height="45.0dip" ripple:rippleColor="#ffe0e0e0" ripple:alphaFactor="0.8" ripple:hover="true" />
+    <TextView android:background="#ffdfdfdf" android:layout_width="190.0dip" android:layout_height="1.0dip" />
+    <com.indris.material.RippleView android:id="@id/btn_color_act_pop_rainbow" android:background="@mipmap/rainbow_pop" android:layout_width="190.0dip" android:layout_height="45.0dip" ripple:rippleColor="#ffe0e0e0" ripple:alphaFactor="0.8" ripple:hover="true" />
+    <View android:background="@mipmap/rainbow_pop_bot" android:layout_width="190.0dip" android:layout_height="10.0dip" />
+</LinearLayout>
