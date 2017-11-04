@@ -3,79 +3,53 @@ package com.ex.ltech.LogRegForget;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ex.ltech.LogRegForget.ShareSdk.LoginApi;
-import com.ex.ltech.LogRegForget.ShareSdk.OnLoginListener;
-import com.ex.ltech.LogRegForget.ShareSdk.UserInfo;
-import com.ex.ltech.led.MyApp;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
-import com.ex.ltech.led.acti.main.DeviceListActivity;
-import com.loopj.android.http.TextHttpResponseHandler;
 
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import cn.sharesdk.facebook.Facebook;
-import cn.sharesdk.framework.PlatformDb;
-import cn.sharesdk.framework.ShareSDK;
-import cn.sharesdk.tencent.qq.QQ;
-import cn.sharesdk.twitter.Twitter;
-import cn.sharesdk.wechat.friends.Wechat;
-import io.xlink.wifi.js.http.HttpAgent;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
-import io.xlink.wifi.js.util.XlinkUtils;
 
 public class ActLoginActivity extends MyBaseActivity
 {
 
-  @Bind({R.id.et_act_log_phone})
+  @BindView(R.id.et_act_log_phone)
   EditText etActLogPhone;
 
-  @Bind({2131558931})
+  @BindView(R.id.et_act_log_psd)
   EditText etActLogPsd;
 
-  @Bind({2131558909})
+  @BindView(R.id.et_area)
   EditText etArea;
   boolean isEyesClose = true;
   boolean isZh;
   String phone = "";
   String psd = "";
 
-  @Bind({2131558932})
+  @BindView(R.id.tv_act_log_forget)
   TextView tvActLogForget;
 
-  @Bind({2131558910})
+  @BindView(R.id.tv_country_code)
   TextView tvCountryCode;
   RegVo vo = new RegVo();
 
   private void initTitle()
   {
     setViewTitle();
-    setTiTleTextRes(2131100154);
-    setEditTextRes(2131100320, Color.parseColor("#ff3636"));
+    setTiTleTextRes(R.string.login);
+    setEditTextRes(R.string.reg, Color.parseColor("#ff3636"));
     showBottomLine();
     setBgWhite();
   }
 
   private void login(String paramString)
   {
-    LoginApi localLoginApi = new LoginApi();
+    /*LoginApi localLoginApi = new LoginApi();
     localLoginApi.setPlatform(paramString);
     localLoginApi.setOnLoginListener(new OnLoginListener(paramString)
     {
@@ -96,7 +70,7 @@ public class ActLoginActivity extends MyBaseActivity
         return false;
       }
     });
-    localLoginApi.login(this);
+    localLoginApi.login(this);*/
   }
 
   public void changeHead(View paramView)
@@ -105,10 +79,10 @@ public class ActLoginActivity extends MyBaseActivity
 
   public void eyes(View paramView)
   {
-    ImageView localImageView = (ImageView)paramView;
+    /*ImageView localImageView = (ImageView)paramView;
     if (this.isEyesClose)
     {
-      localImageView.setBackgroundResource(R.drawable.eyes_open);
+      localImageView.setBackgroundResource(R.mipmap.eyes_open);
       this.etActLogPsd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
       Editable localEditable = this.etActLogPsd.getText();
       if ((localEditable instanceof Spannable))
@@ -120,10 +94,10 @@ public class ActLoginActivity extends MyBaseActivity
     {
       this.isEyesClose = bool;
       return;
-      localImageView.setBackgroundResource(R.drawable.eyes_close);
+      localImageView.setBackgroundResource(R.mipmap.eyes_close);
       this.etActLogPsd.setTransformationMethod(PasswordTransformationMethod.getInstance());
       break;
-    }
+    }*/
   }
 
  /* public void fastLog1(View paramView)
@@ -234,9 +208,7 @@ public class ActLoginActivity extends MyBaseActivity
     ShareSDK.getPlatformList();*/
     this.isZh = UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", true);
     ButterKnife.bind(this);
-    if (this.isZh);
-    while (true)
-    {
+    if (this.isZh){
       this.tvActLogForget.getPaint().setFlags(8);
       this.tvActLogForget.setText(getString(R.string.forget_psd));
       this.etActLogPsd.setTransformationMethod(PasswordTransformationMethod.getInstance());

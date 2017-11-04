@@ -118,7 +118,7 @@ public class SimpleColorPickerView extends View
   {
     this.generalP = new Paint();
     this.generalP.setAntiAlias(true);
-    WindowManager localWindowManager = (WindowManager)getContext().getSystemService("window");
+    WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
     this.screenHeight = localWindowManager.getDefaultDisplay().getHeight();
     this.screenWidth = localWindowManager.getDefaultDisplay().getWidth();
     this.colorBM = BitmapFactory.decodeResource(getResources(), 2130903616);
@@ -272,7 +272,7 @@ public class SimpleColorPickerView extends View
       this.colorAreaHeiht = j;
       this.generalP = new Paint();
       this.generalP.setAntiAlias(true);
-      WindowManager localWindowManager = (WindowManager)getContext().getSystemService("window");
+      WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
       this.screenHeight = localWindowManager.getDefaultDisplay().getHeight();
       this.screenWidth = localWindowManager.getDefaultDisplay().getWidth();
       this.colorBM = BitmapFactory.decodeResource(getResources(), paramInt);
@@ -299,7 +299,7 @@ public class SimpleColorPickerView extends View
       this.colorAreaHeiht = j;
       this.generalP = new Paint();
       this.generalP.setAntiAlias(true);
-      WindowManager localWindowManager = (WindowManager)getContext().getSystemService("window");
+      WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
       this.screenHeight = localWindowManager.getDefaultDisplay().getHeight();
       this.screenWidth = localWindowManager.getDefaultDisplay().getWidth();
       this.colorBM = BitmapFactory.decodeResource(getResources(), paramInt);
@@ -341,8 +341,3 @@ public class SimpleColorPickerView extends View
     public abstract void onPikerXYChange(int paramInt1, int paramInt2, float paramFloat, boolean paramBoolean);
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.my_view.SimpleColorPickerView
- * JD-Core Version:    0.6.0
- */

@@ -2,19 +2,15 @@ package com.ex.ltech.led.acti;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Color;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.ex.ltech.led.UserFerences;
-import com.ex.ltech.led.my_view.MyAlertDialog13;
+
+import com.ex.ltech.led.R;
 import com.indris.material.RippleView;
+
 import java.util.Locale;
 
 public class MyBaseActivity extends Activity
@@ -28,21 +24,23 @@ public class MyBaseActivity extends Activity
     {
       switch (paramView.getId())
       {
-      default:
-        return;
-      case 2131558781:
-      case 2131558783:
+      case R.id.btn_title_view_menu:
+      case R.id.tv_title_view_title:
         MyBaseActivity.this.onMenu();
-        return;
-      case 2131558782:
+        break;
+      case R.id.tv_title_device_name:
         MyBaseActivity.this.onMenu();
-        return;
-      case 2131558784:
+        break;
+      case R.id.btn_title_view_edit:
         MyBaseActivity.this.onEdit();
-        return;
-      case 2131558785:
+        break;
+      case R.id.tv_title_view_edit:
+        MyBaseActivity.this.onEdit();
+        break;
+        default:
+          break;
       }
-      MyBaseActivity.this.onEdit();
+
     }
   };
   private TextView tv_title_device_name;
@@ -78,16 +76,16 @@ public class MyBaseActivity extends Activity
   {
     if (paramBoolean)
     {
-      this.btn_title_view_edit.setVisibility(8);
+      this.btn_title_view_edit.setVisibility(View.GONE);
       return;
     }
-    this.btn_title_view_edit.setVisibility(0);
+    this.btn_title_view_edit.setVisibility(View.VISIBLE);
   }
 
   protected boolean isMobileNO(String paramString)
   {
     boolean bool = true;
-    if (!UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", bool));
+    /*if (!UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", bool));
     do
     {
       return bool;
@@ -96,7 +94,7 @@ public class MyBaseActivity extends Activity
       bool = paramString.matches("13\\d{9}|14[57]\\d{8}|15[012356789]\\d{8}|18[012356789]\\d{8}|17[0678]\\d{8}");
     }
     while (bool);
-    new MyAlertDialog13(this).showInputTureNumDialog();
+    new MyAlertDialog13(this).showInputTureNumDialog();*/
     return bool;
   }
 
@@ -110,7 +108,7 @@ public class MyBaseActivity extends Activity
 
   protected void longToast(int paramInt)
   {
-    Toast.makeText(this, paramInt, 1).show();
+    Toast.makeText(this, paramInt, Toast.LENGTH_LONG).show();
   }
 
   protected void onEdit()
@@ -143,14 +141,14 @@ public class MyBaseActivity extends Activity
 
   protected void setDeviceTextRes(String paramString)
   {
-    this.tv_title_device_name.setVisibility(0);
+    this.tv_title_device_name.setVisibility(View.VISIBLE);
     this.tv_title_device_name.setText(paramString);
     this.tv_title_device_name.setOnClickListener(this.title_listener);
   }
 
   protected void setDeviceTextRes(String paramString, int paramInt)
   {
-    this.tv_title_device_name.setVisibility(0);
+    this.tv_title_device_name.setVisibility(View.VISIBLE);
     this.tv_title_device_name.setText(paramString);
     this.tv_title_device_name.setTextColor(getResources().getColor(paramInt));
     this.tv_title_device_name.setOnClickListener(this.title_listener);
@@ -158,17 +156,17 @@ public class MyBaseActivity extends Activity
 
   protected void setEditImageRes(int paramInt)
   {
-    this.tv_title_view_edit.setVisibility(8);
+    this.tv_title_view_edit.setVisibility(View.GONE);
     this.btn_title_view_edit.setOnClickListener(this.title_listener);
-    this.btn_title_view_edit.setVisibility(0);
+    this.btn_title_view_edit.setVisibility(View.VISIBLE);
     this.btn_title_view_edit.setBackgroundResource(paramInt);
   }
 
   protected void setEditImageText(int paramInt1, int paramInt2)
   {
-    this.tv_title_view_edit.setVisibility(8);
+    this.tv_title_view_edit.setVisibility(View.GONE);
     this.btn_title_view_edit.setOnClickListener(this.title_listener);
-    this.btn_title_view_edit.setVisibility(0);
+    this.btn_title_view_edit.setVisibility(View.VISIBLE);
     this.btn_title_view_edit.setTextColor(paramInt2);
     this.btn_title_view_edit.setTextSize(1, 18.0F);
     this.btn_title_view_edit.setText(paramInt1);
@@ -176,29 +174,29 @@ public class MyBaseActivity extends Activity
 
   protected void setEditStr(String paramString)
   {
-    this.tv_title_view_edit.setVisibility(8);
+    this.tv_title_view_edit.setVisibility(View.GONE);
     this.btn_title_view_edit.setText(paramString);
     this.btn_title_view_edit.setOnClickListener(this.title_listener);
-    this.btn_title_view_edit.setVisibility(0);
+    this.btn_title_view_edit.setVisibility(View.VISIBLE);
   }
 
   protected void setEditStrColor(int paramInt)
   {
-    this.tv_title_view_edit.setVisibility(8);
+    this.tv_title_view_edit.setVisibility(View.GONE);
     this.btn_title_view_edit.setTextColor(paramInt);
   }
 
   protected void setEditStrRes(int paramInt)
   {
-    this.tv_title_view_edit.setVisibility(8);
-    this.btn_title_view_edit.setVisibility(0);
+    this.tv_title_view_edit.setVisibility(View.GONE);
+    this.btn_title_view_edit.setVisibility(View.VISIBLE);
     this.btn_title_view_edit.setText(paramInt);
     this.btn_title_view_edit.setOnClickListener(this.title_listener);
   }
 
   protected void setEditTextRes(int paramInt)
   {
-    setEditImageText(paramInt, getResources().getColor(2131492962));
+    setEditImageText(paramInt, getResources().getColor(R.color.oringe));
   }
 
   protected void setEditTextRes(int paramInt1, int paramInt2)
@@ -210,21 +208,21 @@ public class MyBaseActivity extends Activity
   {
     this.btn_title_view_menu.setBackgroundResource(paramInt);
     this.btn_title_view_menu.setOnClickListener(this.title_listener);
-    this.btn_title_view_menu.setVisibility(0);
+    this.btn_title_view_menu.setVisibility(View.VISIBLE);
   }
 
   protected void setMenuStr(String paramString)
   {
     this.btn_title_view_menu.setText(paramString);
     this.btn_title_view_menu.setOnClickListener(this.title_listener);
-    this.btn_title_view_menu.setVisibility(0);
+    this.btn_title_view_menu.setVisibility(View.VISIBLE);
   }
 
   protected void setMenuStrRes(int paramInt)
   {
     this.btn_title_view_menu.setText(paramInt);
     this.btn_title_view_menu.setOnClickListener(this.title_listener);
-    this.btn_title_view_menu.setVisibility(0);
+    this.btn_title_view_menu.setVisibility(View.VISIBLE);
   }
 
   protected void setSlidingMenu()
@@ -252,35 +250,30 @@ public class MyBaseActivity extends Activity
 
   protected void setViewTitle()
   {
-    this.relativeLayout = ((RelativeLayout)findViewById(2131558780));
-    this.tv_title_view_title = ((TextView)findViewById(2131558783));
-    this.tv_title_device_name = ((TextView)findViewById(2131558782));
-    this.btn_title_view_menu = ((RippleView)findViewById(2131558781));
-    this.btn_title_view_edit = ((RippleView)findViewById(2131558784));
-    this.tv_title_view_edit = ((TextView)findViewById(2131558785));
+    this.relativeLayout = ((RelativeLayout)findViewById(R.id.rl_titlerl_title));
+    this.tv_title_view_title = ((TextView)findViewById(R.id.tv_title_view_title));
+    this.tv_title_device_name = ((TextView)findViewById(R.id.tv_title_device_name));
+    this.btn_title_view_menu = ((RippleView)findViewById(R.id.btn_title_view_menu));
+    this.btn_title_view_edit = ((RippleView)findViewById(R.id.btn_title_view_edit));
+    this.tv_title_view_edit = ((TextView)findViewById(R.id.tv_title_view_edit));
   }
 
   protected void showBottomLine()
   {
-    findViewById(2131558786).setVisibility(0);
+    findViewById(R.id.iv_bottom_line).setVisibility(View.VISIBLE);
   }
 
   protected void toast(int paramInt)
   {
-    Toast.makeText(this, paramInt, 0).show();
+    Toast.makeText(this, paramInt, Toast.LENGTH_SHORT).show();
   }
 
   protected void toast(String paramString)
   {
-    Toast.makeText(this, paramString, 0).show();
+    Toast.makeText(this, paramString, Toast.LENGTH_SHORT).show();
   }
 
   protected void toggleMenu()
   {
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.MyBaseActivity
- * JD-Core Version:    0.6.0
- */

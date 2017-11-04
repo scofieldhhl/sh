@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.ex.ltech.LogRegForget.ActLoginActivity;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
-import com.ex.ltech.led.acti.guide.ActGuide;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.remote.control.yaokong.RcDiyBusiness;
 
@@ -29,12 +28,12 @@ public class ActWelcome extends MyBaseActivity {
         UserFerences localUserFerences = UserFerences.getUserFerences(this);
         if (isZh())
             localUserFerences.putValue("isZh", Boolean.valueOf(true));
-        while (localUserFerences.spFerences.getInt("isFirstOpen", -1) == -1) {
+        /*while (localUserFerences.spFerences.getInt("isFirstOpen", -1) == -1) {
             goAct(ActGuide.class);
             finish();
             return;
-            /*localUserFerences.putValue("isZh", Boolean.valueOf(false));*/
-        }
+            localUserFerences.putValue("isZh", Boolean.valueOf(false));
+        }*/
         if (!localUserFerences.spFerences.getBoolean("isLog", false)) {
             goAct(ActLoginActivity.class);
             finish();
@@ -130,8 +129,3 @@ public class ActWelcome extends MyBaseActivity {
         }
     }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.ActWelcome
- * JD-Core Version:    0.6.0
- */
