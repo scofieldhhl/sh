@@ -71,12 +71,12 @@ public class AtYkNewSceneActivity extends YkAt
 
   public void cancelPic(View paramView)
   {
-    this.rlPhoto.setVisibility(8);
+    this.rlPhoto.setVisibility(View.GONE);
   }
 
   public void okSecondOk(View paramView)
   {
-    this.rlSecond.setVisibility(8);
+    this.rlSecond.setVisibility(View.GONE);
     this.business.okSecondOk(Integer.parseInt(this.tpSecond.getValue()), this.sceneVoPosi);
     this.adt = new ItAtYkNSAdapter(this, this.business.getYkVos(this.sceneVoPosi));
     this.lvAtYkNS.setAdapter(this.adt);
@@ -146,7 +146,7 @@ public class AtYkNewSceneActivity extends YkAt
     this.lvAtYkNS.setAdapter(this.adt);
     setTitleView();
     if (this.sceneVoPosi < 3)
-      findViewById(2131559054).setVisibility(8);
+      findViewById(2131559054).setVisibility(View.GONE);
     getWindow().setSoftInputMode(3);
   }
 
@@ -209,18 +209,18 @@ public class AtYkNewSceneActivity extends YkAt
   public void phonePhoto(View paramView)
   {
     Crop.pickImage(this);
-    this.rlPhoto.setVisibility(8);
+    this.rlPhoto.setVisibility(View.GONE);
   }
 
   public void seletedIc(View paramView)
   {
-    this.rlPhoto.setVisibility(0);
+    this.rlPhoto.setVisibility(View.VISIBLE);
   }
 
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     if (this.business.isNewScene(this.sceneVoPosi))
     {
       setTiTleText(getString(2131100205) + (-4 + (1 + this.sceneVoPosi)));
@@ -244,7 +244,7 @@ public class AtYkNewSceneActivity extends YkAt
 
   public void showSecond(int paramInt)
   {
-    this.rlSecond.setVisibility(0);
+    this.rlSecond.setVisibility(View.VISIBLE);
     this.tpSecond.setData(this.business.getStrArr());
     this.business.showSecond(paramInt);
   }
@@ -258,7 +258,7 @@ public class AtYkNewSceneActivity extends YkAt
     Intent localIntent = new Intent("android.media.action.IMAGE_CAPTURE");
     localIntent.putExtra("output", Uri.fromFile(this.currentFile));
     startActivityForResult(localIntent, this.SHOT_REQ_CODE);
-    this.rlPhoto.setVisibility(8);
+    this.rlPhoto.setVisibility(View.GONE);
   }
 }
 

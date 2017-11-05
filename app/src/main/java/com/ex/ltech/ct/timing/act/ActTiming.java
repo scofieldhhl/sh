@@ -2,27 +2,26 @@ package com.ex.ltech.ct.timing.act;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+
 import com.ex.ltech.ct.timing.TimingBussines;
-import com.ex.ltech.ct.timing.TimingBussines.SendCmdListener;
 import com.ex.ltech.ct.timing.TimingListAdapter;
-import com.ex.ltech.ct.timing.TimingListAdapter.OnListVSwichChangeListener;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenu;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuCreator;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuItem;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView;
-import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView.OnMenuItemClickListener;
 import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActTiming extends MyBaseActivity
   implements TimingListAdapter.OnListVSwichChangeListener
@@ -164,7 +163,7 @@ public class ActTiming extends MyBaseActivity
         case 0:
           if (((TimingVo)ActTiming.this.vos.get(paramInt1)).isOther())
           {
-            ActTiming.this.toast(2131100210);
+            ActTiming.this.toast(R.string.no_edit_other);
             return false;
           }
           ActTiming.this.bussines.isCreateNewTime = false;
@@ -185,14 +184,14 @@ public class ActTiming extends MyBaseActivity
         case 1:
         }
         ActTiming.this.bussines.delTimingItem(ActTiming.this.vos, paramInt1);
-        ProgressDialog localProgressDialog = ProgressDialog.show(ActTiming.this, "", ActTiming.this.getString(2131100075), false);
+        ProgressDialog localProgressDialog = ProgressDialog.show(ActTiming.this, "", ActTiming.this.getString(R.string.get_d_info), false);
         localProgressDialog.setCancelable(true);
         localProgressDialog.show();
         ActTiming.this.bussines.setSendCmdListener(new TimingBussines.SendCmdListener(paramInt1, localProgressDialog)
         {
           public void onSendFailde()
           {
-            ActTiming.this.toast(2131099854);
+            ActTiming.this.toast(R.string.add_time_no_ok);
             this.val$dialog.dismiss();
           }
 
@@ -216,7 +215,7 @@ public class ActTiming extends MyBaseActivity
   private void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
+    setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(2131100433);
     setEditImageRes(2130903589);
     setDeviceTextRes(SharedPreferencesUtil.queryValue("dname"));
@@ -233,14 +232,14 @@ public class ActTiming extends MyBaseActivity
     }
     while (true)
     {
-      ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(2131100075), false);
+      ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(R.string.get_d_info), false);
       localProgressDialog.setCancelable(true);
       localProgressDialog.show();
       this.bussines.setSendCmdListener(new TimingBussines.SendCmdListener(localProgressDialog)
       {
         public void onSendFailde()
         {
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
         }
 
@@ -255,7 +254,7 @@ public class ActTiming extends MyBaseActivity
             ActTiming.this.setListTotgleBtnListenerDelay();
             ActTiming.this.adt.notifyDataSetChanged();
             this.val$dialog.dismiss();
-            ActTiming.this.toast(2131100431);
+            ActTiming.this.toast(R.string.time_ctrl_ok);
             ActTiming.this.bussines.setSendCmdListener(null);
             return;
             ActTiming.this.vos.remove(ActTiming.this.itemPosition);
@@ -295,7 +294,7 @@ public class ActTiming extends MyBaseActivity
       this.bussines.isCreateNewTime = true;
       return;
     }
-    toast(2131100429);
+    toast(R.string.ten_timing);
   }
 
   public void onListVSwichChange(boolean paramBoolean, int paramInt)
@@ -319,7 +318,7 @@ public class ActTiming extends MyBaseActivity
           ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
           ActTiming.this.setListTotgleBtnListenerDelay();
           ActTiming.this.adt.notifyDataSetChanged();
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           ActTiming.this.getTimeDialog.dismiss();
           return;
         }
@@ -330,7 +329,7 @@ public class ActTiming extends MyBaseActivity
         ((TimingVo)ActTiming.this.vos.get(this.val$posi)).setSwich(this.val$on);
         ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
         ActTiming.this.getTimeDialog.dismiss();
-        ActTiming.this.toast(2131100431);
+        ActTiming.this.toast(R.string.time_ctrl_ok);
         ActTiming.this.bussines.setSendCmdListener(null);
       }
     });

@@ -188,7 +188,7 @@ public class MyBiz extends BaseBusiness
           switch (i)
           {
           default:
-            if ((!localInnerRcVo.getStatus().equals(this.c.getString(2131100232))) && (!localInnerRcVo.getStatus().equals(this.c.getString(2131100226))))
+            if ((!localInnerRcVo.getStatus().equals(this.c.getString(R.string.on))) && (!localInnerRcVo.getStatus().equals(this.c.getString(2131100226))))
               break label1102;
             sendRcCodeByChineseName("电源");
             break label80;

@@ -254,7 +254,7 @@ public class ActMode extends MyBaseFt
   private void initTitle()
   {
     this.btnTitleViewMenu.setBackgroundResource(2130903274);
-    this.tvTitleViewTitle.setText(2131100163);
+    this.tvTitleViewTitle.setText(R.string.mode);
     this.btnTitleViewMenu.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
@@ -291,7 +291,7 @@ public class ActMode extends MyBaseFt
           ActMode.this.sbActiMode.setVisibility(4);
           return;
         }
-        ActMode.this.sbActiMode.setVisibility(0);
+        ActMode.this.sbActiMode.setVisibility(View.VISIBLE);
       }
     });
     this.madapter.setSingleSeletedListener(new SingleSeletedListener()
@@ -324,13 +324,13 @@ public class ActMode extends MyBaseFt
           }
           while (localModeVo.isAddBtn());
           ActMode.this.sbActiMode.setProgress(12 * localModeVo.getSpeed());
-          ActMode.this.sbActiMode.setVisibility(0);
-          ActMode.this.ivFragSysInsideAllSeleted.setBackgroundResource(2130903315);
+          ActMode.this.sbActiMode.setVisibility(View.VISIBLE);
+          ActMode.this.ivFragSysInsideAllSeleted.setBackgroundResource(R.mipmap.ic_no_all_seleted);
           ActMode.this.isAllSeleted = false;
-          ActMode.this.sbActiMode.setVisibility(0);
+          ActMode.this.sbActiMode.setVisibility(View.VISIBLE);
         }
         while (!ActMode.this.isPlay);
-        ActMode.this.btnActiModePlay.setBackgroundResource(2130903500);
+        ActMode.this.btnActiModePlay.setBackgroundResource(R.mipmap.music_paly);
         ActMode.access$302(ActMode.this, false);
       }
     });
@@ -352,13 +352,13 @@ public class ActMode extends MyBaseFt
           {
             if (!ActMode.this.isPlay)
               break;
-            ActMode.this.btnActiModePlay.setBackgroundResource(2130903501);
+            ActMode.this.btnActiModePlay.setBackgroundResource(R.mipmap.music_stop);
             ActMode.this.business.sendModes(ActMode.this.roomNum, ActMode.this.dIndex, 1);
           }
           return;
         }
         ActMode.this.business.sendModes(ActMode.this.roomNum, ActMode.this.dIndex, 2);
-        ActMode.this.btnActiModePlay.setBackgroundResource(2130903500);
+        ActMode.this.btnActiModePlay.setBackgroundResource(R.mipmap.music_paly);
       }
     });
   }
@@ -423,7 +423,7 @@ public class ActMode extends MyBaseFt
     this.singleSeletedIndex = -1;
     if (!this.isAllSeleted)
     {
-      this.ivFragSysInsideAllSeleted.setBackgroundResource(2130903475);
+      this.ivFragSysInsideAllSeleted.setBackgroundResource(R.mipmap.mode_all_seleted);
       this.isAllSeleted = true;
       this.sbActiMode.setVisibility(4);
     }
@@ -432,9 +432,9 @@ public class ActMode extends MyBaseFt
       this.business.seletedAll(this.isAllSeleted);
       this.madapter.notifyDataSetChanged();
       return;
-      this.ivFragSysInsideAllSeleted.setBackgroundResource(2130903315);
+      this.ivFragSysInsideAllSeleted.setBackgroundResource(R.mipmap.ic_no_all_seleted);
       this.isAllSeleted = false;
-      this.sbActiMode.setVisibility(0);
+      this.sbActiMode.setVisibility(View.VISIBLE);
     }
   }
 
@@ -496,7 +496,7 @@ public class ActMode extends MyBaseFt
     if (!Main.lastSendCmd.equals(Main.modeCmd))
     {
       this.isPlay = false;
-      this.btnActiModePlay.setBackgroundResource(2130903500);
+      this.btnActiModePlay.setBackgroundResource(R.mipmap.music_paly);
     }
   }
 

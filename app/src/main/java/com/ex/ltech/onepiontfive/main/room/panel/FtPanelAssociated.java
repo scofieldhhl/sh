@@ -126,7 +126,7 @@ public class FtPanelAssociated extends MyBaseFt
         FtPanelAssociated.this.finish();
       }
     });
-    this.tvTitleViewEdit.setVisibility(0);
+    this.tvTitleViewEdit.setVisibility(View.VISIBLE);
     this.tvTitleViewEdit.setText(2131100358);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492897));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()

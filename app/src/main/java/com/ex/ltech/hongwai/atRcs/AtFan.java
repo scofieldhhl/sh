@@ -301,7 +301,7 @@ public class AtFan extends AtBaseYk
       sendRcParmas(this.kkNonACManager.getParams());
       continue;
       this.kkNonACManager = new KKNonACManager((IrData)((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).irDatas.get(0));
-      setSettingText(2131100063, -1);
+      setSettingText(R.string.finish, -1);
       setCanLearn(false);
     }
   }

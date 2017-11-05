@@ -115,7 +115,7 @@ public class ActDeviceManager extends MyBaseActivity
   private void setMyTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     if (this.isShare)
     {
       setTiTleTextRes(2131100395);
@@ -250,9 +250,9 @@ public class ActDeviceManager extends MyBaseActivity
         localDevice = (Device)this.devices.get(paramInt);
         if (!ActDeviceManager.this.isShare)
           break label793;
-        localHolder.tv_act_device_del.setVisibility(8);
-        localHolder.tv_act_device_rename.setVisibility(8);
-        localHolder.tv_act_device_share.setVisibility(0);
+        localHolder.tv_act_device_del.setVisibility(View.GONE);
+        localHolder.tv_act_device_rename.setVisibility(View.GONE);
+        localHolder.tv_act_device_share.setVisibility(View.VISIBLE);
         localHolder.tv_act_device_share.setOnClickListener(new View.OnClickListener(localDevice)
         {
           public void onClick(View paramView)
@@ -452,9 +452,9 @@ public class ActDeviceManager extends MyBaseActivity
           return paramView;
           localHolder = (Holder)paramView.getTag();
           break;
-          label793: localHolder.tv_act_device_del.setVisibility(0);
-          localHolder.tv_act_device_rename.setVisibility(0);
-          localHolder.tv_act_device_share.setVisibility(8);
+          label793: localHolder.tv_act_device_del.setVisibility(View.VISIBLE);
+          localHolder.tv_act_device_rename.setVisibility(View.VISIBLE);
+          localHolder.tv_act_device_share.setVisibility(View.GONE);
         }
         catch (Exception localException)
         {

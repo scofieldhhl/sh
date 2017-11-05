@@ -141,14 +141,14 @@ public class PullToRefreshLayout extends RelativeLayout
     default:
       return;
     case 0:
-      this.refreshStateImageView.setVisibility(8);
+      this.refreshStateImageView.setVisibility(View.GONE);
       this.refreshStateTextView.setText(2131100281);
       this.pullView.clearAnimation();
-      this.pullView.setVisibility(0);
-      this.loadStateImageView.setVisibility(8);
+      this.pullView.setVisibility(View.VISIBLE);
+      this.loadStateImageView.setVisibility(View.GONE);
       this.loadStateTextView.setText(2131100282);
       this.pullUpView.clearAnimation();
-      this.pullUpView.setVisibility(0);
+      this.pullUpView.setVisibility(View.VISIBLE);
       return;
     case 1:
       this.refreshStateTextView.setText(2131100325);
@@ -156,7 +156,7 @@ public class PullToRefreshLayout extends RelativeLayout
       return;
     case 2:
       this.pullView.clearAnimation();
-      this.refreshingView.setVisibility(0);
+      this.refreshingView.setVisibility(View.VISIBLE);
       this.pullView.setVisibility(4);
       this.refreshingView.startAnimation(this.refreshingAnimation);
       this.refreshStateTextView.setText(2131100319);
@@ -168,7 +168,7 @@ public class PullToRefreshLayout extends RelativeLayout
     case 4:
     }
     this.pullUpView.clearAnimation();
-    this.loadingView.setVisibility(0);
+    this.loadingView.setVisibility(View.VISIBLE);
     this.pullUpView.setVisibility(4);
     this.loadingView.startAnimation(this.refreshingAnimation);
     this.loadStateTextView.setText(2131100152);
@@ -333,11 +333,11 @@ public class PullToRefreshLayout extends RelativeLayout
   public void loadmoreFinish(int paramInt)
   {
     this.loadingView.clearAnimation();
-    this.loadingView.setVisibility(8);
+    this.loadingView.setVisibility(View.GONE);
     switch (paramInt)
     {
     default:
-      this.loadStateImageView.setVisibility(0);
+      this.loadStateImageView.setVisibility(View.VISIBLE);
       this.loadStateTextView.setText(2131100150);
       this.loadStateImageView.setBackgroundResource(2130903454);
     case 0:
@@ -354,7 +354,7 @@ public class PullToRefreshLayout extends RelativeLayout
       }
       .sendEmptyMessageDelayed(0, 1000L);
       return;
-      this.loadStateImageView.setVisibility(0);
+      this.loadStateImageView.setVisibility(View.VISIBLE);
       this.loadStateTextView.setText(2131100151);
       this.loadStateImageView.setBackgroundResource(2130903455);
     }
@@ -393,11 +393,11 @@ public class PullToRefreshLayout extends RelativeLayout
     if (this.refreshingView != null)
     {
       this.refreshingView.clearAnimation();
-      this.refreshingView.setVisibility(8);
+      this.refreshingView.setVisibility(View.GONE);
       switch (paramInt)
       {
       default:
-        this.refreshStateImageView.setVisibility(0);
+        this.refreshStateImageView.setVisibility(View.VISIBLE);
         this.refreshStateTextView.setText(2131100316);
         this.refreshStateImageView.setBackgroundResource(2130903675);
       case 0:
@@ -415,7 +415,7 @@ public class PullToRefreshLayout extends RelativeLayout
       }
       .sendEmptyMessageDelayed(0, 1000L);
       return;
-      this.refreshStateImageView.setVisibility(0);
+      this.refreshStateImageView.setVisibility(View.VISIBLE);
       this.refreshStateTextView.setText(2131100318);
       this.refreshStateImageView.setBackgroundResource(2130903676);
     }

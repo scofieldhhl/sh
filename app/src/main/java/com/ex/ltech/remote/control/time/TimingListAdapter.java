@@ -98,14 +98,14 @@ public class TimingListAdapter extends BaseAdapter
       });
       if (!localYaokongTimingVo.isOther())
       {
-        if (!localYaokongTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+        if (!localYaokongTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
           break label606;
-        localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100232));
+        localHolder.tv_act_timing_swich_status.setText(this.pct.getString(R.string.on));
         localHolder.tv_act_timing_swich_status.setText(localYaokongTimingVo.getYaoKongName());
         if (localYaokongTimingVo.getColor() == 0)
           break label626;
-        localHolder.csv_act_timing.setVisibility(0);
-        localHolder.tv_act_timing_mode.setVisibility(8);
+        localHolder.csv_act_timing.setVisibility(View.VISIBLE);
+        localHolder.tv_act_timing_mode.setVisibility(View.GONE);
         localHolder.csv_act_timing.setColor(localYaokongTimingVo.getColor());
         this.fleshSpaceTime = System.currentTimeMillis();
         str2 = localYaokongTimingVo.getYkType();
@@ -119,7 +119,7 @@ public class TimingListAdapter extends BaseAdapter
         default:
           label544: if (!(localYaokongTimingVo.isShowMineTiming() | localYaokongTimingVo.isShowOtherTiming()))
             break label1391;
-          localHolder.who_timing.setVisibility(0);
+          localHolder.who_timing.setVisibility(View.VISIBLE);
           localTextView = localHolder.who_timing;
           if (!localYaokongTimingVo.isShowMineTiming());
         case 0:
@@ -149,8 +149,8 @@ public class TimingListAdapter extends BaseAdapter
         break;
         label606: localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100226));
         break label358;
-        label626: localHolder.tv_act_timing_mode.setVisibility(0);
-        localHolder.csv_act_timing.setVisibility(8);
+        label626: localHolder.tv_act_timing_mode.setVisibility(View.VISIBLE);
+        localHolder.csv_act_timing.setVisibility(View.GONE);
         if (!localYaokongTimingVo.isOffDevice())
           localHolder.tv_act_timing_mode.setText(localYaokongTimingVo.getModeName());
         try
@@ -227,14 +227,14 @@ public class TimingListAdapter extends BaseAdapter
       break label544;
       if (localYaokongTimingVo.isOnOff())
       {
-        localHolder.tv_act_timing_mode.setText(this.pct.getString(2131100232));
+        localHolder.tv_act_timing_mode.setText(this.pct.getString(R.string.on));
         break label544;
       }
       localHolder.tv_act_timing_mode.setText(this.pct.getString(2131100226));
       break label544;
       if (localYaokongTimingVo.isOnOff())
       {
-        localHolder.tv_act_timing_mode.setText(this.pct.getString(2131100232));
+        localHolder.tv_act_timing_mode.setText(this.pct.getString(R.string.on));
         break label544;
       }
       localHolder.tv_act_timing_mode.setText(this.pct.getString(2131100226));
@@ -248,13 +248,13 @@ public class TimingListAdapter extends BaseAdapter
       break label544;
       if (localYaokongTimingVo.isOnOff())
       {
-        localHolder.tv_act_timing_mode.setText(this.pct.getString(2131100232));
+        localHolder.tv_act_timing_mode.setText(this.pct.getString(R.string.on));
         break label544;
       }
       localHolder.tv_act_timing_mode.setText(this.pct.getString(2131100226));
       break label544;
     }
-    label1391: localHolder.who_timing.setVisibility(8);
+    label1391: localHolder.who_timing.setVisibility(View.GONE);
     return paramView;
   }
 

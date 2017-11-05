@@ -26,8 +26,8 @@ public class AtYkGradientTime extends MyBaseActivity
     for (int i = 1; i < 61; i++)
     {
       if (i == 1)
-        this.gradientTime = (i + getString(2131100160));
-      localArrayList.add(i + getString(2131100160));
+        this.gradientTime = (i + getString(R.string.min));
+      localArrayList.add(i + getString(R.string.min));
     }
     this.myTimePickerView.setData(localArrayList);
     this.myTimePickerView.setTextCol(5855577);

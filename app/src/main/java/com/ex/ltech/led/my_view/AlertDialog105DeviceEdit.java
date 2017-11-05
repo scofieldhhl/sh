@@ -143,13 +143,13 @@ public class AlertDialog105DeviceEdit extends AlertDialog
 
   public void setDelDeviceTextGone()
   {
-    this.rv_my_alertdialog_1.setVisibility(8);
+    this.rv_my_alertdialog_1.setVisibility(View.GONE);
   }
 
   public void setDelDeviceTextVisiable()
   {
-    this.rv_my_alertdialog_0.setVisibility(8);
-    this.rv_my_alertdialog_1.setVisibility(0);
+    this.rv_my_alertdialog_0.setVisibility(View.GONE);
+    this.rv_my_alertdialog_1.setVisibility(View.VISIBLE);
   }
 
   public void setMyOnClickListener(MyOnClickListener paramMyOnClickListener)
@@ -159,8 +159,8 @@ public class AlertDialog105DeviceEdit extends AlertDialog
 
   public void setRemoveOutGroupTextVisiable()
   {
-    this.rv_my_alertdialog_0.setVisibility(0);
-    this.rv_my_alertdialog_1.setVisibility(8);
+    this.rv_my_alertdialog_0.setVisibility(View.VISIBLE);
+    this.rv_my_alertdialog_1.setVisibility(View.GONE);
   }
 
   public static abstract interface MyOnClickListener

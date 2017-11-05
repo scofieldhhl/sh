@@ -2,10 +2,10 @@ package com.ex.ltech.bwct.timing;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Handler;
-import android.util.DisplayMetrics;
+
 import com.ex.ltech.bwct.timing.act.ActTiming;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.timing.TimingData;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
@@ -21,6 +21,13 @@ import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
 import io.xlink.wifi.js.manage.DeviceManage;
 import io.xlink.wifi.js.util.SharedPreferencesUtil;
 import io.xlink.wifi.sdk.XDevice;
@@ -29,12 +36,6 @@ import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.io.PrintStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 public class TimingBussines
 {
@@ -451,11 +452,11 @@ public class TimingBussines
     {
       if (!paramTimingVo.isSwich())
         break label243;
-      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label237;
       j = 1;
       str4 = "0";
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label464;
       str4 = "1";
       i2 = DateFmtUtil.getWeekOfDate();
@@ -596,11 +597,11 @@ public class TimingBussines
         break label335;
       if (!paramTimingVo.isSwich())
         break label344;
-      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label338;
       k = 1;
       str5 = "0";
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label579;
       str5 = "1";
       i7 = DateFmtUtil.getWeekOfDate();
@@ -930,12 +931,12 @@ public class TimingBussines
             localTimingVo3.setSwich(bool2);
             if (!str9.equals("1"))
               break label657;
-            str11 = TimingBussines.this.pct.getString(2131100232);
+            str11 = TimingBussines.this.pct.getString(R.string.on);
             localTimingVo3.setLightStatus(str11);
             localArrayList3 = new ArrayList();
             if (!str7.substring(0, 1).equals("1"))
               break label674;
-            localArrayList3.add(TimingBussines.this.pct.getString(2131100239));
+            localArrayList3.add(TimingBussines.this.pct.getString(R.string.once));
           }
           while (true)
           {

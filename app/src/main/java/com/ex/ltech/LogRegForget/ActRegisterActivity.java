@@ -236,13 +236,13 @@ public class ActRegisterActivity extends MyBaseActivity
     if (this.redBgTextView.getText().toString().equals(getString(2131100206)))
       if (this.etPhone.getText().toString().indexOf("@") != -1)
       {
-        this.rl_area.setVisibility(8);
-        this.rl_phone.setVisibility(8);
-        this.rlVerfy.setVisibility(8);
-        this.rl_psd.setVisibility(0);
-        this.rlActRegSeleted.setVisibility(0);
-        this.redBgTextView.setText(getString(2131100063));
-        this.rl_psd.setVisibility(0);
+        this.rl_area.setVisibility(View.GONE);
+        this.rl_phone.setVisibility(View.GONE);
+        this.rlVerfy.setVisibility(View.GONE);
+        this.rl_psd.setVisibility(View.VISIBLE);
+        this.rlActRegSeleted.setVisibility(View.VISIBLE);
+        this.redBgTextView.setText(getString(R.string.finish));
+        this.rl_psd.setVisibility(View.VISIBLE);
       }
     do
     {
@@ -255,13 +255,13 @@ public class ActRegisterActivity extends MyBaseActivity
         return;
       }
       this.countryCode = this.tvCountryCode.getText().toString().substring(1, this.tvCountryCode.getText().toString().length());
-      this.rl_area.setVisibility(8);
-      this.rl_phone.setVisibility(8);
+      this.rl_area.setVisibility(View.GONE);
+      this.rl_phone.setVisibility(View.GONE);
       this.isNumVerfly = true;
-      this.rlActRegSeleted.setVisibility(0);
-      this.rlVerfy.setVisibility(0);
-      this.rl_psd.setVisibility(0);
-      this.redBgTextView.setText(getString(2131100063));
+      this.rlActRegSeleted.setVisibility(View.VISIBLE);
+      this.rlVerfy.setVisibility(View.VISIBLE);
+      this.rl_psd.setVisibility(View.VISIBLE);
+      this.redBgTextView.setText(getString(R.string.finish));
       SMSSDK.initSDK(this, "c2e74330ba24", "daa45b125ea9ecb0968b2a53705ca2eb", false);
       SMSSDK.registerEventHandler(new EventHandler()
       {
@@ -322,18 +322,18 @@ public class ActRegisterActivity extends MyBaseActivity
       }
       if (this.etVerfyCode.getText().toString().trim().equals(this.mailCode))
       {
-        this.redBgTextView.setText(getString(2131100063));
-        this.rlActRegSeleted.setVisibility(0);
-        this.rl_psd.setVisibility(0);
-        this.tvVerfyCodeSend.setVisibility(8);
-        this.rlVerfy.setVisibility(8);
+        this.redBgTextView.setText(getString(R.string.finish));
+        this.rlActRegSeleted.setVisibility(View.VISIBLE);
+        this.rl_psd.setVisibility(View.VISIBLE);
+        this.tvVerfyCodeSend.setVisibility(View.GONE);
+        this.rlVerfy.setVisibility(View.GONE);
         this.ivStep.setBackgroundResource(2130903773);
         return;
       }
       toast(2131100498);
       return;
     }
-    while ((!this.redBgTextView.getText().toString().equals(getString(2131100063))) || (!this.isProtocol));
+    while ((!this.redBgTextView.getText().toString().equals(getString(R.string.finish))) || (!this.isProtocol));
     if (this.isNumVerfly)
     {
       if (this.etActLogPsd.getText().toString().length() < 6)

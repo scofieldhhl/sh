@@ -262,7 +262,7 @@ public class ActNewMode extends MyBaseFt
   {
     this.business.prepareLink();
     this.rlNewCustomColorBar = ((RelativeLayout)this.view.findViewById(2131558570));
-    this.btActiNewModeZan.setBackgroundResource(2130903314);
+    this.btActiNewModeZan.setBackgroundResource(R.mipmap.ic_new_custom_zan_press);
     this.modeCount = (2 + getRequest().getIntExtra("modeCount", 1));
     this.modesNames = getRequest().getStringExtra("modesNames");
     this.modesPosi = getRequest().getIntExtra("modesPosi", -1);
@@ -291,7 +291,7 @@ public class ActNewMode extends MyBaseFt
   private void initTitle()
   {
     this.btnTitleViewMenu.setBackgroundResource(2130903274);
-    this.tvTitleViewTitle.setText(2131100163);
+    this.tvTitleViewTitle.setText(R.string.mode);
     this.btnTitleViewMenu.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
@@ -299,8 +299,8 @@ public class ActNewMode extends MyBaseFt
         ActNewMode.this.finish();
       }
     });
-    this.tvTitleViewEdit.setVisibility(0);
-    this.tvTitleViewEdit.setText(2131100063);
+    this.tvTitleViewEdit.setVisibility(View.VISIBLE);
+    this.tvTitleViewEdit.setText(R.string.finish);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492897));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {
@@ -396,30 +396,30 @@ public class ActNewMode extends MyBaseFt
         ModeVo localModeVo = (ModeVo)localList.get(this.modesPosi);
         this.ccvActiNewMode.setColors(localModeVo.getColors());
         this.ccvActiNewMode.invalidate();
-        this.ccvActiNewMode.setVisibility(0);
+        this.ccvActiNewMode.setVisibility(View.VISIBLE);
         this.sbActiNewMode2.setProgress(100 * localModeVo.getBrt() / 255);
         this.sbActiNewMode1.setProgress(12 * localModeVo.getSpeed());
         this.speed = localModeVo.getSpeed();
         this.brt = localModeVo.getBrt();
         if (this.brt < 12)
           this.brt = 12;
-        this.btActiNewModePing.setBackgroundResource(2130903309);
-        this.btActiNewModeZan.setBackgroundResource(2130903313);
-        this.btActiNewModeTiao.setBackgroundResource(2130903311);
+        this.btActiNewModePing.setBackgroundResource(R.mipmap.ic_new_custom_ping);
+        this.btActiNewModeZan.setBackgroundResource(R.mipmap.ic_new_custom_zan);
+        this.btActiNewModeTiao.setBackgroundResource(R.mipmap.ic_new_custom_tiao);
         this.changeMode = 2;
         if (localModeVo.getTransformation() == 1)
         {
-          this.btActiNewModeTiao.setBackgroundResource(2130903312);
+          this.btActiNewModeTiao.setBackgroundResource(R.mipmap.ic_new_custom_tiao_press);
           this.changeMode = 1;
         }
         if (localModeVo.getTransformation() == 2)
         {
-          this.btActiNewModeZan.setBackgroundResource(2130903314);
+          this.btActiNewModeZan.setBackgroundResource(R.mipmap.ic_new_custom_zan_press);
           this.changeMode = 2;
         }
         if (localModeVo.getTransformation() == 3)
         {
-          this.btActiNewModePing.setBackgroundResource(2130903310);
+          this.btActiNewModePing.setBackgroundResource(R.mipmap.ic_new_custom_ping_press);
           this.changeMode = 3;
         }
       }
@@ -444,8 +444,8 @@ public class ActNewMode extends MyBaseFt
 
   public void onCilcleBgTouchUp()
   {
-    this.tvActiNewModeCircleColorPosi.setVisibility(8);
-    this.tvActiNewModeCircleColorPosi.setAnimation(AnimationUtils.loadAnimation(getActivity(), 2131034123));
+    this.tvActiNewModeCircleColorPosi.setVisibility(View.GONE);
+    this.tvActiNewModeCircleColorPosi.setAnimation(AnimationUtils.loadAnimation(getActivity(), R.anim.push_down_out_fast));
   }
 
   public void onClick(View paramView)
@@ -470,7 +470,7 @@ public class ActNewMode extends MyBaseFt
         i1 = 255;
         label89: localModeBusiness5.sendCustomMode(null, i1, this.changeMode, 2, this.speed, this.brt, this.colorCount, this.ccvActiNewMode.colors);
         this.isPlay = false;
-        paramView.setBackgroundResource(2130903500);
+        paramView.setBackgroundResource(R.mipmap.music_paly);
       }
     }
     label140: label149: int k;
@@ -495,15 +495,15 @@ public class ActNewMode extends MyBaseFt
             {
               localModeBusiness4.sendCustomMode(null, n, this.changeMode, 1, this.speed, this.brt, this.colorCount, this.ccvActiNewMode.colors);
               this.isPlay = true;
-              paramView.setBackgroundResource(2130903501);
+              paramView.setBackgroundResource(R.mipmap.music_stop);
               return;
             }
-            this.btActiNewModePing.setBackgroundResource(2130903309);
-            this.btActiNewModeZan.setBackgroundResource(2130903313);
-            this.btActiNewModeTiao.setBackgroundResource(2130903311);
+            this.btActiNewModePing.setBackgroundResource(R.mipmap.ic_new_custom_ping);
+            this.btActiNewModeZan.setBackgroundResource(R.mipmap.ic_new_custom_zan);
+            this.btActiNewModeTiao.setBackgroundResource(R.mipmap.ic_new_custom_tiao);
             if (paramView != this.btActiNewModeZan)
               break label330;
-            this.btActiNewModeZan.setBackgroundResource(2130903314);
+            this.btActiNewModeZan.setBackgroundResource(R.mipmap.ic_new_custom_zan_press);
             this.changeMode = 2;
           }
           while (!this.isPlay);
@@ -514,7 +514,7 @@ public class ActNewMode extends MyBaseFt
           localModeBusiness3.sendCustomMode(null, k, this.changeMode, 1, this.speed, this.brt, this.colorCount, this.ccvActiNewMode.colors);
           if (paramView != this.btActiNewModePing)
             break label410;
-          this.btActiNewModePing.setBackgroundResource(2130903310);
+          this.btActiNewModePing.setBackgroundResource(R.mipmap.ic_new_custom_ping_press);
           this.changeMode = 3;
         }
         while (!this.isPlay);
@@ -525,7 +525,7 @@ public class ActNewMode extends MyBaseFt
         localModeBusiness2.sendCustomMode(null, j, this.changeMode, 1, this.speed, this.brt, this.colorCount, this.ccvActiNewMode.colors);
       }
       while (paramView != this.btActiNewModeTiao);
-      this.btActiNewModeTiao.setBackgroundResource(2130903312);
+      this.btActiNewModeTiao.setBackgroundResource(R.mipmap.ic_new_custom_tiao_press);
       this.changeMode = 1;
     }
     while (!this.isPlay);
@@ -737,7 +737,7 @@ public class ActNewMode extends MyBaseFt
     {
       localModeBusiness.sendCustomMode(null, i, this.changeMode, 2, this.speed, this.brt, this.ccvActiNewMode.colors.size(), this.ccvActiNewMode.colors);
       this.isPlay = false;
-      this.btActiNewModePlay.setBackgroundResource(2130903500);
+      this.btActiNewModePlay.setBackgroundResource(R.mipmap.music_paly);
       return;
     }
   }
@@ -766,7 +766,7 @@ public class ActNewMode extends MyBaseFt
       {
         localModeBusiness2.sendCustomMode(null, i, this.changeMode, 2, this.speed, this.brt, this.ccvActiNewMode.colors.size(), this.ccvActiNewMode.colors);
         this.isPlay = false;
-        paramView.setBackgroundResource(2130903500);
+        paramView.setBackgroundResource(R.mipmap.music_paly);
         return;
         i = this.modeOrder;
       }
@@ -788,7 +788,7 @@ public class ActNewMode extends MyBaseFt
     {
       localModeBusiness1.sendCustomMode(null, i, this.changeMode, 1, this.speed, this.brt, this.colorCount, this.ccvActiNewMode.colors);
       this.isPlay = true;
-      paramView.setBackgroundResource(2130903501);
+      paramView.setBackgroundResource(R.mipmap.music_stop);
       return;
       j--;
       break;

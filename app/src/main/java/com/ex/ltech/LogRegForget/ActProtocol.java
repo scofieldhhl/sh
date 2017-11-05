@@ -22,10 +22,10 @@ public class ActProtocol extends MyBaseActivity
     this.isZh = UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", true);
     if (this.isZh)
     {
-      findViewById(2131558604).setVisibility(0);
+      findViewById(2131558604).setVisibility(View.VISIBLE);
       return;
     }
-    findViewById(2131558605).setVisibility(0);
+    findViewById(2131558605).setVisibility(View.VISIBLE);
   }
 
   protected void onMenu()

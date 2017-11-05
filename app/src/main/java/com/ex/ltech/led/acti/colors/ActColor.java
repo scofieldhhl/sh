@@ -180,20 +180,20 @@ public class ActColor extends MyBaseActivity
   private void setMyTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
+    setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(2131099965);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
   public void addPanel(View paramView)
   {
-    findViewById(2131558680).setVisibility(8);
-    findViewById(2131558681).setVisibility(0);
+    findViewById(2131558680).setVisibility(View.GONE);
+    findViewById(2131558681).setVisibility(View.VISIBLE);
   }
 
   public void addPanel1(View paramView)
   {
-    findViewById(2131558681).setVisibility(8);
+    findViewById(2131558681).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel11"; ; str = "panel1")
@@ -205,7 +205,7 @@ public class ActColor extends MyBaseActivity
 
   public void addPanel2(View paramView)
   {
-    findViewById(2131558681).setVisibility(8);
+    findViewById(2131558681).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel22"; ; str = "panel2")
@@ -217,7 +217,7 @@ public class ActColor extends MyBaseActivity
 
   public void addPanel3(View paramView)
   {
-    findViewById(2131558681).setVisibility(8);
+    findViewById(2131558681).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel33"; ; str = "panel3")
@@ -229,7 +229,7 @@ public class ActColor extends MyBaseActivity
 
   public void addPanel4(View paramView)
   {
-    findViewById(2131558681).setVisibility(8);
+    findViewById(2131558681).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel44"; ; str = "panel4")
@@ -241,13 +241,13 @@ public class ActColor extends MyBaseActivity
 
   public void addRc(View paramView)
   {
-    findViewById(2131558680).setVisibility(8);
-    findViewById(2131558690).setVisibility(0);
+    findViewById(2131558680).setVisibility(View.GONE);
+    findViewById(2131558690).setVisibility(View.VISIBLE);
   }
 
   public void addRc1(View paramView)
   {
-    findViewById(2131558690).setVisibility(8);
+    findViewById(2131558690).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "rc11"; ; str = "rc1")
@@ -259,7 +259,7 @@ public class ActColor extends MyBaseActivity
 
   public void addRc2(View paramView)
   {
-    findViewById(2131558690).setVisibility(8);
+    findViewById(2131558690).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "rc22"; ; str = "rc2")
@@ -295,23 +295,23 @@ public class ActColor extends MyBaseActivity
 
   public void hideAddPanelDialog(View paramView)
   {
-    findViewById(2131558681).setVisibility(8);
+    findViewById(2131558681).setVisibility(View.GONE);
   }
 
   public void hideAddRcDialog(View paramView)
   {
-    findViewById(2131558690).setVisibility(8);
+    findViewById(2131558690).setVisibility(View.GONE);
   }
 
   public void hidePopWindow(View paramView)
   {
-    paramView.setVisibility(8);
+    paramView.setVisibility(View.GONE);
   }
 
   public void hideSonView()
   {
     this.sonView.setAnimation(AnimationUtils.loadAnimation(this, 2131034122));
-    this.sonView.setVisibility(8);
+    this.sonView.setVisibility(View.GONE);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -468,7 +468,7 @@ public class ActColor extends MyBaseActivity
   protected void onEdit()
   {
     super.onEdit();
-    findViewById(2131558680).setVisibility(0);
+    findViewById(2131558680).setVisibility(View.VISIBLE);
   }
 
   protected void onMenu()
@@ -718,14 +718,14 @@ public class ActColor extends MyBaseActivity
     localTextView4.setText(2131099835);
     localTextView5.setText(2131099842);
     localTextView6.setText(2131099844);
-    setEditTextRes(2131099812, getResources().getColor(2131492962));
-    findViewById(2131558674).setVisibility(0);
+    setEditTextRes(2131099812, getResources().getColor(R.color.oringe));
+    findViewById(2131558674).setVisibility(View.VISIBLE);
     this.handler.postDelayed(new Runnable()
     {
       public void run()
       {
         ActColor.this.sb_color_acti_1.setProgress(100);
-        ActColor.this.findViewById(2131558676).setVisibility(8);
+        ActColor.this.findViewById(2131558676).setVisibility(View.GONE);
       }
     }
     , 100L);
@@ -733,7 +733,7 @@ public class ActColor extends MyBaseActivity
     {
       public void run()
       {
-        ActColor.this.findViewById(2131558675).setVisibility(8);
+        ActColor.this.findViewById(2131558675).setVisibility(View.GONE);
       }
     }
     , 0L);
@@ -741,7 +741,7 @@ public class ActColor extends MyBaseActivity
 
   public void showRgbwSeekBarStatus()
   {
-    setEditImageText(2131099812, getResources().getColor(2131492962));
+    setEditImageText(2131099812, getResources().getColor(R.color.oringe));
   }
 
   public void showSonView()

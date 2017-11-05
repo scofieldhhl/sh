@@ -104,9 +104,9 @@ public abstract class AtBaseFanYk extends Activity
 
   protected void hideSeletedRcLib()
   {
-    this.rlLast.setVisibility(8);
-    this.rlSeleted.setVisibility(8);
-    this.rlNext.setVisibility(8);
+    this.rlLast.setVisibility(View.GONE);
+    this.rlSeleted.setVisibility(View.GONE);
+    this.rlNext.setVisibility(View.GONE);
   }
 
   String int2Chinese(int paramInt)
@@ -289,13 +289,13 @@ public abstract class AtBaseFanYk extends Activity
 
   protected void showSeletedRcLib()
   {
-    this.rlLast.setVisibility(0);
-    this.rlSeleted.setVisibility(0);
-    this.rlNext.setVisibility(0);
+    this.rlLast.setVisibility(View.VISIBLE);
+    this.rlSeleted.setVisibility(View.VISIBLE);
+    this.rlNext.setVisibility(View.VISIBLE);
     if (this.rcLibPosi == 0)
-      this.rlLast.setVisibility(8);
+      this.rlLast.setVisibility(View.GONE);
     if (this.rcLibPosi == -1 + this.rcLibCount)
-      this.rlNext.setVisibility(8);
+      this.rlNext.setVisibility(View.GONE);
     this.tvLast.setText(getString(2131100035) + int2Chinese(1 + this.rcLibPosi) + getString(2131100072));
     this.tvNext.setText(getString(2131100035) + int2Chinese(3 + this.rcLibPosi) + getString(2131100072));
   }

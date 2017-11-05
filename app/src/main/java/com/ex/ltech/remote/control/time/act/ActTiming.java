@@ -113,7 +113,7 @@ public class ActTiming extends MyBaseActivity
         case 0:
           if (((YaokongTimingVo)ActTiming.this.vos.get(paramInt1)).isOther())
           {
-            ActTiming.this.toast(2131100210);
+            ActTiming.this.toast(R.string.no_edit_other);
             return false;
           }
           ActTiming.this.bussines.isCreateNewTime = false;
@@ -133,14 +133,14 @@ public class ActTiming extends MyBaseActivity
         case 1:
         }
         ActTiming.this.bussines.delTimingItem(ActTiming.this.vos, paramInt1);
-        ProgressDialog localProgressDialog = ProgressDialog.show(ActTiming.this, "", ActTiming.this.getString(2131100075), false);
+        ProgressDialog localProgressDialog = ProgressDialog.show(ActTiming.this, "", ActTiming.this.getString(R.string.get_d_info), false);
         localProgressDialog.setCancelable(true);
         localProgressDialog.show();
         ActTiming.this.bussines.setSendCmdListener(new TimingBussines.SendCmdListener(paramInt1, localProgressDialog)
         {
           public void onSendFailde()
           {
-            ActTiming.this.toast(2131099854);
+            ActTiming.this.toast(R.string.add_time_no_ok);
             this.val$dialog.dismiss();
           }
 
@@ -152,7 +152,7 @@ public class ActTiming extends MyBaseActivity
             ActTiming.this.setListTotgleBtnListenerDelay();
             ActTiming.this.adt.notifyDataSetChanged();
             this.val$dialog.dismiss();
-            ActTiming.this.toast(2131100431);
+            ActTiming.this.toast(R.string.time_ctrl_ok);
             ActTiming.this.bussines.setSendCmdListener(null);
           }
         });
@@ -164,7 +164,7 @@ public class ActTiming extends MyBaseActivity
   private void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
+    setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(2131100433);
     setEditImageRes(2130903589);
     setDeviceTextRes(UserFerences.getUserFerences(this).spFerences.getString("dName" + DeviceListActivity.deviceMacAddress, ""), 2131492890);
@@ -181,14 +181,14 @@ public class ActTiming extends MyBaseActivity
     }
     while (true)
     {
-      ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(2131100075), false);
+      ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(R.string.get_d_info), false);
       localProgressDialog.setCancelable(true);
       localProgressDialog.show();
       this.bussines.setSendCmdListener(new TimingBussines.SendCmdListener(localProgressDialog)
       {
         public void onSendFailde()
         {
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
         }
 
@@ -242,7 +242,7 @@ public class ActTiming extends MyBaseActivity
 
   public void onListVSwichChange(boolean paramBoolean, int paramInt)
   {
-    ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(2131100075), false);
+    ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(R.string.get_d_info), false);
     localProgressDialog.setCancelable(true);
     System.out.println("onListVSwichChange        " + paramInt);
     YaokongTimingVo localYaokongTimingVo = (YaokongTimingVo)this.vos.get(paramInt);
@@ -260,7 +260,7 @@ public class ActTiming extends MyBaseActivity
           ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
           ActTiming.this.setListTotgleBtnListenerDelay();
           ActTiming.this.adt.notifyDataSetChanged();
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
           return;
         }
@@ -271,7 +271,7 @@ public class ActTiming extends MyBaseActivity
         ((YaokongTimingVo)ActTiming.this.vos.get(this.val$posi)).setSwich(this.val$on);
         ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
         this.val$dialog.dismiss();
-        ActTiming.this.toast(2131100431);
+        ActTiming.this.toast(R.string.time_ctrl_ok);
         ActTiming.this.bussines.setSendCmdListener(null);
       }
     });

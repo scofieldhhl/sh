@@ -59,9 +59,9 @@ public class AtAirYKSetActivity extends MyBaseActivity
     TextView localTextView = (TextView)findViewById(2131558816);
     if (localETDeviceAIR.GetKeyByValue(49153).GetState() == 1)
     {
-      findViewById(2131558540).setVisibility(8);
-      findViewById(2131559048).setVisibility(8);
-      localTextView.setVisibility(0);
+      findViewById(2131558540).setVisibility(View.GONE);
+      findViewById(2131559048).setVisibility(View.GONE);
+      localTextView.setVisibility(View.VISIBLE);
       localTextView.setText(2131100247);
       this.mode.setText("");
       this.wendu.setText("");
@@ -71,9 +71,9 @@ public class AtAirYKSetActivity extends MyBaseActivity
       return;
     while (localETDeviceAIR.GetKeyByValue(49155).GetState() != 1);
     this.codeBaseConflict = true;
-    findViewById(2131558540).setVisibility(8);
-    findViewById(2131559048).setVisibility(8);
-    localTextView.setVisibility(0);
+    findViewById(2131558540).setVisibility(View.GONE);
+    findViewById(2131559048).setVisibility(View.GONE);
+    localTextView.setVisibility(View.VISIBLE);
     localTextView.setText(2131100164);
     this.mode.setText("");
     this.wendu.setText("");
@@ -146,7 +146,7 @@ public class AtAirYKSetActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.ykName);
     setEditTextRes(2131100358, getResources().getColor(2131492897));
   }

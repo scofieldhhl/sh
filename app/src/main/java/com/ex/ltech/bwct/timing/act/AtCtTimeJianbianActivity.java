@@ -21,10 +21,10 @@ public class AtCtTimeJianbianActivity extends MyBaseActivity
     this.rlMain = ((RelativeLayout)findViewById(2131558902));
     this.min = ((MyTimePickerView)findViewById(2131558903));
     ArrayList localArrayList = new ArrayList();
-    localArrayList.add(getString(2131100085));
-    localArrayList.add(30 + getString(2131100382));
+    localArrayList.add(getString(R.string.has_no));
+    localArrayList.add(30 + getString(R.string.sec));
     for (int i = 1; i < 61; i++)
-      localArrayList.add(i + getString(2131100160));
+      localArrayList.add(i + getString(R.string.min));
     this.min.setData(localArrayList);
   }
 
@@ -40,7 +40,7 @@ public class AtCtTimeJianbianActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100333);
   }
 }

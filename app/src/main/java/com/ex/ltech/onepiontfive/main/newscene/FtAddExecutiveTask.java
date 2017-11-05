@@ -52,9 +52,9 @@ public class FtAddExecutiveTask extends MyBaseFt
       }
     });
     this.tvTitleViewTitle.setText(2131099853);
-    this.btnTitleViewEdit.setVisibility(0);
+    this.btnTitleViewEdit.setVisibility(View.VISIBLE);
     this.btnTitleViewEdit.setTextColor(-65536);
-    this.btnTitleViewEdit.setText(2131100063);
+    this.btnTitleViewEdit.setText(R.string.finish);
     this.btnTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)

@@ -80,7 +80,7 @@ public class MyAlertDialog11 extends AlertDialog
       if (MyAlertDialog11.this.timerTime > 0)
       {
         MyAlertDialog11.this.timeHandler.postDelayed(MyAlertDialog11.this.runnable, 1000L);
-        MyAlertDialog11.this.second.setText(MyAlertDialog11.this.context.getString(2131100302) + MyAlertDialog11.this.timerTime + MyAlertDialog11.this.context.getString(2131100382) + ")");
+        MyAlertDialog11.this.second.setText(MyAlertDialog11.this.context.getString(2131100302) + MyAlertDialog11.this.timerTime + MyAlertDialog11.this.context.getString(R.string.sec) + ")");
         MyAlertDialog11 localMyAlertDialog11 = MyAlertDialog11.this;
         localMyAlertDialog11.timerTime = (-1 + localMyAlertDialog11.timerTime);
         return;

@@ -61,10 +61,10 @@ public class FtPanelAdapter extends BaseAdapter
       {
         public void onClick(View paramView)
         {
-          this.val$holder.ivRelationCircle.setVisibility(0);
-          this.val$holder.tblightswitch.setVisibility(8);
-          this.val$holder.ivConnect.setVisibility(8);
-          this.val$holder.btnConnect.setVisibility(8);
+          this.val$holder.ivRelationCircle.setVisibility(View.VISIBLE);
+          this.val$holder.tblightswitch.setVisibility(View.GONE);
+          this.val$holder.ivConnect.setVisibility(View.GONE);
+          this.val$holder.btnConnect.setVisibility(View.GONE);
         }
       });
       localHolder.btnEdit.setOnClickListener(new View.OnClickListener()

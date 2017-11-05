@@ -37,9 +37,9 @@ public class DevicGridAdapter extends BaseAdapter
         DevicGridAdapter.this.onMyDelBtnListener.onDeivceEdit(this.val$vo, this.val$posi);
       }
     });
-    paramViewHolder.rl_off_light_layer.setVisibility(8);
+    paramViewHolder.rl_off_light_layer.setVisibility(View.GONE);
     paramViewHolder.name.setTextColor(-16777216);
-    paramViewHolder.name.setVisibility(0);
+    paramViewHolder.name.setVisibility(View.VISIBLE);
     ArrayList localArrayList;
     int i5;
     label267: int i6;
@@ -49,28 +49,28 @@ public class DevicGridAdapter extends BaseAdapter
     if ((paramDvc.isGroup()) && (paramDvc.innerDvcVos.size() > i))
     {
       paramViewHolder.name.setText(paramDvc.getGroupName());
-      paramViewHolder.ivIc.setVisibility(8);
-      paramViewHolder.groupBg.setVisibility(0);
+      paramViewHolder.ivIc.setVisibility(View.GONE);
+      paramViewHolder.groupBg.setVisibility(View.VISIBLE);
       int i4 = paramDvc.getType();
-      paramViewHolder.group_inner1.setVisibility(8);
-      paramViewHolder.group_inner2.setVisibility(8);
-      paramViewHolder.group_inner3.setVisibility(8);
+      paramViewHolder.group_inner1.setVisibility(View.GONE);
+      paramViewHolder.group_inner2.setVisibility(View.GONE);
+      paramViewHolder.group_inner3.setVisibility(View.GONE);
       switch (i4)
       {
       default:
         localArrayList = paramDvc.innerDvcVos;
         if (localArrayList.size() == i)
-          paramViewHolder.group_inner1.setVisibility(0);
+          paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
         if (localArrayList.size() == 2)
         {
-          paramViewHolder.group_inner1.setVisibility(0);
-          paramViewHolder.group_inner2.setVisibility(0);
+          paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
+          paramViewHolder.group_inner2.setVisibility(View.VISIBLE);
         }
         if (localArrayList.size() == 3)
         {
-          paramViewHolder.group_inner1.setVisibility(0);
-          paramViewHolder.group_inner2.setVisibility(0);
-          paramViewHolder.group_inner3.setVisibility(0);
+          paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
+          paramViewHolder.group_inner2.setVisibility(View.VISIBLE);
+          paramViewHolder.group_inner3.setVisibility(View.VISIBLE);
         }
         if (localArrayList.size() != 4)
           break;
@@ -80,9 +80,9 @@ public class DevicGridAdapter extends BaseAdapter
           i6 = i;
           if ((i5 | i6) != 0)
           {
-            paramViewHolder.group_inner1.setVisibility(0);
-            paramViewHolder.group_inner2.setVisibility(0);
-            paramViewHolder.group_inner3.setVisibility(0);
+            paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
+            paramViewHolder.group_inner2.setVisibility(View.VISIBLE);
+            paramViewHolder.group_inner3.setVisibility(View.VISIBLE);
           }
           ImageView localImageView3 = paramViewHolder.ligth_status_bg;
           if (!paramDvc.isClickSeleted())
@@ -91,10 +91,10 @@ public class DevicGridAdapter extends BaseAdapter
           localImageView3.setVisibility(i7);
           if (paramDvc.isOnLine())
             break label584;
-          paramViewHolder.ivIc.setVisibility(0);
-          paramViewHolder.group_inner1.setVisibility(8);
-          paramViewHolder.group_inner2.setVisibility(8);
-          paramViewHolder.group_inner3.setVisibility(8);
+          paramViewHolder.ivIc.setVisibility(View.VISIBLE);
+          paramViewHolder.group_inner1.setVisibility(View.GONE);
+          paramViewHolder.group_inner2.setVisibility(View.GONE);
+          paramViewHolder.group_inner3.setVisibility(View.GONE);
           paramViewHolder.ivIc.setBackgroundResource(2130903597);
           localImageView2 = paramViewHolder.bt_del;
           boolean bool = paramDvc.isShowDelBtn();
@@ -141,33 +141,33 @@ public class DevicGridAdapter extends BaseAdapter
       break label330;
       label584: if (!paramDvc.isOnOff())
       {
-        paramViewHolder.group_inner1.setVisibility(8);
-        paramViewHolder.group_inner2.setVisibility(8);
-        paramViewHolder.group_inner3.setVisibility(8);
-        paramViewHolder.ivIc.setVisibility(0);
+        paramViewHolder.group_inner1.setVisibility(View.GONE);
+        paramViewHolder.group_inner2.setVisibility(View.GONE);
+        paramViewHolder.group_inner3.setVisibility(View.GONE);
+        paramViewHolder.ivIc.setVisibility(View.VISIBLE);
         paramViewHolder.ivIc.setBackgroundResource(2130903596);
         break label388;
       }
-      paramViewHolder.ivIc.setVisibility(8);
+      paramViewHolder.ivIc.setVisibility(View.GONE);
       if (localArrayList.size() == i)
-        paramViewHolder.group_inner1.setVisibility(0);
+        paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
       if (localArrayList.size() == 2)
       {
-        paramViewHolder.group_inner1.setVisibility(0);
-        paramViewHolder.group_inner2.setVisibility(0);
+        paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
+        paramViewHolder.group_inner2.setVisibility(View.VISIBLE);
       }
       if (localArrayList.size() != 3)
         break label388;
-      paramViewHolder.group_inner1.setVisibility(0);
-      paramViewHolder.group_inner2.setVisibility(0);
-      paramViewHolder.group_inner3.setVisibility(0);
+      paramViewHolder.group_inner1.setVisibility(View.VISIBLE);
+      paramViewHolder.group_inner2.setVisibility(View.VISIBLE);
+      paramViewHolder.group_inner3.setVisibility(View.VISIBLE);
       break label388;
       paramViewHolder.name.setText(paramDvc.getName());
-      paramViewHolder.groupBg.setVisibility(8);
-      paramViewHolder.group_inner1.setVisibility(8);
-      paramViewHolder.group_inner2.setVisibility(8);
-      paramViewHolder.group_inner3.setVisibility(8);
-      paramViewHolder.ivIc.setVisibility(0);
+      paramViewHolder.groupBg.setVisibility(View.GONE);
+      paramViewHolder.group_inner1.setVisibility(View.GONE);
+      paramViewHolder.group_inner2.setVisibility(View.GONE);
+      paramViewHolder.group_inner3.setVisibility(View.GONE);
+      paramViewHolder.ivIc.setVisibility(View.VISIBLE);
       ImageView localImageView1 = paramViewHolder.ligth_status_bg;
       int j;
       label803: int k;

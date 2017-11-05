@@ -18,7 +18,7 @@ public class ActSimpleReadmeInfoActivity extends MyBaseActivity
     setContentView(2130968622);
     int i = getIntent().getIntExtra("page", 0);
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     if (i != 7)
       setTiTleTextRes(2131100082);
     while (true)
@@ -36,21 +36,21 @@ public class ActSimpleReadmeInfoActivity extends MyBaseActivity
       case 7:
       case 8:
       }
-    findViewById(2131558628).setVisibility(0);
+    findViewById(2131558628).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558629).setVisibility(0);
+    findViewById(2131558629).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558630).setVisibility(0);
+    findViewById(2131558630).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558631).setVisibility(0);
+    findViewById(2131558631).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558632).setVisibility(0);
+    findViewById(2131558632).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558633).setVisibility(0);
+    findViewById(2131558633).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558634).setVisibility(0);
+    findViewById(2131558634).setVisibility(View.VISIBLE);
     return;
-    findViewById(2131558635).setVisibility(0);
+    findViewById(2131558635).setVisibility(View.VISIBLE);
     setTiTleTextRes(2131099810);
   }
 

@@ -76,7 +76,7 @@ public class FinishAddSceneAdapter extends BaseAdapter
     SceneStep localSceneStep = (SceneStep)this.sceneSteps.getSteps().get(paramInt);
     paramViewHolder.yaoKongName.setText(localSceneStep.getRoomName());
     paramViewHolder.yaoKongStatus.setText(localSceneStep.getSeletedDvcNames());
-    paramViewHolder.time.setText(localSceneStep.getSpaceTime() + this.ftFinishAddScene.getString(2131100382));
+    paramViewHolder.time.setText(localSceneStep.getSpaceTime() + this.ftFinishAddScene.getString(R.string.sec));
     String str;
     int i;
     if ((localSceneStep.seletedDvcs != null) && (localSceneStep.seletedDvcs.size() > 0) && (((RoomLvChildVo)localSceneStep.seletedDvcs.get(0)).getYkVo() != null))
@@ -91,7 +91,7 @@ public class FinishAddSceneAdapter extends BaseAdapter
         default:
           label244: if ((getCount() > 1) && (-2 + getCount() == paramInt + 1))
           {
-            paramViewHolder.time.setVisibility(8);
+            paramViewHolder.time.setVisibility(View.GONE);
             paramViewHolder.time.setOnClickListener(new View.OnClickListener(localSceneStep, paramInt)
             {
               public void onClick(View paramView)
@@ -102,8 +102,8 @@ public class FinishAddSceneAdapter extends BaseAdapter
             });
             if (paramInt == -1 + getCount())
               break label801;
-            paramViewHolder.down_vertical_line.setVisibility(0);
-            paramViewHolder.time.setVisibility(0);
+            paramViewHolder.down_vertical_line.setVisibility(View.VISIBLE);
+            paramViewHolder.time.setVisibility(View.VISIBLE);
           }
         case 0:
         case 1:
@@ -212,10 +212,10 @@ public class FinishAddSceneAdapter extends BaseAdapter
       case 9:
         paramViewHolder.icon.setBackgroundResource(2130903805);
         break;
-        paramViewHolder.time.setVisibility(0);
+        paramViewHolder.time.setVisibility(View.VISIBLE);
         break label274;
-        label801: paramViewHolder.down_vertical_line.setVisibility(8);
-        paramViewHolder.time.setVisibility(8);
+        label801: paramViewHolder.down_vertical_line.setVisibility(View.GONE);
+        paramViewHolder.time.setVisibility(View.GONE);
       }
     }
   }

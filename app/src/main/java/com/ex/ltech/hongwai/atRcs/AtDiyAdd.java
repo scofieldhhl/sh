@@ -108,7 +108,7 @@ public class AtDiyAdd extends AtBaseYk
     setTitleView();
     initSystemBar(this, Color.parseColor("#FFFFFF"));
     setBackIc(2130903274);
-    setSettingText(2131100063);
+    setSettingText(R.string.finish);
     setTitleText(2131100129, -16777216);
     setListener();
     this.k17.setBtnTextColor(Color.parseColor("#717171"));

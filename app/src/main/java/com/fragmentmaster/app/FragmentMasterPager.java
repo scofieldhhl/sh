@@ -75,7 +75,7 @@ class FragmentMasterPager extends ViewPagerCompat
           paramView.setVisibility(4);
           return;
         }
-        paramView.setVisibility(0);
+        paramView.setVisibility(View.VISIBLE);
         PageAnimator localPageAnimator = FragmentMasterPager.this.mFragmentMasterImpl.getPageAnimator();
         if (FragmentMasterPager.this.mAnimationState == i);
         while (true)
@@ -85,7 +85,7 @@ class FragmentMasterPager extends ViewPagerCompat
           int j = 0;
         }
       }
-      paramView.setVisibility(0);
+      paramView.setVisibility(View.VISIBLE);
     }
   };
   private ViewPager.OnPageChangeListener mWrappedOnPageChangeListener;

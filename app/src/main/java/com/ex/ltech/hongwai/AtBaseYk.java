@@ -174,7 +174,7 @@ public abstract class AtBaseYk extends FragmentActivity
   public void checkClickTime()
   {
     if ((this.opType.equals("OP_AT_TYPE_CREATE")) && (this.clickTime == 1))
-      this.rl_tips.setVisibility(0);
+      this.rl_tips.setVisibility(View.VISIBLE);
     if ((this.opType.equals("OP_AT_TYPE_CREATE")) && (this.clickTime == 3))
       showSaveYkDialog();
   }
@@ -220,19 +220,19 @@ public abstract class AtBaseYk extends FragmentActivity
 
   public void hideBottomView()
   {
-    this.rl_bottom_view.setVisibility(8);
+    this.rl_bottom_view.setVisibility(View.GONE);
   }
 
   protected void hideSeletedRcLib()
   {
-    this.rlLast.setVisibility(8);
-    this.rlSeleted.setVisibility(8);
-    this.rlNext.setVisibility(8);
+    this.rlLast.setVisibility(View.GONE);
+    this.rlSeleted.setVisibility(View.GONE);
+    this.rlNext.setVisibility(View.GONE);
   }
 
   public void hideSetting()
   {
-    this.setting.setVisibility(8);
+    this.setting.setVisibility(View.GONE);
   }
 
   String int2Chinese(int paramInt)
@@ -282,14 +282,14 @@ public abstract class AtBaseYk extends FragmentActivity
     if (paramView == this.back)
       back();
     if (paramView == this.close_tips)
-      this.rl_tips.setVisibility(8);
+      this.rl_tips.setVisibility(View.GONE);
     if (paramView == this.tvSetting)
       setting();
     if (paramView == this.setting)
       goSettingAt();
     if (paramView == this.rlSeleted)
     {
-      this.setting.setVisibility(0);
+      this.setting.setVisibility(View.VISIBLE);
       seleted(this.rcLibPosi);
       hideSeletedRcLib();
       this.isSeleted = true;
@@ -428,23 +428,23 @@ public abstract class AtBaseYk extends FragmentActivity
 
   protected void setSettingText(int paramInt)
   {
-    this.setting.setVisibility(8);
-    this.tvSetting.setVisibility(0);
+    this.setting.setVisibility(View.GONE);
+    this.tvSetting.setVisibility(View.VISIBLE);
     this.tvSetting.setText(paramInt);
   }
 
   protected void setSettingText(int paramInt1, int paramInt2)
   {
-    this.setting.setVisibility(8);
-    this.tvSetting.setVisibility(0);
+    this.setting.setVisibility(View.GONE);
+    this.tvSetting.setVisibility(View.VISIBLE);
     this.tvSetting.setText(paramInt1);
     this.tvSetting.setTextColor(paramInt2);
   }
 
   protected void setSettingText(String paramString)
   {
-    this.setting.setVisibility(8);
-    this.tvSetting.setVisibility(0);
+    this.setting.setVisibility(View.GONE);
+    this.tvSetting.setVisibility(View.VISIBLE);
     this.tvSetting.setText(paramString);
   }
 
@@ -499,7 +499,7 @@ public abstract class AtBaseYk extends FragmentActivity
 
   public void showBottomView()
   {
-    this.rl_bottom_view.setVisibility(0);
+    this.rl_bottom_view.setVisibility(View.VISIBLE);
   }
 
   public void showFaildToast(String paramString)
@@ -562,11 +562,11 @@ public abstract class AtBaseYk extends FragmentActivity
       {
         if (paramInt == 0)
         {
-          AtBaseYk.this.setting.setVisibility(0);
+          AtBaseYk.this.setting.setVisibility(View.VISIBLE);
           AtBaseYk.this.seleted(AtBaseYk.this.rcLibPosi);
           AtBaseYk.this.hideSeletedRcLib();
           AtBaseYk.this.isSeleted = true;
-          AtBaseYk.this.rl_tips.setVisibility(8);
+          AtBaseYk.this.rl_tips.setVisibility(View.GONE);
           return;
         }
         AtBaseYk.this.showSeletedRcLib();
@@ -577,11 +577,11 @@ public abstract class AtBaseYk extends FragmentActivity
   protected void showSeletedRcLib()
   {
     onBottomViewShow();
-    this.rlLast.setVisibility(0);
-    this.rlSeleted.setVisibility(0);
-    this.rlNext.setVisibility(0);
+    this.rlLast.setVisibility(View.VISIBLE);
+    this.rlSeleted.setVisibility(View.VISIBLE);
+    this.rlNext.setVisibility(View.VISIBLE);
     if (this.rcLibPosi == 0)
-      this.rlLast.setVisibility(8);
+      this.rlLast.setVisibility(View.GONE);
     this.tvLast.setText(getString(2131100035) + int2Chinese(this.rcLibPosi) + getString(2131100072));
     if (this.rcLibPosi == -1 + this.rcLibCount)
     {
@@ -593,14 +593,14 @@ public abstract class AtBaseYk extends FragmentActivity
 
   public void showSetting()
   {
-    this.setting.setVisibility(0);
-    this.tvSetting.setVisibility(8);
+    this.setting.setVisibility(View.VISIBLE);
+    this.tvSetting.setVisibility(View.GONE);
   }
 
   public void showSettingBtn()
   {
-    this.setting.setVisibility(0);
-    this.tvSetting.setVisibility(8);
+    this.setting.setVisibility(View.VISIBLE);
+    this.tvSetting.setVisibility(View.GONE);
   }
 
   public void showTips()

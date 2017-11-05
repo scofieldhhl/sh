@@ -54,8 +54,8 @@ public class InitConditionAdapter extends BaseExpandableListAdapter
     }
     while (true)
     {
-      localItemHolder.name.setVisibility(8);
-      localItemHolder.condition.setVisibility(0);
+      localItemHolder.name.setVisibility(View.GONE);
+      localItemHolder.condition.setVisibility(View.VISIBLE);
       localItemHolder.condition.setText(this.childNames[paramInt2]);
       localItemHolder.swich.setOnToggleChangedInListView(new ToggleButton.OnToggleChangedInListView(paramInt2)
       {
@@ -102,7 +102,7 @@ public class InitConditionAdapter extends BaseExpandableListAdapter
       paramView.setTag(localGroupHolder);
       if (paramInt != 1)
         break label132;
-      localGroupHolder.ic_down_show.setVisibility(0);
+      localGroupHolder.ic_down_show.setVisibility(View.VISIBLE);
     }
     while (true)
     {
@@ -111,7 +111,7 @@ public class InitConditionAdapter extends BaseExpandableListAdapter
       return paramView;
       localGroupHolder = (GroupHolder)paramView.getTag();
       break;
-      label132: localGroupHolder.ic_down_show.setVisibility(8);
+      label132: localGroupHolder.ic_down_show.setVisibility(View.GONE);
     }
   }
 

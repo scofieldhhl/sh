@@ -4,19 +4,23 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import butterknife.ButterKnife.Finder;
-import butterknife.ButterKnife.ViewBinder;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.my_view.SimpleColorPickerView;
 import com.zhy.android.percent.support.PercentRelativeLayout;
+
+import butterknife.ButterKnife;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
 
 public class AtYkLampActivity$$ViewBinder<T extends AtYkLampActivity>
   implements ButterKnife.ViewBinder<T>
 {
   public void bind(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    paramT.mSimpleColorPickerView = ((SimpleColorPickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558646, "field 'mSimpleColorPickerView'"), 2131558646, "field 'mSimpleColorPickerView'"));
+    paramT.mSimpleColorPickerView = ((SimpleColorPickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.color, "field 'mSimpleColorPickerView'"), R.id.color, "field 'mSimpleColorPickerView'"));
     paramT.mGrayLayer = ((PercentRelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558654, "field 'mGrayLayer'"), 2131558654, "field 'mGrayLayer'"));
-    paramT.sb = ((SeekBar)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558652, "field 'sb'"), 2131558652, "field 'sb'"));
+    paramT.sb = ((SeekBar)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.sb, "field 'sb'"), R.id.sb, "field 'sb'"));
     paramT.tvBrtPrecent = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558653, "field 'tvBrtPrecent'"), 2131558653, "field 'tvBrtPrecent'"));
     paramT.layoutOption = ((PercentRelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558647, "field 'layoutOption'"), 2131558647, "field 'layoutOption'"));
     paramT.rlBrt = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558651, "field 'rlBrt'"), 2131558651, "field 'rlBrt'"));

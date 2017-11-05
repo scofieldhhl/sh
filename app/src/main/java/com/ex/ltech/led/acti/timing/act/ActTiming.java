@@ -180,7 +180,7 @@ public class ActTiming extends MyBaseActivity
   private void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
+    setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(2131100433);
     setEditImageRes(2130903589);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
@@ -224,7 +224,7 @@ public class ActTiming extends MyBaseActivity
       this.itemPosition = -1;
       return;
     }
-    toast(2131100429);
+    toast(R.string.ten_timing);
   }
 
   public void onListVSwichChange(boolean paramBoolean, int paramInt)

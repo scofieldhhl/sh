@@ -50,14 +50,14 @@ public class DeviceListAdapter extends BaseAdapter
         DeviceListAdapter.this.callBack.switchOnOff(this.val$posi, paramBoolean);
       }
     });
-    paramViewHolder.rl_off_light_layer.setVisibility(8);
+    paramViewHolder.rl_off_light_layer.setVisibility(View.GONE);
     int i3;
     label80: label222: int k;
     label208: label235: int m;
     label248: int i1;
     if ((paramDvc.isShowDeviceTitle() | paramDvc.isShowLightTitle()))
     {
-      paramViewHolder.rl_title.setVisibility(0);
+      paramViewHolder.rl_title.setVisibility(View.VISIBLE);
       TextView localTextView = paramViewHolder.title;
       if (paramDvc.isShowDeviceTitle())
       {
@@ -91,9 +91,9 @@ public class DeviceListAdapter extends BaseAdapter
               break label704;
             label284: if ((i2 | i) == 0)
               break label710;
-            paramViewHolder.sun_left.setVisibility(0);
-            paramViewHolder.sun_right.setVisibility(0);
-            paramViewHolder.sb.setVisibility(0);
+            paramViewHolder.sun_left.setVisibility(View.VISIBLE);
+            paramViewHolder.sun_right.setVisibility(View.VISIBLE);
+            paramViewHolder.sb.setVisibility(View.VISIBLE);
             paramViewHolder.sb.setOnProgressChangeListener(null);
             paramViewHolder.sb.setProgress(paramDvc.getBrtProgress());
             paramViewHolder.sb.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener(paramInt, paramDvc)
@@ -113,8 +113,8 @@ public class DeviceListAdapter extends BaseAdapter
                 DeviceListAdapter.this.callBack.onLvSbChanged(this.val$posi);
               }
             });
-            paramViewHolder.arrow.setVisibility(8);
-            paramViewHolder.swich.setVisibility(0);
+            paramViewHolder.arrow.setVisibility(View.GONE);
+            paramViewHolder.swich.setVisibility(View.VISIBLE);
           }
         case 11:
         case 14:
@@ -146,7 +146,7 @@ public class DeviceListAdapter extends BaseAdapter
       return;
       i3 = 2131100145;
       break;
-      paramViewHolder.rl_title.setVisibility(8);
+      paramViewHolder.rl_title.setVisibility(View.GONE);
       break label80;
       paramViewHolder.ic.setBackgroundResource(2130903085);
       break label208;
@@ -204,13 +204,13 @@ public class DeviceListAdapter extends BaseAdapter
       break label268;
       label704: i = 0;
       break label284;
-      label710: paramViewHolder.arrow.setVisibility(0);
-      paramViewHolder.sun_left.setVisibility(8);
-      paramViewHolder.sun_right.setVisibility(8);
-      paramViewHolder.sb.setVisibility(8);
-      paramViewHolder.name.setVisibility(0);
+      label710: paramViewHolder.arrow.setVisibility(View.VISIBLE);
+      paramViewHolder.sun_left.setVisibility(View.GONE);
+      paramViewHolder.sun_right.setVisibility(View.GONE);
+      paramViewHolder.sb.setVisibility(View.GONE);
+      paramViewHolder.name.setVisibility(View.VISIBLE);
       paramViewHolder.name.setText(paramDvc.getName());
-      paramViewHolder.swich.setVisibility(8);
+      paramViewHolder.swich.setVisibility(View.GONE);
     }
   }
 

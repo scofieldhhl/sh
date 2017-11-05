@@ -93,9 +93,9 @@ public class NewTimingListAdapter extends BaseAdapter
     if (localTimingVo.isSwich())
     {
       localHolder.tb_act_timing_swich.setToggleOn();
-      if (!localTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!localTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label523;
-      localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100232));
+      localHolder.tv_act_timing_swich_status.setText(this.pct.getString(R.string.on));
       localHolder.tb_act_timing_swich.setOnToggleChangedInListView(new ToggleButton.OnToggleChangedInListView()
       {
         public void onToggleInListView(boolean paramBoolean, int paramInt)
@@ -106,13 +106,13 @@ public class NewTimingListAdapter extends BaseAdapter
       System.out.println("fleshSpaceTime" + (System.currentTimeMillis() - this.fleshSpaceTime));
       if (localTimingVo.getColor() == 0)
         break label543;
-      localHolder.csv_act_timing.setVisibility(0);
-      localHolder.tv_act_timing_mode.setVisibility(8);
+      localHolder.csv_act_timing.setVisibility(View.VISIBLE);
+      localHolder.tv_act_timing_mode.setVisibility(View.GONE);
       localHolder.csv_act_timing.setColor(localTimingVo.getColor());
       label454: this.fleshSpaceTime = System.currentTimeMillis();
       if (!(localTimingVo.isShowMineTiming() | localTimingVo.isShowOtherTiming()))
         break label601;
-      localHolder.who_timing.setVisibility(0);
+      localHolder.who_timing.setVisibility(View.VISIBLE);
       localTextView = localHolder.who_timing;
       if (!localTimingVo.isShowMineTiming())
         break label594;
@@ -125,14 +125,14 @@ public class NewTimingListAdapter extends BaseAdapter
       break;
       localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100226));
       break label364;
-      localHolder.tv_act_timing_mode.setVisibility(0);
-      localHolder.csv_act_timing.setVisibility(8);
+      localHolder.tv_act_timing_mode.setVisibility(View.VISIBLE);
+      localHolder.csv_act_timing.setVisibility(View.GONE);
       if (!localTimingVo.isOffDevice())
         localHolder.tv_act_timing_mode.setText(localTimingVo.getModeName());
       System.out.println("");
       break label454;
     }
-    label601: localHolder.who_timing.setVisibility(8);
+    label601: localHolder.who_timing.setVisibility(View.GONE);
     return paramView;
   }
 

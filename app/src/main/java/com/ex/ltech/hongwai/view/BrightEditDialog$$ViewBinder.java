@@ -2,6 +2,10 @@ package com.ex.ltech.hongwai.view;
 
 import android.view.View;
 import android.widget.SeekBar;
+
+import com.ex.ltech.led.R;
+
+import butterknife.ButterKnife;
 import butterknife.ButterKnife.Finder;
 import butterknife.ButterKnife.ViewBinder;
 import butterknife.internal.DebouncingOnClickListener;
@@ -11,7 +15,7 @@ public class BrightEditDialog$$ViewBinder<T extends BrightEditDialog>
 {
   public void bind(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    paramT.mSeekBar = ((SeekBar)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558652, "field 'mSeekBar'"), 2131558652, "field 'mSeekBar'"));
+    paramT.mSeekBar = ((SeekBar)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.sb, "field 'mSeekBar'"), R.id.sb, "field 'mSeekBar'"));
     ((View)paramFinder.findRequiredView(paramObject, 2131559094, "method 'cancel'")).setOnClickListener(new DebouncingOnClickListener(paramT)
     {
       public void doClick(View paramView)

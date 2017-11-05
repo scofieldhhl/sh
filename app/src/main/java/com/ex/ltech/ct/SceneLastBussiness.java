@@ -41,14 +41,14 @@ public class SceneLastBussiness extends ModeBusiness
     this.modesDefultName.add(this.pct.getString(2131099981));
     this.modesDefultName.add(this.pct.getString(2131099982));
     this.modesDefultName.add(this.pct.getString(2131099983));
-    this.gradViewDefultName.add(this.pct.getString(2131100166));
-    this.gradViewDefultName.add(this.pct.getString(2131100168));
-    this.gradViewDefultName.add(this.pct.getString(2131100170));
-    this.gradViewDefultName.add(this.pct.getString(2131100172));
-    this.gradViewDefultName.add(this.pct.getString(2131100174));
-    this.gradViewDefultName.add(this.pct.getString(2131100176));
-    this.gradViewDefultName.add(this.pct.getString(2131100178));
-    this.gradViewDefultName.add(this.pct.getString(2131100180));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_11));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_22));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_33));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_44));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_55));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_66));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_77));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_88));
   }
 }
 

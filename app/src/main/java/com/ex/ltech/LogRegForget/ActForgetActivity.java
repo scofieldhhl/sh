@@ -2,7 +2,6 @@ package com.ex.ltech.LogRegForget;
 
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -13,29 +12,32 @@ import android.text.Spannable;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
-import cn.smssdk.SMSSDK.VerifyCodeReadListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.my_view.MyAlertDialog13;
 import com.loopj.android.http.TextHttpResponseHandler;
-import io.xlink.wifi.js.http.HttpAgent;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
-import java.io.PrintStream;
-import java.util.Random;
-import java.util.Scanner;
+
 import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Random;
+import java.util.Scanner;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.SMSSDK.VerifyCodeReadListener;
+import io.xlink.wifi.js.http.HttpAgent;
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActForgetActivity extends MyBaseActivity
 {
@@ -303,7 +305,7 @@ public class ActForgetActivity extends MyBaseActivity
       }
       this.isNumVerfly = true;
       this.countryCode = this.tvCountryCode.getText().toString().substring(1, this.tvCountryCode.getText().toString().length());
-      this.rlVerfy.setVisibility(0);
+      this.rlVerfy.setVisibility(View.VISIBLE);
       SMSSDK.initSDK(this, "c2e74330ba24", "daa45b125ea9ecb0968b2a53705ca2eb", false);
       SMSSDK.registerEventHandler(new EventHandler()
       {
@@ -315,8 +317,8 @@ public class ActForgetActivity extends MyBaseActivity
             {
               if ((this.val$result == -1) && (this.val$event == 3))
               {
-                ActForgetActivity.this.rlVerfy.setVisibility(8);
-                ActForgetActivity.this.rlPsd.setVisibility(0);
+                ActForgetActivity.this.rlVerfy.setVisibility(View.GONE);
+                ActForgetActivity.this.rlPsd.setVisibility(View.VISIBLE);
                 SMSSDK.unregisterAllEventHandler();
                 ActForgetActivity.this.toast(2131100499);
               }
@@ -386,9 +388,9 @@ public class ActForgetActivity extends MyBaseActivity
     if (this.etVerfyCode.getText().toString().trim().equals(this.mailCode))
     {
       toast(2131100499);
-      this.redBgTextView.setText(getString(2131100063));
-      this.rlVerfy.setVisibility(8);
-      this.rlPsd.setVisibility(0);
+      this.redBgTextView.setText(getString(R.string.finish));
+      this.rlVerfy.setVisibility(View.GONE);
+      this.rlPsd.setVisibility(View.VISIBLE);
       return;
     }
     toast(2131100498);

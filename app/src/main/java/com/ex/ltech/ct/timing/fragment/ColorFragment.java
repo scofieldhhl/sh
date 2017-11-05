@@ -55,8 +55,8 @@ public class ColorFragment extends Fragment
     }
     , 500L);
     this.cp_acti_timing_fragment_col.setViewBgRes(2130903151, true);
-    this.mRootView.findViewById(2131558871).setVisibility(8);
-    this.mRootView.findViewById(2131558863).setVisibility(0);
+    this.mRootView.findViewById(2131558871).setVisibility(View.GONE);
+    this.mRootView.findViewById(2131558863).setVisibility(View.VISIBLE);
   }
 
   public void onColorFragSeleted()

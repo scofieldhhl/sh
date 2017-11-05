@@ -125,7 +125,7 @@ public class TimingBussines
     {
       if (TimingBussines.this.isRespTimeOut)
       {
-        Toast.makeText(TimingBussines.this.pct, TimingBussines.this.pct.getString(2131099854), 0).show();
+        Toast.makeText(TimingBussines.this.pct, TimingBussines.this.pct.getString(R.string.add_time_no_ok), 0).show();
         if (TimingBussines.this.sendCmdListener != null)
           TimingBussines.this.sendCmdListener.onSendFailde();
       }
@@ -179,7 +179,7 @@ public class TimingBussines
       case 6:
       case 7:
       default:
-        if ((localInnerRcVo.getStatus().equals(this.pct.getString(2131100232))) || (localInnerRcVo.getStatus().equals(this.pct.getString(2131100226))))
+        if ((localInnerRcVo.getStatus().equals(this.pct.getString(R.string.on))) || (localInnerRcVo.getStatus().equals(this.pct.getString(2131100226))))
         {
           arrayOfByte = getRcCodeByChineseName("电源");
           return arrayOfByte;
@@ -1348,7 +1348,7 @@ public class TimingBussines
       int j = 0;
       if (!bool)
         j = 1;
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label248;
       str4 = "1";
       m = DateFmtUtil.getWeekOfDate();
@@ -1467,7 +1467,7 @@ public class TimingBussines
       int k = 0;
       if (!bool)
         k = 1;
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label334;
       str5 = "1";
       i1 = DateFmtUtil.getWeekOfDate();
@@ -1730,12 +1730,12 @@ public class TimingBussines
           localTimingVo3.setSwich(bool2);
           if (!str8.equals("1"))
             break label701;
-          str11 = TimingBussines.this.pct.getString(2131100232);
+          str11 = TimingBussines.this.pct.getString(R.string.on);
           localTimingVo3.setStatus(str11);
           localArrayList3 = new ArrayList();
           if (!str6.substring(0, 1).equals("1"))
             break label718;
-          localArrayList3.add(TimingBussines.this.pct.getString(2131100239));
+          localArrayList3.add(TimingBussines.this.pct.getString(R.string.once));
         }
         while (true)
         {

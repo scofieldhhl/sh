@@ -113,7 +113,7 @@ public class RoomGridView extends GridView
 
   private void setViewXy(View paramView, int paramInt1, int paramInt2)
   {
-    paramView.setVisibility(0);
+    paramView.setVisibility(View.VISIBLE);
     ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(paramView, "alpha", new float[] { 0.0F, 1.0F });
     localObjectAnimator.setDuration(300L);
     localObjectAnimator.start();
@@ -322,7 +322,7 @@ public class RoomGridView extends GridView
                   RoomGridView.this.onDragInGroupListener.onDragFinish(RoomGridView.this.pointToPosition(m, k));
                 RoomGridView.this.isGvLongClick = false;
                 RoomGridView.this.isFirstTimeTouchMove = true;
-                RoomGridView.this.draftDevice.setVisibility(8);
+                RoomGridView.this.draftDevice.setVisibility(View.GONE);
                 ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(RoomGridView.this.draftDevice, "alpha", new float[] { 1.0F, 0.0F });
                 localObjectAnimator.setDuration(300L);
                 localObjectAnimator.start();

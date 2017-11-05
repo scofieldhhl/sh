@@ -85,10 +85,10 @@ public class AtRegAreaActivity extends MyBaseActivity
   {
     if (paramEditable.toString().length() > 0)
     {
-      this.tv_cancel.setVisibility(0);
+      this.tv_cancel.setVisibility(View.VISIBLE);
       return;
     }
-    this.tv_cancel.setVisibility(8);
+    this.tv_cancel.setVisibility(View.GONE);
   }
 
   public void beforeTextChanged(CharSequence paramCharSequence, int paramInt1, int paramInt2, int paramInt3)

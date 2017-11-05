@@ -3,20 +3,15 @@ package com.ex.ltech.led.acti.mode;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
-import com.ex.ltech.led.vo.DeviceVo;
-import com.ex.ltech.led.vo.ModeVo;
 import com.indris.material.RippleView;
-import java.io.PrintStream;
-import java.util.List;
 
 public class ActMode extends MyBaseActivity
   implements AdapterView.OnItemClickListener, SeekBar.OnSeekBarChangeListener
@@ -38,10 +33,10 @@ public class ActMode extends MyBaseActivity
 
   private void findView()
   {
-    this.iv_frag_sys_inside_all_seleted = ((ImageView)findViewById(2131558711));
-    this.gridView = ((GridView)findViewById(2131558714));
-    this.sb_acti_mode = ((SeekBar)findViewById(2131558708));
-    this.btn_acti_mode_play = ((RippleView)findViewById(2131558709));
+    this.iv_frag_sys_inside_all_seleted = ((ImageView)findViewById(R.id.iv_frag_sys_inside_all_seleted));
+    this.gridView = ((GridView)findViewById(R.id.gv_act_mode));
+    this.sb_acti_mode = ((SeekBar)findViewById(R.id.sb_acti_mode));
+    this.btn_acti_mode_play = ((RippleView)findViewById(R.id.btn_acti_mode_play));
   }
 
   private void init()
@@ -64,10 +59,10 @@ public class ActMode extends MyBaseActivity
         ActMode.this.madapter.notifyDataSetChanged();
         if (ActMode.this.business.isMultiSeleted())
         {
-          ActMode.this.sb_acti_mode.setVisibility(4);
+          ActMode.this.sb_acti_mode.setVisibility(View.INVISIBLE);
           return;
         }
-        ActMode.this.sb_acti_mode.setVisibility(0);
+        ActMode.this.sb_acti_mode.setVisibility(View.VISIBLE);
       }
     });
     this.madapter.setSingleSeletedListener(new SingleSeletedListener()
@@ -80,7 +75,7 @@ public class ActMode extends MyBaseActivity
 
       public void onSingleSeleted(int paramInt)
       {
-        if (ActMode.this.isLongClick)
+        /*if (ActMode.this.isLongClick)
           ActMode.this.isLongClick = false;
         do
         {
@@ -95,14 +90,14 @@ public class ActMode extends MyBaseActivity
           }
           while (localModeVo.isAddBtn());
           ActMode.this.sb_acti_mode.setProgress(12 * localModeVo.getSpeed());
-          ActMode.this.sb_acti_mode.setVisibility(0);
-          ActMode.this.iv_frag_sys_inside_all_seleted.setBackgroundResource(2130903315);
+          ActMode.this.sb_acti_mode.setVisibility(View.VISIBLE);
+          ActMode.this.iv_frag_sys_inside_all_seleted.setBackgroundResource(R.mipmap.ic_no_all_seleted);
           ActMode.this.isAllSeleted = false;
-          ActMode.this.sb_acti_mode.setVisibility(0);
+          ActMode.this.sb_acti_mode.setVisibility(View.VISIBLE);
         }
         while (!ActMode.this.isPlay);
-        ActMode.this.btn_acti_mode_play.setBackgroundResource(2130903500);
-        ActMode.access$002(ActMode.this, false);
+        ActMode.this.btn_acti_mode_play.setBackgroundResource(R.mipmap.music_paly);
+        ActMode.access$002(ActMode.this, false);*/
       }
     });
   }
@@ -114,7 +109,7 @@ public class ActMode extends MyBaseActivity
     {
       public void onClick(View paramView)
       {
-        ActMode localActMode = ActMode.this;
+        /*ActMode localActMode = ActMode.this;
         if (!ActMode.this.isPlay);
         for (boolean bool = true; ; bool = false)
         {
@@ -123,13 +118,13 @@ public class ActMode extends MyBaseActivity
           {
             if (!ActMode.this.isPlay)
               break;
-            ActMode.this.btn_acti_mode_play.setBackgroundResource(2130903501);
+            ActMode.this.btn_acti_mode_play.setBackgroundResource(R.mipmap.music_stop);
             ActMode.this.business.sendModes();
           }
           return;
         }
         ActMode.this.business.offModes();
-        ActMode.this.btn_acti_mode_play.setBackgroundResource(2130903500);
+        ActMode.this.btn_acti_mode_play.setBackgroundResource(R.mipmap.music_paly);*/
       }
     });
   }
@@ -137,8 +132,8 @@ public class ActMode extends MyBaseActivity
   private void setMyTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
-    setTiTleTextRes(2131100163);
+    setMenuBackgroundRes(R.mipmap.device_ic);
+    setTiTleTextRes(R.string.mode);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
@@ -155,7 +150,7 @@ public class ActMode extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968634);
+    setContentView(R.layout.acti_mode);
     setMyTitle();
     findView();
     init();
@@ -185,7 +180,7 @@ public class ActMode extends MyBaseActivity
     this.speed = (paramSeekBar.getProgress() / 12);
     int j;
     ModeBusiness localModeBusiness1;
-    if (this.tempSpeed != this.speed)
+    /*if (this.tempSpeed != this.speed)
     {
       this.tempSpeed = this.speed;
       if (this.isSingleSeleted)
@@ -203,9 +198,7 @@ public class ActMode extends MyBaseActivity
         if (this.speed != 0)
           break label169;
       }
-    }
-    while (true)
-    {
+    }else {
       localModeBusiness1.sendModesWithSameSpeed(i);
       System.out.println("isMultiSeleted            -----      " + this.isMultiSeleted);
       System.out.println("isSingleSeleted            -----      " + this.speed);
@@ -213,7 +206,7 @@ public class ActMode extends MyBaseActivity
       label160: j = this.speed;
       break;
       label169: i = this.speed;
-    }
+    }*/
   }
 
   protected void onResume()
@@ -222,7 +215,7 @@ public class ActMode extends MyBaseActivity
     if (!Main.lastSendCmd.equals(Main.modeCmd))
     {
       this.isPlay = false;
-      this.btn_acti_mode_play.setBackgroundResource(2130903500);
+      this.btn_acti_mode_play.setBackgroundResource(R.mipmap.music_paly);
     }
   }
 
@@ -242,18 +235,15 @@ public class ActMode extends MyBaseActivity
     this.singleSeletedIndex = -1;
     if (!this.isAllSeleted)
     {
-      this.iv_frag_sys_inside_all_seleted.setBackgroundResource(2130903475);
+      this.iv_frag_sys_inside_all_seleted.setBackgroundResource(R.mipmap.mode_all_seleted);
       this.isAllSeleted = true;
-      this.sb_acti_mode.setVisibility(4);
-    }
-    while (true)
-    {
+      this.sb_acti_mode.setVisibility(View.INVISIBLE);
+    }else {
       this.business.seletedAll(this.isAllSeleted);
       this.madapter.notifyDataSetChanged();
-      return;
-      this.iv_frag_sys_inside_all_seleted.setBackgroundResource(2130903315);
+      this.iv_frag_sys_inside_all_seleted.setBackgroundResource(R.mipmap.ic_no_all_seleted);
       this.isAllSeleted = false;
-      this.sb_acti_mode.setVisibility(0);
+      this.sb_acti_mode.setVisibility(View.VISIBLE);
     }
   }
 
@@ -269,8 +259,3 @@ public class ActMode extends MyBaseActivity
     public abstract void onSingleSeleted(int paramInt);
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.mode.ActMode
- * JD-Core Version:    0.6.0
- */

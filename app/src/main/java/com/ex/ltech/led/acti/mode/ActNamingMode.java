@@ -67,8 +67,8 @@ public class ActNamingMode extends MyBaseActivity
     {
       public void onClick(View paramView)
       {
-        ActNamingMode.this.tv_act_name_mode.setVisibility(8);
-        ActNamingMode.this.et_act_name_mode.setVisibility(0);
+        ActNamingMode.this.tv_act_name_mode.setVisibility(View.GONE);
+        ActNamingMode.this.et_act_name_mode.setVisibility(View.VISIBLE);
       }
     });
   }
@@ -83,7 +83,7 @@ public class ActNamingMode extends MyBaseActivity
       FileUtil.saveMyBitmap(str, this.tempBm, "/ltech/led/image");
       this.vo.setNewCreateModeBitmapPath(str);
       ArrayList localArrayList = this.business.getModesDefultName();
-      this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+      this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
       BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
       ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
       localShapeDrawable.getPaint().setShader(localBitmapShader);
@@ -130,23 +130,23 @@ public class ActNamingMode extends MyBaseActivity
   private void setTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100202);
-    setEditStrColor(getResources().getColor(2131492962));
+    setEditStrColor(getResources().getColor(R.color.oringe));
     setEditTextRes(2131100358);
   }
 
   public void actionDown()
   {
-    this.et_act_name_mode.setVisibility(8);
-    this.tv_act_name_mode.setVisibility(0);
+    this.et_act_name_mode.setVisibility(View.GONE);
+    this.tv_act_name_mode.setVisibility(View.VISIBLE);
   }
 
   public void actionUp()
   {
     String str = this.tv_act_name_mode.getText().toString();
-    this.tv_act_name_mode.setVisibility(8);
-    this.et_act_name_mode.setVisibility(0);
+    this.tv_act_name_mode.setVisibility(View.GONE);
+    this.et_act_name_mode.setVisibility(View.VISIBLE);
     this.et_act_name_mode.setText(str);
   }
 
@@ -188,7 +188,7 @@ public class ActNamingMode extends MyBaseActivity
         this.tempBm = new Business(this).autoZoomInBM(BitmapFactory.decodeFile(this.currentFile.getPath()), 100.0D, 100.0D);
         this.vo.setNewCreateModeBitmapPath(this.currentFile.getPath());
         ArrayList localArrayList2 = this.business.getModesDefultName();
-        this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList2.size()));
+        this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList2.size()));
         BitmapShader localBitmapShader2 = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
         ShapeDrawable localShapeDrawable2 = new ShapeDrawable(new OvalShape());
         localShapeDrawable2.getPaint().setShader(localBitmapShader2);
@@ -201,7 +201,7 @@ public class ActNamingMode extends MyBaseActivity
         this.tempBm = new Business(this).autoZoomInBM(BitmapFactory.decodeFile(this.currentFile.getPath()), 100.0D, 100.0D);
         this.vo.setNewCreateModeBitmapPath(this.currentFile.getPath());
         ArrayList localArrayList1 = this.business.getModesDefultName();
-        this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList1.size()));
+        this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList1.size()));
         BitmapShader localBitmapShader1 = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
         ShapeDrawable localShapeDrawable1 = new ShapeDrawable(new OvalShape());
         localShapeDrawable1.getPaint().setShader(localBitmapShader1);

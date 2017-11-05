@@ -110,7 +110,7 @@ public class MyAlertDialog7 extends AlertDialog
 
   public void setOnOffItemName()
   {
-    ((TextView)findViewById(2131559419)).setText(2131100232);
+    ((TextView)findViewById(2131559419)).setText(R.string.on);
     ((TextView)findViewById(2131559420)).setText(2131100226);
   }
 

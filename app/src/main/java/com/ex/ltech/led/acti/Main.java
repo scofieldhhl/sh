@@ -1,33 +1,28 @@
 package com.ex.ltech.led.acti;
 
 import android.app.Activity;
-import android.app.LocalActivityManager;
 import android.app.ProgressDialog;
 import android.app.TabActivity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
-import android.widget.TabHost.OnTabChangeListener;
-import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 import android.widget.TextView;
+
 import com.ex.ltech.hongwai.StringUtil;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.colors.ActColor;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
@@ -38,13 +33,14 @@ import com.ex.ltech.led.acti.timing.newRgb.ActNewRgbTiming;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.musci_service.ServicePlayer;
-import com.ex.ltech.led.musci_service.ServicePlayer.MyBinder;
-import com.ex.ltech.led.my_view.MyAlertDialog.MyOnClickListener;
+import com.ex.ltech.led.my_view.MyAlertDialog;
 import com.ex.ltech.led.my_view.MyAlertDialog14;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.led.vo.DeviceVo;
 import com.ex.ltech.onepiontfive.main.updataHardWareProgram.SynProgram2Device;
-import com.ex.ltech.onepiontfive.main.updataHardWareProgram.SynProgram2Device.SynListener;
+
+import java.util.List;
+
 import io.xlink.wifi.js.manage.DeviceManage;
 import io.xlink.wifi.js.util.SharedPreferencesUtil;
 import io.xlink.wifi.sdk.XDevice;
@@ -53,8 +49,6 @@ import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.io.PrintStream;
-import java.util.List;
 
 public class Main extends TabActivity
 {
@@ -174,7 +168,7 @@ public class Main extends TabActivity
     if (this.synProgram2Device == null)
     {
       this.isUpdataIng = true;
-      this.rl_load.setVisibility(0);
+      this.rl_load.setVisibility(View.VISIBLE);
       DeviceManage.getInstance();
       this.synProgram2Device = new SynProgram2Device(this, DeviceManage.getxDevice(), paramString);
       this.synProgram2Device.setListener(new SynProgram2Device.SynListener()
@@ -182,13 +176,13 @@ public class Main extends TabActivity
         public void failed()
         {
           Main.this.isUpdataIng = false;
-          Main.this.rl_load.setVisibility(8);
-          Main.this.findViewById(2131558798).setVisibility(0);
+          Main.this.rl_load.setVisibility(View.GONE);
+          Main.this.findViewById(2131558798).setVisibility(View.VISIBLE);
           Main.this.findViewById(2131558799).setOnClickListener(new View.OnClickListener()
           {
             public void onClick(View paramView)
             {
-              Main.this.findViewById(2131558798).setVisibility(8);
+              Main.this.findViewById(2131558798).setVisibility(View.GONE);
               Main.this.finish();
             }
           });
@@ -198,8 +192,8 @@ public class Main extends TabActivity
         public void ok()
         {
           Main.this.isUpdataIng = false;
-          Main.this.rl_load.setVisibility(8);
-          Main.this.findViewById(2131558802).setVisibility(0);
+          Main.this.rl_load.setVisibility(View.GONE);
+          Main.this.findViewById(2131558802).setVisibility(View.VISIBLE);
           new Handler()
           {
           }
@@ -207,7 +201,7 @@ public class Main extends TabActivity
           {
             public void run()
             {
-              Main.this.findViewById(2131558802).setVisibility(8);
+              Main.this.findViewById(2131558802).setVisibility(View.GONE);
             }
           }
           , 1000L);
@@ -328,8 +322,8 @@ public class Main extends TabActivity
   {
     isOnAllOff = true;
     this.curSwitchCmd = 160;
-    this.iv_act_main_all_on.setVisibility(8);
-    this.act_gray_layer.setVisibility(0);
+    this.iv_act_main_all_on.setVisibility(View.GONE);
+    this.act_gray_layer.setVisibility(View.VISIBLE);
     this.allOn = true;
     this.isRespTimeOut = true;
     if (seekSecond != -1)
@@ -379,8 +373,8 @@ public class Main extends TabActivity
   public void allOn(View paramView)
   {
     this.curSwitchCmd = 161;
-    this.iv_act_main_all_on.setVisibility(0);
-    this.act_gray_layer.setVisibility(8);
+    this.iv_act_main_all_on.setVisibility(View.VISIBLE);
+    this.act_gray_layer.setVisibility(View.GONE);
     this.allOn = false;
     if (seekSecond != -1)
     {
@@ -444,16 +438,16 @@ public class Main extends TabActivity
     deviceVo.setIp("");
     deviceVo.setDeviceName(SharedPreferencesUtil.queryValue("dname"));
     deviceVo.setMacAddress(SharedPreferencesUtil.queryValue("dMacAddress"));
-    setContentView(2130968649);
+    setContentView(R.layout.app_main);
     findView();
     changeTabItemBG(0);
     this.socketManager = SocketManager.instance();
     this.cmdDateBussiness = new CmdDateBussiness(this, "0000");
     bindService(new Intent(this, ServicePlayer.class), this.mServiceConnection, 1);
-    if (SharedPreferencesUtil.queryValue("dStatus").equals(getString(2131100229)))
+    if (SharedPreferencesUtil.queryValue("dStatus").equals(getString(R.string.off_device)))
     {
-      this.iv_act_main_all_on.setVisibility(8);
-      this.act_gray_layer.setVisibility(0);
+      this.iv_act_main_all_on.setVisibility(View.GONE);
+      this.act_gray_layer.setVisibility(View.VISIBLE);
     }
     StringUtil.byte2Hexstr(this.cmdDateBussiness.getDeviceOnOffInfoCmd());
     XlinkAgent.getInstance().addXlinkListener(this.myXlinkNetListener);
@@ -642,14 +636,14 @@ public class Main extends TabActivity
         {
           if (str1.substring(12, 14).equals("01"))
           {
-            Main.this.iv_act_main_all_on.setVisibility(0);
-            Main.this.act_gray_layer.setVisibility(8);
+            Main.this.iv_act_main_all_on.setVisibility(View.VISIBLE);
+            Main.this.act_gray_layer.setVisibility(View.GONE);
             Main.access$202(Main.this, false);
           }
           if (str1.substring(12, 14).equals("00"))
           {
-            Main.this.iv_act_main_all_on.setVisibility(8);
-            Main.this.act_gray_layer.setVisibility(0);
+            Main.this.iv_act_main_all_on.setVisibility(View.GONE);
+            Main.this.act_gray_layer.setVisibility(View.VISIBLE);
             Main.access$202(Main.this, true);
           }
           if (str1.substring(14, 16).equalsIgnoreCase("DD"))

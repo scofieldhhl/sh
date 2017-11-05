@@ -104,11 +104,11 @@ public class ActAddTiming extends MyBaseActivity
       open(null);
       if (this.vo.getYaoKongName().equals(getString(2131099858)))
       {
-        this.rl_act_add_timing_mode.setVisibility(0);
-        this.rl_act_add_timing_wendu.setVisibility(0);
+        this.rl_act_add_timing_mode.setVisibility(View.VISIBLE);
+        this.rl_act_add_timing_wendu.setVisibility(View.VISIBLE);
       }
       if ((this.vo.getYaoKongName().equals(getString(2131100457))) || ((this.vo.getYaoKongName().equals(getString(2131100459)) | this.vo.getYaoKongName().equals(getString(2131100109)))))
-        this.rl_act_add_timing_chanel.setVisibility(0);
+        this.rl_act_add_timing_chanel.setVisibility(View.VISIBLE);
     }
     while (true)
     {
@@ -130,7 +130,7 @@ public class ActAddTiming extends MyBaseActivity
       this.min = str2;
       localYaokongTimingVo.setTime(str2);
       ArrayList localArrayList = new ArrayList();
-      localArrayList.add(getString(2131100239));
+      localArrayList.add(getString(R.string.once));
       this.vo.setShotNameDays(localArrayList);
       this.vo.setSwich(true);
       open(null);
@@ -187,13 +187,13 @@ public class ActAddTiming extends MyBaseActivity
     findViewById(2131558507).setBackgroundResource(2130903318);
     findViewById(2131558508).setBackgroundResource(2130903280);
     this.vo.setType(2);
-    this.lightStatus = getString(2131100229);
+    this.lightStatus = getString(R.string.off_device);
     this.vo.setOnOff(false);
   }
 
   public void goChanel(View paramView)
   {
-    findViewById(2131558553).setVisibility(0);
+    findViewById(2131558553).setVisibility(View.VISIBLE);
   }
 
   public void goMode(View paramView)
@@ -210,7 +210,7 @@ public class ActAddTiming extends MyBaseActivity
 
   public void goWendu(View paramView)
   {
-    findViewById(2131558551).setVisibility(0);
+    findViewById(2131558551).setVisibility(View.VISIBLE);
   }
 
   public void goYaoKong(View paramView)
@@ -222,14 +222,14 @@ public class ActAddTiming extends MyBaseActivity
 
   public void hideChanel(View paramView)
   {
-    findViewById(2131558553).setVisibility(8);
+    findViewById(2131558553).setVisibility(View.GONE);
     this.tv_act_add_timing_chanel.setText(this.chanel + getString(2131099929));
     this.vo.setChanel(this.tv_act_add_timing_chanel.getText().toString());
   }
 
   public void hideWendu(View paramView)
   {
-    findViewById(2131558551).setVisibility(8);
+    findViewById(2131558551).setVisibility(View.GONE);
     this.tv_act_add_timing_wendu.setText(this.wendu + "℃");
     this.vo.setWendu(this.wendu + "℃");
   }
@@ -256,9 +256,9 @@ public class ActAddTiming extends MyBaseActivity
         if (localETDeviceAIR.GetKeyByValue(49153).GetState() == 1)
         {
           Toast.makeText(this, 2131100247, 1).show();
-          this.rl_act_add_timing_mode.setVisibility(0);
-          this.rl_act_add_timing_wendu.setVisibility(0);
-          this.rl_act_add_timing_chanel.setVisibility(8);
+          this.rl_act_add_timing_mode.setVisibility(View.VISIBLE);
+          this.rl_act_add_timing_wendu.setVisibility(View.VISIBLE);
+          this.rl_act_add_timing_chanel.setVisibility(View.GONE);
           this.vo.setAirMode(getString(2131099860));
           label205: if (paramInt1 != this.modeReqCode);
         }
@@ -287,15 +287,15 @@ public class ActAddTiming extends MyBaseActivity
             break;
             if ((paramIntent.getStringExtra("ykType").equals("tv") | paramIntent.getStringExtra("ykType").equals("tvbox") | paramIntent.getStringExtra("ykType").equals("iptv")))
             {
-              this.rl_act_add_timing_chanel.setVisibility(0);
-              this.rl_act_add_timing_mode.setVisibility(8);
-              this.rl_act_add_timing_wendu.setVisibility(8);
+              this.rl_act_add_timing_chanel.setVisibility(View.VISIBLE);
+              this.rl_act_add_timing_mode.setVisibility(View.GONE);
+              this.rl_act_add_timing_wendu.setVisibility(View.GONE);
               this.ykType = "tv";
               break label205;
             }
-            this.rl_act_add_timing_mode.setVisibility(8);
-            this.rl_act_add_timing_wendu.setVisibility(8);
-            this.rl_act_add_timing_chanel.setVisibility(8);
+            this.rl_act_add_timing_mode.setVisibility(View.GONE);
+            this.rl_act_add_timing_wendu.setVisibility(View.GONE);
+            this.rl_act_add_timing_chanel.setVisibility(View.GONE);
           }
       }
       catch (Exception localException)
@@ -308,7 +308,7 @@ public class ActAddTiming extends MyBaseActivity
           this.tv_act_add_timing_repeat.setText(str);
           return;
         }
-        this.tv_act_add_timing_repeat.setText(getString(2131100239));
+        this.tv_act_add_timing_repeat.setText(getString(R.string.once));
       }
     }
   }
@@ -359,13 +359,13 @@ public class ActAddTiming extends MyBaseActivity
         this.vo.setXuHao(this.bussines.getTimgItemXuHao());
       if (this.vo.getType() != 1)
         this.vo.setColor(0);
-      if (this.lightStatus.equals(getString(2131100229)))
+      if (this.lightStatus.equals(getString(R.string.off_device)))
       {
         this.vo.setIsOffDevice(true);
-        if (this.tv_act_add_timing_repeat.getText().toString().indexOf(getString(2131100239)) == -1)
+        if (this.tv_act_add_timing_repeat.getText().toString().indexOf(getString(R.string.once)) == -1)
           break label522;
         ArrayList localArrayList = new ArrayList();
-        localArrayList.add(getString(2131100239));
+        localArrayList.add(getString(R.string.once));
         this.vo.setShotNameDays(localArrayList);
         this.vo.setIsJustOnce(true);
         if (DateFmtUtil.getTime4HHmm(this.vo.getTime()) <= System.currentTimeMillis())
@@ -388,7 +388,7 @@ public class ActAddTiming extends MyBaseActivity
       break label415;
       label522: this.vo.setIsJustOnce(false);
       break label415;
-      toast(2131099969);
+      toast(R.string.config_failed_timing);
     }
   }
 
@@ -406,9 +406,9 @@ public class ActAddTiming extends MyBaseActivity
   public void open(View paramView)
   {
     findViewById(2131558507).setBackgroundResource(2130903281);
-    findViewById(2131558508).setBackgroundResource(2130903316);
-    findViewById(2131558510).setVisibility(0);
-    this.lightStatus = getString(2131100232);
+    findViewById(2131558508).setBackgroundResource(R.mipmap.ic_off);
+    findViewById(2131558510).setVisibility(View.VISIBLE);
+    this.lightStatus = getString(R.string.on);
     this.vo.setOnOff(true);
     if (this.ykType.equals("air"))
       goWendu(null);
@@ -420,8 +420,8 @@ public class ActAddTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(2130903274);
-    setTiTleTextRes(2131099856);
-    setEditTextRes(2131100063, getResources().getColor(2131492897));
+    setTiTleTextRes(R.mipmap.add_timing);
+    setEditTextRes(R.string.finish, getResources().getColor(2131492897));
   }
 }
 

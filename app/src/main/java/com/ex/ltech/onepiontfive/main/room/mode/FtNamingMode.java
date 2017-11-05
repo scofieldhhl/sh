@@ -65,12 +65,12 @@ public class FtNamingMode extends MyBaseActivity
     this.mCoverFlowView = ((CoverFlowView)findViewById(2131558555));
     this.et_act_name_mode = ((EditText)findViewById(2131558556));
     this.tv_act_name_mode = ((TextView)findViewById(2131558557));
-    this.tv_act_name_mode.setVisibility(8);
+    this.tv_act_name_mode.setVisibility(View.GONE);
     this.tv_act_name_mode.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
       {
-        FtNamingMode.this.tv_act_name_mode.setVisibility(8);
+        FtNamingMode.this.tv_act_name_mode.setVisibility(View.GONE);
       }
     });
   }
@@ -85,7 +85,7 @@ public class FtNamingMode extends MyBaseActivity
       FileUtil.saveMyBitmap(str, this.tempBm, "/ltech/led/image");
       this.vo.setNewCreateModeBitmapPath(str);
       ArrayList localArrayList = this.business.getModesDefultName();
-      this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+      this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
       BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
       ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
       localShapeDrawable.getPaint().setShader(localBitmapShader);
@@ -138,9 +138,9 @@ public class FtNamingMode extends MyBaseActivity
   private void setTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     if (this.vo.getTvName() != null)
-      setTiTleText(getString(2131100049) + getString(2131100163));
+      setTiTleText(getString(2131100049) + getString(R.string.mode));
     while (true)
     {
       setEditStrColor(getResources().getColor(2131492897));
@@ -157,7 +157,7 @@ public class FtNamingMode extends MyBaseActivity
   public void actionUp()
   {
     this.tv_act_name_mode.getText().toString();
-    this.tv_act_name_mode.setVisibility(8);
+    this.tv_act_name_mode.setVisibility(View.GONE);
   }
 
   public void getLocalPhoto(View paramView)
@@ -190,7 +190,7 @@ public class FtNamingMode extends MyBaseActivity
         FileUtil.saveMyBitmap(str, this.tempBm, "/ltech/led/image");
         this.vo.setNewCreateModeBitmapPath(str);
         ArrayList localArrayList = this.business.getModesDefultName();
-        this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+        this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
         BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
         ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
         localShapeDrawable.getPaint().setShader(localBitmapShader);

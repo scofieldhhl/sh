@@ -2,7 +2,7 @@ package io.xlink.wifi.js.http;
 
 import com.ex.ltech.led.MyApp;
 import com.google.gson.Gson;
-import com.google.gson.internal..Gson.Types;
+import com.google.gson.internal.Gson.Types;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
 import io.xlink.wifi.js.util.SharedPreferencesUtil;

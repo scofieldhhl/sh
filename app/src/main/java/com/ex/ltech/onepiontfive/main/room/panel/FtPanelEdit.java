@@ -50,7 +50,7 @@ public class FtPanelEdit extends MyBaseFt
   {
     this.btnTitleViewMenu.setBackgroundResource(2130903274);
     this.tvTitleViewTitle.setText(2131100052);
-    this.tvTitleViewEdit.setVisibility(0);
+    this.tvTitleViewEdit.setVisibility(View.VISIBLE);
     this.tvTitleViewEdit.setText(2131099874);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492897));
     this.btnTitleViewMenu.setOnClickListener(new View.OnClickListener()

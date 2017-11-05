@@ -49,18 +49,18 @@ public class FtPanelEditAdapter extends BaseAdapter
         break label237;
       if ((i1 | i) == 0)
         break label243;
-      paramView.setVisibility(0);
+      paramView.setVisibility(View.VISIBLE);
       paramHolder.tvLampNameEdit.setText(paramDvc.getName());
       paramHolder.sb_detail_play_progress.setProgress(paramDvc.getBrtProgress());
       if (!paramDvc.isOnLine())
         break label307;
-      paramHolder.ibLampChose.setVisibility(0);
+      paramHolder.ibLampChose.setVisibility(View.VISIBLE);
       ImageButton localImageButton = paramHolder.ibLampChose;
       if (!paramDvc.isSeletedRelation())
         break label252;
       i2 = 2130903786;
       label132: localImageButton.setBackgroundResource(i2);
-      paramHolder.ib_lamp_offline.setVisibility(8);
+      paramHolder.ib_lamp_offline.setVisibility(View.GONE);
       switch (paramDvc.getType())
       {
       default:
@@ -103,7 +103,7 @@ public class FtPanelEditAdapter extends BaseAdapter
       break label49;
       label237: i = 0;
       break label65;
-      label243: paramView.setVisibility(8);
+      label243: paramView.setVisibility(View.GONE);
       break label78;
       label252: i2 = 2130903784;
       break label132;
@@ -115,8 +115,8 @@ public class FtPanelEditAdapter extends BaseAdapter
       break label184;
       paramHolder.iv_icon.setBackgroundResource(2130903142);
       break label184;
-      label307: paramHolder.ibLampChose.setVisibility(8);
-      paramHolder.ib_lamp_offline.setVisibility(0);
+      label307: paramHolder.ibLampChose.setVisibility(View.GONE);
+      paramHolder.ib_lamp_offline.setVisibility(View.VISIBLE);
       paramHolder.iv_icon.setBackgroundResource(2130903597);
     }
   }

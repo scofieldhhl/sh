@@ -33,7 +33,7 @@ public class GroupAdapter extends BaseAdapter
     int j;
     if (paramDvc.isClickSeleted())
     {
-      paramViewHolder.iv_seleted.setVisibility(0);
+      paramViewHolder.iv_seleted.setVisibility(View.VISIBLE);
       int i = paramDvc.getType();
       if (!paramDvc.isOnLine())
         break label200;

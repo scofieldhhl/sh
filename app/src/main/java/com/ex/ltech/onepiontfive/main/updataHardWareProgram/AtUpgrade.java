@@ -43,13 +43,13 @@ public class AtUpgrade extends MyBaseActivity
 
   public void failed()
   {
-    this.rlLoad.setVisibility(8);
+    this.rlLoad.setVisibility(View.GONE);
     Toast.makeText(this, "Upgrade Failed", 0).show();
   }
 
   public void ok()
   {
-    this.rlLoad.setVisibility(8);
+    this.rlLoad.setVisibility(View.GONE);
     Toast.makeText(this, "Upgrade Ok", 0).show();
     setResult(127);
     finish();
@@ -102,7 +102,7 @@ public class AtUpgrade extends MyBaseActivity
 
   public void upgrade(View paramView)
   {
-    this.rlLoad.setVisibility(0);
+    this.rlLoad.setVisibility(View.VISIBLE);
     this.synProgram2Device.syn();
   }
 }

@@ -40,7 +40,7 @@ public class FtRooms extends MyBaseFt
     public void run()
     {
       if (FtRooms.this.banFastClickTabsLayout != null)
-        FtRooms.this.banFastClickTabsLayout.setVisibility(8);
+        FtRooms.this.banFastClickTabsLayout.setVisibility(View.GONE);
     }
   };
   private TabsFragmentAdapter adapter;
@@ -113,8 +113,8 @@ public class FtRooms extends MyBaseFt
     {
       public void onClick(View paramView)
       {
-        FtRooms.this.menu.setVisibility(0);
-        FtRooms.this.dvcOkOperea.setVisibility(8);
+        FtRooms.this.menu.setVisibility(View.VISIBLE);
+        FtRooms.this.dvcOkOperea.setVisibility(View.GONE);
         ((RoomFragment)FtRooms.this.fragments.get(FtRooms.tagPagePosi)).hideDelBtn();
       }
     });
@@ -143,12 +143,12 @@ public class FtRooms extends MyBaseFt
           FtRooms.this.fragment.setRoom((Room)FtRooms.this.business.getHome().getRooms().get(paramInt));
           ((RoomFragment)FtRooms.this.fragments.get(FtRooms.this.lastPageSeletedPosi)).onMimeInvisiable();
           ((RoomFragment)FtRooms.this.fragments.get(paramInt)).onMimeSeleted();
-          FtRooms.this.menu.setVisibility(0);
-          FtRooms.this.dvcOkOperea.setVisibility(8);
+          FtRooms.this.menu.setVisibility(View.VISIBLE);
+          FtRooms.this.dvcOkOperea.setVisibility(View.GONE);
         }
         FtRooms.this.lastPageSeletedPosi = paramInt;
         FtRooms.this.handler.removeCallbacks(FtRooms.this.BanFastClickTabsRunnable);
-        FtRooms.this.banFastClickTabsLayout.setVisibility(0);
+        FtRooms.this.banFastClickTabsLayout.setVisibility(View.VISIBLE);
         FtRooms.this.handler.postDelayed(FtRooms.this.BanFastClickTabsRunnable, 400L);
       }
     });
@@ -236,8 +236,8 @@ public class FtRooms extends MyBaseFt
 
   public void onDeviceEditShow()
   {
-    this.menu.setVisibility(8);
-    this.dvcOkOperea.setVisibility(0);
+    this.menu.setVisibility(View.GONE);
+    this.dvcOkOperea.setVisibility(View.VISIBLE);
   }
 
   public void onPause()

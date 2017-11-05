@@ -132,19 +132,19 @@ public class MusicFragment extends MyBaseFt
     {
       public void run()
       {
-        MusicFragment.this.btMusicActGoList.setVisibility(8);
-        MusicFragment.this.sbMusicActi.setVisibility(8);
-        MusicFragment.this.ivActiMusicDisc.setVisibility(8);
-        MusicFragment.this.view.findViewById(2131558719).setVisibility(0);
-        MusicFragment.this.tvActiMusicSongName.setVisibility(8);
-        MusicFragment.this.tvActiMusicSongCurrentTime.setVisibility(8);
-        MusicFragment.this.tvActiMusicSongAllTime.setVisibility(8);
-        MusicFragment.this.sbMusicActi.setVisibility(8);
-        MusicFragment.this.ivActiMusicBack.setVisibility(8);
-        MusicFragment.this.ivActiMusicPlay.setVisibility(8);
-        MusicFragment.this.ivActiMusicNext.setVisibility(8);
-        MusicFragment.this.ivActiMusicMic.setVisibility(0);
-        MusicFragment.this.vvActMusic.setVisibility(0);
+        MusicFragment.this.btMusicActGoList.setVisibility(View.GONE);
+        MusicFragment.this.sbMusicActi.setVisibility(View.GONE);
+        MusicFragment.this.ivActiMusicDisc.setVisibility(View.GONE);
+        MusicFragment.this.view.findViewById(2131558719).setVisibility(View.VISIBLE);
+        MusicFragment.this.tvActiMusicSongName.setVisibility(View.GONE);
+        MusicFragment.this.tvActiMusicSongCurrentTime.setVisibility(View.GONE);
+        MusicFragment.this.tvActiMusicSongAllTime.setVisibility(View.GONE);
+        MusicFragment.this.sbMusicActi.setVisibility(View.GONE);
+        MusicFragment.this.ivActiMusicBack.setVisibility(View.GONE);
+        MusicFragment.this.ivActiMusicPlay.setVisibility(View.GONE);
+        MusicFragment.this.ivActiMusicNext.setVisibility(View.GONE);
+        MusicFragment.this.ivActiMusicMic.setVisibility(View.VISIBLE);
+        MusicFragment.this.vvActMusic.setVisibility(View.VISIBLE);
         MusicFragment.this.btActiMusicMic.setBackgroundResource(2130903044);
         MusicFragment.this.btActiMusList.setBackgroundResource(2130903757);
       }
@@ -208,13 +208,13 @@ public class MusicFragment extends MyBaseFt
           MusicFragment.this.sbMusicActi.setProgress(paramInt);
           if (paramString4.equals("play"))
           {
-            MusicFragment.this.ivActiMusicPlay.setBackgroundResource(2130903501);
+            MusicFragment.this.ivActiMusicPlay.setBackgroundResource(R.mipmap.music_stop);
             if (!MusicFragment.this.isPlay)
               MusicFragment.this.ivActiMusicLoader.startAnimation(MusicFragment.this.loaderLoadAnimation);
             MusicFragment.this.isPlay = true;
             return;
           }
-          MusicFragment.this.ivActiMusicPlay.setBackgroundResource(2130903500);
+          MusicFragment.this.ivActiMusicPlay.setBackgroundResource(R.mipmap.music_paly);
           if (MusicFragment.this.isPlay)
             MusicFragment.this.ivActiMusicLoader.startAnimation(MusicFragment.this.loaderReturnAnimation);
           MusicFragment.this.isPlay = false;
@@ -238,7 +238,7 @@ public class MusicFragment extends MyBaseFt
 
   private void playSong()
   {
-    this.ivActiMusicPlay.setBackgroundResource(2130903501);
+    this.ivActiMusicPlay.setBackgroundResource(R.mipmap.music_stop);
     this.ivActiMusicLoader.clearAnimation();
     this.ivActiMusicLoader.startAnimation(this.loaderLoadAnimation);
     this.playSongBusiness.playTrack105(getRequest().getIntExtra("DTypeKey", 0), getRequest().getIntExtra("DRoomNumKey", 0), getRequest().getIntExtra("DIndexKey", 0), getRequest().getBooleanExtra("MusicIsGroupKey", false));
@@ -249,23 +249,23 @@ public class MusicFragment extends MyBaseFt
 
   private void showPlaySongViews()
   {
-    this.btMusicActGoList.setVisibility(0);
-    this.sbMusicActi.setVisibility(0);
-    this.ivActiMusicDisc.setVisibility(0);
-    this.view.findViewById(2131558719).setVisibility(8);
-    this.tvActiMusicSongName.setVisibility(0);
-    this.tvActiMusicSongCurrentTime.setVisibility(0);
-    this.tvActiMusicSongAllTime.setVisibility(0);
-    this.sbMusicActi.setVisibility(0);
-    this.ivActiMusicBack.setVisibility(0);
-    this.ivActiMusicPlay.setVisibility(0);
-    this.ivActiMusicNext.setVisibility(0);
+    this.btMusicActGoList.setVisibility(View.VISIBLE);
+    this.sbMusicActi.setVisibility(View.VISIBLE);
+    this.ivActiMusicDisc.setVisibility(View.VISIBLE);
+    this.view.findViewById(2131558719).setVisibility(View.GONE);
+    this.tvActiMusicSongName.setVisibility(View.VISIBLE);
+    this.tvActiMusicSongCurrentTime.setVisibility(View.VISIBLE);
+    this.tvActiMusicSongAllTime.setVisibility(View.VISIBLE);
+    this.sbMusicActi.setVisibility(View.VISIBLE);
+    this.ivActiMusicBack.setVisibility(View.VISIBLE);
+    this.ivActiMusicPlay.setVisibility(View.VISIBLE);
+    this.ivActiMusicNext.setVisibility(View.VISIBLE);
     this.btActiMusList.setBackgroundResource(2130903758);
     this.btActiMusicMic.setBackgroundResource(2130903043);
-    this.ivActiMusicMic.setVisibility(8);
+    this.ivActiMusicMic.setVisibility(View.GONE);
     this.playSongBusiness.recordStop();
     this.vvActMusic.setNullArr();
-    this.vvActMusic.setVisibility(8);
+    this.vvActMusic.setVisibility(View.GONE);
   }
 
   private void stopSong()
@@ -396,7 +396,7 @@ public class MusicFragment extends MyBaseFt
             }
             ServicePlayer.isPlay = true;
             this.playSongBusiness.backSong();
-            this.ivActiMusicPlay.setBackgroundResource(2130903501);
+            this.ivActiMusicPlay.setBackgroundResource(R.mipmap.music_stop);
             return;
           }
           while (this.playSongBusiness.getSongs().size() == 0);
@@ -407,7 +407,7 @@ public class MusicFragment extends MyBaseFt
           }
           this.playSongBusiness.nextSong();
           ServicePlayer.isPlay = true;
-          this.ivActiMusicPlay.setBackgroundResource(2130903501);
+          this.ivActiMusicPlay.setBackgroundResource(R.mipmap.music_stop);
           this.handler.postDelayed(new Runnable()
           {
             public void run()

@@ -87,8 +87,8 @@ public class FtFanRc2 extends Fragment
     {
       if ((!((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname.equals("电源")) && (!((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname.equals("风速")) && (!((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname.equals("风类")) && (!((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname.equals("定时")) && (!((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname.equals("静音")) && (!((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname.equals("摆风")))
       {
-        paramViewHolder.btDiy.setVisibility(0);
-        paramViewHolder.bt_image_text.setVisibility(8);
+        paramViewHolder.btDiy.setVisibility(View.VISIBLE);
+        paramViewHolder.bt_image_text.setVisibility(View.GONE);
         paramViewHolder.btDiy.setText(paramIrKey.fname);
         paramViewHolder.btDiy.setOnTouchListener(new FtFanRc2.MyOnTouchListener(FtFanRc2.this, paramView.findViewById(2131558559)));
         paramViewHolder.btDiy.setOnClickListener(new View.OnClickListener(paramIrKey)
@@ -108,8 +108,8 @@ public class FtFanRc2 extends Fragment
         });
         return;
       }
-      paramViewHolder.btDiy.setVisibility(8);
-      paramViewHolder.bt_image_text.setVisibility(0);
+      paramViewHolder.btDiy.setVisibility(View.GONE);
+      paramViewHolder.bt_image_text.setVisibility(View.VISIBLE);
       paramViewHolder.bt_image_text.setImageTextButtonLongClickListener(FtFanRc2.this.pat);
       paramViewHolder.bt_image_text.setOnTouchListener(new FtFanRc2.MyOnTouchListener(FtFanRc2.this, paramView.findViewById(2131558559)));
       String str = ((IrData.IrKey)((IrData)((MyRcDevice)FtFanRc2.this.pat.rcDevices.myRcDevices.get(FtFanRc2.this.pat.existRcPosi)).irDatas.get(0)).keys.get(paramInt)).fname;

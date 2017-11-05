@@ -76,7 +76,7 @@ public class ActRepeatDay extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100333);
   }
 }

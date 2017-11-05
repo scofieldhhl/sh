@@ -85,7 +85,7 @@ public class AtCfgStep2Activity extends MyBaseActivity
     setContentView(2130968652);
     ButterKnife.bind(this);
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText("");
     this.ivDevice = ((ImageView)findViewById(2131558808));
     this.info1 = ((TextView)findViewById(2131558809));

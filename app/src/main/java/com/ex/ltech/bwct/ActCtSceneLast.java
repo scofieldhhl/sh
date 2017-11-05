@@ -2,42 +2,40 @@ package com.ex.ltech.bwct;
 
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader.TileMode;
+import android.graphics.Shader;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.my_view.gallery_view.CoverFlowAdapter;
 import com.ex.ltech.led.my_view.gallery_view.CoverFlowView;
-import com.ex.ltech.led.my_view.gallery_view.CoverFlowView.OnCoverFlowViewTouchEvent;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.utils.FileUtil;
 import com.ex.ltech.led.utils.UriUtil;
 import com.ex.ltech.led.vo.CtSceneVo;
 import com.google.gson.Gson;
 import com.soundcloud.android.crop.Crop;
+
+import java.io.File;
+import java.util.ArrayList;
+
 import io.xlink.wifi.js.manage.DeviceManage;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
-import java.io.File;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ActCtSceneLast extends MyBaseActivity
   implements CoverFlowView.OnCoverFlowViewTouchEvent
@@ -71,8 +69,8 @@ public class ActCtSceneLast extends MyBaseActivity
     {
       public void onClick(View paramView)
       {
-        ActCtSceneLast.this.tv_act_name_mode.setVisibility(8);
-        ActCtSceneLast.this.et_act_name_mode.setVisibility(0);
+        ActCtSceneLast.this.tv_act_name_mode.setVisibility(View.GONE);
+        ActCtSceneLast.this.et_act_name_mode.setVisibility(View.VISIBLE);
       }
     });
   }
@@ -87,7 +85,7 @@ public class ActCtSceneLast extends MyBaseActivity
       FileUtil.saveMyBitmap(str, this.tempBm, "/ltech/led/image");
       this.vo.setIcPath(str);
       ArrayList localArrayList = this.business.getModesDefultName();
-      this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+      this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
       BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
       ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
       localShapeDrawable.getPaint().setShader(localBitmapShader);
@@ -135,23 +133,23 @@ public class ActCtSceneLast extends MyBaseActivity
   private void setTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100364);
-    setEditStrColor(getResources().getColor(2131492962));
+    setEditStrColor(getResources().getColor(R.color.oringe));
     setEditTextRes(2131100358);
   }
 
   public void actionDown()
   {
-    this.et_act_name_mode.setVisibility(8);
-    this.tv_act_name_mode.setVisibility(0);
+    this.et_act_name_mode.setVisibility(View.GONE);
+    this.tv_act_name_mode.setVisibility(View.VISIBLE);
   }
 
   public void actionUp()
   {
     String str = this.tv_act_name_mode.getText().toString();
-    this.tv_act_name_mode.setVisibility(8);
-    this.et_act_name_mode.setVisibility(0);
+    this.tv_act_name_mode.setVisibility(View.GONE);
+    this.et_act_name_mode.setVisibility(View.VISIBLE);
     this.et_act_name_mode.setText(str);
   }
 
@@ -185,7 +183,7 @@ public class ActCtSceneLast extends MyBaseActivity
         FileUtil.saveMyBitmap(str, this.tempBm, "/ltech/led/image");
         this.vo.setIcPath(str);
         ArrayList localArrayList = this.business.getModesDefultName();
-        this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+        this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
         BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
         ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
         localShapeDrawable.getPaint().setShader(localBitmapShader);

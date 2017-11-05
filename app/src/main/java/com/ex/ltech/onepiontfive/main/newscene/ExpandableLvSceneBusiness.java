@@ -256,9 +256,9 @@ public class ExpandableLvSceneBusiness extends MyBusiness
     ETDeviceTV localETDeviceTV = (ETDeviceTV)this.mGroup.GetItem(paramYkVo.getId());
     localETDeviceTV.Load(ETDB.getInstance(this.ct));
     byte[] arrayOfByte10;
-    if ((paramYkVo.getStatus().equals(this.ct.getString(2131100232))) || (paramYkVo.getStatus().equals(this.ct.getString(2131100226))))
+    if ((paramYkVo.getStatus().equals(this.ct.getString(R.string.on))) || (paramYkVo.getStatus().equals(this.ct.getString(2131100226))))
     {
-      boolean bool3 = paramYkVo.getStatus().equals(this.ct.getString(2131100232));
+      boolean bool3 = paramYkVo.getStatus().equals(this.ct.getString(R.string.on));
       arrayOfByte10 = null;
       if (bool3)
         arrayOfByte10 = localETDeviceTV.GetKeyValue(8203);
@@ -405,9 +405,9 @@ public class ExpandableLvSceneBusiness extends MyBusiness
     ETDeviceSTB localETDeviceSTB = (ETDeviceSTB)this.mGroup.GetItem(paramYkVo.getId());
     localETDeviceSTB.Load(ETDB.getInstance(this.ct));
     byte[] arrayOfByte7;
-    if ((paramYkVo.getStatus().equals(this.ct.getString(2131100232))) || (paramYkVo.getStatus().equals(this.ct.getString(2131100226))))
+    if ((paramYkVo.getStatus().equals(this.ct.getString(R.string.on))) || (paramYkVo.getStatus().equals(this.ct.getString(2131100226))))
     {
-      boolean bool2 = paramYkVo.getStatus().equals(this.ct.getString(2131100232));
+      boolean bool2 = paramYkVo.getStatus().equals(this.ct.getString(R.string.on));
       arrayOfByte7 = null;
       if (bool2)
         arrayOfByte7 = localETDeviceSTB.GetKeyValue(16385);
@@ -554,9 +554,9 @@ public class ExpandableLvSceneBusiness extends MyBusiness
     ETDeviceIPTV localETDeviceIPTV = (ETDeviceIPTV)this.mGroup.GetItem(paramYkVo.getId());
     localETDeviceIPTV.Load(ETDB.getInstance(this.ct));
     byte[] arrayOfByte4;
-    if ((paramYkVo.getStatus().equals(this.ct.getString(2131100232))) || (paramYkVo.getStatus().equals(this.ct.getString(2131100226))))
+    if ((paramYkVo.getStatus().equals(this.ct.getString(R.string.on))) || (paramYkVo.getStatus().equals(this.ct.getString(2131100226))))
     {
-      boolean bool1 = paramYkVo.getStatus().equals(this.ct.getString(2131100232));
+      boolean bool1 = paramYkVo.getStatus().equals(this.ct.getString(R.string.on));
       arrayOfByte4 = null;
       if (bool1)
         arrayOfByte4 = localETDeviceIPTV.GetKeyValue(8449);
@@ -702,7 +702,7 @@ public class ExpandableLvSceneBusiness extends MyBusiness
     }
     ETDevicePJT localETDevicePJT = (ETDevicePJT)this.mGroup.GetItem(paramYkVo.getId());
     localETDevicePJT.Load(ETDB.getInstance(this.ct));
-    if (paramYkVo.getStatus().equals(this.ct.getString(2131100232)));
+    if (paramYkVo.getStatus().equals(this.ct.getString(R.string.on)));
     for (byte[] arrayOfByte3 = localETDevicePJT.GetKeyValue(40961); ; arrayOfByte3 = localETDevicePJT.GetKeyValue(40963))
     {
       ArrayList localArrayList3 = this.sendSteps;
@@ -712,7 +712,7 @@ public class ExpandableLvSceneBusiness extends MyBusiness
     }
     ETDeviceFANS localETDeviceFANS = (ETDeviceFANS)this.mGroup.GetItem(paramYkVo.getId());
     localETDeviceFANS.Load(ETDB.getInstance(this.ct));
-    if (paramYkVo.getStatus().equals(this.ct.getString(2131100232)))
+    if (paramYkVo.getStatus().equals(this.ct.getString(R.string.on)))
       localETDeviceFANS.GetKeyValue(32769);
     for (byte[] arrayOfByte2 = localETDeviceFANS.GetKeyValue(32769); ; arrayOfByte2 = localETDeviceFANS.GetKeyValue(32769))
     {
@@ -723,7 +723,7 @@ public class ExpandableLvSceneBusiness extends MyBusiness
     }
     ETDeviceDVD localETDeviceDVD = (ETDeviceDVD)this.mGroup.GetItem(paramYkVo.getId());
     localETDeviceDVD.Load(ETDB.getInstance(this.ct));
-    if (paramYkVo.getStatus().equals(this.ct.getString(2131100232)))
+    if (paramYkVo.getStatus().equals(this.ct.getString(R.string.on)))
       localETDeviceDVD.GetKeyValue(24587);
     for (byte[] arrayOfByte1 = localETDeviceDVD.GetKeyValue(24587); ; arrayOfByte1 = localETDeviceDVD.GetKeyValue(24587))
     {

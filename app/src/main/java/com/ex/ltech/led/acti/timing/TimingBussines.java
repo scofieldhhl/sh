@@ -86,7 +86,7 @@ public class TimingBussines
     public void run()
     {
       if (TimingBussines.this.isRespTimeOut)
-        Toast.makeText(TimingBussines.this.pct, TimingBussines.this.pct.getString(2131099854), 0).show();
+        Toast.makeText(TimingBussines.this.pct, TimingBussines.this.pct.getString(R.string.add_time_no_ok), 0).show();
     }
   };
   private int timingPosi = 0;
@@ -124,7 +124,7 @@ public class TimingBussines
         break label192;
       i = 1;
       str4 = "0";
-      if (!((String)localTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)localTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label223;
       str4 = "1";
       k = 7;
@@ -464,11 +464,11 @@ public class TimingBussines
       i = 17;
       if (!paramTimingVo.isSwich())
         break label231;
-      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label225;
       j = 1;
       str4 = "0";
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label262;
       str4 = "1";
       i3 = 7;

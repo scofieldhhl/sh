@@ -55,7 +55,7 @@ public class GroupGridView extends GridView
 
   private void setViewXy(View paramView, int paramInt1, int paramInt2)
   {
-    paramView.setVisibility(0);
+    paramView.setVisibility(View.VISIBLE);
     ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(paramView, "alpha", new float[] { 0.0F, 1.0F });
     localObjectAnimator.setDuration(300L);
     localObjectAnimator.start();
@@ -150,7 +150,7 @@ public class GroupGridView extends GridView
             GroupGridView.this.onDragInGroupListener.onDragFinish();
           GroupGridView.this.isGvLongClick = false;
           GroupGridView.this.isFirstTimeTouchMove = true;
-          GroupGridView.this.draftDevice.setVisibility(8);
+          GroupGridView.this.draftDevice.setVisibility(View.GONE);
           ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(GroupGridView.this.draftDevice, "alpha", new float[] { 1.0F, 0.0F });
           localObjectAnimator.setDuration(300L);
           localObjectAnimator.start();

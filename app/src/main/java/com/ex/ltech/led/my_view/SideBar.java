@@ -73,7 +73,7 @@ public class SideBar extends View
       i = -1 + this.l.length;
       if ((paramMotionEvent.getAction() != 0) && (paramMotionEvent.getAction() != 2))
         break label169;
-      this.mDialogText.setVisibility(0);
+      this.mDialogText.setVisibility(View.VISIBLE);
       this.mDialogText.setText("" + this.l[i]);
       if (this.sectionIndexter == null)
         this.sectionIndexter = ((SectionIndexer)this.list.getAdapter());

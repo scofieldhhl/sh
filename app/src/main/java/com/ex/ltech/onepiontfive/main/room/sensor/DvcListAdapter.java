@@ -76,9 +76,9 @@ public class DvcListAdapter extends BaseExpandableListAdapter
       if (!localRoomLvChildVo.isSwich())
         break label456;
       localItemHolder.seleted.setBackgroundResource(2130903786);
-      localItemHolder.name.setVisibility(0);
+      localItemHolder.name.setVisibility(View.VISIBLE);
       localItemHolder.name.setText(localRoomLvChildVo.getInnerDeviceName());
-      localItemHolder.condition.setVisibility(8);
+      localItemHolder.condition.setVisibility(View.GONE);
       paramView.setOnClickListener(new View.OnClickListener(paramInt1, paramInt2, localRoomLvChildVo)
       {
         public void onClick(View paramView)
@@ -109,9 +109,9 @@ public class DvcListAdapter extends BaseExpandableListAdapter
         break label487;
       label289: if ((i1 | i) == 0)
         break label493;
-      localItemHolder.seleted.setVisibility(0);
-      localItemHolder.status.setVisibility(8);
-      localItemHolder.icNext.setVisibility(8);
+      localItemHolder.seleted.setVisibility(View.VISIBLE);
+      localItemHolder.status.setVisibility(View.GONE);
+      localItemHolder.icNext.setVisibility(View.GONE);
       localItemHolder.seleted.setOnClickListener(new View.OnClickListener(paramInt1, paramInt2, localRoomLvChildVo)
       {
         public void onClick(View paramView)
@@ -145,10 +145,10 @@ public class DvcListAdapter extends BaseExpandableListAdapter
         break label272;
         label487: i = 0;
         break label289;
-        label493: localItemHolder.seleted.setVisibility(8);
-        localItemHolder.status.setVisibility(0);
+        label493: localItemHolder.seleted.setVisibility(View.GONE);
+        localItemHolder.status.setVisibility(View.VISIBLE);
         localItemHolder.status.setText(localRoomLvChildVo.getInnerDeviceStatus());
-        localItemHolder.icNext.setVisibility(0);
+        localItemHolder.icNext.setVisibility(View.VISIBLE);
         paramView.setOnClickListener(new View.OnClickListener(paramInt1, paramInt2, localRoomLvChildVo)
         {
           public void onClick(View paramView)

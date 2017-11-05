@@ -66,7 +66,7 @@ public class FtAddTime extends MyBaseFt
   {
     public void run()
     {
-      Toast.makeText(FtAddTime.this.getActivity(), 2131099854, 0).show();
+      Toast.makeText(FtAddTime.this.getActivity(), R.string.add_time_no_ok, 0).show();
     }
   };
   private int[] shotDay = { 2131100240, 2131100240, 2131100467, 2131100430, 2131100071, 2131100066, 2131100404, 2131100394 };
@@ -118,7 +118,7 @@ public class FtAddTime extends MyBaseFt
   private void initTitle()
   {
     this.btnTitleViewMenu.setBackgroundResource(2130903274);
-    this.tvTitleViewTitle.setText(2131099856);
+    this.tvTitleViewTitle.setText(R.mipmap.add_timing);
     this.btnTitleViewEdit.setBackgroundResource(2130903116);
   }
 
@@ -153,7 +153,7 @@ public class FtAddTime extends MyBaseFt
       if (this.isNewCreate)
       {
         this.business.sendNewCreateTiming(this.timing, 17);
-        if (this.timing.getShotDaysStr().equalsIgnoreCase(getString(2131100239)))
+        if (this.timing.getShotDaysStr().equalsIgnoreCase(getString(R.string.once)))
           this.timing.setIsJustOnce(true);
         this.handler.removeCallbacks(this.runnable);
         this.handler.postDelayed(this.runnable, 5000L);
@@ -178,7 +178,7 @@ public class FtAddTime extends MyBaseFt
             FtAddTime.this.handler.removeCallbacks(FtAddTime.this.runnable);
             if (paramArrayOfByte[16] == -1)
             {
-              Toast.makeText(FtAddTime.this.getActivity(), 2131100429, 0).show();
+              Toast.makeText(FtAddTime.this.getActivity(), R.string.ten_timing, 0).show();
               return;
             }
             FtAddTime.this.timing.setOrder(paramArrayOfByte[16]);
@@ -276,7 +276,7 @@ public class FtAddTime extends MyBaseFt
         this.timing.setHour(Integer.parseInt(this.hour));
         this.timing.setMin(Integer.parseInt(this.min));
         openOperation();
-        this.timing.setShotDaysStr(getString(2131100239));
+        this.timing.setShotDaysStr(getString(R.string.once));
       }
       if (getRequest().getStringExtra("TimingOperationKey").equals("EditTiming"))
       {
@@ -361,7 +361,7 @@ public class FtAddTime extends MyBaseFt
         break label491;
         if (str3.length() != 0)
           continue;
-        str3 = getString(2131100239);
+        str3 = getString(R.string.once);
         this.timing.setShotDaysStr(str3);
         this.tvActAddTimingRepeatStatus.setText(str3);
         if (paramInt2 != 209)

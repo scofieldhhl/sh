@@ -158,7 +158,7 @@ public class NewHongWaiMain extends TabActivity
         if (paramBoolean)
         {
           NewHongWaiMain.this.isUpdataIng = true;
-          NewHongWaiMain.this.rl_load.setVisibility(0);
+          NewHongWaiMain.this.rl_load.setVisibility(View.VISIBLE);
           NewHongWaiMain localNewHongWaiMain1 = NewHongWaiMain.this;
           NewHongWaiMain localNewHongWaiMain2 = NewHongWaiMain.this;
           DeviceManage.getInstance();
@@ -168,13 +168,13 @@ public class NewHongWaiMain extends TabActivity
             public void failed()
             {
               NewHongWaiMain.this.isUpdataIng = false;
-              NewHongWaiMain.this.rl_load.setVisibility(8);
-              NewHongWaiMain.this.findViewById(2131558798).setVisibility(0);
+              NewHongWaiMain.this.rl_load.setVisibility(View.GONE);
+              NewHongWaiMain.this.findViewById(2131558798).setVisibility(View.VISIBLE);
               NewHongWaiMain.this.findViewById(2131558799).setOnClickListener(new View.OnClickListener()
               {
                 public void onClick(View paramView)
                 {
-                  NewHongWaiMain.this.findViewById(2131558798).setVisibility(8);
+                  NewHongWaiMain.this.findViewById(2131558798).setVisibility(View.GONE);
                   NewHongWaiMain.this.finish();
                 }
               });
@@ -184,8 +184,8 @@ public class NewHongWaiMain extends TabActivity
             public void ok()
             {
               NewHongWaiMain.this.isUpdataIng = false;
-              NewHongWaiMain.this.rl_load.setVisibility(8);
-              NewHongWaiMain.this.findViewById(2131558802).setVisibility(0);
+              NewHongWaiMain.this.rl_load.setVisibility(View.GONE);
+              NewHongWaiMain.this.findViewById(2131558802).setVisibility(View.VISIBLE);
               new Handler()
               {
               }
@@ -193,7 +193,7 @@ public class NewHongWaiMain extends TabActivity
               {
                 public void run()
                 {
-                  NewHongWaiMain.this.findViewById(2131558802).setVisibility(8);
+                  NewHongWaiMain.this.findViewById(2131558802).setVisibility(View.GONE);
                 }
               }
               , 1000L);
@@ -301,7 +301,7 @@ public class NewHongWaiMain extends TabActivity
         SocketManager.instance().sendData(new CmdDateBussiness(NewHongWaiMain.this, "0000").queryIr$Devices());
         SocketManager.instance().sendData(new CmdDateBussiness(NewHongWaiMain.this, "0000").queryIr$Devices());
         NewHongWaiMain.access$102(NewHongWaiMain.this, new ProgressDialog(NewHongWaiMain.this));
-        NewHongWaiMain.this.dialog.setMessage(NewHongWaiMain.this.getString(2131100075));
+        NewHongWaiMain.this.dialog.setMessage(NewHongWaiMain.this.getString(R.string.get_d_info));
         NewHongWaiMain.this.dialog.show();
       }
 

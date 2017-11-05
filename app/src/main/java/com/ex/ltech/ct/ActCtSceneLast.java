@@ -85,8 +85,8 @@ public class ActCtSceneLast extends MyBaseActivity
     {
       public void onClick(View paramView)
       {
-        ActCtSceneLast.this.tv_act_name_mode.setVisibility(8);
-        ActCtSceneLast.this.et_act_name_mode.setVisibility(0);
+        ActCtSceneLast.this.tv_act_name_mode.setVisibility(View.GONE);
+        ActCtSceneLast.this.et_act_name_mode.setVisibility(View.VISIBLE);
       }
     });
   }
@@ -101,7 +101,7 @@ public class ActCtSceneLast extends MyBaseActivity
       FileUtil.saveMyBitmap(str, this.tempBm, "/ltech/led/image");
       this.vo.setIcPath(str);
       ArrayList localArrayList = this.business.getModesDefultName();
-      this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+      this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
       BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
       ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
       localShapeDrawable.getPaint().setShader(localBitmapShader);
@@ -157,23 +157,23 @@ public class ActCtSceneLast extends MyBaseActivity
   private void setTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100364);
-    setEditStrColor(getResources().getColor(2131492962));
+    setEditStrColor(getResources().getColor(R.color.oringe));
     setEditTextRes(2131100358);
   }
 
   public void actionDown()
   {
-    this.et_act_name_mode.setVisibility(8);
-    this.tv_act_name_mode.setVisibility(0);
+    this.et_act_name_mode.setVisibility(View.GONE);
+    this.tv_act_name_mode.setVisibility(View.VISIBLE);
   }
 
   public void actionUp()
   {
     String str = this.tv_act_name_mode.getText().toString();
-    this.tv_act_name_mode.setVisibility(8);
-    this.et_act_name_mode.setVisibility(0);
+    this.tv_act_name_mode.setVisibility(View.GONE);
+    this.et_act_name_mode.setVisibility(View.VISIBLE);
     this.et_act_name_mode.setText(str);
   }
 
@@ -223,7 +223,7 @@ public class ActCtSceneLast extends MyBaseActivity
         this.tempBm = new Business(this).autoZoomInBM(BitmapFactory.decodeFile(this.currentFile.getPath()), 100.0D, 100.0D);
         this.vo.setIcPath(this.currentFile.getPath());
         ArrayList localArrayList = this.business.getModesDefultName();
-        this.business.addModesDefultName(getString(2131100163) + (1 + localArrayList.size()));
+        this.business.addModesDefultName(getString(R.string.mode) + (1 + localArrayList.size()));
         BitmapShader localBitmapShader = new BitmapShader(this.tempBm, Shader.TileMode.MIRROR, Shader.TileMode.REPEAT);
         ShapeDrawable localShapeDrawable = new ShapeDrawable(new OvalShape());
         localShapeDrawable.getPaint().setShader(localBitmapShader);

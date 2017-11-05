@@ -62,10 +62,10 @@ public class AtSceneEdit extends MyBaseActivity
     this.ctSceneName = getIntent().getStringExtra("ctSceneName");
     this.vo = ((CtSceneVo)this.bussiness.vos.get(this.ctScenePosi));
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.ctSceneName);
-    setEditTextRes(2131100063, getResources().getColor(2131492892));
-    SeekBar localSeekBar = (SeekBar)findViewById(2131558652);
+    setEditTextRes(R.string.finish, getResources().getColor(2131492892));
+    SeekBar localSeekBar = (SeekBar)findViewById(R.id.sb);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
     {
       public void onProgressChanged(SeekBar paramSeekBar, int paramInt, boolean paramBoolean)
@@ -92,7 +92,7 @@ public class AtSceneEdit extends MyBaseActivity
       {
       }
     });
-    SimpleColorPickerView localSimpleColorPickerView = (SimpleColorPickerView)findViewById(2131558646);
+    SimpleColorPickerView localSimpleColorPickerView = (SimpleColorPickerView)findViewById(R.id.color);
     new Handler().postDelayed(new Runnable(localSeekBar, localSimpleColorPickerView)
     {
       public void run()

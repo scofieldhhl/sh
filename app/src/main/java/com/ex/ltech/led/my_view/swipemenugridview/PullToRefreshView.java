@@ -126,10 +126,10 @@ public class PullToRefreshView extends LinearLayout
   {
     this.mFooterState = 4;
     setHeaderTopMargin(-(this.mHeaderViewHeight + this.mFooterViewHeight));
-    this.mFooterImageView.setVisibility(8);
+    this.mFooterImageView.setVisibility(View.GONE);
     this.mFooterImageView.clearAnimation();
     this.mFooterImageView.setImageDrawable(null);
-    this.mFooterProgressBar.setVisibility(0);
+    this.mFooterProgressBar.setVisibility(View.VISIBLE);
     this.mFooterTextView.setText(2131100325);
     if (this.mOnFooterRefreshListener != null)
       this.mOnFooterRefreshListener.onFooterRefresh(this);
@@ -144,10 +144,10 @@ public class PullToRefreshView extends LinearLayout
   {
     this.mHeaderState = 4;
     setHeaderTopMargin(0);
-    this.mHeaderImageView.setVisibility(8);
+    this.mHeaderImageView.setVisibility(View.GONE);
     this.mHeaderImageView.clearAnimation();
     this.mHeaderImageView.setImageDrawable(null);
-    this.mHeaderProgressBar.setVisibility(0);
+    this.mHeaderProgressBar.setVisibility(View.VISIBLE);
     this.mHeaderTextView.setText(2131100325);
     if (this.mOnHeaderRefreshListener != null)
       this.mOnHeaderRefreshListener.onHeaderRefresh(this);
@@ -264,7 +264,7 @@ public class PullToRefreshView extends LinearLayout
     if ((i >= 0) && (this.mHeaderState != 3))
     {
       this.mHeaderTextView.setText(2131100325);
-      this.mHeaderUpdateTextView.setVisibility(0);
+      this.mHeaderUpdateTextView.setVisibility(View.VISIBLE);
       this.mHeaderImageView.clearAnimation();
       this.mHeaderImageView.startAnimation(this.mFlipAnimation);
       this.mHeaderState = 3;
@@ -288,20 +288,20 @@ public class PullToRefreshView extends LinearLayout
   public void onFooterRefreshComplete()
   {
     setHeaderTopMargin(-this.mHeaderViewHeight);
-    this.mFooterImageView.setVisibility(0);
+    this.mFooterImageView.setVisibility(View.VISIBLE);
     this.mFooterImageView.setImageResource(2130903641);
     this.mFooterTextView.setText(2131100281);
-    this.mFooterProgressBar.setVisibility(8);
+    this.mFooterProgressBar.setVisibility(View.GONE);
     this.mFooterState = 2;
   }
 
   public void onHeaderRefreshComplete()
   {
     setHeaderTopMargin(-this.mHeaderViewHeight);
-    this.mHeaderImageView.setVisibility(0);
+    this.mHeaderImageView.setVisibility(View.VISIBLE);
     this.mHeaderImageView.setImageResource(2130903640);
     this.mHeaderTextView.setText(2131100281);
-    this.mHeaderProgressBar.setVisibility(8);
+    this.mHeaderProgressBar.setVisibility(View.GONE);
     this.mHeaderState = 2;
   }
 
@@ -397,11 +397,11 @@ public class PullToRefreshView extends LinearLayout
   {
     if (paramCharSequence != null)
     {
-      this.mHeaderUpdateTextView.setVisibility(0);
+      this.mHeaderUpdateTextView.setVisibility(View.VISIBLE);
       this.mHeaderUpdateTextView.setText(paramCharSequence);
       return;
     }
-    this.mHeaderUpdateTextView.setVisibility(8);
+    this.mHeaderUpdateTextView.setVisibility(View.GONE);
   }
 
   public void setOnFooterRefreshListener(OnFooterRefreshListener paramOnFooterRefreshListener)

@@ -70,7 +70,7 @@ public class AtAddDiyBtnActivity extends YkAt
     setViewTitle();
     setMenuBackgroundRes(2130903830);
     setTiTleTextRes(2131099813);
-    setEditTextRes(2131100063, getResources().getColor(2131492897));
+    setEditTextRes(R.string.finish, getResources().getColor(2131492897));
   }
 
   class ItDiyAdapter extends BaseAdapter
@@ -91,7 +91,7 @@ public class AtAddDiyBtnActivity extends YkAt
         paramViewHolder.btDiy.setBackgroundResource(paramETKey.GetRes());
       if (paramETKey.GetName().length() > 0)
         paramViewHolder.btDiy.setText(paramETKey.GetName());
-      paramViewHolder.btEdit.setVisibility(0);
+      paramViewHolder.btEdit.setVisibility(View.VISIBLE);
       if (((Integer)AtAddDiyBtnActivity.this.seleted.get(paramInt)).intValue() == 0)
         paramViewHolder.btEdit.setBackgroundResource(2130903276);
       while (true)
@@ -108,7 +108,7 @@ public class AtAddDiyBtnActivity extends YkAt
             AtAddDiyBtnActivity.ItDiyAdapter.this.notifyDataSetChanged();
           }
         });
-        paramViewHolder.tv_under_line.setVisibility(0);
+        paramViewHolder.tv_under_line.setVisibility(View.VISIBLE);
         return;
         paramViewHolder.btEdit.setBackgroundResource(2130903277);
       }

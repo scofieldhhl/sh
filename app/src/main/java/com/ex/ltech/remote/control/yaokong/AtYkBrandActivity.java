@@ -323,7 +323,7 @@ public class AtYkBrandActivity extends YkAt
     super.onCreate(paramBundle);
     setContentView(2130968714);
     ButterKnife.bind(this);
-    this.rlSearch.setVisibility(8);
+    this.rlSearch.setVisibility(View.GONE);
     this.mType = getIntent().getIntExtra("type", -1);
     setTitleView();
     this.lvAtYkType = ((ListView)findViewById(2131559029));
@@ -429,7 +429,7 @@ public class AtYkBrandActivity extends YkAt
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100535);
   }
 }

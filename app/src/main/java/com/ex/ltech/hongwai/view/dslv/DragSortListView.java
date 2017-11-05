@@ -437,7 +437,7 @@ public class DragSortListView extends ListView
   {
     if (this.mFloatView != null)
     {
-      this.mFloatView.setVisibility(8);
+      this.mFloatView.setVisibility(View.GONE);
       if (this.mFloatViewManager != null)
         this.mFloatViewManager.onDestroyFloatView(this.mFloatView);
       this.mFloatView = null;

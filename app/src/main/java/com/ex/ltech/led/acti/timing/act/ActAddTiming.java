@@ -96,14 +96,14 @@ public class ActAddTiming extends MyBaseActivity
         this.tv_act_add_timing_repeat_status.setText(str3);
         if (this.vo.getType() == 1)
         {
-          this.tv_act_add_timing_mode_status.setVisibility(8);
-          this.cv_act_add_timing_mode.setVisibility(0);
+          this.tv_act_add_timing_mode_status.setVisibility(View.GONE);
+          this.cv_act_add_timing_mode.setVisibility(View.VISIBLE);
           this.cv_act_add_timing_mode.setColor(this.vo.getColor());
         }
         if (this.vo.getType() == 0)
         {
-          this.cv_act_add_timing_mode.setVisibility(8);
-          this.tv_act_add_timing_mode_status.setVisibility(0);
+          this.cv_act_add_timing_mode.setVisibility(View.GONE);
+          this.tv_act_add_timing_mode_status.setVisibility(View.VISIBLE);
         }
         if (this.vo.isOffDevice())
           break label335;
@@ -128,7 +128,7 @@ public class ActAddTiming extends MyBaseActivity
     this.min = str2;
     localTimingVo.setTime(str2);
     ArrayList localArrayList = new ArrayList();
-    localArrayList.add(getString(2131100239));
+    localArrayList.add(getString(R.string.once));
     this.vo.setShotNameDays(localArrayList);
     this.vo.setSwich(true);
     open(null);
@@ -165,9 +165,9 @@ public class ActAddTiming extends MyBaseActivity
   {
     findViewById(2131558507).setBackgroundResource(2130903318);
     findViewById(2131558508).setBackgroundResource(2130903317);
-    findViewById(2131558510).setVisibility(8);
+    findViewById(2131558510).setVisibility(View.GONE);
     this.vo.setType(2);
-    this.lightStatus = getString(2131100229);
+    this.lightStatus = getString(R.string.off_device);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -207,17 +207,17 @@ public class ActAddTiming extends MyBaseActivity
     {
       if (this.vo.getType() == 1)
       {
-        this.tv_act_add_timing_mode_status.setVisibility(8);
-        this.cv_act_add_timing_mode.setVisibility(0);
+        this.tv_act_add_timing_mode_status.setVisibility(View.GONE);
+        this.cv_act_add_timing_mode.setVisibility(View.VISIBLE);
       }
       if (this.vo.getType() == 0)
       {
-        this.cv_act_add_timing_mode.setVisibility(8);
-        this.tv_act_add_timing_mode_status.setVisibility(0);
+        this.cv_act_add_timing_mode.setVisibility(View.GONE);
+        this.tv_act_add_timing_mode_status.setVisibility(View.VISIBLE);
       }
       this.tv_act_add_timing_mode_status.setText(str1);
       return;
-      this.tv_act_add_timing_repeat_status.setText(getString(2131100239));
+      this.tv_act_add_timing_repeat_status.setText(getString(R.string.once));
       break;
       label373: this.cv_act_add_timing_mode.setColor(-1);
     }
@@ -253,7 +253,7 @@ public class ActAddTiming extends MyBaseActivity
   protected void onEdit()
   {
     super.onEdit();
-    if ((this.vo.getSeletedModes() != null) || (this.vo.getColor() != 0) || (this.lightStatus.equals(getString(2131100229))))
+    if ((this.vo.getSeletedModes() != null) || (this.vo.getColor() != 0) || (this.lightStatus.equals(getString(R.string.off_device))))
     {
       this.vo.setSwich(true);
       this.vo.setLightStatus(this.lightStatus);
@@ -262,13 +262,13 @@ public class ActAddTiming extends MyBaseActivity
         this.vo.setXuHao(this.bussines.getTimgItemXuHao());
       if (this.vo.getType() != 1)
         this.vo.setColor(0);
-      if (this.lightStatus.equals(getString(2131100229)))
+      if (this.lightStatus.equals(getString(R.string.off_device)))
       {
         this.vo.setIsOffDevice(true);
-        if (this.tv_act_add_timing_repeat_status.getText().toString().indexOf(getString(2131100239)) == -1)
+        if (this.tv_act_add_timing_repeat_status.getText().toString().indexOf(getString(R.string.once)) == -1)
           break label395;
         ArrayList localArrayList = new ArrayList();
-        localArrayList.add(getString(2131100239));
+        localArrayList.add(getString(R.string.once));
         this.vo.setShotNameDays(localArrayList);
         this.vo.setIsJustOnce(true);
         if (DateFmtUtil.getTime4HHmm(this.vo.getTime()) <= System.currentTimeMillis())
@@ -301,7 +301,7 @@ public class ActAddTiming extends MyBaseActivity
       label440: this.vo.setIsOther(false);
       this.bussines.saveCacheVos(this.vo);
       break label318;
-      toast(2131099969);
+      toast(R.string.config_failed_timing);
     }
   }
 
@@ -318,18 +318,18 @@ public class ActAddTiming extends MyBaseActivity
 
   public void open(View paramView)
   {
-    findViewById(2131558507).setBackgroundResource(2130903319);
-    findViewById(2131558508).setBackgroundResource(2130903316);
-    findViewById(2131558510).setVisibility(0);
-    this.lightStatus = getString(2131100232);
+    findViewById(2131558507).setBackgroundResource(R.mipmap.ic_on_press);
+    findViewById(2131558508).setBackgroundResource(R.mipmap.ic_off);
+    findViewById(2131558510).setVisibility(View.VISIBLE);
+    this.lightStatus = getString(R.string.on);
   }
 
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
-    setTiTleTextRes(2131099856);
-    setEditTextRes(2131100063, getResources().getColor(2131492892));
+    setMenuBackgroundRes(R.mipmap.back_ic);
+    setTiTleTextRes(R.mipmap.add_timing);
+    setEditTextRes(R.string.finish, getResources().getColor(2131492892));
   }
 }
 

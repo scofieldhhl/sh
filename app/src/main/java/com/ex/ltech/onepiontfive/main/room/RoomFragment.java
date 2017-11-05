@@ -323,7 +323,7 @@ public class RoomFragment extends MyBaseFt
           RoomFragment.this.devicGridAdapter.notifyDataSetChanged();
           RoomFragment.this.handler.postDelayed(RoomFragment.this.dataRequestTimeoutRunnable, 10L);
           RoomFragment.this.handler.postDelayed(RoomFragment.this.PullRefreshRunnable, 10L);
-          RoomFragment.this.btAddDevice.setVisibility(0);
+          RoomFragment.this.btAddDevice.setVisibility(View.VISIBLE);
         case 79:
         case 47:
         case 95:
@@ -398,7 +398,7 @@ public class RoomFragment extends MyBaseFt
       try
       {
         RoomFragment.access$502(RoomFragment.this, -1);
-        RoomFragment.this.rlGvGroupParent.setVisibility(8);
+        RoomFragment.this.rlGvGroupParent.setVisibility(View.GONE);
         RoomFragment.this.isGroupLayoutShow = false;
         RoomFragment.this.mainPullRefreshView.setCanRefresh(true);
         RoomFragment.this.isGroupShow = false;
@@ -585,7 +585,7 @@ public class RoomFragment extends MyBaseFt
       return;
       if (this.dvcClickPosi != paramInt)
         this.isShowColorView = false;
-      this.deviceTitleBar.setVisibility(0);
+      this.deviceTitleBar.setVisibility(View.VISIBLE);
       if (!paramBoolean)
         break label1650;
       if ((this.roomBusiness.isShowDelBtn()) || (paramInt > -1 + this.roomBusiness.dvcVos.size()))
@@ -617,7 +617,7 @@ public class RoomFragment extends MyBaseFt
       if (((Dvc)this.roomBusiness.dvcVos.get(paramInt)).innerDvcVos.size() >= 2)
         break label1102;
       this.isClickGroup = false;
-      this.edit.setVisibility(0);
+      this.edit.setVisibility(View.VISIBLE);
       this.roomBusiness.checkGroupStatus();
       this.devicGridAdapter.notifyDataSetChanged();
       switch (i)
@@ -652,50 +652,50 @@ public class RoomFragment extends MyBaseFt
       label384: i5 = 0;
       break label170;
       showHidePickerView();
-      this.twoBtnsLl.setVisibility(0);
-      this.threeBtnsLl.setVisibility(8);
+      this.twoBtnsLl.setVisibility(View.VISIBLE);
+      this.threeBtnsLl.setVisibility(View.GONE);
       this.pickerview.setBgType("ColorPanelTypeBlackWhite");
-      this.brtBar.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       continue;
       showHidePickerView();
-      this.twoBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.pickerview.setBgType("ColorPanelType");
-      this.ivMusic.setVisibility(0);
-      this.tvMusic.setVisibility(0);
+      this.ivMusic.setVisibility(View.VISIBLE);
+      this.tvMusic.setVisibility(View.VISIBLE);
       this.ivMusic.setBackgroundResource(2130903494);
       this.tvMusic.setText(2131100194);
       this.ivMode.setBackgroundResource(2130903487);
-      this.tvMode.setText(2131100163);
+      this.tvMode.setText(R.string.mode);
       continue;
       showHidePickerView();
-      this.twoBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.pickerview.setBgType("ColorPanelType");
-      this.ivMusic.setVisibility(0);
-      this.tvMusic.setVisibility(0);
+      this.ivMusic.setVisibility(View.VISIBLE);
+      this.tvMusic.setVisibility(View.VISIBLE);
       this.ivMusic.setBackgroundResource(2130903494);
       this.tvMusic.setText(2131100194);
       this.ivMode.setBackgroundResource(2130903487);
-      this.tvMode.setText(2131100163);
+      this.tvMode.setText(R.string.mode);
       continue;
       showHidePickerView();
-      this.twoBtnsLl.setVisibility(0);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.twoBtnsLl.setVisibility(View.VISIBLE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.pickerview.setBgType("ColorPanelTypeWarmWhite");
       this.ivMode.setBackgroundResource(2130903217);
       this.tvMode.setText(2131100041);
-      this.ivMusic.setVisibility(8);
-      this.tvMusic.setVisibility(8);
+      this.ivMusic.setVisibility(View.GONE);
+      this.tvMusic.setVisibility(View.GONE);
       continue;
       this.isShowColorView = true;
       showHidePickerView();
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.isShowColorView = true;
       Intent localIntent4 = new Intent(AtMain.instance, AtFragmentMaster.class);
       localIntent4.putExtra("AtTypeKey", "AtTypeSensor");
@@ -704,29 +704,29 @@ public class RoomFragment extends MyBaseFt
       localIntent4.putExtra("DClickPosiKey", paramInt);
       startActivity(localIntent4);
       continue;
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       continue;
       if (Build.CPU_ABI.indexOf("arm") == -1)
       {
         Toast.makeText(AtMain.instance, getString(2131100209), 0).show();
         return;
       }
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.roomBusiness.putData("dvcInRoom", this.seletedDvc);
       startActivity(new Intent(AtMain.instance, AtYaokongActivity.class));
       continue;
       this.isShowColorView = true;
       showHidePickerView();
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.isShowColorView = true;
       Intent localIntent3 = new Intent(AtMain.instance, AtFragmentMaster.class);
       localIntent3.putExtra("AtTypeKey", "AtTypePanel");
@@ -763,16 +763,16 @@ public class RoomFragment extends MyBaseFt
           break;
         case 8:
         case 12:
-          this.twoBtnsLl.setVisibility(8);
+          this.twoBtnsLl.setVisibility(View.GONE);
           this.isShowColorView = false;
           showHidePickerView();
           this.pickerview.setBgType("ColorPanelType");
-          this.ivMusic.setVisibility(0);
-          this.tvMusic.setVisibility(0);
+          this.ivMusic.setVisibility(View.VISIBLE);
+          this.tvMusic.setVisibility(View.VISIBLE);
           this.ivMusic.setBackgroundResource(2130903494);
           this.tvMusic.setText(2131100194);
           this.ivMode.setBackgroundResource(2130903487);
-          this.tvMode.setText(2131100163);
+          this.tvMode.setText(R.string.mode);
           break;
           (1 + i1 / 2);
         case 11:
@@ -780,12 +780,12 @@ public class RoomFragment extends MyBaseFt
         case 9:
         }
       }
-      this.twoBtnsLl.setVisibility(0);
+      this.twoBtnsLl.setVisibility(View.VISIBLE);
       this.isShowColorView = false;
       showHidePickerView();
       this.pickerview.setBgType("ColorPanelTypeBlackWhite");
       continue;
-      this.twoBtnsLl.setVisibility(8);
+      this.twoBtnsLl.setVisibility(View.GONE);
       this.isShowColorView = false;
       showHidePickerView();
       this.pickerview.setBgType("ColorPanelTypeCold");
@@ -794,15 +794,15 @@ public class RoomFragment extends MyBaseFt
       this.ivMode.setBackgroundResource(2130903136);
       this.tvMode.setText(2131099928);
       continue;
-      this.twoBtnsLl.setVisibility(0);
-      this.threeBtnsLl.setVisibility(8);
+      this.twoBtnsLl.setVisibility(View.VISIBLE);
+      this.threeBtnsLl.setVisibility(View.GONE);
       this.isShowColorView = false;
       showHidePickerView();
       this.pickerview.setBgType("ColorPanelTypeWarmWhite");
       this.ivMode.setBackgroundResource(2130903217);
       this.tvMode.setText(2131100041);
-      this.ivMusic.setVisibility(8);
-      this.tvMusic.setVisibility(8);
+      this.ivMusic.setVisibility(View.GONE);
+      this.tvMusic.setVisibility(View.GONE);
       continue;
       label1650: i = ((Dvc)this.roomBusiness.listviewDvcVos.get(paramInt)).getType();
       int j = ((Dvc)this.roomBusiness.listviewDvcVos.get(paramInt)).getmIndex();
@@ -829,10 +829,10 @@ public class RoomFragment extends MyBaseFt
         default:
           break;
         case 13:
-          this.brtBar.setVisibility(8);
-          this.twoBtnsLl.setVisibility(8);
-          this.threeBtnsLl.setVisibility(8);
-          this.hsvColor.setVisibility(8);
+          this.brtBar.setVisibility(View.GONE);
+          this.twoBtnsLl.setVisibility(View.GONE);
+          this.threeBtnsLl.setVisibility(View.GONE);
+          this.hsvColor.setVisibility(View.GONE);
           break;
         case 14:
         case 21:
@@ -842,10 +842,10 @@ public class RoomFragment extends MyBaseFt
         case 18:
         }
       }
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       Intent localIntent2 = new Intent(AtMain.instance, AtFragmentMaster.class);
       localIntent2.putExtra("AtTypeKey", "AtTypeSensor");
       localIntent2.putExtra("DIndexKey", this.seletedDvc.getmIndex());
@@ -858,17 +858,17 @@ public class RoomFragment extends MyBaseFt
         Toast.makeText(AtMain.instance, getString(2131100209), 0).show();
         return;
       }
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       this.roomBusiness.putData("dvcInRoom", this.seletedDvc);
       startActivity(new Intent(AtMain.instance, AtYaokongActivity.class));
       continue;
-      this.brtBar.setVisibility(8);
-      this.twoBtnsLl.setVisibility(8);
-      this.threeBtnsLl.setVisibility(8);
-      this.hsvColor.setVisibility(8);
+      this.brtBar.setVisibility(View.GONE);
+      this.twoBtnsLl.setVisibility(View.GONE);
+      this.threeBtnsLl.setVisibility(View.GONE);
+      this.hsvColor.setVisibility(View.GONE);
       Intent localIntent1 = new Intent(AtMain.instance, AtFragmentMaster.class);
       localIntent1.putExtra("AtTypeKey", "AtTypePanel");
       localIntent1.putExtra("DIndexKey", this.seletedDvc.getmIndex());
@@ -971,7 +971,7 @@ public class RoomFragment extends MyBaseFt
         i1 = 1;
         label65: if ((i1 | n) == 0)
           break label135;
-        this.hidepickerview.setVisibility(0);
+        this.hidepickerview.setVisibility(View.VISIBLE);
         this.ivMode.setImageResource(2130903488);
         this.ivMusic.setImageResource(2130903495);
         this.ivDiy.setImageResource(2130903218);
@@ -997,7 +997,7 @@ public class RoomFragment extends MyBaseFt
         }
       });
       return true;
-      this.hidepickerview.setVisibility(8);
+      this.hidepickerview.setVisibility(View.GONE);
       this.ivMode.setImageResource(2130903487);
       this.ivMusic.setImageResource(2130903494);
       this.ivDiy.setImageResource(2130903217);
@@ -1006,7 +1006,7 @@ public class RoomFragment extends MyBaseFt
 
   private void hideViewAnimaion(View paramView)
   {
-    paramView.setVisibility(8);
+    paramView.setVisibility(View.GONE);
   }
 
   private void init()
@@ -1092,7 +1092,7 @@ public class RoomFragment extends MyBaseFt
     {
       public void onClick(View paramView)
       {
-        RoomFragment.this.rlGvGroupParent.setVisibility(8);
+        RoomFragment.this.rlGvGroupParent.setVisibility(View.GONE);
         RoomFragment.this.isGroupLayoutShow = false;
         RoomFragment.this.mainPullRefreshView.setCanRefresh(true);
         RoomFragment.this.isGroupShow = false;
@@ -1114,8 +1114,8 @@ public class RoomFragment extends MyBaseFt
     });
     if (this.roomBusiness.dvcVos.size() == 0)
     {
-      this.btAddDevice.setVisibility(0);
-      this.deviceTitleBar.setVisibility(8);
+      this.btAddDevice.setVisibility(View.VISIBLE);
+      this.deviceTitleBar.setVisibility(View.GONE);
     }
     while (true)
     {
@@ -1276,7 +1276,7 @@ public class RoomFragment extends MyBaseFt
           if (RoomFragment.this.roomBusiness.isGroupInnerDvcDragOk())
           {
             RoomFragment.access$502(RoomFragment.this, -1);
-            RoomFragment.this.rlGvGroupParent.setVisibility(8);
+            RoomFragment.this.rlGvGroupParent.setVisibility(View.GONE);
             RoomFragment.this.isGroupLayoutShow = false;
             RoomFragment.this.mainPullRefreshView.setCanRefresh(true);
             RoomFragment.this.isGroupShow = false;
@@ -1394,7 +1394,7 @@ public class RoomFragment extends MyBaseFt
         public void onClick(View paramView)
         {
           RoomFragment.access$502(RoomFragment.this, -1);
-          RoomFragment.this.rlGvGroupParent.setVisibility(8);
+          RoomFragment.this.rlGvGroupParent.setVisibility(View.GONE);
           RoomFragment.this.isGroupLayoutShow = false;
           RoomFragment.this.mainPullRefreshView.setCanRefresh(true);
           RoomFragment.this.isGroupShow = false;
@@ -1502,7 +1502,7 @@ public class RoomFragment extends MyBaseFt
         }
       });
       return;
-      this.deviceTitleBar.setVisibility(0);
+      this.deviceTitleBar.setVisibility(View.VISIBLE);
     }
   }
 
@@ -1570,7 +1570,7 @@ public class RoomFragment extends MyBaseFt
                     Dvc localDvc = RoomFragment.this.roomBusiness.checkSumDeviceInfo(str, 1 + RoomFragment.this.roomIndex, RoomFragment.this.curGetDeviceType);
                     if (localDvc == null)
                       continue;
-                    RoomFragment.this.btAddDevice.setVisibility(8);
+                    RoomFragment.this.btAddDevice.setVisibility(View.GONE);
                     System.out.println(RoomFragment.this.testLoopDevice + "   Dvc   ok     (mIndex) = " + i);
                     RoomFragment.this.exitsDeviceIndexs.add(Integer.valueOf(i));
                     RoomFragment.this.roomBusiness.responseMessage(str.substring(4, 6), "23");
@@ -1578,7 +1578,7 @@ public class RoomFragment extends MyBaseFt
                     RoomFragment.this.groupAdapter.notifyDataSetChanged();
                     RoomFragment.this.roomBusiness.checkGroupStatus();
                     RoomFragment.this.devicGridAdapter.notifyDataSetChanged();
-                    RoomFragment.this.view.findViewById(2131559248).setVisibility(8);
+                    RoomFragment.this.view.findViewById(2131559248).setVisibility(View.GONE);
                     RoomFragment.this.mcDeviceIndexs.remove(0);
                     RoomFragment.this.loopGetDeviceInfo();
                     if (RoomFragment.this.mcDeviceIndexs.size() != 0)
@@ -1675,7 +1675,7 @@ public class RoomFragment extends MyBaseFt
         RoomFragment.this.groupAdapter.notifyDataSetChanged();
         RoomFragment.this.roomBusiness.checkGroupStatus();
         RoomFragment.this.devicGridAdapter.notifyDataSetChanged();
-        RoomFragment.this.btAddDevice.setVisibility(8);
+        RoomFragment.this.btAddDevice.setVisibility(View.GONE);
       }
 
       public void onTimeOut()
@@ -1794,13 +1794,13 @@ public class RoomFragment extends MyBaseFt
       bool4 = bool1;
       if ((bool3 | bool4))
       {
-        this.brtBar.setVisibility(0);
+        this.brtBar.setVisibility(View.VISIBLE);
         this.llRgbwBar.setVisibility(i);
       }
       if (this.seletedDvc.getType() == 12)
       {
         this.brtBar.setVisibility(i);
-        this.llRgbwBar.setVisibility(0);
+        this.llRgbwBar.setVisibility(View.VISIBLE);
       }
       label153: RelativeLayout localRelativeLayout = this.threeBtnsLl;
       if (this.isShowColorView)
@@ -1833,7 +1833,7 @@ public class RoomFragment extends MyBaseFt
 
   private void showViewAnimaion(View paramView)
   {
-    paramView.setVisibility(0);
+    paramView.setVisibility(View.VISIBLE);
   }
 
   private void syncDeviceInfo(int paramInt1, int paramInt2)
@@ -2149,7 +2149,7 @@ public class RoomFragment extends MyBaseFt
     , 50L);
     label243: if (paramView == this.threeBtnsLlMode)
     {
-      if ((this.tvMode.getText().toString().equals(getString(2131100163))) && (this.seletedDvc.isOnLine()))
+      if ((this.tvMode.getText().toString().equals(getString(R.string.mode))) && (this.seletedDvc.isOnLine()))
       {
         Intent localIntent2 = new Intent(AtMain.instance, AtFragmentMaster.class);
         localIntent2.putExtra("DIndexKey", this.seletedDvc.getmIndex());
@@ -2395,7 +2395,7 @@ public class RoomFragment extends MyBaseFt
                     RoomFragment.this.groupAdapter.setDvcVos(((Dvc)RoomFragment.this.roomBusiness.dvcVos.get(RoomFragment.this.dvcClickPosi)).innerDvcVos);
                     if (((Dvc)RoomFragment.this.roomBusiness.dvcVos.get(RoomFragment.this.dvcClickPosi)).innerDvcVos.size() == 0)
                     {
-                      RoomFragment.this.rlGvGroupParent.setVisibility(8);
+                      RoomFragment.this.rlGvGroupParent.setVisibility(View.GONE);
                       RoomFragment.this.isGroupLayoutShow = false;
                       RoomFragment.access$502(RoomFragment.this, -1);
                       RoomFragment.this.mainPullRefreshView.setCanRefresh(true);
@@ -2436,7 +2436,7 @@ public class RoomFragment extends MyBaseFt
                   RoomFragment.this.groupAdapter.setDvcVos(((Dvc)RoomFragment.this.roomBusiness.dvcVos.get(RoomFragment.this.dvcClickPosi)).innerDvcVos);
                   if (((Dvc)RoomFragment.this.roomBusiness.dvcVos.get(RoomFragment.this.dvcClickPosi)).innerDvcVos.size() == 0)
                   {
-                    RoomFragment.this.rlGvGroupParent.setVisibility(8);
+                    RoomFragment.this.rlGvGroupParent.setVisibility(View.GONE);
                     RoomFragment.this.isGroupLayoutShow = false;
                     RoomFragment.access$502(RoomFragment.this, -1);
                     RoomFragment.this.mainPullRefreshView.setCanRefresh(true);
@@ -2859,7 +2859,7 @@ public class RoomFragment extends MyBaseFt
     try
     {
       if (this.roomBusiness.dvcVos.size() > 0)
-        this.btAddDevice.setVisibility(8);
+        this.btAddDevice.setVisibility(View.GONE);
       this.roomBusiness.checkGroupStatus();
       this.devicGridAdapter.notifyDataSetChanged();
       this.deviceListAdapter.notifyDataSetChanged();
@@ -2870,7 +2870,7 @@ public class RoomFragment extends MyBaseFt
       while (true)
         try
         {
-          this.btAddDevice.setVisibility(8);
+          this.btAddDevice.setVisibility(View.GONE);
         }
         catch (Exception localException2)
         {
@@ -2890,7 +2890,7 @@ public class RoomFragment extends MyBaseFt
 
     public void run()
     {
-      this.view.setVisibility(8);
+      this.view.setVisibility(View.GONE);
     }
   }
 

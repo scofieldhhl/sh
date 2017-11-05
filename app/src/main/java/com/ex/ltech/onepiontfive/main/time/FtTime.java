@@ -440,7 +440,7 @@ public class FtTime extends MyBaseFt
         public void create(SwipeMenu paramSwipeMenu)
         {
           SwipeMenuItem localSwipeMenuItem1 = new SwipeMenuItem(FtTime.this.getActivity());
-          localSwipeMenuItem1.setBackground(new ColorDrawable(FtTime.this.getResources().getColor(2131492980)));
+          localSwipeMenuItem1.setBackground(new ColorDrawable(FtTime.this.getResources().getColor(R.color.progress_gray)));
           localSwipeMenuItem1.setWidth(BitmapUtils.dp2px(FtTime.this.getActivity(), 45.0F));
           localSwipeMenuItem1.setIcon(2130903240);
           localSwipeMenuItem1.setTitleColor(-1);

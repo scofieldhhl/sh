@@ -280,7 +280,7 @@ public class AtAirConActivity extends AtBaseYk
       continue;
       this.kkACManager = new KKACManagerV2((IrData)((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).irDatas.get(0));
       this.kkACManager.setACStateV2FromString(((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).acState);
-      setSettingText(2131100063, -1);
+      setSettingText(R.string.finish, -1);
       initACPannel();
     }
   }
@@ -366,10 +366,10 @@ public class AtAirConActivity extends AtBaseYk
     if (this.kkACManager.getPowerState() == 1)
     {
       this.wendu.setText("NA");
-      this.rlOff.setVisibility(0);
+      this.rlOff.setVisibility(View.VISIBLE);
       return;
     }
-    this.rlOff.setVisibility(8);
+    this.rlOff.setVisibility(View.GONE);
     updateTemptures();
     updateWindSpeed();
     updateWindDirectType();
@@ -401,26 +401,26 @@ public class AtAirConActivity extends AtBaseYk
     default:
       return;
     case 1:
-      this.sao_feng.setVisibility(0);
-      this.orientation.setVisibility(8);
+      this.sao_feng.setVisibility(View.VISIBLE);
+      this.orientation.setVisibility(View.GONE);
       this.tvOrientation.setText(2131099865);
       return;
     case 2:
-      this.sao_feng.setVisibility(8);
-      this.orientation.setVisibility(0);
+      this.sao_feng.setVisibility(View.GONE);
+      this.orientation.setVisibility(View.VISIBLE);
       this.tvOrientation.setText(2131099859);
       return;
     case 3:
     }
     if (i == 0)
     {
-      this.sao_feng.setVisibility(0);
-      this.orientation.setVisibility(8);
+      this.sao_feng.setVisibility(View.VISIBLE);
+      this.orientation.setVisibility(View.GONE);
       this.tvOrientation.setText(2131099865);
       return;
     }
-    this.sao_feng.setVisibility(8);
-    this.orientation.setVisibility(0);
+    this.sao_feng.setVisibility(View.GONE);
+    this.orientation.setVisibility(View.VISIBLE);
     this.tvOrientation.setText(2131099859);
   }
 
@@ -438,13 +438,13 @@ public class AtAirConActivity extends AtBaseYk
       default:
         return;
       case 1:
-        this.sao_feng.setVisibility(0);
-        this.orientation.setVisibility(8);
+        this.sao_feng.setVisibility(View.VISIBLE);
+        this.orientation.setVisibility(View.GONE);
         return;
       case 2:
         updateWindDirect();
-        this.sao_feng.setVisibility(8);
-        this.orientation.setVisibility(0);
+        this.sao_feng.setVisibility(View.GONE);
+        this.orientation.setVisibility(View.VISIBLE);
         return;
       case 3:
       }
@@ -593,9 +593,9 @@ public class AtAirConActivity extends AtBaseYk
       updateTemptures();
       updateWindSpeed();
       initACPannel();
-      if (((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).learnMap.get(getString(2131100163)) != null)
+      if (((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).learnMap.get(getString(R.string.mode)) != null)
       {
-        sendLearnedCmd((byte[])((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).learnMap.get(getString(2131100163)));
+        sendLearnedCmd((byte[])((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).learnMap.get(getString(R.string.mode)));
         return;
       }
       this.clickTime = (1 + this.clickTime);

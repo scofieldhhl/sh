@@ -34,8 +34,8 @@ public class AtAirRcSetActivity extends MyBaseActivity
   {
     super.onCreate(paramBundle);
     setContentView(2130968708);
-    findViewById(2131558540).setVisibility(8);
-    findViewById(2131559048).setVisibility(8);
+    findViewById(2131558540).setVisibility(View.GONE);
+    findViewById(2131559048).setVisibility(View.GONE);
     this.yaokongName = ((TextView)findViewById(2131559046));
     this.swich = ((ToggleButton)findViewById(2131559047));
     this.mode = ((TextView)findViewById(2131558835));
@@ -47,12 +47,12 @@ public class AtAirRcSetActivity extends MyBaseActivity
       {
         if (paramBoolean)
         {
-          AtAirRcSetActivity.this.findViewById(2131558540).setVisibility(0);
-          AtAirRcSetActivity.this.findViewById(2131559048).setVisibility(0);
+          AtAirRcSetActivity.this.findViewById(2131558540).setVisibility(View.VISIBLE);
+          AtAirRcSetActivity.this.findViewById(2131559048).setVisibility(View.VISIBLE);
           return;
         }
-        AtAirRcSetActivity.this.findViewById(2131558540).setVisibility(8);
-        AtAirRcSetActivity.this.findViewById(2131559048).setVisibility(8);
+        AtAirRcSetActivity.this.findViewById(2131558540).setVisibility(View.GONE);
+        AtAirRcSetActivity.this.findViewById(2131559048).setVisibility(View.GONE);
       }
     });
     if (this.opType.equals("OP_AT_TYPE_CREATE"))
@@ -150,7 +150,7 @@ public class AtAirRcSetActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.rcName);
     setEditTextRes(2131100358, getResources().getColor(2131492897));
   }

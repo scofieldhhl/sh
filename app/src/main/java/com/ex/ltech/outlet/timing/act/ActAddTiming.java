@@ -157,14 +157,14 @@ public class ActAddTiming extends MyBaseActivity
           this.tv_act_outlet_add_timing_mode_status.setText(this.vo.getModeName());
           if (this.vo.getType() == 1)
           {
-            this.tv_act_outlet_add_timing_mode_status.setVisibility(8);
-            this.cv_act_outlet_add_timing_mode.setVisibility(0);
+            this.tv_act_outlet_add_timing_mode_status.setVisibility(View.GONE);
+            this.cv_act_outlet_add_timing_mode.setVisibility(View.VISIBLE);
             this.cv_act_outlet_add_timing_mode.setColor(this.vo.getColor());
           }
           if (this.vo.getType() == 0)
           {
-            this.cv_act_outlet_add_timing_mode.setVisibility(8);
-            this.tv_act_outlet_add_timing_mode_status.setVisibility(0);
+            this.cv_act_outlet_add_timing_mode.setVisibility(View.GONE);
+            this.tv_act_outlet_add_timing_mode_status.setVisibility(View.VISIBLE);
           }
           if (this.vo.isOffDevice())
             break label487;
@@ -202,7 +202,7 @@ public class ActAddTiming extends MyBaseActivity
             localMyTimePickerView2.setSelected(Integer.parseInt(str4));
             this.vo = new TimingVo();
             ArrayList localArrayList = new ArrayList();
-            localArrayList.add(getString(2131100239));
+            localArrayList.add(getString(R.string.once));
             this.vo.setShotNameDays(localArrayList);
             this.vo.setSwich(true);
             open(null);
@@ -271,9 +271,9 @@ public class ActAddTiming extends MyBaseActivity
 
   public void close(View paramView)
   {
-    findViewById(2131558590).setVisibility(8);
+    findViewById(2131558590).setVisibility(View.GONE);
     this.vo.setType(2);
-    this.lightStatus = getString(2131100229);
+    this.lightStatus = getString(R.string.off_device);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -311,13 +311,13 @@ public class ActAddTiming extends MyBaseActivity
     {
       if (this.vo.getType() == 1)
       {
-        this.tv_act_outlet_add_timing_mode_status.setVisibility(8);
-        this.cv_act_outlet_add_timing_mode.setVisibility(0);
+        this.tv_act_outlet_add_timing_mode_status.setVisibility(View.GONE);
+        this.cv_act_outlet_add_timing_mode.setVisibility(View.VISIBLE);
       }
       if (this.vo.getType() == 0)
       {
-        this.cv_act_outlet_add_timing_mode.setVisibility(8);
-        this.tv_act_outlet_add_timing_mode_status.setVisibility(0);
+        this.cv_act_outlet_add_timing_mode.setVisibility(View.GONE);
+        this.tv_act_outlet_add_timing_mode_status.setVisibility(View.VISIBLE);
       }
       this.tv_act_outlet_add_timing_mode_status.setText(str1);
       return;
@@ -443,15 +443,15 @@ public class ActAddTiming extends MyBaseActivity
 
   public void open(View paramView)
   {
-    findViewById(2131558590).setVisibility(0);
-    this.lightStatus = getString(2131100232);
+    findViewById(2131558590).setVisibility(View.VISIBLE);
+    this.lightStatus = getString(R.string.on);
   }
 
   public void setTitleView()
   {
     setViewTitle();
     setMenuBackgroundRes(2130903623);
-    setTiTleTextRes(2131099856);
+    setTiTleTextRes(R.mipmap.add_timing);
     setEditTextRes(2131100530, getResources().getColor(2131492964));
   }
 }

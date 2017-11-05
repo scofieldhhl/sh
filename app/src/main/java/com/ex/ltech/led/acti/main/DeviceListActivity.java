@@ -70,8 +70,7 @@ import io.xlink.wifi.sdk.listener.SendPipeListener;
 import io.xlink.wifi.sdk.listener.SetDeviceAccessKeyListener;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
 
-public class DeviceListActivity extends MasterActionBarActivity
-        implements View.OnClickListener {
+public class DeviceListActivity extends MasterActionBarActivity implements View.OnClickListener {
     public static String deviceMacAddress = "";
     public static String devicePid = "";
     public static String dname;

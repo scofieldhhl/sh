@@ -90,9 +90,9 @@ public class TimingListAdapter extends BaseAdapter
     if (localTimingVo.isSwich())
     {
       localHolder.tb_act_timing_swich.setToggleOn();
-      if (!localTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!localTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label445;
-      localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100232));
+      localHolder.tv_act_timing_swich_status.setText(this.pct.getString(R.string.on));
       label335: localHolder.tb_act_timing_swich.setOnToggleChangedInListView(new ToggleButton.OnToggleChangedInListView()
       {
         public void onToggleInListView(boolean paramBoolean, int paramInt)
@@ -103,8 +103,8 @@ public class TimingListAdapter extends BaseAdapter
       System.out.println("fleshSpaceTime" + (System.currentTimeMillis() - this.fleshSpaceTime));
       if (localTimingVo.getColor() == 0)
         break label465;
-      localHolder.csv_act_timing.setVisibility(0);
-      localHolder.tv_act_timing_mode.setVisibility(8);
+      localHolder.csv_act_timing.setVisibility(View.VISIBLE);
+      localHolder.tv_act_timing_mode.setVisibility(View.GONE);
       localHolder.csv_act_timing.setColor(localTimingVo.getColor());
     }
     while (true)
@@ -115,8 +115,8 @@ public class TimingListAdapter extends BaseAdapter
       break;
       label445: localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100226));
       break label335;
-      label465: localHolder.tv_act_timing_mode.setVisibility(0);
-      localHolder.csv_act_timing.setVisibility(8);
+      label465: localHolder.tv_act_timing_mode.setVisibility(View.VISIBLE);
+      localHolder.csv_act_timing.setVisibility(View.GONE);
       if (!localTimingVo.isOffDevice())
         localHolder.tv_act_timing_mode.setText(localTimingVo.getModeName());
       System.out.println("");

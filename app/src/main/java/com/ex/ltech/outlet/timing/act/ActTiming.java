@@ -170,7 +170,7 @@ public class ActTiming extends MyBaseActivity
         case 0:
           if (((TimingVo)ActTiming.this.vos.get(paramInt1)).isOther())
           {
-            ActTiming.this.toast(2131100210);
+            ActTiming.this.toast(R.string.no_edit_other);
             return false;
           }
           ActTiming.this.bussines.isCreateNewTime = false;
@@ -188,7 +188,7 @@ public class ActTiming extends MyBaseActivity
           return false;
         case 1:
         }
-        ProgressDialog localProgressDialog = ProgressDialog.show(ActTiming.this, "", ActTiming.this.getString(2131100075), false);
+        ProgressDialog localProgressDialog = ProgressDialog.show(ActTiming.this, "", ActTiming.this.getString(R.string.get_d_info), false);
         localProgressDialog.setCancelable(true);
         localProgressDialog.show();
         ActTiming.this.bussines.delTimingItem(ActTiming.this.vos, paramInt1);
@@ -196,7 +196,7 @@ public class ActTiming extends MyBaseActivity
         {
           public void onSendFailde()
           {
-            ActTiming.this.toast(2131099854);
+            ActTiming.this.toast(R.string.add_time_no_ok);
             this.val$dialog.dismiss();
             ActTiming.this.bussines.setSendCmdListener(null);
           }
@@ -208,7 +208,7 @@ public class ActTiming extends MyBaseActivity
             ActTiming.this.bussines.reSortTimingData(ActTiming.this.vos);
             ActTiming.this.adt.notifyDataSetChanged();
             this.val$dialog.dismiss();
-            ActTiming.this.toast(2131100431);
+            ActTiming.this.toast(R.string.time_ctrl_ok);
             ActTiming.this.bussines.setSendCmdListener(null);
           }
         });
@@ -245,7 +245,7 @@ public class ActTiming extends MyBaseActivity
       {
         public void onSendFailde()
         {
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
         }
 
@@ -259,7 +259,7 @@ public class ActTiming extends MyBaseActivity
             com.ex.ltech.outlet.timing.TimingData.getInstance(ActTiming.this).saveTimingVos2Sd(ActTiming.this.vos);
             ActTiming.this.adt.notifyDataSetChanged();
             this.val$dialog.dismiss();
-            ActTiming.this.toast(2131100431);
+            ActTiming.this.toast(R.string.time_ctrl_ok);
             ActTiming.this.bussines.setSendCmdListener(null);
             return;
             ActTiming.this.vos.remove(ActTiming.this.itemPosition);
@@ -299,12 +299,12 @@ public class ActTiming extends MyBaseActivity
       this.itemPosition = -1;
       return;
     }
-    toast(2131100429);
+    toast(R.string.ten_timing);
   }
 
   public void onListVSwichChange(boolean paramBoolean, int paramInt)
   {
-    ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(2131100075), false);
+    ProgressDialog localProgressDialog = ProgressDialog.show(this, "", getString(R.string.get_d_info), false);
     System.out.println("onListVSwichChange        " + paramInt);
     TimingVo localTimingVo = (TimingVo)this.vos.get(paramInt);
     localTimingVo.setSwich(paramBoolean);
@@ -321,7 +321,7 @@ public class ActTiming extends MyBaseActivity
           localTimingVo.setSwich(bool);
           ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
           ActTiming.this.adt.notifyDataSetChanged();
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
           return;
         }
@@ -332,7 +332,7 @@ public class ActTiming extends MyBaseActivity
         ((TimingVo)ActTiming.this.vos.get(this.val$posi)).setSwich(this.val$on);
         ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
         this.val$dialog.dismiss();
-        ActTiming.this.toast(2131100431);
+        ActTiming.this.toast(R.string.time_ctrl_ok);
         ActTiming.this.bussines.setSendCmdListener(null);
       }
     });
@@ -357,7 +357,7 @@ public class ActTiming extends MyBaseActivity
 
   public void sendTimeOut()
   {
-    Toast.makeText(this, getString(2131099854), 0).show();
+    Toast.makeText(this, getString(R.string.add_time_no_ok), 0).show();
     if (this.getTimeDialog.isShowing())
       this.getTimeDialog.dismiss();
   }

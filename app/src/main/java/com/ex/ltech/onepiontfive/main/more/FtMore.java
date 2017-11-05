@@ -123,7 +123,7 @@ public class FtMore extends MyBaseFt
         if (paramBoolean)
         {
           FtMore.this.isUpdataIng = true;
-          FtMore.this.rl_load.setVisibility(0);
+          FtMore.this.rl_load.setVisibility(View.VISIBLE);
           FtMore localFtMore = FtMore.this;
           FragmentActivity localFragmentActivity = FtMore.this.getActivity();
           DeviceManage.getInstance();
@@ -133,14 +133,14 @@ public class FtMore extends MyBaseFt
             public void failed()
             {
               FtMore.this.isUpdataIng = false;
-              FtMore.this.rl_load.setVisibility(8);
+              FtMore.this.rl_load.setVisibility(View.GONE);
               FtMore.this.synProgram2Device.close();
-              FtMore.this.view.findViewById(2131558798).setVisibility(0);
+              FtMore.this.view.findViewById(2131558798).setVisibility(View.VISIBLE);
               FtMore.this.view.findViewById(2131558799).setOnClickListener(new View.OnClickListener()
               {
                 public void onClick(View paramView)
                 {
-                  FtMore.this.view.findViewById(2131558798).setVisibility(8);
+                  FtMore.this.view.findViewById(2131558798).setVisibility(View.GONE);
                   FtMore.this.getActivity().finish();
                 }
               });
@@ -154,15 +154,15 @@ public class FtMore extends MyBaseFt
                 public void failed()
                 {
                   FtMore.this.isUpdataIng = false;
-                  FtMore.this.rl_load.setVisibility(8);
-                  FtMore.this.view.findViewById(2131558798).setVisibility(0);
+                  FtMore.this.rl_load.setVisibility(View.GONE);
+                  FtMore.this.view.findViewById(2131558798).setVisibility(View.VISIBLE);
                   FtMore.this.synProgram2Device.close();
-                  FtMore.this.view.findViewById(2131558798).setVisibility(0);
+                  FtMore.this.view.findViewById(2131558798).setVisibility(View.VISIBLE);
                   FtMore.this.view.findViewById(2131558799).setOnClickListener(new View.OnClickListener()
                   {
                     public void onClick(View paramView)
                     {
-                      FtMore.this.view.findViewById(2131558798).setVisibility(8);
+                      FtMore.this.view.findViewById(2131558798).setVisibility(View.GONE);
                       FtMore.this.getActivity().finish();
                     }
                   });
@@ -171,8 +171,8 @@ public class FtMore extends MyBaseFt
                 public void ok()
                 {
                   FtMore.this.isUpdataIng = false;
-                  FtMore.this.rl_load.setVisibility(8);
-                  FtMore.this.view.findViewById(2131558802).setVisibility(0);
+                  FtMore.this.rl_load.setVisibility(View.GONE);
+                  FtMore.this.view.findViewById(2131558802).setVisibility(View.VISIBLE);
                   new Handler()
                   {
                   }
@@ -180,7 +180,7 @@ public class FtMore extends MyBaseFt
                   {
                     public void run()
                     {
-                      FtMore.this.view.findViewById(2131558802).setVisibility(8);
+                      FtMore.this.view.findViewById(2131558802).setVisibility(View.GONE);
                       FtMore.this.synProgram2Device.close();
                       FtMore.this.getActivity().finish();
                     }

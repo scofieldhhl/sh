@@ -70,7 +70,7 @@ public class TimingRoomListAdapter extends BaseExpandableListAdapter
       paramView.setTag(localItemHolder);
       localRoomLvChildVo = (RoomLvChildVo)((Room)this.home.getRooms().get(paramInt1)).getExpandableLvInnerItemVos().get(paramInt2);
       localItemHolder.name.setText(localRoomLvChildVo.getInnerDeviceName());
-      localItemHolder.name.setVisibility(0);
+      localItemHolder.name.setVisibility(View.VISIBLE);
       localTextView = localItemHolder.bt_d_seleted;
       if (!localRoomLvChildVo.isSeted())
         break label316;

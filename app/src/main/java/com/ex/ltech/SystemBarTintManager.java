@@ -4,22 +4,19 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.content.res.Resources.Theme;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.os.Build.VERSION;
+import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
-import android.view.Display;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.WindowManager.LayoutParams;
-import android.widget.FrameLayout.LayoutParams;
+import android.widget.FrameLayout;
+
 import java.lang.reflect.Method;
 
 public class SystemBarTintManager
@@ -94,7 +91,7 @@ public class SystemBarTintManager
     {
       this.mNavBarTintView.setLayoutParams(localLayoutParams);
       this.mNavBarTintView.setBackgroundColor(-1728053248);
-      this.mNavBarTintView.setVisibility(8);
+      this.mNavBarTintView.setVisibility(View.GONE);
       paramViewGroup.addView(this.mNavBarTintView);
       return;
       localLayoutParams = new FrameLayout.LayoutParams(this.mConfig.getNavigationBarWidth(), -1);
@@ -110,7 +107,7 @@ public class SystemBarTintManager
       localLayoutParams.rightMargin = this.mConfig.getNavigationBarWidth();
     this.mStatusBarTintView.setLayoutParams(localLayoutParams);
     this.mStatusBarTintView.setBackgroundColor(-1728053248);
-    this.mStatusBarTintView.setVisibility(8);
+    this.mStatusBarTintView.setVisibility(View.GONE);
     paramViewGroup.addView(this.mStatusBarTintView);
   }
 

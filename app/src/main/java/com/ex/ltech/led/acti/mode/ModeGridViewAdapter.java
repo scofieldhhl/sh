@@ -97,7 +97,7 @@ public class ModeGridViewAdapter extends BaseAdapter
         return paramView;
         localHolder = (Holder)paramView.getTag();
         break;
-        localHolder.iv_acti_scene_list_item_4.setVisibility(0);
+        localHolder.iv_acti_scene_list_item_4.setVisibility(View.VISIBLE);
         localHolder.iv_acti_scene_list_item_1.setBackgroundResource(localModeVo.getIvLeftRes());
         localHolder.tv_acti_scene_list_item_2.setText(localModeVo.getTvName());
         ImageView localImageView2 = localHolder.iv_acti_scene_list_item_4;
@@ -118,12 +118,12 @@ public class ModeGridViewAdapter extends BaseAdapter
         }
         localHolder.iv_acti_scene_list_item_1.setBackgroundResource(2130903702);
         localHolder.tv_acti_scene_list_item_2.setText("");
-        localHolder.iv_acti_scene_list_item_4.setVisibility(8);
+        localHolder.iv_acti_scene_list_item_4.setVisibility(View.GONE);
         paramView.setBackgroundColor(this.pct.getResources().getColor(2131492997));
       }
     case 3:
     }
-    localHolder.iv_acti_scene_list_item_4.setVisibility(0);
+    localHolder.iv_acti_scene_list_item_4.setVisibility(View.VISIBLE);
     localHolder.tv_acti_scene_list_item_2.setText(localModeVo.getNewCreateModeName());
     localHolder.iv_acti_scene_list_item_5.setImageBitmap((Bitmap)this.bms.get(paramInt));
     ImageView localImageView1 = localHolder.iv_acti_scene_list_item_4;

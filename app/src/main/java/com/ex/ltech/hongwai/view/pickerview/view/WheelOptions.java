@@ -127,9 +127,9 @@ public class WheelOptions<T>
     this.wv_option2.setTextSize(20);
     this.wv_option3.setTextSize(20);
     if (this.mOptions2Items == null)
-      this.wv_option2.setVisibility(8);
+      this.wv_option2.setVisibility(View.GONE);
     if (this.mOptions3Items == null)
-      this.wv_option3.setVisibility(8);
+      this.wv_option3.setVisibility(View.GONE);
     this.wheelListener_option1 = new OnItemSelectedListener()
     {
       public void onItemSelected(int paramInt)

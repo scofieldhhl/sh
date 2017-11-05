@@ -196,7 +196,7 @@ public class FtGeoFencing extends MyBaseFt
     int j;
     if ((this.goHomeGeoSpaceVo.getLat() != 0.0D) && (this.goHomeGeoSpaceVo.getLng() != 0.0D) && (this.goHomeGeoSpaceVo.getRepeatDayVos() != null) && (this.goHomeGeoSpaceVo.getTouchSceneIndex() != -1))
     {
-      this.btn_home_on_off.setVisibility(0);
+      this.btn_home_on_off.setVisibility(View.VISIBLE);
       Button localButton2 = this.btn_home_on_off;
       if (this.goHomeGeoSpaceVo.isStart())
       {
@@ -208,7 +208,7 @@ public class FtGeoFencing extends MyBaseFt
     {
       if ((this.outHomeGeoSpaceVo.getLat() == 0.0D) || (this.outHomeGeoSpaceVo.getLng() == 0.0D) || (this.outHomeGeoSpaceVo.getRepeatDayVos() == null) || (this.outHomeGeoSpaceVo.getTouchSceneIndex() == -1))
         break label176;
-      this.btn_leave_home_on_off.setVisibility(0);
+      this.btn_leave_home_on_off.setVisibility(View.VISIBLE);
       Button localButton1 = this.btn_leave_home_on_off;
       if (this.outHomeGeoSpaceVo.isStart())
         i = 2131100412;
@@ -216,9 +216,9 @@ public class FtGeoFencing extends MyBaseFt
       return;
       j = i;
       break;
-      this.btn_home_on_off.setVisibility(8);
+      this.btn_home_on_off.setVisibility(View.GONE);
     }
-    label176: this.btn_leave_home_on_off.setVisibility(8);
+    label176: this.btn_leave_home_on_off.setVisibility(View.GONE);
   }
 
   private void showDetail()

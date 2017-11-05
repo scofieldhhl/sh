@@ -82,7 +82,7 @@ public class FtSensorInfo extends MyBaseFt
       }
     });
     if (this.business.getSmartScenes().smartScenes.size() > 0)
-      paramSwipeMenuListView.setVisibility(0);
+      paramSwipeMenuListView.setVisibility(View.VISIBLE);
     paramSwipeMenuListView.setDividerHeight(0);
     3 local3 = new BaseAdapter()
     {

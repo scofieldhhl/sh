@@ -234,8 +234,8 @@ public class FtScene extends MyBaseFt
       {
         public void run()
         {
-          FtScene.this.ivNoListIc.setVisibility(8);
-          FtScene.this.tvNoListIc.setVisibility(8);
+          FtScene.this.ivNoListIc.setVisibility(View.GONE);
+          FtScene.this.tvNoListIc.setVisibility(View.GONE);
           FtScene.this.adapter.notifyDataSetChanged();
         }
       };
@@ -329,13 +329,13 @@ public class FtScene extends MyBaseFt
     {
       if (this.business.getSmartScenes().smartScenes.size() > 0)
       {
-        this.ivNoListIc.setVisibility(8);
-        this.tvNoListIc.setVisibility(8);
+        this.ivNoListIc.setVisibility(View.GONE);
+        this.tvNoListIc.setVisibility(View.GONE);
       }
       this.business.reSortScenes();
       return;
     }
-    this.lv.setVisibility(8);
+    this.lv.setVisibility(View.GONE);
   }
 
   private void initView()
@@ -443,7 +443,7 @@ public class FtScene extends MyBaseFt
       public void create(SwipeMenu paramSwipeMenu)
       {
         SwipeMenuItem localSwipeMenuItem1 = new SwipeMenuItem(FtScene.this.getActivity());
-        localSwipeMenuItem1.setBackground(new ColorDrawable(FtScene.this.getResources().getColor(2131492980)));
+        localSwipeMenuItem1.setBackground(new ColorDrawable(FtScene.this.getResources().getColor(R.color.progress_gray)));
         localSwipeMenuItem1.setWidth(BitmapUtils.dp2px(FtScene.this.getActivity(), 40.0F));
         localSwipeMenuItem1.setIcon(2130903240);
         localSwipeMenuItem1.setTitleColor(-1);
@@ -594,12 +594,12 @@ public class FtScene extends MyBaseFt
         localScene = (Scene)FtScene.this.business.getSmartScenes().smartScenes.get(paramInt);
         if ((localScene.getCondition() != null) && (!localScene.getCondition().equals(FtScene.this.getString(2131100083))))
           break label464;
-        localItemHolder.ll_hand_touch.setVisibility(0);
-        localItemHolder.ll_sensor_touch.setVisibility(8);
+        localItemHolder.ll_hand_touch.setVisibility(View.VISIBLE);
+        localItemHolder.ll_sensor_touch.setVisibility(View.GONE);
         localItemHolder.ic.setBackgroundResource(2130903762);
         if (-1 + getCount() != paramInt)
           break label451;
-        localItemHolder.ll_hand_touch_bottom.setVisibility(0);
+        localItemHolder.ll_hand_touch_bottom.setVisibility(View.VISIBLE);
         label289: localItemHolder.swich.setListViewItemPosi(paramInt);
         localItemHolder.name.setText(localScene.getName());
         localItemHolder.name_hand_touch.setText(localScene.getName());
@@ -670,20 +670,20 @@ public class FtScene extends MyBaseFt
         }
         localItemHolder = (ItemHolder)paramView.getTag();
         break;
-        label451: localItemHolder.ll_hand_touch_bottom.setVisibility(8);
+        label451: localItemHolder.ll_hand_touch_bottom.setVisibility(View.GONE);
         break label289;
         label464: if (localScene.getCondition().equals(FtScene.this.getString(2131100045)))
         {
-          localItemHolder.ll_hand_touch.setVisibility(8);
-          localItemHolder.ll_sensor_touch.setVisibility(0);
+          localItemHolder.ll_hand_touch.setVisibility(View.GONE);
+          localItemHolder.ll_sensor_touch.setVisibility(View.VISIBLE);
           localItemHolder.ic.setBackgroundResource(2130903227);
-          localItemHolder.ll_hand_touch_bottom.setVisibility(8);
+          localItemHolder.ll_hand_touch_bottom.setVisibility(View.GONE);
           break label289;
         }
-        localItemHolder.ll_hand_touch.setVisibility(8);
-        localItemHolder.ll_sensor_touch.setVisibility(0);
+        localItemHolder.ll_hand_touch.setVisibility(View.GONE);
+        localItemHolder.ll_sensor_touch.setVisibility(View.VISIBLE);
         localItemHolder.ic.setBackgroundResource(2130903731);
-        localItemHolder.ll_hand_touch_bottom.setVisibility(8);
+        localItemHolder.ll_hand_touch_bottom.setVisibility(View.GONE);
         break label289;
         label568: localItemHolder.swich.setToggleOff();
       }

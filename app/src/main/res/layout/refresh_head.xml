@@ -1,12 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
-        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
-            <ImageView android:id="@id/pull_icon" android:background="@mipmap/pull_icon_big" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip" android:layout_centerVertical="true" />
-            <ImageView android:id="@id/refreshing_icon" android:background="@mipmap/refreshing" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip" android:layout_centerVertical="true" />
-            <TextView android:textSize="16.0sp" android:textColor="#ffbababa" android:id="@id/state_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pull_to_refresh" android:layout_centerInParent="true" />
-            <ImageView android:id="@id/state_iv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/state_tv" android:layout_centerVertical="true" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="20.0dip"
+        android:paddingTop="20.0dip">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@id/pull_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60.0dip"
+                android:background="@mipmap/pull_icon_big" />
+
+            <ImageView
+                android:id="@id/refreshing_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="60.0dip"
+                android:background="@mipmap/refreshing"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@id/state_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/pull_to_refresh"
+                android:textColor="#ffbababa"
+                android:textSize="16.0sp" />
+
+            <ImageView
+                android:id="@id/state_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8.0dip"
+                android:layout_toLeftOf="@id/state_tv"
+                android:visibility="gone" />
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

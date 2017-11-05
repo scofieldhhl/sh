@@ -136,7 +136,7 @@ public class AtRcDiyActivity extends YkAt
         {
           i = 0;
           localButton.setVisibility(i);
-          paramViewHolder.btDiy.setVisibility(0);
+          paramViewHolder.btDiy.setVisibility(View.VISIBLE);
           paramViewHolder.btDiy.setBackgroundResource(paramETKey.GetRes());
         }
       }
@@ -177,23 +177,23 @@ public class AtRcDiyActivity extends YkAt
           break label184;
         if (paramInt <= 2)
           break label174;
-        paramViewHolder.tv_under_line.setVisibility(0);
+        paramViewHolder.tv_under_line.setVisibility(View.VISIBLE);
         return;
         i = 8;
         break;
-        paramViewHolder.btEdit.setVisibility(8);
+        paramViewHolder.btEdit.setVisibility(View.GONE);
         paramViewHolder.btDiy.setOnLongClickListener(null);
         paramViewHolder.btDiy.setVisibility(4);
         paramViewHolder.btDiy.setOnClickListener(null);
       }
-      label174: paramViewHolder.tv_under_line.setVisibility(8);
+      label174: paramViewHolder.tv_under_line.setVisibility(View.GONE);
       return;
       label184: if (paramInt > 5)
       {
-        paramViewHolder.tv_under_line.setVisibility(0);
+        paramViewHolder.tv_under_line.setVisibility(View.VISIBLE);
         return;
       }
-      paramViewHolder.tv_under_line.setVisibility(8);
+      paramViewHolder.tv_under_line.setVisibility(View.GONE);
     }
 
     public int getCount()

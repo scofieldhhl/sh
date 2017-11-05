@@ -106,8 +106,8 @@ public class BoxFragment2 extends Fragment
 
     private void initializeViews(IrData.IrKey paramIrKey, ViewHolder paramViewHolder, int paramInt, View paramView)
     {
-      paramViewHolder.btDiy.setVisibility(0);
-      paramViewHolder.bt_image_text.setVisibility(8);
+      paramViewHolder.btDiy.setVisibility(View.VISIBLE);
+      paramViewHolder.bt_image_text.setVisibility(View.GONE);
       paramViewHolder.btDiy.setText(paramIrKey.fname);
       paramViewHolder.btDiy.setOnTouchListener(new BoxFragment2.MyOnTouchListener(BoxFragment2.this, paramViewHolder.btDiy));
       paramViewHolder.btDiy.setOnClickListener(new View.OnClickListener(paramIrKey)

@@ -113,7 +113,7 @@ public class SceneModeDialog extends BaseTipsDialog
         if ((!localCt1SceneVo.isEdit) && (SceneModeDialog.this.mSelectPosition == paramInt))
         {
           localViewHolder.edit.setBackgroundResource(2130903398);
-          localViewHolder.edit.setVisibility(0);
+          localViewHolder.edit.setVisibility(View.VISIBLE);
         }
         localViewHolder.name.setText(localCt1SceneVo.name);
         localViewHolder.customIc.setBackgroundResource(SceneModeDialog.this.reses[(paramInt % SceneModeDialog.this.reses.length)]);

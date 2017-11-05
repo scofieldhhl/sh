@@ -34,11 +34,11 @@ public class ItAtYkNSAdapter extends BaseAdapter
     System.out.println(localYkVo.toString() + "798987987978");
     if (localYkVo.isAdd())
     {
-      paramViewHolder.yaoKongStatus.setVisibility(8);
-      paramViewHolder.down_vertical_line.setVisibility(8);
+      paramViewHolder.yaoKongStatus.setVisibility(View.GONE);
+      paramViewHolder.down_vertical_line.setVisibility(View.GONE);
       paramViewHolder.icon.setImageResource(2130903753);
       paramViewHolder.yaoKongName.setText(2131099949);
-      paramViewHolder.time.setVisibility(8);
+      paramViewHolder.time.setVisibility(View.GONE);
       paramViewHolder.icon.setOnClickListener(new View.OnClickListener(paramInt)
       {
         public void onClick(View paramView)
@@ -55,15 +55,15 @@ public class ItAtYkNSAdapter extends BaseAdapter
       });
       return;
     }
-    paramViewHolder.yaoKongStatus.setVisibility(0);
-    paramViewHolder.down_vertical_line.setVisibility(0);
+    paramViewHolder.yaoKongStatus.setVisibility(View.VISIBLE);
+    paramViewHolder.down_vertical_line.setVisibility(View.VISIBLE);
     label171: String str;
     int i;
     if ((getCount() > 1) && (-2 + getCount() == paramInt))
     {
-      paramViewHolder.time.setVisibility(8);
+      paramViewHolder.time.setVisibility(View.GONE);
       paramViewHolder.yaoKongName.setText(localYkVo.getName());
-      paramViewHolder.time.setText(localYkVo.getSpaceTime() + ".0" + this.context.getString(2131100382));
+      paramViewHolder.time.setText(localYkVo.getSpaceTime() + ".0" + this.context.getString(R.string.sec));
       str = localYkVo.getType();
       i = -1;
       switch (str.hashCode())
@@ -93,7 +93,7 @@ public class ItAtYkNSAdapter extends BaseAdapter
     {
       paramViewHolder.yaoKongStatus.setText(localYkVo.getStatus());
       break;
-      paramViewHolder.time.setVisibility(0);
+      paramViewHolder.time.setVisibility(View.VISIBLE);
       break label171;
       if (!str.equals("air"))
         break label308;

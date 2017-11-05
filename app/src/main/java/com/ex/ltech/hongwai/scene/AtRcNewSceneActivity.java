@@ -96,7 +96,7 @@ public class AtRcNewSceneActivity extends YkAt
 
   public void cancelPic(View paramView)
   {
-    this.rlPhoto.setVisibility(8);
+    this.rlPhoto.setVisibility(View.GONE);
   }
 
   public void delName(View paramView)
@@ -107,7 +107,7 @@ public class AtRcNewSceneActivity extends YkAt
 
   public void okSecondOk(View paramView)
   {
-    this.rlSecond.setVisibility(8);
+    this.rlSecond.setVisibility(View.GONE);
     ((InnerRcVo)((SceneVo)this.sceneVos.sceneVos.get(this.sceneVoPosi)).innerRcVos.get(this.clickTimeItemPosi)).setSpaceTime(Integer.parseInt(this.tpSecond.getValue()));
     this.adt.notifyDataSetChanged();
   }
@@ -238,25 +238,25 @@ public class AtRcNewSceneActivity extends YkAt
     if (this.sceneVoPosi == 0)
     {
       this.tvYkNSName.setKeyListener(null);
-      findViewById(2131559054).setVisibility(8);
+      findViewById(2131559054).setVisibility(View.GONE);
       this.ivAtYkNewSceneBg2.setBackgroundResource(2130903560);
     }
     if (this.sceneVoPosi == 1)
     {
       this.tvYkNSName.setKeyListener(null);
-      findViewById(2131559054).setVisibility(8);
+      findViewById(2131559054).setVisibility(View.GONE);
       this.ivAtYkNewSceneBg2.setBackgroundResource(2130903647);
     }
     if (this.sceneVoPosi == 2)
     {
       this.tvYkNSName.setKeyListener(null);
-      findViewById(2131559054).setVisibility(8);
+      findViewById(2131559054).setVisibility(View.GONE);
       this.ivAtYkNewSceneBg2.setBackgroundResource(2130903649);
     }
     if (this.sceneVoPosi == 3)
     {
       this.tvYkNSName.setKeyListener(null);
-      findViewById(2131559054).setVisibility(8);
+      findViewById(2131559054).setVisibility(View.GONE);
       this.ivAtYkNewSceneBg2.setBackgroundResource(2130903648);
     }
     this.adt = new NewSceneAdapter(this, ((SceneVo)this.sceneVos.sceneVos.get(this.sceneVoPosi)).innerRcVos);
@@ -276,7 +276,7 @@ public class AtRcNewSceneActivity extends YkAt
     super.onEdit();
     if (((SceneVo)this.sceneVos.sceneVos.get(this.sceneVoPosi)).getInnerRcVos().size() == 1)
       return;
-    findViewById(2131559060).setVisibility(0);
+    findViewById(2131559060).setVisibility(View.VISIBLE);
     new Handler().postDelayed(new Runnable()
     {
       public void run()
@@ -407,7 +407,7 @@ public class AtRcNewSceneActivity extends YkAt
           public void on()
           {
             ((InnerRcVo)((SceneVo)AtRcNewSceneActivity.this.sceneVos.sceneVos.get(AtRcNewSceneActivity.this.sceneVoPosi)).innerRcVos.get(this.val$position)).nonIrDevice.irCt1Onoff = true;
-            ((InnerRcVo)((SceneVo)AtRcNewSceneActivity.this.sceneVos.sceneVos.get(AtRcNewSceneActivity.this.sceneVoPosi)).innerRcVos.get(this.val$position)).setStatus(AtRcNewSceneActivity.this.getString(2131100232));
+            ((InnerRcVo)((SceneVo)AtRcNewSceneActivity.this.sceneVos.sceneVos.get(AtRcNewSceneActivity.this.sceneVoPosi)).innerRcVos.get(this.val$position)).setStatus(AtRcNewSceneActivity.this.getString(R.string.on));
             AtRcNewSceneActivity.this.adt.notifyDataSetChanged();
           }
         });
@@ -470,12 +470,12 @@ public class AtRcNewSceneActivity extends YkAt
       localFile.mkdirs();
     this.currentFile = new File(localFile, System.currentTimeMillis() + ".jpg");
     Crop.pickImage(this);
-    this.rlPhoto.setVisibility(8);
+    this.rlPhoto.setVisibility(View.GONE);
   }
 
   public void seletedIc(View paramView)
   {
-    this.rlPhoto.setVisibility(0);
+    this.rlPhoto.setVisibility(View.VISIBLE);
   }
 
   public void setTitleView()
@@ -513,13 +513,13 @@ public class AtRcNewSceneActivity extends YkAt
   public void showSecond(int paramInt, String paramString)
   {
     this.clickTimeItemPosi = paramInt;
-    this.rlSecond.setVisibility(0);
+    this.rlSecond.setVisibility(View.VISIBLE);
     this.tpSecond.setSelected(paramString);
   }
 
   public void spaceTimeCancel(View paramView)
   {
-    this.rlSecond.setVisibility(8);
+    this.rlSecond.setVisibility(View.GONE);
   }
 
   public void takePhoto(View paramView)
@@ -531,7 +531,7 @@ public class AtRcNewSceneActivity extends YkAt
     Intent localIntent = new Intent("android.media.action.IMAGE_CAPTURE");
     localIntent.putExtra("output", Uri.fromFile(this.currentFile));
     startActivityForResult(localIntent, this.SHOT_REQ_CODE);
-    this.rlPhoto.setVisibility(8);
+    this.rlPhoto.setVisibility(View.GONE);
   }
 }
 

@@ -43,7 +43,7 @@ public class FtRoomList extends MyBaseFt
   {
     this.btnTitleViewMenu.setBackgroundResource(2130903274);
     this.tvTitleViewTitle.setText(2131099958);
-    this.tv_title_view_edit.setVisibility(0);
+    this.tv_title_view_edit.setVisibility(View.VISIBLE);
     this.tv_title_view_edit.setTextColor(-16777216);
     this.btnTitleViewMenu.setOnClickListener(new View.OnClickListener()
     {

@@ -19,11 +19,11 @@ public class MyAlertDialog16 extends AlertDialog
   {
     public void onClick(View paramView)
     {
-      MyAlertDialog16.this.selelted1.setVisibility(8);
-      MyAlertDialog16.this.selelted2.setVisibility(8);
-      MyAlertDialog16.this.selelted3.setVisibility(8);
-      MyAlertDialog16.this.selelted4.setVisibility(8);
-      MyAlertDialog16.this.selelted5.setVisibility(8);
+      MyAlertDialog16.this.selelted1.setVisibility(View.GONE);
+      MyAlertDialog16.this.selelted2.setVisibility(View.GONE);
+      MyAlertDialog16.this.selelted3.setVisibility(View.GONE);
+      MyAlertDialog16.this.selelted4.setVisibility(View.GONE);
+      MyAlertDialog16.this.selelted5.setVisibility(View.GONE);
       switch (paramView.getId())
       {
       default:
@@ -31,28 +31,28 @@ public class MyAlertDialog16 extends AlertDialog
       case 2131559071:
         if (MyAlertDialog16.this.myListener != null)
           MyAlertDialog16.this.myListener.onClick(0);
-        MyAlertDialog16.this.selelted1.setVisibility(0);
+        MyAlertDialog16.this.selelted1.setVisibility(View.VISIBLE);
         return;
       case 2131559072:
         if (MyAlertDialog16.this.myListener != null)
           MyAlertDialog16.this.myListener.onClick(1);
-        MyAlertDialog16.this.selelted2.setVisibility(0);
+        MyAlertDialog16.this.selelted2.setVisibility(View.VISIBLE);
         return;
       case 2131559073:
         if (MyAlertDialog16.this.myListener != null)
           MyAlertDialog16.this.myListener.onClick(2);
-        MyAlertDialog16.this.selelted3.setVisibility(0);
+        MyAlertDialog16.this.selelted3.setVisibility(View.VISIBLE);
         return;
       case 2131559074:
         if (MyAlertDialog16.this.myListener != null)
           MyAlertDialog16.this.myListener.onClick(3);
-        MyAlertDialog16.this.selelted4.setVisibility(0);
+        MyAlertDialog16.this.selelted4.setVisibility(View.VISIBLE);
         return;
       case 2131559075:
       }
       if (MyAlertDialog16.this.myListener != null)
         MyAlertDialog16.this.myListener.onClick(4);
-      MyAlertDialog16.this.selelted5.setVisibility(0);
+      MyAlertDialog16.this.selelted5.setVisibility(View.VISIBLE);
     }
   };
   private Context context;

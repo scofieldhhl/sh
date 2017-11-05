@@ -69,19 +69,19 @@ public class AddExecutiveTaskListAdapter extends BaseExpandableListAdapter
       localItemHolder.ic = ((ImageView)paramView.findViewById(2131558883));
       paramView.setTag(localItemHolder);
       localRoomLvChildVo = (RoomLvChildVo)((Room)this.home.getRooms().get(paramInt1)).getExpandableLvInnerItemVos().get(paramInt2);
-      localItemHolder.name.setVisibility(0);
+      localItemHolder.name.setVisibility(View.VISIBLE);
       localItemHolder.name.setText(localRoomLvChildVo.getInnerDeviceName());
-      localItemHolder.condition.setVisibility(8);
+      localItemHolder.condition.setVisibility(View.GONE);
       paramView.setOnClickListener(null);
       if (localRoomLvChildVo.getInnerItemType() == 21)
         break label447;
-      localItemHolder.status.setVisibility(8);
+      localItemHolder.status.setVisibility(View.GONE);
       TextView localTextView = localItemHolder.selected;
       if (localRoomLvChildVo.getInnerItemType() != 21)
         break label428;
       i = 8;
       label232: localTextView.setVisibility(i);
-      localItemHolder.icNext.setVisibility(8);
+      localItemHolder.icNext.setVisibility(View.GONE);
       localItemHolder.selected.setOnClickListener(new View.OnClickListener(paramInt1, paramInt2, localRoomLvChildVo)
       {
         public void onClick(View paramView)
@@ -149,14 +149,14 @@ public class AddExecutiveTaskListAdapter extends BaseExpandableListAdapter
       case 6:
       case 7:
       }
-    label447: localItemHolder.selected.setVisibility(8);
+    label447: localItemHolder.selected.setVisibility(View.GONE);
     if (localRoomLvChildVo.isSeted())
       localItemHolder.status.setText(localRoomLvChildVo.getInnerDeviceStatus());
     while (true)
     {
       if (localRoomLvChildVo.getYkVo() != null);
-      localItemHolder.status.setVisibility(0);
-      localItemHolder.icNext.setVisibility(0);
+      localItemHolder.status.setVisibility(View.VISIBLE);
+      localItemHolder.icNext.setVisibility(View.VISIBLE);
       paramView.setOnClickListener(new View.OnClickListener(paramInt1, paramInt2, localRoomLvChildVo)
       {
         public void onClick(View paramView)

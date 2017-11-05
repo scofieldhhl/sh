@@ -123,7 +123,7 @@ public class AtLamp extends MyBaseActivity
       public void onMySbBrightChange(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5)
       {
         AtLamp.this.off.setBackgroundResource(2130903599);
-        AtLamp.this.roomCoverLay.setVisibility(0);
+        AtLamp.this.roomCoverLay.setVisibility(View.VISIBLE);
         AtLamp.this.roomCoverLay.setBackgroundColor(Color.argb(80, paramInt2, paramInt3, paramInt4));
         AtLamp localAtLamp = AtLamp.this;
         localAtLamp.time = (1 + localAtLamp.time);
@@ -161,9 +161,9 @@ public class AtLamp extends MyBaseActivity
   {
     if (this.onOff)
     {
-      this.rlOff.setVisibility(8);
+      this.rlOff.setVisibility(View.GONE);
       SocketManager.instance().sendData(this.cmdDateBussiness.getColorCmd(209, 255, this.r, this.g, this.b, 255));
-      this.roomCoverLay.setVisibility(0);
+      this.roomCoverLay.setVisibility(View.VISIBLE);
       if (this.onOff)
         break label125;
     }
@@ -172,8 +172,8 @@ public class AtLamp extends MyBaseActivity
       this.onOff = bool;
       return;
       SocketManager.instance().sendData(this.cmdDateBussiness.getColorCmd(209, 0, this.r, this.g, this.b, 255));
-      this.roomCoverLay.setVisibility(8);
-      this.rlOff.setVisibility(0);
+      this.roomCoverLay.setVisibility(View.GONE);
+      this.rlOff.setVisibility(View.VISIBLE);
       break;
     }
   }

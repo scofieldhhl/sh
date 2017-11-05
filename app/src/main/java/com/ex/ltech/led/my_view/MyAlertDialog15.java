@@ -19,14 +19,14 @@ public class MyAlertDialog15 extends AlertDialog
   {
     public void onClick(View paramView)
     {
-      MyAlertDialog15.this.selelted1.setVisibility(8);
-      MyAlertDialog15.this.selelted2.setVisibility(8);
-      MyAlertDialog15.this.selelted3.setVisibility(8);
-      MyAlertDialog15.this.selelted4.setVisibility(8);
-      MyAlertDialog15.this.selelted5.setVisibility(8);
-      MyAlertDialog15.this.selelted6.setVisibility(8);
-      MyAlertDialog15.this.selelted7.setVisibility(8);
-      MyAlertDialog15.this.selelted8.setVisibility(8);
+      MyAlertDialog15.this.selelted1.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted2.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted3.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted4.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted5.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted6.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted7.setVisibility(View.GONE);
+      MyAlertDialog15.this.selelted8.setVisibility(View.GONE);
       switch (paramView.getId())
       {
       default:
@@ -34,43 +34,43 @@ public class MyAlertDialog15 extends AlertDialog
       case 2131559071:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(0);
-        MyAlertDialog15.this.selelted1.setVisibility(0);
+        MyAlertDialog15.this.selelted1.setVisibility(View.VISIBLE);
         return;
       case 2131559072:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(1);
-        MyAlertDialog15.this.selelted2.setVisibility(0);
+        MyAlertDialog15.this.selelted2.setVisibility(View.VISIBLE);
         return;
       case 2131559073:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(2);
-        MyAlertDialog15.this.selelted3.setVisibility(0);
+        MyAlertDialog15.this.selelted3.setVisibility(View.VISIBLE);
         return;
       case 2131559074:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(3);
-        MyAlertDialog15.this.selelted4.setVisibility(0);
+        MyAlertDialog15.this.selelted4.setVisibility(View.VISIBLE);
         return;
       case 2131559075:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(4);
-        MyAlertDialog15.this.selelted5.setVisibility(0);
+        MyAlertDialog15.this.selelted5.setVisibility(View.VISIBLE);
         return;
       case 2131559076:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(5);
-        MyAlertDialog15.this.selelted6.setVisibility(0);
+        MyAlertDialog15.this.selelted6.setVisibility(View.VISIBLE);
         return;
       case 2131559077:
         if (MyAlertDialog15.this.myListener != null)
           MyAlertDialog15.this.myListener.onClick(6);
-        MyAlertDialog15.this.selelted7.setVisibility(0);
+        MyAlertDialog15.this.selelted7.setVisibility(View.VISIBLE);
         return;
       case 2131559078:
       }
       if (MyAlertDialog15.this.myListener != null)
         MyAlertDialog15.this.myListener.onClick(7);
-      MyAlertDialog15.this.selelted8.setVisibility(0);
+      MyAlertDialog15.this.selelted8.setVisibility(View.VISIBLE);
     }
   };
   private Context context;

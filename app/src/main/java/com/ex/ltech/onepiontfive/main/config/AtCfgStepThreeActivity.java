@@ -75,7 +75,7 @@ public class AtCfgStepThreeActivity extends MyBaseActivity
     setContentView(2130968653);
     ButterKnife.bind(this);
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     this.tvLampBlink.setText(2131100064);
     this.cfgType = getIntent().getStringExtra("cfgType");
     String str = this.cfgType;

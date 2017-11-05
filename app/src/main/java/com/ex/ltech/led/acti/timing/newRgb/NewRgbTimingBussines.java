@@ -499,11 +499,11 @@ public class NewRgbTimingBussines
         j = 17;
         if (!paramTimingVo.isSwich())
           break label319;
-        if (!paramTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+        if (!paramTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
           break label313;
         k = 1;
         str5 = "0";
-        if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+        if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
           break label350;
         str5 = "1";
         for (int i7 = 7; ; i7--)
@@ -820,12 +820,12 @@ public class NewRgbTimingBussines
                 localTimingVo3.setSwich(bool2);
                 if (!str7.equals("1"))
                   break label708;
-                str9 = NewRgbTimingBussines.this.pct.getString(2131100232);
+                str9 = NewRgbTimingBussines.this.pct.getString(R.string.on);
                 localTimingVo3.setLightStatus(str9);
                 localArrayList3 = new ArrayList();
                 if (!str5.substring(0, 1).equals("1"))
                   break label728;
-                localArrayList3.add(NewRgbTimingBussines.this.pct.getString(2131100239));
+                localArrayList3.add(NewRgbTimingBussines.this.pct.getString(R.string.once));
               }
               while (true)
               {

@@ -102,8 +102,8 @@ public class ActAddTiming extends MyBaseActivity
       label156: MyTimePickerView localMyTimePickerView3;
       if (this.vo.getGradientMins() > 0)
       {
-        this.tv_gradient_time.setText(this.vo.getGradientMins() + getString(2131100160));
-        this.rl_gradient_time.setVisibility(0);
+        this.tv_gradient_time.setText(this.vo.getGradientMins() + getString(R.string.min));
+        this.rl_gradient_time.setVisibility(View.VISIBLE);
         if (k < 12)
           break label322;
         bool3 = true;
@@ -127,7 +127,7 @@ public class ActAddTiming extends MyBaseActivity
         str3 = "";
         for (int n = 0; n < localList.size(); n++)
           str3 = str3 + "\t\t" + (String)localList.get(n);
-        this.rl_gradient_time.setVisibility(8);
+        this.rl_gradient_time.setVisibility(View.GONE);
         break;
         bool3 = false;
         break label156;
@@ -136,9 +136,9 @@ public class ActAddTiming extends MyBaseActivity
       if (this.vo.getRcVo().nonIrDevice == null)
         break label453;
       this.tv_act_add_timing_yaokong.setText(this.vo.getYaoKongName());
-      this.rl_act_add_timing_action.setVisibility(0);
+      this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
       this.tv_act_add_timing_action.setText(this.vo.getStatus());
-      this.rl_act_add_timing_action.setVisibility(0);
+      this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
       if (this.vo.getRcVo() == null)
         break label498;
       this.tv_act_add_timing_yaokong.setText(this.vo.getRcVo().getName());
@@ -149,7 +149,7 @@ public class ActAddTiming extends MyBaseActivity
       this.vo.setOnOff(true);
       return;
       label453: this.tv_act_add_timing_yaokong.setText(this.vo.getRcVo().getName());
-      this.rl_act_add_timing_action.setVisibility(0);
+      this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
       this.tv_act_add_timing_action.setText(this.vo.getRcVo().getStatus());
       break;
       label498: this.tv_act_add_timing_yaokong.setText(this.vo.getYaoKongName());
@@ -183,7 +183,7 @@ public class ActAddTiming extends MyBaseActivity
       this.min = str2;
       localTimingVo.setTime(str2);
       ArrayList localArrayList = new ArrayList();
-      localArrayList.add(getString(2131100239));
+      localArrayList.add(getString(R.string.once));
       this.vo.setShotNameDays(localArrayList);
       this.vo.setSwich(true);
       break;
@@ -257,10 +257,10 @@ public class ActAddTiming extends MyBaseActivity
   {
     if (this.tv_act_add_timing_action.getText().toString().equalsIgnoreCase(getString(2131100054)))
     {
-      this.rl_gradient_time.setVisibility(0);
+      this.rl_gradient_time.setVisibility(View.VISIBLE);
       return;
     }
-    this.rl_gradient_time.setVisibility(8);
+    this.rl_gradient_time.setVisibility(View.GONE);
   }
 
   public void goAction(View paramView)
@@ -301,8 +301,8 @@ public class ActAddTiming extends MyBaseActivity
         public void on()
         {
           ActAddTiming.this.vo.getRcVo().nonIrDevice.irCt1Onoff = true;
-          ActAddTiming.this.tv_act_add_timing_action.setText(ActAddTiming.this.getString(2131100232));
-          ActAddTiming.this.vo.setStatus(ActAddTiming.this.getString(2131100232));
+          ActAddTiming.this.tv_act_add_timing_action.setText(ActAddTiming.this.getString(R.string.on));
+          ActAddTiming.this.vo.setStatus(ActAddTiming.this.getString(R.string.on));
           ActAddTiming.this.showHideEffectLayout();
         }
       });
@@ -332,7 +332,7 @@ public class ActAddTiming extends MyBaseActivity
       {
         public void onChanel()
         {
-          ActAddTiming.this.rl_at_rc_add_timing_chanel.setVisibility(0);
+          ActAddTiming.this.rl_at_rc_add_timing_chanel.setVisibility(View.VISIBLE);
         }
 
         public void onOnOff()
@@ -348,8 +348,8 @@ public class ActAddTiming extends MyBaseActivity
 
             public void on()
             {
-              ActAddTiming.this.vo.getRcVo().setStatus(ActAddTiming.this.getString(2131100232));
-              ActAddTiming.this.tv_act_add_timing_action.setText(ActAddTiming.this.getString(2131100232));
+              ActAddTiming.this.vo.getRcVo().setStatus(ActAddTiming.this.getString(R.string.on));
+              ActAddTiming.this.tv_act_add_timing_action.setText(ActAddTiming.this.getString(R.string.on));
             }
           });
           localMyAlertDialog10.show();
@@ -376,8 +376,8 @@ public class ActAddTiming extends MyBaseActivity
 
       public void on()
       {
-        ActAddTiming.this.vo.getRcVo().setStatus(ActAddTiming.this.getString(2131100232));
-        ActAddTiming.this.tv_act_add_timing_action.setText(ActAddTiming.this.getString(2131100232));
+        ActAddTiming.this.vo.getRcVo().setStatus(ActAddTiming.this.getString(R.string.on));
+        ActAddTiming.this.tv_act_add_timing_action.setText(ActAddTiming.this.getString(R.string.on));
       }
     });
     localMyAlertDialog10.show();
@@ -402,7 +402,7 @@ public class ActAddTiming extends MyBaseActivity
 
   public void goWendu(View paramView)
   {
-    findViewById(2131558551).setVisibility(0);
+    findViewById(2131558551).setVisibility(View.VISIBLE);
   }
 
   public void goYaoKong(View paramView)
@@ -414,14 +414,14 @@ public class ActAddTiming extends MyBaseActivity
 
   public void hideChanel(View paramView)
   {
-    findViewById(2131558553).setVisibility(8);
+    findViewById(2131558553).setVisibility(View.GONE);
     this.tv_act_add_timing_action.setText(this.chanel + getString(2131099929));
     this.vo.setChanel(this.tv_act_add_timing_action.getText().toString());
   }
 
   public void hideWendu(View paramView)
   {
-    findViewById(2131558551).setVisibility(8);
+    findViewById(2131558551).setVisibility(View.GONE);
     this.vo.setWendu(this.wendu + "℃");
   }
 
@@ -431,7 +431,7 @@ public class ActAddTiming extends MyBaseActivity
     if (paramInt2 == 210000)
     {
       String str4 = paramIntent.getStringExtra("gradient_time");
-      this.vo.setGradientMins(Integer.parseInt(str4.substring(0, str4.length() - getString(2131100160).length())));
+      this.vo.setGradientMins(Integer.parseInt(str4.substring(0, str4.length() - getString(R.string.min).length())));
       this.tv_gradient_time.setText(str4);
     }
     int i3;
@@ -453,7 +453,7 @@ public class ActAddTiming extends MyBaseActivity
       break;
       label113: i4 = 0;
       break label98;
-      label119: this.rl_act_add_timing_action.setVisibility(0);
+      label119: this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
       InnerRcVo localInnerRcVo4 = (InnerRcVo)paramIntent.getSerializableExtra(InnerRcVo.class.getName());
       this.vo.setRcVo(localInnerRcVo4);
       this.tv_act_add_timing_yaokong.setText(localInnerRcVo4.getName());
@@ -475,7 +475,7 @@ public class ActAddTiming extends MyBaseActivity
         {
           if ((paramIntent == null) || ((this.lastActItemPosi != -1) && (this.vo.getRcVo().getmType() > 9)))
             continue;
-          this.rl_act_add_timing_action.setVisibility(0);
+          this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
           InnerRcVo localInnerRcVo3 = (InnerRcVo)paramIntent.getSerializableExtra(InnerRcVo.class.getName());
           this.vo.setRcVo(localInnerRcVo3);
           this.tv_act_add_timing_yaokong.setText(localInnerRcVo3.getName());
@@ -488,14 +488,14 @@ public class ActAddTiming extends MyBaseActivity
         {
           if ((paramIntent == null) || ((this.lastActItemPosi != -1) && (this.vo.getRcVo().getmType() > 9)))
             continue;
-          this.tv_act_add_timing_action.setText(getString(2131100232));
-          this.rl_act_add_timing_action.setVisibility(0);
+          this.tv_act_add_timing_action.setText(getString(R.string.on));
+          this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
           InnerRcVo localInnerRcVo2 = new InnerRcVo();
           int m = paramIntent.getIntExtra("OP_RC_POSI_KEY", 0);
           int n = paramIntent.getIntExtra("RC_TYPE_KEY", 0);
           String str3 = paramIntent.getStringExtra("RC_NAME_KEY");
           this.tv_act_add_timing_yaokong.setText(str3);
-          localInnerRcVo2.setStatus(getString(2131100232));
+          localInnerRcVo2.setStatus(getString(R.string.on));
           localInnerRcVo2.setName(str3);
           localInnerRcVo2.setmType(n);
           this.vo.setYkType(localInnerRcVo2.getTypeStr());
@@ -508,7 +508,7 @@ public class ActAddTiming extends MyBaseActivity
             break label1302;
           i2 = 1;
           if ((i2 | i1) != 0)
-            this.rl_act_add_timing_action.setVisibility(0);
+            this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
           this.vo.setYaoKongName(localInnerRcVo2.getName());
           this.vo.setYkType(localInnerRcVo2.getTypeStr());
         }
@@ -516,14 +516,14 @@ public class ActAddTiming extends MyBaseActivity
         {
           if ((paramIntent == null) || ((this.lastActItemPosi != -1) && (this.vo.getRcVo().getmType() < 10)))
             continue;
-          this.rl_act_add_timing_action.setVisibility(0);
+          this.rl_act_add_timing_action.setVisibility(View.VISIBLE);
           String str2 = paramIntent.getStringExtra("RC_NAME_KEY");
           this.tv_act_add_timing_yaokong.setText(str2);
           int j = paramIntent.getIntExtra("OP_RC_POSI_KEY", 0);
           this.bussines.initRcData();
           InnerRcVo localInnerRcVo1 = new InnerRcVo();
           int k = paramIntent.getIntExtra("RC_TYPE_KEY", 0);
-          localInnerRcVo1.setStatus(getString(2131100232));
+          localInnerRcVo1.setStatus(getString(R.string.on));
           localInnerRcVo1.setName(str2);
           localInnerRcVo1.setmSaveRcListPosi(j);
           this.vo.setYaoKongName(localInnerRcVo1.getName());
@@ -609,7 +609,7 @@ public class ActAddTiming extends MyBaseActivity
           this.tv_act_add_timing_repeat.setText(str1);
           return;
         }
-        this.tv_act_add_timing_repeat.setText(getString(2131100239));
+        this.tv_act_add_timing_repeat.setText(getString(R.string.once));
       }
     }
   }
@@ -644,10 +644,10 @@ public class ActAddTiming extends MyBaseActivity
       this.vo.setTime(this.hour + ":" + this.min);
       if (this.vo.getXuHao() == -1)
         this.vo.setXuHao(this.bussines.getTimgItemXuHao());
-      if (this.tv_act_add_timing_repeat.getText().toString().indexOf(getString(2131100239)) != -1)
+      if (this.tv_act_add_timing_repeat.getText().toString().indexOf(getString(R.string.once)) != -1)
       {
         ArrayList localArrayList = new ArrayList();
-        localArrayList.add(getString(2131100239));
+        localArrayList.add(getString(R.string.once));
         this.vo.setShotNameDays(localArrayList);
         this.vo.setIsJustOnce(true);
         if (DateFmtUtil.getTime4HHmm(this.vo.getTime()) > System.currentTimeMillis())
@@ -700,7 +700,7 @@ public class ActAddTiming extends MyBaseActivity
     {
       System.out.println("#$%^&*()    ++++++++++    " + this.vo.toString());
       return;
-      toast(2131099969);
+      toast(R.string.config_failed_timing);
     }
   }
 
@@ -719,7 +719,7 @@ public class ActAddTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(2130903274);
-    setTiTleTextRes(2131099856);
+    setTiTleTextRes(R.mipmap.add_timing);
     setBgWhite();
     setEditTextRes(2131100416, getResources().getColor(2131492897));
   }

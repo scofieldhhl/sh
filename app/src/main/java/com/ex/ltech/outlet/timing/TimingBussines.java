@@ -503,10 +503,10 @@ public class TimingBussines
       str6 = str4.substring(1 + str4.indexOf(":"));
       if (!paramTimingVo.isSwich())
         break label382;
-      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label379;
       str7 = "0";
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label493;
       str7 = "1";
       k = DateFmtUtil.getWeekOfDate();
@@ -603,10 +603,10 @@ public class TimingBussines
       str7 = str5.substring(1 + str5.indexOf(":"));
       if (!paramTimingVo.isSwich())
         break label487;
-      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!paramTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label484;
       str8 = "0";
-      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(2131100239)))
+      if (!((String)paramTimingVo.getShotNameDays().get(0)).equals(this.pct.getString(R.string.once)))
         break label598;
       str8 = "1";
       m = DateFmtUtil.getWeekOfDate();
@@ -858,7 +858,7 @@ public class TimingBussines
             label630: ArrayList localArrayList3;
             if (str7.equals("1"))
             {
-              str8 = TimingBussines.this.pct.getString(2131100232);
+              str8 = TimingBussines.this.pct.getString(R.string.on);
               localTimingVo1.setLightStatus(str8);
               localArrayList3 = new ArrayList();
               TimingBussines.this.resetOtherDays();

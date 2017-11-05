@@ -75,7 +75,7 @@ public class AtShare extends MyBaseActivity
       public void onClick(DialogInterface paramDialogInterface, int paramInt)
       {
         AtShare.this.isImportData = false;
-        AtShare.this.rlExport.setVisibility(8);
+        AtShare.this.rlExport.setVisibility(View.GONE);
         AtShare.this.tcpServer.closeTcpServer();
         AtShare.this.udpSend.loopSendStop();
       }
@@ -102,7 +102,7 @@ public class AtShare extends MyBaseActivity
       {
         public void onItemClick(AdapterView<?> paramAdapterView, View paramView, int paramInt, long paramLong)
         {
-          AtShare.this.rlPhones.setVisibility(8);
+          AtShare.this.rlPhones.setVisibility(View.GONE);
           AtShare.this.waitDialog.setMessage(AtShare.this.getString(2131100506));
           AtShare.this.waitDialog.show();
           AtShare.this.isImportData = true;
@@ -118,14 +118,14 @@ public class AtShare extends MyBaseActivity
         public void onClick(View paramView)
         {
           AtShare.this.isShowPhoneList = false;
-          AtShare.this.rlPhones.setVisibility(8);
+          AtShare.this.rlPhones.setVisibility(View.GONE);
         }
       });
       this.tvExportCancel.setOnClickListener(new View.OnClickListener()
       {
         public void onClick(View paramView)
         {
-          AtShare.this.rlExport.setVisibility(8);
+          AtShare.this.rlExport.setVisibility(View.GONE);
           AtShare.this.tcpServer.closeTcpServer();
           AtShare.this.udpSend.loopSendStop();
         }
@@ -144,7 +144,7 @@ public class AtShare extends MyBaseActivity
     this.tcpServer.start();
     this.udpSend.loopSendMyInfo();
     this.udpReceive.stop();
-    this.rlExport.setVisibility(0);
+    this.rlExport.setVisibility(View.VISIBLE);
   }
 
   public void importData(View paramView)
@@ -160,7 +160,7 @@ public class AtShare extends MyBaseActivity
     setContentView(2130968704);
     ButterKnife.bind(this);
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131099932);
     init();
   }
@@ -216,7 +216,7 @@ public class AtShare extends MyBaseActivity
         public void run()
         {
           AtShare.this.waitDialog.dismiss();
-          AtShare.this.rlPhones.setVisibility(8);
+          AtShare.this.rlPhones.setVisibility(View.GONE);
           AtShare.this.longToast(2131100398);
           System.out.println("MessageGet         " + Build.MODEL + "      成功接收数据");
         }
@@ -240,7 +240,7 @@ public class AtShare extends MyBaseActivity
       public void run()
       {
         AtShare.this.longToast(2131100399);
-        AtShare.this.rlExport.setVisibility(8);
+        AtShare.this.rlExport.setVisibility(View.GONE);
       }
     });
   }
@@ -252,7 +252,7 @@ public class AtShare extends MyBaseActivity
       public void run()
       {
         if (AtShare.this.isShowPhoneList)
-          AtShare.this.rlPhones.setVisibility(0);
+          AtShare.this.rlPhones.setVisibility(View.VISIBLE);
         Iterator localIterator = AtShare.this.phones.iterator();
         while (localIterator.hasNext())
           if (((AtShare.Phone)localIterator.next()).ip.equals(this.val$ip))

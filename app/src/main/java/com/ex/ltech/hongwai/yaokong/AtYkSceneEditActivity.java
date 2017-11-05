@@ -1,26 +1,22 @@
 package com.ex.ltech.hongwai.yaokong;
 
-import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
-import butterknife.Bind;
-import butterknife.ButterKnife;
+
 import com.ex.ltech.MyDb;
 import com.ex.ltech.hongwai.NonIrDeviceAt;
 import com.ex.ltech.hongwai.vo.Ct1SceneVo;
 import com.ex.ltech.hongwai.vo.Ct1ScenesVo;
 import com.ex.ltech.hongwai.vo.MyRcDevice;
 import com.ex.ltech.hongwai.vo.MyRcDevices;
-import com.ex.ltech.hongwai.vo.NonIrDevice;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
-import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.my_view.SimpleColorPickerView;
-import com.ex.ltech.led.my_view.SimpleColorPickerView.OnXYChangedListener;
-import java.util.ArrayList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class AtYkSceneEditActivity extends NonIrDeviceAt
 {
@@ -34,11 +30,11 @@ public class AtYkSceneEditActivity extends NonIrDeviceAt
   @Bind({2131558829})
   ImageView mImageviewBright;
 
-  @Bind({2131558646})
+  @Bind({R.id.color})
   SimpleColorPickerView mSimpleColorPickerView;
   private MyRcDevices rcDevices;
 
-  @Bind({2131558652})
+  @Bind({R.id.sb})
   SeekBar sb;
 
   private void setTitleView()
@@ -107,7 +103,7 @@ public class AtYkSceneEditActivity extends NonIrDeviceAt
     setTitleView();
     this.mSimpleColorPickerView.setViewBgRes(2130903079, false);
     this.mImageviewBright.setBackgroundResource(2130903361);
-    this.mImageviewAdd.setVisibility(8);
+    this.mImageviewAdd.setVisibility(View.GONE);
     this.existRcPosi = getIntent().getIntExtra("OP_AT_POSI_KEY", -1);
     this.irCtScenePosi = getIntent().getIntExtra("OP_IR_CT_SCENE_POSI_KEY", -1);
     this.rcDevices = ((MyRcDevices)MyDb.getInstance(getApplicationContext()).getBean(DeviceListActivity.deviceMacAddress, MyRcDevices.class));

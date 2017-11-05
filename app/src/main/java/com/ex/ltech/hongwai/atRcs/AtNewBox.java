@@ -420,7 +420,7 @@ public class AtNewBox extends AtBaseYk
     setContentView(2130968691);
     ButterKnife.bind(this);
     this.pageIndex = ((ImageView)findViewById(2131558908));
-    this.pageIndex.setVisibility(8);
+    this.pageIndex.setVisibility(View.GONE);
     setTitleView();
     initViewPager();
     setTitleView();

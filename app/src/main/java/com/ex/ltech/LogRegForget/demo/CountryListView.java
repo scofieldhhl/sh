@@ -64,7 +64,7 @@ public class CountryListView extends RelativeLayout
     this.tvScroll.setBackgroundResource(2130837613);
     this.tvScroll.setTextSize(1, 48.0F);
     this.tvScroll.setTypeface(Typeface.DEFAULT);
-    this.tvScroll.setVisibility(8);
+    this.tvScroll.setVisibility(View.GONE);
     this.tvScroll.setGravity(17);
     int j = dipToPx(paramContext, 80.0F);
     RelativeLayout.LayoutParams localLayoutParams2 = new RelativeLayout.LayoutParams(j, j);
@@ -131,7 +131,7 @@ public class CountryListView extends RelativeLayout
         if ((paramFloat1 >= localTextView.getLeft()) && (paramFloat1 <= localTextView.getRight()) && (paramFloat2 >= localTextView.getTop()) && (paramFloat2 <= localTextView.getBottom()))
         {
           this.lvContries.setSelection(i);
-          this.tvScroll.setVisibility(0);
+          this.tvScroll.setVisibility(View.VISIBLE);
           this.tvScroll.setText(localTextView.getText());
         }
       }
@@ -148,12 +148,12 @@ public class CountryListView extends RelativeLayout
     this.adapter.search(paramString);
     this.adapter.notifyDataSetChanged();
     if (this.adapter.getGroupCount() == 0)
-      this.llScroll.setVisibility(8);
+      this.llScroll.setVisibility(View.GONE);
     while (true)
     {
       initScroll(getContext());
       return;
-      this.llScroll.setVisibility(0);
+      this.llScroll.setVisibility(View.VISIBLE);
     }
   }
 
@@ -179,7 +179,7 @@ public class CountryListView extends RelativeLayout
       onScroll((ViewGroup)paramView, f1, f2);
       continue;
       paramView.setBackgroundResource(2130837614);
-      this.tvScroll.setVisibility(8);
+      this.tvScroll.setVisibility(View.GONE);
     }
   }
 

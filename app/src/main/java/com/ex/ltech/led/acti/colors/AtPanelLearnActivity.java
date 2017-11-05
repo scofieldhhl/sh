@@ -315,37 +315,37 @@ public class AtPanelLearnActivity extends MyBaseActivity
       j = 2131099847;
       this.ivResFront = 2130903334;
       this.ivResReal = 2130903335;
-      findViewById(2131558810).setVisibility(0);
+      findViewById(2131558810).setVisibility(View.VISIBLE);
       continue;
       k = 2131100448;
       j = 2131099848;
       this.ivResFront = 2130903342;
       this.ivResReal = 2130903343;
-      findViewById(2131558810).setVisibility(0);
+      findViewById(2131558810).setVisibility(View.VISIBLE);
       continue;
       k = 2131100447;
       j = 2131099847;
       this.ivResFront = 2130903334;
       this.ivResReal = 2130903335;
-      findViewById(2131558810).setVisibility(0);
+      findViewById(2131558810).setVisibility(View.VISIBLE);
       continue;
       k = 2131100449;
       j = 2131099848;
       this.ivResFront = 2130903340;
       this.ivResReal = 2130903341;
-      findViewById(2131558810).setVisibility(0);
+      findViewById(2131558810).setVisibility(View.VISIBLE);
       continue;
       k = 2131100450;
       j = 2131099848;
       this.ivResFront = 2130903336;
       this.ivResReal = 2130903337;
-      findViewById(2131558810).setVisibility(0);
+      findViewById(2131558810).setVisibility(View.VISIBLE);
       continue;
       k = 2131100451;
       j = 2131099848;
       this.ivResFront = 2130903338;
       this.ivResReal = 2130903339;
-      findViewById(2131558810).setVisibility(0);
+      findViewById(2131558810).setVisibility(View.VISIBLE);
     }
   }
 

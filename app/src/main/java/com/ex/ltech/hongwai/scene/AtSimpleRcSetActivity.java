@@ -69,9 +69,9 @@ public class AtSimpleRcSetActivity extends MyBaseActivity
       if ((this.rcType != 2) && (this.rcType != 1))
         break label410;
       if (getIntent().getStringExtra("OP_SCENE_IN_TV_TYPE_KEY").equals("OP_SCENE_IN_TV_TYPE_ON_OFF"))
-        findViewById(2131559049).setVisibility(8);
+        findViewById(2131559049).setVisibility(View.GONE);
       if (getIntent().getStringExtra("OP_SCENE_IN_TV_TYPE_KEY").equals("OP_SCENE_IN_TV_TYPE_CHANNEL"))
-        findViewById(2131559051).setVisibility(8);
+        findViewById(2131559051).setVisibility(View.GONE);
       label267: this.yaokong_name.setText(this.rcName);
       switch (this.rcType)
       {
@@ -99,11 +99,11 @@ public class AtSimpleRcSetActivity extends MyBaseActivity
       this.rcPosi = localInnerRcVo.getmSaveRcListPosi();
       this.rcType = localInnerRcVo.getmType();
       this.rcName = localInnerRcVo.getName();
-      if (!localInnerRcVo.getStatus().equals(getString(2131100232)))
+      if (!localInnerRcVo.getStatus().equals(getString(R.string.on)))
         break;
       this.swich.toggle();
       break;
-      label410: findViewById(2131559049).setVisibility(8);
+      label410: findViewById(2131559049).setVisibility(View.GONE);
       break label267;
       this.sceneInnerRcVo.setTypeStr("air");
       this.yaokongIc.setBackgroundResource(2130903523);
@@ -141,7 +141,7 @@ public class AtSimpleRcSetActivity extends MyBaseActivity
       if (getIntent().getStringExtra("OP_SCENE_IN_TV_TYPE_KEY").equals("OP_SCENE_IN_TV_TYPE_ON_OFF"))
       {
         if (this.swich.isToggle())
-          this.sceneInnerRcVo.setStatus(getString(2131100232));
+          this.sceneInnerRcVo.setStatus(getString(R.string.on));
       }
       else
       {
@@ -162,7 +162,7 @@ public class AtSimpleRcSetActivity extends MyBaseActivity
       break;
       if (this.swich.isToggle())
       {
-        this.sceneInnerRcVo.setStatus(getString(2131100232));
+        this.sceneInnerRcVo.setStatus(getString(R.string.on));
         break label144;
       }
       this.sceneInnerRcVo.setStatus(getString(2131100226));
@@ -180,7 +180,7 @@ public class AtSimpleRcSetActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.rcName);
     setBgWhite();
     setEditTextRes(2131100358, getResources().getColor(2131492897));

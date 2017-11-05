@@ -78,7 +78,7 @@ public class ImageTextButton extends LinearLayout
         this.isShowText = this.a.getBoolean(n, true);
         if (this.isShowText)
           continue;
-        this.tv.setVisibility(8);
+        this.tv.setVisibility(View.GONE);
       }
     }
     int k = 0;

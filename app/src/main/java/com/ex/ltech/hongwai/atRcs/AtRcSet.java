@@ -211,11 +211,11 @@ public class AtRcSet extends MyBaseActivity
     this.tvRcName.setText(((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).mName);
     if (((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).mType == 9)
     {
-      findViewById(2131558906).setVisibility(8);
-      findViewById(2131558999).setVisibility(0);
-      findViewById(2131559001).setVisibility(0);
-      findViewById(2131559003).setVisibility(0);
-      findViewById(2131559004).setVisibility(0);
+      findViewById(2131558906).setVisibility(View.GONE);
+      findViewById(2131558999).setVisibility(View.VISIBLE);
+      findViewById(2131559001).setVisibility(View.VISIBLE);
+      findViewById(2131559003).setVisibility(View.VISIBLE);
+      findViewById(2131559004).setVisibility(View.VISIBLE);
     }
     label232: label363: label369: label372: 
     while (true)
@@ -238,11 +238,11 @@ public class AtRcSet extends MyBaseActivity
       {
         if ((m | i) == 0)
           break label372;
-        findViewById(2131558906).setVisibility(8);
+        findViewById(2131558906).setVisibility(View.GONE);
         if (((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).mType != 12)
           break;
-        findViewById(2131559005).setVisibility(0);
-        findViewById(2131559006).setVisibility(0);
+        findViewById(2131559005).setVisibility(View.VISIBLE);
+        findViewById(2131559006).setVisibility(View.VISIBLE);
         return;
         j = 0;
         break label232;

@@ -13,7 +13,7 @@ public class ReadmeActivity extends MyBaseActivity
     super.onCreate(paramBundle);
     setContentView(2130968617);
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100082);
     findViewById(2131558612).setOnClickListener(new View.OnClickListener()
     {

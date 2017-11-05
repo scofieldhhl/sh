@@ -93,22 +93,22 @@ public class TimingListAdapter extends BaseAdapter
     if (localTimingVo.isSwich())
     {
       localHolder.tb_act_timing_swich.setToggleOn();
-      if (!localTimingVo.getLightStatus().equals(this.pct.getString(2131100232)))
+      if (!localTimingVo.getLightStatus().equals(this.pct.getString(R.string.on)))
         break label507;
-      localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100232));
+      localHolder.tv_act_timing_swich_status.setText(this.pct.getString(R.string.on));
       if (localTimingVo.isOther())
         break label578;
-      localHolder.csv_act_timing.setVisibility(0);
-      localHolder.tv_act_timing_mode.setVisibility(0);
+      localHolder.csv_act_timing.setVisibility(View.VISIBLE);
+      localHolder.tv_act_timing_mode.setVisibility(View.VISIBLE);
       if (localTimingVo.getColor() == 0)
         break label527;
-      localHolder.csv_act_timing.setVisibility(0);
-      localHolder.tv_act_timing_mode.setVisibility(8);
+      localHolder.csv_act_timing.setVisibility(View.VISIBLE);
+      localHolder.tv_act_timing_mode.setVisibility(View.GONE);
       localHolder.csv_act_timing.setColor(localTimingVo.getColor());
       label415: this.fleshSpaceTime = System.currentTimeMillis();
       label422: if (!(localTimingVo.isShowMineTiming() | localTimingVo.isShowOtherTiming()))
         break label606;
-      localHolder.who_timing.setVisibility(0);
+      localHolder.who_timing.setVisibility(View.VISIBLE);
       TextView localTextView = localHolder.who_timing;
       if (!localTimingVo.isShowMineTiming())
         break label599;
@@ -131,8 +131,8 @@ public class TimingListAdapter extends BaseAdapter
       break;
       label507: localHolder.tv_act_timing_swich_status.setText(this.pct.getString(2131100226));
       break label349;
-      label527: localHolder.tv_act_timing_mode.setVisibility(0);
-      localHolder.csv_act_timing.setVisibility(8);
+      label527: localHolder.tv_act_timing_mode.setVisibility(View.VISIBLE);
+      localHolder.csv_act_timing.setVisibility(View.GONE);
       if (!localTimingVo.isOffDevice())
         localHolder.tv_act_timing_mode.setText(localTimingVo.getModeName());
       System.out.println("");
@@ -142,7 +142,7 @@ public class TimingListAdapter extends BaseAdapter
       break label422;
       label599: i = 2131100255;
       break label464;
-      label606: localHolder.who_timing.setVisibility(8);
+      label606: localHolder.who_timing.setVisibility(View.GONE);
     }
   }
 

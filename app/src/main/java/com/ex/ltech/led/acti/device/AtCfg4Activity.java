@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.ex.ltech.led.Global;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.my_view.SecondArc;
@@ -86,7 +85,7 @@ public class AtCfg4Activity extends MyBaseActivity
     }
 
     public void onClick(View paramView) {
-        switch (paramView.getId()) {
+        /*switch (paramView.getId()) {
             default:
             case R.id.device_connet:
                 do {
@@ -118,7 +117,7 @@ public class AtCfg4Activity extends MyBaseActivity
         this.smallSsecond.setVisibility(View.VISIBLE);
         this.second.setVisibility(View.VISIBLE);
         this.ivCfgNoOk.setVisibility(View.GONE);
-        startSmartLink();
+        startSmartLink();*/
     }
 
     protected void onCreate(Bundle paramBundle) {

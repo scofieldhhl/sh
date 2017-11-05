@@ -132,19 +132,19 @@ public class ActiMusic extends MyBaseActivity
     {
       public void run()
       {
-        ActiMusic.this.bt_music_act_go_list.setVisibility(8);
-        ActiMusic.this.sb_music_acti.setVisibility(8);
-        ActiMusic.this.iv_acti_music_disc.setVisibility(8);
-        ActiMusic.this.findViewById(2131558719).setVisibility(0);
-        ActiMusic.this.tv_acti_music_song_name.setVisibility(8);
-        ActiMusic.this.tv_acti_music_song_current_time.setVisibility(8);
-        ActiMusic.this.tv_acti_music_song_all_time.setVisibility(8);
-        ActiMusic.this.sb_music_acti.setVisibility(8);
-        ActiMusic.this.iv_acti_music_back.setVisibility(8);
-        ActiMusic.this.iv_acti_music_play.setVisibility(8);
-        ActiMusic.this.iv_acti_music_next.setVisibility(8);
-        ActiMusic.this.iv_acti_music_mic.setVisibility(0);
-        ActiMusic.this.vv_act_music.setVisibility(0);
+        ActiMusic.this.bt_music_act_go_list.setVisibility(View.GONE);
+        ActiMusic.this.sb_music_acti.setVisibility(View.GONE);
+        ActiMusic.this.iv_acti_music_disc.setVisibility(View.GONE);
+        ActiMusic.this.findViewById(2131558719).setVisibility(View.VISIBLE);
+        ActiMusic.this.tv_acti_music_song_name.setVisibility(View.GONE);
+        ActiMusic.this.tv_acti_music_song_current_time.setVisibility(View.GONE);
+        ActiMusic.this.tv_acti_music_song_all_time.setVisibility(View.GONE);
+        ActiMusic.this.sb_music_acti.setVisibility(View.GONE);
+        ActiMusic.this.iv_acti_music_back.setVisibility(View.GONE);
+        ActiMusic.this.iv_acti_music_play.setVisibility(View.GONE);
+        ActiMusic.this.iv_acti_music_next.setVisibility(View.GONE);
+        ActiMusic.this.iv_acti_music_mic.setVisibility(View.VISIBLE);
+        ActiMusic.this.vv_act_music.setVisibility(View.VISIBLE);
         ActiMusic.this.bt_acti_music_mic.setBackgroundResource(2130903044);
         ActiMusic.this.bt_acti_mus_list.setBackgroundResource(2130903757);
       }
@@ -167,7 +167,7 @@ public class ActiMusic extends MyBaseActivity
 
   private void playSong()
   {
-    this.iv_acti_music_play.setBackgroundResource(2130903501);
+    this.iv_acti_music_play.setBackgroundResource(R.mipmap.music_stop);
     this.iv_acti_music_loader.clearAnimation();
     this.iv_acti_music_loader.startAnimation(this.loaderLoadAnimation);
     this.playSongBusiness.playTrack();
@@ -188,30 +188,30 @@ public class ActiMusic extends MyBaseActivity
   private void setMyTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
+    setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(2131100194);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
   private void showPlaySongViews()
   {
-    this.bt_music_act_go_list.setVisibility(0);
-    this.sb_music_acti.setVisibility(0);
-    this.iv_acti_music_disc.setVisibility(0);
-    findViewById(2131558719).setVisibility(8);
-    this.tv_acti_music_song_name.setVisibility(0);
-    this.tv_acti_music_song_current_time.setVisibility(0);
-    this.tv_acti_music_song_all_time.setVisibility(0);
-    this.sb_music_acti.setVisibility(0);
-    this.iv_acti_music_back.setVisibility(0);
-    this.iv_acti_music_play.setVisibility(0);
-    this.iv_acti_music_next.setVisibility(0);
+    this.bt_music_act_go_list.setVisibility(View.VISIBLE);
+    this.sb_music_acti.setVisibility(View.VISIBLE);
+    this.iv_acti_music_disc.setVisibility(View.VISIBLE);
+    findViewById(2131558719).setVisibility(View.GONE);
+    this.tv_acti_music_song_name.setVisibility(View.VISIBLE);
+    this.tv_acti_music_song_current_time.setVisibility(View.VISIBLE);
+    this.tv_acti_music_song_all_time.setVisibility(View.VISIBLE);
+    this.sb_music_acti.setVisibility(View.VISIBLE);
+    this.iv_acti_music_back.setVisibility(View.VISIBLE);
+    this.iv_acti_music_play.setVisibility(View.VISIBLE);
+    this.iv_acti_music_next.setVisibility(View.VISIBLE);
     this.bt_acti_mus_list.setBackgroundResource(2130903758);
     this.bt_acti_music_mic.setBackgroundResource(2130903043);
-    this.iv_acti_music_mic.setVisibility(8);
+    this.iv_acti_music_mic.setVisibility(View.GONE);
     this.playSongBusiness.recordStop();
     this.vv_act_music.setNullArr();
-    this.vv_act_music.setVisibility(8);
+    this.vv_act_music.setVisibility(View.GONE);
   }
 
   private void startMic()
@@ -288,7 +288,7 @@ public class ActiMusic extends MyBaseActivity
             }
             ServicePlayer.isPlay = true;
             this.playSongBusiness.backSong();
-            this.iv_acti_music_play.setBackgroundResource(2130903501);
+            this.iv_acti_music_play.setBackgroundResource(R.mipmap.music_stop);
             return;
           }
           while (this.playSongBusiness.getSongs().size() == 0);
@@ -314,7 +314,7 @@ public class ActiMusic extends MyBaseActivity
         }
         this.playSongBusiness.nextSong();
         ServicePlayer.isPlay = true;
-        this.iv_acti_music_play.setBackgroundResource(2130903501);
+        this.iv_acti_music_play.setBackgroundResource(R.mipmap.music_stop);
         this.handler.postDelayed(new Runnable()
         {
           public void run()
@@ -415,7 +415,7 @@ public class ActiMusic extends MyBaseActivity
         ActiMusic.this.sb_music_acti.setProgress(paramInt);
         if (paramString4.equals("play"))
         {
-          ActiMusic.this.iv_acti_music_play.setBackgroundResource(2130903501);
+          ActiMusic.this.iv_acti_music_play.setBackgroundResource(R.mipmap.music_stop);
           if (!ActiMusic.this.isPlay)
             ActiMusic.this.iv_acti_music_loader.startAnimation(ActiMusic.this.loaderLoadAnimation);
         }
@@ -423,7 +423,7 @@ public class ActiMusic extends MyBaseActivity
         {
           System.out.println("songInfoCallBack  " + paramString1 + "      " + paramInt + "   " + paramString2 + "        " + paramString3 + "     " + paramString4);
           return;
-          ActiMusic.this.iv_acti_music_play.setBackgroundResource(2130903500);
+          ActiMusic.this.iv_acti_music_play.setBackgroundResource(R.mipmap.music_paly);
           if (!ActiMusic.this.isPlay)
             continue;
           ActiMusic.this.iv_acti_music_loader.startAnimation(ActiMusic.this.loaderReturnAnimation);

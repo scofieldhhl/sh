@@ -59,7 +59,7 @@ public class AtModeList extends MyBaseActivity
         while (true)
         {
           localHolder.name.setText(AtModeList.this.getString(AtModeList.this.nameRes[paramInt]));
-          localHolder.ic.setVisibility(8);
+          localHolder.ic.setVisibility(View.GONE);
           return paramView;
           localHolder = (Holder)paramView.getTag();
         }
@@ -115,8 +115,8 @@ public class AtModeList extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
-    setTiTleTextRes(2131100163);
+    setMenuBackgroundRes(R.mipmap.back_ic);
+    setTiTleTextRes(R.string.mode);
   }
 }
 

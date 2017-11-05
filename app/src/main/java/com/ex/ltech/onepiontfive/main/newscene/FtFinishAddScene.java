@@ -232,7 +232,7 @@ public class FtFinishAddScene extends MyBaseFt
     {
       public void onClick(View paramView)
       {
-        FtFinishAddScene.this.rlTime.setVisibility(8);
+        FtFinishAddScene.this.rlTime.setVisibility(View.GONE);
         FtFinishAddScene.this.business.onSpaceTimeClick(FtFinishAddScene.this.clickTimePosi, FtFinishAddScene.this.second);
         FtFinishAddScene.this.finishAddSceneAdapter.notifyDataSetChanged();
         FtFinishAddScene.this.autoSetLvPaddingAndMargins();
@@ -609,7 +609,7 @@ public class FtFinishAddScene extends MyBaseFt
   public void onSpaceTimeClick(int paramInt1, int paramInt2)
   {
     this.tpSecond.setSelected(paramInt2 + "");
-    this.rlTime.setVisibility(0);
+    this.rlTime.setVisibility(View.VISIBLE);
     this.clickTimePosi = paramInt1;
     this.second = (paramInt2 + "");
   }

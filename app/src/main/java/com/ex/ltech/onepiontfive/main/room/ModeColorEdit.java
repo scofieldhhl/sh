@@ -1,39 +1,33 @@
 package com.ex.ltech.onepiontfive.main.room;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import butterknife.Bind;
-import butterknife.ButterKnife;
+
 import com.ex.ltech.ct.ActCtSceneLast;
 import com.ex.ltech.ct.ColorBussiness;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.my_view.SimpleColorPickerView;
-import com.ex.ltech.led.my_view.SimpleColorPickerView.OnColorChangedListener;
 import com.ex.ltech.led.vo.CtSceneVo;
 import com.ex.ltech.onepiontfive.main.MyBaseFt;
-import com.ex.ltech.onepiontfive.main.MyBusiness.MySendListener;
+import com.ex.ltech.onepiontfive.main.MyBusiness;
 import com.ex.ltech.onepiontfive.main.vo.Dvc;
 import com.ex.ltech.onepiontfive.main.vo.Home;
 import com.ex.ltech.onepiontfive.main.vo.Room;
-import com.fragmentmaster.app.Request;
-import com.google.gson.Gson;
 import com.indris.material.RippleView;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ModeColorEdit extends MyBaseFt
 {
@@ -51,7 +45,7 @@ public class ModeColorEdit extends MyBaseFt
   int c;
   private CmdDateBussiness cmdDateBussiness;
 
-  @Bind({2131558646})
+  @Bind({R.id.color})
   SimpleColorPickerView color;
   private String ctSceneName;
   private int ctScenePosi;
@@ -63,7 +57,7 @@ public class ModeColorEdit extends MyBaseFt
   private RoomBusiness roomBusiness;
   private int roomIndex;
 
-  @Bind({2131558652})
+  @Bind({R.id.sb})
   SeekBar sb;
   SendPipeListener sendPipeListener = new SendPipeListener()
   {
@@ -231,8 +225,8 @@ public class ModeColorEdit extends MyBaseFt
         ModeColorEdit.this.finish();
       }
     });
-    this.tvTitleViewEdit.setVisibility(0);
-    this.tvTitleViewEdit.setText(2131100063);
+    this.tvTitleViewEdit.setVisibility(View.VISIBLE);
+    this.tvTitleViewEdit.setText(R.string.finish);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492892));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {

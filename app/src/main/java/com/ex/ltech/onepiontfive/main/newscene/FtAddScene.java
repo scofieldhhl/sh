@@ -71,7 +71,7 @@ public class FtAddScene extends MasterFragment
         new MyBusiness(FtAddScene.this.getActivity()).putData4ClassName(FtAddScene.this.mac, new SceneSteps());
       }
     });
-    this.btnTitleViewEdit.setVisibility(8);
+    this.btnTitleViewEdit.setVisibility(View.GONE);
   }
 
   public void onClick(View paramView)

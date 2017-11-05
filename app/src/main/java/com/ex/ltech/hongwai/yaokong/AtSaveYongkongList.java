@@ -237,7 +237,7 @@ public class AtSaveYongkongList extends MyBaseActivity
           public void on()
           {
             this.val$sceneInnerRcVo.nonIrDevice.irCt1Onoff = true;
-            this.val$sceneInnerRcVo.setStatus(AtSaveYongkongList.this.getString(2131100232));
+            this.val$sceneInnerRcVo.setStatus(AtSaveYongkongList.this.getString(R.string.on));
             Intent localIntent = new Intent();
             localIntent.putExtra(InnerRcVo.class.getName(), this.val$sceneInnerRcVo);
             AtSaveYongkongList.this.setResult(210000, localIntent);

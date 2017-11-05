@@ -346,11 +346,11 @@ public class AtLearnActivity extends YkAt
         {
           if (!AtLearnActivity.this.isRecDataOk)
           {
-            AtLearnActivity.this.learn_again.setVisibility(0);
-            AtLearnActivity.this.info1.setVisibility(8);
-            AtLearnActivity.this.info2.setVisibility(8);
-            AtLearnActivity.this.info3.setVisibility(8);
-            AtLearnActivity.this.info10.setVisibility(0);
+            AtLearnActivity.this.learn_again.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.info1.setVisibility(View.GONE);
+            AtLearnActivity.this.info2.setVisibility(View.GONE);
+            AtLearnActivity.this.info3.setVisibility(View.GONE);
+            AtLearnActivity.this.info10.setVisibility(View.VISIBLE);
           }
         }
       }
@@ -376,7 +376,7 @@ public class AtLearnActivity extends YkAt
       this.info6.setText(getString(2131100425) + "( " + (1 + this.currentTestYkPosi) + "/" + this.data.size() + " )");
       System.out.println("currentTestYkPosi : " + this.currentTestYkPosi);
     }
-    this.save.setVisibility(0);
+    this.save.setVisibility(View.VISIBLE);
   }
 
   private void setListener()
@@ -430,16 +430,16 @@ public class AtLearnActivity extends YkAt
               String str3 = str1.substring(28, -8 + str1.length());
               AtLearnActivity.this.data.addAll(AtLearnActivity.this.getYaokongList(AtLearnActivity.this.type, AtLearnActivity.this.index, str3));
               System.out.println("M1    hongwai    " + AtLearnActivity.this.type + "     " + AtLearnActivity.this.index);
-              AtLearnActivity.this.info2.setVisibility(8);
-              AtLearnActivity.this.info3.setVisibility(8);
-              AtLearnActivity.this.iv_center.setVisibility(8);
-              AtLearnActivity.this.info4.setVisibility(0);
-              AtLearnActivity.this.info5.setVisibility(0);
-              AtLearnActivity.this.info6.setVisibility(0);
-              AtLearnActivity.this.last.setVisibility(0);
-              AtLearnActivity.this.next.setVisibility(0);
-              AtLearnActivity.this.on.setVisibility(0);
-              AtLearnActivity.this.info10.setVisibility(0);
+              AtLearnActivity.this.info2.setVisibility(View.GONE);
+              AtLearnActivity.this.info3.setVisibility(View.GONE);
+              AtLearnActivity.this.iv_center.setVisibility(View.GONE);
+              AtLearnActivity.this.info4.setVisibility(View.VISIBLE);
+              AtLearnActivity.this.info5.setVisibility(View.VISIBLE);
+              AtLearnActivity.this.info6.setVisibility(View.VISIBLE);
+              AtLearnActivity.this.last.setVisibility(View.VISIBLE);
+              AtLearnActivity.this.next.setVisibility(View.VISIBLE);
+              AtLearnActivity.this.on.setVisibility(View.VISIBLE);
+              AtLearnActivity.this.info10.setVisibility(View.VISIBLE);
               AtLearnActivity.this.info1.setText(2131100133);
               AtLearnActivity.this.info10.setText(2131100134);
               AtLearnActivity.this.nextTest();
@@ -458,16 +458,16 @@ public class AtLearnActivity extends YkAt
             String str2 = StringUtils.btye2Str(AtLearnActivity.this.subZero(paramArrayOfByte));
             AtLearnActivity.this.data.addAll(AtLearnActivity.this.getYaokongList(AtLearnActivity.this.type, AtLearnActivity.this.index, str2));
             System.out.println("M1    hongwai    " + AtLearnActivity.this.type + "     " + AtLearnActivity.this.index);
-            AtLearnActivity.this.info2.setVisibility(8);
-            AtLearnActivity.this.info3.setVisibility(8);
-            AtLearnActivity.this.iv_center.setVisibility(8);
-            AtLearnActivity.this.info4.setVisibility(0);
-            AtLearnActivity.this.info5.setVisibility(0);
-            AtLearnActivity.this.info6.setVisibility(0);
-            AtLearnActivity.this.last.setVisibility(0);
-            AtLearnActivity.this.next.setVisibility(0);
-            AtLearnActivity.this.on.setVisibility(0);
-            AtLearnActivity.this.info10.setVisibility(0);
+            AtLearnActivity.this.info2.setVisibility(View.GONE);
+            AtLearnActivity.this.info3.setVisibility(View.GONE);
+            AtLearnActivity.this.iv_center.setVisibility(View.GONE);
+            AtLearnActivity.this.info4.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.info5.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.info6.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.last.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.next.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.on.setVisibility(View.VISIBLE);
+            AtLearnActivity.this.info10.setVisibility(View.VISIBLE);
             AtLearnActivity.this.info1.setText(2131100133);
             AtLearnActivity.this.info10.setText(2131100134);
             AtLearnActivity.this.nextTest();
@@ -569,11 +569,11 @@ public class AtLearnActivity extends YkAt
 
   public void again(View paramView)
   {
-    this.learn_again.setVisibility(8);
-    this.info1.setVisibility(0);
-    this.info2.setVisibility(0);
-    this.info3.setVisibility(0);
-    this.info10.setVisibility(8);
+    this.learn_again.setVisibility(View.GONE);
+    this.info1.setVisibility(View.VISIBLE);
+    this.info2.setVisibility(View.VISIBLE);
+    this.info3.setVisibility(View.VISIBLE);
+    this.info10.setVisibility(View.GONE);
     learn();
   }
 
@@ -635,7 +635,7 @@ public class AtLearnActivity extends YkAt
       testYaokong((FastItem)this.data.get(this.currentTestYkPosi), this.type, this.index);
       System.out.println("currentTestYkPosi : " + this.currentTestYkPosi);
     }
-    this.save.setVisibility(0);
+    this.save.setVisibility(View.VISIBLE);
   }
 
   public void nextTest(View paramView)
@@ -648,20 +648,20 @@ public class AtLearnActivity extends YkAt
     this.currentTestYkPosi = 0;
     this.isRecDataOk = false;
     this.isReceivePipeData = false;
-    this.save.setVisibility(8);
-    this.learn_again.setVisibility(0);
-    this.info1.setVisibility(8);
-    this.info2.setVisibility(8);
-    this.info3.setVisibility(8);
-    this.info10.setVisibility(0);
+    this.save.setVisibility(View.GONE);
+    this.learn_again.setVisibility(View.VISIBLE);
+    this.info1.setVisibility(View.GONE);
+    this.info2.setVisibility(View.GONE);
+    this.info3.setVisibility(View.GONE);
+    this.info10.setVisibility(View.VISIBLE);
     this.info10.setText(2131100131);
-    this.iv_center.setVisibility(0);
-    this.info4.setVisibility(8);
-    this.info5.setVisibility(8);
-    this.info6.setVisibility(8);
-    this.last.setVisibility(8);
-    this.next.setVisibility(8);
-    this.on.setVisibility(8);
+    this.iv_center.setVisibility(View.VISIBLE);
+    this.info4.setVisibility(View.GONE);
+    this.info5.setVisibility(View.GONE);
+    this.info6.setVisibility(View.GONE);
+    this.last.setVisibility(View.GONE);
+    this.next.setVisibility(View.GONE);
+    this.on.setVisibility(View.GONE);
   }
 
   protected void onCreate(Bundle paramBundle)
@@ -824,7 +824,7 @@ public class AtLearnActivity extends YkAt
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100536);
   }
 
@@ -848,7 +848,7 @@ public class AtLearnActivity extends YkAt
   public void yes(View paramView)
   {
     int i = 10;
-    this.save.setVisibility(8);
+    this.save.setVisibility(View.GONE);
     View localView = LayoutInflater.from(this).inflate(2130968729, null);
     EditText localEditText = (EditText)localView.findViewById(2131559104);
     if (this.mName.length() > i);

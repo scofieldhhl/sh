@@ -160,7 +160,7 @@ public class DragGridView extends GridView
 
   private void onStopDrag()
   {
-    getChildAt(this.mDragPosition - getFirstVisiblePosition()).setVisibility(0);
+    getChildAt(this.mDragPosition - getFirstVisiblePosition()).setVisibility(View.VISIBLE);
     removeDragImage();
   }
 
@@ -170,7 +170,7 @@ public class DragGridView extends GridView
     if ((i != this.mDragPosition) && (i != -1))
     {
       getChildAt(i - getFirstVisiblePosition()).setVisibility(4);
-      getChildAt(this.mDragPosition - getFirstVisiblePosition()).setVisibility(0);
+      getChildAt(this.mDragPosition - getFirstVisiblePosition()).setVisibility(View.VISIBLE);
       if (this.onChanageListener != null)
         this.onChanageListener.onChange(this.mDragPosition, i);
       this.mDragPosition = i;

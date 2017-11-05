@@ -77,7 +77,7 @@ public class FtChooseSensor extends MyBaseFt
       }
     });
     this.tvTitleViewEdit.setText(2131100206);
-    this.tvTitleViewEdit.setVisibility(0);
+    this.tvTitleViewEdit.setVisibility(View.VISIBLE);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492877));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {

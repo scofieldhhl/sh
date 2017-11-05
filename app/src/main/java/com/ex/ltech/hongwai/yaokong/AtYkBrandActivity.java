@@ -100,7 +100,7 @@ public class AtYkBrandActivity extends YkAt
           return;
         case 1:
         }
-        AtYkBrandActivity.this.location.setVisibility(0);
+        AtYkBrandActivity.this.location.setVisibility(View.VISIBLE);
         AtYkBrandActivity.this.location.setText(AtYkBrandActivity.this.locationAndWeatherBusiness.getCityVo().getProvince() + AtYkBrandActivity.this.locationAndWeatherBusiness.getCityVo().getCity() + AtYkBrandActivity.this.locationAndWeatherBusiness.getCityVo().getArea());
         KookongSDK.getAreaId(AtYkBrandActivity.this.locationAndWeatherBusiness.getCityVo().getProvince(), AtYkBrandActivity.this.locationAndWeatherBusiness.getCityVo().getCity(), "", new IRequestResult()
         {
@@ -335,8 +335,8 @@ public class AtYkBrandActivity extends YkAt
     {
       setTiTleTextRes(2131100458);
       getCityStbList();
-      this.rl_search.setVisibility(8);
-      this.sideBar.setVisibility(8);
+      this.rl_search.setVisibility(View.GONE);
+      this.sideBar.setVisibility(View.GONE);
     }
     while (true)
     {
@@ -398,7 +398,7 @@ public class AtYkBrandActivity extends YkAt
                   AtYkBrandActivity.this.nomalItems.add(new AdapterPYinItem(((StbList.Stb)localList.get(j)).bname, "", ((StbList.Stb)localList.get(j)).bid, "A"));
                   AtYkBrandActivity.this.showItems.add(new AdapterPYinItem(((StbList.Stb)localList.get(j)).bname, "", ((StbList.Stb)localList.get(j)).bid, "A"));
                 }
-                AtYkBrandActivity.this.location.setVisibility(8);
+                AtYkBrandActivity.this.location.setVisibility(View.GONE);
                 AtYkBrandActivity.this.mAdapter.notifyDataSetChanged();
               }
             });
@@ -414,7 +414,7 @@ public class AtYkBrandActivity extends YkAt
         }
       });
       return;
-      this.location.setVisibility(8);
+      this.location.setVisibility(View.GONE);
       KookongSDK.getBrandListFromNet(this.mType, new IRequestResult()
       {
         public void onFail(Integer paramInteger, String paramString)
@@ -445,7 +445,7 @@ public class AtYkBrandActivity extends YkAt
       this.showItems.clear();
       setTiTleTextRes(2131100458);
       getCityStbList();
-      this.location.setVisibility(0);
+      this.location.setVisibility(View.VISIBLE);
       this.iptvOrStb = false;
       return;
     }

@@ -110,8 +110,8 @@ public class SeekArc extends View
   {
     Resources localResources = getResources();
     float f = paramContext.getResources().getDisplayMetrics().density;
-    int i = localResources.getColor(2131492980);
-    int j = localResources.getColor(2131492963);
+    int i = localResources.getColor(R.color.progress_gray);
+    int j = localResources.getColor(R.color.outlet_green);
     this.mThumb = localResources.getDrawable(2130837636);
     this.mProgressWidth = (int)(f * this.mProgressWidth);
     if (paramAttributeSet != null)

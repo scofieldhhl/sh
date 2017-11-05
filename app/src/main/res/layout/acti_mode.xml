@@ -1,31 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:id="@id/rl_acti_mode_parent" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:id="@id/rl_acti_mode_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
     <include layout="@layout/acti_title_view" />
-    <TextView android:textColor="#ff000000" android:id="@id/tv_acti_mode_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:text="88" android:layout_toRightOf="@id/btn_acti_mode_menu" />
-    <RelativeLayout android:background="@mipmap/mode_title_bg" android:layout_width="fill_parent" android:layout_height="130.0dip" android:layout_marginTop="50.0dip" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/ll_acti_mode_3" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_marginTop="50.0dip" android:layout_below="@id/tv_acti_mode_progress">
-        <Button android:layout_gravity="center_vertical" android:background="@mipmap/ic_progress_low" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="20.0dip" />
-        <SeekBar android:layout_gravity="center_vertical" android:id="@id/sb_acti_mode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:maxHeight="2.0dip" android:max="100" android:progress="30" android:progressDrawable="@drawable/seekbar_style" android:minHeight="5.0dip" android:thumb="@mipmap/thumb_2" android:layout_weight="1.0" android:layout_centerInParent="true" />
-        <Button android:layout_gravity="center_vertical" android:background="@mipmap/ic_progress_height" android:visibility="gone" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="20.0dip" />
-        <com.indris.material.RippleView android:layout_gravity="center_vertical" android:id="@id/btn_acti_mode_play" android:background="@mipmap/music_paly" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="5.0dip" android:onClick="sendModes" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.8" ripple:hover="true" />
+
+    <TextView
+        android:id="@id/tv_acti_mode_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30.0dip"
+        android:layout_toRightOf="@id/btn_acti_mode_menu"
+        android:text="88"
+        android:textColor="#ff000000"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="130.0dip"
+        android:layout_marginTop="50.0dip"
+        android:background="@mipmap/mode_title_bg" />
+
+    <LinearLayout
+        android:id="@id/ll_acti_mode_3"
+        android:layout_width="fill_parent"
+        android:layout_height="100.0dip"
+        android:layout_below="@id/tv_acti_mode_progress"
+        android:layout_marginTop="50.0dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20.0dip"
+            android:background="@mipmap/ic_progress_low" />
+
+        <SeekBar
+            android:id="@id/sb_acti_mode"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_weight="1.0"
+            android:max="100"
+            android:maxHeight="2.0dip"
+            android:minHeight="5.0dip"
+            android:progress="30"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@mipmap/thumb_2" />
+
+        <Button
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20.0dip"
+            android:background="@mipmap/ic_progress_height"
+            android:visibility="gone" />
+
+        <com.indris.material.RippleView
+            android:id="@id/btn_acti_mode_play"
+            android:layout_width="50.0dip"
+            android:layout_height="50.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="5.0dip"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:background="@mipmap/music_paly"
+            android:onClick="sendModes"
+            ripple:alphaFactor="0.8"
+            ripple:hover="true"
+            ripple:rippleColor="#ffffffff" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:id="@id/ll_choseall" android:layout_width="100.0dip" android:layout_height="25.0dip" android:layout_below="@id/ll_acti_mode_3" android:layout_alignParentRight="true" android:onClick="seletedAll">
-        <TextView android:textColor="#ff4a4a4a" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/all_s" />
-        <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_frag_sys_inside_all_seleted" android:background="@mipmap/ic_no_all_seleted" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="10.0dip" />
+
+    <LinearLayout
+        android:id="@id/ll_choseall"
+        android:layout_width="100.0dip"
+        android:layout_height="25.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/ll_acti_mode_3"
+        android:onClick="seletedAll"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/all_s"
+            android:textColor="#ff4a4a4a" />
+
+        <ImageView
+            android:id="@id/iv_frag_sys_inside_all_seleted"
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:background="@mipmap/ic_no_all_seleted" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="120.0dip" android:layout_height="40.0dip" android:layout_below="@id/ll_acti_mode_3" android:layout_alignParentLeft="true" android:onClick="seletedAll">
-        <Button android:id="@id/btn_del_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="del" android:layout_weight="1.0" />
-        <Button android:id="@id/btn_refresh_mode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刷新" android:layout_weight="1.0" />
+
+    <LinearLayout
+        android:layout_width="120.0dip"
+        android:layout_height="40.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/ll_acti_mode_3"
+        android:onClick="seletedAll"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@id/btn_del_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="del" />
+
+        <Button
+            android:id="@id/btn_refresh_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="刷新" />
     </LinearLayout>
-    <com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout android:id="@id/refresh_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_act_new_main"
-      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@id/refresh_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_act_new_main"
+        android:visibility="gone">
+
         <include layout="@layout/refresh_head" />
-        <com.ex.ltech.led.my_view.pullfresh.PullableGridView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="@color/gray" android:dividerHeight="1.0dip" />
+
+        <com.ex.ltech.led.my_view.pullfresh.PullableGridView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/white"
+            android:divider="@color/gray"
+            android:dividerHeight="1.0dip" />
+
         <include layout="@layout/load_more" />
     </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>
-    <GridView android:gravity="center" android:id="@id/gv_act_mode" android:background="#ffe5e5e5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:horizontalSpacing="1.0px" android:verticalSpacing="1.0px" android:stretchMode="columnWidth" android:columnWidth="90.0dip" android:numColumns="3" android:layout_below="@id/ll_choseall" />
-    <LinearLayout android:gravity="center" android:id="@id/ll_acti_mode_bottom" android:background="#ffe5e5e5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
-        <Button android:id="@id/btn_acti_mode_add" android:background="@mipmap/add_music" android:layout_width="45.0dip" android:layout_height="45.0dip" />
+
+    <GridView
+        android:id="@id/gv_act_mode"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_choseall"
+        android:layout_marginTop="10.0dip"
+        android:background="#ffe5e5e5"
+        android:columnWidth="90.0dip"
+        android:gravity="center"
+        android:horizontalSpacing="1.0px"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="1.0px" />
+
+    <LinearLayout
+        android:id="@id/ll_acti_mode_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffe5e5e5"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <Button
+            android:id="@id/btn_acti_mode_add"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:background="@mipmap/add_music" />
     </LinearLayout>
 </RelativeLayout>

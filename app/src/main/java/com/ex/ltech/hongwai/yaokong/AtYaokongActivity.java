@@ -606,12 +606,12 @@ public class AtYaokongActivity extends YkAt
   {
     if ((!this.sceneVos.isShowGrid) && (this.sceneVos.sceneVos.size() > 0))
     {
-      this.horizontalScrollView.setVisibility(0);
+      this.horizontalScrollView.setVisibility(View.VISIBLE);
       this.sceneVos.isShowGrid = true;
       this.mSceneArrow.setBackgroundResource(2130903582);
       return;
     }
-    this.horizontalScrollView.setVisibility(8);
+    this.horizontalScrollView.setVisibility(View.GONE);
     this.sceneVos.isShowGrid = false;
     this.mSceneArrow.setBackgroundResource(2130903552);
   }
@@ -621,7 +621,7 @@ public class AtYaokongActivity extends YkAt
     ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(paramView, "alpha", new float[] { 0.0F, 1.0F });
     localObjectAnimator.setDuration(50L);
     localObjectAnimator.start();
-    paramView.setVisibility(0);
+    paramView.setVisibility(View.VISIBLE);
   }
 
   private void skip2YkAt(MyRcDevice paramMyRcDevice, int paramInt)
@@ -761,12 +761,12 @@ public class AtYaokongActivity extends YkAt
     this.horizontalGrid.setAdapter(this.sceneAdapter);
     if ((this.sceneVos.isShowGrid) && (this.sceneVos.sceneVos.size() > 0))
     {
-      this.horizontalScrollView.setVisibility(0);
+      this.horizontalScrollView.setVisibility(View.VISIBLE);
       this.sceneVos.isShowGrid = true;
       this.mSceneArrow.setBackgroundResource(2130903582);
       return;
     }
-    this.horizontalScrollView.setVisibility(8);
+    this.horizontalScrollView.setVisibility(View.GONE);
     this.sceneVos.isShowGrid = false;
     this.mSceneArrow.setBackgroundResource(2130903552);
   }
@@ -791,7 +791,7 @@ public class AtYaokongActivity extends YkAt
     {
       public void run()
       {
-        AtYaokongActivity.this.pop.setVisibility(8);
+        AtYaokongActivity.this.pop.setVisibility(View.GONE);
       }
     }
     , 300L);
@@ -821,7 +821,7 @@ public class AtYaokongActivity extends YkAt
     ObjectAnimator localObjectAnimator = ObjectAnimator.ofFloat(this.pop, "alpha", new float[] { 0.0F, 1.0F });
     localObjectAnimator.setDuration(300L);
     localObjectAnimator.start();
-    this.pop.setVisibility(0);
+    this.pop.setVisibility(View.VISIBLE);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -1024,14 +1024,14 @@ public class AtYaokongActivity extends YkAt
     {
       if (paramMyRcDevice.isShowListInfo)
       {
-        paramViewHolder.rlSimple.setVisibility(8);
+        paramViewHolder.rlSimple.setVisibility(View.GONE);
         switch (paramMyRcDevice.mType)
         {
         default:
-          paramViewHolder.rlDoubleWayPanel.setVisibility(8);
-          paramViewHolder.rlComplex.setVisibility(0);
-          paramViewHolder.rlIrCt1.setVisibility(8);
-          paramViewHolder.rlStb.setVisibility(8);
+          paramViewHolder.rlDoubleWayPanel.setVisibility(View.GONE);
+          paramViewHolder.rlComplex.setVisibility(View.VISIBLE);
+          paramViewHolder.rlIrCt1.setVisibility(View.GONE);
+          paramViewHolder.rlStb.setVisibility(View.GONE);
           paramViewHolder.complexName.setText(paramMyRcDevice.mName);
           paramViewHolder.complexMode1.setOnClickListener(new View.OnClickListener(paramInt, paramMyRcDevice, paramViewHolder)
           {
@@ -1091,7 +1091,7 @@ public class AtYaokongActivity extends YkAt
             break;
           AtYaokongActivity.this.kkACManager = new KKACManagerV2((IrData)((MyRcDevice)AtYaokongActivity.this.rcDevices.myRcDevices.get(paramInt)).irDatas.get(0));
           AtYaokongActivity.this.kkACManager.setACStateV2FromString(((MyRcDevice)AtYaokongActivity.this.rcDevices.myRcDevices.get(paramInt)).acState);
-          paramViewHolder.complexWendu.setVisibility(0);
+          paramViewHolder.complexWendu.setVisibility(View.VISIBLE);
           paramViewHolder.complexWendu.setData(this.wendu);
           paramViewHolder.complexWendu.setTextCol(-1);
           paramViewHolder.complexWendu.setSelected(paramMyRcDevice.currentWenduPosi);
@@ -1120,7 +1120,7 @@ public class AtYaokongActivity extends YkAt
           if (paramMyRcDevice.mType == 2)
           {
             AtYaokongActivity.this.initTvView(paramViewHolder.complexMode1, paramViewHolder.complexMode2, paramViewHolder.complexMode3, paramViewHolder.complexMode4);
-            paramViewHolder.complexWendu.setVisibility(8);
+            paramViewHolder.complexWendu.setVisibility(View.GONE);
           }
           switch (paramMyRcDevice.mType)
           {
@@ -1145,7 +1145,7 @@ public class AtYaokongActivity extends YkAt
               }
             });
             label477: if (paramMyRcDevice.mType == 5)
-              paramViewHolder.iv_wendu_arrow.setVisibility(0);
+              paramViewHolder.iv_wendu_arrow.setVisibility(View.VISIBLE);
           case 2:
           case 3:
           case 1:
@@ -1174,7 +1174,7 @@ public class AtYaokongActivity extends YkAt
             localAtYaokongActivity.clickOfflineDeviceId = i;
             localItRcLvAdapter.cracySend(localCmdDateBussiness.getIrCt1OnlineStatus(i), 3);
             AtYaokongActivity.access$2802(AtYaokongActivity.this, new ProgressDialog(AtYaokongActivity.this));
-            AtYaokongActivity.this.dialog.setMessage(AtYaokongActivity.this.getString(2131100075));
+            AtYaokongActivity.this.dialog.setMessage(AtYaokongActivity.this.getString(R.string.get_d_info));
             AtYaokongActivity.this.dialog.setCancelable(false);
             AtYaokongActivity.this.dialog.show();
             AtYaokongActivity.this.handler.postDelayed(AtYaokongActivity.this.checkDeviceStatusDelay, 5500L);
@@ -1192,18 +1192,18 @@ public class AtYaokongActivity extends YkAt
             localAtYaokongActivity.clickOfflineDeviceId = i;
             localItRcLvAdapter.cracySend(localCmdDateBussiness.getIrCt1OnlineStatus(i), 3);
             AtYaokongActivity.access$2802(AtYaokongActivity.this, new ProgressDialog(AtYaokongActivity.this));
-            AtYaokongActivity.this.dialog.setMessage(AtYaokongActivity.this.getString(2131100075));
+            AtYaokongActivity.this.dialog.setMessage(AtYaokongActivity.this.getString(R.string.get_d_info));
             AtYaokongActivity.this.dialog.setCancelable(false);
             AtYaokongActivity.this.dialog.show();
             AtYaokongActivity.this.handler.postDelayed(AtYaokongActivity.this.checkDeviceStatusDelay, 5500L);
           }
         });
         return;
-        paramViewHolder.rlDoubleWayPanel.setVisibility(0);
-        paramViewHolder.rlComplex.setVisibility(8);
-        paramViewHolder.rlIrCt1.setVisibility(8);
-        paramViewHolder.rlStb.setVisibility(8);
-        paramViewHolder.doubleWayPanelTb.setVisibility(8);
+        paramViewHolder.rlDoubleWayPanel.setVisibility(View.VISIBLE);
+        paramViewHolder.rlComplex.setVisibility(View.GONE);
+        paramViewHolder.rlIrCt1.setVisibility(View.GONE);
+        paramViewHolder.rlStb.setVisibility(View.GONE);
+        paramViewHolder.doubleWayPanelTb.setVisibility(View.GONE);
         paramViewHolder.doubleWayPanelIvIc.setBackgroundResource(2130903411);
         paramViewHolder.doubleWayPanelTvOne.setVisibility(4);
         paramViewHolder.doubleWayPanelTvTwo.setVisibility(4);
@@ -1215,17 +1215,17 @@ public class AtYaokongActivity extends YkAt
         paramViewHolder.tvOnoffOn1.setTextColor(Color.parseColor("#FFFFFF"));
         paramViewHolder.tvOnoffOff1.setTextColor(Color.parseColor("#FFFFFF"));
         break label477;
-        paramViewHolder.rlDoubleWayPanel.setVisibility(0);
-        paramViewHolder.rlComplex.setVisibility(8);
-        paramViewHolder.rlStb.setVisibility(8);
-        paramViewHolder.rlIrCt1.setVisibility(8);
+        paramViewHolder.rlDoubleWayPanel.setVisibility(View.VISIBLE);
+        paramViewHolder.rlComplex.setVisibility(View.GONE);
+        paramViewHolder.rlStb.setVisibility(View.GONE);
+        paramViewHolder.rlIrCt1.setVisibility(View.GONE);
         paramViewHolder.doubleWayPanelName.setText(paramMyRcDevice.mName);
-        paramViewHolder.doubleWayPanelTb.setVisibility(8);
+        paramViewHolder.doubleWayPanelTb.setVisibility(View.GONE);
         paramViewHolder.doubleWayPanelIvIc.setBackgroundResource(2130903412);
-        paramViewHolder.doubleWayPanelTvOne.setVisibility(0);
-        paramViewHolder.doubleWayPanelTvTwo.setVisibility(0);
-        paramViewHolder.tvOnoffOn2.setVisibility(0);
-        paramViewHolder.tvOnoffOff2.setVisibility(0);
+        paramViewHolder.doubleWayPanelTvOne.setVisibility(View.VISIBLE);
+        paramViewHolder.doubleWayPanelTvTwo.setVisibility(View.VISIBLE);
+        paramViewHolder.tvOnoffOn2.setVisibility(View.VISIBLE);
+        paramViewHolder.tvOnoffOff2.setVisibility(View.VISIBLE);
         paramViewHolder.tvOnoffOn1.setOnTouchListener(new SwitchOnTouchListener(paramViewHolder.tvOnoffOn1, true, 1, paramInt));
         paramViewHolder.tvOnoffOff1.setOnTouchListener(new SwitchOnTouchListener(paramViewHolder.tvOnoffOff1, false, 2, paramInt));
         paramViewHolder.tvOnoffOn2.setOnTouchListener(new SwitchOnTouchListener(paramViewHolder.tvOnoffOn2, true, 3, paramInt));
@@ -1241,10 +1241,10 @@ public class AtYaokongActivity extends YkAt
         {
           j = 8;
           label972: localTextView2.setVisibility(j);
-          paramViewHolder.rlStb.setVisibility(8);
-          paramViewHolder.rlDoubleWayPanel.setVisibility(8);
-          paramViewHolder.rlComplex.setVisibility(8);
-          paramViewHolder.rlIrCt1.setVisibility(0);
+          paramViewHolder.rlStb.setVisibility(View.GONE);
+          paramViewHolder.rlDoubleWayPanel.setVisibility(View.GONE);
+          paramViewHolder.rlComplex.setVisibility(View.GONE);
+          paramViewHolder.rlIrCt1.setVisibility(View.VISIBLE);
           paramViewHolder.rlIrCt1Name.setText(paramMyRcDevice.mName);
           if (!paramMyRcDevice.nonIrDevice.irCt1Onoff)
             break label1213;
@@ -1331,10 +1331,10 @@ public class AtYaokongActivity extends YkAt
           paramViewHolder.irCt1Sb.setScrubberColor(Color.parseColor("#c8B6B6B6"));
           paramViewHolder.tvBrt.setBackgroundResource(2130903361);
         }
-        paramViewHolder.rlStb.setVisibility(0);
-        paramViewHolder.rlDoubleWayPanel.setVisibility(8);
-        paramViewHolder.rlComplex.setVisibility(8);
-        paramViewHolder.rlIrCt1.setVisibility(8);
+        paramViewHolder.rlStb.setVisibility(View.VISIBLE);
+        paramViewHolder.rlDoubleWayPanel.setVisibility(View.GONE);
+        paramViewHolder.rlComplex.setVisibility(View.GONE);
+        paramViewHolder.rlIrCt1.setVisibility(View.GONE);
         paramViewHolder.stbName.setText(paramMyRcDevice.mName);
         paramViewHolder.stbChAdd.setOnClickListener(new stbClickListener(paramInt));
         paramViewHolder.stbChMinus.setOnClickListener(new stbClickListener(paramInt));
@@ -1354,7 +1354,7 @@ public class AtYaokongActivity extends YkAt
         if (paramMyRcDevice.mType != 8)
           break;
         AtYaokongActivity.this.initFanView(paramViewHolder.complexMode1, paramViewHolder.complexMode2, paramViewHolder.complexMode3, paramViewHolder.complexMode4);
-        paramViewHolder.complexWendu.setVisibility(8);
+        paramViewHolder.complexWendu.setVisibility(View.GONE);
         break;
         paramViewHolder.complexIvIc.setBackgroundResource(2130903581);
         paramViewHolder.rlComplex.setBackgroundColor(Color.parseColor("#FFFD7A7F"));
@@ -1373,14 +1373,14 @@ public class AtYaokongActivity extends YkAt
         break label444;
         paramViewHolder.complexIvIc.setBackgroundResource(2130903534);
         break label444;
-        paramViewHolder.rlSimple.setVisibility(0);
-        paramViewHolder.rlDoubleWayPanel.setVisibility(8);
-        paramViewHolder.rlComplex.setVisibility(8);
-        paramViewHolder.rlIrCt1.setVisibility(8);
-        paramViewHolder.rlStb.setVisibility(8);
+        paramViewHolder.rlSimple.setVisibility(View.VISIBLE);
+        paramViewHolder.rlDoubleWayPanel.setVisibility(View.GONE);
+        paramViewHolder.rlComplex.setVisibility(View.GONE);
+        paramViewHolder.rlIrCt1.setVisibility(View.GONE);
+        paramViewHolder.rlStb.setVisibility(View.GONE);
         paramViewHolder.name.setText(paramMyRcDevice.mName);
-        paramViewHolder.irCtTb.setVisibility(8);
-        paramViewHolder.tvRefreshOfflineItem2.setVisibility(8);
+        paramViewHolder.irCtTb.setVisibility(View.GONE);
+        paramViewHolder.tvRefreshOfflineItem2.setVisibility(View.GONE);
         switch (paramMyRcDevice.mType)
         {
         case 4:
@@ -1455,7 +1455,7 @@ public class AtYaokongActivity extends YkAt
         {
           i = 8;
           label1934: localTextView1.setVisibility(i);
-          paramViewHolder.irCtTb.setVisibility(0);
+          paramViewHolder.irCtTb.setVisibility(View.VISIBLE);
           paramViewHolder.ivIc.setBackgroundResource(2130903403);
           paramViewHolder.arrow.setBackgroundResource(2130903552);
           if (!paramMyRcDevice.nonIrDevice.irCt1Onoff)
@@ -1477,7 +1477,7 @@ public class AtYaokongActivity extends YkAt
           break label1934;
           label2011: paramViewHolder.irCtTb.setToggleOff();
         }
-        paramViewHolder.iv_wendu_arrow.setVisibility(8);
+        paramViewHolder.iv_wendu_arrow.setVisibility(View.GONE);
       }
     }
 
@@ -1764,7 +1764,7 @@ public class AtYaokongActivity extends YkAt
 
     public void run()
     {
-      this.view.setVisibility(8);
+      this.view.setVisibility(View.GONE);
     }
   }
 

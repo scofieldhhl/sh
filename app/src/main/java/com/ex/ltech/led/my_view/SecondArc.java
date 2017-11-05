@@ -5,14 +5,12 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Paint.Cap;
-import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-import com.ex.ltech.led.R.styleable;
+
+import com.ex.ltech.led.R;
 
 public class SecondArc extends View
 {
@@ -108,8 +106,8 @@ public class SecondArc extends View
   {
     Resources localResources = getResources();
     float f = paramContext.getResources().getDisplayMetrics().density;
-    int i = localResources.getColor(2131492980);
-    int j = localResources.getColor(2131492963);
+    int i = localResources.getColor(R.color.progress_gray);
+    int j = localResources.getColor(R.color.outlet_green);
     this.mProgressWidth = (int)(f * this.mProgressWidth);
     if (paramAttributeSet != null)
     {

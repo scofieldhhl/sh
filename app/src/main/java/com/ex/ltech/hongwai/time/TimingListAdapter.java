@@ -96,8 +96,8 @@ public class TimingListAdapter extends BaseAdapter
       localHolder.tv_act_timing_swich_status.setText(localTimingVo.getYaoKongName());
       if (localTimingVo.getColor() == 0)
         break label459;
-      localHolder.csv_act_timing.setVisibility(0);
-      localHolder.tv_act_timing_mode.setVisibility(8);
+      localHolder.csv_act_timing.setVisibility(View.VISIBLE);
+      localHolder.tv_act_timing_mode.setVisibility(View.GONE);
       localHolder.csv_act_timing.setColor(localTimingVo.getColor());
       this.fleshSpaceTime = System.currentTimeMillis();
       if (localTimingVo.getRcVo() == null)
@@ -105,7 +105,7 @@ public class TimingListAdapter extends BaseAdapter
       localHolder.tv_act_timing_mode.setText(localTimingVo.getRcVo().getStatus());
       label397: if (!(localTimingVo.isShowMineTiming() | localTimingVo.isShowOtherTiming()))
         break label530;
-      localHolder.who_timing.setVisibility(0);
+      localHolder.who_timing.setVisibility(View.VISIBLE);
       localTextView = localHolder.who_timing;
       if (!localTimingVo.isShowMineTiming())
         break label523;
@@ -116,16 +116,16 @@ public class TimingListAdapter extends BaseAdapter
       return paramView;
       localHolder.tb_act_timing_swich.setToggleOff();
       break;
-      label459: localHolder.tv_act_timing_mode.setVisibility(0);
-      localHolder.csv_act_timing.setVisibility(8);
+      label459: localHolder.tv_act_timing_mode.setVisibility(View.VISIBLE);
+      localHolder.csv_act_timing.setVisibility(View.GONE);
       break label366;
       label481: localHolder.tv_act_timing_mode.setText(localTimingVo.getStatus());
       break label397;
-      label497: localHolder.tv_act_timing_mode.setVisibility(8);
+      label497: localHolder.tv_act_timing_mode.setVisibility(View.GONE);
       localHolder.tv_act_timing_swich_status.setText(localTimingVo.getStatus());
       break label397;
     }
-    label530: localHolder.who_timing.setVisibility(8);
+    label530: localHolder.who_timing.setVisibility(View.GONE);
     return paramView;
   }
 

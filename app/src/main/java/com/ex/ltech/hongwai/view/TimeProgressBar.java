@@ -90,7 +90,7 @@ public class TimeProgressBar extends View
       paramCanvas.drawArc(localRectF, 360.0F * (this.currentProgress / this.totalProgress) - 90.0F, 360.0F * ((this.totalProgress - this.currentProgress) / this.totalProgress), false, this.ringPaint);
       this.ringPaint.setColor(this.firstProgressColor);
       paramCanvas.drawArc(localRectF, -90.0F, 360.0F * (this.currentProgress / this.totalProgress), false, this.ringPaint);
-      String str = this.currentProgress + getResources().getString(2131100382);
+      String str = this.currentProgress + getResources().getString(R.string.sec);
       this.textWidth = this.textPaint.measureText(str, 0, str.length());
       paramCanvas.drawText(str, getWidth() / 2 - this.textWidth / 2.0F, getHeight() / 2 + this.textHeight / 3.0F, this.textPaint);
     }

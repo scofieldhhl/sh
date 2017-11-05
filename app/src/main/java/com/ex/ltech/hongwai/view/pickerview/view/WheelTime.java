@@ -214,21 +214,21 @@ public class WheelTime
       i *= 3;
       continue;
       j *= 4;
-      this.wv_hours.setVisibility(8);
-      this.wv_mins.setVisibility(8);
+      this.wv_hours.setVisibility(View.GONE);
+      this.wv_mins.setVisibility(View.GONE);
       continue;
       j *= 4;
-      this.wv_year.setVisibility(8);
-      this.wv_month.setVisibility(8);
-      this.wv_day.setVisibility(8);
+      this.wv_year.setVisibility(View.GONE);
+      this.wv_month.setVisibility(View.GONE);
+      this.wv_day.setVisibility(View.GONE);
       continue;
       j *= 3;
-      this.wv_year.setVisibility(8);
+      this.wv_year.setVisibility(View.GONE);
       continue;
       j *= 4;
-      this.wv_day.setVisibility(8);
-      this.wv_hours.setVisibility(8);
-      this.wv_mins.setVisibility(8);
+      this.wv_day.setVisibility(View.GONE);
+      this.wv_hours.setVisibility(View.GONE);
+      this.wv_mins.setVisibility(View.GONE);
     }
   }
 

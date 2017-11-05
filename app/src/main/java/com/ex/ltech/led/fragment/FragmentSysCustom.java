@@ -50,7 +50,7 @@ public class FragmentSysCustom extends Fragment
     this.btn_acti_scene_add = ((Button)this.mRootView.findViewById(2131559137));
     this.ll_acti_scene_3 = ((LinearLayout)this.mRootView.findViewById(2131559133));
     this.ll_acti_scene_bottom = ((LinearLayout)this.mRootView.findViewById(2131559136));
-    this.ll_acti_scene_bottom.setVisibility(0);
+    this.ll_acti_scene_bottom.setVisibility(View.VISIBLE);
     this.btn_acti_scene_play = ((RippleView)this.mRootView.findViewById(2131559131));
     this.tv_acti_scene_progress = ((TextView)this.mRootView.findViewById(2131559132));
     this.sb_acti_scene = ((SeekBar)this.mRootView.findViewById(2131559134));
@@ -71,10 +71,10 @@ public class FragmentSysCustom extends Fragment
 
   public void hideAnyView()
   {
-    this.btn_acti_scene_play.setVisibility(8);
-    this.tv_acti_scene_progress.setVisibility(8);
-    this.ll_acti_scene_3.setVisibility(8);
-    this.ll_acti_scene_bottom.setVisibility(8);
+    this.btn_acti_scene_play.setVisibility(View.GONE);
+    this.tv_acti_scene_progress.setVisibility(View.GONE);
+    this.ll_acti_scene_3.setVisibility(View.GONE);
+    this.ll_acti_scene_bottom.setVisibility(View.GONE);
   }
 
   public void init()

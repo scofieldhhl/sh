@@ -2,11 +2,12 @@ package com.ex.ltech.led.acti.mode;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
@@ -15,12 +16,11 @@ import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.utils.FileUtil;
 import com.ex.ltech.led.utils.UriUtil;
-import com.ex.ltech.led.vo.DeviceVo;
 import com.ex.ltech.led.vo.ModeVo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,57 +66,57 @@ public class ModeBusiness
   {
     StringBuilder localStringBuilder = new StringBuilder();
     ModeVo localModeVo1 = new ModeVo();
-    localModeVo1.setTvName(this.pct.getString(2131100166));
-    localModeVo1.setIvLeftRes(2130903482);
+    localModeVo1.setTvName(this.pct.getString(R.string.mode_text_11));
+    localModeVo1.setIvLeftRes(R.mipmap.mode_ic_6);
     localModeVo1.setSeleted(false);
     localModeVo1.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 0, 6));
     localStringBuilder.append(localModeVo1.getTvName());
     this.modes.add(localModeVo1);
     ModeVo localModeVo2 = new ModeVo();
-    localModeVo2.setTvName(this.pct.getString(2131100168));
-    localModeVo2.setIvLeftRes(2130903481);
+    localModeVo2.setTvName(this.pct.getString(R.string.mode_text_22));
+    localModeVo2.setIvLeftRes(R.mipmap.mode_ic_5);
     localModeVo2.setSeleted(false);
     localModeVo2.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 1, 6));
     localStringBuilder.append(localModeVo2.getTvName());
     this.modes.add(localModeVo2);
     ModeVo localModeVo3 = new ModeVo();
-    localModeVo3.setTvName(this.pct.getString(2131100170));
-    localModeVo3.setIvLeftRes(2130903483);
+    localModeVo3.setTvName(this.pct.getString(R.string.mode_text_33));
+    localModeVo3.setIvLeftRes(R.mipmap.mode_ic_7);
     localModeVo3.setSeleted(false);
     localModeVo3.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 2, 6));
     localStringBuilder.append(localModeVo3.getTvName());
     this.modes.add(localModeVo3);
     ModeVo localModeVo4 = new ModeVo();
-    localModeVo4.setTvName(this.pct.getString(2131100172));
-    localModeVo4.setIvLeftRes(2130903484);
+    localModeVo4.setTvName(this.pct.getString(R.string.mode_text_44));
+    localModeVo4.setIvLeftRes(R.mipmap.mode_ic_8);
     localModeVo4.setSeleted(false);
     localModeVo4.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 3, 6));
     localStringBuilder.append(localModeVo4.getTvName());
     this.modes.add(localModeVo4);
     ModeVo localModeVo5 = new ModeVo();
-    localModeVo5.setTvName(this.pct.getString(2131100174));
-    localModeVo5.setIvLeftRes(2130903477);
+    localModeVo5.setTvName(this.pct.getString(R.string.mode_text_55));
+    localModeVo5.setIvLeftRes(R.mipmap.mode_ic_1);
     localModeVo5.setSeleted(false);
     localStringBuilder.append(localModeVo5.getTvName());
     localModeVo5.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 4, 6));
     this.modes.add(localModeVo5);
     ModeVo localModeVo6 = new ModeVo();
-    localModeVo6.setTvName(this.pct.getString(2131100176));
-    localModeVo6.setIvLeftRes(2130903480);
+    localModeVo6.setTvName(this.pct.getString(R.string.mode_text_66));
+    localModeVo6.setIvLeftRes(R.mipmap.mode_ic_4);
     localModeVo6.setSeleted(false);
     localStringBuilder.append(localModeVo6.getTvName());
     localModeVo6.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 5, 6));
     this.modes.add(localModeVo6);
     ModeVo localModeVo7 = new ModeVo();
-    localModeVo7.setTvName(this.pct.getString(2131100178));
-    localModeVo7.setIvLeftRes(2130903478);
+    localModeVo7.setTvName(this.pct.getString(R.string.mode_text_77));
+    localModeVo7.setIvLeftRes(R.mipmap.mode_ic_2);
     localModeVo7.setSeleted(false);
     localStringBuilder.append(localModeVo7.getTvName());
     localModeVo7.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 6, 6));
     this.modes.add(localModeVo7);
     ModeVo localModeVo8 = new ModeVo();
-    localModeVo8.setTvName(this.pct.getString(2131100180));
-    localModeVo8.setIvLeftRes(2130903479);
+    localModeVo8.setTvName(this.pct.getString(R.string.mode_text_88));
+    localModeVo8.setIvLeftRes(R.mipmap.mode_ic_3);
     localModeVo8.setSeleted(false);
     localStringBuilder.append(localModeVo8.getTvName());
     localModeVo8.setSpeed(this.ferences.spFerences.getInt(this.modeSpeedKey + 7, 6));
@@ -211,7 +211,7 @@ public class ModeBusiness
   public List<Bitmap> getNewCreateModeBitmaps()
   {
     this.bms.clear();
-    int i = 0;
+    /*int i = 0;
     if (i < this.modes.size())
     {
       if (((ModeVo)this.modes.get(i)).getNewCreateModeBitmapPath() != null)
@@ -222,7 +222,7 @@ public class ModeBusiness
         break;
         this.bms.add(BitmapFactory.decodeResource(this.pct.getResources(), ((ModeVo)this.modes.get(i)).getIvLeftRes()));
       }
-    }
+    }*/
     return this.bms;
   }
 
@@ -233,44 +233,44 @@ public class ModeBusiness
 
   public void initGalleryData()
   {
-    this.reses.add(Integer.valueOf(2130903477));
-    this.reses.add(Integer.valueOf(2130903478));
-    this.reses.add(Integer.valueOf(2130903479));
-    this.reses.add(Integer.valueOf(2130903480));
-    this.reses.add(Integer.valueOf(2130903481));
-    this.reses.add(Integer.valueOf(2130903482));
-    this.reses.add(Integer.valueOf(2130903483));
-    this.reses.add(Integer.valueOf(2130903484));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903477));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903478));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903479));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903480));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903481));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903482));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903483));
-    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), 2130903484));
-    this.modesDefultName.add(this.pct.getString(2131100165));
-    this.modesDefultName.add(this.pct.getString(2131100167));
-    this.modesDefultName.add(this.pct.getString(2131100169));
-    this.modesDefultName.add(this.pct.getString(2131100171));
-    this.modesDefultName.add(this.pct.getString(2131100173));
-    this.modesDefultName.add(this.pct.getString(2131100175));
-    this.modesDefultName.add(this.pct.getString(2131100177));
-    this.modesDefultName.add(this.pct.getString(2131100179));
-    this.gradViewDefultName.add(this.pct.getString(2131100166));
-    this.gradViewDefultName.add(this.pct.getString(2131100168));
-    this.gradViewDefultName.add(this.pct.getString(2131100170));
-    this.gradViewDefultName.add(this.pct.getString(2131100172));
-    this.gradViewDefultName.add(this.pct.getString(2131100174));
-    this.gradViewDefultName.add(this.pct.getString(2131100176));
-    this.gradViewDefultName.add(this.pct.getString(2131100178));
-    this.gradViewDefultName.add(this.pct.getString(2131100180));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_1));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_2));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_3));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_4));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_5));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_6));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_7));
+    this.reses.add(Integer.valueOf(R.mipmap.mode_ic_8));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_1));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_2));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_3));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_4));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_5));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_6));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_7));
+    this.imgList.add(BitmapFactory.decodeResource(this.pct.getResources(), R.mipmap.mode_ic_8));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_1));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_2));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_3));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_4));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_5));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_6));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_7));
+    this.modesDefultName.add(this.pct.getString(R.string.mode_text_8));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_11));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_22));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_33));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_44));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_55));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_66));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_77));
+    this.gradViewDefultName.add(this.pct.getString(R.string.mode_text_88));
   }
 
   public void initModes()
   {
     String str = this.ferences.spFerences.getString(this.modeDataKey, "");
-    if (str.equals(""))
+    /*if (str.equals(""))
       initDefaultModes();
     while (true)
     {
@@ -294,7 +294,7 @@ public class ModeBusiness
       {
         initDefaultModes();
       }
-    }
+    }*/
   }
 
   public boolean isMultiSeleted()
@@ -315,7 +315,7 @@ public class ModeBusiness
 
   public void offModes()
   {
-    if (!isMultiSeleted())
+    /*if (!isMultiSeleted())
       return;
     ArrayList localArrayList = new ArrayList();
     int i;
@@ -364,7 +364,7 @@ public class ModeBusiness
       }
     }
     System.out.println("Test the fucking send    438       sendSingleMode " + str);
-    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 178));
+    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 178));*/
   }
 
   public void onListViewItemClick(int paramInt)
@@ -418,7 +418,7 @@ public class ModeBusiness
         removeAddBtnVos();
       return;
     }
-    if (this.singleSeletedPosi == paramInt)
+    /*if (this.singleSeletedPosi == paramInt)
     {
       ModeVo localModeVo3 = (ModeVo)this.modes.get(paramInt);
       if (!localModeVo3.isSingleSeleted())
@@ -449,7 +449,7 @@ public class ModeBusiness
       localModeVo1.setSingleSeleted(bool);
       this.modes.remove(paramInt);
       this.modes.add(paramInt, localModeVo1);
-    }
+    }*/
   }
 
   public void prepareLink()
@@ -505,7 +505,7 @@ public class ModeBusiness
 
   public void sendCustomMode(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, List<Integer> paramList)
   {
-    byte b = 17;
+    /*byte b = 17;
     int i;
     switch (paramInt4)
     {
@@ -569,12 +569,12 @@ public class ModeBusiness
       i = 247;
       continue;
       i = 248;
-    }
+    }*/
   }
 
   public void sendModes()
   {
-    if (!isMultiSeleted())
+    /*if (!isMultiSeleted())
       return;
     ArrayList localArrayList = new ArrayList();
     int i;
@@ -641,12 +641,12 @@ public class ModeBusiness
     }
     System.out.println("Test the fucking send       389    sendSingleMode " + str);
     this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 177));
-    localList.add(localModeVo1);
+    localList.add(localModeVo1);*/
   }
 
   public void sendModesWithSameSpeed(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    /*ArrayList localArrayList = new ArrayList();
     int i;
     int j;
     label37: byte b;
@@ -692,12 +692,12 @@ public class ModeBusiness
       }
     }
     System.out.println("Test the fucking send      481     sendSingleMode " + str);
-    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 177));
+    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 177));*/
   }
 
   public void sendSingleMode(int paramInt)
   {
-    ArrayList localArrayList = new ArrayList();
+    /*ArrayList localArrayList = new ArrayList();
     int i;
     int j;
     label37: byte b;
@@ -758,7 +758,7 @@ public class ModeBusiness
       }
     }
     System.out.println("Test the fucking send      538     sendSingleMode " + str);
-    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 177));
+    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 177));*/
   }
 
   public void sendbrightCmd(int paramInt1, int paramInt2, int paramInt3, int paramInt4)
@@ -766,8 +766,3 @@ public class ModeBusiness
     this.socketManager.postTask(this.cmdDateBussiness.getColorCmd(209, paramInt1, paramInt2, paramInt3, paramInt4, 0));
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.mode.ModeBusiness
- * JD-Core Version:    0.6.0
- */

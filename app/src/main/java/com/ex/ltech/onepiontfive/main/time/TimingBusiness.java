@@ -514,7 +514,7 @@ public class TimingBusiness extends MyBusiness
     if (!str2.equals("0"))
     {
       ((RepeatDayVo)localArrayList1.get(0)).setSeleted(true);
-      localStringBuffer1.append(this.context.getString(2131100239)).append("\t\t");
+      localStringBuffer1.append(this.context.getString(R.string.once)).append("\t\t");
       j = 1;
       break label1697;
       if (!str2.equals("0"))
@@ -651,7 +651,7 @@ public class TimingBusiness extends MyBusiness
             localTiming.setSeletedInfo(localStringBuffer2.toString());
             localTiming.setTimingInnerDeivces(getSeletedTimingDeviceListData(localArrayList2));
             localTiming.setOnOff(false);
-            if (!localTiming.getShotDaysStr().equalsIgnoreCase(this.context.getString(2131100239)))
+            if (!localTiming.getShotDaysStr().equalsIgnoreCase(this.context.getString(R.string.once)))
               break label1412;
             localTiming.setIsJustOnce(true);
             break label1412;
@@ -731,7 +731,7 @@ public class TimingBusiness extends MyBusiness
     this.cmd.add(Integer.valueOf(paramInt));
     this.cmd.add(Integer.valueOf(paramTiming.getOrder()));
     String str1 = "";
-    if (paramTiming.getShotDaysStr().equals(this.ct.getString(2131100239)))
+    if (paramTiming.getShotDaysStr().equals(this.ct.getString(R.string.once)))
       str1 = "10000000";
     while (true)
     {

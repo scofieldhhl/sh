@@ -34,11 +34,11 @@ public class NewSceneAdapter extends BaseAdapter
     System.out.println(localInnerRcVo.toString() + "798987987978");
     if (localInnerRcVo.isAdd())
     {
-      paramViewHolder.yaoKongStatus.setVisibility(8);
-      paramViewHolder.down_vertical_line.setVisibility(8);
+      paramViewHolder.yaoKongStatus.setVisibility(View.GONE);
+      paramViewHolder.down_vertical_line.setVisibility(View.GONE);
       paramViewHolder.icon.setImageResource(2130903753);
       paramViewHolder.yaoKongName.setText(2131099936);
-      paramViewHolder.time.setVisibility(8);
+      paramViewHolder.time.setVisibility(View.GONE);
       paramViewHolder.icon.setOnClickListener(new View.OnClickListener(paramInt)
       {
         public void onClick(View paramView)
@@ -55,8 +55,8 @@ public class NewSceneAdapter extends BaseAdapter
       });
       if (paramInt >= -1 + getCount())
         break label525;
-      paramViewHolder.edit.setVisibility(0);
-      paramViewHolder.del.setVisibility(0);
+      paramViewHolder.edit.setVisibility(View.VISIBLE);
+      paramViewHolder.del.setVisibility(View.VISIBLE);
     }
     while (true)
     {
@@ -75,13 +75,13 @@ public class NewSceneAdapter extends BaseAdapter
         }
       });
       return;
-      paramViewHolder.yaoKongStatus.setVisibility(0);
-      paramViewHolder.down_vertical_line.setVisibility(0);
+      paramViewHolder.yaoKongStatus.setVisibility(View.VISIBLE);
+      paramViewHolder.down_vertical_line.setVisibility(View.VISIBLE);
       if ((getCount() > 1) && (-2 + getCount() == paramInt))
       {
-        paramViewHolder.time.setVisibility(8);
+        paramViewHolder.time.setVisibility(View.GONE);
         label231: paramViewHolder.yaoKongName.setText(localInnerRcVo.getName());
-        paramViewHolder.time.setText(localInnerRcVo.getSpaceTime() + ".0" + this.context.getString(2131100382));
+        paramViewHolder.time.setText(localInnerRcVo.getSpaceTime() + ".0" + this.context.getString(R.string.sec));
         switch (localInnerRcVo.getmType())
         {
         case 4:
@@ -103,7 +103,7 @@ public class NewSceneAdapter extends BaseAdapter
       {
         paramViewHolder.yaoKongStatus.setText(localInnerRcVo.getStatus());
         break;
-        paramViewHolder.time.setVisibility(0);
+        paramViewHolder.time.setVisibility(View.VISIBLE);
         break label231;
         paramViewHolder.icon.setImageResource(this.picRes[0]);
         continue;
@@ -123,8 +123,8 @@ public class NewSceneAdapter extends BaseAdapter
         continue;
         paramViewHolder.icon.setImageResource(this.picRes[8]);
       }
-      label525: paramViewHolder.edit.setVisibility(8);
-      paramViewHolder.del.setVisibility(8);
+      label525: paramViewHolder.edit.setVisibility(View.GONE);
+      paramViewHolder.del.setVisibility(View.GONE);
     }
   }
 

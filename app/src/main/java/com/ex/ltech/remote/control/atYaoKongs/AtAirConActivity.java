@@ -62,12 +62,12 @@ public class AtAirConActivity extends YkAt
 
   private void hideStatus()
   {
-    findViewById(2131558823).setVisibility(8);
-    findViewById(2131558824).setVisibility(8);
-    findViewById(2131558825).setVisibility(8);
-    findViewById(2131558826).setVisibility(8);
-    findViewById(2131558827).setVisibility(8);
-    findViewById(2131558828).setVisibility(8);
+    findViewById(2131558823).setVisibility(View.GONE);
+    findViewById(2131558824).setVisibility(View.GONE);
+    findViewById(2131558825).setVisibility(View.GONE);
+    findViewById(2131558826).setVisibility(View.GONE);
+    findViewById(2131558827).setVisibility(View.GONE);
+    findViewById(2131558828).setVisibility(View.GONE);
   }
 
   private void initAir()
@@ -82,12 +82,12 @@ public class AtAirConActivity extends YkAt
 
   private void showStatus()
   {
-    findViewById(2131558823).setVisibility(0);
-    findViewById(2131558824).setVisibility(0);
-    findViewById(2131558825).setVisibility(0);
-    findViewById(2131558826).setVisibility(0);
-    findViewById(2131558827).setVisibility(0);
-    findViewById(2131558828).setVisibility(0);
+    findViewById(2131558823).setVisibility(View.VISIBLE);
+    findViewById(2131558824).setVisibility(View.VISIBLE);
+    findViewById(2131558825).setVisibility(View.VISIBLE);
+    findViewById(2131558826).setVisibility(View.VISIBLE);
+    findViewById(2131558827).setVisibility(View.VISIBLE);
+    findViewById(2131558828).setVisibility(View.VISIBLE);
   }
 
   public void F5()
@@ -107,7 +107,7 @@ public class AtAirConActivity extends YkAt
             default:
               if (this.mDevice.GetAutoWindDir() != 1)
                 break label259;
-              findViewById(2131558824).setVisibility(0);
+              findViewById(2131558824).setVisibility(View.VISIBLE);
               this.mDevice.Update(ETDB.getInstance(this));
               return;
               findViewById(2131558825).setBackgroundResource(2130903422);

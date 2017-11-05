@@ -93,8 +93,8 @@ public class ActDeleteManager extends MyBaseFt
         ActDeleteManager.this.finish();
       }
     });
-    this.tvTitleViewEdit.setVisibility(0);
-    this.tvTitleViewEdit.setText(2131100063);
+    this.tvTitleViewEdit.setVisibility(View.VISIBLE);
+    this.tvTitleViewEdit.setText(R.string.finish);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492897));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {

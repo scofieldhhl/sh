@@ -73,10 +73,10 @@ public class ActNewCustom extends MyBaseActivity
   private void setTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100202);
-    setEditStrColor(getResources().getColor(2131492962));
-    setEditTextRes(2131100063);
+    setEditStrColor(getResources().getColor(R.color.oringe));
+    setEditTextRes(R.string.finish);
   }
 
   private void setTitleView()
@@ -87,27 +87,27 @@ public class ActNewCustom extends MyBaseActivity
   {
     this.cilcleBallPosi = paramInt;
     this.tv_acti_new_custom_circle_color_posi.setText("" + (paramInt + 1));
-    this.tv_acti_new_custom_circle_color_posi.setVisibility(0);
+    this.tv_acti_new_custom_circle_color_posi.setVisibility(View.VISIBLE);
     this.tv_acti_new_custom_circle_color_posi.setAnimation(AnimationUtils.loadAnimation(this, 2131034125));
   }
 
   public void onCilcleBgTouchUp()
   {
-    this.tv_acti_new_custom_circle_color_posi.setVisibility(8);
-    this.tv_acti_new_custom_circle_color_posi.setAnimation(AnimationUtils.loadAnimation(this, 2131034123));
+    this.tv_acti_new_custom_circle_color_posi.setVisibility(View.GONE);
+    this.tv_acti_new_custom_circle_color_posi.setAnimation(AnimationUtils.loadAnimation(this, R.anim.push_down_out_fast));
   }
 
   public void onClick(View paramView)
   {
-    this.bt_acti_new_custom_ping.setBackgroundResource(2130903309);
-    this.bt_acti_new_custom_zan.setBackgroundResource(2130903313);
-    this.bt_acti_new_custom_tiao.setBackgroundResource(2130903311);
+    this.bt_acti_new_custom_ping.setBackgroundResource(R.mipmap.ic_new_custom_ping);
+    this.bt_acti_new_custom_zan.setBackgroundResource(R.mipmap.ic_new_custom_zan);
+    this.bt_acti_new_custom_tiao.setBackgroundResource(R.mipmap.ic_new_custom_tiao);
     if (paramView == this.bt_acti_new_custom_ping)
-      this.bt_acti_new_custom_ping.setBackgroundResource(2130903310);
+      this.bt_acti_new_custom_ping.setBackgroundResource(R.mipmap.ic_new_custom_ping_press);
     if (paramView == this.bt_acti_new_custom_zan)
-      this.bt_acti_new_custom_zan.setBackgroundResource(2130903314);
+      this.bt_acti_new_custom_zan.setBackgroundResource(R.mipmap.ic_new_custom_zan_press);
     if (paramView == this.bt_acti_new_custom_tiao)
-      this.bt_acti_new_custom_tiao.setBackgroundResource(2130903312);
+      this.bt_acti_new_custom_tiao.setBackgroundResource(R.mipmap.ic_new_custom_tiao_press);
   }
 
   protected void onCreate(Bundle paramBundle)

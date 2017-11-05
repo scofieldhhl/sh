@@ -4,10 +4,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import butterknife.ButterKnife.Finder;
-import butterknife.ButterKnife.ViewBinder;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.my_view.SimpleColorPickerView;
 import com.indris.material.RippleView;
+
+import butterknife.ButterKnife;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
 
 public class ModeColorEdit$$ViewBinder<T extends ModeColorEdit>
   implements ButterKnife.ViewBinder<T>
@@ -19,9 +23,9 @@ public class ModeColorEdit$$ViewBinder<T extends ModeColorEdit>
     paramT.tvTitleViewTitle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558783, "field 'tvTitleViewTitle'"), 2131558783, "field 'tvTitleViewTitle'"));
     paramT.btnTitleViewEdit = ((RippleView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558784, "field 'btnTitleViewEdit'"), 2131558784, "field 'btnTitleViewEdit'"));
     paramT.tvTitleViewEdit = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558785, "field 'tvTitleViewEdit'"), 2131558785, "field 'tvTitleViewEdit'"));
-    paramT.color = ((SimpleColorPickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558646, "field 'color'"), 2131558646, "field 'color'"));
+    paramT.color = ((SimpleColorPickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.color, "field 'color'"), R.id.color, "field 'color'"));
     paramT.sub = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558829, "field 'sub'"), 2131558829, "field 'sub'"));
-    paramT.sb = ((SeekBar)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558652, "field 'sb'"), 2131558652, "field 'sb'"));
+    paramT.sb = ((SeekBar)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.sb, "field 'sb'"), R.id.sb, "field 'sb'"));
   }
 
   public void unbind(T paramT)

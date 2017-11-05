@@ -165,7 +165,7 @@ public class ActTiming extends MyBaseActivity
         case 0:
           if (((TimingVo)ActTiming.this.vos.get(paramInt1)).isOther())
           {
-            ActTiming.this.toast(2131100210);
+            ActTiming.this.toast(R.string.no_edit_other);
             return false;
           }
           ActTiming.this.bussines.isCreateNewTime = false;
@@ -191,7 +191,7 @@ public class ActTiming extends MyBaseActivity
         {
           public void onSendFailde()
           {
-            ActTiming.this.toast(2131099854);
+            ActTiming.this.toast(R.string.add_time_no_ok);
             ActTiming.this.dialog.dismiss();
           }
 
@@ -203,7 +203,7 @@ public class ActTiming extends MyBaseActivity
             ActTiming.this.setListTotgleBtnListenerDelay();
             ActTiming.this.adt.notifyDataSetChanged();
             ActTiming.this.dialog.dismiss();
-            ActTiming.this.toast(2131100431);
+            ActTiming.this.toast(R.string.time_ctrl_ok);
             ActTiming.this.bussines.setSendCmdListener(null);
           }
         });
@@ -254,7 +254,7 @@ public class ActTiming extends MyBaseActivity
       {
         public void onSendFailde()
         {
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           ActTiming.this.dialog.dismiss();
         }
 
@@ -325,7 +325,7 @@ public class ActTiming extends MyBaseActivity
       this.itemPosition = -1;
       return;
     }
-    toast(2131100429);
+    toast(R.string.ten_timing);
   }
 
   public void onListVSwichChange(boolean paramBoolean, int paramInt)
@@ -348,7 +348,7 @@ public class ActTiming extends MyBaseActivity
           ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
           ActTiming.this.setListTotgleBtnListenerDelay();
           ActTiming.this.adt.notifyDataSetChanged();
-          ActTiming.this.toast(2131099854);
+          ActTiming.this.toast(R.string.add_time_no_ok);
           ActTiming.this.dialog.dismiss();
           return;
         }
@@ -359,7 +359,7 @@ public class ActTiming extends MyBaseActivity
         ((TimingVo)ActTiming.this.vos.get(this.val$posi)).setSwich(this.val$on);
         ActTiming.this.timingData.saveTimingVos2Sd(ActTiming.this.vos);
         ActTiming.this.dialog.dismiss();
-        ActTiming.this.toast(2131100431);
+        ActTiming.this.toast(R.string.time_ctrl_ok);
         ActTiming.this.bussines.setSendCmdListener(null);
       }
     });
@@ -430,7 +430,7 @@ public class ActTiming extends MyBaseActivity
       this.bussines.sendEditTiming(this.cacheTimingVo, this.itemPosition);
       return;
     }
-    toast(2131100429);
+    toast(R.string.ten_timing);
     this.bussines.getDeviceTiming();
   }
 

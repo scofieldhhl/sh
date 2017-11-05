@@ -63,9 +63,9 @@ public class FragmentSysInside extends Fragment
 
   public void hideAnyView()
   {
-    this.btn_acti_scene_play.setVisibility(8);
-    this.tv_acti_scene_progress.setVisibility(8);
-    this.ll_acti_scene_3.setVisibility(8);
+    this.btn_acti_scene_play.setVisibility(View.GONE);
+    this.tv_acti_scene_progress.setVisibility(View.GONE);
+    this.ll_acti_scene_3.setVisibility(View.GONE);
   }
 
   public void init()

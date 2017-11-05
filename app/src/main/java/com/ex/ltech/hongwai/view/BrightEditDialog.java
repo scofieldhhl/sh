@@ -1,10 +1,10 @@
 package com.ex.ltech.hongwai.view;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import com.ex.ltech.led.R;
+
 import butterknife.Bind;
 import butterknife.OnClick;
 
@@ -12,7 +12,7 @@ public class BrightEditDialog extends BaseTipsDialog
 {
   private OnListener mListener;
 
-  @Bind({2131558652})
+  @Bind({R.id.sb})
   SeekBar mSeekBar;
 
   public BrightEditDialog(Context paramContext)

@@ -69,14 +69,14 @@ public class AtYkSwitchSelectActivity extends MyBaseActivity
       return;
     case 10:
       this.bSelect1 = true;
-      this.mLayoutSelect.setVisibility(0);
+      this.mLayoutSelect.setVisibility(View.VISIBLE);
       setTiTleTextRes(2131100423);
       return;
     case 11:
     }
     setTiTleTextRes(2131100424);
-    this.mLayoutSelect1.setVisibility(0);
-    this.mLayoutSelect2.setVisibility(0);
+    this.mLayoutSelect1.setVisibility(View.VISIBLE);
+    this.mLayoutSelect2.setVisibility(View.VISIBLE);
   }
 
   private void setSelectBackground(ImageView paramImageView, Boolean paramBoolean)
@@ -152,7 +152,7 @@ public class AtYkSwitchSelectActivity extends MyBaseActivity
       {
         if (!this.wayOneOnoff)
           break;
-        localStringBuffer.append(getString(2131100509) + " " + getString(2131100232));
+        localStringBuffer.append(getString(2131100509) + " " + getString(R.string.on));
       }
       else
       {
@@ -161,7 +161,7 @@ public class AtYkSwitchSelectActivity extends MyBaseActivity
           localStringBuffer.append(" ");
           if (!this.wayTwoOnoff)
             break label452;
-          localStringBuffer.append(getString(2131100510) + " " + getString(2131100232));
+          localStringBuffer.append(getString(2131100510) + " " + getString(R.string.on));
         }
         this.sceneInnerRcVo.setStatus(localStringBuffer.toString());
         localIntent = new Intent();

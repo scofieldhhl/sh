@@ -20,12 +20,12 @@ public class AtAddResultActivity extends MyBaseActivity
     setMenuBackgroundRes(2130903830);
     if (getIntent().getBooleanExtra("isConfigOk", false))
     {
-      findViewById(2131558802).setVisibility(0);
+      findViewById(2131558802).setVisibility(View.VISIBLE);
       setTiTleTextRes(2131099823);
       return;
     }
     setTiTleTextRes(2131099817);
-    findViewById(2131558820).setVisibility(0);
+    findViewById(2131558820).setVisibility(View.VISIBLE);
   }
 
   protected void onMenu()

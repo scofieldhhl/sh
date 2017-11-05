@@ -206,7 +206,7 @@ public class FtPanel extends MyBaseFt
         FtPanel.this.finish();
       }
     });
-    this.tvTitleViewEdit.setVisibility(8);
+    this.tvTitleViewEdit.setVisibility(View.GONE);
     this.tvTitleViewEdit.setText(2131100358);
     this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492897));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()
@@ -218,7 +218,7 @@ public class FtPanel extends MyBaseFt
           FtPanel.this.bussiness.saveData(FtPanel.this.panelLampVO);
           FtPanel.this.finish();
         }
-        if (FtPanel.this.tvTitleViewEdit.getText().toString().equals(FtPanel.this.getString(2131100063)))
+        if (FtPanel.this.tvTitleViewEdit.getText().toString().equals(FtPanel.this.getString(R.string.finish)))
         {
           FtPanel.this.bussiness.onHideRelationControl();
           FtPanel.this.bussiness.saveBug(313, FtPanel.this.lampAdapter.getCount());

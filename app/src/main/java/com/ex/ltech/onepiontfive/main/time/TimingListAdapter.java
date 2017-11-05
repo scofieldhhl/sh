@@ -61,7 +61,7 @@ public class TimingListAdapter extends BaseAdapter
       StringBuilder localStringBuilder = new StringBuilder();
       if (!localTiming.isOnOff())
         break label272;
-      str = this.pct.getString(2131100232);
+      str = this.pct.getString(R.string.on);
       label170: localTextView.setText(str + "\t" + localTiming.getSeletedInfo());
       if (localTiming.getSeletedScenePosi() > 0);
       localHolder.tv_act_timing_repeat.setText(localTiming.getShotDaysStr());

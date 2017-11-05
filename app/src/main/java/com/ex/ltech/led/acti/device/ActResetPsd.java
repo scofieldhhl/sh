@@ -36,7 +36,7 @@ public class ActResetPsd extends MyBaseActivity
   private void setMyTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100393);
     setBgAlpha();
   }
@@ -74,7 +74,7 @@ public class ActResetPsd extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(2130903623);
     setTiTleTextRes(2131100344);
-    setEditStrColor(getResources().getColor(2131492962));
+    setEditStrColor(getResources().getColor(R.color.oringe));
     setEditStrRes(2131100530);
     setEditTextRes(2131100530);
   }

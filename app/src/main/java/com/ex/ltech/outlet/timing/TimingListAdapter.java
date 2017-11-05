@@ -112,7 +112,7 @@ public class TimingListAdapter extends BaseAdapter
       localHolder.tb_act_outlet_timing_swich.setToggleOn();
       if (!localTimingVo.isShowOtherTiming())
         break label644;
-      localHolder.who_timing.setVisibility(0);
+      localHolder.who_timing.setVisibility(View.VISIBLE);
       TextView localTextView = localHolder.who_timing;
       if (!localTimingVo.isShowMineTiming())
         break label637;
@@ -128,8 +128,8 @@ public class TimingListAdapter extends BaseAdapter
       System.out.println("bababaab" + (System.currentTimeMillis() - this.fleshSpaceTime));
       if (localTimingVo.getColor() == 0)
         break label657;
-      localHolder.csv_act_outlet_timing.setVisibility(0);
-      localHolder.tv_act_outlet_timing_mode.setVisibility(8);
+      localHolder.csv_act_outlet_timing.setVisibility(View.VISIBLE);
+      localHolder.tv_act_outlet_timing_mode.setVisibility(View.GONE);
       localHolder.csv_act_outlet_timing.setColor(localTimingVo.getColor());
     }
     while (true)
@@ -140,10 +140,10 @@ public class TimingListAdapter extends BaseAdapter
       break;
       label637: k = 2131100255;
       break label522;
-      label644: localHolder.who_timing.setVisibility(8);
+      label644: localHolder.who_timing.setVisibility(View.GONE);
       break label529;
-      label657: localHolder.tv_act_outlet_timing_mode.setVisibility(0);
-      localHolder.csv_act_outlet_timing.setVisibility(8);
+      label657: localHolder.tv_act_outlet_timing_mode.setVisibility(View.VISIBLE);
+      localHolder.csv_act_outlet_timing.setVisibility(View.GONE);
       if (!localTimingVo.isOffDevice())
         localHolder.tv_act_outlet_timing_mode.setText(localTimingVo.getModeName());
       System.out.println("");

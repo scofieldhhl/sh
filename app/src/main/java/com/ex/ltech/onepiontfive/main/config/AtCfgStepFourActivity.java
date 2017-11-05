@@ -60,7 +60,7 @@ public class AtCfgStepFourActivity extends MyBaseActivity
         localAtCfgStepFourActivity.timerTime = (-1 + localAtCfgStepFourActivity.timerTime);
         AtCfgStepFourActivity.this.timeHandler.postDelayed(AtCfgStepFourActivity.this.runnable, 1000L);
         AtCfgStepFourActivity.this.second.setText(AtCfgStepFourActivity.this.timerTime + "");
-        AtCfgStepFourActivity.this.smallSsecond.setVisibility(0);
+        AtCfgStepFourActivity.this.smallSsecond.setVisibility(View.VISIBLE);
         AtCfgStepFourActivity.this.sbActOutletLed.setProgressSweep(360 * (60 - AtCfgStepFourActivity.this.timerTime) / 60);
         return;
       }
@@ -71,18 +71,18 @@ public class AtCfgStepFourActivity extends MyBaseActivity
       if (AtCfgStepFourActivity.this.dIndexs.size() > 0)
       {
         AtCfgStepFourActivity.this.cfgState = "ok";
-        AtCfgStepFourActivity.this.ivCfgOk.setVisibility(0);
-        AtCfgStepFourActivity.this.ivCfgNoOk.setVisibility(8);
+        AtCfgStepFourActivity.this.ivCfgOk.setVisibility(View.VISIBLE);
+        AtCfgStepFourActivity.this.ivCfgNoOk.setVisibility(View.GONE);
         AtCfgStepFourActivity.this.deviceConnet.setBackgroundResource(2130903587);
       }
       while (true)
       {
-        AtCfgStepFourActivity.this.smallSsecond.setVisibility(8);
-        AtCfgStepFourActivity.this.second.setVisibility(0);
+        AtCfgStepFourActivity.this.smallSsecond.setVisibility(View.GONE);
+        AtCfgStepFourActivity.this.second.setVisibility(View.VISIBLE);
         break;
         AtCfgStepFourActivity.this.cfgState = "research";
-        AtCfgStepFourActivity.this.ivCfgOk.setVisibility(8);
-        AtCfgStepFourActivity.this.ivCfgNoOk.setVisibility(0);
+        AtCfgStepFourActivity.this.ivCfgOk.setVisibility(View.GONE);
+        AtCfgStepFourActivity.this.ivCfgNoOk.setVisibility(View.VISIBLE);
         AtCfgStepFourActivity.this.deviceConnet.setBackgroundResource(2130903114);
       }
     }
@@ -241,10 +241,10 @@ public class AtCfgStepFourActivity extends MyBaseActivity
         startSmartLink();
         this.cfgState = "cfging";
         this.deviceConnet.setBackgroundResource(2130903131);
-        this.ivCfgOk.setVisibility(8);
-        this.smallSsecond.setVisibility(0);
-        this.second.setVisibility(0);
-        this.ivCfgNoOk.setVisibility(8);
+        this.ivCfgOk.setVisibility(View.GONE);
+        this.smallSsecond.setVisibility(View.VISIBLE);
+        this.second.setVisibility(View.VISIBLE);
+        this.ivCfgNoOk.setVisibility(View.GONE);
       }
       if (!this.cfgState.equals("ok"))
         continue;
@@ -261,7 +261,7 @@ public class AtCfgStepFourActivity extends MyBaseActivity
     setContentView(2130968665);
     ButterKnife.bind(this);
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText("");
     this.sbActOutletLed = ((SecondArc)findViewById(2131558742));
     this.second = ((TextView)findViewById(2131558875));
@@ -359,8 +359,8 @@ public class AtCfgStepFourActivity extends MyBaseActivity
   public void startSmartLink()
   {
     this.info.setText(2131100084);
-    this.ivCfgOk.setVisibility(8);
-    this.ivCfgNoOk.setVisibility(8);
+    this.ivCfgOk.setVisibility(View.GONE);
+    this.ivCfgNoOk.setVisibility(View.GONE);
     timer();
     if (!this.isconncting)
     {
@@ -387,10 +387,10 @@ public class AtCfgStepFourActivity extends MyBaseActivity
       {
         AtCfgStepFourActivity.this.info.setText(2131099922);
         AtCfgStepFourActivity.this.deviceConnet.setBackgroundResource(2130903587);
-        AtCfgStepFourActivity.this.ivCfgOk.setVisibility(0);
-        AtCfgStepFourActivity.this.ivCfgNoOk.setVisibility(8);
-        AtCfgStepFourActivity.this.smallSsecond.setVisibility(8);
-        AtCfgStepFourActivity.this.second.setVisibility(8);
+        AtCfgStepFourActivity.this.ivCfgOk.setVisibility(View.VISIBLE);
+        AtCfgStepFourActivity.this.ivCfgNoOk.setVisibility(View.GONE);
+        AtCfgStepFourActivity.this.smallSsecond.setVisibility(View.GONE);
+        AtCfgStepFourActivity.this.second.setVisibility(View.GONE);
       }
     });
   }

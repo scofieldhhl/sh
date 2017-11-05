@@ -65,9 +65,9 @@ public class AtSimpleYKSetActivity extends MyBaseActivity
     if ((this.ykType.equals("tv")) || (this.ykType.equals("iptv")) || (this.ykType.equals("tvbox")))
     {
       if (getIntent().getStringExtra("ykTvStatusType").equals("onOff"))
-        findViewById(2131559049).setVisibility(8);
+        findViewById(2131559049).setVisibility(View.GONE);
       if (getIntent().getStringExtra("ykTvStatusType").equals("chanel"))
-        findViewById(2131559051).setVisibility(8);
+        findViewById(2131559051).setVisibility(View.GONE);
     }
     while (true)
     {
@@ -80,7 +80,7 @@ public class AtSimpleYKSetActivity extends MyBaseActivity
         }
       });
       return;
-      findViewById(2131559049).setVisibility(8);
+      findViewById(2131559049).setVisibility(View.GONE);
     }
   }
 
@@ -95,7 +95,7 @@ public class AtSimpleYKSetActivity extends MyBaseActivity
       if (getIntent().getStringExtra("ykTvStatusType").equals("onOff"))
       {
         if (this.swich.isToggle())
-          localYkVo1.setStatus(getString(2131100232));
+          localYkVo1.setStatus(getString(R.string.on));
       }
       else if (getIntent().getStringExtra("ykTvStatusType").equals("chanel"))
         localYkVo1.setStatus(this.chanel + getString(2131099929));
@@ -115,7 +115,7 @@ public class AtSimpleYKSetActivity extends MyBaseActivity
       break;
       if (this.swich.isToggle())
       {
-        localYkVo1.setStatus(getString(2131100232));
+        localYkVo1.setStatus(getString(R.string.on));
         continue;
       }
       localYkVo1.setStatus(getString(2131100226));
@@ -131,7 +131,7 @@ public class AtSimpleYKSetActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903074);
+    setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.ykName);
     setEditTextRes(2131100358, getResources().getColor(2131492897));
   }

@@ -64,7 +64,7 @@ public class FtScene extends MyBaseFt
       }
     });
     if (this.business.getSmartScenes().smartScenes.size() > 0)
-      this.lv.setVisibility(0);
+      this.lv.setVisibility(View.VISIBLE);
     if (this.business.getSmartScenes().smartScenes.size() > 1 + getRequest().getIntExtra("sceneOrder", 0));
     try
     {

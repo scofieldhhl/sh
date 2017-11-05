@@ -173,7 +173,7 @@ public class AtSceneActivity extends Activity
         paramViewHolder.ivIc.setImageBitmap(BitmapFactory.decodeResource(AtSceneActivity.this.getResources(), 2130903647));
         if (!(paramSceneVo.getSenceIcType().equals("outHome") | paramSceneVo.getSenceIcType().equals("goHome")))
           break label311;
-        paramViewHolder.ivIcBottom.setVisibility(0);
+        paramViewHolder.ivIcBottom.setVisibility(View.VISIBLE);
         if (paramSceneVo.getSenceIcType().equals("outHome"))
           paramViewHolder.ivIcBottom.setImageBitmap(BitmapFactory.decodeResource(AtSceneActivity.this.getResources(), 2130903567));
         if (paramSceneVo.getSenceIcType().equals("goHome"))
@@ -222,7 +222,7 @@ public class AtSceneActivity extends Activity
         break;
         label289: paramViewHolder.ivIc.setImageBitmap(BitmapFactory.decodeResource(AtSceneActivity.this.getResources(), 2130903560));
         break;
-        label311: paramViewHolder.ivIcBottom.setVisibility(8);
+        label311: paramViewHolder.ivIcBottom.setVisibility(View.GONE);
       }
     }
 

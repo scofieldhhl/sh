@@ -55,7 +55,7 @@ public class SeletedPanelAdapter extends BaseAdapter
       paramView.setTag(localHolder);
       PanelLampVO localPanelLampVO = (PanelLampVO)this.itemVos.get(paramInt);
       localHolder.tv_act_repeat_day.setText(localPanelLampVO.getName());
-      localHolder.ic.setVisibility(0);
+      localHolder.ic.setVisibility(View.VISIBLE);
       switch (localPanelLampVO.getType())
       {
       default:

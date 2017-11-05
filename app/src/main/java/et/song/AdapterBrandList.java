@@ -96,7 +96,7 @@ public class AdapterBrandList extends BaseAdapter
       localViewHolder.file_ename.setText(((AdapterPYinItem)this.mItems.get(paramInt)).ename);
       if (!((AdapterPYinItem)this.mItems.get(paramInt)).ename.equals(""))
         break label351;
-      localViewHolder.file_ename.setVisibility(8);
+      localViewHolder.file_ename.setVisibility(View.GONE);
       return paramView;
       localViewHolder = (ViewHolder)paramView.getTag();
       break;
@@ -105,7 +105,7 @@ public class AdapterBrandList extends BaseAdapter
       j = 8;
       break label167;
     }
-    label351: localViewHolder.file_ename.setVisibility(0);
+    label351: localViewHolder.file_ename.setVisibility(View.VISIBLE);
     return paramView;
   }
 

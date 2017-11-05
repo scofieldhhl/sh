@@ -151,7 +151,7 @@ public class ActNewRgbTiming extends MyBaseActivity
         case 0:
           if (((TimingVo)ActNewRgbTiming.this.vos.get(paramInt1)).isOther())
           {
-            ActNewRgbTiming.this.toast(2131100210);
+            ActNewRgbTiming.this.toast(R.string.no_edit_other);
             return false;
           }
           ActNewRgbTiming.this.bussines.isCreateNewTime = false;
@@ -177,7 +177,7 @@ public class ActNewRgbTiming extends MyBaseActivity
         {
           public void onSendFailde()
           {
-            ActNewRgbTiming.this.toast(2131099854);
+            ActNewRgbTiming.this.toast(R.string.add_time_no_ok);
             this.val$dialog.dismiss();
           }
 
@@ -188,7 +188,7 @@ public class ActNewRgbTiming extends MyBaseActivity
             ActNewRgbTiming.this.bussines.reSortTimingData(ActNewRgbTiming.this.vos);
             ActNewRgbTiming.this.adt.notifyDataSetChanged();
             this.val$dialog.dismiss();
-            ActNewRgbTiming.this.toast(2131100431);
+            ActNewRgbTiming.this.toast(R.string.time_ctrl_ok);
             ActNewRgbTiming.this.bussines.setSendCmdListener(null);
           }
 
@@ -204,7 +204,7 @@ public class ActNewRgbTiming extends MyBaseActivity
   private void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903197);
+    setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(2131100433);
     setEditImageRes(2130903589);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
@@ -229,7 +229,7 @@ public class ActNewRgbTiming extends MyBaseActivity
       {
         public void onSendFailde()
         {
-          ActNewRgbTiming.this.toast(2131099854);
+          ActNewRgbTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
         }
 
@@ -243,7 +243,7 @@ public class ActNewRgbTiming extends MyBaseActivity
             TimingData.getInstance(ActNewRgbTiming.this).saveTimingVos2Sd(ActNewRgbTiming.this.vos);
             ActNewRgbTiming.this.adt.notifyDataSetChanged();
             this.val$dialog.dismiss();
-            ActNewRgbTiming.this.toast(2131100431);
+            ActNewRgbTiming.this.toast(R.string.time_ctrl_ok);
             ActNewRgbTiming.this.bussines.setSendCmdListener(null);
             return;
             ActNewRgbTiming.this.vos.remove(ActNewRgbTiming.this.itemPosition);
@@ -253,7 +253,7 @@ public class ActNewRgbTiming extends MyBaseActivity
 
         public void onTimingFull()
         {
-          ActNewRgbTiming.this.toast(2131100429);
+          ActNewRgbTiming.this.toast(R.string.ten_timing);
           this.val$dialog.dismiss();
         }
       });
@@ -282,7 +282,7 @@ public class ActNewRgbTiming extends MyBaseActivity
       this.bussines.isCreateNewTime = true;
       return;
     }
-    toast(2131100429);
+    toast(R.string.ten_timing);
   }
 
   public void onListVSwichChange(boolean paramBoolean, int paramInt)
@@ -304,7 +304,7 @@ public class ActNewRgbTiming extends MyBaseActivity
           localTimingVo.setSwich(bool);
           ActNewRgbTiming.this.timingData.saveTimingVos2Sd(ActNewRgbTiming.this.vos);
           ActNewRgbTiming.this.adt.notifyDataSetChanged();
-          ActNewRgbTiming.this.toast(2131099854);
+          ActNewRgbTiming.this.toast(R.string.add_time_no_ok);
           this.val$dialog.dismiss();
           return;
         }
@@ -315,7 +315,7 @@ public class ActNewRgbTiming extends MyBaseActivity
         ((TimingVo)ActNewRgbTiming.this.vos.get(this.val$posi)).setSwich(this.val$on);
         ActNewRgbTiming.this.timingData.saveTimingVos2Sd(ActNewRgbTiming.this.vos);
         this.val$dialog.dismiss();
-        ActNewRgbTiming.this.toast(2131100431);
+        ActNewRgbTiming.this.toast(R.string.time_ctrl_ok);
         ActNewRgbTiming.this.bussines.setSendCmdListener(null);
       }
 
@@ -363,7 +363,7 @@ public class ActNewRgbTiming extends MyBaseActivity
           {
             public void onSendFailde()
             {
-              ActNewRgbTiming.this.toast(2131099854);
+              ActNewRgbTiming.this.toast(R.string.add_time_no_ok);
               ActNewRgbTiming.this.getTimeDialog.dismiss();
             }
 

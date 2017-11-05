@@ -220,7 +220,7 @@ public class AtDiy extends AtBaseYk
       ((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).mName = getResources().getString(2131100285);
       hideSetting();
       continue;
-      this.tips.setVisibility(8);
+      this.tips.setVisibility(View.GONE);
     }
   }
 

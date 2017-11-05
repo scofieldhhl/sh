@@ -5,29 +5,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import butterknife.Bind;
-import butterknife.ButterKnife;
+
 import com.ex.ltech.MyDb;
 import com.ex.ltech.hongwai.NonIrDeviceAt;
 import com.ex.ltech.hongwai.atRcs.AtRcSet;
 import com.ex.ltech.hongwai.view.BrightEditDialog;
-import com.ex.ltech.hongwai.view.BrightEditDialog.OnListener;
 import com.ex.ltech.hongwai.view.SceneModeDialog;
-import com.ex.ltech.hongwai.view.SceneModeDialog.OnListener;
 import com.ex.ltech.hongwai.vo.Ct1SceneVo;
 import com.ex.ltech.hongwai.vo.Ct1ScenesVo;
 import com.ex.ltech.hongwai.vo.MyRcDevice;
 import com.ex.ltech.hongwai.vo.MyRcDevices;
-import com.ex.ltech.hongwai.vo.NonIrDevice;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
-import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.my_view.SimpleColorPickerView;
-import com.ex.ltech.led.my_view.SimpleColorPickerView.OnXYChangedListener;
 import com.zhy.android.percent.support.PercentRelativeLayout;
-import java.io.PrintStream;
-import java.util.ArrayList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class AtYkLampActivity extends NonIrDeviceAt
 {
@@ -40,14 +35,14 @@ public class AtYkLampActivity extends NonIrDeviceAt
   @Bind({2131558654})
   PercentRelativeLayout mGrayLayer;
 
-  @Bind({2131558646})
+  @Bind({R.id.color})
   SimpleColorPickerView mSimpleColorPickerView;
   private MyRcDevices rcDevices;
 
   @Bind({2131558651})
   LinearLayout rlBrt;
 
-  @Bind({2131558652})
+  @Bind({R.id.sb})
   SeekBar sb;
 
   @Bind({2131558653})
@@ -117,10 +112,10 @@ public class AtYkLampActivity extends NonIrDeviceAt
     this.mSimpleColorPickerView.setPikerXY(((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).nonIrDevice.irCt1X, ((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).nonIrDevice.irCt1X);
     if (((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).nonIrDevice.irCt1Onoff)
     {
-      this.mGrayLayer.setVisibility(8);
+      this.mGrayLayer.setVisibility(View.GONE);
       return;
     }
-    this.mGrayLayer.setVisibility(0);
+    this.mGrayLayer.setVisibility(View.VISIBLE);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -154,7 +149,7 @@ public class AtYkLampActivity extends NonIrDeviceAt
     switch (paramView.getId())
     {
     case 2131558651:
-    case 2131558652:
+    case R.id.sb:
     case 2131558653:
     case 2131558654:
     default:
@@ -240,14 +235,14 @@ public class AtYkLampActivity extends NonIrDeviceAt
           localAtYkLampActivity.fillterSend(arrayOfByte, k);
           if (!paramBoolean)
             break;
-          AtYkLampActivity.this.sb.setVisibility(0);
-          AtYkLampActivity.this.layoutOption.setVisibility(0);
-          AtYkLampActivity.this.rlBrt.setVisibility(0);
+          AtYkLampActivity.this.sb.setVisibility(View.VISIBLE);
+          AtYkLampActivity.this.layoutOption.setVisibility(View.VISIBLE);
+          AtYkLampActivity.this.rlBrt.setVisibility(View.VISIBLE);
           return;
         }
-        AtYkLampActivity.this.sb.setVisibility(8);
-        AtYkLampActivity.this.layoutOption.setVisibility(8);
-        AtYkLampActivity.this.rlBrt.setVisibility(8);
+        AtYkLampActivity.this.sb.setVisibility(View.GONE);
+        AtYkLampActivity.this.layoutOption.setVisibility(View.GONE);
+        AtYkLampActivity.this.rlBrt.setVisibility(View.GONE);
       }
     });
     this.existRcPosi = getIntent().getIntExtra("OP_AT_POSI_KEY", -1);
