@@ -227,7 +227,7 @@ public class ModeColorEdit extends MyBaseFt
     });
     this.tvTitleViewEdit.setVisibility(View.VISIBLE);
     this.tvTitleViewEdit.setText(R.string.finish);
-    this.tvTitleViewEdit.setTextColor(getResources().getColor(2131492892));
+    this.tvTitleViewEdit.setTextColor(getResources().getColor(R.color.color1));
     this.tvTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)

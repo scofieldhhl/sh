@@ -47,7 +47,7 @@ public class ActTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.lv_act_timing = ((SwipeMenuListView)findViewById(2131558611));
+    this.lv_act_timing = ((SwipeMenuListView)findViewById(R.id.lv_act_timing));
     this.lv_act_timing.setMenuCreator(new SwipeMenuCreator()
     {
       public void create(SwipeMenu paramSwipeMenu)
@@ -165,8 +165,8 @@ public class ActTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
-    setTiTleTextRes(2131100433);
-    setEditImageRes(2130903589);
+    setTiTleTextRes(R.string.timing);
+    setEditImageRes(R.mipmap.new_add);
     setDeviceTextRes(UserFerences.getUserFerences(this).spFerences.getString("dName" + DeviceListActivity.deviceMacAddress, ""), 2131492890);
   }
 

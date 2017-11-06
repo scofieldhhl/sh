@@ -112,9 +112,9 @@ public class MyAdapter extends BaseAdapter
       return paramView;
       localHolder = (Holder)paramView.getTag();
       break;
-      localHolder.iv_device.setBackgroundResource(2130903199);
+      localHolder.iv_device.setBackgroundResource(R.mipmap.device_light);
       break label156;
-      localHolder.iv_device.setBackgroundResource(2130903202);
+      localHolder.iv_device.setBackgroundResource(R.mipmap.device_plug);
       break label156;
       localHolder.tv_status.setText(this.pct.getString(2131099970));
       paramView.setBackgroundColor(this.pct.getResources().getColor(2131492997));

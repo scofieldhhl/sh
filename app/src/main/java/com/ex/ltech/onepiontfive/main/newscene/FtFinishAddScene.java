@@ -266,7 +266,7 @@ public class FtFinishAddScene extends MyBaseFt
       {
         FtFinishAddScene.this.name = FtFinishAddScene.this.etName.getText().toString();
         if (FtFinishAddScene.this.name.getBytes().length > 24)
-          Toast.makeText(FtFinishAddScene.this.getActivity(), 2131100328, 0).show();
+          Toast.makeText(FtFinishAddScene.this.getActivity(), R.string.rename_count, 0).show();
         int i;
         Object localObject;
         while (true)

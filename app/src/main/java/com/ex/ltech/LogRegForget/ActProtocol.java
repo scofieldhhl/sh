@@ -37,7 +37,7 @@ public class ActProtocol extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setTiTleTextRes(2131100493);
   }
 }

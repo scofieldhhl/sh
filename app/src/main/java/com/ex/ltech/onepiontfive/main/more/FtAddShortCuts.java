@@ -114,7 +114,7 @@ public class FtAddShortCuts extends MyBaseFt
       public void create(SwipeMenu paramSwipeMenu)
       {
         SwipeMenuItem localSwipeMenuItem = new SwipeMenuItem(FtAddShortCuts.this.getActivity().getApplication());
-        localSwipeMenuItem.setBackground(new ColorDrawable(FtAddShortCuts.this.getResources().getColor(2131492896)));
+        localSwipeMenuItem.setBackground(new ColorDrawable(FtAddShortCuts.this.getResources().getColor(R.color.color5)));
         localSwipeMenuItem.setWidth(150);
         localSwipeMenuItem.setBackground(2130903193);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem);

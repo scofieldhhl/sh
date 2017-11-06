@@ -20,7 +20,7 @@ public class VisualizerView extends View
   private int maringLeft;
   private short[] mshort;
   private int[] rateArr = new int[6];
-  private int[] rectColors = { 2131492892, 2131492892, 2131492893, 2131492893, 2131492894, 2131492894, 2131492895, 2131492895, 2131492896, 2131492896 };
+  private int[] rectColors = { R.color.color1, R.color.color1, 2131492893, 2131492893, 2131492894, 2131492894, 2131492895, 2131492895, R.color.color5, R.color.color5 };
   private int[] rectColors2 = { 2131492886, 2131492886, 2131492886, 2131492886, 2131492886, 2131492886, 2131492886, 2131492886, 2131492886, 2131492886 };
   private int rectCount = 10;
   private int rectHei = 30 * this.screenHeight / 1280;

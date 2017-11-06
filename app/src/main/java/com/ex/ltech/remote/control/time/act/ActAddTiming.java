@@ -61,13 +61,13 @@ public class ActAddTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.tp_act_add_timing_hour = ((MyTimePickerView)findViewById(2131558504));
-    this.tp_act_add_timing_min = ((MyTimePickerView)findViewById(2131558505));
+    this.tp_act_add_timing_hour = ((MyTimePickerView)findViewById(R.id.tp_act_add_timing_hour));
+    this.tp_act_add_timing_min = ((MyTimePickerView)findViewById(R.id.tp_act_add_timing_min));
     this.tp_act_add_timing_chanel = ((MyTimePickerView)findViewById(2131558554));
     this.tp_act_add_timing_wendu = ((MyTimePickerView)findViewById(2131558552));
-    this.rl_act_add_timing_yaokong = ((RelativeLayout)findViewById(2131558510));
-    this.rl_act_add_timing_mode = ((RelativeLayout)findViewById(2131558516));
-    this.rl_act_add_timing_wendu = ((RelativeLayout)findViewById(2131558521));
+    this.rl_act_add_timing_yaokong = ((RelativeLayout)findViewById(R.id.rl_act_add_timing_1));
+    this.rl_act_add_timing_mode = ((RelativeLayout)findViewById(R.id.rl_act_add_timing_2));
+    this.rl_act_add_timing_wendu = ((RelativeLayout)findViewById(R.id.rl_act_add_timing_3));
     this.rl_act_add_timing_repeat = ((RelativeLayout)findViewById(2131558608));
     this.rl_act_add_timing_chanel = ((RelativeLayout)findViewById(2131558606));
     this.tv_act_add_timing_yaokong = ((TextView)findViewById(2131558539));
@@ -75,7 +75,7 @@ public class ActAddTiming extends MyBaseActivity
     this.tv_act_add_timing_chanel = ((TextView)findViewById(2131558543));
     this.tv_act_add_timing_wendu = ((TextView)findViewById(2131558545));
     this.tv_act_add_timing_repeat = ((TextView)findViewById(2131558518));
-    this.cv_act_add_timing_mode = ((ColorSeletedView)findViewById(2131558513));
+    this.cv_act_add_timing_mode = ((ColorSeletedView)findViewById(R.id.cv_act_add_timing_mode));
   }
 
   private void getMyIntent()
@@ -184,8 +184,8 @@ public class ActAddTiming extends MyBaseActivity
 
   public void close(View paramView)
   {
-    findViewById(2131558507).setBackgroundResource(2130903318);
-    findViewById(2131558508).setBackgroundResource(2130903280);
+    findViewById(R.id.tv_act_add_timing_on).setBackgroundResource(R.mipmap.ic_on);
+    findViewById(R.id.tv_act_add_timing_off).setBackgroundResource(2130903280);
     this.vo.setType(2);
     this.lightStatus = getString(R.string.off_device);
     this.vo.setOnOff(false);
@@ -405,9 +405,9 @@ public class ActAddTiming extends MyBaseActivity
 
   public void open(View paramView)
   {
-    findViewById(2131558507).setBackgroundResource(2130903281);
-    findViewById(2131558508).setBackgroundResource(R.mipmap.ic_off);
-    findViewById(2131558510).setVisibility(View.VISIBLE);
+    findViewById(R.id.tv_act_add_timing_on).setBackgroundResource(2130903281);
+    findViewById(R.id.tv_act_add_timing_off).setBackgroundResource(R.mipmap.ic_off);
+    findViewById(R.id.rl_act_add_timing_1).setVisibility(View.VISIBLE);
     this.lightStatus = getString(R.string.on);
     this.vo.setOnOff(true);
     if (this.ykType.equals("air"))

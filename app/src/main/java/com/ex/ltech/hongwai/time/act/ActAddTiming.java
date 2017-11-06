@@ -71,8 +71,8 @@ public class ActAddTiming extends MyBaseActivity
   private void findView()
   {
     this.tp_act_add_timing_time_range = ((MyTimePickerView)findViewById(2131558536));
-    this.tp_act_add_timing_hour = ((MyTimePickerView)findViewById(2131558504));
-    this.tp_act_add_timing_min = ((MyTimePickerView)findViewById(2131558505));
+    this.tp_act_add_timing_hour = ((MyTimePickerView)findViewById(R.id.tp_act_add_timing_hour));
+    this.tp_act_add_timing_min = ((MyTimePickerView)findViewById(R.id.tp_act_add_timing_min));
     this.tp_act_add_timing_chanel = ((MyTimePickerView)findViewById(2131558554));
     this.tp_act_add_timing_wendu = ((MyTimePickerView)findViewById(2131558552));
     this.rl_act_add_timing_action = ((RelativeLayout)findViewById(2131558541));
@@ -81,7 +81,7 @@ public class ActAddTiming extends MyBaseActivity
     this.tv_act_add_timing_yaokong = ((TextView)findViewById(2131558539));
     this.tv_act_add_timing_action = ((TextView)findViewById(2131558544));
     this.tv_act_add_timing_repeat = ((TextView)findViewById(2131558518));
-    this.cv_act_add_timing_mode = ((ColorSeletedView)findViewById(2131558513));
+    this.cv_act_add_timing_mode = ((ColorSeletedView)findViewById(R.id.cv_act_add_timing_mode));
     this.tv_gradient_time = ((TextView)findViewById(2131558550));
   }
 

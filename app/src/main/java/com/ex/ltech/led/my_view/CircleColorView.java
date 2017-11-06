@@ -65,11 +65,11 @@ public class CircleColorView extends View
   public void init()
   {
     this.circleColorPaint = new Paint();
-    this.circleColorPaint.setColor(getResources().getColor(2131492927));
+    this.circleColorPaint.setColor(getResources().getColor(R.color.gray));
     this.circleColorPaint.setAntiAlias(true);
     this.circleColorPaint.setStyle(Paint.Style.FILL);
     this.currentCircleColorPaint = new Paint();
-    this.currentCircleColorPaint.setColor(getResources().getColor(2131492927));
+    this.currentCircleColorPaint.setColor(getResources().getColor(R.color.gray));
     this.currentCircleColorPaint.setAntiAlias(true);
     this.currentCircleColorPaint.setStyle(Paint.Style.FILL);
     this.currentCircleColorPaint2 = new Paint();

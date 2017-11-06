@@ -45,7 +45,7 @@ public class ActNewRgbTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.lv_act_timing = ((SwipeMenuListView)findViewById(2131558611));
+    this.lv_act_timing = ((SwipeMenuListView)findViewById(R.id.lv_act_timing));
     this.lv_act_timing.setMenuCreator(new SwipeMenuCreator()
     {
       public void create(SwipeMenu paramSwipeMenu)
@@ -57,7 +57,7 @@ public class ActNewRgbTiming extends MyBaseActivity
         localSwipeMenuItem1.setTitleColor(-1);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem1);
         SwipeMenuItem localSwipeMenuItem2 = new SwipeMenuItem(ActNewRgbTiming.this.getApplicationContext());
-        localSwipeMenuItem2.setBackground(new ColorDrawable(ActNewRgbTiming.this.getResources().getColor(2131492896)));
+        localSwipeMenuItem2.setBackground(new ColorDrawable(ActNewRgbTiming.this.getResources().getColor(R.color.color5)));
         localSwipeMenuItem2.setWidth(ActNewRgbTiming.this.bussines.dp2px(70));
         localSwipeMenuItem2.setIcon(2130903138);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem2);
@@ -205,8 +205,8 @@ public class ActNewRgbTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
-    setTiTleTextRes(2131100433);
-    setEditImageRes(2130903589);
+    setTiTleTextRes(R.string.timing);
+    setEditImageRes(R.mipmap.new_add);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
@@ -265,7 +265,7 @@ public class ActNewRgbTiming extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968623);
+    setContentView(R.layout.act_timing);
     setTitleView();
     findView();
     init();

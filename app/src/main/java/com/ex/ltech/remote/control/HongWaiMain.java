@@ -71,9 +71,9 @@ public class HongWaiMain extends TabActivity
     this.tabHost = getTabHost();
     this.tabHost.setOnTabChangedListener(this.tab_listener);
     this.inflater = LayoutInflater.from(this);
-    View localView1 = setMenuView(2130903467);
-    View localView2 = setMenuView(2130903469);
-    View localView3 = setMenuView(2130903471);
+    View localView1 = setMenuView(R.mipmap.mode_1);
+    View localView2 = setMenuView(R.mipmap.mode_2);
+    View localView3 = setMenuView(R.mipmap.mode_3);
     this.tabHost.addTab(this.tabHost.newTabSpec("yaokong").setContent(new Intent(this, AtYaokongActivity.class)).setIndicator(localView1));
     this.tabHost.addTab(this.tabHost.newTabSpec("scene").setContent(new Intent(this, AtSceneActivity.class)).setIndicator(localView2));
     this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActTiming.class)).setIndicator(localView3));

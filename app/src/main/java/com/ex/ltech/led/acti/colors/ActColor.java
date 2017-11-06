@@ -1,7 +1,6 @@
 package com.ex.ltech.led.acti.colors;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -10,42 +9,36 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.ex.ltech.led.AtClip;
 import com.ex.ltech.led.BaseBusiness;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.my_view.ColorPickerView;
-import com.ex.ltech.led.my_view.ColorPickerView.OnColorChangedListener;
 import com.ex.ltech.led.my_view.MyAlertDialog2;
-import com.ex.ltech.led.my_view.MyAlertDialog2.MyOnClickListener;
 import com.ex.ltech.led.my_view.MySeekBar;
-import com.ex.ltech.led.my_view.MySeekBar.onMySBtouchListener;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.utils.FileUtil;
-import com.ex.ltech.led.vo.DeviceVo;
 import com.indris.material.RippleView;
 import com.soundcloud.android.crop.Crop;
 import com.zcw.togglebutton.ToggleButton;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
+
 import java.io.File;
-import java.io.PrintStream;
+
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActColor extends MyBaseActivity
   implements View.OnClickListener, SeekBar.OnSeekBarChangeListener, ColorPickerView.OnColorChangedListener, MySeekBar.onMySBtouchListener
@@ -685,11 +678,11 @@ public class ActColor extends MyBaseActivity
           break label72;
         i = 2;
         break label74;
-        setContentView(2130968630);
+        setContentView(R.layout.acti_color);
         break label100;
-        setContentView(2130968631);
+        setContentView(R.layout.acti_color2);
         break label100;
-        setContentView(2130968630);
+        setContentView(R.layout.acti_color);
         break label100;
         if (!str2.equals("rgb"))
           break label212;

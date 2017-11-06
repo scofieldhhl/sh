@@ -59,7 +59,7 @@ public class DelayAdapter extends BaseAdapter
       if (!localSensorDelay.isSeleted())
         break label173;
     }
-    label166: label173: for (int j = this.pct.getResources().getColor(2131492927); ; j = this.pct.getResources().getColor(2131492997))
+    label166: label173: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
     {
       paramView.setBackgroundColor(j);
       return paramView;

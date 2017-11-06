@@ -126,7 +126,7 @@ public class ModeFragment extends Fragment
         if (!localCtSceneVo.isEdit())
           break label239;
       }
-      label213: label232: label239: for (int j = this.pct.getResources().getColor(2131492927); ; j = this.pct.getResources().getColor(2131492997))
+      label213: label232: label239: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
       {
         paramView.setBackgroundColor(j);
         return paramView;

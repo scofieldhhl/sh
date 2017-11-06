@@ -158,8 +158,8 @@ public class AtRegAreaActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
-    setTiTleTextRes(2131100384);
+    setMenuBackgroundRes(R.mipmap.plug_back);
+    setTiTleTextRes(R.string.seleted_area);
     showBottomLine();
     setBgWhite();
   }

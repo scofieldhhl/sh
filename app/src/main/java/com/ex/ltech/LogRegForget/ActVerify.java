@@ -48,11 +48,11 @@ public class ActVerify extends MyBaseActivity
         ActVerify localActVerify = ActVerify.this;
         localActVerify.timerTime = (-1 + localActVerify.timerTime);
         ActVerify.this.timeHandler.postDelayed(ActVerify.this.runnable, 1000L);
-        ActVerify.this.tvActVerifyTime.setText(ActVerify.this.getString(2131100338) + "(" + ActVerify.this.timerTime + "s)");
+        ActVerify.this.tvActVerifyTime.setText(ActVerify.this.getString(R.string.resend) + "(" + ActVerify.this.timerTime + "s)");
         return;
       }
       ActVerify.this.timerTime = 60;
-      ActVerify.this.tvActVerifyTime.setText(ActVerify.this.getString(2131100338));
+      ActVerify.this.tvActVerifyTime.setText(ActVerify.this.getString(R.string.resend));
       ActVerify.this.tvActVerifyTime.setOnClickListener(new View.OnClickListener()
       {
         public void onClick(View paramView)
@@ -108,7 +108,7 @@ public class ActVerify extends MyBaseActivity
             if ((this.val$result == -1) && (this.val$event == 3))
             {
               SMSSDK.unregisterAllEventHandler();
-              ActVerify.this.toast(2131100499);
+              ActVerify.this.toast(R.string.verify_ok);
               if (!ActVerify.this.isReg)
                 break label74;
               ActVerify.this.reg();
@@ -116,7 +116,7 @@ public class ActVerify extends MyBaseActivity
             while (true)
             {
               if (this.val$result == 0)
-                ActVerify.this.toast(2131100498);
+                ActVerify.this.toast(R.string.verify_no_ok);
               return;
               label74: Intent localIntent = new Intent(ActVerify.this, ActResetPsd.class);
               localIntent.putExtra("phone", ActVerify.this.phone);
@@ -217,7 +217,7 @@ public class ActVerify extends MyBaseActivity
             do
               return;
             while (!ActVerify.this.tv_act_verify_code.getText().toString().equals(ActVerify.this.mailCode));
-            ActVerify.this.toast(2131100499);
+            ActVerify.this.toast(R.string.verify_ok);
             ActVerify.this.reg();
             return;
             if (!ActVerify.this.isZh)
@@ -226,7 +226,7 @@ public class ActVerify extends MyBaseActivity
             return;
           }
           while (!ActVerify.this.tv_act_verify_code.getText().toString().equals(ActVerify.this.mailCode));
-          ActVerify.this.toast(2131100499);
+          ActVerify.this.toast(R.string.verify_ok);
           Intent localIntent = new Intent(ActVerify.this, ActResetPsd.class);
           localIntent.putExtra("mail", ActVerify.this.mail);
           ActVerify.this.startActivity(localIntent);
@@ -272,7 +272,7 @@ public class ActVerify extends MyBaseActivity
       {
         public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
         {
-          ActVerify.this.toast(2131100201);
+          ActVerify.this.toast(R.string.net_no_ok);
         }
 
         public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
@@ -293,7 +293,7 @@ public class ActVerify extends MyBaseActivity
             }
             if (i == 201)
             {
-              ActVerify.this.toast(2131100321);
+              ActVerify.this.toast(R.string.reged);
               return;
             }
           }
@@ -311,7 +311,7 @@ public class ActVerify extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setTiTleTextRes(2131100410);
   }
 }

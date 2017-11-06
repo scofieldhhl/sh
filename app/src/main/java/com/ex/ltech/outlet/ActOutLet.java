@@ -120,7 +120,7 @@ public class ActOutLet extends MyBaseActivity
   {
     String str = UserFerences.getUserFerences(this).spFerences.getString("dName" + DeviceListActivity.deviceMacAddress, "");
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setEditImageRes(2130903627);
     setTiTleText(str);
   }

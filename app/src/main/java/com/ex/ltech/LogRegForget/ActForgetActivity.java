@@ -31,7 +31,7 @@ import org.json.JSONObject;
 import java.util.Random;
 import java.util.Scanner;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
@@ -43,19 +43,19 @@ public class ActForgetActivity extends MyBaseActivity
 {
   String countryCode;
 
-  @Bind({2131558911})
+  @BindView(R.id.et_act_log_phone)
   EditText etActLogPhone;
 
-  @Bind({2131558909})
+  @BindView(R.id.et_area)
   EditText etArea;
 
-  @Bind({2131558916})
+  @BindView(R.id.et_psd_1)
   EditText etPsd1;
 
-  @Bind({2131558917})
+  @BindView(R.id.et_psd_2)
   EditText etPsd2;
 
-  @Bind({2131558913})
+  @BindView(R.id.verfy_code)
   EditText etVerfyCode;
   boolean isEyesClose1 = true;
   boolean isEyesClose2 = true;
@@ -65,10 +65,10 @@ public class ActForgetActivity extends MyBaseActivity
   String mailCode;
   TextView redBgTextView;
 
-  @Bind({2131558915})
+  @BindView(R.id.rl_psd)
   RelativeLayout rlPsd;
 
-  @Bind({2131558912})
+  @BindView({R.id.rl_verfy})
   RelativeLayout rlVerfy;
   Runnable runnable = new Runnable()
   {
@@ -79,11 +79,11 @@ public class ActForgetActivity extends MyBaseActivity
         ActForgetActivity localActForgetActivity = ActForgetActivity.this;
         localActForgetActivity.timerTime = (-1 + localActForgetActivity.timerTime);
         ActForgetActivity.this.timeHandler.postDelayed(ActForgetActivity.this.runnable, 1000L);
-        ActForgetActivity.this.verifyTime.setText(ActForgetActivity.this.getString(2131100338) + "(" + ActForgetActivity.this.timerTime + "s)");
+        ActForgetActivity.this.verifyTime.setText(ActForgetActivity.this.getString(R.string.resend) + "(" + ActForgetActivity.this.timerTime + "s)");
         return;
       }
       ActForgetActivity.this.timerTime = 60;
-      ActForgetActivity.this.verifyTime.setText(ActForgetActivity.this.getString(2131100338));
+      ActForgetActivity.this.verifyTime.setText(ActForgetActivity.this.getString(R.string.resend));
       ((GradientDrawable)ActForgetActivity.this.verifyTime.getBackground()).setColor(Color.parseColor("#ff3636"));
       ActForgetActivity.this.verifyTime.setOnClickListener(new View.OnClickListener()
       {
@@ -101,10 +101,10 @@ public class ActForgetActivity extends MyBaseActivity
   };
   int timerTime = 60;
 
-  @Bind({2131558910})
+  @BindView(R.id.tv_country_code)
   TextView tvCountryCode;
 
-  @Bind({2131558914})
+  @BindView(R.id.verify_time)
   TextView verifyTime;
 
   private String randomCode()
@@ -125,7 +125,6 @@ public class ActForgetActivity extends MyBaseActivity
       int m = localRandom.nextInt(-1 + arrayOfString.length);
       str = str + arrayOfString[m];
     }
-    System.out.println("��֤�룺" + str);
     return str;
   }
 
@@ -139,7 +138,7 @@ public class ActForgetActivity extends MyBaseActivity
 
   public void changePsd(View paramView)
   {
-    int i = 1;
+    /*int i = 1;
     String str1 = this.etPsd1.getText().toString().trim();
     String str2 = this.etPsd2.getText().toString().trim();
     int j;
@@ -153,7 +152,7 @@ public class ActForgetActivity extends MyBaseActivity
     {
       if ((j | i) == 0)
         break label78;
-      toast(2131100278);
+      toast(R.string.psw);
       return;
       j = 0;
       break;
@@ -161,7 +160,7 @@ public class ActForgetActivity extends MyBaseActivity
     }
     label78: if (!str1.equals(str2))
     {
-      toast(2131100218);
+      toast(R.string.no_same_psd);
       return;
     }
     RegVo localRegVo = new RegVo();
@@ -174,7 +173,7 @@ public class ActForgetActivity extends MyBaseActivity
     {
       public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
       {
-        ActForgetActivity.this.toast(2131100201);
+        ActForgetActivity.this.toast(R.string.net_no_ok);
       }
 
       public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
@@ -195,7 +194,7 @@ public class ActForgetActivity extends MyBaseActivity
           }
           if (i == 201)
           {
-            ActForgetActivity.this.toast(2131100321);
+            ActForgetActivity.this.toast(R.string.reged);
             return;
           }
         }
@@ -204,15 +203,15 @@ public class ActForgetActivity extends MyBaseActivity
           localJSONException.printStackTrace();
         }
       }
-    });
+    });*/
   }
 
   public void eyes1(View paramView)
   {
-    ImageView localImageView = (ImageView)paramView;
+    /*ImageView localImageView = (ImageView)paramView;
     if (this.isEyesClose1)
     {
-      localImageView.setBackgroundResource(2130903243);
+      localImageView.setBackgroundResource(R.mipmap.eyes_open);
       this.etPsd1.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
       Editable localEditable = this.etPsd1.getText();
       if ((localEditable instanceof Spannable))
@@ -224,18 +223,18 @@ public class ActForgetActivity extends MyBaseActivity
     {
       this.isEyesClose1 = bool;
       return;
-      localImageView.setBackgroundResource(2130903242);
+      localImageView.setBackgroundResource(R.mipmap.eyes_close);
       this.etPsd1.setTransformationMethod(PasswordTransformationMethod.getInstance());
       break;
-    }
+    }*/
   }
 
   public void eyes2(View paramView)
   {
-    ImageView localImageView = (ImageView)paramView;
+    /*ImageView localImageView = (ImageView)paramView;
     if (this.isEyesClose2)
     {
-      localImageView.setBackgroundResource(2130903243);
+      localImageView.setBackgroundResource(R.mipmap.eyes_open);
       this.etPsd2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
       Editable localEditable = this.etPsd2.getText();
       if ((localEditable instanceof Spannable))
@@ -247,10 +246,10 @@ public class ActForgetActivity extends MyBaseActivity
     {
       this.isEyesClose2 = bool;
       return;
-      localImageView.setBackgroundResource(2130903242);
+      localImageView.setBackgroundResource(R.mipmap.eyes_close);
       this.etPsd2.setTransformationMethod(PasswordTransformationMethod.getInstance());
       break;
-    }
+    }*/
   }
 
   public void finish(View paramView)
@@ -265,7 +264,7 @@ public class ActForgetActivity extends MyBaseActivity
         startActivityForResult(localIntent2, 0);
         return;
       }
-      toast(2131100101);
+      toast(R.string.input_ok_phone);
       return;
     }
     Intent localIntent1 = new Intent(this, ActVerify.class);
@@ -277,7 +276,7 @@ public class ActForgetActivity extends MyBaseActivity
   public void getVerfyCode(View paramView)
   {
     this.redBgTextView = ((TextView)paramView);
-    if (this.etActLogPhone.getText().toString().indexOf("@") != -1)
+    /*if (this.etActLogPhone.getText().toString().indexOf("@") != -1)
     {
       this.isNumVerfly = false;
       this.mailCode = randomCode();
@@ -300,7 +299,7 @@ public class ActForgetActivity extends MyBaseActivity
         continue;
       if (this.tvCountryCode.getText().toString().length() < 1)
       {
-        toast(2131100384);
+        toast(R.string.seleted_area);
         return;
       }
       this.isNumVerfly = true;
@@ -320,10 +319,10 @@ public class ActForgetActivity extends MyBaseActivity
                 ActForgetActivity.this.rlVerfy.setVisibility(View.GONE);
                 ActForgetActivity.this.rlPsd.setVisibility(View.VISIBLE);
                 SMSSDK.unregisterAllEventHandler();
-                ActForgetActivity.this.toast(2131100499);
+                ActForgetActivity.this.toast(R.string.verify_ok);
               }
               if (this.val$result == 0)
-                ActForgetActivity.this.toast(2131100498);
+                ActForgetActivity.this.toast(R.string.verify_no_ok);
             }
           });
         }
@@ -353,7 +352,7 @@ public class ActForgetActivity extends MyBaseActivity
         localThrowable.printStackTrace();
         this.smsReceiver = null;
       }
-    }
+    }*/
   }
 
   public int maiVerifly()
@@ -380,20 +379,20 @@ public class ActForgetActivity extends MyBaseActivity
 
   public void next(View paramView)
   {
-    if (this.isNumVerfly)
+    /*if (this.isNumVerfly)
     {
       SMSSDK.submitVerificationCode(this.countryCode, this.etActLogPhone.getText().toString(), this.etVerfyCode.getText().toString().trim());
       return;
     }
     if (this.etVerfyCode.getText().toString().trim().equals(this.mailCode))
     {
-      toast(2131100499);
+      toast(R.string.verify_ok);
       this.redBgTextView.setText(getString(R.string.finish));
       this.rlVerfy.setVisibility(View.GONE);
       this.rlPsd.setVisibility(View.VISIBLE);
       return;
-    }
-    toast(2131100498);
+    }*/
+    toast(R.string.verify_no_ok);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -414,7 +413,7 @@ public class ActForgetActivity extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968677);
+    setContentView(R.layout.at_forget_psd);
     this.isZh = UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", true);
     ButterKnife.bind(this);
     setTitleView();
@@ -436,14 +435,9 @@ public class ActForgetActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
-    setTiTleTextRes(2131100062);
+    setMenuBackgroundRes(R.mipmap.plug_back);
+    setTiTleTextRes(R.string.find_back_psd);
     showBottomLine();
     setBgWhite();
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.LogRegForget.ActForgetActivity
- * JD-Core Version:    0.6.0
- */

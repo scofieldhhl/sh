@@ -1,26 +1,20 @@
 package com.ex.ltech.hongwai;
 
 import android.app.Activity;
-import android.app.LocalActivityManager;
 import android.app.ProgressDialog;
 import android.app.TabActivity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
-import android.widget.TabHost.OnTabChangeListener;
-import android.widget.TabHost.TabSpec;
 import android.widget.TabWidget;
 import android.widget.TextView;
+
 import com.ex.ltech.MyDb;
 import com.ex.ltech.hongwai.lamp.AtLamp;
 import com.ex.ltech.hongwai.scene.AtSceneActivity;
@@ -30,28 +24,27 @@ import com.ex.ltech.hongwai.vo.MyRcDevice;
 import com.ex.ltech.hongwai.vo.MyRcDevices;
 import com.ex.ltech.hongwai.vo.NonIrDevice;
 import com.ex.ltech.hongwai.yaokong.AtYaokongActivity;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.my_view.MyAlertDialog.MyOnClickListener;
+import com.ex.ltech.led.my_view.MyAlertDialog;
 import com.ex.ltech.led.my_view.MyAlertDialog14;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.led.vo.DeviceVo;
 import com.ex.ltech.onepiontfive.main.MyBusiness;
-import com.ex.ltech.onepiontfive.main.MyBusiness.MySendListener;
 import com.ex.ltech.onepiontfive.main.updataHardWareProgram.SynProgram2Device;
-import com.ex.ltech.onepiontfive.main.updataHardWareProgram.SynProgram2Device.SynListener;
 import com.hzy.tvmao.KookongSDK;
+
+import java.util.List;
+
 import io.xlink.wifi.js.manage.DeviceManage;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class NewHongWaiMain extends TabActivity
   implements XlinkNetListener
@@ -128,10 +121,10 @@ public class NewHongWaiMain extends TabActivity
     this.tabHost = getTabHost();
     this.tabHost.setOnTabChangedListener(this.tab_listener);
     this.inflater = LayoutInflater.from(this);
-    View localView1 = setMenuView(2130903467);
-    View localView2 = setMenuView(2130903469);
-    View localView3 = setMenuView(2130903471);
-    View localView4 = setMenuView(2130903473);
+    View localView1 = setMenuView(R.mipmap.mode_1);
+    View localView2 = setMenuView(R.mipmap.mode_2);
+    View localView3 = setMenuView(R.mipmap.mode_3);
+    View localView4 = setMenuView(R.mipmap.mode_4);
     this.tabHost.addTab(this.tabHost.newTabSpec("yaokong").setContent(new Intent(this, AtYaokongActivity.class)).setIndicator(localView1));
     this.tabHost.addTab(this.tabHost.newTabSpec("scene").setContent(new Intent(this, AtSceneActivity.class)).setIndicator(localView2));
     this.tabHost.addTab(this.tabHost.newTabSpec("lamp").setContent(new Intent(this, AtLamp.class)).setIndicator(localView3));
@@ -150,7 +143,7 @@ public class NewHongWaiMain extends TabActivity
     MyAlertDialog14 localMyAlertDialog14 = new MyAlertDialog14(this);
     localMyAlertDialog14.show();
     localMyAlertDialog14.setCancelable(false);
-    localMyAlertDialog14.setMsg(getString(2131100502) + paramString);
+    localMyAlertDialog14.setMsg(getString(R.string.version_code) + paramString);
     localMyAlertDialog14.setMyOnClickListener(new MyAlertDialog.MyOnClickListener()
     {
       public void onClick(View paramView, boolean paramBoolean)

@@ -56,10 +56,10 @@ public class FtAddTime extends MyBaseFt
   boolean onOff;
   private int position = -1;
 
-  @Bind({2131558516})
+  @Bind({R.id.rl_act_add_timing_2})
   RelativeLayout rlSeletedDays;
 
-  @Bind({2131558510})
+  @Bind({R.id.rl_act_add_timing_1})
   RelativeLayout rlSeletedDevice;
   RoomBusiness roomBusiness;
   Runnable runnable = new Runnable()
@@ -72,28 +72,28 @@ public class FtAddTime extends MyBaseFt
   private int[] shotDay = { 2131100240, 2131100240, 2131100467, 2131100430, 2131100071, 2131100066, 2131100404, 2131100394 };
   Timing timing;
 
-  @Bind({2131558504})
+  @Bind({R.id.tp_act_add_timing_hour})
   MyTimePickerView tpActAddTimingHour;
 
-  @Bind({2131558505})
+  @Bind({R.id.tp_act_add_timing_min})
   MyTimePickerView tpActAddTimingMin;
 
   @Bind({2131558512})
   TextView tvActAddTimingMode;
 
-  @Bind({2131558515})
+  @Bind({R.id.tv_act_add_timing_mode_status})
   TextView tvActAddTimingModeStatus;
 
-  @Bind({2131558508})
+  @Bind({R.id.tv_act_add_timing_off})
   TextView tvActAddTimingOff;
 
-  @Bind({2131558507})
+  @Bind({R.id.tv_act_add_timing_on})
   TextView tvActAddTimingOn;
 
   @Bind({2131558518})
   TextView tvActAddTimingRepeat;
 
-  @Bind({2131558520})
+  @Bind({R.id.tv_act_add_timing_repeat_status})
   TextView tvActAddTimingRepeatStatus;
 
   @Bind({2131558783})

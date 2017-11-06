@@ -11,6 +11,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.fragment.FragmentPageAdapter;
 import com.ex.ltech.led.fragment.FragmentSysCustom;
 import com.ex.ltech.led.fragment.FragmentSysInside;
@@ -100,7 +102,7 @@ public class ActScene extends FragmentActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968642);
+    setContentView(R.layout.acti_scene_two);
     initViewPager();
     findView();
     init();

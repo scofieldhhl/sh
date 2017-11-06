@@ -68,7 +68,7 @@ public class MyAdapter extends BaseAdapter
       if (!localModeVo.isSeleted())
         break label232;
     }
-    label209: label225: label232: for (int j = this.pct.getResources().getColor(2131492927); ; j = this.pct.getResources().getColor(2131492997))
+    label209: label225: label232: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
     {
       paramView.setBackgroundColor(j);
       return paramView;

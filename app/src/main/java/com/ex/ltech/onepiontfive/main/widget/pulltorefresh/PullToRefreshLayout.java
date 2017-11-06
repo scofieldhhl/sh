@@ -343,7 +343,7 @@ public class PullToRefreshLayout extends RelativeLayout
     {
     default:
       this.loadStateImageView.setVisibility(View.VISIBLE);
-      this.loadStateTextView.setText(2131100150);
+      this.loadStateTextView.setText(R.string.load_fail);
       this.loadStateImageView.setBackgroundResource(2130903206);
     case 0:
     }

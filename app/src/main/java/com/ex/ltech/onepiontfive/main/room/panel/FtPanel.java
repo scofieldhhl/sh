@@ -246,7 +246,7 @@ public class FtPanel extends MyBaseFt
       {
         MyAlertDialog localMyAlertDialog = new MyAlertDialog(FtPanel.this.getActivity());
         localMyAlertDialog.show();
-        localMyAlertDialog.setTitle(2131100435);
+        localMyAlertDialog.setTitle(R.string.tips);
         localMyAlertDialog.setMsg(2131100025);
         localMyAlertDialog.getWindow().clearFlags(131080);
         localMyAlertDialog.getWindow().setSoftInputMode(4);

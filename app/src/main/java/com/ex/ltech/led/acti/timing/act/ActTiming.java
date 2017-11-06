@@ -1,27 +1,24 @@
 package com.ex.ltech.led.acti.timing.act;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.AbsListView;
-import android.widget.AbsListView.OnScrollListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.timing.TimingBussines;
 import com.ex.ltech.led.acti.timing.TimingData;
 import com.ex.ltech.led.acti.timing.TimingListAdapter;
-import com.ex.ltech.led.acti.timing.TimingListAdapter.OnListVSwichChangeListener;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenu;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuCreator;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuItem;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView;
-import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView.OnMenuItemClickListener;
-import com.ex.ltech.led.vo.DeviceVo;
 import com.ex.ltech.led.vo.TimingVo;
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +41,7 @@ public class ActTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.lv_act_timing = ((SwipeMenuListView)findViewById(2131558611));
+    this.lv_act_timing = ((SwipeMenuListView)findViewById(R.id.lv_act_timing));
     this.lv_act_timing.setMenuCreator(new SwipeMenuCreator()
     {
       public void create(SwipeMenu paramSwipeMenu)
@@ -56,7 +53,7 @@ public class ActTiming extends MyBaseActivity
         localSwipeMenuItem1.setTitleColor(-1);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem1);
         SwipeMenuItem localSwipeMenuItem2 = new SwipeMenuItem(ActTiming.this.getApplicationContext());
-        localSwipeMenuItem2.setBackground(new ColorDrawable(ActTiming.this.getResources().getColor(2131492896)));
+        localSwipeMenuItem2.setBackground(new ColorDrawable(ActTiming.this.getResources().getColor(R.color.color5)));
         localSwipeMenuItem2.setWidth(ActTiming.this.bussines.dp2px(70));
         localSwipeMenuItem2.setIcon(2130903138);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem2);
@@ -148,7 +145,7 @@ public class ActTiming extends MyBaseActivity
     {
       public boolean onMenuItemClick(int paramInt1, SwipeMenu paramSwipeMenu, int paramInt2)
       {
-        switch (paramInt2)
+        /*switch (paramInt2)
         {
         default:
         case 0:
@@ -172,7 +169,8 @@ public class ActTiming extends MyBaseActivity
           ActTiming.this.bussines.delTimingItem(ActTiming.this.vos, paramInt1);
           ActTiming.this.adt.notifyDataSetChanged();
           ActTiming.this.setListTotgleBtnListenerDelay();
-        }
+        }*/
+        return true;
       }
     });
   }
@@ -181,15 +179,15 @@ public class ActTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
-    setTiTleTextRes(2131100433);
-    setEditImageRes(2130903589);
+    setTiTleTextRes(R.string.timing);
+    setEditImageRes(R.mipmap.new_add);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
     super.onActivityResult(paramInt1, paramInt2, paramIntent);
-    if (paramInt2 == -1)
+    /*if (paramInt2 == -1)
     {
       this.vos.clear();
       this.vos.addAll(this.timingData.getTimingVos4Sd());
@@ -202,13 +200,13 @@ public class ActTiming extends MyBaseActivity
       this.adt.notifyDataSetChanged();
       return;
       label96: this.bussines.sendTiming((TimingVo)this.vos.get(this.itemPosition), this.itemPosition, false);
-    }
+    }*/
   }
 
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968623);
+    setContentView(R.layout.act_timing);
     setTitleView();
     findView();
     init();

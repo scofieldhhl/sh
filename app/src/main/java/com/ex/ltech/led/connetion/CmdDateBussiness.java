@@ -1,15 +1,16 @@
 package com.ex.ltech.led.connetion;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Color;
+
 import com.ex.ltech.hongwai.StringUtil;
 import com.ex.ltech.hongwai.vo.NonIrDevice;
 import com.ex.ltech.led.MyApp;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.onepiontfive.main.MyBusiness;
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -541,7 +542,7 @@ public class CmdDateBussiness
     for (int j = 0; j < paramInt5; j++)
     {
       int k = ((Integer)paramList.get(j)).intValue();
-      if (k == this.context.getResources().getColor(2131492927))
+      if (k == this.context.getResources().getColor(R.color.gray))
         k = -16777216;
       arrayOfByte[(15 + j * 3)] = (byte)tenToSixteen(Color.red(k));
       arrayOfByte[(16 + j * 3)] = (byte)tenToSixteen(Color.green(k));

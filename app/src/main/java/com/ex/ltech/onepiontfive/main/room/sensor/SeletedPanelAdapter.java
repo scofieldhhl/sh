@@ -71,7 +71,7 @@ public class SeletedPanelAdapter extends BaseAdapter
       case 10:
       }
     }
-    for (int j = this.pct.getResources().getColor(2131492927); ; j = this.pct.getResources().getColor(2131492997))
+    for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
     {
       paramView.setBackgroundColor(j);
       localHolder.iv_act_repeat_day.setOnClickListener(new View.OnClickListener(paramInt)

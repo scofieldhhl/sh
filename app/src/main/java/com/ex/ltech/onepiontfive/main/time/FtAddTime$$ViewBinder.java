@@ -17,17 +17,17 @@ public class FtAddTime$$ViewBinder<T extends FtAddTime>
     paramT.btnTitleViewMenu = ((RippleView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558781, "field 'btnTitleViewMenu'"), 2131558781, "field 'btnTitleViewMenu'"));
     paramT.tvTitleViewTitle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558783, "field 'tvTitleViewTitle'"), 2131558783, "field 'tvTitleViewTitle'"));
     paramT.btnTitleViewEdit = ((RippleView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558784, "field 'btnTitleViewEdit'"), 2131558784, "field 'btnTitleViewEdit'"));
-    paramT.tpActAddTimingHour = ((MyTimePickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558504, "field 'tpActAddTimingHour'"), 2131558504, "field 'tpActAddTimingHour'"));
-    paramT.tpActAddTimingMin = ((MyTimePickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558505, "field 'tpActAddTimingMin'"), 2131558505, "field 'tpActAddTimingMin'"));
-    paramT.tvActAddTimingOn = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558507, "field 'tvActAddTimingOn'"), 2131558507, "field 'tvActAddTimingOn'"));
-    paramT.tvActAddTimingOff = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558508, "field 'tvActAddTimingOff'"), 2131558508, "field 'tvActAddTimingOff'"));
-    paramT.tvActAddTimingModeStatus = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558515, "field 'tvActAddTimingModeStatus'"), 2131558515, "field 'tvActAddTimingModeStatus'"));
-    paramT.tvActAddTimingRepeatStatus = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558520, "field 'tvActAddTimingRepeatStatus'"), 2131558520, "field 'tvActAddTimingRepeatStatus'"));
+    paramT.tpActAddTimingHour = ((MyTimePickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tp_act_add_timing_hour, "field 'tpActAddTimingHour'"), R.id.tp_act_add_timing_hour, "field 'tpActAddTimingHour'"));
+    paramT.tpActAddTimingMin = ((MyTimePickerView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tp_act_add_timing_min, "field 'tpActAddTimingMin'"), R.id.tp_act_add_timing_min, "field 'tpActAddTimingMin'"));
+    paramT.tvActAddTimingOn = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tv_act_add_timing_on, "field 'tvActAddTimingOn'"), R.id.tv_act_add_timing_on, "field 'tvActAddTimingOn'"));
+    paramT.tvActAddTimingOff = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tv_act_add_timing_off, "field 'tvActAddTimingOff'"), R.id.tv_act_add_timing_off, "field 'tvActAddTimingOff'"));
+    paramT.tvActAddTimingModeStatus = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tv_act_add_timing_mode_status, "field 'tvActAddTimingModeStatus'"), R.id.tv_act_add_timing_mode_status, "field 'tvActAddTimingModeStatus'"));
+    paramT.tvActAddTimingRepeatStatus = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tv_act_add_timing_repeat_status, "field 'tvActAddTimingRepeatStatus'"), R.id.tv_act_add_timing_repeat_status, "field 'tvActAddTimingRepeatStatus'"));
     paramT.tvActAddTimingMode = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558512, "field 'tvActAddTimingMode'"), 2131558512, "field 'tvActAddTimingMode'"));
-    paramT.rlSeletedDevice = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558510, "field 'rlSeletedDevice'"), 2131558510, "field 'rlSeletedDevice'"));
+    paramT.rlSeletedDevice = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.rl_act_add_timing_1, "field 'rlSeletedDevice'"), R.id.rl_act_add_timing_1, "field 'rlSeletedDevice'"));
     paramT.tvActAddTimingRepeat = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558518, "field 'tvActAddTimingRepeat'"), 2131558518, "field 'tvActAddTimingRepeat'"));
     paramT.ivActAddTimingGo2 = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558519, "field 'ivActAddTimingGo2'"), 2131558519, "field 'ivActAddTimingGo2'"));
-    paramT.rlSeletedDays = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558516, "field 'rlSeletedDays'"), 2131558516, "field 'rlSeletedDays'"));
+    paramT.rlSeletedDays = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.rl_act_add_timing_2, "field 'rlSeletedDays'"), R.id.rl_act_add_timing_2, "field 'rlSeletedDays'"));
   }
 
   public void unbind(T paramT)

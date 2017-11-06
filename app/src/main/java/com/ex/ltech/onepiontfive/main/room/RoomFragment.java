@@ -1456,7 +1456,7 @@ public class RoomFragment extends MyBaseFt
               }
               while (paramString.getBytes().length > 24)
               {
-                Toast.makeText(AtMain.instance, 2131100328, 0).show();
+                Toast.makeText(AtMain.instance, R.string.rename_count, 0).show();
                 RoomFragment.this.dialog.dismiss();
                 return;
                 i = 69;
@@ -2550,7 +2550,7 @@ public class RoomFragment extends MyBaseFt
                 {
                   if (paramString.getBytes().length <= 24)
                     break label241;
-                  Toast.makeText(AtMain.instance, 2131100328, 0).show();
+                  Toast.makeText(AtMain.instance, R.string.rename_count, 0).show();
                   RoomFragment.this.dialog.dismiss();
                   return;
                   j = 69;

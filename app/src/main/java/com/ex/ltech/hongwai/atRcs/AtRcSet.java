@@ -2,36 +2,31 @@ package com.ex.ltech.hongwai.atRcs;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.ex.ltech.LogRegForget.Mail;
 import com.ex.ltech.MyDb;
 import com.ex.ltech.hongwai.vo.DiyKey;
 import com.ex.ltech.hongwai.vo.MyRcDevice;
 import com.ex.ltech.hongwai.vo.MyRcDevices;
-import com.ex.ltech.hongwai.vo.NonIrDevice;
 import com.ex.ltech.hongwai.yaokong.AtIrLightReset;
 import com.ex.ltech.hongwai.yaokong.AtYkCfgHelpActivity;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.my_view.MyAlertDialog12;
-import com.ex.ltech.led.my_view.MyAlertDialog12.MyOnClickListener;
 import com.ex.ltech.led.my_view.MyEditAlertDialog;
-import com.ex.ltech.led.my_view.MyEditAlertDialog.MyOnClickListener;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.onepiontfive.main.MyBusiness;
-import com.ex.ltech.onepiontfive.main.MyBusiness.MySendListener;
 import com.hzy.tvmao.KKACManagerV2;
 import com.kookong.app.data.api.IrData;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -202,7 +197,7 @@ public class AtRcSet extends MyBaseActivity
     setContentView(2130968697);
     setViewTitle();
     setMenuBackgroundRes(2130903274);
-    setTiTleTextRes(2131100393);
+    setTiTleTextRes(R.string.setting);
     this.tvRcName = ((TextView)findViewById(2131558907));
     this.existRcPosi = getIntent().getIntExtra("OP_AT_POSI_KEY", -1);
     this.rcDevices = ((MyRcDevices)MyDb.getInstance(getApplicationContext()).getBean(DeviceListActivity.deviceMacAddress, MyRcDevices.class));

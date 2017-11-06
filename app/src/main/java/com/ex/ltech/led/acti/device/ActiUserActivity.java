@@ -1,7 +1,6 @@
 package com.ex.ltech.led.acti.device;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -9,27 +8,23 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
+
 import com.ex.ltech.LogRegForget.ActLoginActivity;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.my_view.MLImageView;
 import com.ex.ltech.led.my_view.MyAlertDialog;
 import com.ex.ltech.led.my_view.MyAlertDialog2;
-import com.ex.ltech.led.my_view.MyAlertDialog2.MyOnClickListener;
 import com.ex.ltech.led.my_view.MyEditAlertDialog;
 import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.utils.FileUtil;
 import com.ex.ltech.led.utils.NormalLoadPictrue;
-import com.ex.ltech.led.utils.UriUtil;
-import com.indris.material.RippleView;
 import com.soundcloud.android.crop.Crop;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
+
 import java.io.File;
+
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActiUserActivity extends MyBaseActivity
 {
@@ -47,7 +42,7 @@ public class ActiUserActivity extends MyBaseActivity
 
   private void handleCrop(int paramInt, Intent paramIntent)
   {
-    String str;
+    /*String str;
     if (paramInt == -1)
     {
       Bitmap localBitmap1 = BitmapUtils.autoZoomInBM(BitmapUtils.getBitmapFromUri(this, Crop.getOutput(paramIntent)), 300.0D, 300.0D);
@@ -72,22 +67,22 @@ public class ActiUserActivity extends MyBaseActivity
     catch (Exception localException)
     {
       localException.printStackTrace();
-    }
+    }*/
   }
 
   private void setMyTitle()
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100393);
+    setTiTleTextRes(R.string.setting);
     setBgAlpha();
   }
 
   public void changeHead(View paramView)
   {
-    MyAlertDialog2 localMyAlertDialog2 = new MyAlertDialog2(this);
+    final MyAlertDialog2 localMyAlertDialog2 = new MyAlertDialog2(this);
     localMyAlertDialog2.show();
-    localMyAlertDialog2.setMyOnClickListener(new MyAlertDialog2.MyOnClickListener(localMyAlertDialog2)
+    localMyAlertDialog2.setMyOnClickListener(new MyAlertDialog2.MyOnClickListener()
     {
       public void onClick(int paramInt)
       {
@@ -98,8 +93,8 @@ public class ActiUserActivity extends MyBaseActivity
         if (paramInt == 3)
         {
           UserFerences.getUserFerences(ActiUserActivity.this).putValue("uHeadPath", "");
-          ActiUserActivity.this.iv_acti_user_head.setImageResource(2130903460);
-          this.val$dialog.dismiss();
+          ActiUserActivity.this.iv_acti_user_head.setImageResource(R.mipmap.log_head_6);
+          localMyAlertDialog2.dismiss();
         }
       }
     });
@@ -107,26 +102,26 @@ public class ActiUserActivity extends MyBaseActivity
 
   public void changeName(View paramView)
   {
-    MyEditAlertDialog localMyEditAlertDialog = new MyEditAlertDialog(this);
+    final MyEditAlertDialog localMyEditAlertDialog = new MyEditAlertDialog(this);
     localMyEditAlertDialog.show();
     localMyEditAlertDialog.setMsg(2131100107);
     localMyEditAlertDialog.getWindow().clearFlags(131080);
     localMyEditAlertDialog.getWindow().setSoftInputMode(4);
-    localMyEditAlertDialog.rv_my_edit_alertdialog_ok.setOnClickListener(new View.OnClickListener(localMyEditAlertDialog)
+    localMyEditAlertDialog.rv_my_edit_alertdialog_ok.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
       {
-        String str = this.val$dialog.et_my_edit_alertdialog.getText().toString();
+        String str = localMyEditAlertDialog.et_my_edit_alertdialog.getText().toString();
         UserFerences.getUserFerences(ActiUserActivity.this.getApplicationContext()).putValue("user", str);
         ActiUserActivity.this.tv_acti_user_name.setText(str);
-        this.val$dialog.dismiss();
+        localMyEditAlertDialog.dismiss();
       }
     });
-    localMyEditAlertDialog.rv_my_edit_alertdialog_cancle.setOnClickListener(new View.OnClickListener(localMyEditAlertDialog)
+    localMyEditAlertDialog.rv_my_edit_alertdialog_cancle.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
       {
-        this.val$dialog.dismiss();
+        localMyEditAlertDialog.dismiss();
       }
     });
   }
@@ -149,17 +144,17 @@ public class ActiUserActivity extends MyBaseActivity
 
   public void logOut(View paramView)
   {
-    MyAlertDialog localMyAlertDialog = new MyAlertDialog(this);
+    final MyAlertDialog localMyAlertDialog = new MyAlertDialog(this);
     localMyAlertDialog.show();
-    localMyAlertDialog.setTitle(2131100435);
-    localMyAlertDialog.setMsg(2131100193);
+    localMyAlertDialog.setTitle(R.string.tips);
+    localMyAlertDialog.setMsg(R.string.msg_log_out);
     localMyAlertDialog.getWindow().clearFlags(131080);
     localMyAlertDialog.getWindow().setSoftInputMode(4);
-    localMyAlertDialog.rv_my_alertdialog_cancle.setOnClickListener(new View.OnClickListener(localMyAlertDialog)
+    localMyAlertDialog.rv_my_alertdialog_cancle.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
       {
-        this.val$dialog.dismiss();
+        localMyAlertDialog.dismiss();
       }
     });
     localMyAlertDialog.rv_my_alertdialog_ok.setOnClickListener(new View.OnClickListener()
@@ -180,7 +175,7 @@ public class ActiUserActivity extends MyBaseActivity
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
     super.onActivityResult(paramInt1, paramInt2, paramIntent);
-    String str;
+    /*String str;
     if ((-1 == paramInt2) && (paramInt1 == this.SHOT_REQ_CODE))
     {
       str = this.currentFile.getPath();
@@ -212,15 +207,15 @@ public class ActiUserActivity extends MyBaseActivity
       return;
     }
     while (paramInt1 != 6709);
-    handleCrop(paramInt2, paramIntent);
+    handleCrop(paramInt2, paramIntent);*/
   }
 
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968645);
-    this.iv_acti_user_head = ((MLImageView)findViewById(2131558788));
-    this.tv_acti_user_name = ((TextView)findViewById(2131558790));
+    setContentView(R.layout.acti_user);
+    this.iv_acti_user_head = ((MLImageView)findViewById(R.id.iv_acti_user_head));
+    this.tv_acti_user_name = ((TextView)findViewById(R.id.tv_acti_user_name));
     setMyTitle();
     this.headPtah = UserFerences.getUserFerences(this).spFerences.getString("uHeadPath", "");
     this.nName = UserFerences.getUserFerences(this).spFerences.getString("user", "");
@@ -246,7 +241,7 @@ public class ActiUserActivity extends MyBaseActivity
     catch (Exception localException)
     {
       localException.printStackTrace();
-      this.iv_acti_user_head.setImageBitmap(BitmapFactory.decodeResource(getResources(), 2130903460));
+      this.iv_acti_user_head.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.log_head_6));
     }
   }
 

@@ -112,7 +112,7 @@ public class AtIrLightReset extends MyBaseActivity
   {
     setViewTitle();
     setTitle(2131100341);
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setDeviceTextRes(getResources().getString(2131099880), 2131492935);
   }
 

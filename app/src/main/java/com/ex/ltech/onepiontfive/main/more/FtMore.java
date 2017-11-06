@@ -115,7 +115,7 @@ public class FtMore extends MyBaseFt
     MyAlertDialog14 localMyAlertDialog14 = new MyAlertDialog14(getActivity());
     localMyAlertDialog14.show();
     localMyAlertDialog14.setCancelable(false);
-    localMyAlertDialog14.setMsg(getString(2131100502) + paramString);
+    localMyAlertDialog14.setMsg(getString(R.string.version_code) + paramString);
     localMyAlertDialog14.setMyOnClickListener(new MyAlertDialog.MyOnClickListener()
     {
       public void onClick(View paramView, boolean paramBoolean)

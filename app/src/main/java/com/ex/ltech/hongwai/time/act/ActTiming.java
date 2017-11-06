@@ -55,7 +55,7 @@ public class ActTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.lv_act_timing = ((SwipeMenuListView)findViewById(2131558611));
+    this.lv_act_timing = ((SwipeMenuListView)findViewById(R.id.lv_act_timing));
     this.lv_act_timing.setMenuCreator(new SwipeMenuCreator()
     {
       public void create(SwipeMenu paramSwipeMenu)
@@ -216,7 +216,7 @@ public class ActTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(2130903274);
-    setTiTleTextRes(2131100433);
+    setTiTleTextRes(R.string.timing);
     setBgWhite();
     setEditImageRes(2130903273);
   }

@@ -140,7 +140,7 @@ public class MyRainbowSeekBar extends View
     this.whiteP.setAntiAlias(true);
     this.whiteP.setColor(-1);
     this.garyP.setAntiAlias(true);
-    this.garyP.setColor(getResources().getColor(2131492927));
+    this.garyP.setColor(getResources().getColor(R.color.gray));
     this.progressPaint = new Paint();
     this.bgPaint = new Paint();
     this.progressPaint.setColor(-7829368);

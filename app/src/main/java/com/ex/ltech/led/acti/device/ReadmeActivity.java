@@ -14,7 +14,7 @@ public class ReadmeActivity extends MyBaseActivity
     setContentView(2130968617);
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100082);
+    setTiTleTextRes(R.string.guide);
     findViewById(2131558612).setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)

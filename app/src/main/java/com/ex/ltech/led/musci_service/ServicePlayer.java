@@ -4,17 +4,17 @@ import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnCompletionListener;
 import android.media.audiofx.Visualizer;
-import android.media.audiofx.Visualizer.OnDataCaptureListener;
 import android.os.Binder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+
 import com.ex.ltech.led.acti.music.PlaySongBusiness;
 import com.ex.ltech.led.acti.music.RecordBusiness;
 import com.ex.ltech.led.vo.SongVo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -145,7 +145,7 @@ public class ServicePlayer extends Service
       return;
     Bundle localBundle = paramIntent.getExtras();
     String str = localBundle.getString("operation");
-    int i = -1;
+    /*int i = -1;
     switch (str.hashCode())
     {
     default:
@@ -245,7 +245,7 @@ public class ServicePlayer extends Service
     this.recordBusiness.recordingStart();
     this.recordBusiness.setOnOff(true);
     return;
-    this.recordBusiness.stopRecording();
+    this.recordBusiness.stopRecording();*/
   }
 
   public boolean onUnbind(Intent paramIntent)
@@ -265,9 +265,9 @@ public class ServicePlayer extends Service
 
   public void setRecordCallBack(RecordCallBack paramRecordCallBack)
   {
-    this.recordCallBack = paramRecordCallBack;
+    /*this.recordCallBack = paramRecordCallBack;
     this.recordBusiness.stopRecording();
-    this.recordBusiness.setRecordCallBack(this.recordCallBack);
+    this.recordBusiness.setRecordCallBack(this.recordCallBack);*/
   }
 
   public void setSongRecordCallBack(SongRecordCallBack paramSongRecordCallBack)

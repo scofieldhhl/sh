@@ -37,7 +37,7 @@ public class ActResetPsd extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100393);
+    setTiTleTextRes(R.string.setting);
     setBgAlpha();
   }
 
@@ -72,7 +72,7 @@ public class ActResetPsd extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setTiTleTextRes(2131100344);
     setEditStrColor(getResources().getColor(R.color.oringe));
     setEditStrRes(2131100530);
@@ -100,7 +100,7 @@ public class ActResetPsd extends MyBaseActivity
     {
       if ((j | i) == 0)
         break label117;
-      toast(2131100278);
+      toast(R.string.psw);
       return;
       j = 0;
       break;
@@ -108,7 +108,7 @@ public class ActResetPsd extends MyBaseActivity
     }
     label117: if (!str1.equals(str2))
     {
-      toast(2131100218);
+      toast(R.string.no_same_psd);
       return;
     }
     RegVo localRegVo = new RegVo();
@@ -122,7 +122,7 @@ public class ActResetPsd extends MyBaseActivity
       {
         public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
         {
-          ActResetPsd.this.toast(2131100201);
+          ActResetPsd.this.toast(R.string.net_no_ok);
         }
 
         public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
@@ -142,7 +142,7 @@ public class ActResetPsd extends MyBaseActivity
             }
             if (i == 201)
             {
-              ActResetPsd.this.toast(2131100321);
+              ActResetPsd.this.toast(R.string.reged);
               return;
             }
           }

@@ -109,7 +109,7 @@ public class ModeGridViewAdapter extends BaseAdapter
           if (!localModeVo.isSingleSeleted())
             break label331;
         }
-        label331: for (int m = this.pct.getResources().getColor(2131492927); ; m = this.pct.getResources().getColor(2131492997))
+        label331: for (int m = this.pct.getResources().getColor(R.color.gray); ; m = this.pct.getResources().getColor(2131492997))
         {
           paramView.setBackgroundColor(m);
           break;
@@ -133,7 +133,7 @@ public class ModeGridViewAdapter extends BaseAdapter
       if (!localModeVo.isSingleSeleted())
         break label510;
     }
-    label510: for (int j = this.pct.getResources().getColor(2131492927); ; j = this.pct.getResources().getColor(2131492997))
+    label510: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
     {
       paramView.setBackgroundColor(j);
       this.bmsIndex = (1 + this.bmsIndex);

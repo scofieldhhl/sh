@@ -105,7 +105,7 @@ public class ActOutLetLed extends MyBaseActivity
   private void setMyTitle()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setTiTleTextRes(2131100147);
   }
 

@@ -117,7 +117,7 @@ public class ActiPlayList extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(2131100194);
-    setEditTextRes(R.string.finish, getResources().getColor(2131492892));
+    setEditTextRes(R.string.finish, getResources().getColor(R.color.color1));
   }
 
   public String getPinYinHeadChar(String paramString)

@@ -150,7 +150,7 @@ public class ActLoginActivity extends MyBaseActivity
       {
         public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
         {
-          ActLoginActivity.this.toast(2131100201);
+          ActLoginActivity.this.toast(R.string.net_no_ok);
         }
 
         public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
@@ -185,7 +185,7 @@ public class ActLoginActivity extends MyBaseActivity
       break;
       label107: i = 0;
     }
-    label112: toast(2131100101);
+    label112: toast(R.string.input_ok_phone);
   }*/
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)

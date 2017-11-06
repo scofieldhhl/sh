@@ -48,13 +48,13 @@ public class DeviceListAdapter extends BaseAdapter
   {
     this.mContext = paramActivity;
     this.devices = paramArrayList;
-    this.ledBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903697);
-    this.plugBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903202);
-    this.hongwaiBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903190);
+    this.ledBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.rgb);
+    this.plugBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.device_plug);
+    this.hongwaiBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.d_remote);
     this.ctBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903146);
     this.bwBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903101);
     this.defaultBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903115);
-    this.oneZeroFiveBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903358);
+    this.oneZeroFiveBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.icon_105);
     this.oneZeroFiveOff = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903359);
     this.lightOffline = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903452);
     this.plugOffline = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903630);

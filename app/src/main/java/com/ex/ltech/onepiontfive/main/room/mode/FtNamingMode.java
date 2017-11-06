@@ -233,7 +233,7 @@ public class FtNamingMode extends MyBaseActivity
     super.onEdit();
     if (this.et_act_name_mode.getText().toString().getBytes().length > 24)
     {
-      Toast.makeText(this, 2131100328, 0).show();
+      Toast.makeText(this, R.string.rename_count, 0).show();
       return;
     }
     if (this.et_act_name_mode.getText().toString().length() == 0);

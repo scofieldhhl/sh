@@ -66,7 +66,7 @@ public class ActTiming extends MyBaseActivity
       public void create(SwipeMenu paramSwipeMenu)
       {
         SwipeMenuItem localSwipeMenuItem1 = new SwipeMenuItem(ActTiming.this.getApplicationContext());
-        localSwipeMenuItem1.setBackground(new ColorDrawable(ActTiming.this.getResources().getColor(2131492927)));
+        localSwipeMenuItem1.setBackground(new ColorDrawable(ActTiming.this.getResources().getColor(R.color.gray)));
         localSwipeMenuItem1.setWidth(ActTiming.this.bussines.dp2px(60));
         localSwipeMenuItem1.setIcon(2130903626);
         localSwipeMenuItem1.setTitleColor(-1);
@@ -221,8 +221,8 @@ public class ActTiming extends MyBaseActivity
   {
     String str = UserFerences.getUserFerences(this).spFerences.getString("dName" + DeviceListActivity.deviceMacAddress, "");
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
-    setTiTleTextRes(2131100433);
+    setMenuBackgroundRes(R.mipmap.plug_back);
+    setTiTleTextRes(R.string.timing);
     setEditImageRes(2130903622);
     setDeviceTextRes(str);
   }

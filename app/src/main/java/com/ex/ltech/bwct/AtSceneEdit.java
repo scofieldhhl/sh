@@ -1,23 +1,20 @@
 package com.ex.ltech.bwct;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.my_view.SimpleColorPickerView;
-import com.ex.ltech.led.my_view.SimpleColorPickerView.OnColorChangedListener;
 import com.ex.ltech.led.vo.CtSceneVo;
-import com.google.gson.Gson;
+
 import io.xlink.wifi.js.manage.DeviceManage;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
-import java.io.PrintStream;
-import java.util.List;
 
 public class AtSceneEdit extends MyBaseActivity
 {
@@ -64,7 +61,7 @@ public class AtSceneEdit extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.ctSceneName);
-    setEditTextRes(R.string.finish, getResources().getColor(2131492892));
+    setEditTextRes(R.string.finish, getResources().getColor(R.color.color1));
     SeekBar localSeekBar = (SeekBar)findViewById(R.id.sb);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
     {

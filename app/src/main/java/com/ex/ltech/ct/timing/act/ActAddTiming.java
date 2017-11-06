@@ -4,21 +4,21 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.ex.ltech.ct.timing.TimingBussines;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.timing.TimingData;
 import com.ex.ltech.led.acti.timing.act.ActRepeatDay;
 import com.ex.ltech.led.my_view.ColorSeletedView;
 import com.ex.ltech.led.my_view.MyTimePickerView;
-import com.ex.ltech.led.my_view.MyTimePickerView.onSelectListener;
 import com.ex.ltech.led.utils.DateFmtUtil;
 import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
-import java.io.PrintStream;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,14 +48,14 @@ public class ActAddTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.tp_act_add_timing_hour = ((MyTimePickerView)findViewById(2131558504));
-    this.tp_act_add_timing_min = ((MyTimePickerView)findViewById(2131558505));
-    this.rl_act_add_timing_3 = ((RelativeLayout)findViewById(2131558521));
-    this.rl_act_add_timing_1 = ((RelativeLayout)findViewById(2131558510));
-    this.rl_act_add_timing_2 = ((RelativeLayout)findViewById(2131558516));
-    this.cv_act_add_timing_mode = ((ColorSeletedView)findViewById(2131558513));
-    this.tv_act_add_timing_repeat_status = ((TextView)findViewById(2131558520));
-    this.tv_act_add_timing_mode_status = ((TextView)findViewById(2131558515));
+    this.tp_act_add_timing_hour = ((MyTimePickerView)findViewById(R.id.tp_act_add_timing_hour));
+    this.tp_act_add_timing_min = ((MyTimePickerView)findViewById(R.id.tp_act_add_timing_min));
+    this.rl_act_add_timing_3 = ((RelativeLayout)findViewById(R.id.rl_act_add_timing_3));
+    this.rl_act_add_timing_1 = ((RelativeLayout)findViewById(R.id.rl_act_add_timing_1));
+    this.rl_act_add_timing_2 = ((RelativeLayout)findViewById(R.id.rl_act_add_timing_2));
+    this.cv_act_add_timing_mode = ((ColorSeletedView)findViewById(R.id.cv_act_add_timing_mode));
+    this.tv_act_add_timing_repeat_status = ((TextView)findViewById(R.id.tv_act_add_timing_repeat_status));
+    this.tv_act_add_timing_mode_status = ((TextView)findViewById(R.id.tv_act_add_timing_mode_status));
     this.tv_act_add_timing_jianbian_status = ((TextView)findViewById(2131558524));
   }
 
@@ -178,9 +178,9 @@ public class ActAddTiming extends MyBaseActivity
 
   public void close(View paramView)
   {
-    findViewById(2131558507).setBackgroundResource(2130903318);
-    findViewById(2131558508).setBackgroundResource(2130903317);
-    findViewById(2131558510).setVisibility(View.GONE);
+    findViewById(R.id.tv_act_add_timing_on).setBackgroundResource(R.mipmap.ic_on);
+    findViewById(R.id.tv_act_add_timing_off).setBackgroundResource(R.mipmap.ic_off_press);
+    findViewById(R.id.rl_act_add_timing_1).setVisibility(View.GONE);
     this.vo.setType(2);
     this.lightStatus = getString(R.string.off_device);
   }
@@ -188,7 +188,7 @@ public class ActAddTiming extends MyBaseActivity
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
     super.onActivityResult(paramInt1, paramInt2, paramIntent);
-    String str3;
+    /*String str3;
     String str2;
     int i;
     label110: int j;
@@ -276,7 +276,7 @@ public class ActAddTiming extends MyBaseActivity
       this.tv_act_add_timing_repeat_status.setText(getString(R.string.once));
       break;
       label591: this.cv_act_add_timing_mode.setColor(-1);
-    }
+    }*/
   }
 
   public void onClick(View paramView)
@@ -365,9 +365,9 @@ public class ActAddTiming extends MyBaseActivity
 
   public void open(View paramView)
   {
-    findViewById(2131558507).setBackgroundResource(R.mipmap.ic_on_press);
-    findViewById(2131558508).setBackgroundResource(R.mipmap.ic_off);
-    findViewById(2131558510).setVisibility(View.VISIBLE);
+    findViewById(R.id.tv_act_add_timing_on).setBackgroundResource(R.mipmap.ic_on_press);
+    findViewById(R.id.tv_act_add_timing_off).setBackgroundResource(R.mipmap.ic_off);
+    findViewById(R.id.rl_act_add_timing_1).setVisibility(View.VISIBLE);
     this.lightStatus = getString(R.string.on);
   }
 

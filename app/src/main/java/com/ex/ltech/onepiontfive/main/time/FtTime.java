@@ -136,7 +136,7 @@ public class FtTime extends MyBaseFt
   };
   int loopGetDeviceCount = 0;
 
-  @Bind({2131558611})
+  @Bind({R.id.lv_act_timing})
   SwipeMenuListView lvActTiming;
   private List<Integer> mTimingNums = new ArrayList();
   private String mac;
@@ -281,7 +281,7 @@ public class FtTime extends MyBaseFt
         FtTime.this.finish();
       }
     });
-    this.tvTitleViewTitle.setText(2131100433);
+    this.tvTitleViewTitle.setText(R.string.timing);
     this.btnTitleViewEdit.setBackgroundResource(2130903273);
     this.btnTitleViewEdit.setOnClickListener(new View.OnClickListener()
     {

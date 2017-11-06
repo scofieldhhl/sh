@@ -145,8 +145,8 @@ public class MusicFragment extends MyBaseFt
         MusicFragment.this.ivActiMusicNext.setVisibility(View.GONE);
         MusicFragment.this.ivActiMusicMic.setVisibility(View.VISIBLE);
         MusicFragment.this.vvActMusic.setVisibility(View.VISIBLE);
-        MusicFragment.this.btActiMusicMic.setBackgroundResource(2130903044);
-        MusicFragment.this.btActiMusList.setBackgroundResource(2130903757);
+        MusicFragment.this.btActiMusicMic.setBackgroundResource(R.mipmap.act_mus_mic_seleted);
+        MusicFragment.this.btActiMusList.setBackgroundResource(R.mipmap.song);
       }
     }
     , 200L);
@@ -260,8 +260,8 @@ public class MusicFragment extends MyBaseFt
     this.ivActiMusicBack.setVisibility(View.VISIBLE);
     this.ivActiMusicPlay.setVisibility(View.VISIBLE);
     this.ivActiMusicNext.setVisibility(View.VISIBLE);
-    this.btActiMusList.setBackgroundResource(2130903758);
-    this.btActiMusicMic.setBackgroundResource(2130903043);
+    this.btActiMusList.setBackgroundResource(R.mipmap.song_seleted);
+    this.btActiMusicMic.setBackgroundResource(R.mipmap.act_mus_mic);
     this.ivActiMusicMic.setVisibility(View.GONE);
     this.playSongBusiness.recordStop();
     this.vvActMusic.setNullArr();
@@ -291,7 +291,7 @@ public class MusicFragment extends MyBaseFt
       {
         if (MusicFragment.this.isMicClick)
         {
-          MusicFragment.this.ivActiMusicMic.setBackgroundResource(2130903497);
+          MusicFragment.this.ivActiMusicMic.setBackgroundResource(R.mipmap.music_mic);
           MusicFragment.this.playSongBusiness.recordStop();
           MusicFragment.this.vvActMusic.setNullArr();
         }
@@ -448,7 +448,7 @@ public class MusicFragment extends MyBaseFt
       if (this.isMicClick)
       {
         this.playSongBusiness.recordStart(getRequest().getIntExtra("DTypeKey", 0), getRequest().getIntExtra("DRoomNumKey", 0), getRequest().getIntExtra("DIndexKey", 0), getRequest().getBooleanExtra("MusicIsGroupKey", false));
-        this.ivActiMusicMic.setBackgroundResource(2130903498);
+        this.ivActiMusicMic.setBackgroundResource(R.mipmap.music_mic_dark);
         return;
       }
     }
@@ -458,7 +458,7 @@ public class MusicFragment extends MyBaseFt
       Toast.makeText(getActivity(), localException.getMessage(), 1).show();
       return;
     }
-    this.ivActiMusicMic.setBackgroundResource(2130903497);
+    this.ivActiMusicMic.setBackgroundResource(R.mipmap.music_mic);
     this.playSongBusiness.recordStop();
     this.handler.postDelayed(new Runnable()
     {
@@ -525,8 +525,8 @@ public class MusicFragment extends MyBaseFt
   public void onViewCreated(View paramView, Bundle paramBundle)
   {
     super.onViewCreated(paramView, paramBundle);
-    this.btActiMusList.setBackgroundResource(2130903758);
-    this.btActiMusicMic.setBackgroundResource(2130903043);
+    this.btActiMusList.setBackgroundResource(R.mipmap.song_seleted);
+    this.btActiMusicMic.setBackgroundResource(R.mipmap.act_mus_mic);
     this.btMusicActGoList.setOnClickListener(this);
     this.btActiMusicMic.setOnClickListener(this);
     this.ivActiMusicPlay.setOnClickListener(this);

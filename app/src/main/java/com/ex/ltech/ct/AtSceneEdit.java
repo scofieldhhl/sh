@@ -61,7 +61,7 @@ public class AtSceneEdit extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText(this.ctSceneName);
-    setEditTextRes(R.string.finish, getResources().getColor(2131492892));
+    setEditTextRes(R.string.finish, getResources().getColor(R.color.color1));
     SeekBar localSeekBar = (SeekBar)findViewById(R.id.sb);
     localSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
     {

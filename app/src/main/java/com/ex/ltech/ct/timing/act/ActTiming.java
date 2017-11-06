@@ -62,7 +62,7 @@ public class ActTiming extends MyBaseActivity
 
   private void findView()
   {
-    this.lv_act_timing = ((SwipeMenuListView)findViewById(2131558611));
+    this.lv_act_timing = ((SwipeMenuListView)findViewById(R.id.lv_act_timing));
     this.lv_act_timing.setMenuCreator(new SwipeMenuCreator()
     {
       public void create(SwipeMenu paramSwipeMenu)
@@ -74,7 +74,7 @@ public class ActTiming extends MyBaseActivity
         localSwipeMenuItem1.setTitleColor(-1);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem1);
         SwipeMenuItem localSwipeMenuItem2 = new SwipeMenuItem(ActTiming.this.getApplicationContext());
-        localSwipeMenuItem2.setBackground(new ColorDrawable(ActTiming.this.getResources().getColor(2131492896)));
+        localSwipeMenuItem2.setBackground(new ColorDrawable(ActTiming.this.getResources().getColor(R.color.color5)));
         localSwipeMenuItem2.setWidth(ActTiming.this.bussines.dp2px(70));
         localSwipeMenuItem2.setIcon(2130903138);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem2);
@@ -216,8 +216,8 @@ public class ActTiming extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
-    setTiTleTextRes(2131100433);
-    setEditImageRes(2130903589);
+    setTiTleTextRes(R.string.timing);
+    setEditImageRes(R.mipmap.new_add);
     setDeviceTextRes(SharedPreferencesUtil.queryValue("dname"));
   }
 
@@ -270,7 +270,7 @@ public class ActTiming extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968623);
+    setContentView(R.layout.act_timing);
     setTitleView();
     findView();
     init();
@@ -369,8 +369,3 @@ public class ActTiming extends MyBaseActivity
     });
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.ct.timing.act.ActTiming
- * JD-Core Version:    0.6.0
- */

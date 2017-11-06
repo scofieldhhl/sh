@@ -1,13 +1,14 @@
 package com.ex.ltech.led.acti.device;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.my_view.MLImageView;
@@ -24,7 +25,7 @@ public class ActSetting extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100393);
+    setTiTleTextRes(R.string.setting);
     setBgAlpha();
   }
 
@@ -66,7 +67,7 @@ public class ActSetting extends MyBaseActivity
 
   public void goVersion(View paramView)
   {
-    toast(2131100222);
+    toast(R.string.now_new);
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -82,12 +83,12 @@ public class ActSetting extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968643);
+    setContentView(R.layout.acti_setting);
     setMyTitle();
-    this.iv_setting_acti_1 = ((MLImageView)findViewById(2131558770));
-    this.iv_setting_acti_2 = ((MLImageView)findViewById(2131558771));
-    this.iv_setting_acti_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), 2130903820));
-    this.iv_setting_acti_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), 2130903460));
+    this.iv_setting_acti_1 = ((MLImageView)findViewById(R.id.iv_setting_acti_1));
+    this.iv_setting_acti_2 = ((MLImageView)findViewById(R.id.iv_setting_acti_2));
+    this.iv_setting_acti_1.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.white_piont));
+    this.iv_setting_acti_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.log_head_6));
   }
 
   protected void onMenu()
@@ -101,7 +102,7 @@ public class ActSetting extends MyBaseActivity
     super.onResume();
     String str1 = UserFerences.getUserFerences(this).spFerences.getString("uHeadPath", "");
     String str2 = UserFerences.getUserFerences(this).spFerences.getString("user", "");
-    ((TextView)findViewById(2131558772)).setText(str2);
+    ((TextView)findViewById(R.id.tv_act_setting_u_name)).setText(str2);
     if (str1.indexOf("http") != -1)
     {
       new NormalLoadPictrue().getPicture(str1, this.iv_setting_acti_2);
@@ -123,12 +124,7 @@ public class ActSetting extends MyBaseActivity
     catch (Exception localException)
     {
       localException.printStackTrace();
-      this.iv_setting_acti_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), 2130903460));
+      this.iv_setting_acti_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.log_head_6));
     }
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.device.ActSetting
- * JD-Core Version:    0.6.0
- */

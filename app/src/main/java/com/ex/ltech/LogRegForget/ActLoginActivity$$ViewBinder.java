@@ -11,11 +11,11 @@ public class ActLoginActivity$$ViewBinder<T extends ActLoginActivity>
 {
   public void bind(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    paramT.etActLogPhone = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558911, "field 'etActLogPhone'"), 2131558911, "field 'etActLogPhone'"));
+    paramT.etActLogPhone = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.et_act_log_phone, "field 'etActLogPhone'"), R.id.et_act_log_phone, "field 'etActLogPhone'"));
     paramT.etActLogPsd = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558931, "field 'etActLogPsd'"), 2131558931, "field 'etActLogPsd'"));
     paramT.tvActLogForget = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558932, "field 'tvActLogForget'"), 2131558932, "field 'tvActLogForget'"));
-    paramT.etArea = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558909, "field 'etArea'"), 2131558909, "field 'etArea'"));
-    paramT.tvCountryCode = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558910, "field 'tvCountryCode'"), 2131558910, "field 'tvCountryCode'"));
+    paramT.etArea = ((EditText)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.et_area, "field 'etArea'"), R.id.et_area, "field 'etArea'"));
+    paramT.tvCountryCode = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.tv_country_code, "field 'tvCountryCode'"), R.id.tv_country_code, "field 'tvCountryCode'"));
   }
 
   public void unbind(T paramT)

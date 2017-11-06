@@ -51,13 +51,13 @@ public class ActRegisterActivity extends MyBaseActivity
   @Bind({2131558931})
   EditText etActLogPsd;
 
-  @Bind({2131558909})
+  @Bind({R.id.et_area})
   EditText etArea;
 
   @Bind({2131559024})
   EditText etPhone;
 
-  @Bind({2131558913})
+  @Bind({R.id.verfy_code})
   EditText etVerfyCode;
   boolean isEyesClose = true;
   boolean isNumVerfly;
@@ -77,7 +77,7 @@ public class ActRegisterActivity extends MyBaseActivity
   @Bind({2131559026})
   RelativeLayout rlActRegSeleted;
 
-  @Bind({2131558912})
+  @Bind({R.id.rl_verfy})
   RelativeLayout rlVerfy;
 
   @Bind({2131559022})
@@ -86,7 +86,7 @@ public class ActRegisterActivity extends MyBaseActivity
   @Bind({2131559023})
   RelativeLayout rl_phone;
 
-  @Bind({2131558915})
+  @Bind({R.id.rl_psd})
   RelativeLayout rl_psd;
   Runnable runnable = new Runnable()
   {
@@ -97,11 +97,11 @@ public class ActRegisterActivity extends MyBaseActivity
         ActRegisterActivity localActRegisterActivity = ActRegisterActivity.this;
         localActRegisterActivity.timerTime = (-1 + localActRegisterActivity.timerTime);
         ActRegisterActivity.this.timeHandler.postDelayed(ActRegisterActivity.this.runnable, 1000L);
-        ActRegisterActivity.this.verifyTime.setText(ActRegisterActivity.this.getString(2131100338) + "(" + ActRegisterActivity.this.timerTime + "s)");
+        ActRegisterActivity.this.verifyTime.setText(ActRegisterActivity.this.getString(R.string.resend) + "(" + ActRegisterActivity.this.timerTime + "s)");
         return;
       }
       ActRegisterActivity.this.timerTime = 60;
-      ActRegisterActivity.this.verifyTime.setText(ActRegisterActivity.this.getString(2131100338));
+      ActRegisterActivity.this.verifyTime.setText(ActRegisterActivity.this.getString(R.string.resend));
       ((GradientDrawable)ActRegisterActivity.this.verifyTime.getBackground()).setColor(Color.parseColor("#ff3636"));
       ActRegisterActivity.this.verifyTime.setOnClickListener(new View.OnClickListener()
       {
@@ -119,13 +119,13 @@ public class ActRegisterActivity extends MyBaseActivity
   };
   int timerTime = 60;
 
-  @Bind({2131558910})
+  @Bind({R.id.tv_country_code})
   TextView tvCountryCode;
 
   @Bind({2131559025})
   TextView tvVerfyCodeSend;
 
-  @Bind({2131558914})
+  @Bind({R.id.verify_time})
   TextView verifyTime;
   RegVo vo;
 
@@ -166,7 +166,7 @@ public class ActRegisterActivity extends MyBaseActivity
     {
       public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
       {
-        ActRegisterActivity.this.toast(2131100201);
+        ActRegisterActivity.this.toast(R.string.net_no_ok);
       }
 
       public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
@@ -187,7 +187,7 @@ public class ActRegisterActivity extends MyBaseActivity
           }
           if (i == 201)
           {
-            ActRegisterActivity.this.toast(2131100321);
+            ActRegisterActivity.this.toast(R.string.reged);
             return;
           }
         }
@@ -212,7 +212,7 @@ public class ActRegisterActivity extends MyBaseActivity
     ImageView localImageView = (ImageView)paramView;
     if (this.isEyesClose)
     {
-      localImageView.setBackgroundResource(2130903243);
+      localImageView.setBackgroundResource(R.mipmap.eyes_open);
       this.etActLogPsd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
       Editable localEditable = this.etActLogPsd.getText();
       if ((localEditable instanceof Spannable))
@@ -224,7 +224,7 @@ public class ActRegisterActivity extends MyBaseActivity
     {
       this.isEyesClose = bool;
       return;
-      localImageView.setBackgroundResource(2130903242);
+      localImageView.setBackgroundResource(R.mipmap.eyes_close);
       this.etActLogPsd.setTransformationMethod(PasswordTransformationMethod.getInstance());
       break;
     }
@@ -251,7 +251,7 @@ public class ActRegisterActivity extends MyBaseActivity
       while (!isMobileNO(this.etPhone.getText().toString()));
       if (this.tvCountryCode.getText().toString().length() < 1)
       {
-        toast(2131100384);
+        toast(R.string.seleted_area);
         return;
       }
       this.countryCode = this.tvCountryCode.getText().toString().substring(1, this.tvCountryCode.getText().toString().length());
@@ -277,7 +277,7 @@ public class ActRegisterActivity extends MyBaseActivity
                 SMSSDK.unregisterAllEventHandler();
               }
               if (this.val$result == 0)
-                ActRegisterActivity.this.toast(2131100498);
+                ActRegisterActivity.this.toast(R.string.verify_no_ok);
             }
           });
         }
@@ -330,7 +330,7 @@ public class ActRegisterActivity extends MyBaseActivity
         this.ivStep.setBackgroundResource(2130903773);
         return;
       }
-      toast(2131100498);
+      toast(R.string.verify_no_ok);
       return;
     }
     while ((!this.redBgTextView.getText().toString().equals(getString(R.string.finish))) || (!this.isProtocol));
@@ -338,7 +338,7 @@ public class ActRegisterActivity extends MyBaseActivity
     {
       if (this.etActLogPsd.getText().toString().length() < 6)
       {
-        toast(2131100278);
+        toast(R.string.psw);
         return;
       }
       SMSSDK.submitVerificationCode(this.countryCode, this.etPhone.getText().toString(), this.etVerfyCode.getText().toString().trim());
@@ -478,7 +478,7 @@ public class ActRegisterActivity extends MyBaseActivity
       }
       else
       {
-        toast(2131100101);
+        toast(R.string.input_ok_phone);
         return;
         if (!this.isVerify)
         {
@@ -502,7 +502,7 @@ public class ActRegisterActivity extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setTiTleTextRes(2131100320);
     showBottomLine();
     setBgWhite();

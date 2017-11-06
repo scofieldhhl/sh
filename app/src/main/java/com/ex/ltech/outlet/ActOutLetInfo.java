@@ -42,7 +42,7 @@ public class ActOutLetInfo extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100393);
+    setTiTleTextRes(R.string.setting);
   }
 
   public void goXiaoLed(View paramView)

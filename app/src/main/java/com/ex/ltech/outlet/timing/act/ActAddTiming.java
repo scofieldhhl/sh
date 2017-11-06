@@ -450,7 +450,7 @@ public class ActAddTiming extends MyBaseActivity
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903623);
+    setMenuBackgroundRes(R.mipmap.plug_back);
     setTiTleTextRes(R.mipmap.add_timing);
     setEditTextRes(2131100530, getResources().getColor(2131492964));
   }
