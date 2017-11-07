@@ -87,9 +87,9 @@ public class AtCfgStep2Activity extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleText("");
-    this.ivDevice = ((ImageView)findViewById(2131558808));
+    this.ivDevice = ((ImageView)findViewById(R.id.iv_device));
     this.info1 = ((TextView)findViewById(2131558809));
-    this.info2 = ((TextView)findViewById(2131558810));
+    this.info2 = ((TextView)findViewById(R.id.info2));
     this.center = ((ImageView)findViewById(2131558457));
     getIntent().getStringExtra("ds");
     String str = getIntent().getStringExtra("cfgType");

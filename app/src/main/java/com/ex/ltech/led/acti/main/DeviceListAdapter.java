@@ -1,17 +1,15 @@
 package com.ex.ltech.led.acti.main;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout.LayoutParams;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.my_view.ColorSeletedView;
 import com.ex.ltech.led.my_view.MLImageView;
@@ -20,10 +18,12 @@ import com.ex.ltech.led.vo.ModeVo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-import io.xlink.wifi.js.bean.Device;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import io.xlink.wifi.js.bean.Device;
 
 public class DeviceListAdapter extends BaseAdapter
 {
@@ -51,14 +51,14 @@ public class DeviceListAdapter extends BaseAdapter
     this.ledBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.rgb);
     this.plugBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.device_plug);
     this.hongwaiBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.d_remote);
-    this.ctBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903146);
-    this.bwBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903101);
-    this.defaultBm = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903115);
+    this.ctBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.ct);
+    this.bwBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.bw_d_ic);
+    this.defaultBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.cfg_cfg_no);
     this.oneZeroFiveBm = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.icon_105);
-    this.oneZeroFiveOff = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903359);
-    this.lightOffline = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903452);
-    this.plugOffline = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903630);
-    this.remoteOffline = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903680);
+    this.oneZeroFiveOff = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.icon_105_off);
+    this.lightOffline = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.light_offline);
+    this.plugOffline = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.plug_offline);
+    this.remoteOffline = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.remote_offline);
     this.layoutParams = new RelativeLayout.LayoutParams(-2, -2);
   }
 

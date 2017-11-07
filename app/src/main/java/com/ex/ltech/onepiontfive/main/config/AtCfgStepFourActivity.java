@@ -36,7 +36,7 @@ public class AtCfgStepFourActivity extends MyBaseActivity
   DiscoverDeviceDialog discoverDeviceDialog;
   private Home home;
 
-  @Bind({2131558816})
+  @Bind({R.id.info})
   TextView info;
   private boolean isconncting = false;
 

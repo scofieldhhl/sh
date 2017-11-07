@@ -87,7 +87,7 @@ public class AtIrLightReset extends MyBaseActivity
     }
     while (!str2.equals("C7"));
     this.mTextViewNext.setBackgroundResource(2130837655);
-    this.mTextViewNext.setTextColor(getResources().getColor(2131492997));
+    this.mTextViewNext.setTextColor(getResources().getColor(R.color.white));
   }
 
   private void learn()

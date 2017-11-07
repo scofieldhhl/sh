@@ -56,7 +56,7 @@ public class AtAirYKSetActivity extends MyBaseActivity
     ETGroup localETGroup = (ETGroup)ETPage.getInstance(this).GetItem(0);
     localETGroup.Load(ETDB.getInstance(this));
     ETDeviceAIR localETDeviceAIR = (ETDeviceAIR)localETGroup.GetItem(getIntent().getIntExtra("ykId", -1));
-    TextView localTextView = (TextView)findViewById(2131558816);
+    TextView localTextView = (TextView)findViewById(R.id.info);
     if (localETDeviceAIR.GetKeyByValue(49153).GetState() == 1)
     {
       findViewById(2131558540).setVisibility(View.GONE);

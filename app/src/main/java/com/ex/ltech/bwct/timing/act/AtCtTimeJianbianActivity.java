@@ -41,7 +41,7 @@ public class AtCtTimeJianbianActivity extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100333);
+    setTiTleTextRes(R.string.repeat);
   }
 }
 

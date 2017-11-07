@@ -2,6 +2,8 @@ package com.ex.ltech.led.acti.device;
 
 import android.view.View;
 import android.widget.EditText;
+
+import butterknife.ButterKnife;
 import butterknife.ButterKnife.Finder;
 import butterknife.ButterKnife.ViewBinder;
 

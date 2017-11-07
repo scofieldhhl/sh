@@ -13,7 +13,7 @@ public class AtCfgStepThreeActivity$$ViewBinder<T extends AtCfgStepThreeActivity
   {
     paramT.icCenter = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558814, "field 'icCenter'"), 2131558814, "field 'icCenter'"));
     paramT.icMatchParent = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558815, "field 'icMatchParent'"), 2131558815, "field 'icMatchParent'"));
-    paramT.info = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558816, "field 'info'"), 2131558816, "field 'info'"));
+    paramT.info = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.info, "field 'info'"), R.id.info, "field 'info'"));
     paramT.next = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558795, "field 'next'"), 2131558795, "field 'next'"));
     paramT.tvLampBlinkSeleted = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558817, "field 'tvLampBlinkSeleted'"), 2131558817, "field 'tvLampBlinkSeleted'"));
     paramT.tvLampBlink = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558818, "field 'tvLampBlink'"), 2131558818, "field 'tvLampBlink'"));

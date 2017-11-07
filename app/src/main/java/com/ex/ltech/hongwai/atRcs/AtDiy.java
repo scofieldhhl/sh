@@ -2,36 +2,31 @@ package com.ex.ltech.hongwai.atRcs;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
-import butterknife.Bind;
-import butterknife.ButterKnife;
+
 import com.ex.ltech.MyDb;
 import com.ex.ltech.hongwai.AtBaseYk;
 import com.ex.ltech.hongwai.view.ImageTextBigButton;
 import com.ex.ltech.hongwai.vo.DiyKey;
 import com.ex.ltech.hongwai.vo.MyRcDevice;
 import com.ex.ltech.hongwai.vo.MyRcDevices;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.my_view.MyAlertDialog12;
-import com.ex.ltech.led.my_view.MyAlertDialog12.MyOnClickListener;
 import com.ex.ltech.led.my_view.MyAlertDialog9;
-import com.ex.ltech.led.my_view.MyAlertDialog9.MyOnClickListener;
 import com.ex.ltech.led.utils.BitmapUtils;
-import java.util.ArrayList;
-import java.util.Map;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class AtDiy extends AtBaseYk
 {
@@ -213,7 +208,7 @@ public class AtDiy extends AtBaseYk
       this.rcDevices.myRcDevices.add(new MyRcDevice());
       DiyKey localDiyKey = new DiyKey();
       localDiyKey.setTextColor(Color.parseColor("#FFFC2032"));
-      localDiyKey.setName(getString(2131099812));
+      localDiyKey.setName(getString(R.string.add));
       localDiyKey.setRes(0);
       localDiyKey.setIcData(BitmapUtils.Bitmap2Bytes(BitmapUtils.zoomOutBM(BitmapFactory.decodeResource(getResources(), 2130903535), 120.0D)));
       ((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).diyKeys.add(localDiyKey);

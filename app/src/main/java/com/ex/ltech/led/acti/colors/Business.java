@@ -1,11 +1,11 @@
 package com.ex.ltech.led.acti.colors;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.net.Uri;
-import android.provider.MediaStore.Images.Media;
+import android.provider.MediaStore;
+
 import com.ex.ltech.led.UserFerences;
 
 public class Business
@@ -104,8 +104,3 @@ public class Business
     this.ferences.putValue(paramString + "pikerY", Integer.valueOf(paramInt));
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.colors.Business
- * JD-Core Version:    0.6.0
- */

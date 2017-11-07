@@ -4,23 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Toast;
+
 import com.ex.ltech.bwct.timing.TimingData;
 import com.ex.ltech.bwct.timing.fragment.ColorFragment;
 import com.ex.ltech.bwct.timing.fragment.ModeFragment;
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.fragment.FragmentPageAdapter;
 import com.ex.ltech.led.my_view.NoScrollViewPager;
 import com.ex.ltech.led.vo.CtSceneVo;
 import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
 import com.indris.material.RippleView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,9 +43,9 @@ public class ActMode extends FragmentActivity
 
   private void findView()
   {
-    this.btn_acti_mode_menu = ((Button)findViewById(2131558640));
-    this.btn_acti_timing_mode_mode = ((RippleView)findViewById(2131558638));
-    this.btn_acti_timing_mode_col = ((RippleView)findViewById(2131558639));
+    this.btn_acti_mode_menu = ((Button)findViewById(R.id.btn_acti_mode_menu));
+    this.btn_acti_timing_mode_mode = ((RippleView)findViewById(R.id.btn_acti_timing_mode_mode));
+    this.btn_acti_timing_mode_col = ((RippleView)findViewById(R.id.btn_acti_timing_mode_col));
   }
 
   private void getMyIntent()
@@ -60,7 +61,7 @@ public class ActMode extends FragmentActivity
 
   private void initViewPager()
   {
-    this.mVPFragments = ((NoScrollViewPager)findViewById(2131558641));
+    this.mVPFragments = ((NoScrollViewPager)findViewById(R.id.pager2));
     this.mVPFragments.setOnPageChangeListener(this);
     this.mVPFragments.setOffscreenPageLimit(3);
     this.layoutInflater = LayoutInflater.from(this);
@@ -78,13 +79,13 @@ public class ActMode extends FragmentActivity
       return;
     if (paramInt == 0)
     {
-      this.btn_acti_timing_mode_mode.setBackgroundResource(2130903299);
-      this.btn_acti_timing_mode_col.setBackgroundResource(2130903296);
+      this.btn_acti_timing_mode_mode.setBackgroundResource(R.mipmap.ic_btn_mode_press);
+      this.btn_acti_timing_mode_col.setBackgroundResource(R.mipmap.ic_btn_color);
     }
     if (paramInt == 1)
     {
-      this.btn_acti_timing_mode_mode.setBackgroundResource(2130903298);
-      this.btn_acti_timing_mode_col.setBackgroundResource(2130903297);
+      this.btn_acti_timing_mode_mode.setBackgroundResource(R.mipmap.ic_btn_mode);
+      this.btn_acti_timing_mode_col.setBackgroundResource(R.mipmap.ic_btn_color_press);
     }
     this.pagerCurrent = paramInt;
   }
@@ -101,8 +102,8 @@ public class ActMode extends FragmentActivity
     switch (paramView.getId())
     {
     default:
-      return;
-    case 2131558640:
+      break;
+    case R.id.btn_acti_mode_menu:
       if (this.pagerCurrent == 0)
       {
         this.vo.setSeletedCtScenes(this.modeFragment.ctSceneVos);
@@ -139,7 +140,7 @@ public class ActMode extends FragmentActivity
             this.vo.setW(this.fragmentTimingColor.w);
             this.vo.setC(this.fragmentTimingColor.c);
             this.vo.setType(1);
-            Toast.makeText(this, getString(2131099964), 1).show();
+            Toast.makeText(this, getString(R.string.col_seleted), Toast.LENGTH_SHORT).show();
             break;
           }
         str2 = str1.substring(0, -2 + str1.length());
@@ -155,10 +156,10 @@ public class ActMode extends FragmentActivity
         finish();
         return;
       }
-    case 2131558638:
+    case R.id.btn_acti_timing_mode_mode:
       label388: this.mVPFragments.setCurrentItem(0);
       return;
-    case 2131558639:
+    case R.id.btn_acti_timing_mode_col:
     }
     this.mVPFragments.setCurrentItem(1);
   }
@@ -166,7 +167,7 @@ public class ActMode extends FragmentActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968624);
+    setContentView(R.layout.act_timing_mode);
     initViewPager();
     findView();
     init();
@@ -202,12 +203,7 @@ public class ActMode extends FragmentActivity
   public void onWindowFocusChanged(boolean paramBoolean)
   {
     super.onWindowFocusChanged(paramBoolean);
-    sonActHeightWithouTitle = findViewById(2131558636).getHeight();
+    sonActHeightWithouTitle = findViewById(R.id.rl_act_timing_mode).getHeight();
     this.fragmentTimingColor.setPactHeight();
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.bwct.timing.act.ActMode
- * JD-Core Version:    0.6.0
- */

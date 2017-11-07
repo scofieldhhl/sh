@@ -17,7 +17,7 @@ public class AtAddResultActivity extends MyBaseActivity
     super.onCreate(paramBundle);
     setContentView(2130968655);
     setViewTitle();
-    setMenuBackgroundRes(2130903830);
+    setMenuBackgroundRes(R.mipmap.yk_back);
     if (getIntent().getBooleanExtra("isConfigOk", false))
     {
       findViewById(2131558802).setVisibility(View.VISIBLE);

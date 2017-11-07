@@ -68,7 +68,7 @@ public class AtAddDiyBtnActivity extends YkAt
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903830);
+    setMenuBackgroundRes(R.mipmap.yk_back);
     setTiTleTextRes(2131099813);
     setEditTextRes(R.string.finish, getResources().getColor(2131492897));
   }

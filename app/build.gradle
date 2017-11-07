@@ -30,6 +30,7 @@ android {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -50,4 +51,5 @@ dependencies {
     compile project(path: ':rippleView')
     compile project(path: ':rippleView')
     compile files('libs/hiflying-iots-android-smartlink-7.0.3.jar')
+    compile 'com.github.zcweng:switch-button:0.0.3@aar'
 }

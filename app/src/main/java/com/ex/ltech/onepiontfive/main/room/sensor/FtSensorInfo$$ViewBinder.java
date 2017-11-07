@@ -17,9 +17,9 @@ public class FtSensorInfo$$ViewBinder<T extends FtSensorInfo>
     paramT.device = ((RippleView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131559270, "field 'device'"), 2131559270, "field 'device'"));
     paramT.sence = ((RippleView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131559271, "field 'sence'"), 2131559271, "field 'sence'"));
     paramT.llRippleView = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131559269, "field 'llRippleView'"), 2131559269, "field 'llRippleView'"));
-    paramT.btnActiModeMenu = ((Button)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558640, "field 'btnActiModeMenu'"), 2131558640, "field 'btnActiModeMenu'"));
+    paramT.btnActiModeMenu = ((Button)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.btn_acti_mode_menu, "field 'btnActiModeMenu'"), R.id.btn_acti_mode_menu, "field 'btnActiModeMenu'"));
     paramT.pager = ((ViewPager)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558769, "field 'pager'"), 2131558769, "field 'pager'"));
-    paramT.rlActTimingMode = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558636, "field 'rlActTimingMode'"), 2131558636, "field 'rlActTimingMode'"));
+    paramT.rlActTimingMode = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.rl_act_timing_mode, "field 'rlActTimingMode'"), R.id.rl_act_timing_mode, "field 'rlActTimingMode'"));
   }
 
   public void unbind(T paramT)

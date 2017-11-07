@@ -21,10 +21,10 @@ public class FtCfg2 extends MyBaseFt
   @Bind({2131558809})
   TextView info1;
 
-  @Bind({2131558810})
+  @Bind({R.id.info2})
   TextView info2;
 
-  @Bind({2131558808})
+  @Bind({R.id.iv_device})
   ImageView ivDevice;
 
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)

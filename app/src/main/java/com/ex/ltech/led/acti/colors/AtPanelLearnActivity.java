@@ -3,20 +3,22 @@ package com.ex.ltech.led.acti.colors;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.utils.StringUtils;
+
+import java.util.List;
+
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.io.PrintStream;
-import java.util.List;
 
 public class AtPanelLearnActivity extends MyBaseActivity
 {
@@ -109,7 +111,7 @@ public class AtPanelLearnActivity extends MyBaseActivity
 
   private void loopPic()
   {
-    if (this.changeBg)
+    /*if (this.changeBg)
     {
       this.iv.setBackgroundResource(this.ivResFront);
       if (this.changeBg)
@@ -122,7 +124,7 @@ public class AtPanelLearnActivity extends MyBaseActivity
       return;
       this.iv.setBackgroundResource(this.ivResReal);
       break;
-    }
+    }*/
   }
 
   private void timer()
@@ -136,17 +138,17 @@ public class AtPanelLearnActivity extends MyBaseActivity
   {
     super.onCreate(paramBundle);
     SocketManager.instance().sendData(new CmdDateBussiness("0000").getLearnPanelNRcCmd());
-    setContentView(2130968693);
+    setContentView(R.layout.at_panel_learn);
     setViewTitle();
-    setMenuBackgroundRes(2130903830);
-    this.sec = ((TextView)findViewById(2131558994));
-    this.iv = ((ImageView)findViewById(2131558995));
-    this.tv_info = ((TextView)findViewById(2131558816));
+    setMenuBackgroundRes(R.mipmap.yk_back);
+    this.sec = ((TextView)findViewById(R.id.sec));
+    this.iv = ((ImageView)findViewById(R.id.iv));
+    this.tv_info = ((TextView)findViewById(R.id.info));
     String str = getIntent().getStringExtra("type");
     int i = -1;
     int j;
     int k;
-    switch (str.hashCode())
+    /*switch (str.hashCode())
     {
     default:
       j = 0;
@@ -261,92 +263,92 @@ public class AtPanelLearnActivity extends MyBaseActivity
         break;
       i = 15;
       break;
-      k = 2131100436;
-      j = 2131099838;
-      this.ivResFront = 2130903320;
-      this.ivResReal = 2130903321;
+      k = R.string.title_add_panel_1;
+      j = R.string.add_panel_info1;
+      this.ivResFront = R.mipmap.ic_panel1_learn_front;
+      this.ivResReal = R.mipmap.ic_panel1_learn_real;
       continue;
-      k = 2131100438;
-      j = 2131099838;
-      this.ivResFront = 2130903320;
-      this.ivResReal = 2130903321;
+      k = R.string.title_add_panel_2;
+      j = R.string.add_panel_info1;
+      this.ivResFront = R.mipmap.ic_panel1_learn_front;
+      this.ivResReal = R.mipmap.ic_panel1_learn_real;
       continue;
-      k = 2131100440;
-      j = 2131099839;
-      this.ivResFront = 2130903322;
-      this.ivResReal = 2130903323;
+      k = R.string.title_add_panel_3;
+      j = R.string.add_panel_info2;
+      this.ivResFront = R.mipmap.ic_panel2_learn_front;
+      this.ivResReal = R.mipmap.ic_panel2_learn_real;
       continue;
-      k = 2131100442;
-      j = 2131099839;
-      this.ivResFront = 2130903322;
-      this.ivResReal = 2130903323;
+      k = R.string.title_add_panel_4;
+      j = R.string.add_panel_info2;
+      this.ivResFront = R.mipmap.ic_panel2_learn_front;
+      this.ivResReal = R.mipmap.ic_panel2_learn_real;
       continue;
-      k = 2131100437;
-      j = 2131099838;
-      this.ivResFront = 2130903320;
-      this.ivResReal = 2130903321;
+      k = R.string.title_add_panel_11;
+      j = R.string.add_panel_info1;
+      this.ivResFront = R.mipmap.ic_panel1_learn_front;
+      this.ivResReal = R.mipmap.ic_panel1_learn_real;
       continue;
-      k = 2131100439;
-      j = 2131099838;
-      this.ivResFront = 2130903320;
-      this.ivResReal = 2130903321;
+      k = R.string.title_add_panel_22;
+      j = R.string.add_panel_info1;
+      this.ivResFront = R.mipmap.ic_panel1_learn_front;
+      this.ivResReal = R.mipmap.ic_panel1_learn_real;
       continue;
-      k = 2131100441;
-      j = 2131099839;
-      this.ivResFront = 2130903322;
-      this.ivResReal = 2130903323;
+      k = R.string.title_add_panel_33;
+      j = R.string.add_panel_info2;
+      this.ivResFront = R.mipmap.ic_panel2_learn_front;
+      this.ivResReal = R.mipmap.ic_panel2_learn_real;
       continue;
-      k = 2131100443;
-      j = 2131099839;
-      this.ivResFront = 2130903322;
-      this.ivResReal = 2130903323;
+      k = R.string.title_add_panel_44;
+      j = R.string.add_panel_info2;
+      this.ivResFront = R.mipmap.ic_panel2_learn_front;
+      this.ivResReal = R.mipmap.ic_panel2_learn_real;
       continue;
-      k = 2131100444;
-      j = 2131099839;
-      this.ivResFront = 2130903324;
-      this.ivResReal = 2130903325;
+      k = R.string.title_add_panel_5;
+      j = R.string.add_panel_info2;
+      this.ivResFront = R.mipmap.ic_panel3_learn_front;
+      this.ivResReal = R.mipmap.ic_panel3_learn_real;
       continue;
-      k = 2131100445;
-      j = 2131099839;
-      this.ivResFront = 2130903326;
-      this.ivResReal = 2130903327;
+      k = R.string.title_add_panel_6;
+      j = R.string.add_panel_info2;
+      this.ivResFront = R.mipmap.ic_panel4_learn_front;
+      this.ivResReal = R.mipmap.ic_panel4_learn_real;
       continue;
-      k = 2131100446;
-      j = 2131099847;
-      this.ivResFront = 2130903334;
-      this.ivResReal = 2130903335;
-      findViewById(2131558810).setVisibility(View.VISIBLE);
+      k = R.string.title_add_rc_1;
+      j = R.string.add_rc_info1;
+      this.ivResFront = R.mipmap.ic_rc1_learn_front;
+      this.ivResReal = R.mipmap.ic_rc1_learn_real;
+      findViewById(R.id.info2).setVisibility(View.VISIBLE);
       continue;
-      k = 2131100448;
-      j = 2131099848;
-      this.ivResFront = 2130903342;
-      this.ivResReal = 2130903343;
-      findViewById(2131558810).setVisibility(View.VISIBLE);
+      k = R.string.title_add_rc_2;
+      j = R.string.add_rc_info2;
+      this.ivResFront = R.mipmap.ic_rc_f8_learn_front;
+      this.ivResReal = R.mipmap.ic_rc_f8_learn_real;
+      findViewById(R.id.info2).setVisibility(View.VISIBLE);
       continue;
-      k = 2131100447;
-      j = 2131099847;
-      this.ivResFront = 2130903334;
-      this.ivResReal = 2130903335;
-      findViewById(2131558810).setVisibility(View.VISIBLE);
+      k = R.string.title_add_rc_11;
+      j = R.string.add_rc_info1;
+      this.ivResFront = R.mipmap.ic_rc1_learn_front;
+      this.ivResReal = R.mipmap.ic_rc1_learn_real;
+      findViewById(R.id.info2).setVisibility(View.VISIBLE);
       continue;
-      k = 2131100449;
-      j = 2131099848;
-      this.ivResFront = 2130903340;
-      this.ivResReal = 2130903341;
-      findViewById(2131558810).setVisibility(View.VISIBLE);
+      k = R.string.title_add_rc_22;
+      j = R.string.add_rc_info2;
+      this.ivResFront = R.mipmap.ic_rc_f7_learn_front;
+      this.ivResReal = R.mipmap.ic_rc_f7_learn_real;
+      findViewById(R.id.info2).setVisibility(View.VISIBLE);
       continue;
-      k = 2131100450;
-      j = 2131099848;
-      this.ivResFront = 2130903336;
-      this.ivResReal = 2130903337;
-      findViewById(2131558810).setVisibility(View.VISIBLE);
+      k = R.string.title_add_rc_3;
+      j = R.string.add_rc_info2;
+      this.ivResFront = R.mipmap.ic_rc3_learn_front;
+      this.ivResReal = R.mipmap.ic_rc3_learn_real;
+      findViewById(R.id.info2).setVisibility(View.VISIBLE);
       continue;
-      k = 2131100451;
-      j = 2131099848;
-      this.ivResFront = 2130903338;
-      this.ivResReal = 2130903339;
-      findViewById(2131558810).setVisibility(View.VISIBLE);
-    }
+      k = R.string.title_add_rc_4;
+      j = R.string.add_rc_info2;
+      this.ivResFront = R.mipmap.ic_rc_f6_learn_front;
+      this.ivResReal = R.mipmap.ic_rc_f6_learn_real;
+      findViewById(R.id.info2).setVisibility(View.VISIBLE);
+    }*/
   }
 
   protected void onMenu()
@@ -363,8 +365,3 @@ public class AtPanelLearnActivity extends MyBaseActivity
     XlinkAgent.getInstance().removeListener(this.mXlinkNetListener);
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.colors.AtPanelLearnActivity
- * JD-Core Version:    0.6.0
- */

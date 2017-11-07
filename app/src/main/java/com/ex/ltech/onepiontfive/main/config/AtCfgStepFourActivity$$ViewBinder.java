@@ -15,7 +15,7 @@ public class AtCfgStepFourActivity$$ViewBinder<T extends AtCfgStepFourActivity>
     paramT.ivCfgOk = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558878, "field 'ivCfgOk'"), 2131558878, "field 'ivCfgOk'"));
     paramT.ivCfgNoOk = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558879, "field 'ivCfgNoOk'"), 2131558879, "field 'ivCfgNoOk'"));
     paramT.deviceConnet = ((Button)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558877, "field 'deviceConnet'"), 2131558877, "field 'deviceConnet'"));
-    paramT.info = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558816, "field 'info'"), 2131558816, "field 'info'"));
+    paramT.info = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.info, "field 'info'"), R.id.info, "field 'info'"));
   }
 
   public void unbind(T paramT)

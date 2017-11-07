@@ -39,7 +39,7 @@ public class ImageTextButton extends LinearLayout
   {
     super(paramContext, paramAttributeSet);
     LayoutInflater.from(paramContext).inflate(2130968789, this, true);
-    this.iv = ((ImageView)findViewById(2131558995));
+    this.iv = ((ImageView)findViewById(R.id.iv));
     this.tv = ((TextView)findViewById(2131559087));
     this.bg = ((PercentLinearLayout)findViewById(2131558840));
     setClickable(true);

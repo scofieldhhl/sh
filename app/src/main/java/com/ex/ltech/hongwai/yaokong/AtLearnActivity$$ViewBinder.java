@@ -5,6 +5,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
+
+import butterknife.ButterKnife;
 import butterknife.ButterKnife.Finder;
 import butterknife.ButterKnife.ViewBinder;
 
@@ -22,12 +26,12 @@ public class AtLearnActivity$$ViewBinder<T extends AtLearnActivity>
     paramT.on = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558874, "field 'on'"), 2131558874, "field 'on'"));
     paramT.info1 = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558809, "field 'info1'"), 2131558809, "field 'info1'"));
     paramT.info10 = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558925, "field 'info10'"), 2131558925, "field 'info10'"));
-    paramT.info2 = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558810, "field 'info2'"), 2131558810, "field 'info2'"));
+    paramT.info2 = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.info2, "field 'info2'"), R.id.info2, "field 'info2'"));
     paramT.again = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558927, "field 'again'"), 2131558927, "field 'again'"));
     paramT.handCfg = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558928, "field 'handCfg'"), 2131558928, "field 'handCfg'"));
     paramT.info8 = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558930, "field 'info8'"), 2131558930, "field 'info8'"));
     paramT.save = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558929, "field 'save'"), 2131558929, "field 'save'"));
-    paramT.info = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558816, "field 'info'"), 2131558816, "field 'info'"));
+    paramT.info = ((RelativeLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.info, "field 'info'"), R.id.info, "field 'info'"));
     paramT.learn_again = ((LinearLayout)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558926, "field 'learn_again'"), 2131558926, "field 'learn_again'"));
     paramT.iv_center = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558920, "field 'iv_center'"), 2131558920, "field 'iv_center'"));
   }

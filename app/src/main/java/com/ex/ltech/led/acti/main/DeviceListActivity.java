@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -25,10 +26,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ex.ltech.WifiReceiver;
+import com.ex.ltech.hongwai.NewHongWaiMain;
 import com.ex.ltech.led.Global;
 import com.ex.ltech.led.MyApp;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
+import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.device.ActSetting;
 import com.ex.ltech.led.acti.device.AtCfg1Activity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
@@ -39,11 +42,13 @@ import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuCreator;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuItem;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView;
 import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.vo.CityVo;
+import com.ex.ltech.onepiontfive.main.AtMain;
 import com.ex.ltech.onepiontfive.main.room.RoomsBusiness;
 import com.ex.ltech.onepiontfive.main.vo.GeoSpaceVo;
 import com.ex.ltech.onepiontfive.main.vo.Scenes;
 import com.ex.ltech.onepiontfive.main.vo.Timings;
+import com.ex.ltech.outlet.ActOutLet;
+import com.ex.ltech.remote.control.HongWaiMain;
 import com.fragmentmaster.app.MasterActionBarActivity;
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.soundcloud.android.crop.Crop;
@@ -123,11 +128,12 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     CmdDateBussiness cmdDateBussiness = new CmdDateBussiness(this, "0000");
     private ConnectDeviceListener connectDeviceListener = new ConnectDeviceListener() {
         public void onConnectDevice(XDevice paramXDevice, int paramInt) {
-            /*int i = 1;
+            int i = 1;
             if (!DeviceListActivity.this.isOnResume) {
 
             }else {
-                if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getProductId() == null) || (paramXDevice.getMacAddress().length() == 0) || (paramXDevice.getProductId().length() == 0))
+                if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getProductId() == null) ||
+                (paramXDevice.getMacAddress().length() == 0) || (paramXDevice.getProductId().length() == 0))
                     continue;
                 switch (paramInt) {
                     default:
@@ -255,10 +261,20 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                                 break label1239;
                         }
                     case 102:
+                        XlinkUtils.shortTips("设备认证失败");
+                        break;
                     case 110:
+                        XlinkUtils.shortTips("设备不在线");
+                        break;
                     case 200:
+                        XlinkUtils.shortTips("连接设备超时");
+                        break;
                     case 104:
+                        XlinkUtils.shortTips("连接设备失败，服务器内部错误");
+                        break;
                     case 111:
+                        XlinkUtils.shortTips("连接设备失败，设备未在局域网内，且当前手机只有局域网环境");
+                        break;
                 }
             }
             while (true) {
@@ -285,15 +301,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                 Intent localIntent6 = new Intent(DeviceListActivity.this, AtMain.class);
                 DeviceListActivity.this.startActivity(localIntent6);
             }
-            XlinkUtils.shortTips("设备认证失败");
-            return;
-            XlinkUtils.shortTips("设备不在线");
-            return;
-            XlinkUtils.shortTips("连接设备超时");
-            return;
-            XlinkUtils.shortTips("连接设备失败，服务器内部错误");
-            return;
-            XlinkUtils.shortTips("连接设备失败，设备未在局域网内，且当前手机只有局域网环境");*/
+
         }
     };
     private File currentFile;
@@ -378,8 +386,8 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     }
 
     private void connectDevice(Device paramDevice) {
-        /*int i = XlinkAgent.getInstance().connectDevice(paramDevice.getXDevice(), this.connectDeviceListener);
-        if (i != 0) ;
+        int i = XlinkAgent.getInstance().connectDevice(paramDevice.getXDevice(), this.connectDeviceListener);
+        /*if (i != 0) ;
         switch (i) {
             case -10:
             case -9:
@@ -752,7 +760,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     }
 
     private void setWeatherView() {
-        CityVo localCityVo = this.locationAndWeatherBusiness.getCityVo();
+        /*CityVo localCityVo = this.locationAndWeatherBusiness.getCityVo();
         if (!UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", false)) {
             this.tv_act_new_main_city.setVisibility(View.GONE);
             this.tv_act_new_main_wendu_max_min.setVisibility(View.GONE);
@@ -761,7 +769,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
             this.iv_act_new_main_piker.setVisibility(View.GONE);
             this.tv_act_new_main_wendu_max_min.setVisibility(View.GONE);
         }
-        /*this.tv_act_new_main_city.setText(this.locationAndWeatherBusiness.getCityVo().getCity());
+        this.tv_act_new_main_city.setText(this.locationAndWeatherBusiness.getCityVo().getCity());
         if ((localCityVo.getL_tmp() != null) && (localCityVo.getH_tmp() != null))
             this.tv_act_new_main_wendu_max_min.setText(localCityVo.getL_tmp() + "-" + localCityVo.getH_tmp() + "℃");
         if (localCityVo.getTemp() != null)

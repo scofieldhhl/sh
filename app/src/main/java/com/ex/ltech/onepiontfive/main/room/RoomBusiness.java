@@ -2246,7 +2246,7 @@ public class RoomBusiness extends MyBusiness
         this.dvcVos.clear();
         this.dvcVos.addAll(((Room)localHome.getRooms().get(this.roomIndex)).getDvcVos());
         localDvc2 = new Dvc();
-        localDvc2.setName(this.context.getString(2131099812));
+        localDvc2.setName(this.context.getString(R.string.add));
         localDvc2.setType(22);
         if (this.dvcVos.size() != 0)
           break;
@@ -2406,7 +2406,7 @@ public class RoomBusiness extends MyBusiness
     {
       Dvc localDvc = new Dvc();
       localDvc.setType(22);
-      localDvc.setName(this.context.getString(2131099812));
+      localDvc.setName(this.context.getString(R.string.add));
       if (i != -1)
       {
         this.dvcVos.add(i, paramDvc);
@@ -2917,7 +2917,7 @@ public class RoomBusiness extends MyBusiness
     this.dvcVos.clear();
     this.dvcVos.addAll(localArrayList);
     Dvc localDvc = new Dvc();
-    localDvc.setName(this.context.getString(2131099812));
+    localDvc.setName(this.context.getString(R.string.add));
     localDvc.setType(22);
     this.dvcVos.add(localDvc);
   }

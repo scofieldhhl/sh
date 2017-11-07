@@ -34,7 +34,7 @@ public class FtRepeatDay extends MyBaseFt
   TimingBusiness business;
   boolean isAllSeleted;
 
-  @Bind({2131558610})
+  @Bind({R.id.lv_act_repeat_day})
   ListView lvActRepeatDay;
   public List<RepeatDayVo> repeatDayVos = new ArrayList();
 
@@ -52,7 +52,7 @@ public class FtRepeatDay extends MyBaseFt
         FtRepeatDay.this.finish();
       }
     });
-    this.tvTitleViewTitle.setText(2131100333);
+    this.tvTitleViewTitle.setText(R.string.repeat);
     this.btnTitleViewMenu.setOnClickListener(new View.OnClickListener()
     {
       public void onClick(View paramView)
@@ -107,7 +107,7 @@ public class FtRepeatDay extends MyBaseFt
     if (this.view == null)
     {
       this.business = new TimingBusiness(getActivity());
-      this.view = paramLayoutInflater.inflate(2130968618, null);
+      this.view = paramLayoutInflater.inflate(R.layout.act_repeat_day, null);
       ButterKnife.bind(this, this.view);
       SensorVo localSensorVo = new SensorBiz(getActivity()).getCacheSensorVo();
       localTiming = this.business.getCacheData();

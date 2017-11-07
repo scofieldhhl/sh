@@ -222,7 +222,7 @@ public class AtYkSwitchRf2Activity extends NonIrDeviceAt
   {
     setViewTitle();
     setTiTleText(((MyRcDevice)this.rcDevices.myRcDevices.get(this.existRcPosi)).mName);
-    setTiTleTextColor(getResources().getColor(2131492997));
+    setTiTleTextColor(getResources().getColor(R.color.white));
     setMenuBackgroundRes(2130903076);
     setEditImageRes(2130903385);
     setBgAlpha();

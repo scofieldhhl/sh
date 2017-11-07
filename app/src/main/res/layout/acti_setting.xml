@@ -1,49 +1,301 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:melove="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout android:background="@mipmap/setting_bg" android:layout_width="fill_parent" android:layout_height="250.0dip">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:melove="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff7f7f7"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="250.0dip"
+        android:background="@mipmap/setting_bg">
+
         <include layout="@layout/acti_title_view" />
-        <com.ex.ltech.led.my_view.MLImageView android:id="@id/iv_setting_acti_1" android:layout_width="100.0dip" android:layout_height="100.0dip" android:layout_centerInParent="true" melove:shape_type="round" />
-        <com.ex.ltech.led.my_view.MLImageView android:id="@id/iv_setting_acti_2" android:layout_width="95.0dip" android:layout_height="95.0dip" android:layout_centerInParent="true" android:onClick="goUserSetting" melove:shape_type="round" />
-        <TextView android:textSize="20.0dip" android:textColor="#ffffffff" android:id="@id/tv_act_setting_u_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/iv_setting_acti_2" android:layout_centerHorizontal="true" />
+
+        <com.ex.ltech.led.my_view.MLImageView
+            android:id="@id/iv_setting_acti_1"
+            android:layout_width="100.0dip"
+            android:layout_height="100.0dip"
+            android:layout_centerInParent="true"
+            melove:shape_type="round" />
+
+        <com.ex.ltech.led.my_view.MLImageView
+            android:id="@id/iv_setting_acti_2"
+            android:layout_width="95.0dip"
+            android:layout_height="95.0dip"
+            android:layout_centerInParent="true"
+            android:onClick="goUserSetting"
+            melove:shape_type="round" />
+
+        <TextView
+            android:id="@id/tv_act_setting_u_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_setting_acti_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10.0dip"
+            android:textColor="#ffffffff"
+            android:textSize="20.0dip" />
     </RelativeLayout>
-    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="goDeviceManager">
-        <ImageView android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <ImageView android:id="@id/setting_acti_guide" android:background="@mipmap/set_4" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/device_manager" android:layout_toRightOf="@id/setting_acti_guide" android:layout_centerVertical="true" />
-        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goDeviceManager"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="#ffe4e4e4" />
+
+        <ImageView
+            android:id="@id/setting_acti_guide"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="@mipmap/set_4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10.0dip"
+            android:layout_toRightOf="@id/setting_acti_guide"
+            android:text="@string/device_manager"
+            android:textColor="#ff000000"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/next_ic" />
     </RelativeLayout>
-    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="goDeviceShare">
-        <ImageView android:background="#ffe4e4e4" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <ImageView android:id="@id/setting_acti_share" android:background="@mipmap/share_grad" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/share_data" android:layout_toRightOf="@id/setting_acti_share" android:layout_centerVertical="true" />
-        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goDeviceShare"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="#ffe4e4e4" />
+
+        <ImageView
+            android:id="@id/setting_acti_share"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="@mipmap/share_grad" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10.0dip"
+            android:layout_toRightOf="@id/setting_acti_share"
+            android:text="@string/share_data"
+            android:textColor="#ff000000"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/next_ic" />
     </RelativeLayout>
-    <ImageView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <RelativeLayout android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:onClick="goGuide">
-        <ImageView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <ImageView android:id="@id/setting_acti_about" android:background="@mipmap/set_3" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginLeft="40.0dip" android:text="@string/guide" android:layout_toRightOf="@id/setting_acti_about" android:layout_centerVertical="true" />
-        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="#ffe6e6e6" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:onClick="goGuide"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="#ffe6e6e6" />
+
+        <ImageView
+            android:id="@id/setting_acti_about"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="@mipmap/set_3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10.0dip"
+            android:layout_marginLeft="40.0dip"
+            android:layout_toRightOf="@id/setting_acti_about"
+            android:text="@string/guide"
+            android:textColor="#ff000000"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/next_ic" />
     </RelativeLayout>
-    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="goVersion">
-        <ImageView android:background="#ffe9e9e9" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <ImageView android:id="@id/setting_acti_verson_up" android:background="@mipmap/set_2" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:text="@string/verson_update" android:layout_toRightOf="@id/setting_acti_verson_up" android:layout_centerVertical="true" />
-        <ImageView android:id="@id/iv_setting_acti_next2" android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-        <TextView android:textSize="16.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/ver" android:layout_toLeftOf="@id/iv_setting_acti_next2" android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goVersion"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="#ffe9e9e9" />
+
+        <ImageView
+            android:id="@id/setting_acti_verson_up"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="@mipmap/set_2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10.0dip"
+            android:layout_toRightOf="@id/setting_acti_verson_up"
+            android:text="@string/verson_update"
+            android:textColor="#ff000000"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:id="@id/iv_setting_acti_next2"
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/next_ic" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:layout_toLeftOf="@id/iv_setting_acti_next2"
+            android:text="@string/ver"
+            android:textSize="16.0sp" />
     </RelativeLayout>
-    <RelativeLayout android:orientation="vertical" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="goDelete">
-        <ImageView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <ImageView android:id="@id/setting_acti_delete" android:background="@mipmap/reset_devices" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginLeft="40.0dip" android:text="@string/reset_app" android:layout_toRightOf="@id/setting_acti_delete" android:layout_centerVertical="true" />
-        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goDelete"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="#ffe6e6e6" />
+
+        <ImageView
+            android:id="@id/setting_acti_delete"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="@mipmap/reset_devices" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10.0dip"
+            android:layout_marginLeft="40.0dip"
+            android:layout_toRightOf="@id/setting_acti_delete"
+            android:text="@string/reset_app"
+            android:textColor="#ff000000"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/next_ic" />
     </RelativeLayout>
-    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="goAbout">
-        <ImageView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-        <ImageView android:id="@id/setting_acti_about4" android:background="@mipmap/set_1" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
-        <TextView android:textSize="18.0sp" android:textColor="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_marginLeft="40.0dip" android:text="@string/about" android:layout_toRightOf="@id/setting_acti_about4" android:layout_centerVertical="true" />
-        <ImageView android:background="@mipmap/next_ic" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goAbout"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:background="#ffe6e6e6" />
+
+        <ImageView
+            android:id="@id/setting_acti_about4"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="5.0dip"
+            android:background="@mipmap/set_1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="10.0dip"
+            android:layout_marginLeft="40.0dip"
+            android:layout_toRightOf="@id/setting_acti_about4"
+            android:text="@string/about"
+            android:textColor="#ff000000"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10.0dip"
+            android:background="@mipmap/next_ic" />
     </RelativeLayout>
-    <ImageView android:background="#ffe8e8e8" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:background="#ffe8e8e8" />
 </LinearLayout>

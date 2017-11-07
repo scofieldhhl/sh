@@ -11,12 +11,11 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnLongClickListener;
-import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.ex.ltech.led.R.styleable;
+
+import com.ex.ltech.led.R;
 import com.zhy.android.percent.support.PercentLinearLayout;
 
 public class ImageTextBigButton extends LinearLayout
@@ -40,7 +39,7 @@ public class ImageTextBigButton extends LinearLayout
   {
     super(paramContext, paramAttributeSet);
     LayoutInflater.from(paramContext).inflate(2130968788, this, true);
-    this.iv = ((ImageView)findViewById(2131558995));
+    this.iv = ((ImageView)findViewById(R.id.iv));
     this.tv = ((TextView)findViewById(2131559087));
     this.bg = ((PercentLinearLayout)findViewById(2131558840));
     setClickable(true);

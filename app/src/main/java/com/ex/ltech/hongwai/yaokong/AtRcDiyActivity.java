@@ -93,7 +93,7 @@ public class AtRcDiyActivity extends YkAt
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903830);
+    setMenuBackgroundRes(R.mipmap.yk_back);
     setTiTleTextRes(2131100536);
     setEditImageRes(2130903831);
   }

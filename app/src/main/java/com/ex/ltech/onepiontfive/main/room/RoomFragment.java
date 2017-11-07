@@ -893,7 +893,7 @@ public class RoomFragment extends MyBaseFt
     this.threeBtnsLl = ((RelativeLayout)this.view.findViewById(2131559230));
     this.threeBtnsLlOnoff = ((LinearLayout)this.view.findViewById(2131559231));
     this.threeBtnsLlMode = ((LinearLayout)this.view.findViewById(2131559232));
-    this.ivMode = ((ImageView)this.view.findViewById(2131559233));
+    this.ivMode = ((ImageView)this.view.findViewById(R.id.iv_mode));
     this.tvMode = ((TextView)this.view.findViewById(2131558842));
     this.threeBtnsLlMusic = ((LinearLayout)this.view.findViewById(2131559234));
     this.ivMusic = ((ImageView)this.view.findViewById(2131559235));

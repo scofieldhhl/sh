@@ -23,7 +23,7 @@ public class ActRepeatDay extends MyBaseActivity
 
   private void findView()
   {
-    this.lv = ((ListView)findViewById(2131558610));
+    this.lv = ((ListView)findViewById(R.id.lv_act_repeat_day));
   }
 
   private void getMyIntent()
@@ -77,7 +77,7 @@ public class ActRepeatDay extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100333);
+    setTiTleTextRes(R.string.repeat);
   }
 }
 

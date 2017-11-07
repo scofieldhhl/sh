@@ -14,7 +14,7 @@ public class FtRepeatDay$$ViewBinder<T extends FtRepeatDay>
   {
     paramT.btnTitleViewMenu = ((RippleView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558781, "field 'btnTitleViewMenu'"), 2131558781, "field 'btnTitleViewMenu'"));
     paramT.tvTitleViewTitle = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558783, "field 'tvTitleViewTitle'"), 2131558783, "field 'tvTitleViewTitle'"));
-    paramT.lvActRepeatDay = ((ListView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558610, "field 'lvActRepeatDay'"), 2131558610, "field 'lvActRepeatDay'"));
+    paramT.lvActRepeatDay = ((ListView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.lv_act_repeat_day, "field 'lvActRepeatDay'"), R.id.lv_act_repeat_day, "field 'lvActRepeatDay'"));
   }
 
   public void unbind(T paramT)

@@ -1847,7 +1847,7 @@ public class AtYaokongActivity extends YkAt
       {
         paramView = this.layoutInflater.inflate(2130968813, null);
         ViewHolder localViewHolder = new ViewHolder();
-        ViewHolder.access$2902(localViewHolder, (MLImageView)paramView.findViewById(2131558995));
+        ViewHolder.access$2902(localViewHolder, (MLImageView)paramView.findViewById(R.id.iv));
         ViewHolder.access$3002(localViewHolder, (TextView)paramView.findViewById(2131559008));
         paramView.setTag(localViewHolder);
       }

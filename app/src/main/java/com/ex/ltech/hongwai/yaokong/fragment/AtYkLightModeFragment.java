@@ -120,7 +120,7 @@ public class AtYkLightModeFragment extends Fragment
         label133: if (!localCtSceneVo.isEdit())
           break label194;
       }
-      label175: label194: for (int i = this.pct.getResources().getColor(R.color.gray); ; i = this.pct.getResources().getColor(2131492997))
+      label175: label194: for (int i = this.pct.getResources().getColor(R.color.gray); ; i = this.pct.getResources().getColor(R.color.white))
       {
         paramView.setBackgroundColor(i);
         return paramView;

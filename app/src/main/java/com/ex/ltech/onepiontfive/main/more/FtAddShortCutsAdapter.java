@@ -46,7 +46,7 @@ public class FtAddShortCutsAdapter extends BaseAdapter
     {
       localHolder = new Holder();
       paramView = LayoutInflater.from(this.context).inflate(2130968763, null);
-      localHolder.devicesName = ((TextView)paramView.findViewById(2131559206));
+      localHolder.devicesName = ((TextView)paramView.findViewById(R.id.tv_device_name));
       localHolder.deviceIcon = ((ImageView)paramView.findViewById(2131559205));
       paramView.setTag(localHolder);
       localHolder.devicesName.setTag(((Dvc)this.devices.get(paramInt)).getId());

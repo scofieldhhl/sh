@@ -14,8 +14,8 @@ public class AtYkLightMode$$ViewBinder<T extends AtYkLightMode>
 {
   public void bind(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    View localView1 = (View)paramFinder.findRequiredView(paramObject, 2131558640, "field 'mBtnBack' and method 'back'");
-    paramT.mBtnBack = ((Button)paramFinder.castView(localView1, 2131558640, "field 'mBtnBack'"));
+    View localView1 = (View)paramFinder.findRequiredView(paramObject, R.id.btn_acti_mode_menu, "field 'mBtnBack' and method 'back'");
+    paramT.mBtnBack = ((Button)paramFinder.castView(localView1, R.id.btn_acti_mode_menu, "field 'mBtnBack'"));
     localView1.setOnClickListener(new DebouncingOnClickListener(paramT)
     {
       public void doClick(View paramView)
@@ -23,8 +23,8 @@ public class AtYkLightMode$$ViewBinder<T extends AtYkLightMode>
         this.val$target.back();
       }
     });
-    View localView2 = (View)paramFinder.findRequiredView(paramObject, 2131558638, "field 'btn_acti_timing_mode_mode' and method 'mode'");
-    paramT.btn_acti_timing_mode_mode = ((RippleView)paramFinder.castView(localView2, 2131558638, "field 'btn_acti_timing_mode_mode'"));
+    View localView2 = (View)paramFinder.findRequiredView(paramObject, R.id.btn_acti_timing_mode_mode, "field 'btn_acti_timing_mode_mode' and method 'mode'");
+    paramT.btn_acti_timing_mode_mode = ((RippleView)paramFinder.castView(localView2, R.id.btn_acti_timing_mode_mode, "field 'btn_acti_timing_mode_mode'"));
     localView2.setOnClickListener(new DebouncingOnClickListener(paramT)
     {
       public void doClick(View paramView)
@@ -32,8 +32,8 @@ public class AtYkLightMode$$ViewBinder<T extends AtYkLightMode>
         this.val$target.mode();
       }
     });
-    View localView3 = (View)paramFinder.findRequiredView(paramObject, 2131558639, "field 'btn_acti_timing_mode_col' and method 'color'");
-    paramT.btn_acti_timing_mode_col = ((RippleView)paramFinder.castView(localView3, 2131558639, "field 'btn_acti_timing_mode_col'"));
+    View localView3 = (View)paramFinder.findRequiredView(paramObject, R.id.btn_acti_timing_mode_col, "field 'btn_acti_timing_mode_col' and method 'color'");
+    paramT.btn_acti_timing_mode_col = ((RippleView)paramFinder.castView(localView3, R.id.btn_acti_timing_mode_col, "field 'btn_acti_timing_mode_col'"));
     localView3.setOnClickListener(new DebouncingOnClickListener(paramT)
     {
       public void doClick(View paramView)
@@ -50,7 +50,7 @@ public class AtYkLightMode$$ViewBinder<T extends AtYkLightMode>
         this.val$target.save();
       }
     });
-    paramT.mVPFragments = ((NoScrollViewPager)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558641, "field 'mVPFragments'"), 2131558641, "field 'mVPFragments'"));
+    paramT.mVPFragments = ((NoScrollViewPager)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.pager2, "field 'mVPFragments'"), R.id.pager2, "field 'mVPFragments'"));
   }
 
   public void unbind(T paramT)

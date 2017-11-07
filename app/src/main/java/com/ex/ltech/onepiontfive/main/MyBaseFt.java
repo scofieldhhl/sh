@@ -2,9 +2,10 @@ package com.ex.ltech.onepiontfive.main;
 
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
-import android.content.res.Resources.NotFoundException;
+import android.content.res.Resources;
 import android.support.v4.content.LocalBroadcastManager;
 import android.widget.Toast;
+
 import com.fragmentmaster.app.MasterFragment;
 
 public class MyBaseFt extends MasterFragment
@@ -39,7 +40,7 @@ public class MyBaseFt extends MasterFragment
   {
     try
     {
-      Toast.makeText(getActivity(), paramInt, 0).show();
+      Toast.makeText(getActivity(), paramInt, Toast.LENGTH_SHORT).show();
       return;
     }
     catch (Resources.NotFoundException localNotFoundException)
@@ -54,8 +55,3 @@ public class MyBaseFt extends MasterFragment
       LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(this.mBroadcastReceiver);
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.onepiontfive.main.MyBaseFt
- * JD-Core Version:    0.6.0
- */

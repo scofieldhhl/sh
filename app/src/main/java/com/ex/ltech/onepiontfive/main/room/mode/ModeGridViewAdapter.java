@@ -109,7 +109,7 @@ public class ModeGridViewAdapter extends BaseAdapter
           if (!localModeVo.isSingleSeleted())
             break label327;
         }
-        label327: for (int m = this.pct.getResources().getColor(R.color.gray); ; m = this.pct.getResources().getColor(2131492997))
+        label327: for (int m = this.pct.getResources().getColor(R.color.gray); ; m = this.pct.getResources().getColor(R.color.white))
         {
           paramView.setBackgroundColor(m);
           break;
@@ -119,7 +119,7 @@ public class ModeGridViewAdapter extends BaseAdapter
         localHolder.iv_acti_scene_list_item_5.setImageBitmap(BitmapFactory.decodeResource(this.pct.getResources(), 2130903702));
         localHolder.tv_acti_scene_list_item_2.setText("");
         localHolder.iv_acti_scene_list_item_4.setVisibility(View.GONE);
-        paramView.setBackgroundColor(this.pct.getResources().getColor(2131492997));
+        paramView.setBackgroundColor(this.pct.getResources().getColor(R.color.white));
       }
     case 3:
     }
@@ -133,7 +133,7 @@ public class ModeGridViewAdapter extends BaseAdapter
       if (!localModeVo.isSingleSeleted())
         break label516;
     }
-    label516: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
+    label516: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(R.color.white))
     {
       paramView.setBackgroundColor(j);
       this.bmsIndex = (1 + this.bmsIndex);

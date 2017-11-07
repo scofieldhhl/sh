@@ -250,7 +250,7 @@ public class AtFanActivity extends YkAt
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903830);
+    setMenuBackgroundRes(R.mipmap.yk_back);
     setTiTleText(this.mDevice.GetName());
     setEditImageRes(2130903831);
   }

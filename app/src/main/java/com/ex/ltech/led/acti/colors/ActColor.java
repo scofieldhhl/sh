@@ -17,28 +17,23 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.ex.ltech.led.AtClip;
 import com.ex.ltech.led.BaseBusiness;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
-import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.my_view.ColorPickerView;
-import com.ex.ltech.led.my_view.MyAlertDialog2;
 import com.ex.ltech.led.my_view.MySeekBar;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.utils.FileUtil;
 import com.indris.material.RippleView;
 import com.soundcloud.android.crop.Crop;
-import com.zcw.togglebutton.ToggleButton;
 
 import java.io.File;
-
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActColor extends MyBaseActivity
   implements View.OnClickListener, SeekBar.OnSeekBarChangeListener, ColorPickerView.OnColorChangedListener, MySeekBar.onMySBtouchListener
@@ -92,8 +87,8 @@ public class ActColor extends MyBaseActivity
 
   private void findView()
   {
-    this.sb_color_acti_2 = ((SeekBar)findViewById(2131558676));
-    this.sb_color_acti_1 = ((MySeekBar)findViewById(2131558674));
+    this.sb_color_acti_2 = ((SeekBar)findViewById(R.id.sb_color_acti_2));
+    this.sb_color_acti_1 = ((MySeekBar)findViewById(R.id.sb_color_acti_1));
     this.handler.postDelayed(new Runnable()
     {
       public void run()
@@ -105,29 +100,29 @@ public class ActColor extends MyBaseActivity
     }
     , 100L);
     this.sb_color_acti_2.setProgress(100);
-    this.btn_acti_color_op_photo = ((Button)findViewById(2131558678));
-    this.btn_acti_color_show_lights = ((Button)findViewById(2131558679));
-    this.rl_acti_color_parent = ((RelativeLayout)findViewById(2131558672));
+    this.btn_acti_color_op_photo = ((Button)findViewById(R.id.btn_acti_color_op_photo));
+    this.btn_acti_color_show_lights = ((Button)findViewById(R.id.btn_acti_color_show_lights));
+    this.rl_acti_color_parent = ((RelativeLayout)findViewById(R.id.rl_acti_color_parent));
     getLayoutInflater();
-    this.sonView = LayoutInflater.from(this).inflate(2130968632, null);
+    this.sonView = LayoutInflater.from(this).inflate(R.layout.acti_color_son_view, null);
     RelativeLayout.LayoutParams localLayoutParams = new RelativeLayout.LayoutParams(-2, -2);
     localLayoutParams.addRule(12);
     this.rl_acti_color_parent.addView(this.sonView, localLayoutParams);
-    this.color_picker_view = ((ColorPickerView)findViewById(2131558677));
+    this.color_picker_view = ((ColorPickerView)findViewById(R.id.color_picker_view));
     this.color_picker_view.setOnColorChangedListener(this);
-    this.btn_acti_color_son_light_1 = ((Button)this.sonView.findViewById(2131558695));
-    this.btn_acti_color_son_light_2 = ((Button)this.sonView.findViewById(2131558696));
-    this.btn_acti_color_son_light_3 = ((Button)this.sonView.findViewById(2131558697));
-    this.btn_acti_color_son_light_4 = ((Button)this.sonView.findViewById(2131558698));
-    this.btn_acti_color_son_dwon = ((Button)this.sonView.findViewById(2131558703));
-    this.tb_acti_color_son_swc_1 = ((ToggleButton)this.sonView.findViewById(2131558699));
-    this.tb_acti_color_son_swc_2 = ((ToggleButton)this.sonView.findViewById(2131558700));
-    this.tb_acti_color_son_swc_3 = ((ToggleButton)this.sonView.findViewById(2131558701));
-    this.tb_acti_color_son_swc_4 = ((ToggleButton)this.sonView.findViewById(2131558702));
+    this.btn_acti_color_son_light_1 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_1));
+    this.btn_acti_color_son_light_2 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_2));
+    this.btn_acti_color_son_light_3 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_3));
+    this.btn_acti_color_son_light_4 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_4));
+    this.btn_acti_color_son_dwon = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_dwon));
+    this.tb_acti_color_son_swc_1 = ((ToggleButton)this.sonView.findViewById(R.id.tb_acti_color_son_swc_1));
+    this.tb_acti_color_son_swc_2 = ((ToggleButton)this.sonView.findViewById(R.id.tb_acti_color_son_swc_2));
+    this.tb_acti_color_son_swc_3 = ((ToggleButton)this.sonView.findViewById(R.id.tb_acti_color_son_swc_3));
+    this.tb_acti_color_son_swc_4 = ((ToggleButton)this.sonView.findViewById(R.id.tb_acti_color_son_swc_4));
     getLayoutInflater();
-    this.popView = LayoutInflater.from(this).inflate(2130968716, null);
+    this.popView = LayoutInflater.from(this).inflate(R.layout.col_act_pop, null);
     this.bottomPopWin = new PopupWindow(this.popView, -2, -2);
-    this.bottomPopWin.setAnimationStyle(2131296562);
+    this.bottomPopWin.setAnimationStyle(R.style.popwin_anim_style);
     this.bottomPopWin.setOutsideTouchable(true);
     this.bottomPopWin.setTouchable(true);
     this.bottomPopWin.setBackgroundDrawable(new ColorDrawable(0));
@@ -135,7 +130,7 @@ public class ActColor extends MyBaseActivity
 
   private void handleCrop(int paramInt, Intent paramIntent)
   {
-    if (paramInt == -1)
+    /*if (paramInt == -1)
     {
       this.business.saveBgType("gallery");
       this.business.saveBgPath(Crop.getOutput(paramIntent).toString());
@@ -146,7 +141,7 @@ public class ActColor extends MyBaseActivity
     do
       return;
     while (paramInt != 404);
-    Toast.makeText(this, Crop.getError(paramIntent).getMessage(), 0).show();
+    Toast.makeText(this, Crop.getError(paramIntent).getMessage(), Toast.LENGTH_SHORT).show();*/
   }
 
   private void init()
@@ -166,27 +161,27 @@ public class ActColor extends MyBaseActivity
     this.btn_acti_color_op_photo.setOnClickListener(this);
     this.btn_acti_color_show_lights.setOnClickListener(this);
     this.btn_acti_color_son_dwon.setOnClickListener(this);
-    this.popView.findViewById(2131559063).setOnClickListener(this);
-    this.popView.findViewById(2131559064).setOnClickListener(this);
+    this.popView.findViewById(R.id.btn_color_act_pop_photo).setOnClickListener(this);
+    this.popView.findViewById(R.id.btn_color_act_pop_rainbow).setOnClickListener(this);
   }
 
   private void setMyTitle()
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
-    setTiTleTextRes(2131099965);
+    setTiTleTextRes(R.string.color);
     setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
   public void addPanel(View paramView)
   {
-    findViewById(2131558680).setVisibility(View.GONE);
-    findViewById(2131558681).setVisibility(View.VISIBLE);
+    findViewById(R.id.rl_pop).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_panel).setVisibility(View.VISIBLE);
   }
 
   public void addPanel1(View paramView)
   {
-    findViewById(2131558681).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel11"; ; str = "panel1")
@@ -198,7 +193,7 @@ public class ActColor extends MyBaseActivity
 
   public void addPanel2(View paramView)
   {
-    findViewById(2131558681).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel22"; ; str = "panel2")
@@ -210,7 +205,7 @@ public class ActColor extends MyBaseActivity
 
   public void addPanel3(View paramView)
   {
-    findViewById(2131558681).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel33"; ; str = "panel3")
@@ -222,7 +217,7 @@ public class ActColor extends MyBaseActivity
 
   public void addPanel4(View paramView)
   {
-    findViewById(2131558681).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "panel44"; ; str = "panel4")
@@ -234,13 +229,13 @@ public class ActColor extends MyBaseActivity
 
   public void addRc(View paramView)
   {
-    findViewById(2131558680).setVisibility(View.GONE);
-    findViewById(2131558690).setVisibility(View.VISIBLE);
+    findViewById(R.id.rl_pop).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_rc).setVisibility(View.VISIBLE);
   }
 
   public void addRc1(View paramView)
   {
-    findViewById(2131558690).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_rc).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "rc11"; ; str = "rc1")
@@ -252,7 +247,7 @@ public class ActColor extends MyBaseActivity
 
   public void addRc2(View paramView)
   {
-    findViewById(2131558690).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_rc).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
     if (this.isRbgLamp);
     for (String str = "rc22"; ; str = "rc2")
@@ -266,7 +261,7 @@ public class ActColor extends MyBaseActivity
   {
     RelativeLayout.LayoutParams localLayoutParams = new RelativeLayout.LayoutParams(-2, -2);
     localLayoutParams.addRule(12);
-    this.sonView.setAnimation(AnimationUtils.loadAnimation(this, 2131034124));
+    this.sonView.setAnimation(AnimationUtils.loadAnimation(this, R.anim.push_up_in));
     this.rl_acti_color_parent.addView(this.sonView, localLayoutParams);
   }
 
@@ -288,12 +283,12 @@ public class ActColor extends MyBaseActivity
 
   public void hideAddPanelDialog(View paramView)
   {
-    findViewById(2131558681).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
   }
 
   public void hideAddRcDialog(View paramView)
   {
-    findViewById(2131558690).setVisibility(View.GONE);
+    findViewById(R.id.rl_add_rc).setVisibility(View.GONE);
   }
 
   public void hidePopWindow(View paramView)
@@ -303,7 +298,7 @@ public class ActColor extends MyBaseActivity
 
   public void hideSonView()
   {
-    this.sonView.setAnimation(AnimationUtils.loadAnimation(this, 2131034122));
+    this.sonView.setAnimation(AnimationUtils.loadAnimation(this, R.anim.push_down_out));
     this.sonView.setVisibility(View.GONE);
   }
 
@@ -336,7 +331,7 @@ public class ActColor extends MyBaseActivity
         }
       }
       .start();
-    if ((paramInt1 == 9162) && (paramInt2 == -1))
+    /*if ((paramInt1 == 9162) && (paramInt2 == -1))
       startActivityForResult(new Intent(this, AtClip.class).putExtra("OP_CLIP_TYPE", "OP_CLIP_TYPE_GRALLRY").putExtra("OP_CLIP_IC_URI_KEY", paramIntent.getData().toString()).putExtra("OP_CLIP_IC_FILE_PATH_KEY", this.currentFile.getPath()).putExtra("OP_CLIP_VIEW_MAX_WIDTH_KEY", this.color_picker_view.width), 0);
     while (true)
     {
@@ -359,7 +354,7 @@ public class ActColor extends MyBaseActivity
         continue;
       handleCrop(paramInt2, paramIntent);
       this.color_picker_view.isRainbowBg = false;
-    }
+    }*/
   }
 
   public void onBrightnessChange(int paramInt)
@@ -368,11 +363,11 @@ public class ActColor extends MyBaseActivity
 
   public void onClick(View paramView)
   {
-    switch (paramView.getId())
+    /*switch (paramView.getId())
     {
     default:
       return;
-    case 2131558678:
+    case R.id.btn_acti_color_op_photo:
       MyAlertDialog2 localMyAlertDialog2 = new MyAlertDialog2(this);
       localMyAlertDialog2.show();
       localMyAlertDialog2.setMyOnClickListener(new MyAlertDialog2.MyOnClickListener()
@@ -398,13 +393,13 @@ public class ActColor extends MyBaseActivity
         }
       });
       return;
-    case 2131558679:
+    case R.id.btn_acti_color_show_lights:
       showSonView();
       return;
-    case 2131558703:
+    case R.id.btn_acti_color_son_dwon:
       hideSonView();
       return;
-    case 2131559063:
+    case R.id.btn_color_act_pop_photo:
       this.handler.postDelayed(new Runnable()
       {
         public void run()
@@ -415,7 +410,7 @@ public class ActColor extends MyBaseActivity
       }
       , 400L);
       return;
-    case 2131559064:
+    case R.id.btn_color_act_pop_rainbow:
     }
     this.handler.postDelayed(new Runnable()
     {
@@ -427,7 +422,7 @@ public class ActColor extends MyBaseActivity
         ActColor.this.bottomPopWin.dismiss();
       }
     }
-    , 400L);
+    , 400L);*/
   }
 
   public void onColorChange(int paramInt)
@@ -461,7 +456,7 @@ public class ActColor extends MyBaseActivity
   protected void onEdit()
   {
     super.onEdit();
-    findViewById(2131558680).setVisibility(View.VISIBLE);
+    findViewById(R.id.rl_pop).setVisibility(View.VISIBLE);
   }
 
   protected void onMenu()
@@ -536,7 +531,7 @@ public class ActColor extends MyBaseActivity
 
   public void setLightNum(int paramInt)
   {
-    this.lightNum = paramInt;
+    /*this.lightNum = paramInt;
     switch (paramInt)
     {
     default:
@@ -585,12 +580,12 @@ public class ActColor extends MyBaseActivity
       this.color_picker_view.showPiker(4);
       this.business.savePikerX2Xml("4", this.color_picker_view.pickerX4);
       this.business.savePikerY2Xml("4", -100 + this.color_picker_view.pikerAraeHight);
-    }
+    }*/
   }
 
   public void setPikerView()
   {
-    if (this.isInitPikerView)
+    /*if (this.isInitPikerView)
       return;
     String str1 = SharedPreferencesUtil.queryValue(DeviceListActivity.deviceMacAddress + "lampType");
     label72: int i;
@@ -693,32 +688,32 @@ public class ActColor extends MyBaseActivity
         j = 1;
       case 1:
       }
-    showRgbwSeekBarStatus();
+    showRgbwSeekBarStatus();*/
   }
 
   public void showRgbSeekBarStatus()
   {
     this.isRbgLamp = true;
-    TextView localTextView1 = (TextView)findViewById(2131558686);
-    TextView localTextView2 = (TextView)findViewById(2131558687);
-    TextView localTextView3 = (TextView)findViewById(2131558688);
-    TextView localTextView4 = (TextView)findViewById(2131558689);
-    TextView localTextView5 = (TextView)findViewById(2131558693);
-    TextView localTextView6 = (TextView)findViewById(2131558694);
-    localTextView1.setText(2131099829);
-    localTextView3.setText(2131099831);
-    localTextView2.setText(2131099833);
-    localTextView4.setText(2131099835);
-    localTextView5.setText(2131099842);
-    localTextView6.setText(2131099844);
-    setEditTextRes(2131099812, getResources().getColor(R.color.oringe));
-    findViewById(2131558674).setVisibility(View.VISIBLE);
+    TextView localTextView1 = (TextView)findViewById(R.id.textView2);
+    TextView localTextView2 = (TextView)findViewById(R.id.textView3);
+    TextView localTextView3 = (TextView)findViewById(R.id.textView4);
+    TextView localTextView4 = (TextView)findViewById(R.id.textView5);
+    TextView localTextView5 = (TextView)findViewById(R.id.textView6);
+    TextView localTextView6 = (TextView)findViewById(R.id.textView7);
+    localTextView1.setText(R.string.add_panel_11);
+    localTextView3.setText(R.string.add_panel_22);
+    localTextView2.setText(R.string.add_panel_33);
+    localTextView4.setText(R.string.add_panel_44);
+    localTextView5.setText(R.string.add_rc_11);
+    localTextView6.setText(R.string.add_rc_22);
+    setEditTextRes(R.string.add, getResources().getColor(R.color.oringe));
+    findViewById(R.id.sb_color_acti_1).setVisibility(View.VISIBLE);
     this.handler.postDelayed(new Runnable()
     {
       public void run()
       {
         ActColor.this.sb_color_acti_1.setProgress(100);
-        ActColor.this.findViewById(2131558676).setVisibility(View.GONE);
+        ActColor.this.findViewById(R.id.sb_color_acti_2).setVisibility(View.GONE);
       }
     }
     , 100L);
@@ -726,7 +721,7 @@ public class ActColor extends MyBaseActivity
     {
       public void run()
       {
-        ActColor.this.findViewById(2131558675).setVisibility(View.GONE);
+        ActColor.this.findViewById(R.id.bt_white_light).setVisibility(View.GONE);
       }
     }
     , 0L);
@@ -734,15 +729,10 @@ public class ActColor extends MyBaseActivity
 
   public void showRgbwSeekBarStatus()
   {
-    setEditImageText(2131099812, getResources().getColor(R.color.oringe));
+    setEditImageText(R.string.add, getResources().getColor(R.color.oringe));
   }
 
   public void showSonView()
   {
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.colors.ActColor
- * JD-Core Version:    0.6.0
- */

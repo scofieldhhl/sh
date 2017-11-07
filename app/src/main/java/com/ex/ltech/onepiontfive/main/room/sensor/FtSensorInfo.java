@@ -41,7 +41,7 @@ public class FtSensorInfo extends MyBaseFt
   DvcListAdapter adapter;
   BaseAdapter adapter2;
 
-  @Bind({2131558640})
+  @Bind({R.id.btn_acti_mode_menu})
   Button btnActiModeMenu;
   ExpandableLvSceneBusiness business;
 
@@ -55,7 +55,7 @@ public class FtSensorInfo extends MyBaseFt
   @Bind({2131558769})
   ViewPager pager;
 
-  @Bind({2131558636})
+  @Bind({R.id.rl_act_timing_mode})
   RelativeLayout rlActTimingMode;
   String seletedSceneName = "";
   int seletedScenePosi = 0;
@@ -222,7 +222,7 @@ public class FtSensorInfo extends MyBaseFt
       this.device.setBackgroundResource(2130903245);
       this.sence.setBackgroundResource(2130903246);
       return;
-    case 2131558640:
+    case R.id.btn_acti_mode_menu:
     }
     this.vo.setRooms(this.expandableLvSceneBusiness.getRoomExpandableLvInnerItem().getRooms());
     SensorVo localSensorVo = this.vo;

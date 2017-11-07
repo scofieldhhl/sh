@@ -81,7 +81,7 @@ public class AtLearnActivity extends YkAt
   Handler handler = new Handler();
   int index;
 
-  @Bind({2131558816})
+  @Bind({R.id.info})
   RelativeLayout info;
 
   @Bind({2131558809})
@@ -90,7 +90,7 @@ public class AtLearnActivity extends YkAt
   @Bind({2131558925})
   TextView info10;
 
-  @Bind({2131558810})
+  @Bind({R.id.info2})
   LinearLayout info2;
 
   @Bind({2131558813})

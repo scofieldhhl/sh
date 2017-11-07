@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.timing.RepeatDayAdapter;
 import com.ex.ltech.led.acti.timing.TimingBussines;
@@ -23,7 +24,7 @@ public class ActRepeatDay extends MyBaseActivity
 
   private void findView()
   {
-    this.lv = ((ListView)findViewById(2131558610));
+    this.lv = ((ListView)findViewById(R.id.lv_act_repeat_day));
   }
 
   private void getMyIntent()
@@ -55,7 +56,7 @@ public class ActRepeatDay extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968618);
+    setContentView(R.layout.act_repeat_day);
     findView();
     setTitleView();
     getMyIntent();
@@ -77,7 +78,7 @@ public class ActRepeatDay extends MyBaseActivity
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
-    setTiTleTextRes(2131100333);
+    setTiTleTextRes(R.string.repeat);
   }
 }
 

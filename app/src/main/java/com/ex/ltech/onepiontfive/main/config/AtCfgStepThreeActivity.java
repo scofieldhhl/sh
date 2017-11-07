@@ -19,7 +19,7 @@ public class AtCfgStepThreeActivity extends MyBaseActivity
   @Bind({2131558815})
   ImageView icMatchParent;
 
-  @Bind({2131558816})
+  @Bind({R.id.info})
   TextView info;
   boolean isLampBlinkSeleted;
 

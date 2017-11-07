@@ -2,20 +2,21 @@ package com.ex.ltech.hongwai.yaokong;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+
 import com.ex.ltech.hongwai.YkAt;
-import et.song.etclass.ETDevice;
-import et.song.etclass.ETKey;
+import com.ex.ltech.led.R;
+
 import java.util.ArrayList;
+
+import et.song.etclass.ETKey;
 
 public class AtAddDiyBtnActivity extends YkAt
 {
@@ -68,7 +69,7 @@ public class AtAddDiyBtnActivity extends YkAt
   public void setTitleView()
   {
     setViewTitle();
-    setMenuBackgroundRes(2130903830);
+    setMenuBackgroundRes(R.mipmap.yk_back);
     setTiTleTextRes(2131099813);
     setEditTextRes(R.string.finish, getResources().getColor(2131492897));
   }

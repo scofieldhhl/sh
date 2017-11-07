@@ -61,7 +61,7 @@ public class SysInsideAdapter extends BaseAdapter
       if (!localSceneSysInsideItemVo.isSeleted())
         break label200;
     }
-    label193: label200: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
+    label193: label200: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(R.color.white))
     {
       paramView.setBackgroundColor(j);
       return paramView;

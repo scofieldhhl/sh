@@ -16,7 +16,7 @@ public class FtCfg4$$ViewBinder<T extends FtCfg4>
     paramT.sbActOutletLed = ((SecondArc)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558742, "field 'sbActOutletLed'"), 2131558742, "field 'sbActOutletLed'"));
     paramT.second = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558875, "field 'second'"), 2131558875, "field 'second'"));
     paramT.smallSecond = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558876, "field 'smallSecond'"), 2131558876, "field 'smallSecond'"));
-    paramT.info = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558816, "field 'info'"), 2131558816, "field 'info'"));
+    paramT.info = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.info, "field 'info'"), R.id.info, "field 'info'"));
     paramT.deviceConnet = ((Button)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558877, "field 'deviceConnet'"), 2131558877, "field 'deviceConnet'"));
     paramT.ivCfgOk = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558878, "field 'ivCfgOk'"), 2131558878, "field 'ivCfgOk'"));
     paramT.ivCfgNoOk = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558879, "field 'ivCfgNoOk'"), 2131558879, "field 'ivCfgNoOk'"));

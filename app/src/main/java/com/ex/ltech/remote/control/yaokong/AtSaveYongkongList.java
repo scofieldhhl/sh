@@ -30,7 +30,7 @@ public class AtSaveYongkongList extends MyBaseActivity
 
   private void findView()
   {
-    this.lv = ((ListView)findViewById(2131558610));
+    this.lv = ((ListView)findViewById(R.id.lv_act_repeat_day));
   }
 
   private void init()
@@ -52,7 +52,7 @@ public class AtSaveYongkongList extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968618);
+    setContentView(R.layout.act_repeat_day);
     this.business = new SaveYongkongListBusiness(this);
     findView();
     setTitleView();

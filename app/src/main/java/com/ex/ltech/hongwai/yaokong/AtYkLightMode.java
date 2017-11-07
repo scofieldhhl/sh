@@ -25,22 +25,22 @@ public class AtYkLightMode extends FragmentActivity
   implements ViewPager.OnPageChangeListener
 {
 
-  @Bind({2131558639})
+  @Bind({R.id.btn_acti_timing_mode_col})
   RippleView btn_acti_timing_mode_col;
 
-  @Bind({2131558638})
+  @Bind({R.id.btn_acti_timing_mode_mode})
   RippleView btn_acti_timing_mode_mode;
   private AtYkLightColorFragment colorFragment;
   public CtTimingAction ctTimingAction = new CtTimingAction();
 
-  @Bind({2131558640})
+  @Bind({R.id.btn_acti_mode_menu})
   Button mBtnBack;
   private List<Fragment> mFragments = new ArrayList();
 
   @Bind({2131558656})
   TextView mSave;
 
-  @Bind({2131558641})
+  @Bind({R.id.pager2})
   NoScrollViewPager mVPFragments;
   private AtYkLightModeFragment modeFragment;
   private int pagerCurrent = 0;
@@ -64,25 +64,25 @@ public class AtYkLightMode extends FragmentActivity
     if (paramInt == 0)
     {
       this.mSave.setText(getResources().getString(2131100416));
-      this.btn_acti_timing_mode_mode.setBackgroundResource(2130903299);
-      this.btn_acti_timing_mode_col.setBackgroundResource(2130903296);
+      this.btn_acti_timing_mode_mode.setBackgroundResource(R.mipmap.ic_btn_mode_press);
+      this.btn_acti_timing_mode_col.setBackgroundResource(R.mipmap.ic_btn_color);
     }
     if (paramInt == 1)
     {
       this.mSave.setText(getResources().getString(2131100358));
-      this.btn_acti_timing_mode_mode.setBackgroundResource(2130903298);
-      this.btn_acti_timing_mode_col.setBackgroundResource(2130903297);
+      this.btn_acti_timing_mode_mode.setBackgroundResource(R.mipmap.ic_btn_mode);
+      this.btn_acti_timing_mode_col.setBackgroundResource(R.mipmap.ic_btn_color_press);
     }
     this.pagerCurrent = paramInt;
   }
 
-  @OnClick({2131558640})
+  @OnClick({R.id.btn_acti_mode_menu})
   public void back()
   {
     finish();
   }
 
-  @OnClick({2131558639})
+  @OnClick({R.id.btn_acti_timing_mode_col})
   public void color()
   {
     this.mVPFragments.setCurrentItem(1);
@@ -90,7 +90,7 @@ public class AtYkLightMode extends FragmentActivity
     localCtTimingAction.seletedType = 2;
   }
 
-  @OnClick({2131558638})
+  @OnClick({R.id.btn_acti_timing_mode_mode})
   public void mode()
   {
     this.mVPFragments.setCurrentItem(0);
@@ -122,7 +122,7 @@ public class AtYkLightMode extends FragmentActivity
   public void onWindowFocusChanged(boolean paramBoolean)
   {
     super.onWindowFocusChanged(paramBoolean);
-    this.colorFragment.setPactHeight(findViewById(2131558636).getHeight());
+    this.colorFragment.setPactHeight(findViewById(R.id.rl_act_timing_mode).getHeight());
   }
 
   @OnClick({2131558656})

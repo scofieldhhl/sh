@@ -18,7 +18,7 @@ public class FtCfg4 extends MyBaseFt
   @Bind({2131558877})
   Button deviceConnet;
 
-  @Bind({2131558816})
+  @Bind({R.id.info})
   TextView info;
 
   @Bind({2131558879})

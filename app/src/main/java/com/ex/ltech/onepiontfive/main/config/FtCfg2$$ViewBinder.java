@@ -11,9 +11,9 @@ public class FtCfg2$$ViewBinder<T extends FtCfg2>
 {
   public void bind(ButterKnife.Finder paramFinder, T paramT, Object paramObject)
   {
-    paramT.ivDevice = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558808, "field 'ivDevice'"), 2131558808, "field 'ivDevice'"));
+    paramT.ivDevice = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.iv_device, "field 'ivDevice'"), R.id.iv_device, "field 'ivDevice'"));
     paramT.info1 = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558809, "field 'info1'"), 2131558809, "field 'info1'"));
-    paramT.info2 = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558810, "field 'info2'"), 2131558810, "field 'info2'"));
+    paramT.info2 = ((TextView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, R.id.info2, "field 'info2'"), R.id.info2, "field 'info2'"));
     paramT.center = ((ImageView)paramFinder.castView((View)paramFinder.findRequiredView(paramObject, 2131558457, "field 'center'"), 2131558457, "field 'center'"));
   }
 

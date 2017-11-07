@@ -70,7 +70,7 @@ public class RepeatDayAdapter extends BaseAdapter
       if (!localRepeatDayVo.isSeleted())
         break label216;
     }
-    label173: label180: label216: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(2131492997))
+    label173: label180: label216: for (int j = this.pct.getResources().getColor(R.color.gray); ; j = this.pct.getResources().getColor(R.color.white))
     {
       paramView.setBackgroundColor(j);
       return paramView;
