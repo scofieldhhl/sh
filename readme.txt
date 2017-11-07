@@ -15,3 +15,10 @@ Main(TabActivity):ActColor(颜色),ActMode(模式),ActNull(开关),ActiMusic(音
 ServicePlayer
 
 ActSetting:设置
+
+bwct:
+ct:色温灯带
+hongwai:遥控
+remote:遥控
+onePiontFive:智能网关
+outlet:智能插座

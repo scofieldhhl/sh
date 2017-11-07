@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
@@ -128,7 +130,7 @@ public class ActOutLet extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968637);
+    setContentView(R.layout.acti_outlet);
     setMyTitle();
     this.cmdDateBussiness = new CmdDateBussiness(this, "0000");
     this.tvTimer = ((TextView)findViewById(2131558738));

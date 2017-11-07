@@ -9,12 +9,13 @@ import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 
 public class AtCfg1Activity extends MyBaseActivity {
+    //智能灯泡
     public void bulb(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "bulb");
         startActivityForResult(localIntent, 200);
     }
-
+    //色温灯带
     public void ct(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "ct");
@@ -41,39 +42,35 @@ public class AtCfg1Activity extends MyBaseActivity {
         super.onMenu();
         finish();
     }
-
+    //智能网关
     public void onePiontFive(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "onePiontFive");
         startActivityForResult(localIntent, 200);
     }
-
+    //智能插座
     public void plugs(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "plugs");
         startActivityForResult(localIntent, 200);
     }
-
+    //万能遥控器
     public void remote(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "remote");
         startActivityForResult(localIntent, 200);
     }
 
+    //幻彩灯带
     public void rgb(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "rgb");
         startActivityForResult(localIntent, 200);
     }
-
+    //幻彩灯带 HV
     public void rgbHV(View paramView) {
         Intent localIntent = new Intent(this, AtCfg2Activity.class);
         localIntent.putExtra("cfgType", "rgbhv");
         startActivityForResult(localIntent, 200);
     }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.device.AtCfg1Activity
- * JD-Core Version:    0.6.0
- */

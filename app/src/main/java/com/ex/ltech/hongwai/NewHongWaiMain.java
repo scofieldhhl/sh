@@ -246,7 +246,7 @@ public class NewHongWaiMain extends TabActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968862);
+    setContentView(R.layout.new_hongwai_main);
     findView();
     changeTabItemBG(0);
     KookongSDK.init(this, "075160883AF24B2E116A97180F75E216", DeviceListActivity.deviceMacAddress);
