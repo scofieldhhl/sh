@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/ft_title_view" layout="@layout/ft_title_view" />
-    <com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView android:id="@id/lv_lamp_item_edit" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="70.0dip" />>
-</RelativeLayout>

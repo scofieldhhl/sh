@@ -2,21 +2,18 @@ package com.ex.ltech.led.acti.timing;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Message;
-import android.util.DisplayMetrics;
 import android.widget.Toast;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.timing.act.ActTiming;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.utils.DateFmtUtil;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.led.vo.ActTimingItemVo;
-import com.ex.ltech.led.vo.DeviceVo;
-import com.ex.ltech.led.vo.ModeVo;
 import com.ex.ltech.led.vo.RepeatDayVo;
 import com.ex.ltech.led.vo.SceneSysCustomItemVo;
 import com.ex.ltech.led.vo.SceneSysInsideItemVo;
@@ -24,19 +21,18 @@ import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-import io.xlink.wifi.js.manage.DeviceManage;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.io.PrintStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 
 public class TimingBussines
 {
@@ -62,7 +58,7 @@ public class TimingBussines
     public void handleMessage(Message paramMessage)
     {
       super.handleMessage(paramMessage);
-      TimingBussines.this.socketManager.closeReadThread();
+      /*TimingBussines.this.socketManager.closeReadThread();
       String str = paramMessage.obj.toString();
       if (TimingBussines.this.isNewTiming)
       {
@@ -74,7 +70,7 @@ public class TimingBussines
         TimingData.getInstance(TimingBussines.this.pct).saveTimingVos2Sd(localList);
         TimingBussines.this.actTiming.upDateData();
       }
-      TimingBussines.access$102(TimingBussines.this, false);
+      TimingBussines.access$102(TimingBussines.this, false);*/
     }
   };
   private List<Integer> seletedDays = new ArrayList();
@@ -86,7 +82,7 @@ public class TimingBussines
     public void run()
     {
       if (TimingBussines.this.isRespTimeOut)
-        Toast.makeText(TimingBussines.this.pct, TimingBussines.this.pct.getString(R.string.add_time_no_ok), 0).show();
+        Toast.makeText(TimingBussines.this.pct, TimingBussines.this.pct.getString(R.string.add_time_no_ok), Toast.LENGTH_SHORT).show();
     }
   };
   private int timingPosi = 0;
@@ -108,7 +104,7 @@ public class TimingBussines
 
   public void delTimingItem(List<TimingVo> paramList, int paramInt)
   {
-    TimingVo localTimingVo = (TimingVo)TimingData.getInstance(this.pct).getTimingVos4Sd().get(paramInt);
+    /*TimingVo localTimingVo = (TimingVo)TimingData.getInstance(this.pct).getTimingVos4Sd().get(paramInt);
     upDateTimgItemXuHao(localTimingVo.getXuHao());
     paramList.remove(paramInt);
     TimingData.getInstance(this.pct).saveTimingVos2Sd(paramList);
@@ -164,7 +160,7 @@ public class TimingBussines
       j--;
       break label369;
       break;
-    }
+    }*/
   }
 
   public int dp2px(int paramInt)
@@ -179,25 +175,26 @@ public class TimingBussines
 
   public String getDaysHex(List<String> paramList)
   {
-    String str1 = "";
+    /*String str1 = "";
     int i = -1 + paramList.size();
     String str2;
     if (i > 0)
     {
       str2 = (String)paramList.get(i);
-      if (str2.indexOf(this.pct.getString(2131100055)) != -1)
+      if (str2.indexOf(this.pct.getString(R.string.evey_day)) != -1)
         str1 = "0111111";
     }
     else
     {
       return str1;
     }
-    if (str2.indexOf(this.pct.getString(2131100525)) != -1);
+    if (str2.indexOf(this.pct.getString(R.string.xinqi)) != -1);
     for (str1 = str1 + "1"; ; str1 = str1 + "0")
     {
       i--;
       break;
-    }
+    }*/
+    return null;
   }
 
   public List<String> getHourDate()
@@ -248,7 +245,7 @@ public class TimingBussines
   public List<String> getShotNameDays()
   {
     ArrayList localArrayList = new ArrayList();
-    int i = 0;
+    /*int i = 0;
     if (i < this.longNameDayVos.size())
     {
       RepeatDayVo localRepeatDayVo = (RepeatDayVo)this.longNameDayVos.get(i);
@@ -264,7 +261,7 @@ public class TimingBussines
         break;
         label79: localArrayList.add(localRepeatDayVo.getDay());
       }
-    }
+    }*/
     return localArrayList;
   }
 
@@ -276,11 +273,11 @@ public class TimingBussines
     localSceneSysCustomItemVo1.setBlingName("非常亮");
     localSceneSysCustomItemVo1.setSeleted(false);
     ArrayList localArrayList = new ArrayList();
-    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(2131492955)));
-    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(2131492981)));
-    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(2131492979)));
-    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(2131492970)));
-    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(2131492889)));
+    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(R.color.login_forage_pwd)));
+    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(R.color.result_points)));
+    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(R.color.progress)));
+    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(R.color.possible_result_points)));
+    localArrayList.add(Integer.valueOf(this.pct.getResources().getColor(R.color.c4)));
     localSceneSysCustomItemVo1.setColors(localArrayList);
     this.customVos.add(localSceneSysCustomItemVo1);
     SceneSysCustomItemVo localSceneSysCustomItemVo2 = new SceneSysCustomItemVo();
@@ -359,28 +356,28 @@ public class TimingBussines
   {
     this.longNameDayVos.clear();
     RepeatDayVo localRepeatDayVo1 = new RepeatDayVo();
-    localRepeatDayVo1.setDay(this.pct.getString(2131100055));
+    localRepeatDayVo1.setDay(this.pct.getString(R.string.evey_day));
     this.longNameDayVos.add(localRepeatDayVo1);
     RepeatDayVo localRepeatDayVo2 = new RepeatDayVo();
-    localRepeatDayVo2.setDay(this.pct.getString(2131100003));
+    localRepeatDayVo2.setDay(this.pct.getString(R.string.day1));
     this.longNameDayVos.add(localRepeatDayVo2);
     RepeatDayVo localRepeatDayVo3 = new RepeatDayVo();
-    localRepeatDayVo3.setDay(this.pct.getString(2131100004));
+    localRepeatDayVo3.setDay(this.pct.getString(R.string.day2));
     this.longNameDayVos.add(localRepeatDayVo3);
     RepeatDayVo localRepeatDayVo4 = new RepeatDayVo();
-    localRepeatDayVo4.setDay(this.pct.getString(2131100005));
+    localRepeatDayVo4.setDay(this.pct.getString(R.string.day3));
     this.longNameDayVos.add(localRepeatDayVo4);
     RepeatDayVo localRepeatDayVo5 = new RepeatDayVo();
-    localRepeatDayVo5.setDay(this.pct.getString(2131100006));
+    localRepeatDayVo5.setDay(this.pct.getString(R.string.day4));
     this.longNameDayVos.add(localRepeatDayVo5);
     RepeatDayVo localRepeatDayVo6 = new RepeatDayVo();
-    localRepeatDayVo6.setDay(this.pct.getString(2131100007));
+    localRepeatDayVo6.setDay(this.pct.getString(R.string.day5));
     this.longNameDayVos.add(localRepeatDayVo6);
     RepeatDayVo localRepeatDayVo7 = new RepeatDayVo();
-    localRepeatDayVo7.setDay(this.pct.getString(2131100008));
+    localRepeatDayVo7.setDay(this.pct.getString(R.string.day6));
     this.longNameDayVos.add(localRepeatDayVo7);
     RepeatDayVo localRepeatDayVo8 = new RepeatDayVo();
-    localRepeatDayVo8.setDay(this.pct.getString(2131100009));
+    localRepeatDayVo8.setDay(this.pct.getString(R.string.day7));
     this.longNameDayVos.add(localRepeatDayVo8);
   }
 
@@ -399,7 +396,7 @@ public class TimingBussines
 
   public void onRepeatDayItemClick(int paramInt)
   {
-    RepeatDayVo localRepeatDayVo1 = (RepeatDayVo)this.longNameDayVos.get(paramInt);
+    /*RepeatDayVo localRepeatDayVo1 = (RepeatDayVo)this.longNameDayVos.get(paramInt);
     boolean bool;
     if (!localRepeatDayVo1.isSeleted())
     {
@@ -422,9 +419,9 @@ public class TimingBussines
       this.longNameDayVos.remove(0);
       RepeatDayVo localRepeatDayVo2 = new RepeatDayVo();
       localRepeatDayVo2.setSeleted(false);
-      localRepeatDayVo2.setDay(this.pct.getString(2131100055));
+      localRepeatDayVo2.setDay(this.pct.getString(R.string.evey_day));
       this.longNameDayVos.add(0, localRepeatDayVo2);
-    }
+    }*/
   }
 
   public void prepareLink()
@@ -446,7 +443,7 @@ public class TimingBussines
 
   public void sendTiming(TimingVo paramTimingVo, int paramInt, boolean paramBoolean)
   {
-    this.isRespTimeOut = true;
+    /*this.isRespTimeOut = true;
     this.handler.removeCallbacks(this.timeOutThread);
     this.handler.postDelayed(this.timeOutThread, 10000L);
     this.timingPosi = paramInt;
@@ -553,7 +550,7 @@ public class TimingBussines
     int n = paramTimingVo.getXuHao();
     int i1 = paramTimingVo.getSpeed();
     localXlinkAgent1.sendPipeData(localXDevice, localCmdDateBussiness.getModeTimingCmd(str4, n, str2, str3, j, str5, i1), this.mySendPipeListener);
-    XlinkAgent.getInstance().addXlinkListener(this.myXlinkNetListener);
+    XlinkAgent.getInstance().addXlinkListener(this.myXlinkNetListener);*/
   }
 
   public void setActTiming(ActTiming paramActTiming)
@@ -563,7 +560,7 @@ public class TimingBussines
 
   public void synTime2Device()
   {
-    new String[] { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+    /*new String[] { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
     int i = getTime("yyyy") / 100;
     int j = getTime("yyyy") - i * 100;
     int k = getTime("MM");
@@ -609,7 +606,7 @@ public class TimingBussines
       continue;
       System.out.println("星期六");
       i3 = 7;
-    }
+    }*/
   }
 
   public void upDateTimgItemXuHao(int paramInt)

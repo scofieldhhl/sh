@@ -1,6 +1,5 @@
 package com.ex.ltech.led.acti.colors;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
@@ -10,7 +9,6 @@ import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.utils.StringUtils;
 
 import java.util.List;
 
@@ -56,7 +54,7 @@ public class AtPanelLearnActivity extends MyBaseActivity
 
     public void onRecvPipeData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte)
     {
-      String str = StringUtils.btye2Str(paramArrayOfByte);
+      /*String str = StringUtils.btye2Str(paramArrayOfByte);
       System.out.println(str);
       if ((str.indexOf("66BB") == -1) || (str.indexOf("EB") == -1) || (str.length() < 18))
         return;
@@ -67,7 +65,7 @@ public class AtPanelLearnActivity extends MyBaseActivity
         AtPanelLearnActivity.this.startActivity(new Intent(AtPanelLearnActivity.this, AtAddResultActivity.class).putExtra("isConfigOk", true).putExtra("type", AtPanelLearnActivity.this.getIntent().getStringExtra("type")));
         AtPanelLearnActivity.this.finish();
       }
-      AtPanelLearnActivity.this.lastRecData = str;
+      AtPanelLearnActivity.this.lastRecData = str;*/
     }
 
     public void onRecvPipeSyncData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte)
@@ -89,7 +87,7 @@ public class AtPanelLearnActivity extends MyBaseActivity
   {
     public void run()
     {
-      if (AtPanelLearnActivity.this.timerTime > 1)
+      /*if (AtPanelLearnActivity.this.timerTime > 1)
       {
         AtPanelLearnActivity localAtPanelLearnActivity = AtPanelLearnActivity.this;
         localAtPanelLearnActivity.timerTime = (-1 + localAtPanelLearnActivity.timerTime);
@@ -99,7 +97,7 @@ public class AtPanelLearnActivity extends MyBaseActivity
       }
       AtPanelLearnActivity.this.timerTime = 60;
       AtPanelLearnActivity.this.startActivity(new Intent(AtPanelLearnActivity.this, AtAddResultActivity.class).putExtra("isConfigOk", false).putExtra("type", AtPanelLearnActivity.this.getIntent().getStringExtra("type")));
-      AtPanelLearnActivity.this.finish();
+      AtPanelLearnActivity.this.finish();*/
     }
   };
   private TextView sec;

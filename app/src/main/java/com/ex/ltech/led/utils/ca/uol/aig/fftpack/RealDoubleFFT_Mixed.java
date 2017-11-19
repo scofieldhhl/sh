@@ -4,7 +4,7 @@ class RealDoubleFFT_Mixed
 {
   void radb2(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    for (int i = 0; i < paramInt2; i++)
+    /*for (int i = 0; i < paramInt2; i++)
     {
       paramArrayOfDouble2[(i * paramInt1)] = (paramArrayOfDouble1[(paramInt1 * (i * 2))] + paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (1 + i * 2))]);
       paramArrayOfDouble2[(paramInt1 * (i + paramInt2))] = (paramArrayOfDouble1[(paramInt1 * (i * 2))] - paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (1 + i * 2))]);
@@ -34,12 +34,12 @@ class RealDoubleFFT_Mixed
         paramArrayOfDouble2[(paramInt1 - 1 + j * paramInt1)] = (2.0D * paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (j * 2))]);
         paramArrayOfDouble2[(paramInt1 - 1 + paramInt1 * (j + paramInt2))] = (-2.0D * paramArrayOfDouble1[(paramInt1 * (1 + j * 2))]);
       }
-    }
+    }*/
   }
 
   void radb3(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    int i = paramInt3 + paramInt1;
+    /*int i = paramInt3 + paramInt1;
     for (int j = 0; j < paramInt2; j++)
     {
       double d11 = 2.0D * paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (1 + j * 3))];
@@ -74,12 +74,12 @@ class RealDoubleFFT_Mixed
           paramArrayOfDouble2[(m - 1 + paramInt1 * (k + paramInt2 * 2))] = (d8 * paramArrayOfDouble3[(i + (m - 2))] - d10 * paramArrayOfDouble3[(i + (m - 1))]);
           paramArrayOfDouble2[(m + paramInt1 * (k + paramInt2 * 2))] = (d10 * paramArrayOfDouble3[(i + (m - 2))] + d8 * paramArrayOfDouble3[(i + (m - 1))]);
         }
-    }
+    }*/
   }
 
   void radb4(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    int i = paramInt3 + paramInt1;
+    /*int i = paramInt3 + paramInt1;
     int j = i + paramInt1;
     for (int k = 0; k < paramInt2; k++)
     {
@@ -139,12 +139,12 @@ class RealDoubleFFT_Mixed
         paramArrayOfDouble2[(paramInt1 - 1 + paramInt1 * (m + paramInt2 * 2))] = (d2 + d2);
         paramArrayOfDouble2[(paramInt1 - 1 + paramInt1 * (m + paramInt2 * 3))] = (-1.414213562373095D * (d3 + d1));
       }
-    }
+    }*/
   }
 
   void radb5(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    int i = paramInt3 + paramInt1;
+    /*int i = paramInt3 + paramInt1;
     int j = i + paramInt1;
     int k = j + paramInt1;
     for (int m = 0; m < paramInt2; m++)
@@ -206,12 +206,12 @@ class RealDoubleFFT_Mixed
           paramArrayOfDouble2[(i1 - 1 + paramInt1 * (n + paramInt2 * 4))] = (d21 * paramArrayOfDouble3[(k + (i1 - 2))] - d23 * paramArrayOfDouble3[(k + (i1 - 1))]);
           paramArrayOfDouble2[(i1 + paramInt1 * (n + paramInt2 * 4))] = (d23 * paramArrayOfDouble3[(k + (i1 - 2))] + d21 * paramArrayOfDouble3[(k + (i1 - 1))]);
         }
-    }
+    }*/
   }
 
   void radbg(int paramInt1, int paramInt2, int paramInt3, int paramInt4, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, double[] paramArrayOfDouble4, double[] paramArrayOfDouble5, double[] paramArrayOfDouble6, int paramInt5)
   {
-    double d1 = 6.283185307179586D / paramInt2;
+    /*double d1 = 6.283185307179586D / paramInt2;
     double d2 = Math.cos(d1);
     double d3 = Math.sin(d1);
     int i = (paramInt1 - 1) / 2;
@@ -377,12 +377,12 @@ class RealDoubleFFT_Mixed
           }
         }
       }
-    }
+    }*/
   }
 
   void radf2(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    for (int i = 0; i < paramInt2; i++)
+    /*for (int i = 0; i < paramInt2; i++)
     {
       paramArrayOfDouble2[(paramInt1 * (i * 2))] = (paramArrayOfDouble1[(i * paramInt1)] + paramArrayOfDouble1[(paramInt1 * (i + paramInt2))]);
       paramArrayOfDouble2[(-1 + (paramInt1 + paramInt1 * (1 + i * 2)))] = (paramArrayOfDouble1[(i * paramInt1)] - paramArrayOfDouble1[(paramInt1 * (i + paramInt2))]);
@@ -412,12 +412,12 @@ class RealDoubleFFT_Mixed
         paramArrayOfDouble2[(paramInt1 * (1 + j * 2))] = (-paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (j + paramInt2))]);
         paramArrayOfDouble2[(paramInt1 - 1 + paramInt1 * (j * 2))] = paramArrayOfDouble1[(paramInt1 - 1 + j * paramInt1)];
       }
-    }
+    }*/
   }
 
   void radf3(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    int i = paramInt3 + paramInt1;
+    /*int i = paramInt3 + paramInt1;
     for (int j = 0; j < paramInt2; j++)
     {
       double d11 = paramArrayOfDouble1[(paramInt1 * (j + paramInt2))] + paramArrayOfDouble1[(paramInt1 * (j + paramInt2 * 2))];
@@ -450,12 +450,12 @@ class RealDoubleFFT_Mixed
           paramArrayOfDouble2[(m + paramInt1 * (2 + k * 3))] = (d8 + d10);
           paramArrayOfDouble2[(n + paramInt1 * (1 + k * 3))] = (d10 - d8);
         }
-    }
+    }*/
   }
 
   void radf4(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    int i = paramInt3 + paramInt1;
+    /*int i = paramInt3 + paramInt1;
     int j = i + paramInt1;
     for (int k = 0; k < paramInt2; k++)
     {
@@ -511,12 +511,12 @@ class RealDoubleFFT_Mixed
         paramArrayOfDouble2[(paramInt1 * (1 + m * 4))] = (d1 - paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (m + paramInt2 * 2))]);
         paramArrayOfDouble2[(paramInt1 * (3 + m * 4))] = (d1 + paramArrayOfDouble1[(paramInt1 - 1 + paramInt1 * (m + paramInt2 * 2))]);
       }
-    }
+    }*/
   }
 
   void radf5(int paramInt1, int paramInt2, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, int paramInt3)
   {
-    int i = paramInt3 + paramInt1;
+    /*int i = paramInt3 + paramInt1;
     int j = i + paramInt1;
     int k = j + paramInt1;
     for (int m = 0; m < paramInt2; m++)
@@ -574,12 +574,12 @@ class RealDoubleFFT_Mixed
           paramArrayOfDouble2[(i1 + paramInt1 * (4 + n * 5))] = (d20 + d24);
           paramArrayOfDouble2[(i2 + paramInt1 * (3 + n * 5))] = (d24 - d20);
         }
-    }
+    }*/
   }
 
   void radfg(int paramInt1, int paramInt2, int paramInt3, int paramInt4, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, double[] paramArrayOfDouble4, double[] paramArrayOfDouble5, double[] paramArrayOfDouble6, int paramInt5)
   {
-    double d1 = 6.283185307179586D / paramInt2;
+    /*double d1 = 6.283185307179586D / paramInt2;
     double d2 = Math.cos(d1);
     double d3 = Math.sin(d1);
     int i = (paramInt2 + 1) / 2;
@@ -751,7 +751,7 @@ class RealDoubleFFT_Mixed
           }
         }
       }
-    }
+    }*/
   }
 
   void rfftb(int paramInt, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2)
@@ -763,7 +763,7 @@ class RealDoubleFFT_Mixed
 
   void rfftb1(int paramInt1, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, int paramInt2)
   {
-    double[] arrayOfDouble = new double[paramInt1];
+    /*double[] arrayOfDouble = new double[paramInt1];
     System.arraycopy(paramArrayOfDouble2, paramInt2, arrayOfDouble, 0, paramInt1);
     int i = (int)paramArrayOfDouble2[(paramInt2 + (1 + paramInt1 * 2))];
     int j = 0;
@@ -842,7 +842,7 @@ class RealDoubleFFT_Mixed
       return;
       for (int i1 = 0; i1 < paramInt1; i1++)
         paramArrayOfDouble1[i1] = arrayOfDouble[i1];
-    }
+    }*/
   }
 
   void rfftf(int paramInt, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2)
@@ -854,7 +854,7 @@ class RealDoubleFFT_Mixed
 
   void rfftf1(int paramInt1, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, int paramInt2)
   {
-    double[] arrayOfDouble = new double[paramInt1];
+    /*double[] arrayOfDouble = new double[paramInt1];
     System.arraycopy(paramArrayOfDouble2, paramInt2, arrayOfDouble, 0, paramInt1);
     int i = (int)paramArrayOfDouble2[(paramInt2 + (1 + paramInt1 * 2))];
     int j = 1;
@@ -927,7 +927,7 @@ class RealDoubleFFT_Mixed
       return;
       for (int i1 = 0; i1 < paramInt1; i1++)
         paramArrayOfDouble1[i1] = arrayOfDouble[i1];
-    }
+    }*/
   }
 
   void rffti(int paramInt, double[] paramArrayOfDouble)
@@ -939,7 +939,7 @@ class RealDoubleFFT_Mixed
 
   void rffti1(int paramInt1, double[] paramArrayOfDouble, int paramInt2)
   {
-    int[] arrayOfInt = { 4, 2, 3, 5 };
+    /*int[] arrayOfInt = { 4, 2, 3, 5 };
     int i = 0;
     int j = paramInt1;
     int k = 0;
@@ -1005,11 +1005,6 @@ class RealDoubleFFT_Mixed
         }
         i3 = i7;
       }
-    }
+    }*/
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.utils.ca.uol.aig.fftpack.RealDoubleFFT_Mixed
- * JD-Core Version:    0.6.0
- */

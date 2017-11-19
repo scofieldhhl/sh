@@ -49,7 +49,7 @@ public class ActTiming extends MyBaseActivity
         SwipeMenuItem localSwipeMenuItem1 = new SwipeMenuItem(ActTiming.this.getApplicationContext());
         localSwipeMenuItem1.setBackground(new ColorDrawable(Color.rgb(201, 201, 206)));
         localSwipeMenuItem1.setWidth(ActTiming.this.bussines.dp2px(60));
-        localSwipeMenuItem1.setIcon(2130903303);
+//        localSwipeMenuItem1.setIcon(2130903303);
         localSwipeMenuItem1.setTitleColor(-1);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem1);
         SwipeMenuItem localSwipeMenuItem2 = new SwipeMenuItem(ActTiming.this.getApplicationContext());
@@ -218,7 +218,7 @@ public class ActTiming extends MyBaseActivity
     super.onEdit();
     if (this.adt.getCount() < 10)
     {
-      goAct4result(ActAddTiming.class, 100);
+//      goAct4result(ActAddTiming.class, 100);
       this.itemPosition = -1;
       return;
     }

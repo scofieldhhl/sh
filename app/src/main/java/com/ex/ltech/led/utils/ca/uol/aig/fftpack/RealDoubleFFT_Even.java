@@ -22,7 +22,7 @@ public class RealDoubleFFT_Even extends RealDoubleFFT_Mixed
 
   void cost(int paramInt, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2)
   {
-    int i = paramInt - 1;
+    /*int i = paramInt - 1;
     int j = paramInt / 2;
     if (paramInt - 2 < 0);
     int m;
@@ -73,7 +73,7 @@ public class RealDoubleFFT_Even extends RealDoubleFFT_Mixed
       }
     }
     while (m == 0);
-    paramArrayOfDouble1[(paramInt - 1)] = d2;
+    paramArrayOfDouble1[(paramInt - 1)] = d2;*/
   }
 
   void costi(int paramInt, double[] paramArrayOfDouble)

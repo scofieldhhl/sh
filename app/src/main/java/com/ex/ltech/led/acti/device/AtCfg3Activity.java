@@ -5,9 +5,6 @@ import android.content.Intent;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.Selection;
-import android.text.Spannable;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -17,7 +14,6 @@ import android.widget.TextView;
 
 import com.ex.ltech.led.Global;
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 
 public class AtCfg3Activity extends MyBaseActivity {
@@ -49,10 +45,10 @@ public class AtCfg3Activity extends MyBaseActivity {
     }
 
     private void init() {
-        this.tv_acti_net_config_pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        /*this.tv_acti_net_config_pwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
         this.tv_acti_net_config_pwd.setText(UserFerences.getUserFerences(this).spFerences.getString("wifiPsd", ""));
         showIsRemenberPsd();
-        this.isEyesClose = UserFerences.getUserFerences(this).spFerences.getBoolean("wifiPsdEye", false);
+        this.isEyesClose = UserFerences.getUserFerences(this).spFerences.getBoolean("wifiPsdEye", false);*/
     }
 
     private void showEyes(ImageView paramImageView) {
@@ -69,7 +65,7 @@ public class AtCfg3Activity extends MyBaseActivity {
     }
 
     public void eyes(View paramView) {
-        showEyes((ImageView) paramView);
+        /*showEyes((ImageView) paramView);
         Editable localEditable = this.tv_acti_net_config_pwd.getText();
         if ((localEditable instanceof Spannable))
             Selection.setSelection((Spannable) localEditable, localEditable.length());
@@ -78,7 +74,7 @@ public class AtCfg3Activity extends MyBaseActivity {
         for (boolean bool = true; ; bool = false) {
             this.isEyesClose = bool;
             return;
-        }
+        }*/
     }
 
     public String getSSid() {
@@ -128,22 +124,22 @@ public class AtCfg3Activity extends MyBaseActivity {
     }
 
     public void remenberPsd(View paramView) {
-        UserFerences localUserFerences = UserFerences.getUserFerences(this);
+       /* UserFerences localUserFerences = UserFerences.getUserFerences(this);
         boolean bool1 = UserFerences.getUserFerences(this).spFerences.getBoolean("isRemenberPsd", false);
         boolean bool2 = false;
         if (!bool1)
             bool2 = true;
         localUserFerences.putValue("isRemenberPsd", Boolean.valueOf(bool2));
-        showIsRemenberPsd();
+        showIsRemenberPsd();*/
     }
 
     public void showIsRemenberPsd() {
-        if (UserFerences.getUserFerences(this).spFerences.getBoolean("isRemenberPsd", false)) {
+        /*if (UserFerences.getUserFerences(this).spFerences.getBoolean("isRemenberPsd", false)) {
             this.tv_remenber_tag.setBackgroundResource(R.mipmap.red_piont);
             UserFerences.getUserFerences(this).putValue("wifiPsd", this.tv_acti_net_config_pwd.getText().toString());
             return;
         }
         this.tv_remenber_tag.setBackgroundResource(R.mipmap.h_timing_choose_n);
-        UserFerences.getUserFerences(this).putValue("wifiPsd", "");
+        UserFerences.getUserFerences(this).putValue("wifiPsd", "");*/
     }
 }

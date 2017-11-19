@@ -1,21 +1,16 @@
 package com.ex.ltech.led.my_view;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.ImageView;
-import com.ex.ltech.led.R.styleable;
 
-public class MLImageView extends ImageView
+public class MLImageView extends android.support.v7.widget.AppCompatImageView
 {
   private int mHeight;
   private Paint mPressPaint;
@@ -46,7 +41,7 @@ public class MLImageView extends ImageView
     localPaint.setColor(-1);
     localPaint.setAntiAlias(true);
     PorterDuffXfermode localPorterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
-    paramCanvas.saveLayer(0.0F, 0.0F, this.mWidth, this.mHeight, null, 31);
+    paramCanvas.saveLayer(0.0F, 0.0F, this.mWidth, this.mHeight, null, Canvas.ALL_SAVE_FLAG);
     if (this.mShapeType == 0)
       paramCanvas.drawCircle(this.mWidth / 2, this.mHeight / 2, this.mWidth / 2, localPaint);
     localPaint.setXfermode(localPorterDuffXfermode);
@@ -63,9 +58,9 @@ public class MLImageView extends ImageView
     this.mShapeType = 1;
     if (paramAttributeSet != null)
     {
-      TypedArray localTypedArray = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.MLImageView);
+      /*TypedArray localTypedArray = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.MLImageView);
       this.mShapeType = localTypedArray.getInteger(5, this.mShapeType);
-      localTypedArray.recycle();
+      localTypedArray.recycle();*/
     }
     setClickable(true);
     setDrawingCacheEnabled(true);
@@ -74,7 +69,7 @@ public class MLImageView extends ImageView
 
   protected void onDraw(Canvas paramCanvas)
   {
-    Drawable localDrawable = getDrawable();
+    /*Drawable localDrawable = getDrawable();
     if (localDrawable == null);
     Bitmap localBitmap;
     do
@@ -85,7 +80,7 @@ public class MLImageView extends ImageView
       localBitmap = ((BitmapDrawable)localDrawable).getBitmap();
     }
     while (localBitmap == null);
-    drawDrawable(paramCanvas, localBitmap);
+    drawDrawable(paramCanvas, localBitmap);*/
   }
 
   protected void onSizeChanged(int paramInt1, int paramInt2, int paramInt3, int paramInt4)

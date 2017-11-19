@@ -1,27 +1,23 @@
 package com.ex.ltech.led.my_view;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory.Options;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Path.Direction;
 import android.graphics.Point;
-import android.os.Build.VERSION;
+import android.os.Build;
 import android.util.AttributeSet;
-import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
-import com.ex.ltech.led.acti.Main;
-import com.ex.ltech.led.musci_service.ServicePlayer;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.vo.TouchArea;
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +48,7 @@ public class ColorPickerView extends View
   private int glassRadius;
   private List<TouchArea> groupAreaList = new ArrayList();
   private Bitmap groupBM;
-  private int groupCircleColor = getResources().getColor(2131492928);
+  private int groupCircleColor = getResources().getColor(R.color.group_color_gone);
   private Point groupPiont = new Point();
   public int height;
   int i = 0;
@@ -141,7 +137,7 @@ public class ColorPickerView extends View
 
   private void changePaintColor(int paramInt1, int paramInt2)
   {
-    int j = -16777216;
+    /*int j = -16777216;
     Paint localPaint1 = this.glassPaint;
     if (paramInt1 > 128);
     for (int m = j; ; m = -1)
@@ -188,7 +184,7 @@ public class ColorPickerView extends View
       localPaint2.setColor(j);
       return;
       j = -1;
-    }
+    }*/
   }
 
   private void cleanShot()
@@ -226,7 +222,7 @@ public class ColorPickerView extends View
 
   private void handleActionMove(int paramInt1, int paramInt2)
   {
-    int j;
+    /*int j;
     int m;
     int n;
     int i1;
@@ -265,12 +261,12 @@ public class ColorPickerView extends View
       label255: this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2);
       this.brightness = getBrightness(paramInt1, paramInt2);
       break;
-    }
+    }*/
   }
 
   private void handleActionUp(int paramInt1, int paramInt2)
   {
-    if (this.seletedPickerIndex != -1)
+    /* if (this.seletedPickerIndex != -1)
     {
       this.actionMoveTime = 0;
       showPikerOnGlassClose(paramInt1 - this.pikerBMWidth / 2, paramInt2 - this.pikerBMHeight / 2, this.seletedPickerIndex);
@@ -295,7 +291,7 @@ public class ColorPickerView extends View
       invalidate();
       return;
       label247: this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2);
-    }
+    }*/
   }
 
   private void hidePikerOnGlassOpen(int paramInt1, int paramInt2, int paramInt3)
@@ -304,22 +300,19 @@ public class ColorPickerView extends View
     {
     default:
     case 0:
-    case 1:
-    case 2:
-    case 3:
-    }
-    while (true)
-    {
-      invalidate();
-      return;
       this.pickerPonit1.set(paramInt1 + this.width, paramInt2);
-      continue;
+      break;
+    case 1:
       this.pickerPonit2.set(paramInt1 + this.width, paramInt2);
-      continue;
+      break;
+    case 2:
       this.pickerPonit3.set(paramInt1 + this.width, paramInt2);
-      continue;
+      break;
+    case 3:
       this.pickerPonit4.set(paramInt1 + this.width, paramInt2);
+      break;
     }
+      invalidate();
   }
 
   private void init()
@@ -329,13 +322,13 @@ public class ColorPickerView extends View
     this.bmOptions = new BitmapFactory.Options();
     this.generalP = new Paint();
     this.generalP.setAntiAlias(true);
-    this.colorBM = BitmapUtils.readBitMap(getResources(), 2130903616);
-    this.bigGroupBM = BitmapUtils.readBitMap(getResources(), 2130903265);
-    this.colorTitleBM = BitmapUtils.readBitMap(getResources(), 2130903618);
-    this.pikerBM = BitmapUtils.readBitMap(getResources(), 2130903072);
-    this.glassPikerBM = BitmapUtils.readBitMap(getResources(), 2130903073);
-    this.pikerSeletedBM = BitmapUtils.readBitMap(getResources(), 2130903071);
-    this.groupBM = BitmapUtils.readBitMap(getResources(), 2130903264);
+    this.colorBM = BitmapUtils.readBitMap(getResources(), R.mipmap.piccolor);
+    this.bigGroupBM = BitmapUtils.readBitMap(getResources(), R.mipmap.groud_area_big);
+    this.colorTitleBM = BitmapUtils.readBitMap(getResources(), R.mipmap.piccolor_title);
+    this.pikerBM = BitmapUtils.readBitMap(getResources(), R.mipmap.area_2);
+    this.glassPikerBM = BitmapUtils.readBitMap(getResources(), R.mipmap.area_big);
+    this.pikerSeletedBM = BitmapUtils.readBitMap(getResources(), R.mipmap.area_1);
+    this.groupBM = BitmapUtils.readBitMap(getResources(), R.mipmap.groud_area_2);
     this.pikerBMWidth = this.pikerBM.getWidth();
     this.pikerBMHeight = this.pikerBM.getHeight();
     this.bitmapPaint = new Paint();
@@ -371,7 +364,7 @@ public class ColorPickerView extends View
 
   private void initBitmapShader()
   {
-    this.mPath.addCircle(this.glassRadius, this.glassRadius, this.glassRadius, Path.Direction.CW);
+    this.mPath.addCircle(this.glassRadius, this.glassRadius, this.glassRadius, Direction.CW);
     this.mMatrix.setScale(2.0F, 2.0F);
   }
 
@@ -435,22 +428,19 @@ public class ColorPickerView extends View
       {
       default:
       case 0:
+        this.pickerPonit1.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
+        break;
       case 1:
+        this.pickerPonit2.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
+        break;
       case 2:
+        this.pickerPonit3.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
+        break;
       case 3:
+        this.pickerPonit4.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
+        break;
       }
-    while (true)
-    {
       invalidate();
-      return;
-      this.pickerPonit1.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
-      continue;
-      this.pickerPonit2.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
-      continue;
-      this.pickerPonit3.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
-      continue;
-      this.pickerPonit4.set(paramInt1, this.pikerAraeHight - this.pikerBMHeight);
-    }
   }
 
   private void onPikerUp(int paramInt1, int paramInt2, int paramInt3)
@@ -488,8 +478,8 @@ public class ColorPickerView extends View
 
   private void sacaleColorBM()
   {
-    Matrix localMatrix = new Matrix();
-    WindowManager localWindowManager = (WindowManager)getContext().getSystemService("window");
+    /*Matrix localMatrix = new Matrix();
+    WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
     this.width = localWindowManager.getDefaultDisplay().getWidth();
     this.height = localWindowManager.getDefaultDisplay().getHeight();
     this.glassRadius = (this.width / 6);
@@ -500,11 +490,8 @@ public class ColorPickerView extends View
     {
       f1 = this.width / this.colorBM.getWidth();
       if (this.height <= this.pActHeight)
-        break label216;
-      f2 = (this.pActHeight - getTop()) / this.colorBM.getHeight();
-    }
-    while (true)
-    {
+        f2 = (this.pActHeight - getTop()) / this.colorBM.getHeight();
+    }else{
       localMatrix.postScale(f1, f2);
       this.colorTitleBM = Bitmap.createBitmap(this.colorTitleBM, 0, 0, this.colorTitleBM.getWidth(), this.colorTitleBM.getHeight(), localMatrix, true);
       this.colorBM = Bitmap.createBitmap(this.colorBM, 0, 0, this.colorBM.getWidth(), this.colorBM.getHeight(), localMatrix, true);
@@ -512,7 +499,7 @@ public class ColorPickerView extends View
       f1 = this.width / this.colorBM.getWidth();
       break;
       label216: f2 = this.colorBM.getHeight() / (this.pActHeight - getTop());
-    }
+    }*/
   }
 
   private void saveShotBm4SellPhone()
@@ -591,11 +578,12 @@ public class ColorPickerView extends View
 
   public int getCurPikerColor()
   {
-    if (this.currentBM == null);
-    do
+    if (this.currentBM == null)
       return 0;
-    while ((this.pickerPonit2.y > this.currentBM.getHeight()) || (this.pickerPonit2.x > this.currentBM.getWidth()));
-    return this.currentBM.getPixel(this.pickerPonit2.x, this.pickerPonit2.y);
+    if((this.pickerPonit2.y > this.currentBM.getHeight()) || (this.pickerPonit2.x > this.currentBM.getWidth()))
+      return this.currentBM.getPixel(this.currentBM.getWidth(), this.currentBM.getHeight());
+    else
+      return this.currentBM.getPixel(this.pickerPonit2.x, this.pickerPonit2.y);
   }
 
   public void hidePiker(int paramInt)
@@ -608,22 +596,19 @@ public class ColorPickerView extends View
     {
     default:
     case 1:
-    case 2:
-    case 3:
-    case 4:
-    }
-    while (true)
-    {
-      invalidate();
-      return;
       this.pickerPonit1 = null;
-      continue;
+      break;
+    case 2:
       this.pickerPonit2 = null;
-      continue;
+      break;
+    case 3:
       this.pickerPonit3 = null;
-      continue;
+      break;
+    case 4:
       this.pickerPonit4 = null;
+      break;
     }
+      invalidate();
   }
 
   protected void onDraw(Canvas paramCanvas)
@@ -636,9 +621,8 @@ public class ColorPickerView extends View
       this.currentBM = this.shotBm4SellPhone;
       paramCanvas.drawBitmap(this.colorTitleBM, 0.0F, 0.0F, this.bitmapPaint);
       paramCanvas.drawBitmap(this.sellPhoneBm, 0.0F, this.colorTitleBM.getHeight(), this.bitmapPaint);
-      label63: if (this.tempShotBM != null)
-        break label354;
-      this.tempShotBM = getDrawingCache();
+      if (this.tempShotBM != null)
+        this.tempShotBM = getDrawingCache();
       if (this.isFirshShotBm)
         this.rainbowBm = this.tempShotBM;
       if (this.tempShotBM != null)
@@ -646,34 +630,30 @@ public class ColorPickerView extends View
         invalidate();
         this.isFirshShotBm = false;
       }
-      label109: if (this.shotBM == null)
-        break label487;
-      this.doubleMoveX = (2 * this.mCurrentX);
-      this.doubleMoveY = (2 * this.mCurrentY);
-      this.glassCenterX = (this.mCurrentX - this.glassRadius);
-      this.glassCenterY = (this.mCurrentY - 2 * this.glassRadius);
-      this.sacleBmX = (this.glassRadius - this.doubleMoveX);
-      this.sacleBmY = (2 * this.glassRadius - this.doubleMoveY);
+      if (this.shotBM == null){
+        this.doubleMoveX = (2 * this.mCurrentX);
+        this.doubleMoveY = (2 * this.mCurrentY);
+        this.glassCenterX = (this.mCurrentX - this.glassRadius);
+        this.glassCenterY = (this.mCurrentY - 2 * this.glassRadius);
+        this.sacleBmX = (this.glassRadius - this.doubleMoveX);
+        this.sacleBmY = (2 * this.glassRadius - this.doubleMoveY);
+      }
       paramCanvas.translate(this.glassCenterX, this.glassCenterY);
       paramCanvas.clipPath(this.mPath);
       paramCanvas.translate(this.sacleBmX, this.sacleBmY);
       paramCanvas.drawBitmap(this.shotBM, this.mMatrix, this.bitmapPaint);
-      if (this.sacleBmX >= 0)
+      /*if (this.sacleBmX >= 0)
         break label538;
       if (this.sacleBmY >= 0)
-        break label489;
+        break label489;*/
       paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, Math.abs(this.sacleBmY) - (this.glassPikerBM.getHeight() - this.glassRadius));
-    }
-    while (true)
-    {
-      if (!this.isGroupSeleted)
-        break label639;
-      paramCanvas.drawBitmap(this.bigGroupBM, 0.0F, 0.0F, this.bitmapPaint);
-      return;
-      paramCanvas.drawBitmap(this.currentBM, 0.0F, 0.0F, this.bitmapPaint);
+    }else {
+      /*if (!this.isGroupSeleted)
+        paramCanvas.drawBitmap(this.bigGroupBM, 0.0F, 0.0F, this.bitmapPaint);
+      else*/
+        paramCanvas.drawBitmap(this.currentBM, 0.0F, 0.0F, this.bitmapPaint);
       this.currentBM = this.colorBM;
-      break label63;
-      label354: if (this.isActionDown)
+      if (this.isActionDown)
       {
         this.isActionDown = false;
         paramCanvas.drawBitmap(this.pikerBM, this.pickerPonit2.x, this.pickerPonit2.y, this.bitmapPaint);
@@ -684,22 +664,17 @@ public class ColorPickerView extends View
         paramCanvas.drawBitmap(this.pikerBM, this.pickerPonit2.x, this.pickerPonit2.y, this.bitmapPaint);
         onTouchPointUp(this.pickerPonit2.x, this.pickerPonit2.y);
         System.out.println("简单画");
-        break label109;
       }
       moveThumb(paramCanvas, this.targetX, this.targetY);
       System.out.println("动画画");
-      break label109;
-      label487: break;
-      label489: paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
-      continue;
-      label538: if (this.sacleBmY < 0)
+      paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
+      if (this.sacleBmY < 0)
       {
         paramCanvas.translate(this.glassRadius - this.glassPikerBM.getWidth() / 2 - this.sacleBmX, Math.abs(this.sacleBmY) - (this.glassPikerBM.getHeight() - this.glassRadius));
-        continue;
       }
       paramCanvas.translate(this.glassRadius - this.glassPikerBM.getWidth() / 2 - this.sacleBmX, -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
     }
-    label639: paramCanvas.drawBitmap(this.glassPikerBM, 0.0F, 0.0F, this.bitmapPaint);
+    paramCanvas.drawBitmap(this.glassPikerBM, 0.0F, 0.0F, this.bitmapPaint);
     paramCanvas.translate(this.glassPikerBM.getWidth() / 2, 9 * this.glassPikerBM.getHeight() / 23);
     this.textPaint.setColor(this.curPikerColor);
     paramCanvas.drawCircle(0.0F, 0.0F, 2 + this.glassPikerBM.getWidth() / 3, this.textPaint);
@@ -725,21 +700,19 @@ public class ColorPickerView extends View
       {
       default:
       case 0:
+        handleActionDown(j, m);
+        break;
       case 2:
+        handleActionMove(j, m);
+        break;
       case 1:
+        cleanShot();
+        handleActionUp(j, m);
+        break;
       }
-    while (true)
-    {
-      if (paramMotionEvent.getAction() == 1)
-        onPikerOutArea(j, m, this.seletedPickerIndex);
-      return true;
-      handleActionDown(j, m);
-      continue;
-      handleActionMove(j, m);
-      continue;
-      cleanShot();
-      handleActionUp(j, m);
-    }
+    if (paramMotionEvent.getAction() == 1)
+      onPikerOutArea(j, m, this.seletedPickerIndex);
+    return true;
   }
 
   protected void onTouchPoint(float paramFloat1, float paramFloat2)
@@ -824,14 +797,6 @@ public class ColorPickerView extends View
     {
     default:
     case 1:
-    case 2:
-    case 3:
-    case 4:
-    }
-    while (true)
-    {
-      invalidate();
-      return;
       localTouchArea1.setMinX(this.width / 2);
       localTouchArea1.setMaxX(this.width / 2 + this.pikerBMWidth);
       localTouchArea1.setMinY(-100 + this.pikerAraeHight / 2);
@@ -840,7 +805,8 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt - 1, localTouchArea1);
       localPoint.set(this.width / 2, -100 + this.pikerAraeHight / 2);
       this.pickerPonit1 = localPoint;
-      continue;
+      break;
+    case 2:
       TouchArea localTouchArea4 = new TouchArea();
       localTouchArea4.setMinX(this.width / 2);
       localTouchArea4.setMaxX(this.width / 2 + this.pikerBMWidth);
@@ -850,7 +816,8 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt - 1, localTouchArea4);
       localPoint.set(this.width / 2, -100 + this.pikerAraeHight / 2);
       this.pickerPonit2 = localPoint;
-      continue;
+      break;
+    case 3:
       TouchArea localTouchArea3 = new TouchArea();
       localTouchArea3.setMinX(this.width / 2);
       localTouchArea3.setMaxX(this.width / 2 + this.pikerBMWidth);
@@ -860,7 +827,8 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt - 1, localTouchArea3);
       localPoint.set(this.width / 2, -100 + this.pikerAraeHight / 2);
       this.pickerPonit3 = localPoint;
-      continue;
+      break;
+    case 4:
       TouchArea localTouchArea2 = new TouchArea();
       localTouchArea2.setMinX(this.width / 2);
       localTouchArea2.setMaxX(this.width / 2 + this.pikerBMWidth);
@@ -870,7 +838,9 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt - 1, localTouchArea2);
       localPoint.set(this.width / 2, -100 + this.pikerAraeHight / 2);
       this.pickerPonit4 = localPoint;
+      break;
     }
+    invalidate();
   }
 
   public void showPiker(int paramInt1, int paramInt2, int paramInt3)
@@ -881,14 +851,6 @@ public class ColorPickerView extends View
     {
     default:
     case 1:
-    case 2:
-    case 3:
-    case 4:
-    }
-    while (true)
-    {
-      invalidate();
-      return;
       localTouchArea1.setMinX(paramInt2);
       localTouchArea1.setMaxX(paramInt2 + this.pikerBMWidth);
       localTouchArea1.setMinY(paramInt3);
@@ -897,7 +859,8 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt1 - 1, localTouchArea1);
       localPoint.set(paramInt2, paramInt3);
       this.pickerPonit1 = localPoint;
-      continue;
+      break;
+    case 2:
       TouchArea localTouchArea4 = new TouchArea();
       localTouchArea4.setMinX(paramInt2);
       localTouchArea4.setMaxX(paramInt2 + this.pikerBMWidth);
@@ -907,7 +870,8 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt1 - 1, localTouchArea4);
       localPoint.set(paramInt2, paramInt3);
       this.pickerPonit2 = localPoint;
-      continue;
+      break;
+    case 3:
       TouchArea localTouchArea3 = new TouchArea();
       localTouchArea3.setMinX(paramInt2);
       localTouchArea3.setMaxX(paramInt2 + this.pikerBMWidth);
@@ -917,7 +881,8 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt1 - 1, localTouchArea3);
       localPoint.set(paramInt2, paramInt3);
       this.pickerPonit3 = localPoint;
-      continue;
+      break;
+    case 4:
       TouchArea localTouchArea2 = new TouchArea();
       localTouchArea2.setMinX(paramInt2);
       localTouchArea2.setMaxX(paramInt2 + this.pikerBMWidth);
@@ -927,7 +892,9 @@ public class ColorPickerView extends View
       this.touchAreaList.add(paramInt1 - 1, localTouchArea2);
       localPoint.set(paramInt2, paramInt3);
       this.pickerPonit4 = localPoint;
+      break;
     }
+      invalidate();
   }
 
   public void updatePikerPosi(Point paramPoint, int paramInt)
@@ -968,8 +935,3 @@ public class ColorPickerView extends View
     public abstract void onNoPickerSeleted();
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.my_view.ColorPickerView
- * JD-Core Version:    0.6.0
- */

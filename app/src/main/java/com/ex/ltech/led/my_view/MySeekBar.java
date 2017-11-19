@@ -2,7 +2,6 @@ package com.ex.ltech.led.my_view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -11,11 +10,11 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.SeekBar.OnSeekBarChangeListener;
-import java.io.PrintStream;
+import android.widget.SeekBar;
+
+import com.ex.ltech.led.R;
 
 public class MySeekBar extends View
 {
@@ -96,18 +95,18 @@ public class MySeekBar extends View
 
   public void init()
   {
-    this.thumbBM = BitmapFactory.decodeResource(this.mContext.getResources(), 2130903782);
+    this.thumbBM = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.thumb_2);
     this.thumbPaint = new Paint();
     this.thumbPaint.setAntiAlias(true);
     this.progressPaint = new Paint();
     this.bgPaint = new Paint();
-    this.progressPaint.setColor(-7829368);
-    this.bgPaint.setColor(-7829368);
+    /*this.progressPaint.setColor(-7829368);
+    this.bgPaint.setColor(-7829368);*/
     this.progressPaint.setAntiAlias(true);
     this.bgPaint.setAntiAlias(true);
     this.progressPaint.setStrokeWidth(dip2px(2.0F));
     this.bgPaint.setStrokeWidth(dip2px(2.0F));
-    this.progressPaint.setStyle(Paint.Style.FILL);
+    this.progressPaint.setStyle(Style.FILL);
   }
 
   public boolean isIosSeekBarStyle()
@@ -152,7 +151,7 @@ public class MySeekBar extends View
 
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
-    if (isIosSeekBarStyle())
+    /*if (isIosSeekBarStyle())
     {
       float f2 = paramMotionEvent.getX();
       paramMotionEvent.getY();
@@ -221,7 +220,7 @@ public class MySeekBar extends View
     if (paramMotionEvent.getAction() == 1)
       onUp(f1);
     this.thumbPoint.set((int)f1, this.thumbPoint.y);
-    invalidate();
+    invalidate();*/
     return true;
   }
 

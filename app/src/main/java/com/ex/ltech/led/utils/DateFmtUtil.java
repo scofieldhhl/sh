@@ -1,6 +1,5 @@
 package com.ex.ltech.led.utils;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,7 +29,7 @@ public class DateFmtUtil
 
   public static String formatTime(long paramLong)
   {
-    int i = 1000 * 60;
+    /*int i = 1000 * 60;
     int j = i * 60;
     int k = j * 24;
     long l1 = paramLong / k;
@@ -77,7 +76,8 @@ public class DateFmtUtil
       break label267;
       label451: new StringBuilder().append("").append(str3).toString();
     }
-    label475: return str1 + "小时" + str2 + "分钟后";
+    label475: return str1 + "小时" + str2 + "分钟后";*/
+    return null;
   }
 
   public static String getDD()
@@ -88,7 +88,7 @@ public class DateFmtUtil
 
   public static int getDayOfMonth()
   {
-    return Calendar.getInstance().get(5);
+    return Calendar.getInstance().get(Calendar.DATE);
   }
 
   public static String getHH()
@@ -104,12 +104,12 @@ public class DateFmtUtil
 
   public static int getHourOfDay()
   {
-    return Calendar.getInstance().get(11);
+    return Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
   }
 
   public static int getLastDayOfMonth()
   {
-    return Calendar.getInstance().getActualMaximum(5);
+    return Calendar.getInstance().getActualMaximum(Calendar.DATE);
   }
 
   public static String getMMSS(long paramLong)
@@ -173,13 +173,14 @@ public class DateFmtUtil
 
   public static int getWeekOfDate()
   {
-    int[] arrayOfInt = { 7, 1, 2, 3, 4, 5, 6 };
+    /*int[] arrayOfInt = { 7, 1, 2, 3, 4, 5, 6 };
     Calendar localCalendar = Calendar.getInstance();
     localCalendar.setTime(new Date());
     int i = -1 + localCalendar.get(7);
     if (i < 0)
       i = 0;
-    return arrayOfInt[i];
+    return arrayOfInt[i];*/
+    return -1;
   }
 
   public static String getYY()
@@ -193,8 +194,3 @@ public class DateFmtUtil
     return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Long.valueOf(paramLong));
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.utils.DateFmtUtil
- * JD-Core Version:    0.6.0
- */

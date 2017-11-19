@@ -5,12 +5,12 @@
     <attr name="height" format="dimension" />
     <attr name="isLightTheme" format="boolean" />
     <attr name="title" format="string" />
-    <attr name="navigationMode">
+    <!--<attr name="navigationMode">
         <enum name="listMode" value="1" />
         <enum name="normal" value="0" />
         <enum name="tabMode" value="2" />
-    </attr>
-    <attr name="displayOptions">
+    </attr>-->
+    <!--<attr name="displayOptions">
         <flag name="disableHome" value="0x00000020" />
         <flag name="homeAsUp" value="0x00000004" />
         <flag name="none" value="0x00000000" />
@@ -18,7 +18,7 @@
         <flag name="showHome" value="0x00000002" />
         <flag name="showTitle" value="0x00000008" />
         <flag name="useLogo" value="0x00000001" />
-    </attr>
+    </attr>-->
     <attr name="subtitle" format="string" />
     <attr name="titleTextStyle" format="reference" />
     <attr name="subtitleTextStyle" format="reference" />
@@ -53,11 +53,11 @@
     <attr name="highlightColor" format="reference|color" />
     <attr name="showThirds" format="boolean" />
     <attr name="showCircle" format="boolean" />
-    <attr name="showHandles">
+    <!--<attr name="showHandles">
         <enum name="always" value="1" />
         <enum name="changing" value="0" />
         <enum name="never" value="2" />
-    </attr>
+    </attr>-->
     <attr name="dsb_min" format="integer|dimension" />
     <attr name="dsb_max" format="integer|dimension" />
     <attr name="dsb_value" format="integer|dimension" />
@@ -151,12 +151,12 @@
     <attr name="bt_drawable_press" format="reference" />
     <attr name="bt_name" format="reference" />
     <attr name="measureWithLargestChild" format="boolean" />
-    <attr name="showDividers">
+    <!--<attr name="showDividers">
         <flag name="none" value="0x00000000" />
         <flag name="beginning" value="0x00000001" />
         <flag name="end" value="0x00000004" />
         <flag name="middle" value="0x00000002" />
-    </attr>
+    </attr>-->
     <attr name="dividerPadding" format="dimension" />
     <attr name="imageAspectRatioAdjust">
         <enum name="none" value="0" />
@@ -174,13 +174,13 @@
         <enum name="rectangle" value="1" />
         <enum name="round" value="0" />
     </attr>
-    <attr name="showAsAction">
+    <!--<attr name="showAsAction">
         <flag name="always" value="0x00000002" />
         <flag name="never" value="0x00000000" />
         <flag name="collapseActionView" value="0x00000008" />
         <flag name="ifRoom" value="0x00000001" />
         <flag name="withText" value="0x00000004" />
-    </attr>
+    </attr>-->
     <attr name="actionLayout" format="reference" />
     <attr name="actionViewClass" format="string" />
     <attr name="actionProviderClass" format="string" />
@@ -193,16 +193,7 @@
     <attr name="slidingBlock" format="reference|color" />
     <attr name="allowWidthFull" format="boolean" />
     <attr name="disableViewPager" format="boolean" />
-    <attr name="layout_widthPercent" format="string" />
-    <attr name="layout_heightPercent" format="string" />
-    <attr name="layout_marginPercent" format="string" />
-    <attr name="layout_marginLeftPercent" format="string" />
-    <attr name="layout_marginTopPercent" format="string" />
-    <attr name="layout_marginRightPercent" format="string" />
-    <attr name="layout_marginBottomPercent" format="string" />
-    <attr name="layout_marginStartPercent" format="string" />
-    <attr name="layout_marginEndPercent" format="string" />
-    <attr name="layout_textSizePercent" format="string" />
+
     <attr name="overlapAnchor" format="boolean" />
     <attr name="state_above_anchor" format="boolean" />
     <attr name="rippleColor" format="color" />
@@ -223,19 +214,21 @@
     <attr name="submitBackground" format="reference" />
     <attr name="thumb" format="reference" />
     <attr name="thumbOffset" format="dimension" />
-    <attr name="maxs" format="integer" />
-    <attr name="progressWidth" format="dimension" />
-    <attr name="arcWidth" format="dimension" />
-    <attr name="progresss" format="integer" />
-    <attr name="rotation" format="integer" />
-    <attr name="startAngle" format="integer" />
-    <attr name="sweepAngle" format="integer" />
-    <attr name="arcColor" format="color" />
-    <attr name="progressColor" format="color" />
-    <attr name="roundEdges" format="boolean" />
-    <attr name="touchInside" format="boolean" />
-    <attr name="clockwise" format="boolean" />
-    <attr name="seekArcStyle" format="reference" />
+    <declare-styleable name="SeekArc">
+        <attr name="maxs" format="integer" />
+        <attr name="progressWidth" format="dimension" />
+        <attr name="arcWidth" format="dimension" />
+        <attr name="progresss" format="integer" />
+        <attr name="rotation" format="integer" />
+        <attr name="startAngle" format="integer" />
+        <attr name="sweepAngle" format="integer" />
+        <attr name="arcColor" format="color" />
+        <attr name="progressColor" format="color" />
+        <attr name="roundEdges" format="boolean" />
+        <attr name="touchInside" format="boolean" />
+        <attr name="clockwise" format="boolean" />
+        <attr name="seekArcStyle" format="reference" />
+    </declare-styleable>
     <attr name="buttonSize" format="reference">
         <enum name="icon_only" value="2" />
         <enum name="standard" value="0" />
@@ -288,9 +281,9 @@
     <attr name="actionBarSplitStyle" format="reference" />
     <attr name="actionBarTheme" format="reference" />
     <attr name="actionBarWidgetTheme" format="reference" />
-    <attr name="actionBarSize" format="dimension">
+    <!--<attr name="actionBarSize" format="dimension">
         <enum name="wrap_content" value="0" />
-    </attr>
+    </attr>-->
     <attr name="actionBarDivider" format="reference" />
     <attr name="actionBarItemBackground" format="reference" />
     <attr name="actionMenuTextAppearance" format="reference" />
@@ -404,13 +397,13 @@
     <attr name="paddingEnd" format="dimension" />
     <attr name="theme" format="reference" />
     <attr name="backgroundTint" format="color" />
-    <attr name="backgroundTintMode">
+    <!--<attr name="backgroundTintMode">
         <enum name="multiply" value="14" />
         <enum name="screen" value="15" />
         <enum name="src_atop" value="9" />
         <enum name="src_in" value="5" />
         <enum name="src_over" value="3" />
-    </attr>
+    </attr>-->
     <attr name="circle_radius" format="dimension" />
     <attr name="center_radius" format="dimension" />
     <attr name="center_color" format="color" />

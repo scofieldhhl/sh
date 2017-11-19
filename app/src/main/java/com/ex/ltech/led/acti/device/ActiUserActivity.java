@@ -1,30 +1,19 @@
 package com.ex.ltech.led.acti.device;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.TextView;
 
-import com.ex.ltech.LogRegForget.ActLoginActivity;
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.my_view.MLImageView;
-import com.ex.ltech.led.my_view.MyAlertDialog;
-import com.ex.ltech.led.my_view.MyAlertDialog2;
-import com.ex.ltech.led.my_view.MyEditAlertDialog;
-import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.utils.NormalLoadPictrue;
 import com.soundcloud.android.crop.Crop;
 
 import java.io.File;
 
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActiUserActivity extends MyBaseActivity
 {
@@ -80,7 +69,7 @@ public class ActiUserActivity extends MyBaseActivity
 
   public void changeHead(View paramView)
   {
-    final MyAlertDialog2 localMyAlertDialog2 = new MyAlertDialog2(this);
+    /*final MyAlertDialog2 localMyAlertDialog2 = new MyAlertDialog2(this);
     localMyAlertDialog2.show();
     localMyAlertDialog2.setMyOnClickListener(new MyAlertDialog2.MyOnClickListener()
     {
@@ -97,12 +86,12 @@ public class ActiUserActivity extends MyBaseActivity
           localMyAlertDialog2.dismiss();
         }
       }
-    });
+    });*/
   }
 
   public void changeName(View paramView)
   {
-    final MyEditAlertDialog localMyEditAlertDialog = new MyEditAlertDialog(this);
+    /*final MyEditAlertDialog localMyEditAlertDialog = new MyEditAlertDialog(this);
     localMyEditAlertDialog.show();
     localMyEditAlertDialog.setMsg(2131100107);
     localMyEditAlertDialog.getWindow().clearFlags(131080);
@@ -123,12 +112,12 @@ public class ActiUserActivity extends MyBaseActivity
       {
         localMyEditAlertDialog.dismiss();
       }
-    });
+    });*/
   }
 
   public void changePsd(View paramView)
   {
-    goAct(ActResetPsd.class);
+    /*goAct(ActResetPsd.class);*/
   }
 
   public void goCarmare()
@@ -144,7 +133,7 @@ public class ActiUserActivity extends MyBaseActivity
 
   public void logOut(View paramView)
   {
-    final MyAlertDialog localMyAlertDialog = new MyAlertDialog(this);
+    /*final MyAlertDialog localMyAlertDialog = new MyAlertDialog(this);
     localMyAlertDialog.show();
     localMyAlertDialog.setTitle(R.string.tips);
     localMyAlertDialog.setMsg(R.string.msg_log_out);
@@ -169,7 +158,7 @@ public class ActiUserActivity extends MyBaseActivity
         ActiUserActivity.this.setResult(400);
         ActiUserActivity.this.finish();
       }
-    });
+    });*/
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
@@ -217,7 +206,7 @@ public class ActiUserActivity extends MyBaseActivity
     this.iv_acti_user_head = ((MLImageView)findViewById(R.id.iv_acti_user_head));
     this.tv_acti_user_name = ((TextView)findViewById(R.id.tv_acti_user_name));
     setMyTitle();
-    this.headPtah = UserFerences.getUserFerences(this).spFerences.getString("uHeadPath", "");
+    /*this.headPtah = UserFerences.getUserFerences(this).spFerences.getString("uHeadPath", "");
     this.nName = UserFerences.getUserFerences(this).spFerences.getString("user", "");
     this.tv_acti_user_name.setText(this.nName);
     if (this.headPtah.indexOf("http") != -1)
@@ -242,7 +231,7 @@ public class ActiUserActivity extends MyBaseActivity
     {
       localException.printStackTrace();
       this.iv_acti_user_head.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.log_head_6));
-    }
+    }*/
   }
 
   protected void onMenu()

@@ -300,11 +300,11 @@ public class ActNewMode extends MyBaseActivity
                 this.vo.setIsNewCreateMode(true);
                 this.vo.setType(3);
                 this.modeDataStr = this.business.gs.toJson(this.vo);
-                Intent localIntent = new Intent(this, ActNamingMode.class);
+                /*Intent localIntent = new Intent(this, ActNamingMode.class);
                 localIntent.putExtra("modeDataStr", this.modeDataStr);
                 localIntent.putExtra("modesPosi", this.modesPosi);
                 localIntent.putExtra("modesNames", this.modesNames);
-                startActivityForResult(localIntent, 1);
+                startActivityForResult(localIntent, 1);*/
                 return;
             }
         }

@@ -1,16 +1,16 @@
 package com.ex.ltech.led.acti.timing.fragment;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.ex.ltech.led.my_view.MLImageView;
 import com.ex.ltech.led.vo.ModeVo;
+
 import java.util.List;
 
 public class MyAdapter extends BaseAdapter
@@ -43,17 +43,17 @@ public class MyAdapter extends BaseAdapter
 
   public View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    Holder localHolder;
+    /*Holder localHolder;
     ModeVo localModeVo;
     label120: int i;
     if (paramView == null)
     {
       localHolder = new Holder();
       this.pct.getLayoutInflater();
-      paramView = LayoutInflater.from(this.pct).inflate(2130968836, null);
-      localHolder.iv_acti_timing_list_item_1 = ((MLImageView)paramView.findViewById(2131559393));
-      localHolder.tv_acti_timing_list_item_2 = ((TextView)paramView.findViewById(2131559394));
-      localHolder.iv_acti_timing_list_item_3 = ((ImageView)paramView.findViewById(2131559402));
+      paramView = LayoutInflater.from(this.pct).inflate(R.layout.lv_item_timing_mode, null);
+      localHolder.iv_acti_timing_list_item_1 = ((MLImageView)paramView.findViewById(R.id.iv_acti_timing_list_item_1));
+      localHolder.tv_acti_timing_list_item_2 = ((TextView)paramView.findViewById(R.id.tv_acti_timing_list_item_2));
+      localHolder.iv_acti_timing_list_item_3 = ((ImageView)paramView.findViewById(R.id.iv_acti_timing_list_item_3));
       paramView.setTag(localHolder);
       localModeVo = (ModeVo)this.itemVos.get(paramInt);
       if (localModeVo.getType() != 1)
@@ -78,7 +78,8 @@ public class MyAdapter extends BaseAdapter
       break label120;
       i = 2130903595;
       break label160;
-    }
+    }*/
+    return null;
   }
 
   static class Holder

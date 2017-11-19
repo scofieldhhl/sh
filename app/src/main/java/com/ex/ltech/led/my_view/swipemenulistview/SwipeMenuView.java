@@ -5,13 +5,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
+
 import java.util.Iterator;
 import java.util.List;
 
 public class SwipeMenuView extends LinearLayout
-  implements View.OnClickListener
+  implements OnClickListener
 {
   private SwipeMenuLayout mLayout;
   private SwipeMenuListView mListView;
@@ -40,12 +40,12 @@ public class SwipeMenuView extends LinearLayout
   {
     if (paramSwipeMenuItem.getHeight() > 0)
       setGravity(80);
-    for (LinearLayout.LayoutParams localLayoutParams = new LinearLayout.LayoutParams(paramSwipeMenuItem.getWidth(), paramSwipeMenuItem.getHeight()); ; localLayoutParams = new LinearLayout.LayoutParams(paramSwipeMenuItem.getWidth(), -1))
+    for (LayoutParams localLayoutParams = new LayoutParams(paramSwipeMenuItem.getWidth(), paramSwipeMenuItem.getHeight()); ; localLayoutParams = new LayoutParams(paramSwipeMenuItem.getWidth(), -1))
     {
       LinearLayout localLinearLayout = new LinearLayout(getContext());
       localLinearLayout.setId(paramInt);
       localLinearLayout.setGravity(17);
-      localLinearLayout.setOrientation(1);
+      localLinearLayout.setOrientation(LinearLayout.VERTICAL);
       localLinearLayout.setLayoutParams(localLayoutParams);
       localLinearLayout.setBackgroundDrawable(paramSwipeMenuItem.getBackground());
       localLinearLayout.setOnClickListener(this);

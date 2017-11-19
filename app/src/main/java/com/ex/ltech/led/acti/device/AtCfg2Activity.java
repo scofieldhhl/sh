@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.ex.ltech.led.Global;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
+
 /**
  * @Description 链接幻彩灯带
  * @time 2017/11/3
@@ -78,19 +79,13 @@ public class AtCfg2Activity extends MyBaseActivity {
     }
 
     private void loopRcPic() {
-        /*if (this.changeBg) {
+        if (this.changeBg) {
             findViewById(R.id.ic).setBackgroundResource(this.res1);
-            if (this.changeBg)
-                break label66;
-        }
-        label66:
-        for (boolean bool = true; ; bool = false) {
-            this.changeBg = bool;
-            this.handler.postDelayed(this.runnable2, 1000L);
-            return;
+        }else {
             findViewById(R.id.ic).setBackgroundResource(this.res2);
-            break;
-        }*/
+        }
+        changeBg = !changeBg;
+        this.handler.postDelayed(this.runnable2, 1000L);
     }
 
     public void cancel(View paramView) {
@@ -103,7 +98,7 @@ public class AtCfg2Activity extends MyBaseActivity {
     }
 
     public void lampBlinkSeleted(View paramView) {
-        /*if (!this.isLampBlinkSeleted) ;
+        if (!this.isLampBlinkSeleted) ;
         ImageView localImageView;
         for (boolean bool = true; ; bool = false) {
             this.isLampBlinkSeleted = bool;
@@ -115,7 +110,7 @@ public class AtCfg2Activity extends MyBaseActivity {
             return;
         }
         localImageView.setBackgroundResource(R.mipmap.next_gray_1);
-        this.tv_lamp_blink_seleted.setBackgroundResource(R.mipmap.time_no_seleted);*/
+        this.tv_lamp_blink_seleted.setBackgroundResource(R.mipmap.time_no_seleted);
     }
 
     public void next(View paramView) {

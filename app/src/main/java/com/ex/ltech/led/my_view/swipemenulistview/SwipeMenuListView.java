@@ -1,15 +1,13 @@
 package com.ex.ltech.led.my_view.swipemenulistview;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.support.v4.view.MotionEventCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.ListAdapter;
+
 import com.ex.ltech.led.my_view.pullfresh.PullableListView;
 
 public class SwipeMenuListView extends PullableListView
@@ -77,7 +75,7 @@ public class SwipeMenuListView extends PullableListView
 
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
-    if ((paramMotionEvent.getAction() != 0) && (this.mTouchView == null))
+    /*if ((paramMotionEvent.getAction() != 0) && (this.mTouchView == null))
       return super.onTouchEvent(paramMotionEvent);
     MotionEventCompat.getActionMasked(paramMotionEvent);
     switch (paramMotionEvent.getAction())
@@ -155,7 +153,7 @@ public class SwipeMenuListView extends PullableListView
     }
     if (this.mOnSwipeListener != null)
       this.mOnSwipeListener.onSwipeEnd(this.mTouchPosition);
-    paramMotionEvent.setAction(3);
+    paramMotionEvent.setAction(3);*/
     super.onTouchEvent(paramMotionEvent);
     return true;
   }

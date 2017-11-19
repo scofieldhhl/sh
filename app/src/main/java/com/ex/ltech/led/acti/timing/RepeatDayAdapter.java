@@ -1,14 +1,14 @@
 package com.ex.ltech.led.acti.timing;
 
 import android.app.Activity;
-import android.content.res.Resources;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.ex.ltech.led.vo.RepeatDayVo;
+
 import java.util.List;
 
 public class RepeatDayAdapter extends BaseAdapter
@@ -47,7 +47,7 @@ public class RepeatDayAdapter extends BaseAdapter
 
   public View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    Holder localHolder;
+    /*Holder localHolder;
     RepeatDayVo localRepeatDayVo;
     int k;
     if (paramView == null)
@@ -85,7 +85,8 @@ public class RepeatDayAdapter extends BaseAdapter
         localImageView1.setBackgroundResource(i);
         break;
       }
-    }
+    }*/
+    return null;
   }
 
   class Holder

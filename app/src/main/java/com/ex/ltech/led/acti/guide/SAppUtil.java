@@ -1,8 +1,6 @@
 package com.ex.ltech.led.acti.guide;
 
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 
 public class SAppUtil
@@ -14,7 +12,7 @@ public class SAppUtil
       int i = paramContext.getPackageManager().getPackageInfo(paramContext.getPackageName(), 0).versionCode;
       return i;
     }
-    catch (PackageManager.NameNotFoundException localNameNotFoundException)
+    catch (NameNotFoundException localNameNotFoundException)
     {
       localNameNotFoundException.printStackTrace();
     }

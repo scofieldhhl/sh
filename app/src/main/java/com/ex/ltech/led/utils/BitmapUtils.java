@@ -9,27 +9,26 @@ import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
-import android.media.ExifInterface;
 import android.net.Uri;
-import android.provider.MediaStore.Images.Media;
-import android.util.DisplayMetrics;
+import android.provider.MediaStore;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 public class BitmapUtils
 {
   public static byte[] Bitmap2Bytes(Bitmap paramBitmap)
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
-    paramBitmap.compress(Bitmap.CompressFormat.PNG, 100, localByteArrayOutputStream);
+    paramBitmap.compress(CompressFormat.PNG, 100, localByteArrayOutputStream);
     return localByteArrayOutputStream.toByteArray();
   }
 
   public static Bitmap ImageCenterCrop(Bitmap paramBitmap)
   {
-    int i = paramBitmap.getWidth();
+    /*int i = paramBitmap.getWidth();
     int j = paramBitmap.getHeight();
     int k;
     label28: label33: int m;
@@ -57,12 +56,13 @@ public class BitmapUtils
       break label33;
       m = i / 2 - k / 2;
       break label41;
-    }
+    }*/
+    return null;
   }
 
   public static Bitmap ImageCrop(Bitmap paramBitmap)
   {
-    int i = paramBitmap.getWidth();
+    /*int i = paramBitmap.getWidth();
     int j = paramBitmap.getHeight();
     int k;
     int m;
@@ -82,12 +82,13 @@ public class BitmapUtils
       break;
       m = 0;
       break label29;
-    }
+    }*/
+    return null;
   }
 
   public static Bitmap ImageCrop2(Bitmap paramBitmap, int paramInt1, int paramInt2)
   {
-    int i = paramBitmap.getWidth();
+    /*int i = paramBitmap.getWidth();
     int j = paramBitmap.getHeight();
     int k;
     if (i > j)
@@ -111,7 +112,8 @@ public class BitmapUtils
       {
       }
     }
-    return paramBitmap;
+    return paramBitmap;*/
+    return null;
   }
 
   public static Bitmap autoZoomInBM(Bitmap paramBitmap, double paramDouble1, double paramDouble2)
@@ -126,14 +128,14 @@ public class BitmapUtils
   public static Bitmap comp(Bitmap paramBitmap)
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
-    paramBitmap.compress(Bitmap.CompressFormat.JPEG, 100, localByteArrayOutputStream);
+    paramBitmap.compress(CompressFormat.JPEG, 100, localByteArrayOutputStream);
     if (localByteArrayOutputStream.toByteArray().length / 1024 > 1024)
     {
       localByteArrayOutputStream.reset();
-      paramBitmap.compress(Bitmap.CompressFormat.JPEG, 50, localByteArrayOutputStream);
+      paramBitmap.compress(CompressFormat.JPEG, 50, localByteArrayOutputStream);
     }
     ByteArrayInputStream localByteArrayInputStream = new ByteArrayInputStream(localByteArrayOutputStream.toByteArray());
-    BitmapFactory.Options localOptions = new BitmapFactory.Options();
+    Options localOptions = new Options();
     localOptions.inJustDecodeBounds = true;
     BitmapFactory.decodeStream(localByteArrayInputStream, null, localOptions);
     localOptions.inJustDecodeBounds = false;
@@ -147,7 +149,7 @@ public class BitmapUtils
         if (k <= 0)
           k = 1;
         localOptions.inSampleSize = k;
-        localOptions.inPreferredConfig = Bitmap.Config.RGB_565;
+        localOptions.inPreferredConfig = Config.RGB_565;
         return compressImage(BitmapFactory.decodeStream(new ByteArrayInputStream(localByteArrayOutputStream.toByteArray()), null, localOptions));
       }
       while ((i >= j) || (j <= 800.0F));
@@ -156,13 +158,13 @@ public class BitmapUtils
   public static Bitmap compressImage(Bitmap paramBitmap)
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
-    paramBitmap.compress(Bitmap.CompressFormat.JPEG, 100, localByteArrayOutputStream);
+    paramBitmap.compress(CompressFormat.JPEG, 100, localByteArrayOutputStream);
     int i = 100;
     while (localByteArrayOutputStream.toByteArray().length / 1024 > 100)
     {
       localByteArrayOutputStream.reset();
       i -= 10;
-      paramBitmap.compress(Bitmap.CompressFormat.JPEG, i, localByteArrayOutputStream);
+      paramBitmap.compress(CompressFormat.JPEG, i, localByteArrayOutputStream);
     }
     return BitmapFactory.decodeStream(new ByteArrayInputStream(localByteArrayOutputStream.toByteArray()), null, null);
   }
@@ -170,20 +172,20 @@ public class BitmapUtils
   public static Bitmap compressImage(Bitmap paramBitmap, int paramInt)
   {
     ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
-    paramBitmap.compress(Bitmap.CompressFormat.PNG, 100, localByteArrayOutputStream);
+    paramBitmap.compress(CompressFormat.PNG, 100, localByteArrayOutputStream);
     int i = 100;
     while ((i > 10) && (localByteArrayOutputStream.toByteArray().length / 1024 > paramInt))
     {
       localByteArrayOutputStream.reset();
       i -= 10;
-      paramBitmap.compress(Bitmap.CompressFormat.PNG, i, localByteArrayOutputStream);
+      paramBitmap.compress(CompressFormat.PNG, i, localByteArrayOutputStream);
     }
     return BitmapFactory.decodeStream(new ByteArrayInputStream(localByteArrayOutputStream.toByteArray()), null, null);
   }
 
-  public static int computeInitialSampleSize(BitmapFactory.Options paramOptions, int paramInt1, int paramInt2)
+  public static int computeInitialSampleSize(Options paramOptions, int paramInt1, int paramInt2)
   {
-    double d1 = paramOptions.outWidth;
+    /*double d1 = paramOptions.outWidth;
     double d2 = paramOptions.outHeight;
     int i;
     int j;
@@ -196,7 +198,7 @@ public class BitmapUtils
       label31: if (j >= i)
         break label84;
     }
-    label60: label84: 
+    label60: label84:
     do
     {
       return i;
@@ -208,12 +210,13 @@ public class BitmapUtils
         return 1;
     }
     while (paramInt1 == -1);
-    return j;
+    return j;*/
+    return -1;
   }
 
-  public static int computeSampleSize(BitmapFactory.Options paramOptions, int paramInt1, int paramInt2)
+  public static int computeSampleSize(Options paramOptions, int paramInt1, int paramInt2)
   {
-    int i = computeInitialSampleSize(paramOptions, paramInt1, paramInt2);
+    /*int i = computeInitialSampleSize(paramOptions, paramInt1, paramInt2);
     if (i <= 8)
     {
       j = 1;
@@ -221,7 +224,8 @@ public class BitmapUtils
         j <<= 1;
     }
     int j = 8 * ((i + 7) / 8);
-    return j;
+    return j;*/
+    return -1;
   }
 
   public static int dp2px(Context paramContext, float paramFloat)
@@ -231,8 +235,8 @@ public class BitmapUtils
 
   public static Bitmap drawableToBitmap(Drawable paramDrawable, int paramInt1, int paramInt2)
   {
-    if (paramDrawable.getOpacity() != -1);
-    for (Bitmap.Config localConfig = Bitmap.Config.ARGB_8888; ; localConfig = Bitmap.Config.RGB_565)
+    if (paramDrawable.getOpacity() != PixelFormat.OPAQUE);
+    for (Config localConfig = Config.ARGB_8888; ; localConfig = Config.RGB_565)
     {
       Bitmap localBitmap = Bitmap.createBitmap(paramInt1, paramInt2, localConfig);
       Canvas localCanvas = new Canvas(localBitmap);
@@ -258,7 +262,7 @@ public class BitmapUtils
 
   public static int getExifOrientation(String paramString)
   {
-    try
+    /*try
     {
       ExifInterface localExifInterface1 = new ExifInterface(paramString);
       localExifInterface2 = localExifInterface1;
@@ -287,12 +291,13 @@ public class BitmapUtils
     {
       while (true)
         ExifInterface localExifInterface2 = null;
-    }
+    }*/
+    return -1;
   }
 
   public static Bitmap getImageBit(String paramString)
   {
-    BitmapFactory.Options localOptions = new BitmapFactory.Options();
+    Options localOptions = new Options();
     localOptions.inJustDecodeBounds = true;
     Object localObject = BitmapFactory.decodeFile(paramString, localOptions);
     localOptions.inSampleSize = computeSampleSize(localOptions, 200, 250000);
@@ -312,8 +317,8 @@ public class BitmapUtils
 
   public static Bitmap readBitMap(Resources paramResources, int paramInt)
   {
-    BitmapFactory.Options localOptions = new BitmapFactory.Options();
-    localOptions.inPreferredConfig = Bitmap.Config.RGB_565;
+    Options localOptions = new Options();
+    localOptions.inPreferredConfig = Config.RGB_565;
     localOptions.inPurgeable = true;
     localOptions.inInputShareable = true;
     return BitmapFactory.decodeStream(paramResources.openRawResource(paramInt), null, localOptions);

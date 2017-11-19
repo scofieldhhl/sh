@@ -2,7 +2,6 @@ package com.ex.ltech.led.my_view.pullfresh;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.ListView;
 
 public class PullableListView extends ListView
@@ -25,7 +24,7 @@ public class PullableListView extends ListView
 
   public boolean canPullDown()
   {
-    int i = 1;
+    /*int i = 1;
     try
     {
       if (getCount() == 0)
@@ -45,7 +44,8 @@ public class PullableListView extends ListView
       localException.printStackTrace();
       i = 0;
     }
-    return i;
+    return i;*/
+    return false;
   }
 
   public boolean canPullUp()

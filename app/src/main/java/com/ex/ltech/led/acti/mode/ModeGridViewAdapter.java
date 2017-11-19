@@ -1,18 +1,18 @@
 package com.ex.ltech.led.acti.mode;
 
 import android.app.Activity;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.my_view.MLImageView;
 import com.ex.ltech.led.vo.ModeVo;
+
 import java.util.List;
 
 public class ModeGridViewAdapter extends BaseAdapter
@@ -46,20 +46,86 @@ public class ModeGridViewAdapter extends BaseAdapter
     return paramInt;
   }
 
-  public View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
+  public View getView(final int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    int i = 2130903724;
+      Holder localHolder;
+      ModeVo localModeVo = itemVos.get(paramInt);
+      if (paramView == null) {
+          localHolder = new Holder();
+          this.pct.getLayoutInflater();
+          paramView = LayoutInflater.from(this.pct).inflate(R.layout.lv_item_sys_inside, null);
+          localHolder.iv_acti_scene_list_item_1 = ((ImageView) paramView.findViewById(R.id.iv_acti_scene_list_item_1));
+          localHolder.tv_acti_scene_list_item_2 = ((TextView) paramView.findViewById(R.id.tv_acti_scene_list_item_2));
+          localHolder.iv_acti_scene_list_item_4 = ((ImageView) paramView.findViewById(R.id.iv_acti_scene_list_item_4));
+          localHolder.iv_acti_scene_list_item_5 = ((MLImageView) paramView.findViewById(R.id.iv_acti_scene_list_item_5));
+          paramView.setTag(localHolder);
+
+      }else {
+          localHolder = (Holder) paramView.getTag();
+      }
+      localHolder.iv_acti_scene_list_item_4.setVisibility(View.VISIBLE);
+      localHolder.iv_acti_scene_list_item_1.setBackgroundResource(localModeVo.getIvLeftRes());
+      localHolder.tv_acti_scene_list_item_2.setText(localModeVo.getTvName());
+      int m = this.pct.getResources().getColor(R.color.gray);
+      if (localModeVo.isSeleted()) {
+          localHolder.iv_acti_scene_list_item_4.setBackgroundResource(R.mipmap.no_seleted_music);
+          if (!localModeVo.isSingleSeleted())
+              m = this.pct.getResources().getColor(R.color.white);
+      }
+      paramView.setBackgroundColor(m);
+     /* localHolder.iv_acti_scene_list_item_1.setBackgroundResource(R.mipmap.rgbw_mode_add);
+      localHolder.tv_acti_scene_list_item_2.setText("");
+      localHolder.iv_acti_scene_list_item_4.setVisibility(View.GONE);
+      paramView.setBackgroundColor(this.pct.getResources().getColor(R.color.white));
+      switch (localModeVo.getType()) {
+          default:
+          case 1:
+          case 2:
+          case 3:
+      }
+      localHolder.iv_acti_scene_list_item_4.setVisibility(View.VISIBLE);
+      localHolder.tv_acti_scene_list_item_2.setText(localModeVo.getNewCreateModeName());
+      localHolder.iv_acti_scene_list_item_5.setImageBitmap(bms.get(paramInt));
+      int j = this.pct.getResources().getColor(R.color.gray);
+      if (localModeVo.isSeleted()) {
+          localHolder.iv_acti_scene_list_item_4.setBackgroundResource(R.mipmap.no_seleted_music);
+          if (!localModeVo.isSingleSeleted())
+              j = this.pct.getResources().getColor(R.color.white);
+      }
+      paramView.setBackgroundColor(j);*/
+      this.bmsIndex = (1 + this.bmsIndex);
+
+      localHolder.iv_acti_scene_list_item_4.setOnClickListener(new View.OnClickListener() {
+          public void onClick(View paramView) {
+              ModeGridViewAdapter.this.moreSeletedListener.onMoreSeleted(bmsIndex);
+          }
+      });
+      localHolder.iv_acti_scene_list_item_5.setOnClickListener(new View.OnClickListener() {
+          public void onClick(View paramView) {
+              ModeGridViewAdapter.this.singleSeletedListener.onSingleSeleted(bmsIndex);
+          }
+      });
+      localHolder.iv_acti_scene_list_item_5.setOnLongClickListener(new View.OnLongClickListener() {
+          public boolean onLongClick(View paramView) {
+              ModeGridViewAdapter.this.singleSeletedListener.onLongClick(bmsIndex);
+              return false;
+          }
+      });
+      if (paramInt == -1 + getCount())
+          localHolder.iv_acti_scene_list_item_5.setOnLongClickListener(null);
+      return paramView;
+    /*int i = 2130903724;
     Holder localHolder;
     ModeVo localModeVo;
     if (paramView == null)
     {
       localHolder = new Holder();
       this.pct.getLayoutInflater();
-      paramView = LayoutInflater.from(this.pct).inflate(2130968835, null);
-      localHolder.iv_acti_scene_list_item_1 = ((ImageView)paramView.findViewById(2131559401));
-      localHolder.tv_acti_scene_list_item_2 = ((TextView)paramView.findViewById(2131559312));
-      localHolder.iv_acti_scene_list_item_4 = ((ImageView)paramView.findViewById(2131559311));
-      localHolder.iv_acti_scene_list_item_5 = ((MLImageView)paramView.findViewById(2131559310));
+      paramView = LayoutInflater.from(this.pct).inflate(R.layout.lv_item_sys_inside, null);
+      localHolder.iv_acti_scene_list_item_1 = ((ImageView)paramView.findViewById(R.id.iv_acti_scene_list_item_1));
+      localHolder.tv_acti_scene_list_item_2 = ((TextView)paramView.findViewById(R.id.tv_acti_scene_list_item_2));
+      localHolder.iv_acti_scene_list_item_4 = ((ImageView)paramView.findViewById(R.id.iv_acti_scene_list_item_4));
+      localHolder.iv_acti_scene_list_item_5 = ((MLImageView)paramView.findViewById(R.id.iv_acti_scene_list_item_5));
       paramView.setTag(localHolder);
       localModeVo = (ModeVo)this.itemVos.get(paramInt);
     }
@@ -70,21 +136,21 @@ public class ModeGridViewAdapter extends BaseAdapter
     case 2:
       while (true)
       {
-        localHolder.iv_acti_scene_list_item_4.setOnClickListener(new View.OnClickListener(paramInt)
+        localHolder.iv_acti_scene_list_item_4.setOnClickListener(new OnClickListener(paramInt)
         {
           public void onClick(View paramView)
           {
             ModeGridViewAdapter.this.moreSeletedListener.onMoreSeleted(this.val$i);
           }
         });
-        localHolder.iv_acti_scene_list_item_5.setOnClickListener(new View.OnClickListener(paramInt)
+        localHolder.iv_acti_scene_list_item_5.setOnClickListener(new OnClickListener(paramInt)
         {
           public void onClick(View paramView)
           {
             ModeGridViewAdapter.this.singleSeletedListener.onSingleSeleted(this.val$i);
           }
         });
-        localHolder.iv_acti_scene_list_item_5.setOnLongClickListener(new View.OnLongClickListener(paramInt)
+        localHolder.iv_acti_scene_list_item_5.setOnLongClickListener(new OnLongClickListener(paramInt)
         {
           public boolean onLongClick(View paramView)
           {
@@ -140,7 +206,8 @@ public class ModeGridViewAdapter extends BaseAdapter
       break;
       i = 2130903595;
       break label455;
-    }
+    }*/
+
   }
 
   public void setMoreSeletedListener(ActMode.MoreSeletedListener paramMoreSeletedListener)
@@ -165,8 +232,3 @@ public class ModeGridViewAdapter extends BaseAdapter
     }
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.mode.ModeGridViewAdapter
- * JD-Core Version:    0.6.0
- */

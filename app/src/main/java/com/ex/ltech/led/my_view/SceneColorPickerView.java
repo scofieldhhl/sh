@@ -1,25 +1,21 @@
 package com.ex.ltech.led.my_view;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.vo.TouchArea;
-import java.io.PrintStream;
 
 public class SceneColorPickerView extends View
 {
@@ -120,7 +116,7 @@ public class SceneColorPickerView extends View
 
   private void initColorArea()
   {
-    this.pikerBM = BitmapFactory.decodeResource(getResources(), 2130903071);
+    this.pikerBM = BitmapFactory.decodeResource(getResources(), R.mipmap.area_1);
     this.colorAreaHeiht = this.colorBM.getHeight();
     this.pickerPonit = new Point(this.screenWidth / 2, this.topBarHeight + this.colorAreaHeiht / 2);
     this.thumbX = this.pickerPonit.x;
@@ -129,12 +125,12 @@ public class SceneColorPickerView extends View
 
   private void initGlobal()
   {
-    this.generalP = new Paint();
+    /*this.generalP = new Paint();
     this.generalP.setAntiAlias(true);
-    WindowManager localWindowManager = (WindowManager)getContext().getSystemService("window");
+    WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
     this.screenHeight = localWindowManager.getDefaultDisplay().getHeight();
     this.screenWidth = localWindowManager.getDefaultDisplay().getWidth();
-    this.colorBM = BitmapFactory.decodeResource(getResources(), 2130903617);
+    this.colorBM = BitmapFactory.decodeResource(getResources(), R.mipmap.piccolor_half_screen);
     float f1;
     int i;
     float f2;
@@ -155,7 +151,7 @@ public class SceneColorPickerView extends View
       f1 = this.colorBM.getWidth() / this.screenWidth;
       break;
       label209: f2 = this.colorBM.getHeight() / i;
-    }
+    }*/
   }
 
   private void initTopBar()
@@ -166,10 +162,10 @@ public class SceneColorPickerView extends View
     this.colorP.setColor(this.colorBM.getPixel(this.screenWidth / 2, this.topBarHeight + this.colorAreaHeiht / 2));
     this.textP = new Paint();
     this.textP.setAntiAlias(true);
-    this.textP.setColor(-16777216);
+//    this.textP.setColor(-16777216);
     this.textP.setTextSize(30.0F);
     this.ovalP = new Paint();
-    this.ovalP.setStyle(Paint.Style.FILL);
+    this.ovalP.setStyle(Style.FILL);
     this.ovalP.setColor(-1);
     this.ovalP.setAntiAlias(true);
   }
@@ -229,12 +225,12 @@ public class SceneColorPickerView extends View
   protected void onDraw(Canvas paramCanvas)
   {
     super.onDraw(paramCanvas);
-    if (this.pActHeight == -1);
+    /*if (this.pActHeight == -1);
     do
       return;
     while (isInEditMode());
     drawColorArea(paramCanvas);
-    System.out.println("onDraw");
+    System.out.println("onDraw");*/
   }
 
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
@@ -274,7 +270,7 @@ public class SceneColorPickerView extends View
         invalidate();
       case 1:
       }
-    do
+    /*do
     {
       return true;
       if (this.listener != null)
@@ -286,7 +282,7 @@ public class SceneColorPickerView extends View
     }
     while (this.listener == null);
     this.listener.onPikerXYChange(this.nowColor);
-    this.listener.onRgbChange(this.strR, this.strG, this.strB);
+    this.listener.onRgbChange(this.strR, this.strG, this.strB);*/
     return true;
   }
 

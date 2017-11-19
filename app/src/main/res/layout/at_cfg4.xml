@@ -8,7 +8,7 @@
     <include layout="@layout/acti_title_view" />
 
     <com.ex.ltech.led.my_view.SecondArc
-        android:id="@id/sb_act_outlet_led"
+        android:id="@+id/sb_act_outlet_led"
         android:layout_width="220.0dip"
         android:layout_height="220.0dip"
         android:layout_centerInParent="true"
@@ -25,7 +25,7 @@
         seekarc:touchInside="true" />
 
     <TextView
-        android:id="@id/second"
+        android:id="@+id/second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -34,7 +34,7 @@
         android:textSize="70.0dip" />
 
     <TextView
-        android:id="@id/small_second"
+        android:id="@+id/small_second"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/second"
@@ -47,7 +47,7 @@
         android:textSize="20.0dip" />
 
     <TextView
-        android:id="@id/info"
+        android:id="@+id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/sb_act_outlet_led"
@@ -58,7 +58,7 @@
         android:textSize="18.0dip" />
 
     <Button
-        android:id="@id/device_connet"
+        android:id="@+id/device_connet"
         android:layout_width="282.0dip"
         android:layout_height="50.0dip"
         android:layout_alignParentBottom="true"
@@ -70,7 +70,7 @@
         android:background="@mipmap/cgf_cancel2" />
 
     <ImageView
-        android:id="@id/iv_cfg_ok"
+        android:id="@+id/iv_cfg_ok"
         android:layout_width="80.0dip"
         android:layout_height="80.0dip"
         android:layout_centerInParent="true"
@@ -78,7 +78,7 @@
         android:visibility="gone" />
 
     <ImageView
-        android:id="@id/iv_cfg_no_ok"
+        android:id="@+id/iv_cfg_no_ok"
         android:layout_width="80.0dip"
         android:layout_height="80.0dip"
         android:layout_centerInParent="true"
@@ -86,13 +86,13 @@
         android:visibility="gone" />
 
     <ImageView
-        android:id="@id/center"
+        android:id="@+id/center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
 
     <ImageView
-        android:id="@id/iv_bottom_left"
+        android:id="@+id/iv_bottom_left"
         android:layout_width="131.0dip"
         android:layout_height="40.0dip"
         android:layout_alignParentBottom="true"
@@ -104,7 +104,7 @@
         android:visibility="gone" />
 
     <ImageView
-        android:id="@id/iv_bottom_right"
+        android:id="@+id/iv_bottom_right"
         android:layout_width="131.0dip"
         android:layout_height="40.0dip"
         android:layout_alignParentBottom="true"

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/bg" android:background="@drawable/shap6" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:gravity="center" android:id="@id/add_device" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/add_smart_device" />
-    <TextView android:gravity="center" android:background="#ffa8a8a8" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <TextView android:gravity="center" android:id="@id/add_light" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/add_smart_light" />
-</LinearLayout>

@@ -1,7 +1,6 @@
 package com.ex.ltech.led.my_view.swipemenulistview;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 
 public class SwipeMenuItem

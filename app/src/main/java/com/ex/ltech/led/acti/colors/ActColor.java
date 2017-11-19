@@ -1,9 +1,6 @@
 package com.ex.ltech.led.acti.colors;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,26 +14,23 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
-import com.ex.ltech.led.AtClip;
 import com.ex.ltech.led.BaseBusiness;
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.my_view.ColorPickerView;
 import com.ex.ltech.led.my_view.MySeekBar;
-import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.utils.FileUtil;
 import com.indris.material.RippleView;
+import com.skydoves.colorpickerview.ColorPickerView;
 import com.soundcloud.android.crop.Crop;
 
 import java.io.File;
 
 public class ActColor extends MyBaseActivity
-  implements View.OnClickListener, SeekBar.OnSeekBarChangeListener, ColorPickerView.OnColorChangedListener, MySeekBar.onMySBtouchListener
+  implements View.OnClickListener, SeekBar.OnSeekBarChangeListener, MySeekBar.onMySBtouchListener
 {
   int SHOT_REQ_CODE = 1;
   private BaseBusiness baseBusiness;
@@ -95,7 +89,7 @@ public class ActColor extends MyBaseActivity
       {
         ActColor.this.sb_color_acti_1.setProgress(100);
         System.out.println(ActColor.this.business.getPikerY4Xml("2") + "噢噢噢");
-        ActColor.this.sb_color_acti_1.setProgressColor(ActColor.this.color_picker_view.getCurPikerColor());
+//        ActColor.this.sb_color_acti_1.setProgressColor(ActColor.this.color_picker_view.getCurPikerColor());
       }
     }
     , 100L);
@@ -109,7 +103,7 @@ public class ActColor extends MyBaseActivity
     localLayoutParams.addRule(12);
     this.rl_acti_color_parent.addView(this.sonView, localLayoutParams);
     this.color_picker_view = ((ColorPickerView)findViewById(R.id.color_picker_view));
-    this.color_picker_view.setOnColorChangedListener(this);
+//    this.color_picker_view.setOnColorChangedListener(this);
     this.btn_acti_color_son_light_1 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_1));
     this.btn_acti_color_son_light_2 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_2));
     this.btn_acti_color_son_light_3 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_3));
@@ -130,18 +124,15 @@ public class ActColor extends MyBaseActivity
 
   private void handleCrop(int paramInt, Intent paramIntent)
   {
-    /*if (paramInt == -1)
+    if (paramInt == -1)
     {
       this.business.saveBgType("gallery");
       this.business.saveBgPath(Crop.getOutput(paramIntent).toString());
-      this.color_picker_view.setSellPhoneBm(this.business.autoZoomInBM(BitmapUtils.getBitmapFromUri(this, Crop.getOutput(paramIntent)), this.color_picker_view.width, this.color_picker_view.width));
+//      this.color_picker_view.setSellPhoneBm(this.business.autoZoomInBM(BitmapUtils.getBitmapFromUri(this, Crop.getOutput(paramIntent)), this.color_picker_view.width, this.color_picker_view.width));
       this.myPhoneExist = true;
       this.myPhoneIsShow = true;
-    }
-    do
-      return;
-    while (paramInt != 404);
-    Toast.makeText(this, Crop.getError(paramIntent).getMessage(), Toast.LENGTH_SHORT).show();*/
+    }else if(paramInt != 404)
+        Toast.makeText(this, Crop.getError(paramIntent).getMessage(), Toast.LENGTH_SHORT).show();
   }
 
   private void init()
@@ -149,9 +140,9 @@ public class ActColor extends MyBaseActivity
     this.business = new Business(this);
     this.baseBusiness = new BaseBusiness(this);
     this.popY = (1470 * getWindowManager().getDefaultDisplay().getHeight() / 1920);
-    this.bussiness = new CmdDateBussiness(this, Main.deviceVo.getPwd());
+    /*this.bussiness = new CmdDateBussiness(this, Main.deviceVo.getPwd());
     this.manager = SocketManager.instance();
-    this.manager.ip = Main.deviceVo.getIp();
+    this.manager.ip = Main.deviceVo.getIp();*/
   }
 
   private void setListener()
@@ -170,7 +161,7 @@ public class ActColor extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(R.string.color);
-    setDeviceTextRes(Main.deviceVo.getDeviceName());
+//    setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
   public void addPanel(View paramView)
@@ -183,48 +174,40 @@ public class ActColor extends MyBaseActivity
   {
     findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
-    if (this.isRbgLamp);
-    for (String str = "panel11"; ; str = "panel1")
-    {
+    String str = "panel11";
+    if (this.isRbgLamp)
+      str = "panel1";
       startActivity(localIntent.putExtra("type", str));
-      return;
-    }
   }
 
   public void addPanel2(View paramView)
   {
     findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
-    if (this.isRbgLamp);
-    for (String str = "panel22"; ; str = "panel2")
-    {
+    String str = "panel22";
+    if (this.isRbgLamp)
+      str = "panel2";
       startActivity(localIntent.putExtra("type", str));
-      return;
-    }
   }
 
   public void addPanel3(View paramView)
   {
     findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
-    if (this.isRbgLamp);
-    for (String str = "panel33"; ; str = "panel3")
-    {
-      startActivity(localIntent.putExtra("type", str));
-      return;
-    }
+    String str = "panel33";
+    if (this.isRbgLamp)
+      str = "panel3";
+    startActivity(localIntent.putExtra("type", str));
   }
 
   public void addPanel4(View paramView)
   {
     findViewById(R.id.rl_add_panel).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
-    if (this.isRbgLamp);
-    for (String str = "panel44"; ; str = "panel4")
-    {
+    String str = "panel44";
+    if (this.isRbgLamp)
+      str = "panel4";
       startActivity(localIntent.putExtra("type", str));
-      return;
-    }
   }
 
   public void addRc(View paramView)
@@ -237,24 +220,21 @@ public class ActColor extends MyBaseActivity
   {
     findViewById(R.id.rl_add_rc).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
-    if (this.isRbgLamp);
-    for (String str = "rc11"; ; str = "rc1")
-    {
-      startActivity(localIntent.putExtra("type", str));
-      return;
-    }
+    String str = "rc11";
+    if (this.isRbgLamp)
+      str = "rc1";
+    startActivity(localIntent.putExtra("type", str));
   }
 
   public void addRc2(View paramView)
   {
     findViewById(R.id.rl_add_rc).setVisibility(View.GONE);
     Intent localIntent = new Intent(this, AtPanelLearnActivity.class);
-    if (this.isRbgLamp);
-    for (String str = "rc22"; ; str = "rc2")
-    {
-      startActivity(localIntent.putExtra("type", str));
-      return;
+    String str = "rc22";
+    if (this.isRbgLamp){
+      str = "rc2";
     }
+    startActivity(localIntent.putExtra("type", str));
   }
 
   public void addView(View paramView)
@@ -304,7 +284,7 @@ public class ActColor extends MyBaseActivity
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
-    if ((-1 == paramInt2) && (paramInt1 == this.SHOT_REQ_CODE))
+    /*if ((-1 == paramInt2) && (paramInt1 == this.SHOT_REQ_CODE))
       new Thread()
       {
         public void run()
@@ -330,7 +310,7 @@ public class ActColor extends MyBaseActivity
           });
         }
       }
-      .start();
+      .start();*/
     /*if ((paramInt1 == 9162) && (paramInt2 == -1))
       startActivityForResult(new Intent(this, AtClip.class).putExtra("OP_CLIP_TYPE", "OP_CLIP_TYPE_GRALLRY").putExtra("OP_CLIP_IC_URI_KEY", paramIntent.getData().toString()).putExtra("OP_CLIP_IC_FILE_PATH_KEY", this.currentFile.getPath()).putExtra("OP_CLIP_VIEW_MAX_WIDTH_KEY", this.color_picker_view.width), 0);
     while (true)
@@ -425,7 +405,7 @@ public class ActColor extends MyBaseActivity
     , 400L);*/
   }
 
-  public void onColorChange(int paramInt)
+  /*public void onColorChange(int paramInt)
   {
     this.sb_color_acti_1.setProgressColor(paramInt);
   }
@@ -441,11 +421,12 @@ public class ActColor extends MyBaseActivity
     this.blue = paramInt3;
     this.bright = 255;
     this.manager.postTask(this.bussiness.getColorCmd(210, this.bright, paramInt1, paramInt2, paramInt3, 0));
-  }
+  }*/
 
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
+    setContentView(R.layout.acti_color2);
   }
 
   protected void onDestroy()
@@ -532,163 +513,123 @@ public class ActColor extends MyBaseActivity
   public void setLightNum(int paramInt)
   {
     /*this.lightNum = paramInt;
-    switch (paramInt)
-    {
-    default:
-      return;
-    case 1:
-      if (this.business.getPikerONOff4Xml("1"))
-        this.color_picker_view.showPiker(1, this.business.getPikerX4Xml("1"), this.business.getPikerY4Xml("1"));
-      while (true)
-      {
+    switch (paramInt) {
+      default:
+        break;
+      case 1:
+        if (this.business.getPikerONOff4Xml("1"))
+          this.color_picker_view.showPiker(1, this.business.getPikerX4Xml("1"), this.business.getPikerY4Xml("1"));
+        else {
+          this.color_picker_view.showPiker(1);
+          this.business.savePikerX2Xml("1", this.color_picker_view.pickerX1);
+          this.business.savePikerY2Xml("1", -100 + this.color_picker_view.pikerAraeHight);
+        }
         this.business.savePikerONOff2Xml("1", true);
-        return;
-        this.color_picker_view.showPiker(1);
-        this.business.savePikerX2Xml("1", this.color_picker_view.pickerX1);
-        this.business.savePikerY2Xml("1", -100 + this.color_picker_view.pikerAraeHight);
-      }
-    case 2:
-      if (this.business.getPikerONOff4Xml("2"))
-        this.color_picker_view.showPiker(2, this.business.getPikerX4Xml("2"), this.business.getPikerY4Xml("2"));
-      while (true)
-      {
+        break;
+      case 2:
+        if (this.business.getPikerONOff4Xml("2"))
+          this.color_picker_view.showPiker(2, this.business.getPikerX4Xml("2"), this.business.getPikerY4Xml("2"));
+        else {
+          this.color_picker_view.showPiker(2);
+          this.business.savePikerX2Xml("2", this.color_picker_view.pickerX2);
+          this.business.savePikerY2Xml("2", -100 + this.color_picker_view.pikerAraeHight);
+        }
         this.business.savePikerONOff2Xml("2", true);
-        return;
-        this.color_picker_view.showPiker(2);
-        this.business.savePikerX2Xml("2", this.color_picker_view.pickerX2);
-        this.business.savePikerY2Xml("2", -100 + this.color_picker_view.pikerAraeHight);
-      }
-    case 3:
-      if (this.business.getPikerONOff4Xml("3"))
-        this.color_picker_view.showPiker(3, this.business.getPikerX4Xml("3"), this.business.getPikerY4Xml("3"));
-      while (true)
-      {
+        break;
+      case 3:
+        if (this.business.getPikerONOff4Xml("3"))
+          this.color_picker_view.showPiker(3, this.business.getPikerX4Xml("3"), this.business.getPikerY4Xml("3"));
+        else {
+          this.color_picker_view.showPiker(3);
+          this.business.savePikerX2Xml("3", this.color_picker_view.pickerX3);
+          this.business.savePikerY2Xml("3", -100 + this.color_picker_view.pikerAraeHight);
+        }
         this.business.savePikerONOff2Xml("3", true);
-        return;
-        this.color_picker_view.showPiker(3);
-        this.business.savePikerX2Xml("3", this.color_picker_view.pickerX3);
-        this.business.savePikerY2Xml("3", -100 + this.color_picker_view.pikerAraeHight);
-      }
-    case 4:
-    }
-    if (this.business.getPikerONOff4Xml("4"))
-      this.color_picker_view.showPiker(4, this.business.getPikerX4Xml("4"), this.business.getPikerY4Xml("4"));
-    while (true)
-    {
-      this.business.savePikerONOff2Xml("4", true);
-      return;
-      this.color_picker_view.showPiker(4);
-      this.business.savePikerX2Xml("4", this.color_picker_view.pickerX4);
-      this.business.savePikerY2Xml("4", -100 + this.color_picker_view.pikerAraeHight);
+        break;
+      case 4:
+        if (this.business.getPikerONOff4Xml("4"))
+          this.color_picker_view.showPiker(4, this.business.getPikerX4Xml("4"), this.business.getPikerY4Xml("4"));
+        else {
+          this.color_picker_view.showPiker(4);
+          this.business.savePikerX2Xml("4", this.color_picker_view.pickerX4);
+          this.business.savePikerY2Xml("4", -100 + this.color_picker_view.pikerAraeHight);
+        }
+        this.business.savePikerONOff2Xml("4", true);
+        break;
     }*/
   }
 
   public void setPikerView()
   {
-    /*if (this.isInitPikerView)
+    if (this.isInitPikerView)
       return;
-    String str1 = SharedPreferencesUtil.queryValue(DeviceListActivity.deviceMacAddress + "lampType");
-    label72: int i;
-    label74: label100: String str2;
-    label212: int j;
-    switch (str1.hashCode())
+    this.isInitPikerView = true;
+    init();
+    setMyTitle();
+    findView();
+    setListener();
+//    this.color_picker_view.setpActHeight(Main.sonActHeightWithouTitle);
+    setLightNum(2);
+    /*this.handler.postDelayed(new Runnable()
+                             {
+                               public void run()
+                               {
+                                 if ((ActColor.this.business.getBgType().equals("camare")) && (new File(ActColor.this.business.getBgPath()).isFile()))
+                                 {
+                                   Bitmap localBitmap2 = ActColor.this.business.autoZoomInBM(BitmapFactory.decodeFile(ActColor.this.business.getBgPath()), ActColor.this.color_picker_view.width, ActColor.this.color_picker_view.width);
+                                   int j = BitmapUtils.getExifOrientation(ActColor.this.business.getBgPath());
+                                   if ((j == 90) || (j == 180) || (j == 270))
+                                   {
+                                     Matrix localMatrix2 = new Matrix();
+                                     localMatrix2.postRotate(j);
+                                     localBitmap2 = Bitmap.createBitmap(localBitmap2, 0, 0, localBitmap2.getWidth(), localBitmap2.getHeight(), localMatrix2, true);
+                                   }
+                                   ActColor.this.color_picker_view.setSellPhoneBm(localBitmap2);
+                                 }
+                                 if ((ActColor.this.business.getBgType().equals("gallery")) && (new File(ActColor.this.business.getBgPath()).isFile()))
+                                 {
+                                   Bitmap localBitmap1 = ActColor.this.business.autoZoomInBM(BitmapFactory.decodeFile(ActColor.this.business.getBgPath()), ActColor.this.color_picker_view.width, ActColor.this.color_picker_view.width);
+                                   int i = BitmapUtils.getExifOrientation(ActColor.this.business.getBgPath());
+                                   if ((i == 90) || (i == 180) || (i == 270))
+                                   {
+                                     Matrix localMatrix1 = new Matrix();
+                                     localMatrix1.postRotate(i);
+                                     localBitmap1 = Bitmap.createBitmap(localBitmap1, 0, 0, localBitmap1.getWidth(), localBitmap1.getHeight(), localMatrix1, true);
+                                   }
+                                   ActColor.this.color_picker_view.setSellPhoneBm(localBitmap1);
+                                 }
+                                 if (ActColor.this.business.getBgType().equals("rainbow"));
+                               }
+                             }
+            , 10L);*/
+//    String str1 = SharedPreferencesUtil.queryValue(DeviceListActivity.deviceMacAddress + "lampType");
+//    String str2 = SharedPreferencesUtil.queryValue(DeviceListActivity.deviceMacAddress + "lampType");
+
+    /*switch (str1.hashCode())
     {
-    default:
-      i = -1;
-      switch (i)
-      {
       default:
-        this.isInitPikerView = true;
-        init();
-        setMyTitle();
-        findView();
-        setListener();
-        this.color_picker_view.setpActHeight(Main.sonActHeightWithouTitle);
-        setLightNum(2);
-        this.handler.postDelayed(new Runnable()
-        {
-          public void run()
-          {
-            if ((ActColor.this.business.getBgType().equals("camare")) && (new File(ActColor.this.business.getBgPath()).isFile()))
-            {
-              Bitmap localBitmap2 = ActColor.this.business.autoZoomInBM(BitmapFactory.decodeFile(ActColor.this.business.getBgPath()), ActColor.this.color_picker_view.width, ActColor.this.color_picker_view.width);
-              int j = BitmapUtils.getExifOrientation(ActColor.this.business.getBgPath());
-              if ((j == 90) || (j == 180) || (j == 270))
-              {
-                Matrix localMatrix2 = new Matrix();
-                localMatrix2.postRotate(j);
-                localBitmap2 = Bitmap.createBitmap(localBitmap2, 0, 0, localBitmap2.getWidth(), localBitmap2.getHeight(), localMatrix2, true);
-              }
-              ActColor.this.color_picker_view.setSellPhoneBm(localBitmap2);
-            }
-            if ((ActColor.this.business.getBgType().equals("gallery")) && (new File(ActColor.this.business.getBgPath()).isFile()))
-            {
-              Bitmap localBitmap1 = ActColor.this.business.autoZoomInBM(BitmapFactory.decodeFile(ActColor.this.business.getBgPath()), ActColor.this.color_picker_view.width, ActColor.this.color_picker_view.width);
-              int i = BitmapUtils.getExifOrientation(ActColor.this.business.getBgPath());
-              if ((i == 90) || (i == 180) || (i == 270))
-              {
-                Matrix localMatrix1 = new Matrix();
-                localMatrix1.postRotate(i);
-                localBitmap1 = Bitmap.createBitmap(localBitmap1, 0, 0, localBitmap1.getWidth(), localBitmap1.getHeight(), localMatrix1, true);
-              }
-              ActColor.this.color_picker_view.setSellPhoneBm(localBitmap1);
-            }
-            if (ActColor.this.business.getBgType().equals("rainbow"));
-          }
-        }
-        , 10L);
-        str2 = SharedPreferencesUtil.queryValue(DeviceListActivity.deviceMacAddress + "lampType");
-        switch (str2.hashCode())
-        {
-        default:
-          j = -1;
-        case 112845:
-        case 3498314:
-        }
       case 0:
-      case 1:
-      case 2:
-      }
-    case 0:
-    case 112845:
-    case 3498314:
-    }
-    while (true)
-      switch (j)
-      {
-      default:
-        return;
-      case 0:
-        showRgbSeekBarStatus();
-        return;
-        if (!str1.equals(""))
-          break label72;
-        i = 0;
-        break label74;
-        if (!str1.equals("rgb"))
-          break label72;
-        i = 1;
-        break label74;
-        if (!str1.equals("rgbw"))
-          break label72;
-        i = 2;
-        break label74;
         setContentView(R.layout.acti_color);
-        break label100;
+        break ;
+      case 112845:*/
         setContentView(R.layout.acti_color2);
-        break label100;
+        /*break;
+      case 3498314:
         setContentView(R.layout.acti_color);
-        break label100;
-        if (!str2.equals("rgb"))
-          break label212;
-        j = 0;
-        continue;
-        if (!str2.equals("rgbw"))
-          break label212;
-        j = 1;
-      case 1:
-      }
-    showRgbwSeekBarStatus();*/
+        break;
+    }*/
+
+    /*switch (str2.hashCode())
+    {
+      default:
+      case 112845:*/
+        showRgbSeekBarStatus();
+        /*break;
+      case 3498314:
+        showRgbwSeekBarStatus();
+        break;
+    }*/
+
   }
 
   public void showRgbSeekBarStatus()

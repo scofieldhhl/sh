@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ripple="http://schemas.android.com/apk/res-auto"
-    android:id="@id/rl_titlerl_title"
+    android:id="@+id/rl_titlerl_title"
     android:layout_width="fill_parent"
     android:layout_height="50.0dip"
     android:background="#fff1f1f1">
 
     <com.indris.material.RippleView
-        android:id="@id/btn_title_view_menu"
+        android:id="@+id/btn_title_view_menu"
         android:layout_width="30.0dip"
         android:layout_height="30.0dip"
         android:layout_alignParentLeft="true"
@@ -18,7 +18,7 @@
         ripple:rippleColor="#ffe0e0e0" />
 
     <TextView
-        android:id="@id/tv_title_device_name"
+        android:id="@+id/tv_title_device_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -31,7 +31,7 @@
         android:textSize="13.0dip" />
 
     <TextView
-        android:id="@id/tv_title_view_title"
+        android:id="@+id/tv_title_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -45,7 +45,7 @@
         android:textSize="20.0sp" />
 
     <com.indris.material.RippleView
-        android:id="@id/btn_title_view_edit"
+        android:id="@+id/btn_title_view_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -57,7 +57,7 @@
         ripple:rippleColor="#ffe0e0e0" />
 
     <TextView
-        android:id="@id/tv_title_view_edit"
+        android:id="@+id/tv_title_view_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -68,7 +68,7 @@
         android:textSize="16.0sp" />
 
     <ImageView
-        android:id="@id/iv_bottom_line"
+        android:id="@+id/iv_bottom_line"
         android:layout_width="fill_parent"
         android:layout_height="1.0dip"
         android:layout_alignParentBottom="true"

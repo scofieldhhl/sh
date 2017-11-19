@@ -3,7 +3,7 @@ package com.ex.ltech.led.acti.guide;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.os.Build.VERSION;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 public class PrefConstants
@@ -22,7 +22,7 @@ public class PrefConstants
 
   public static void putAppPrefInt(Context paramContext, String paramString, int paramInt)
   {
-    SharedPreferences.Editor localEditor;
+    Editor localEditor;
     if (paramContext != null)
     {
       localEditor = PreferenceManager.getDefaultSharedPreferences(paramContext).edit();

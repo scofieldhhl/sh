@@ -2,28 +2,22 @@ package com.ex.ltech.led.acti.main;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ex.ltech.led.R;
-import com.ex.ltech.led.UserFerences;
-import com.ex.ltech.led.my_view.ColorSeletedView;
+import com.ex.ltech.led.acti.mode.ColorSeletedView;
 import com.ex.ltech.led.my_view.MLImageView;
 import com.ex.ltech.led.vo.CtSceneVo;
 import com.ex.ltech.led.vo.ModeVo;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import io.xlink.wifi.js.bean.Device;
+
 
 public class DeviceListAdapter extends BaseAdapter
 {
@@ -31,7 +25,7 @@ public class DeviceListAdapter extends BaseAdapter
   ArrayList<Integer> cols = new ArrayList();
   Bitmap ctBm;
   Bitmap defaultBm;
-  private List<Device> devices;
+//  private List<Device> devices;
   Bitmap hongwaiBm;
   RelativeLayout.LayoutParams layoutParams;
   Bitmap ledBm;
@@ -44,7 +38,7 @@ public class DeviceListAdapter extends BaseAdapter
   Bitmap plugOffline;
   Bitmap remoteOffline;
 
-  public DeviceListAdapter(Activity paramActivity, ArrayList<Device> paramArrayList)
+  /*public DeviceListAdapter(Activity paramActivity, ArrayList<Device> paramArrayList)
   {
     this.mContext = paramActivity;
     this.devices = paramArrayList;
@@ -60,7 +54,7 @@ public class DeviceListAdapter extends BaseAdapter
     this.plugOffline = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.plug_offline);
     this.remoteOffline = BitmapFactory.decodeResource(this.mContext.getResources(), R.mipmap.remote_offline);
     this.layoutParams = new RelativeLayout.LayoutParams(-2, -2);
-  }
+  }*/
 
   private boolean isZh()
   {
@@ -70,7 +64,7 @@ public class DeviceListAdapter extends BaseAdapter
     return (str2 + "_" + str1).equals("zh_CN");
   }
 
-  public int getCount()
+  /*public int getCount()
   {
     return this.devices.size();
   }
@@ -78,6 +72,16 @@ public class DeviceListAdapter extends BaseAdapter
   public Object getItem(int paramInt)
   {
     return this.devices.get(paramInt);
+  }*/
+
+  @Override
+  public int getCount() {
+    return 0;
+  }
+
+  @Override
+  public Object getItem(int position) {
+    return null;
   }
 
   public long getItemId(int paramInt)
@@ -1401,11 +1405,12 @@ public class DeviceListAdapter extends BaseAdapter
     //   1527	1556	3315	java/lang/Exception
     //   1556	1572	3315	java/lang/Exception
     //   3104	3312	3315	java/lang/Exception
+    return null;
   }
 
   public List<CtSceneVo> initCtSceneVos(String paramString)
   {
-    String str = UserFerences.getUserFerences(this.mContext).spFerences.getString(paramString + "CtSceneVos", "");
+    /*String str = UserFerences.getUserFerences(this.mContext).spFerences.getString(paramString + "CtSceneVos", "");
     try
     {
       List localList = (List)new Gson().fromJson(str, new TypeToken()
@@ -1416,13 +1421,13 @@ public class DeviceListAdapter extends BaseAdapter
     }
     catch (JsonSyntaxException localJsonSyntaxException)
     {
-    }
+    }*/
     return null;
   }
 
   public List<ModeVo> initCustomModes(String paramString)
   {
-    String str = UserFerences.getUserFerences(this.mContext).spFerences.getString(paramString + "ModeDataKey", "");
+    /*String str = UserFerences.getUserFerences(this.mContext).spFerences.getString(paramString + "ModeDataKey", "");
     try
     {
       List localList = (List)new Gson().fromJson(str, new TypeToken()
@@ -1433,7 +1438,7 @@ public class DeviceListAdapter extends BaseAdapter
     }
     catch (JsonSyntaxException localJsonSyntaxException)
     {
-    }
+    }*/
     return null;
   }
 

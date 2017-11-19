@@ -1,22 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="#fffefefe" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fffefefe">
+
     <include layout="@layout/acti_title_view" />
-    <ImageView android:id="@id/iv_acti_music_disc" android:background="@mipmap/disc" android:layout_width="190.0dip" android:layout_height="190.0dip" android:layout_marginTop="130.0dip" android:layout_centerHorizontal="true" />
-    <ImageView android:id="@id/iv_acti_music_loader" android:background="@mipmap/disc_loader" android:layout_width="40.0dip" android:layout_height="150.0dip" android:layout_marginTop="130.0dip" android:layout_marginRight="30.0dip" android:layout_alignParentRight="true" />
-    <ImageView android:id="@id/iv_acti_null_loader" android:background="#ffffffff" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="150.0dip" android:layout_marginTop="130.0dip" android:layout_marginRight="30.0dip" android:layout_alignParentRight="true" />
-    <TextView android:textSize="17.0sp" android:textColor="#ffacacac" android:gravity="center" android:id="@id/tv_acti_music_song_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="23.0dip" android:maxEms="20" android:singleLine="true" android:layout_below="@id/iv_acti_music_disc" android:layout_centerHorizontal="true" />
-    <SeekBar android:id="@id/sb_music_acti" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="25.0dip" android:layout_marginRight="30.0dip" android:maxHeight="5.0dip" android:progressDrawable="@drawable/seekbar_style" android:minHeight="5.0dip" android:thumb="@mipmap/thumb_2" android:layout_below="@id/tv_acti_music_song_name" />
-    <Button android:id="@id/bt_music_act_go_list" android:background="@mipmap/mus_list_ic" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="35.0dip" android:layout_marginBottom="25.0dip" android:layout_above="@id/sb_music_acti" android:onClick="seletedMus" />
-    <TextView android:textSize="17.0sp" android:textColor="#ffacacac" android:id="@id/tv_acti_music_song_current_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="5.0dip" android:layout_below="@id/sb_music_acti" />
-    <TextView android:textSize="17.0sp" android:textColor="#ffacacac" android:id="@id/tv_acti_music_song_all_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="30.0dip" android:layout_below="@id/sb_music_acti" android:layout_alignParentRight="true" />
-    <Button android:id="@id/iv_acti_music_back" android:background="@mipmap/music_back" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="30.0dip" android:layout_toLeftOf="@id/iv_acti_music_play" android:layout_below="@id/tv_acti_music_song_all_time" />
-    <com.indris.material.RippleView android:id="@id/iv_acti_music_play" android:background="@mipmap/music_paly" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginTop="3.0dip" android:layout_below="@id/tv_acti_music_song_all_time" android:layout_centerHorizontal="true" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.1" ripple:hover="true" />
-    <com.indris.material.RippleView android:id="@id/iv_acti_music_mic" android:background="@mipmap/music_mic" android:visibility="gone" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginBottom="45.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" ripple:rippleColor="#ffffffff" ripple:alphaFactor="0.1" ripple:hover="true" />
-    <Button android:id="@id/iv_acti_music_next" android:background="@mipmap/music_next" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="30.0dip" android:layout_toRightOf="@id/iv_acti_music_play" android:layout_below="@id/tv_acti_music_song_all_time" />
-    <com.ex.ltech.led.my_view.VisualizerView android:id="@id/vv_act_music" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
-    <LinearLayout android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:layout_alignParentTop="true">
-        <com.indris.material.RippleView android:id="@id/bt_acti_mus_list" android:background="@mipmap/song" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_weight="1.0" ripple:rippleColor="#ffe8e8e8" ripple:alphaFactor="0.1" ripple:hover="true" />
-        <com.indris.material.RippleView android:id="@id/bt_acti_music_mic" android:background="@mipmap/act_mus_mic" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_weight="1.0" ripple:rippleColor="#ffe8e8e8" ripple:alphaFactor="0.1" ripple:hover="true" />
+
+    <ImageView
+        android:id="@+id/iv_acti_music_disc"
+        android:layout_width="190.0dip"
+        android:layout_height="190.0dip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130.0dip"
+        android:background="@mipmap/disc" />
+
+    <ImageView
+        android:id="@+id/iv_acti_music_loader"
+        android:layout_width="40.0dip"
+        android:layout_height="150.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30.0dip"
+        android:layout_marginTop="130.0dip"
+        android:background="@mipmap/disc_loader" />
+
+    <ImageView
+        android:id="@+id/iv_acti_null_loader"
+        android:layout_width="40.0dip"
+        android:layout_height="150.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30.0dip"
+        android:layout_marginTop="130.0dip"
+        android:background="#ffffffff"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_acti_music_song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_acti_music_disc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23.0dip"
+        android:gravity="center"
+        android:maxEms="20"
+        android:singleLine="true"
+        android:textColor="#ffacacac"
+        android:textSize="17.0sp" />
+
+    <SeekBar
+        android:id="@+id/sb_music_acti"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_acti_music_song_name"
+        android:layout_marginLeft="30.0dip"
+        android:layout_marginRight="30.0dip"
+        android:layout_marginTop="25.0dip"
+        android:maxHeight="5.0dip"
+        android:minHeight="5.0dip"
+        android:progressDrawable="@drawable/seekbar_style"
+        android:thumb="@mipmap/thumb_2" />
+
+    <Button
+        android:id="@+id/bt_music_act_go_list"
+        android:layout_width="50.0dip"
+        android:layout_height="50.0dip"
+        android:layout_above="@id/sb_music_acti"
+        android:layout_marginBottom="25.0dip"
+        android:layout_marginLeft="35.0dip"
+        android:background="@mipmap/mus_list_ic"
+        android:onClick="seletedMus" />
+
+    <TextView
+        android:id="@+id/tv_acti_music_song_current_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sb_music_acti"
+        android:layout_marginLeft="30.0dip"
+        android:layout_marginTop="5.0dip"
+        android:textColor="#ffacacac"
+        android:textSize="17.0sp" />
+
+    <TextView
+        android:id="@+id/tv_acti_music_song_all_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/sb_music_acti"
+        android:layout_marginRight="30.0dip"
+        android:layout_marginTop="5.0dip"
+        android:textColor="#ffacacac"
+        android:textSize="17.0sp" />
+
+    <Button
+        android:id="@+id/iv_acti_music_back"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_below="@id/tv_acti_music_song_all_time"
+        android:layout_marginRight="30.0dip"
+        android:layout_marginTop="30.0dip"
+        android:layout_toLeftOf="@id/iv_acti_music_play"
+        android:background="@mipmap/music_back" />
+
+    <com.indris.material.RippleView
+        android:id="@+id/iv_acti_music_play"
+        android:layout_width="70.0dip"
+        android:layout_height="70.0dip"
+        android:layout_below="@id/tv_acti_music_song_all_time"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="3.0dip"
+        android:background="@mipmap/music_paly"
+        ripple:alphaFactor="0.1"
+        ripple:hover="true"
+        ripple:rippleColor="#ffffffff" />
+
+    <com.indris.material.RippleView
+        android:id="@+id/iv_acti_music_mic"
+        android:layout_width="70.0dip"
+        android:layout_height="70.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45.0dip"
+        android:background="@mipmap/music_mic"
+        android:visibility="gone"
+        ripple:alphaFactor="0.1"
+        ripple:hover="true"
+        ripple:rippleColor="#ffffffff" />
+
+    <Button
+        android:id="@+id/iv_acti_music_next"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_below="@id/tv_acti_music_song_all_time"
+        android:layout_marginLeft="30.0dip"
+        android:layout_marginTop="30.0dip"
+        android:layout_toRightOf="@id/iv_acti_music_play"
+        android:background="@mipmap/music_next" />
+
+    <!--<com.ex.ltech.led.my_view.VisualizerView
+        android:id="@+id/vv_act_music"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />-->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50.0dip"
+        android:padding="5.0dip">
+
+        <com.indris.material.RippleView
+            android:id="@+id/bt_acti_mus_list"
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:layout_weight="1.0"
+            android:background="@mipmap/song"
+            ripple:alphaFactor="0.1"
+            ripple:hover="true"
+            ripple:rippleColor="#ffe8e8e8" />
+
+        <com.indris.material.RippleView
+            android:id="@+id/bt_acti_music_mic"
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:layout_weight="1.0"
+            android:background="@mipmap/act_mus_mic"
+            ripple:alphaFactor="0.1"
+            ripple:hover="true"
+            ripple:rippleColor="#ffe8e8e8" />
     </LinearLayout>
 </RelativeLayout>

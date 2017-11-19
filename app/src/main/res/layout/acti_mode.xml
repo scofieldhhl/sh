@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ripple="http://schemas.android.com/apk/res-auto"
-    android:id="@id/rl_acti_mode_parent"
+    android:id="@+id/rl_acti_mode_parent"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffffff"
@@ -10,7 +10,7 @@
     <include layout="@layout/acti_title_view" />
 
     <TextView
-        android:id="@id/tv_acti_mode_progress"
+        android:id="@+id/tv_acti_mode_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30.0dip"
@@ -26,7 +26,7 @@
         android:background="@mipmap/mode_title_bg" />
 
     <LinearLayout
-        android:id="@id/ll_acti_mode_3"
+        android:id="@+id/ll_acti_mode_3"
         android:layout_width="fill_parent"
         android:layout_height="100.0dip"
         android:layout_below="@id/tv_acti_mode_progress"
@@ -41,7 +41,7 @@
             android:background="@mipmap/ic_progress_low" />
 
         <SeekBar
-            android:id="@id/sb_acti_mode"
+            android:id="@+id/sb_acti_mode"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -65,7 +65,7 @@
             android:visibility="gone" />
 
         <com.indris.material.RippleView
-            android:id="@id/btn_acti_mode_play"
+            android:id="@+id/btn_acti_mode_play"
             android:layout_width="50.0dip"
             android:layout_height="50.0dip"
             android:layout_gravity="center_vertical"
@@ -80,7 +80,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@id/ll_choseall"
+        android:id="@+id/ll_choseall"
         android:layout_width="100.0dip"
         android:layout_height="25.0dip"
         android:layout_alignParentRight="true"
@@ -96,7 +96,7 @@
             android:textColor="#ff4a4a4a" />
 
         <ImageView
-            android:id="@id/iv_frag_sys_inside_all_seleted"
+            android:id="@+id/iv_frag_sys_inside_all_seleted"
             android:layout_width="15.0dip"
             android:layout_height="15.0dip"
             android:layout_gravity="center_vertical"
@@ -114,22 +114,22 @@
         android:visibility="gone">
 
         <Button
-            android:id="@id/btn_del_mode"
+            android:id="@+id/btn_del_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
             android:text="del" />
 
         <Button
-            android:id="@id/btn_refresh_mode"
+            android:id="@+id/btn_refresh_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
             android:text="刷新" />
     </LinearLayout>
 
-    <com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@id/refresh_view"
+    <!--<com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/refresh_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/rl_act_new_main"
@@ -145,10 +145,10 @@
             android:dividerHeight="1.0dip" />
 
         <include layout="@layout/load_more" />
-    </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>
+    </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>-->
 
     <GridView
-        android:id="@id/gv_act_mode"
+        android:id="@+id/gv_act_mode"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/ll_choseall"
@@ -162,7 +162,7 @@
         android:verticalSpacing="1.0px" />
 
     <LinearLayout
-        android:id="@id/ll_acti_mode_bottom"
+        android:id="@+id/ll_acti_mode_bottom"
         android:layout_width="fill_parent"
         android:layout_height="50.0dip"
         android:layout_alignParentBottom="true"
@@ -171,7 +171,7 @@
         android:visibility="gone">
 
         <Button
-            android:id="@id/btn_acti_mode_add"
+            android:id="@+id/btn_acti_mode_add"
             android:layout_width="45.0dip"
             android:layout_height="45.0dip"
             android:background="@mipmap/add_music" />

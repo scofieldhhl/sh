@@ -21,7 +21,7 @@ public class Timing
   String shotDaysStr;
   private boolean swich;
   private String time;
-  TimingInnerDeivces timingInnerDeivces;
+//  TimingInnerDeivces timingInnerDeivces;
 
   public int getHour()
   {
@@ -73,10 +73,10 @@ public class Timing
     return this.time;
   }
 
-  public TimingInnerDeivces getTimingInnerDeivces()
-  {
-    return this.timingInnerDeivces;
-  }
+//  public TimingInnerDeivces getTimingInnerDeivces()
+//  {
+//    return this.timingInnerDeivces;
+//  }
 
   public boolean isJustOnce()
   {
@@ -158,10 +158,10 @@ public class Timing
     this.time = paramString;
   }
 
-  public void setTimingInnerDeivces(TimingInnerDeivces paramTimingInnerDeivces)
-  {
-    this.timingInnerDeivces = paramTimingInnerDeivces;
-  }
+//  public void setTimingInnerDeivces(TimingInnerDeivces paramTimingInnerDeivces)
+//  {
+//    this.timingInnerDeivces = paramTimingInnerDeivces;
+//  }
 }
 
 /* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar

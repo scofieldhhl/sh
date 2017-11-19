@@ -77,7 +77,7 @@ public class CharacterParser
 
   public static String getSpellByAscii(int paramInt)
   {
-    String str;
+    /*String str;
     if ((paramInt > 0) && (paramInt < 160))
     {
       str = String.valueOf((char)paramInt);
@@ -94,7 +94,8 @@ public class CharacterParser
         continue;
       str = pystr[i];
       break;
-    }
+    }*/
+    return null;
   }
 
   public CharacterParser getInstance()

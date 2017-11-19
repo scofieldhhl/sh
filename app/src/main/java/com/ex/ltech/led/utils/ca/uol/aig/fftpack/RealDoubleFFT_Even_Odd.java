@@ -87,7 +87,7 @@ public class RealDoubleFFT_Even_Odd extends RealDoubleFFT_Mixed
 
   void cosqf1(int paramInt, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2)
   {
-    int i = (paramInt + 1) / 2;
+    /*int i = (paramInt + 1) / 2;
     (paramInt + 2);
     for (int j = 1; j < i; j++)
     {
@@ -112,7 +112,7 @@ public class RealDoubleFFT_Even_Odd extends RealDoubleFFT_Mixed
       double d = paramArrayOfDouble1[(n - 1)] - paramArrayOfDouble1[n];
       paramArrayOfDouble1[n] = (paramArrayOfDouble1[(n - 1)] + paramArrayOfDouble1[n]);
       paramArrayOfDouble1[(n - 1)] = d;
-    }
+    }*/
   }
 
   void cosqi(int paramInt, double[] paramArrayOfDouble)

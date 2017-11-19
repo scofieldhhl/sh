@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ex.ltech.led">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -37,20 +38,21 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:persistent="true"
-        android:theme="@style/AppTheme">
-        <meta-data
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon, android:name">
+        <!--<meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="3.22267335E14" />
-        <!--<activity
+        <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
 
         <service android:name="io.xlink.wifi.sdk.XlinkUdpService" />
-        <service android:name="com.ex.ltech.onepiontfive.main.GeofenceService" />
+        <!--<service android:name="com.ex.ltech.onepiontfive.main.GeofenceService" />-->
         <service android:name="io.xlink.wifi.sdk.XlinkTcpService" />
-        <service android:name="com.ex.ltech.led.musci_service.ServicePlayer" />
+        <!--<service android:name="com.ex.ltech.led.musci_service.ServicePlayer" />-->
         <!--<service
             android:name="com.baidu.location.f"
             android:enabled="true"
@@ -60,9 +62,9 @@
             </intent-filter>
         </service>-->
 
-        <meta-data
+        <!--<meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="B3SRW9Cs4RGCFw0Pn2ZAxeqkSBuywqyy" />
+            android:value="B3SRW9Cs4RGCFw0Pn2ZAxeqkSBuywqyy" />-->
 
         <activity
             android:name="com.ex.ltech.led.acti.ActWelcome"
@@ -74,23 +76,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ex.ltech.onepiontfive.main.updataHardWareProgram.AtUpgrade" />
+        <!--<activity android:name="com.ex.ltech.onepiontfive.main.updataHardWareProgram.AtUpgrade" />-->
         <activity
             android:name="com.ex.ltech.led.acti.main.DeviceListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
+        <!--<activity
             android:name="com.ex.ltech.onepiontfive.main.AtFragmentMaster"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.led.AtClip"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.onepiontfive.main.AtMain"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
         <activity
             android:name="com.ex.ltech.hongwai.atRcs.AtRcSet"
             android:screenOrientation="portrait"
@@ -153,10 +147,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.ex.ltech.ct.ActCtSceneLast"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.LogRegForget.ActProtocol"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -268,10 +258,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.ex.ltech.hongwai.NewHongWaiMain"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name="com.ex.ltech.hongwai.atRcs.AtFan"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -300,15 +286,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.ex.ltech.led.testAct"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name="com.ex.ltech.outlet.timing.act.ActAddTiming"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.led.acti.device.ActConnet"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -345,20 +323,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.ex.ltech.led.acti.music.ActiPlayList"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity
             android:name="com.ex.ltech.led.acti.timing.act.ActTiming"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.ex.ltech.led.acti.device.ActDeviceManager"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.led.acti.timing.act.ActAddTiming"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -382,16 +351,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.ex.ltech.led.acti.colors.AtAddResultActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name="com.ex.ltech.led.acti.colors.AtPanelLearnActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.led.acti.mode.ActNamingMode"
-            android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
@@ -401,10 +361,6 @@
             android:name="com.soundcloud.android.crop.CropImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />-->
-        <activity
-            android:name="com.ex.ltech.led.acti.device.ActResetPsd"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.ex.ltech.led.acti.device.ActiUserActivity"
             android:screenOrientation="portrait"
@@ -555,24 +511,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name="com.ex.ltech.LogRegForget.ActLoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.LogRegForget.ActForgetActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name="com.ex.ltech.LogRegForget.AtRegAreaActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name="com.ex.ltech.LogRegForget.ActRegisterActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name="com.ex.ltech.led.wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
@@ -635,6 +573,25 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.ex.ltech.sharedevice.testStart"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name="com.ex.ltech.LogRegForget.ActLoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.ex.ltech.LogRegForget.ActForgetActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.ex.ltech.LogRegForget.AtRegAreaActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.ex.ltech.LogRegForget.ActRegisterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 

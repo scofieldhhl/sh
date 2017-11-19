@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
+import com.ex.ltech.led.acti.main.DeviceListActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,7 +37,7 @@ public class ActLoginActivity extends MyBaseActivity
 
   @BindView(R.id.tv_country_code)
   TextView tvCountryCode;
-  RegVo vo = new RegVo();
+//  RegVo vo = new RegVo();
 
   private void initTitle()
   {
@@ -127,12 +128,12 @@ public class ActLoginActivity extends MyBaseActivity
 
   public void forgetPsw(View paramView)
   {
-    startActivityForResult(new Intent(this, ActForgetActivity.class), 0);
+//    startActivityForResult(new Intent(this, ActForgetActivity.class), 0);
   }
 
-  /*public void log(View paramView)
+  public void log(View paramView)
   {
-    int i = 1;
+    /*int i = 1;
     this.phone = this.etActLogPhone.getText().toString().trim();
     this.psd = this.etActLogPsd.getText().toString().trim();
     int j;
@@ -185,8 +186,9 @@ public class ActLoginActivity extends MyBaseActivity
       break;
       label107: i = 0;
     }
-    label112: toast(R.string.input_ok_phone);
-  }*/
+    label112: toast(R.string.input_ok_phone);*/
+    ActLoginActivity.this.goAct(DeviceListActivity.class);
+  }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
@@ -237,7 +239,7 @@ public class ActLoginActivity extends MyBaseActivity
 
   public void seleteArea(View paramView)
   {
-    startActivityForResult(new Intent(this, AtRegAreaActivity.class), 0);
+//    startActivityForResult(new Intent(this, AtRegAreaActivity.class), 0);
   }
 
   public void twiterLogin(View paramView)

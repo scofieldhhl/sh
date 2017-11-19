@@ -9,13 +9,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.mode.ModeBusiness;
 import com.ex.ltech.led.vo.ModeVo;
-import java.io.PrintStream;
+
 import java.util.List;
 
 public class ModeFragment extends Fragment
-  implements AdapterView.OnItemClickListener
+  implements OnItemClickListener
 {
   private ListView lv_f_timing_mode;
   private View mRootView = null;
@@ -30,7 +32,7 @@ public class ModeFragment extends Fragment
     this.modeBusiness = new ModeBusiness(getActivity());
     this.modeBusiness.initModes();
     this.modeBusiness.removeAddBtnVos();
-    this.lv_f_timing_mode = ((ListView)this.mRootView.findViewById(2131559138));
+    this.lv_f_timing_mode = ((ListView)this.mRootView.findViewById(R.id.lv_f_timing_mode));
     this.madapter = new MyAdapter(getActivity(), this.modeBusiness.modes, this.modeBusiness.getNewCreateModeBitmaps());
     this.lv_f_timing_mode.setAdapter(this.madapter);
     this.lv_f_timing_mode.setOnItemClickListener(this);
@@ -39,7 +41,7 @@ public class ModeFragment extends Fragment
 
   public View onCreateView(LayoutInflater paramLayoutInflater, ViewGroup paramViewGroup, Bundle paramBundle)
   {
-    this.mRootView = paramLayoutInflater.inflate(2130968740, paramViewGroup, false);
+    this.mRootView = paramLayoutInflater.inflate(R.layout.fragment_timing_mode, paramViewGroup, false);
     System.out.println("onCreateView");
     return this.mRootView;
   }

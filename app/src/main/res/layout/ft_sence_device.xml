@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/ft_title_view" layout="@layout/ft_title_view" />
-    <TextView android:background="#fff5f5f5" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_marginTop="50.0dip" />
-    <ExpandableListView android:id="@id/expendlist" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="53.0dip" android:cacheColorHint="#00000000" />
-</RelativeLayout>

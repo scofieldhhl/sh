@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="@drawable/shap13" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="20.0dip" android:textColor="#ff4e4e4e" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="@string/discovery_firmware" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="35.0dip" android:textColor="#fffc3c47" android:id="@id/count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="90.0dip" android:text="10个" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="18.0dip" android:textColor="#ffe93939" android:gravity="center" android:id="@id/ok" android:background="@mipmap/red_frame" android:clickable="true" android:layout_width="120.0dip" android:layout_height="30.0dip" android:layout_marginTop="150.0dip" android:layout_marginBottom="15.0dip" android:text="我知道了" android:layout_centerHorizontal="true" />
-</RelativeLayout>

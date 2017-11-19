@@ -1,6 +1,5 @@
 package com.ex.ltech.led.acti.guide;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,9 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.ex.ltech.LogRegForget.ActLoginActivity;
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.UserFerences;
 
 public class ActGuide extends AppCompatActivity
 {
@@ -70,12 +67,12 @@ public class ActGuide extends AppCompatActivity
 
   public void goMain(View paramView)
   {
-    if (UserFerences.getUserFerences(this).spFerences.getInt("isFirstOpen", -1) == -1)
+    /*if (UserFerences.getUserFerences(this).spFerences.getInt("isFirstOpen", -1) == -1)
     {
       UserFerences.getUserFerences(this).putValue("isFirstOpen", Integer.valueOf(0));
       startActivity(new Intent(this, ActLoginActivity.class));
     }
-    finish();
+    finish();*/
   }
 
   public void onBackPressed()
@@ -91,7 +88,7 @@ public class ActGuide extends AppCompatActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    getWindow().setFlags(67108864, 67108864);
+//    getWindow().setFlags(67108864, 67108864);
     setContentView(R.layout.activity_tutorial);
     this.pager = ((ViewPager)findViewById(R.id.pager));
     this.pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());

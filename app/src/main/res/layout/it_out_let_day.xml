@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:layout_width="40.0dip" android:layout_height="40.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0dip" android:gravity="center" android:id="@id/tv_it_outlet_day" android:layout_width="40.0dip" android:layout_height="40.0dip" android:text="a" android:layout_centerInParent="true" />
-</RelativeLayout>

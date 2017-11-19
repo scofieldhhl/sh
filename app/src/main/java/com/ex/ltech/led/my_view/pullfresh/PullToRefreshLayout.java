@@ -13,6 +13,9 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ex.ltech.led.R;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -63,7 +66,7 @@ public class PullToRefreshLayout extends RelativeLayout
   {
     public void handleMessage(Message paramMessage)
     {
-      PullToRefreshLayout.this.MOVE_SPEED = (float)(8.0D + 5.0D * Math.tan(1.570796326794897D / PullToRefreshLayout.this.getMeasuredHeight() * (PullToRefreshLayout.this.pullDownY + Math.abs(PullToRefreshLayout.this.pullUpY))));
+      /*PullToRefreshLayout.this.MOVE_SPEED = (float)(8.0D + 5.0D * Math.tan(1.570796326794897D / PullToRefreshLayout.this.getMeasuredHeight() * (PullToRefreshLayout.this.pullDownY + Math.abs(PullToRefreshLayout.this.pullUpY))));
       if (!PullToRefreshLayout.this.isTouch)
       {
         if ((PullToRefreshLayout.this.state == 2) && (PullToRefreshLayout.this.pullDownY <= PullToRefreshLayout.this.refreshDist))
@@ -111,7 +114,7 @@ public class PullToRefreshLayout extends RelativeLayout
         label405: if (PullToRefreshLayout.this.pullUpY >= 0.0F)
           continue;
         PullToRefreshLayout.access$002(PullToRefreshLayout.this, PullToRefreshLayout.this.pullUpY + PullToRefreshLayout.this.MOVE_SPEED);
-      }
+      }*/
     }
   };
 
@@ -142,36 +145,36 @@ public class PullToRefreshLayout extends RelativeLayout
       return;
     case 0:
       this.refreshStateImageView.setVisibility(View.GONE);
-      this.refreshStateTextView.setText(2131100281);
+      this.refreshStateTextView.setText(R.string.pull_to_refresh);
       this.pullView.clearAnimation();
       this.pullView.setVisibility(View.VISIBLE);
       this.loadStateImageView.setVisibility(View.GONE);
-      this.loadStateTextView.setText(2131100282);
+      this.loadStateTextView.setText(R.string.pullup_to_load);
       this.pullUpView.clearAnimation();
       this.pullUpView.setVisibility(View.VISIBLE);
       return;
     case 1:
-      this.refreshStateTextView.setText(2131100325);
+      this.refreshStateTextView.setText(R.string.release_to_refresh);
       this.pullView.startAnimation(this.rotateAnimation);
       return;
     case 2:
       this.pullView.clearAnimation();
       this.refreshingView.setVisibility(View.VISIBLE);
-      this.pullView.setVisibility(4);
+      this.pullView.setVisibility(INVISIBLE);
       this.refreshingView.startAnimation(this.refreshingAnimation);
-      this.refreshStateTextView.setText(2131100319);
+      this.refreshStateTextView.setText(R.string.refreshing);
       return;
     case 3:
-      this.loadStateTextView.setText(2131100324);
+      this.loadStateTextView.setText(R.string.release_to_load);
       this.pullUpView.startAnimation(this.rotateAnimation);
       return;
     case 4:
     }
     this.pullUpView.clearAnimation();
     this.loadingView.setVisibility(View.VISIBLE);
-    this.pullUpView.setVisibility(4);
+    this.pullUpView.setVisibility(INVISIBLE);
     this.loadingView.startAnimation(this.refreshingAnimation);
-    this.loadStateTextView.setText(2131100152);
+    this.loadStateTextView.setText(R.string.loading);
   }
 
   private void hide()
@@ -181,22 +184,22 @@ public class PullToRefreshLayout extends RelativeLayout
 
   private void initView()
   {
-    this.pullView = this.refreshView.findViewById(2131559459);
-    this.refreshStateTextView = ((TextView)this.refreshView.findViewById(2131559461));
-    this.refreshingView = this.refreshView.findViewById(2131559460);
-    this.refreshStateImageView = this.refreshView.findViewById(2131559462);
-    this.pullUpView = this.loadmoreView.findViewById(2131559371);
-    this.loadStateTextView = ((TextView)this.loadmoreView.findViewById(2131559373));
-    this.loadingView = this.loadmoreView.findViewById(2131559372);
-    this.loadStateImageView = this.loadmoreView.findViewById(2131559374);
+    this.pullView = this.refreshView.findViewById(R.id.pull_icon);
+    this.refreshStateTextView = ((TextView)this.refreshView.findViewById(R.id.state_tv));
+    this.refreshingView = this.refreshView.findViewById(R.id.refreshing_icon);
+    this.refreshStateImageView = this.refreshView.findViewById(R.id.state_iv);
+    this.pullUpView = this.loadmoreView.findViewById(R.id.pullup_icon);
+    this.loadStateTextView = ((TextView)this.loadmoreView.findViewById(R.id.loadstate_tv));
+    this.loadingView = this.loadmoreView.findViewById(R.id.loading_icon);
+    this.loadStateImageView = this.loadmoreView.findViewById(R.id.loadstate_iv);
   }
 
   private void initView(Context paramContext)
   {
     this.mContext = paramContext;
     this.timer = new MyTimer(this.updateHandler);
-    this.rotateAnimation = ((RotateAnimation)AnimationUtils.loadAnimation(paramContext, 2131034126));
-    this.refreshingAnimation = ((RotateAnimation)AnimationUtils.loadAnimation(paramContext, 2131034128));
+    this.rotateAnimation = ((RotateAnimation)AnimationUtils.loadAnimation(paramContext, R.anim.reverse_anim));
+    this.refreshingAnimation = ((RotateAnimation)AnimationUtils.loadAnimation(paramContext, R.anim.rotating));
     LinearInterpolator localLinearInterpolator = new LinearInterpolator();
     this.rotateAnimation.setInterpolator(localLinearInterpolator);
     this.refreshingAnimation.setInterpolator(localLinearInterpolator);
@@ -219,7 +222,7 @@ public class PullToRefreshLayout extends RelativeLayout
 
   public void autoRefresh()
   {
-    AutoRefreshAndLoadTask localAutoRefreshAndLoadTask = new AutoRefreshAndLoadTask(null);
+    AutoRefreshAndLoadTask localAutoRefreshAndLoadTask = new AutoRefreshAndLoadTask();
     Integer[] arrayOfInteger = new Integer[1];
     arrayOfInteger[0] = Integer.valueOf(0);
     localAutoRefreshAndLoadTask.execute(arrayOfInteger);
@@ -227,7 +230,7 @@ public class PullToRefreshLayout extends RelativeLayout
 
   public boolean dispatchTouchEvent(MotionEvent paramMotionEvent)
   {
-    switch (paramMotionEvent.getActionMasked())
+    /*switch (paramMotionEvent.getActionMasked())
     {
     case 3:
     case 4:
@@ -327,12 +330,13 @@ public class PullToRefreshLayout extends RelativeLayout
       if (this.mListener == null)
         continue;
       this.mListener.onLoadMore(this);
-    }
+    }*/
+    return false;
   }
 
   public void loadmoreFinish(int paramInt)
   {
-    this.loadingView.clearAnimation();
+    /*this.loadingView.clearAnimation();
     this.loadingView.setVisibility(View.GONE);
     switch (paramInt)
     {
@@ -359,7 +363,7 @@ public class PullToRefreshLayout extends RelativeLayout
       this.loadStateImageView.setBackgroundResource(2130903455);
     }
     changeState(5);
-    hide();
+    hide();*/
   }
 
   protected void onLayout(boolean paramBoolean, int paramInt1, int paramInt2, int paramInt3, int paramInt4)
@@ -390,7 +394,7 @@ public class PullToRefreshLayout extends RelativeLayout
 
   public void refreshFinish(int paramInt)
   {
-    if (this.refreshingView != null)
+    /*if (this.refreshingView != null)
     {
       this.refreshingView.clearAnimation();
       this.refreshingView.setVisibility(View.GONE);
@@ -420,7 +424,7 @@ public class PullToRefreshLayout extends RelativeLayout
       this.refreshStateImageView.setBackgroundResource(2130903676);
     }
     changeState(5);
-    hide();
+    hide();*/
   }
 
   public void setOnRefreshListener(OnRefreshListener paramOnRefreshListener)
@@ -479,8 +483,7 @@ public class PullToRefreshLayout extends RelativeLayout
 
     public MyTimer(Handler arg2)
     {
-      Object localObject;
-      this.handler = localObject;
+      this.handler = arg2;
       this.timer = new Timer();
     }
 
@@ -510,8 +513,7 @@ public class PullToRefreshLayout extends RelativeLayout
 
       public MyTask(Handler arg2)
       {
-        Object localObject;
-        this.handler = localObject;
+        this.handler = arg2;
       }
 
       public void run()

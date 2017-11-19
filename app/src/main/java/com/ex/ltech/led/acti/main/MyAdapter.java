@@ -124,6 +124,7 @@ public class MyAdapter extends BaseAdapter
       localHolder.tv_status.setText(this.pct.getString(R.string.disconnet));
       paramView.setBackgroundColor(this.pct.getResources().getColor(R.color.login_bg));
     }*/
+    return null;
   }
 
   class Holder

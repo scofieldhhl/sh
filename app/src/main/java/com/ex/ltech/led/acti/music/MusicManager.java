@@ -3,9 +3,10 @@ package com.ex.ltech.led.acti.music;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+
 import com.ex.ltech.led.vo.SongVo;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

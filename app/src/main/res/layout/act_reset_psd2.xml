@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/acti_title_view" />
-    <EditText android:textSize="15.0dip" android:id="@id/et_act_reset2_psd1" android:background="@drawable/log_text_bg" android:padding="10.0dip" android:layout_width="280.0dip" android:layout_height="wrap_content" android:layout_marginTop="110.0dip" android:hint="@string/now_psd" android:drawableLeft="@mipmap/log_call" android:layout_centerHorizontal="true" />
-    <EditText android:textSize="15.0dip" android:id="@id/et_act_reset2_psd2" android:background="@drawable/log_text_bg" android:padding="10.0dip" android:layout_width="280.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:hint="@string/new_psw" android:drawableLeft="@mipmap/log_call" android:layout_below="@id/et_act_reset2_psd1" android:layout_centerHorizontal="true" />
-    <EditText android:textSize="15.0dip" android:id="@id/et_act_reset2_psd3" android:background="@drawable/log_text_bg" android:padding="10.0dip" android:layout_width="280.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:hint="@string/new_psw_again" android:drawableLeft="@mipmap/log_call" android:layout_below="@id/et_act_reset2_psd2" android:layout_centerHorizontal="true" />
-</RelativeLayout>

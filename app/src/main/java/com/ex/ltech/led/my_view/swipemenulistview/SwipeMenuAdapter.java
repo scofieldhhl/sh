@@ -2,7 +2,6 @@ package com.ex.ltech.led.my_view.swipemenulistview;
 
 import android.content.Context;
 import android.database.DataSetObserver;
-import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
@@ -30,12 +29,12 @@ public class SwipeMenuAdapter
   {
     SwipeMenuItem localSwipeMenuItem1 = new SwipeMenuItem(this.mContext);
     localSwipeMenuItem1.setTitle("Item 1");
-    localSwipeMenuItem1.setBackground(new ColorDrawable(-7829368));
+//    localSwipeMenuItem1.setBackground(new ColorDrawable(-7829368));
     localSwipeMenuItem1.setWidth(300);
     paramSwipeMenu.addMenuItem(localSwipeMenuItem1);
     SwipeMenuItem localSwipeMenuItem2 = new SwipeMenuItem(this.mContext);
     localSwipeMenuItem2.setTitle("Item 2");
-    localSwipeMenuItem2.setBackground(new ColorDrawable(-65536));
+//    localSwipeMenuItem2.setBackground(new ColorDrawable(-65536));
     localSwipeMenuItem2.setWidth(300);
     paramSwipeMenu.addMenuItem(localSwipeMenuItem2);
   }

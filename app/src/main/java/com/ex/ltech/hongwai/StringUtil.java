@@ -1,14 +1,12 @@
 package com.ex.ltech.hongwai;
 
 import android.text.TextUtils;
-import java.io.PrintStream;
+
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtil
@@ -26,7 +24,7 @@ public class StringUtil
 
   public static String capitalizeFirstLetter(String paramString)
   {
-    if (isNull(paramString));
+    /*if (isNull(paramString));
     char c;
     do
     {
@@ -34,7 +32,8 @@ public class StringUtil
       c = paramString.charAt(0);
     }
     while ((!Character.isLetter(c)) || (Character.isUpperCase(c)));
-    return paramString.length() + Character.toUpperCase(c) + paramString.substring(1);
+    return paramString.length() + Character.toUpperCase(c) + paramString.substring(1);*/
+    return null;
   }
 
   public static boolean equals(String paramString1, String paramString2)
@@ -53,7 +52,7 @@ public class StringUtil
 
   public static String fullWidthToHalfWidth(String paramString)
   {
-    if (isNull(paramString))
+    /*if (isNull(paramString))
       return paramString;
     char[] arrayOfChar = paramString.toCharArray();
     int i = 0;
@@ -73,7 +72,8 @@ public class StringUtil
         arrayOfChar[i] = arrayOfChar[i];
       }
     }
-    return new String(arrayOfChar);
+    return new String(arrayOfChar);*/
+    return null;
   }
 
   public static String getBuildString(String paramString1, String paramString2)
@@ -102,16 +102,17 @@ public class StringUtil
 
   public static String getHrefInnerHtml(String paramString)
   {
-    if (isNull(paramString))
+    /*if (isNull(paramString))
       paramString = "";
     Matcher localMatcher;
     do
     {
       return paramString;
-      localMatcher = Pattern.compile(".*<[\\s]*a[\\s]*.*>(.+?)<[\\s]*/a[\\s]*>.*", 2).matcher(paramString);
+      localMatcher = Pattern.compile(".*<[\\s]*a[\\s]*.*>(.+?)<[\\s]*//*a[\\s]*>.*", 2).matcher(paramString);
     }
     while (!localMatcher.matches());
-    return localMatcher.group(1);
+    return localMatcher.group(1);*/
+      return null;
   }
 
   public static LinkedHashSet<String> getName(String paramString1, String paramString2)
@@ -128,7 +129,7 @@ public class StringUtil
 
   public static String halfWidthToFullWidth(String paramString)
   {
-    if (isNull(paramString))
+    /*if (isNull(paramString))
       return paramString;
     char[] arrayOfChar = paramString.toCharArray();
     int i = 0;
@@ -148,7 +149,8 @@ public class StringUtil
         arrayOfChar[i] = arrayOfChar[i];
       }
     }
-    return new String(arrayOfChar);
+    return new String(arrayOfChar);*/
+    return null;
   }
 
   public static byte[] hex2Bytes(String paramString)
@@ -246,7 +248,7 @@ public class StringUtil
 
   public static int[] parseIntArray(String paramString1, String paramString2)
   {
-    int[] arrayOfInt;
+    /*int[] arrayOfInt;
     if (TextUtils.isEmpty(paramString1))
       arrayOfInt = null;
     while (true)
@@ -256,7 +258,8 @@ public class StringUtil
       arrayOfInt = new int[arrayOfString.length];
       for (int i = 0; i < arrayOfString.length; i++)
         arrayOfInt[i] = parseInt(arrayOfString[i]);
-    }
+    }*/
+    return null;
   }
 
   public static long parseLong(String paramString)
@@ -290,7 +293,7 @@ public class StringUtil
 
   public static String utf8Decode(String paramString)
   {
-    if (!isNull(paramString));
+    /*if (!isNull(paramString));
     try
     {
       String str = URLDecoder.decode(paramString, "UTF-8");
@@ -300,12 +303,13 @@ public class StringUtil
     catch (UnsupportedEncodingException localUnsupportedEncodingException)
     {
     }
-    throw new RuntimeException("UnsupportedEncodingException occurred. ", localUnsupportedEncodingException);
+    throw new RuntimeException("UnsupportedEncodingException occurred. ", localUnsupportedEncodingException);*/
+    return null;
   }
 
   public static String utf8Encode(String paramString)
   {
-    if ((!isNull(paramString)) && (paramString.getBytes().length != paramString.length()));
+    /*if ((!isNull(paramString)) && (paramString.getBytes().length != paramString.length()));
     try
     {
       String str = URLEncoder.encode(paramString, "UTF-8");
@@ -315,7 +319,8 @@ public class StringUtil
     catch (UnsupportedEncodingException localUnsupportedEncodingException)
     {
     }
-    throw new RuntimeException("UnsupportedEncodingException occurred. ", localUnsupportedEncodingException);
+    throw new RuntimeException("UnsupportedEncodingException occurred. ", localUnsupportedEncodingException);*/
+    return null;
   }
 
   public static String utf8Encode(String paramString1, String paramString2)

@@ -2,16 +2,10 @@ package com.ex.ltech.LogRegForget;
 
 import android.content.BroadcastReceiver;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,44 +14,36 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import cn.smssdk.EventHandler;
-import cn.smssdk.SMSSDK;
-import cn.smssdk.SMSSDK.VerifyCodeReadListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
-import com.ex.ltech.led.acti.main.DeviceListActivity;
-import com.loopj.android.http.TextHttpResponseHandler;
-import io.xlink.wifi.js.http.HttpAgent;
-import io.xlink.wifi.js.http.HttpManage;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
-import java.io.PrintStream;
+
 import java.util.Random;
 import java.util.Scanner;
-import org.apache.http.Header;
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ActRegisterActivity extends MyBaseActivity
 {
   private int appid;
   private String authKey;
 
-  @Bind({2131559027})
+  @BindView(R.id.bt_act_reg_seleted)
   Button btActRegSeleted;
   String countryCode;
 
-  @Bind({2131558931})
+  @BindView(R.id.et_act_log_psd)
   EditText etActLogPsd;
 
-  @Bind({R.id.et_area})
+  @BindView(R.id.et_area)
   EditText etArea;
 
-  @Bind({2131559024})
+  @BindView(R.id.phone)
   EditText etPhone;
 
-  @Bind({R.id.verfy_code})
+  @BindView(R.id.verfy_code)
   EditText etVerfyCode;
   boolean isEyesClose = true;
   boolean isNumVerfly;
@@ -65,7 +51,7 @@ public class ActRegisterActivity extends MyBaseActivity
   boolean isVerify;
   boolean isZh;
 
-  @Bind({2131559021})
+  @BindView(R.id.iv_step)
   ImageView ivStep;
   String mail = "";
   private String mailCode;
@@ -74,19 +60,19 @@ public class ActRegisterActivity extends MyBaseActivity
   TextView redBgTextView;
   ImageView regView;
 
-  @Bind({2131559026})
+  @BindView(R.id.rl_act_reg_seleted)
   RelativeLayout rlActRegSeleted;
 
-  @Bind({R.id.rl_verfy})
+  @BindView(R.id.rl_verfy)
   RelativeLayout rlVerfy;
 
-  @Bind({2131559022})
+  @BindView(R.id.rl_area)
   RelativeLayout rl_area;
 
-  @Bind({2131559023})
+  @BindView(R.id.rl_phone)
   RelativeLayout rl_phone;
 
-  @Bind({R.id.rl_psd})
+  @BindView(R.id.rl_psd)
   RelativeLayout rl_psd;
   Runnable runnable = new Runnable()
   {
@@ -103,7 +89,7 @@ public class ActRegisterActivity extends MyBaseActivity
       ActRegisterActivity.this.timerTime = 60;
       ActRegisterActivity.this.verifyTime.setText(ActRegisterActivity.this.getString(R.string.resend));
       ((GradientDrawable)ActRegisterActivity.this.verifyTime.getBackground()).setColor(Color.parseColor("#ff3636"));
-      ActRegisterActivity.this.verifyTime.setOnClickListener(new View.OnClickListener()
+      ActRegisterActivity.this.verifyTime.setOnClickListener(new OnClickListener()
       {
         public void onClick(View paramView)
         {
@@ -119,15 +105,15 @@ public class ActRegisterActivity extends MyBaseActivity
   };
   int timerTime = 60;
 
-  @Bind({R.id.tv_country_code})
+  @BindView(R.id.tv_country_code)
   TextView tvCountryCode;
 
-  @Bind({2131559025})
+  @BindView(R.id.tv_verfy_code_send)
   TextView tvVerfyCodeSend;
 
-  @Bind({R.id.verify_time})
+  @BindView(R.id.verify_time)
   TextView verifyTime;
-  RegVo vo;
+//  RegVo vo;
 
   private String randomCode()
   {
@@ -153,7 +139,7 @@ public class ActRegisterActivity extends MyBaseActivity
 
   private void reg2Server()
   {
-    this.vo = new RegVo();
+    /*this.vo = new RegVo();
     this.vo.setName("LT");
     this.vo.setUid(this.etPhone.getText().toString());
     this.vo.setPwd(this.etActLogPsd.getText().toString());
@@ -196,7 +182,7 @@ public class ActRegisterActivity extends MyBaseActivity
           localJSONException.printStackTrace();
         }
       }
-    });
+    });*/
   }
 
   private void timer()
@@ -209,7 +195,7 @@ public class ActRegisterActivity extends MyBaseActivity
 
   public void eyes(View paramView)
   {
-    ImageView localImageView = (ImageView)paramView;
+    /*ImageView localImageView = (ImageView)paramView;
     if (this.isEyesClose)
     {
       localImageView.setBackgroundResource(R.mipmap.eyes_open);
@@ -227,13 +213,13 @@ public class ActRegisterActivity extends MyBaseActivity
       localImageView.setBackgroundResource(R.mipmap.eyes_close);
       this.etActLogPsd.setTransformationMethod(PasswordTransformationMethod.getInstance());
       break;
-    }
+    }*/
   }
 
   public void getVerfyCode(View paramView)
   {
-    this.redBgTextView = ((TextView)paramView);
-    if (this.redBgTextView.getText().toString().equals(getString(2131100206)))
+    /*this.redBgTextView = ((TextView)paramView);
+    if (this.redBgTextView.getText().toString().equals(getString(R.string.next)))
       if (this.etPhone.getText().toString().indexOf("@") != -1)
       {
         this.rl_area.setVisibility(View.GONE);
@@ -344,17 +330,17 @@ public class ActRegisterActivity extends MyBaseActivity
       SMSSDK.submitVerificationCode(this.countryCode, this.etPhone.getText().toString(), this.etVerfyCode.getText().toString().trim());
       return;
     }
-    reg2Server();
+    reg2Server();*/
   }
 
   public void goProtocol(View paramView)
   {
-    goAct(ActProtocol.class);
+//    goAct(ActProtocol.class);
   }
 
   public void isProtocol(View paramView)
   {
-    if (this.isProtocol)
+    /*if (this.isProtocol)
     {
       paramView.setBackgroundResource(2130903277);
       if (this.isProtocol)
@@ -366,12 +352,12 @@ public class ActRegisterActivity extends MyBaseActivity
       return;
       paramView.setBackgroundResource(2130903786);
       break;
-    }
+    }*/
   }
 
   public int maiVerifly()
   {
-    Mail localMail = new Mail("L-Home@ltech.cn", "Lt201511");
+    /*Mail localMail = new Mail("L-Home@ltech.cn", "Lt201511");
     localMail.set_debuggable(false);
     String[] arrayOfString = new String[1];
     arrayOfString[0] = this.mail;
@@ -388,13 +374,14 @@ public class ActRegisterActivity extends MyBaseActivity
     catch (Exception localException)
     {
     }
-    return 1;
+    return 1;*/
+    return -1;
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
   {
     super.onActivityResult(paramInt1, paramInt2, paramIntent);
-    if (paramInt2 == 200)
+    /*if (paramInt2 == 200)
     {
       if (!this.isZh)
         break label91;
@@ -411,17 +398,17 @@ public class ActRegisterActivity extends MyBaseActivity
       return;
       label91: setResult(200);
       finish();
-    }
+    }*/
   }
 
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
     this.isZh = UserFerences.getUserFerences(this).spFerences.getBoolean("isZh", true);
-    setContentView(2130968700);
+    setContentView(R.layout.at_reg);
     ButterKnife.bind(this);
     setTitleView();
-    this.ivStep.setBackgroundResource(2130903771);
+    this.ivStep.setBackgroundResource(R.mipmap.step_1);
     this.etActLogPsd.setTransformationMethod(PasswordTransformationMethod.getInstance());
   }
 
@@ -433,18 +420,18 @@ public class ActRegisterActivity extends MyBaseActivity
 
   public void reg(View paramView)
   {
-    boolean bool1 = true;
+    /*boolean bool1 = true;
     try
     {
       this.regView = ((ImageView)paramView);
       if (!this.etActLogPsd.getText().toString().equals(this.etActLogPsd.getText().toString().trim()))
       {
-        toast(2131100280);
+        toast(R.string.psw_again);
         return;
       }
       if (!this.isProtocol)
       {
-        toast(2131100214);
+        toast(R.string.no_protocol);
         return;
       }
     }
@@ -491,19 +478,19 @@ public class ActRegisterActivity extends MyBaseActivity
       }
       return;
       label273: bool1 = false;
-    }
+    }*/
   }
 
   public void seleteArea(View paramView)
   {
-    startActivityForResult(new Intent(this, AtRegAreaActivity.class), 0);
+//    startActivityForResult(new Intent(this, AtRegAreaActivity.class), 0);
   }
 
   public void setTitleView()
   {
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.plug_back);
-    setTiTleTextRes(2131100320);
+    setTiTleTextRes(R.string.reg);
     showBottomLine();
     setBgWhite();
   }

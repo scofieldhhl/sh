@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Environment;
 
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
@@ -13,9 +12,6 @@ import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.utils.FileUtil;
-import com.ex.ltech.led.utils.UriUtil;
 import com.ex.ltech.led.vo.ModeVo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -153,9 +149,9 @@ public class ModeBusiness
 
   public void compressAndSave2SdCardBitmap(Uri paramUri)
   {
-    String str = UriUtil.getRealFilePath(this.pct, paramUri);
+    /*String str = UriUtil.getRealFilePath(this.pct, paramUri);
     Bitmap localBitmap = BitmapUtils.getImageBit(str);
-    FileUtil.saveMyBitmap(Environment.getExternalStorageDirectory() + "/ltech/led/image" + str.substring(str.lastIndexOf("/")), localBitmap, "/ltech/led/image");
+    FileUtil.saveMyBitmap(Environment.getExternalStorageDirectory() + "/ltech/led/image" + str.substring(str.lastIndexOf("/")), localBitmap, "/ltech/led/image");*/
   }
 
   public void editMode(int paramInt)
@@ -211,18 +207,13 @@ public class ModeBusiness
   public List<Bitmap> getNewCreateModeBitmaps()
   {
     this.bms.clear();
-    /*int i = 0;
-    if (i < this.modes.size())
+    for(int i = 0;i < this.modes.size(); i++)
     {
-      if (((ModeVo)this.modes.get(i)).getNewCreateModeBitmapPath() != null)
-        this.bms.add(BitmapFactory.decodeFile(((ModeVo)this.modes.get(i)).getNewCreateModeBitmapPath()));
-      while (true)
-      {
-        i++;
-        break;
-        this.bms.add(BitmapFactory.decodeResource(this.pct.getResources(), ((ModeVo)this.modes.get(i)).getIvLeftRes()));
-      }
-    }*/
+      if ((modes.get(i)).getNewCreateModeBitmapPath() != null)
+        this.bms.add(BitmapFactory.decodeFile((modes.get(i)).getNewCreateModeBitmapPath()));
+      else
+        this.bms.add(BitmapFactory.decodeResource(this.pct.getResources(), (modes.get(i)).getIvLeftRes()));
+    }
     return this.bms;
   }
 
@@ -270,31 +261,22 @@ public class ModeBusiness
   public void initModes()
   {
     String str = this.ferences.spFerences.getString(this.modeDataKey, "");
-    /*if (str.equals(""))
+    if (str.equals(""))
       initDefaultModes();
-    while (true)
-    {
+    else {
       appendAddBtnVo();
-      return;
-      try
-      {
-        this.localModesData = ((List)this.gs.fromJson(str, new TypeToken()
-        {
-        }
-        .getType()));
+      try {
+        this.localModesData = (List<ModeVo>) this.gs.fromJson(str, ModeVo.class);
         StringBuilder localStringBuilder = new StringBuilder();
         for (int i = 0; i < this.localModesData.size(); i++)
-          localStringBuilder.append(((ModeVo)this.localModesData.get(i)).getTvName());
+          localStringBuilder.append(((ModeVo) this.localModesData.get(i)).getTvName());
         this.modesNames = localStringBuilder.toString();
         if (this.localModesData.size() == 0)
-          continue;
-        this.modes = this.localModesData;
-      }
-      catch (JsonSyntaxException localJsonSyntaxException)
-      {
+          this.modes = this.localModesData;
+      } catch (JsonSyntaxException localJsonSyntaxException) {
         initDefaultModes();
       }
-    }*/
+    }
   }
 
   public boolean isMultiSeleted()
@@ -418,38 +400,34 @@ public class ModeBusiness
         removeAddBtnVos();
       return;
     }
-    /*if (this.singleSeletedPosi == paramInt)
+    if (this.singleSeletedPosi == paramInt)
     {
-      ModeVo localModeVo3 = (ModeVo)this.modes.get(paramInt);
+      ModeVo localModeVo3 = modes.get(paramInt);
       if (!localModeVo3.isSingleSeleted())
       {
-        label153: localModeVo3.setSingleSeleted(i);
+        localModeVo3.setSingleSeleted(true);
         this.modes.remove(paramInt);
         this.modes.add(paramInt, localModeVo3);
       }
     }
-    while (true)
-    {
-      this.singleSeletedPosi = paramInt;
-      if (paramInt == j - 1)
-        break;
-      sendSingleMode(paramInt);
+    this.singleSeletedPosi = paramInt;
+    if (paramInt == j - 1)
       return;
-      boolean bool = false;
-      break label153;
+    else {
+      sendSingleMode(paramInt);
       for (int k = 0; k < this.modes.size(); k++)
       {
-        ModeVo localModeVo2 = (ModeVo)this.modes.get(k);
+        ModeVo localModeVo2 = modes.get(k);
         localModeVo2.setSingleSeleted(false);
         localModeVo2.setSeleted(false);
         this.modes.remove(k);
         this.modes.add(k, localModeVo2);
       }
-      ModeVo localModeVo1 = (ModeVo)this.modes.get(paramInt);
-      localModeVo1.setSingleSeleted(bool);
+      ModeVo localModeVo1 = modes.get(paramInt);
+      localModeVo1.setSingleSeleted(false);
       this.modes.remove(paramInt);
       this.modes.add(paramInt, localModeVo1);
-    }*/
+    }
   }
 
   public void prepareLink()
@@ -505,71 +483,67 @@ public class ModeBusiness
 
   public void sendCustomMode(int paramInt1, int paramInt2, int paramInt3, int paramInt4, int paramInt5, int paramInt6, List<Integer> paramList)
   {
-    /*byte b = 17;
+    byte b = 17;
     int i;
+    switch (paramInt1)
+    {
+      default:
+      case 1:
+        i = 241;
+        break;
+      case 2:
+        i = 242;
+        break;
+      case 3:
+        i = 243;
+        break;
+      case 4:
+        i = 244;
+        break;
+      case 5:
+        i = 245;
+        break;
+      case 6:
+        i = 246;
+        break;
+      case 7:
+        i = 247;
+        break;
+      case 8:
+        i = 248;
+        break;
+    }
     switch (paramInt4)
     {
     default:
-      System.out.println("speed       " + b + "      brt   " + paramInt5);
-      i = 241;
-      switch (paramInt1)
-      {
-      default:
-      case 1:
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-      case 7:
-      case 8:
-      }
     case 1:
-    case 2:
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-    case 7:
-    case 8:
-    }
-    while (true)
-    {
-      System.out.println("mIndex%^&(*))*&^&%^           " + paramInt1);
-      this.socketManager.postTask(this.cmdDateBussiness.getCustomModeCmd(i, paramInt2, paramInt3, b, paramInt5, paramInt6, paramList));
-      return;
       b = 17;
       break;
+    case 2:
       b = 18;
       break;
+    case 3:
       b = 19;
       break;
+    case 4:
       b = 20;
       break;
+    case 5:
       b = 21;
       break;
+    case 6:
       b = 22;
       break;
+    case 7:
       b = 23;
       break;
+    case 8:
       b = 24;
       break;
-      i = 241;
-      continue;
-      i = 242;
-      continue;
-      i = 243;
-      continue;
-      i = 244;
-      continue;
-      i = 245;
-      continue;
-      i = 246;
-      continue;
-      i = 247;
-      continue;
-      i = 248;
-    }*/
+    }
+    System.out.println("speed       " + b + "      brt   " + paramInt5);
+    System.out.println("mIndex%^&(*))*&^&%^           " + paramInt1);
+    this.socketManager.postTask(this.cmdDateBussiness.getCustomModeCmd(i, paramInt2, paramInt3, b, paramInt5, paramInt6, paramList));
   }
 
   public void sendModes()
@@ -700,14 +674,14 @@ public class ModeBusiness
     /*ArrayList localArrayList = new ArrayList();
     int i;
     int j;
-    label37: byte b;
+    byte b;
     if (this.modes.size() < 16)
     {
       i = -1 + this.modes.size();
       j = 0;
       if (j >= i)
-        break label203;
-      ModeVo localModeVo = (ModeVo)this.modes.get(j);
+        ModeVo localModeVo = (ModeVo)this.modes.get(j);
+
       b = 17;
       switch (localModeVo.getSpeed())
       {
@@ -745,7 +719,7 @@ public class ModeBusiness
       continue;
       b = 24;
     }
-    label203: String str = "";
+    String str = "";
     List localList = this.modes;
     int k = 15;
     if (k > -1)

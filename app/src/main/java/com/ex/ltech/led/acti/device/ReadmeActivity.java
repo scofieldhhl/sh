@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
 
 public class ReadmeActivity extends MyBaseActivity
@@ -11,11 +13,11 @@ public class ReadmeActivity extends MyBaseActivity
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    setContentView(2130968617);
+    setContentView(R.layout.act_readme);
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.back_ic);
     setTiTleTextRes(R.string.guide);
-    findViewById(2131558612).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_1).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {
@@ -24,7 +26,7 @@ public class ReadmeActivity extends MyBaseActivity
         ReadmeActivity.this.startActivity(localIntent);
       }
     });
-    findViewById(2131558613).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_2).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {
@@ -33,7 +35,7 @@ public class ReadmeActivity extends MyBaseActivity
         ReadmeActivity.this.startActivity(localIntent);
       }
     });
-    findViewById(2131558614).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_3).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {
@@ -42,7 +44,7 @@ public class ReadmeActivity extends MyBaseActivity
         ReadmeActivity.this.startActivity(localIntent);
       }
     });
-    findViewById(2131558615).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_4).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {
@@ -51,7 +53,7 @@ public class ReadmeActivity extends MyBaseActivity
         ReadmeActivity.this.startActivity(localIntent);
       }
     });
-    findViewById(2131558616).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_5).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {
@@ -60,7 +62,7 @@ public class ReadmeActivity extends MyBaseActivity
         ReadmeActivity.this.startActivity(localIntent);
       }
     });
-    findViewById(2131558617).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_6).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {
@@ -69,7 +71,7 @@ public class ReadmeActivity extends MyBaseActivity
         ReadmeActivity.this.startActivity(localIntent);
       }
     });
-    findViewById(2131558618).setOnClickListener(new View.OnClickListener()
+    findViewById(R.id.tv_act_readme_7).setOnClickListener(new OnClickListener()
     {
       public void onClick(View paramView)
       {

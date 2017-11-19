@@ -2,16 +2,15 @@ package com.ex.ltech.led.acti.timing;
 
 import android.app.Activity;
 import android.os.Handler;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.ex.ltech.led.my_view.ColorSeletedView;
+import android.widget.ToggleButton;
+
+import com.ex.ltech.led.acti.mode.ColorSeletedView;
 import com.ex.ltech.led.vo.TimingVo;
-import com.zcw.togglebutton.ToggleButton;
-import com.zcw.togglebutton.ToggleButton.OnToggleChangedInListView;
-import java.io.PrintStream;
+
 import java.util.List;
 
 public class TimingListAdapter extends BaseAdapter
@@ -48,7 +47,7 @@ public class TimingListAdapter extends BaseAdapter
 
   public View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    Holder localHolder;
+    /*Holder localHolder;
     if (paramView == null)
     {
       localHolder = new Holder();
@@ -120,7 +119,8 @@ public class TimingListAdapter extends BaseAdapter
       if (!localTimingVo.isOffDevice())
         localHolder.tv_act_timing_mode.setText(localTimingVo.getModeName());
       System.out.println("");
-    }
+    }*/
+    return null;
   }
 
   public void setHandler(Handler paramHandler)

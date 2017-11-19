@@ -1,6 +1,5 @@
 package com.ex.ltech.onepiontfive.main.vo;
 
-import et.song.etclass.ETGroup;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class Light
   int mIndex;
   String name;
   boolean onOff = true;
-  ETGroup remoteDevices;
+//  ETGroup remoteDevices;
   int type = 8;
 
   public static int getTypeLed()
@@ -45,10 +44,10 @@ public class Light
     return this.name;
   }
 
-  public ETGroup getRemoteDevices()
+  /*public ETGroup getRemoteDevices()
   {
     return this.remoteDevices;
-  }
+  }*/
 
   public int getType()
   {
@@ -196,10 +195,10 @@ public class Light
     this.onOff = paramBoolean;
   }
 
-  public void setRemoteDevices(ETGroup paramETGroup)
-  {
-    this.remoteDevices = paramETGroup;
-  }
+//  public void setRemoteDevices(ETGroup paramETGroup)
+//  {
+//    this.remoteDevices = paramETGroup;
+//  }
 
   public void setType(int paramInt)
   {

@@ -5,10 +5,6 @@ import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.ImageView;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class NormalLoadPictrue
 {
@@ -30,7 +26,7 @@ public class NormalLoadPictrue
   {
     public void run()
     {
-      InputStream localInputStream;
+      /*InputStream localInputStream;
       ByteArrayOutputStream localByteArrayOutputStream;
       try
       {
@@ -61,7 +57,7 @@ public class NormalLoadPictrue
       localInputStream.close();
       Message localMessage = new Message();
       localMessage.what = 1;
-      NormalLoadPictrue.this.handle.sendMessage(localMessage);
+      NormalLoadPictrue.this.handle.sendMessage(localMessage);*/
     }
   };
   private String uri;

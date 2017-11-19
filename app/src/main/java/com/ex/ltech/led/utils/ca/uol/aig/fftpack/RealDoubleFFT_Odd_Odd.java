@@ -19,7 +19,7 @@ public class RealDoubleFFT_Odd_Odd extends RealDoubleFFT_Even_Odd
 
   void sinqb(int paramInt, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2)
   {
-    if (paramInt <= 1)
+    /*if (paramInt <= 1)
       paramArrayOfDouble1[0] = (4.0D * paramArrayOfDouble1[0]);
     while (true)
     {
@@ -35,12 +35,12 @@ public class RealDoubleFFT_Odd_Odd extends RealDoubleFFT_Even_Odd
         paramArrayOfDouble1[k] = paramArrayOfDouble1[m];
         paramArrayOfDouble1[m] = d;
       }
-    }
+    }*/
   }
 
   void sinqf(int paramInt, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2)
   {
-    if (paramInt == 1);
+    /*if (paramInt == 1);
     while (true)
     {
       return;
@@ -55,7 +55,7 @@ public class RealDoubleFFT_Odd_Odd extends RealDoubleFFT_Even_Odd
       cosqf(paramInt, paramArrayOfDouble1, paramArrayOfDouble2);
       for (int k = 1; k < paramInt; k += 2)
         paramArrayOfDouble1[k] = (-paramArrayOfDouble1[k]);
-    }
+    }*/
   }
 }
 

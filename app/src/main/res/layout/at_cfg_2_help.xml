@@ -1,15 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
     <include layout="@layout/acti_title_view" />
-    <TextView android:textSize="20.0dip" android:textColor="#ff000000" android:id="@id/tv_head" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="70.0dip" android:text="@string/d_reset" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="14.0dip" android:textColor="#ffb5b5b5" android:id="@id/restored_textView" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="90.0dip" android:text="@string/d_reset_info" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
-    <com.zhy.android.percent.support.PercentRelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="170.0dip">
-        <ImageView android:id="@id/ic" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_widthPercent="100%w" app:layout_heightPercent="100%w" xmlns:app="http://schemas.android.com/apk/res-auto" />
-    </com.zhy.android.percent.support.PercentRelativeLayout>
-    <RelativeLayout android:padding="3.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="75.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="lampBlinkSeleted">
-        <TextView android:id="@id/tv_lamp_blink_seleted" android:background="@mipmap/h_timing_choose_n" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_centerVertical="true" />
-        <TextView android:id="@id/tv_lamp_blink" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:text="@string/lamp_blink" android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@id/tv_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70.0dip"
+        android:text="@string/d_reset"
+        android:textColor="#ff000000"
+        android:textSize="20.0dip" />
+
+    <TextView
+        android:id="@id/restored_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90.0dip"
+        android:padding="10.0dip"
+        android:text="@string/d_reset_info"
+        android:textColor="#ffb5b5b5"
+        android:textSize="14.0dip" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="170.0dip"
+        android:orientation="vertical">
+
+        <ImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@id/ic"
+            android:layout_width="0.0dip"
+            android:layout_height="0.0dip"
+            app:layout_heightPercent="100%"
+            app:layout_widthPercent="100%" />
+    </android.support.percent.PercentRelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="75.0dip"
+        android:clickable="true"
+        android:onClick="lampBlinkSeleted"
+        android:padding="3.0dip">
+
+        <TextView
+            android:id="@id/tv_lamp_blink_seleted"
+            android:layout_width="18.0dip"
+            android:layout_height="18.0dip"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/h_timing_choose_n" />
+
+        <TextView
+            android:id="@id/tv_lamp_blink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20.0dip"
+            android:text="@string/lamp_blink" />
     </RelativeLayout>
-    <ImageView android:id="@id/iv_bottom_right" android:background="@mipmap/next_gray_1" android:layout_width="280.0dip" android:layout_height="43.0dip" android:layout_marginBottom="30.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="next" />
+
+    <ImageView
+        android:id="@id/iv_bottom_right"
+        android:layout_width="280.0dip"
+        android:layout_height="43.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30.0dip"
+        android:background="@mipmap/next_gray_1"
+        android:onClick="next" />
 </RelativeLayout>

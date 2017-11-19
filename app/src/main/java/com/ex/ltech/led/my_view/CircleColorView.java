@@ -1,17 +1,17 @@
 package com.ex.ltech.led.my_view;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.Point;
-import android.os.Handler;
 import android.util.AttributeSet;
-import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+
+import com.ex.ltech.led.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,14 +67,14 @@ public class CircleColorView extends View
     this.circleColorPaint = new Paint();
     this.circleColorPaint.setColor(getResources().getColor(R.color.gray));
     this.circleColorPaint.setAntiAlias(true);
-    this.circleColorPaint.setStyle(Paint.Style.FILL);
+    this.circleColorPaint.setStyle(Style.FILL);
     this.currentCircleColorPaint = new Paint();
     this.currentCircleColorPaint.setColor(getResources().getColor(R.color.gray));
     this.currentCircleColorPaint.setAntiAlias(true);
-    this.currentCircleColorPaint.setStyle(Paint.Style.FILL);
+    this.currentCircleColorPaint.setStyle(Style.FILL);
     this.currentCircleColorPaint2 = new Paint();
     this.currentCircleColorPaint2.setAntiAlias(true);
-    this.currentCircleColorPaint2.setStyle(Paint.Style.FILL);
+    this.currentCircleColorPaint2.setStyle(Style.FILL);
     for (int i = 0; i < this.circleCount; i++)
       this.colors.add(Integer.valueOf(-16777216));
   }
@@ -93,7 +93,7 @@ public class CircleColorView extends View
 
   protected void onMeasure(int paramInt1, int paramInt2)
   {
-    WindowManager localWindowManager = (WindowManager)getContext().getSystemService("window");
+    WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
     int i = localWindowManager.getDefaultDisplay().getHeight();
     int j = localWindowManager.getDefaultDisplay().getWidth();
     setMeasuredDimension(paramInt1, i * 100 / 1280);
@@ -105,7 +105,7 @@ public class CircleColorView extends View
 
   public boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
-    int i = (int)paramMotionEvent.getX();
+    /*int i = (int)paramMotionEvent.getX();
     int j = (int)paramMotionEvent.getY();
     switch (paramMotionEvent.getAction())
     {
@@ -142,6 +142,7 @@ public class CircleColorView extends View
       }
     }
     , 1000L);
+    return true;*/
     return true;
   }
 

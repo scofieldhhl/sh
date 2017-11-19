@@ -14,7 +14,7 @@ class ComplexDoubleFFT_Mixed
 
   void cfftf1(int paramInt1, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, int paramInt2)
   {
-    int[] arrayOfInt = new int[1];
+    /*int[] arrayOfInt = new int[1];
     double[] arrayOfDouble = new double[paramInt1 * 2];
     int i = paramInt1 * 2;
     int j = paramInt1 * 4;
@@ -101,7 +101,7 @@ class ComplexDoubleFFT_Mixed
       if (i4 >= i5)
         break;
       paramArrayOfDouble1[i4] = arrayOfDouble[i4];
-    }
+    }*/
   }
 
   void cffti(int paramInt, double[] paramArrayOfDouble)
@@ -399,7 +399,7 @@ class ComplexDoubleFFT_Mixed
 
   void passfg(int[] paramArrayOfInt, int paramInt1, int paramInt2, int paramInt3, int paramInt4, double[] paramArrayOfDouble1, double[] paramArrayOfDouble2, double[] paramArrayOfDouble3, double[] paramArrayOfDouble4, double[] paramArrayOfDouble5, double[] paramArrayOfDouble6, int paramInt5, int paramInt6)
   {
-    int i = paramInt1 / 2;
+    /*int i = paramInt1 / 2;
     (paramInt2 * paramInt4);
     int j = (paramInt2 + 1) / 2;
     int k = paramInt2 * paramInt1;
@@ -523,7 +523,7 @@ class ComplexDoubleFFT_Mixed
           }
         }
       }
-    }
+    }*/
   }
 }
 

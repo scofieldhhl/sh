@@ -3,13 +3,10 @@ package com.ex.ltech.led.acti;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.app.TabActivity;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.view.KeyEvent;
@@ -22,7 +19,6 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
-import com.ex.ltech.hongwai.StringUtil;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.colors.ActColor;
@@ -30,20 +26,13 @@ import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.acti.mode.ActMode;
 import com.ex.ltech.led.acti.music.ActiMusic;
 import com.ex.ltech.led.acti.timing.act.ActTiming;
-import com.ex.ltech.led.acti.timing.newRgb.ActNewRgbTiming;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.musci_service.ServicePlayer;
-import com.ex.ltech.led.my_view.MyAlertDialog;
-import com.ex.ltech.led.my_view.MyAlertDialog14;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.led.vo.DeviceVo;
-import com.ex.ltech.onepiontfive.main.updataHardWareProgram.SynProgram2Device;
 
 import java.util.List;
 
-import io.xlink.wifi.js.manage.DeviceManage;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
@@ -60,7 +49,7 @@ public class Main extends TabActivity {
     public static String lastSendCmd;
     public static String modeCmd;
     public static String musicCmd;
-    public static ServicePlayer myService;
+//    public static ServicePlayer myService;
     public static int seekSecond;
     public static int sonActHeightWithouTitle;
     public static int tabIndex;
@@ -84,7 +73,7 @@ public class Main extends TabActivity {
     boolean isUpdataIng = false;
     private ImageButton iv_act_main_all_off;
     private ImageButton iv_act_main_all_on;
-    private ServiceConnection mServiceConnection = new ServiceConnection() {
+    /*private ServiceConnection mServiceConnection = new ServiceConnection() {
         public void onServiceConnected(ComponentName paramComponentName, IBinder paramIBinder) {
             Main.myService = ((ServicePlayer.MyBinder) paramIBinder).getService();
         }
@@ -92,15 +81,15 @@ public class Main extends TabActivity {
         public void onServiceDisconnected(ComponentName paramComponentName) {
             System.out.println("fuckingSSSS         onServiceDisconnected");
         }
-    };
-    MyAlertDialog14 myAlertDialog14;
+    };*/
+//    MyAlertDialog14 myAlertDialog14;
     MyPhoneStateListener myPhoneStateListener = new MyPhoneStateListener();
     MySendPipeListener mySendPipeListener = new MySendPipeListener();
     MyXlinkNetListener myXlinkNetListener = new MyXlinkNetListener();
     private RelativeLayout rl_load;
     private SocketManager socketManager;
     String softVersion;
-    SynProgram2Device synProgram2Device;
+//    SynProgram2Device synProgram2Device;
     private TabHost tabHost;
     private TabHost.OnTabChangeListener tab_listener = new TabHost.OnTabChangeListener() {
         public void onTabChanged(String paramString) {
@@ -128,13 +117,13 @@ public class Main extends TabActivity {
     private int tempSonActHeightWithouTitle;
     Runnable timeOutThread = new Runnable() {
         public void run() {
-            if (Main.this.isRespTimeOut) {
+            /*if (Main.this.isRespTimeOut) {
                 Main.this.handler.removeCallbacks(Main.this.timeOutThread);
                 Main.this.handler.postDelayed(Main.this.timeOutThread, 1000L);
                 XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
                 DeviceManage.getInstance();
                 localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getAllOnOffCmd(160), Main.this.mySendPipeListener);
-            }
+            }*/
         }
     };
     TelephonyManager tpm;
@@ -146,12 +135,12 @@ public class Main extends TabActivity {
         modeCmd = "modeCmd";
         musicCmd = "musicCmd";
         lastSendCmd = modeCmd;
-        myService = null;
+//        myService = null;
         seekSecond = -1;
     }
 
     private void beginUpdata(String paramString) {
-        if (this.synProgram2Device == null) {
+        /*if (this.synProgram2Device == null) {
             this.isUpdataIng = true;
             this.rl_load.setVisibility(View.VISIBLE);
             DeviceManage.getInstance();
@@ -190,7 +179,7 @@ public class Main extends TabActivity {
                 }
             });
             this.synProgram2Device.syn();
-        }
+        }*/
     }
 
     private void changeTabItemBG(int paramInt) {
@@ -230,7 +219,8 @@ public class Main extends TabActivity {
         else {
             this.act_gray_layer = ((RelativeLayout) findViewById(R.id.act_gray_layer));
             this.iv_act_main_all_on = ((ImageButton) findViewById(R.id.iv_act_main_all_on));
-            this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActNewRgbTiming.class)).setIndicator(localView5));
+//            this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActNewRgbTiming.class)).setIndicator(localView5));
+            this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActNull.class)).setIndicator(localView5));
         }
     }
 
@@ -246,7 +236,7 @@ public class Main extends TabActivity {
     }
 
     private void updataDialog(String paramString) {
-        if (this.myAlertDialog14 == null) {
+        /*if (this.myAlertDialog14 == null) {
             this.myAlertDialog14 = new MyAlertDialog14(this);
             this.myAlertDialog14.show();
             this.myAlertDialog14.setCancelable(false);
@@ -273,7 +263,7 @@ public class Main extends TabActivity {
                     }
                 }
             });
-        }
+        }*/
     }
 
     public void allOff(View paramView) {
@@ -284,7 +274,7 @@ public class Main extends TabActivity {
         this.allOn = true;
         this.isRespTimeOut = true;
         if (seekSecond != -1) {
-            Intent localIntent = new Intent(this, ServicePlayer.class);
+            /*Intent localIntent = new Intent(this, ServicePlayer.class);
             Bundle localBundle = new Bundle();
             localBundle.putString("operation", "pause");
             localIntent.putExtras(localBundle);
@@ -305,9 +295,9 @@ public class Main extends TabActivity {
                                          }
                                      }
                     , 1100L);
-            return;
+            return;*/
         }
-        XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+        /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
         DeviceManage.getInstance();
         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getAllOnOffCmd(160), this.mySendPipeListener);
         this.handler.postDelayed(new Runnable() {
@@ -317,7 +307,7 @@ public class Main extends TabActivity {
                                          localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getAllOnOffCmd(160), Main.this.mySendPipeListener);
                                      }
                                  }
-                , 100L);
+                , 100L);*/
     }
 
     public void allOn(View paramView) {
@@ -326,7 +316,7 @@ public class Main extends TabActivity {
         this.act_gray_layer.setVisibility(View.GONE);
         this.allOn = false;
         if (seekSecond != -1) {
-            Intent localIntent = new Intent(this, ServicePlayer.class);
+            /*Intent localIntent = new Intent(this, ServicePlayer.class);
             Bundle localBundle = new Bundle();
             localBundle.putString("operation", "seek");
             localBundle.putInt("seceond", seekSecond);
@@ -339,9 +329,9 @@ public class Main extends TabActivity {
                                              localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getMusicCmdT(true, 0, 0, 0), null);
                                          }
                                      }
-                    , 800L);
+                    , 800L);*/
         }
-        XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+        /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
         DeviceManage.getInstance();
         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getAllOnOffCmd(161), this.mySendPipeListener);
         this.handler.postDelayed(new Runnable() {
@@ -351,7 +341,7 @@ public class Main extends TabActivity {
                                          localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getAllOnOffCmd(161), Main.this.mySendPipeListener);
                                      }
                                  }
-                , 100L);
+                , 100L);*/
     }
 
     public int dip2px(int paramInt) {
@@ -375,23 +365,23 @@ public class Main extends TabActivity {
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         deviceVo.setIp("");
-        deviceVo.setDeviceName(SharedPreferencesUtil.queryValue("dname"));
-        deviceVo.setMacAddress(SharedPreferencesUtil.queryValue("dMacAddress"));
+//        deviceVo.setDeviceName(SharedPreferencesUtil.queryValue("dname"));
+//        deviceVo.setMacAddress(SharedPreferencesUtil.queryValue("dMacAddress"));
         setContentView(R.layout.app_main);
         findView();
         changeTabItemBG(0);
         this.socketManager = SocketManager.instance();
         this.cmdDateBussiness = new CmdDateBussiness(this, "0000");
-        bindService(new Intent(this, ServicePlayer.class), this.mServiceConnection, Context.BIND_AUTO_CREATE);
-        if (SharedPreferencesUtil.queryValue("dStatus").equals(getString(R.string.off_device))) {
+//        bindService(new Intent(this, ServicePlayer.class), this.mServiceConnection, Context.BIND_AUTO_CREATE);
+        /*if (SharedPreferencesUtil.queryValue("dStatus").equals(getString(R.string.off_device))) {
             this.iv_act_main_all_on.setVisibility(View.GONE);
             this.act_gray_layer.setVisibility(View.VISIBLE);
-        }
-        StringUtil.byte2Hexstr(this.cmdDateBussiness.getDeviceOnOffInfoCmd());
+        }*/
+//        StringUtil.byte2Hexstr(this.cmdDateBussiness.getDeviceOnOffInfoCmd());
         XlinkAgent.getInstance().addXlinkListener(this.myXlinkNetListener);
         XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
-        DeviceManage.getInstance();
-        localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getDeviceOnOffInfoCmd(), this.mySendPipeListener);
+//        DeviceManage.getInstance();
+        /*localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getDeviceOnOffInfoCmd(), this.mySendPipeListener);
         this.handler.postDelayed(new Runnable() {
                                      public void run() {
                                          XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
@@ -415,20 +405,20 @@ public class Main extends TabActivity {
                                          localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.checkRgbwDeviceVersionCmd(), Main.this.mySendPipeListener);
                                      }
                                  }
-                , 600L);
+                , 600L);*/
     }
 
     protected void onDestroy() {
         super.onDestroy();
         this.isDestroy = true;
         seekSecond = -1;
-        new Intent(this, ServicePlayer.class);
+        /*new Intent(this, ServicePlayer.class);
         Intent localIntent = new Intent(this, ServicePlayer.class);
         Bundle localBundle = new Bundle();
         localBundle.putString("operation", "destroyPlayer");
         localIntent.putExtras(localBundle);
         startService(localIntent);
-        unbindService(this.mServiceConnection);
+        unbindService(this.mServiceConnection);*/
         this.isOpenHeatbeat = false;
     }
 

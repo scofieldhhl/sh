@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 
 import com.ex.ltech.hongwai.StringUtil;
-import com.ex.ltech.hongwai.vo.NonIrDevice;
 import com.ex.ltech.led.MyApp;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
@@ -744,7 +743,7 @@ public class CmdDateBussiness
 
   public byte[] getMoreSeletedModeCmd(String paramString, List<Byte> paramList, int paramInt)
   {
-    byte[] arrayOfByte = new byte[29];
+    /*byte[] arrayOfByte = new byte[29];
     arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
@@ -775,13 +774,14 @@ public class CmdDateBussiness
       cmdCount = 0;
     cmdCount = 1 + cmdCount;
     Main.lastSendCmd = Main.modeCmd;
-    return arrayOfByte;
+    return arrayOfByte;*/
+    return null;
   }
 
   public byte[] getMusicCmd(boolean paramBoolean, int paramInt)
   {
     byte[] arrayOfByte = new byte[11];
-    arrayOfByte[0] = 102;
+    /*arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
     arrayOfByte[3] = -64;
@@ -800,13 +800,14 @@ public class CmdDateBussiness
       cmdCount = 1 + cmdCount;
       Main.lastSendCmd = Main.musicCmd;
       return arrayOfByte;
-    }
+    }*/
+    return arrayOfByte;
   }
 
   public byte[] getMusicCmdT(boolean paramBoolean, int paramInt1, int paramInt2, int paramInt3)
   {
     byte[] arrayOfByte = new byte[13];
-    arrayOfByte[0] = 102;
+    /*arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
     arrayOfByte[3] = -64;
@@ -827,10 +828,11 @@ public class CmdDateBussiness
       cmdCount = 1 + cmdCount;
       Main.lastSendCmd = Main.musicCmd;
       return arrayOfByte;
-    }
+    }*/
+    return arrayOfByte;
   }
 
-  public byte[] getNonIrTiming(int paramInt1, String paramString1, String paramString2, String paramString3, int paramInt2, NonIrDevice paramNonIrDevice, int paramInt3, boolean paramBoolean)
+  /*public byte[] getNonIrTiming(int paramInt1, String paramString1, String paramString2, String paramString3, int paramInt2, NonIrDevice paramNonIrDevice, int paramInt3, boolean paramBoolean)
   {
     byte[] arrayOfByte1 = new byte[0];
     int i = 1;
@@ -976,7 +978,7 @@ public class CmdDateBussiness
     cmdCount = 1 + cmdCount;
     System.out.println("       getNonIrTiming     cmd        " + StringUtils.btye2Str3(arrayOfByte2));
     return arrayOfByte2;
-  }
+  }*/
 
   public byte[] getOffDeviceCmd(String paramString1, int paramInt1, String paramString2, String paramString3, int paramInt2, int paramInt3)
   {
@@ -1194,7 +1196,7 @@ public class CmdDateBussiness
 
   public byte[] getOutletLed(boolean paramBoolean, int paramInt1, int paramInt2)
   {
-    int i = 1;
+    /*int i = 1;
     byte[] arrayOfByte = new byte[12];
     arrayOfByte[0] = 102;
     arrayOfByte[i] = -69;
@@ -1216,12 +1218,13 @@ public class CmdDateBussiness
       cmdCount = 1 + cmdCount;
       return arrayOfByte;
       i = 2;
-    }
+    }*/
+    return null;
   }
 
   public byte[] getOutletSwich(String paramString, boolean paramBoolean)
   {
-    byte[] arrayOfByte = new byte[10];
+    /*byte[] arrayOfByte = new byte[10];
     arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
@@ -1245,12 +1248,13 @@ public class CmdDateBussiness
       return arrayOfByte;
       arrayOfByte[6] = 36;
       break;
-    }
+    }*/
+    return null;
   }
 
   public byte[] getOutletSwich(boolean paramBoolean)
   {
-    int i = 1;
+    /*int i = 1;
     byte[] arrayOfByte = new byte[10];
     arrayOfByte[0] = 102;
     arrayOfByte[i] = -69;
@@ -1270,12 +1274,13 @@ public class CmdDateBussiness
       cmdCount = 1 + cmdCount;
       return arrayOfByte;
       i = 0;
-    }
+    }*/
+    return null;
   }
 
   public byte[] getOutletTimingCmd(String paramString1, int paramInt, String paramString2, String paramString3, String paramString4, String paramString5)
   {
-    byte[] arrayOfByte = new byte[15];
+    /*byte[] arrayOfByte = new byte[15];
     arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
@@ -1304,7 +1309,8 @@ public class CmdDateBussiness
       cmdCount = 1 + cmdCount;
       return arrayOfByte;
       arrayOfByte[13] = 36;
-    }
+    }*/
+    return null;
   }
 
   public byte[] getPlugOnOffCmd(int paramInt)
@@ -1348,7 +1354,7 @@ public class CmdDateBussiness
 
   public byte[] getPlugsTimingCmd(String paramString1, int paramInt, String paramString2, String paramString3, String paramString4, String paramString5, boolean paramBoolean1, boolean paramBoolean2, byte[] paramArrayOfByte)
   {
-    byte[] arrayOfByte = new byte[24];
+    /*byte[] arrayOfByte = new byte[24];
     arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
@@ -1441,7 +1447,8 @@ public class CmdDateBussiness
       label557: i2 = 0;
       break label401;
       label563: arrayOfByte[18] = 1;
-    }
+    }*/
+    return null;
   }
 
   public byte[] getQeuryIrTimingOrder()
@@ -1466,7 +1473,7 @@ public class CmdDateBussiness
 
   public byte[] getRcTiming(int paramInt1, byte[] paramArrayOfByte1, byte[] paramArrayOfByte2, String paramString1, String paramString2, String paramString3, int paramInt2, byte[] paramArrayOfByte3, boolean paramBoolean)
   {
-    int i = 20 + paramArrayOfByte1.length + paramArrayOfByte2.length;
+    /*int i = 20 + paramArrayOfByte1.length + paramArrayOfByte2.length;
     int j;
     byte[] arrayOfByte;
     int m;
@@ -1531,12 +1538,13 @@ public class CmdDateBussiness
     arrayOfByte[(-1 + arrayOfByte.length)] = -21;
     cmdCount = 1 + cmdCount;
     System.out.println("       Timing     cmd        " + StringUtil.byte2Hexstr(arrayOfByte));
-    return arrayOfByte;
+    return arrayOfByte;*/
+    return null;
   }
 
   public byte[] getRcTimingTwice(int paramInt1, byte[] paramArrayOfByte1, byte[] paramArrayOfByte2, String paramString1, String paramString2, String paramString3, int paramInt2, byte[] paramArrayOfByte3, boolean paramBoolean)
   {
-    int i = 20 + paramArrayOfByte1.length + paramArrayOfByte2.length;
+    /*int i = 20 + paramArrayOfByte1.length + paramArrayOfByte2.length;
     int j;
     byte[] arrayOfByte;
     int m;
@@ -1602,12 +1610,13 @@ public class CmdDateBussiness
     if (cmdCount > 255)
       cmdCount = 0;
     cmdCount = 1 + cmdCount;
-    return arrayOfByte;
+    return arrayOfByte;*/
+    return null;
   }
 
   public byte[] getReqCtSceneCmd(boolean paramBoolean)
   {
-    int i = 1;
+    /*int i = 1;
     System.out.println("getReqCtSceneCmd======");
     byte[] arrayOfByte = new byte[10];
     arrayOfByte[0] = 102;
@@ -1625,7 +1634,8 @@ public class CmdDateBussiness
     if (cmdCount > 255)
       cmdCount = 0;
     cmdCount = 1 + cmdCount;
-    return arrayOfByte;
+    return arrayOfByte;*/
+    return null;
   }
 
   public byte[] getSaveDeviceNameCmd(String paramString)
@@ -1772,7 +1782,7 @@ public class CmdDateBussiness
 
   public byte[] getYaoKongTiming(int paramInt1, byte[] paramArrayOfByte1, String paramString1, String paramString2, String paramString3, int paramInt2, byte[] paramArrayOfByte2, boolean paramBoolean)
   {
-    byte[] arrayOfByte = new byte[19 + paramArrayOfByte1.length];
+    /*byte[] arrayOfByte = new byte[19 + paramArrayOfByte1.length];
     arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
     arrayOfByte[2] = (byte)cmdCount;
@@ -1804,7 +1814,8 @@ public class CmdDateBussiness
     arrayOfByte[(-1 + arrayOfByte.length)] = -21;
     System.out.println("testYaokong     send" + StringUtils.btye2Str(paramArrayOfByte2));
     System.out.println(StringUtils.btye2Str(arrayOfByte));
-    return arrayOfByte;
+    return arrayOfByte;*/
+    return null;
   }
 
   public void handModeNumSeleted(String paramString)

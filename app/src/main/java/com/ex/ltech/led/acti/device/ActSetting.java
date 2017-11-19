@@ -1,20 +1,13 @@
 package com.ex.ltech.led.acti.device;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.my_view.MLImageView;
-import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.utils.NormalLoadPictrue;
-import com.ex.ltech.onepiontfive.main.AtFragmentMaster;
 
 public class ActSetting extends MyBaseActivity
 {
@@ -38,7 +31,7 @@ public class ActSetting extends MyBaseActivity
 
   public void goDelete(View paramView)
   {
-    startActivity(new Intent(this, AtFragmentMaster.class).putExtra("AtTypeKey", "DeleteDevice"));
+//    startActivity(new Intent(this, AtFragmentMaster.class).putExtra("AtTypeKey", "DeleteDevice"));
   }
 
   public void goDeviceManager(View paramView)
@@ -100,7 +93,7 @@ public class ActSetting extends MyBaseActivity
   protected void onResume()
   {
     super.onResume();
-    String str1 = UserFerences.getUserFerences(this).spFerences.getString("uHeadPath", "");
+    /*String str1 = UserFerences.getUserFerences(this).spFerences.getString("uHeadPath", "");
     String str2 = UserFerences.getUserFerences(this).spFerences.getString("user", "");
     ((TextView)findViewById(R.id.tv_act_setting_u_name)).setText(str2);
     if (str1.indexOf("http") != -1)
@@ -125,6 +118,6 @@ public class ActSetting extends MyBaseActivity
     {
       localException.printStackTrace();
       this.iv_setting_acti_2.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.log_head_6));
-    }
+    }*/
   }
 }

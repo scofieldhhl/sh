@@ -6,29 +6,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
-import io.xlink.wifi.js.bean.Device;
-import io.xlink.wifi.js.manage.DeviceManage;
-import io.xlink.wifi.js.util.CrashHandler;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
+
+import java.util.List;
+
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class MyApp extends Application
   implements XlinkNetListener
 {
-  private static final String TAG = "MyApp";
-  private static MyApp application;
-  public static Device dvc;
+  private static final String TAG = "com.ex.ltech.MyApp";
+//  public static Device dvc;
   private static Handler mainHandler = null;
   public static SharedPreferences sharedPreferences;
   private String accessToken;
@@ -39,6 +33,7 @@ public class MyApp extends Application
   public String packageName;
   public int versionCode;
   public String versionName;
+  private static MyApp application;
 
   public static MyApp getApp()
   {
@@ -84,14 +79,14 @@ public class MyApp extends Application
   public void onCreate()
   {
     super.onCreate();
-    CrashHandler.init(this);
+//    CrashHandler.init(this);
     application = this;
     this.auth = false;
     XlinkAgent.init(this);
     sharedPreferences = getSharedPreferences("XlinkOfficiaDemo", 0);
-    this.appid = SharedPreferencesUtil.queryIntValue("appId").intValue();
-    this.authKey = SharedPreferencesUtil.queryValue("authKey", "");
-    String str = Integer.toHexString(SharedPreferencesUtil.queryIntValue("appId").intValue()).toUpperCase();
+    /*this.appid = SharedPreferencesUtil.queryIntValue(this, "appId").intValue();
+    this.authKey = SharedPreferencesUtil.queryValue(this, "authKey", "");
+    String str = Integer.toHexString(SharedPreferencesUtil.queryIntValue(this, "appId").intValue()).toUpperCase();
     for (int i = str.length(); i < 8; i++)
       str = "0" + str;
     initHandler();
@@ -100,7 +95,7 @@ public class MyApp extends Application
     {
       Device localDevice = (Device)localIterator.next();
       XlinkAgent.getInstance().initDevice(localDevice.getXDevice());
-    }
+    }*/
     try
     {
       PackageInfo localPackageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
@@ -109,7 +104,7 @@ public class MyApp extends Application
       this.packageName = localPackageInfo.packageName;
       return;
     }
-    catch (PackageManager.NameNotFoundException localNameNotFoundException)
+    catch (NameNotFoundException localNameNotFoundException)
     {
     }
   }
@@ -157,7 +152,7 @@ public class MyApp extends Application
     sendBroadcast(localIntent);
   }
 
-  public void sendPipeBroad(String paramString, Device paramDevice, byte[] paramArrayOfByte)
+  /*public void sendPipeBroad(String paramString, Device paramDevice, byte[] paramArrayOfByte)
   {
     Intent localIntent = new Intent(paramString);
     if ((paramDevice.getMacAddress() == null) || (paramDevice.getMacAddress().length() == 0))
@@ -166,7 +161,7 @@ public class MyApp extends Application
     if (paramArrayOfByte != null)
       localIntent.putExtra("data", paramArrayOfByte);
     sendBroadcast(localIntent);
-  }
+  }*/
 
   public void setAccessToken(String paramString)
   {

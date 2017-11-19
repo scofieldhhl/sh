@@ -4,23 +4,21 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
+
 import com.ex.ltech.led.UserFerences;
-import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.utils.StringUtils;
-import com.ex.ltech.onepiontfive.main.vo.Dvc;
 import com.ex.ltech.onepiontfive.main.vo.PanelLampVO;
 import com.google.gson.Gson;
-import io.xlink.wifi.js.manage.DeviceManage;
-import io.xlink.wifi.js.util.SharedPreferencesUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
 import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
-import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MyBusiness
 {
@@ -46,7 +44,7 @@ public class MyBusiness
   byte[] currentSendDatas = new byte[0];
   XDevice currentxDevice;
   DvcStatusListener dvcStatusListener;
-  private ArrayList<Dvc> dvcs = null;
+//  private ArrayList<Dvc> dvcs = null;
   public SharedPreferences getter;
   public Gson gs;
   Handler handler;
@@ -99,7 +97,7 @@ public class MyBusiness
 
   public static String hexString2binaryString(String paramString)
   {
-    String str1;
+    /*String str1;
     if ((paramString == null) || (paramString.length() % 2 != 0))
       str1 = null;
     while (true)
@@ -111,12 +109,13 @@ public class MyBusiness
         String str2 = "0000" + Integer.toBinaryString(Integer.parseInt(paramString.substring(i, i + 1), 16));
         str1 = str1 + str2.substring(-4 + str2.length());
       }
-    }
+    }*/
+    return null;
   }
 
   public void addCheckSumData(List<Integer> paramList)
   {
-    int i = 0;
+    /*int i = 0;
     int j = 0;
     if (j < paramList.size())
     {
@@ -137,12 +136,12 @@ public class MyBusiness
     String str2 = str1.substring(-2 + str1.length(), str1.length());
     String str3 = str1.substring(0, 2);
     paramList.add(Integer.valueOf(str2, 16));
-    paramList.add(Integer.valueOf(str3, 16));
+    paramList.add(Integer.valueOf(str3, 16));*/
   }
 
   public boolean addCheckSumData(String paramString)
   {
-    String str = paramString.substring(0, -6 + paramString.length());
+    /*String str = paramString.substring(0, -6 + paramString.length());
     int i = str.length();
     int j = 0;
     for (int k = 0; k < i / 2; k++)
@@ -151,7 +150,8 @@ public class MyBusiness
     int n = 0;
     if (m == j)
       n = 1;
-    return n;
+    return n;*/
+    return false;
   }
 
   public void addDeviceId2Cmd(ArrayList<Integer> paramArrayList, String paramString)
@@ -199,18 +199,18 @@ public class MyBusiness
 
   public void addUserId2Cmd(ArrayList<Integer> paramArrayList)
   {
-    String str = Integer.toHexString(SharedPreferencesUtil.queryIntValue("appId").intValue()).toUpperCase();
+    /*String str = Integer.toHexString(SharedPreferencesUtil.queryIntValue("appId").intValue()).toUpperCase();
     for (int i = str.length(); i < 8; i++)
       str = "0" + str;
     paramArrayList.add(Integer.valueOf(Integer.parseInt(str.substring(6, 8), 16)));
     paramArrayList.add(Integer.valueOf(Integer.parseInt(str.substring(4, 6), 16)));
     paramArrayList.add(Integer.valueOf(Integer.parseInt(str.substring(2, 4), 16)));
-    paramArrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 2), 16)));
+    paramArrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 2), 16)));*/
   }
 
   public void changeName(MySendListener paramMySendListener, int paramInt1, int paramInt2, int paramInt3, byte[] paramArrayOfByte, boolean paramBoolean)
   {
-    setMySendListener(paramMySendListener);
+    /*setMySendListener(paramMySendListener);
     System.out.println("changeName nameType= " + paramInt1 + "   dType= " + paramInt2 + "     index= " + paramInt3);
     addNormalHeadData(this.cmd);
     this.cmd.add(Integer.valueOf(45));
@@ -234,15 +234,15 @@ public class MyBusiness
     this.cmd.add(Integer.valueOf(1));
     addCheckSumData(this.cmd);
     this.cmd.add(Integer.valueOf(22));
-    sendCmd(this.cmd);
+    sendCmd(this.cmd);*/
   }
 
   public void crasySendCmdNoResponse(ArrayList<Integer> paramArrayList)
   {
-    DeviceManage.getInstance();
+    /*DeviceManage.getInstance();
     this.currentxDevice = DeviceManage.getxDevice();
     this.currentSendDatas = getCmdData(paramArrayList);
-    crasySend();
+    crasySend();*/
   }
 
   @Deprecated
@@ -282,7 +282,7 @@ public class MyBusiness
     return this.gs.fromJson(str, paramClass);
   }
 
-  public ArrayList<Dvc> listenerCmd(ArrayList<Dvc> paramArrayList, String paramString)
+  /*public ArrayList<Dvc> listenerCmd(ArrayList<Dvc> paramArrayList, String paramString)
   {
     return this.dvcs;
   }
@@ -295,7 +295,7 @@ public class MyBusiness
   public ArrayList<Dvc> listenerRemoteCmd(String paramString)
   {
     return this.dvcs;
-  }
+  }*/
 
   public void putCacheData(Object paramObject)
   {
@@ -346,7 +346,7 @@ public class MyBusiness
 
   public void sendCmd(ArrayList<Integer> paramArrayList)
   {
-    DeviceManage.getInstance();
+    /*DeviceManage.getInstance();
     this.currentxDevice = DeviceManage.getxDevice();
     this.currentSendDatas = getCmdData(paramArrayList);
     crasySend();
@@ -357,7 +357,7 @@ public class MyBusiness
     this.handler.postDelayed(this.checkTimeOutThread, 5000L);
     this.handler.removeCallbacks(this.sendStatusThread);
     this.handler.postDelayed(this.sendStatusThread, 5000L);
-    this.setter.putValue("SendCmdlLastTimeKey", Long.valueOf(System.currentTimeMillis()));
+    this.setter.putValue("SendCmdlLastTimeKey", Long.valueOf(System.currentTimeMillis()));*/
   }
 
   public void sendCmd(ArrayList<Integer> paramArrayList, XDevice paramXDevice)
@@ -377,7 +377,7 @@ public class MyBusiness
 
   public void sendCmd(byte[] paramArrayOfByte)
   {
-    DeviceManage.getInstance();
+    /*DeviceManage.getInstance();
     this.currentxDevice = DeviceManage.getxDevice();
     this.currentSendDatas = paramArrayOfByte;
     crasySend();
@@ -387,7 +387,7 @@ public class MyBusiness
     this.handler.postDelayed(this.checkTimeOutThread, 5000L);
     this.handler.removeCallbacks(this.sendStatusThread);
     this.handler.postDelayed(this.sendStatusThread, 5000L);
-    this.setter.putValue("SendCmdlLastTimeKey", Long.valueOf(System.currentTimeMillis()));
+    this.setter.putValue("SendCmdlLastTimeKey", Long.valueOf(System.currentTimeMillis()));*/
   }
 
   public void sendCmdNoResponse(ArrayList<Integer> paramArrayList)
@@ -490,7 +490,7 @@ public class MyBusiness
 
     public void onRecvPipeData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte)
     {
-      if (DeviceListActivity.netStats != 0);
+      /*if (DeviceListActivity.netStats != 0);
       String str;
       do
       {
@@ -503,12 +503,12 @@ public class MyBusiness
       Message localMessage = new Message();
       localMessage.obj = paramArrayOfByte;
       MyBusiness.this.myMainThreadHandler.sendMessage(localMessage);
-      MyBusiness.this.isSended = false;
+      MyBusiness.this.isSended = false;*/
     }
 
     public void onRecvPipeSyncData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte)
     {
-      if (DeviceListActivity.netStats != 1);
+      /*if (DeviceListActivity.netStats != 1);
       String str;
       do
       {
@@ -522,7 +522,7 @@ public class MyBusiness
       Message localMessage = new Message();
       localMessage.obj = paramArrayOfByte;
       MyBusiness.this.myMainThreadHandler.sendMessage(localMessage);
-      MyBusiness.this.isSended = false;
+      MyBusiness.this.isSended = false;*/
     }
 
     public void onStart(int paramInt)

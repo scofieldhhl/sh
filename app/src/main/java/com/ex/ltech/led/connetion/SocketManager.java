@@ -2,17 +2,14 @@ package com.ex.ltech.led.connetion;
 
 import android.os.AsyncTask;
 import android.os.Handler;
-import com.ex.ltech.led.utils.StringUtils;
-import io.xlink.wifi.js.manage.DeviceManage;
-import io.xlink.wifi.sdk.XDevice;
-import io.xlink.wifi.sdk.XlinkAgent;
-import io.xlink.wifi.sdk.listener.ConnectDeviceListener;
-import io.xlink.wifi.sdk.listener.SendPipeListener;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintStream;
 import java.net.Socket;
+
+import io.xlink.wifi.sdk.XDevice;
+import io.xlink.wifi.sdk.listener.SendPipeListener;
 
 public class SocketManager
 {
@@ -80,9 +77,9 @@ public class SocketManager
 
   public void jsutSendData(byte[] paramArrayOfByte)
   {
-    XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+    /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
     DeviceManage.getInstance();
-    localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), paramArrayOfByte, this.sendPipeListener);
+    localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), paramArrayOfByte, this.sendPipeListener);*/
   }
 
   public void openReadThread()
@@ -97,14 +94,14 @@ public class SocketManager
 
   public void postTaskNoReturn(byte[] paramArrayOfByte)
   {
-    XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+    /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
     DeviceManage.getInstance();
-    localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), paramArrayOfByte, this.sendPipeListener);
+    localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), paramArrayOfByte, this.sendPipeListener);*/
   }
 
   public void sendData(byte[] paramArrayOfByte)
   {
-    XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+    /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
     DeviceManage.getInstance();
     int i = localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), paramArrayOfByte, this.sendPipeListener);
     System.out.println("sendData = " + StringUtils.btye2Str3(paramArrayOfByte));
@@ -130,7 +127,7 @@ public class SocketManager
             label28: i = 0;
           }
         }
-      });
+      });*/
   }
 
   public void setpHandler(Handler paramHandler)
@@ -146,7 +143,7 @@ public class SocketManager
 
     protected String doInBackground(byte[][] paramArrayOfByte)
     {
-      try
+      /*try
       {
         SocketManager.this.sendData(paramArrayOfByte[0]);
         label10: return null;
@@ -154,7 +151,8 @@ public class SocketManager
       catch (Exception localException)
       {
         break label10;
-      }
+      }*/
+      return null;
     }
 
     protected void onCancelled()

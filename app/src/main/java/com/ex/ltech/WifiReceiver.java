@@ -3,12 +3,6 @@ package com.ex.ltech;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.net.NetworkInfo;
-import android.net.NetworkInfo.State;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
-import android.widget.Toast;
-import java.io.PrintStream;
 
 public class WifiReceiver extends BroadcastReceiver
 {
@@ -16,7 +10,7 @@ public class WifiReceiver extends BroadcastReceiver
 
   public void onReceive(Context paramContext, Intent paramIntent)
   {
-    if (paramIntent.getAction().equals("android.net.wifi.RSSI_CHANGED"));
+    /*if (paramIntent.getAction().equals("android.net.wifi.RSSI_CHANGED"));
     int i;
     do
     {
@@ -27,18 +21,18 @@ public class WifiReceiver extends BroadcastReceiver
           if (!paramIntent.getAction().equals("android.net.wifi.STATE_CHANGE"))
             break;
           NetworkInfo localNetworkInfo = (NetworkInfo)paramIntent.getParcelableExtra("networkInfo");
-          if (localNetworkInfo.getState().equals(NetworkInfo.State.DISCONNECTED))
+          if (localNetworkInfo.getState().equals(State.DISCONNECTED))
           {
             if (System.currentTimeMillis() - this.lastTime > 3000L)
-              Toast.makeText(paramContext, 2131100039, 0).show();
+              Toast.makeText(paramContext, R.string.disconnet_wifi, Toast.LENGTH_SHORT).show();
             this.lastTime = System.currentTimeMillis();
             return;
           }
-          if (!localNetworkInfo.getState().equals(NetworkInfo.State.CONNECTED))
+          if (!localNetworkInfo.getState().equals(State.CONNECTED))
             continue;
-          WifiInfo localWifiInfo = ((WifiManager)paramContext.getSystemService("wifi")).getConnectionInfo();
+          WifiInfo localWifiInfo = ((WifiManager)paramContext.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo();
           if (System.currentTimeMillis() - this.lastTime > 3000L)
-            Toast.makeText(paramContext, paramContext.getString(2131099971) + localWifiInfo.getSSID(), 0).show();
+            Toast.makeText(paramContext, paramContext.getString(R.string.connet_to) + localWifiInfo.getSSID(), Toast.LENGTH_SHORT).show();;
           this.lastTime = System.currentTimeMillis();
           return;
         }
@@ -50,7 +44,7 @@ public class WifiReceiver extends BroadcastReceiver
       return;
     }
     while (i != 3);
-    System.out.println("系统开启wifi");
+    System.out.println("系统开启wifi");*/
   }
 }
 

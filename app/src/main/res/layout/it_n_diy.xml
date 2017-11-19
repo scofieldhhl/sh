@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="110.0dip" android:layout_height="110.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.ex.ltech.hongwai.view.ImageTextBigButton android:id="@id/btn" android:layout_width="90.0dip" android:layout_height="90.0dip" android:src="@mipmap/stb_up" android:scaleType="fitCenter" android:layout_centerInParent="true" app:b_b_iv_drawable="@mipmap/stb_up" app:b_b_tv_name="@string/rc_key_name_page_up" />
-    <Button android:id="@id/bt_edit" android:background="@mipmap/scene_ed" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" />
-    <Button android:id="@id/delkey" android:background="@mipmap/del_105" android:visibility="gone" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" />
-</RelativeLayout>

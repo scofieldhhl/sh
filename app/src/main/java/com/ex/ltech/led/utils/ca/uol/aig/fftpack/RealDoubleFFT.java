@@ -51,7 +51,7 @@ public class RealDoubleFFT extends RealDoubleFFT_Mixed
 
   public void ft(double[] paramArrayOfDouble, Complex1D paramComplex1D)
   {
-    if (paramArrayOfDouble.length != this.ndim)
+    /*if (paramArrayOfDouble.length != this.ndim)
       throw new IllegalArgumentException("The length of data can not match that of the wavetable");
     rfftf(this.ndim, paramArrayOfDouble, this.wavetable);
     if (this.ndim % 2 == 0)
@@ -71,7 +71,7 @@ public class RealDoubleFFT extends RealDoubleFFT_Mixed
     {
       paramComplex1D.x[(this.ndim / 2)] = paramArrayOfDouble[(-1 + this.ndim)];
       paramComplex1D.y[(this.ndim / 2)] = 0.0D;
-    }
+    }*/
   }
 }
 

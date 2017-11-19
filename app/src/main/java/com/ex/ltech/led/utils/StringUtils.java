@@ -1,13 +1,7 @@
 package com.ex.ltech.led.utils;
 
-import java.util.regex.Matcher;
+
 import java.util.regex.Pattern;
-import net.sourceforge.pinyin4j.PinyinHelper;
-import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
-import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
-import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
-import net.sourceforge.pinyin4j.format.HanyuPinyinVCharType;
-import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 public class StringUtils
 {
@@ -53,7 +47,7 @@ public class StringUtils
   public static String bytesStr2WordStr(String paramString)
   {
     byte[] arrayOfByte = new byte[paramString.length() / 2];
-    int i = 0;
+    /*int i = 0;
     while (true)
       if (i < arrayOfByte.length)
       {
@@ -78,7 +72,7 @@ public class StringUtils
     catch (Exception localException1)
     {
       localException1.printStackTrace();
-    }
+    }*/
     return paramString;
   }
 
@@ -89,7 +83,7 @@ public class StringUtils
 
   public static String getPinYin(String paramString)
   {
-    char[] arrayOfChar = paramString.toCharArray();
+    /*char[] arrayOfChar = paramString.toCharArray();
     new String[arrayOfChar.length];
     HanyuPinyinOutputFormat localHanyuPinyinOutputFormat = new HanyuPinyinOutputFormat();
     localHanyuPinyinOutputFormat.setCaseType(HanyuPinyinCaseType.LOWERCASE);
@@ -115,7 +109,8 @@ public class StringUtils
           localBadHanyuPinyinOutputFormatCombination.printStackTrace();
         }
       else
-        return localObject;
+        return localObject;*/
+    return null;
   }
 
   public static String hexString2String(String paramString)
@@ -128,7 +123,7 @@ public class StringUtils
 
   public static String hexString2binaryString(String paramString)
   {
-    String str1;
+    /*String str1;
     if ((paramString == null) || (paramString.length() % 2 != 0))
       str1 = null;
     while (true)
@@ -140,12 +135,13 @@ public class StringUtils
         String str2 = "0000" + Integer.toBinaryString(Integer.parseInt(paramString.substring(i, i + 1), 16));
         str1 = str1 + str2.substring(-4 + str2.length());
       }
-    }
+    }*/
+    return null;
   }
 
   public static boolean isBlank(String paramString)
   {
-    if ((paramString == null) || ("".equals(paramString)));
+    /*if ((paramString == null) || ("".equals(paramString)));
     while (true)
     {
       return true;
@@ -155,7 +151,8 @@ public class StringUtils
         if ((j != 32) && (j != 9) && (j != 13) && (j != 10))
           return false;
       }
-    }
+    }*/
+    return false;
   }
 
   public static String reverse(String paramString)
@@ -212,7 +209,7 @@ public class StringUtils
 
   public static String toStringHex1(String paramString)
   {
-    byte[] arrayOfByte = new byte[paramString.length() / 2];
+    /*byte[] arrayOfByte = new byte[paramString.length() / 2];
     int i = 0;
     while (true)
       if (i < arrayOfByte.length)
@@ -238,7 +235,7 @@ public class StringUtils
     catch (Exception localException1)
     {
       localException1.printStackTrace();
-    }
+    }*/
     return paramString;
   }
 }

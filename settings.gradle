@@ -1,1 +1,1 @@
-include ':app', ':xlinklib', ':rippleView'
+include ':app', ':rippleView', ':fragmentmaster-appcompat', ':fragmentmaster'

@@ -80,7 +80,7 @@ public class SecondArc extends View
   {
     float f1 = paramFloat1 - this.mTranslateX;
     float f2 = paramFloat2 - this.mTranslateY;
-    if (this.mClockwise);
+    /*if (this.mClockwise);
     while (true)
     {
       double d = Math.toDegrees(1.570796326794897D + Math.atan2(f2, f1) - Math.toRadians(this.mRotation));
@@ -88,18 +88,25 @@ public class SecondArc extends View
         d += 360.0D;
       return d - this.mStartAngle;
       f1 = -f1;
-    }
+    }*/
+    if (this.mClockwise);
+
+    double d = Math.toDegrees(1.570796326794897D + Math.atan2(f2, f1) - Math.toRadians(this.mRotation));
+      if (d < 0.0D)
+        d += 360.0D;
+    return d - this.mStartAngle;
   }
 
   private boolean ignoreTouch(float paramFloat1, float paramFloat2)
   {
-    float f1 = paramFloat1 - this.mTranslateX;
+    /*float f1 = paramFloat1 - this.mTranslateX;
     float f2 = paramFloat2 - this.mTranslateY;
     boolean bool = (float)Math.sqrt(f1 * f1 + f2 * f2) < this.mTouchIgnoreRadius;
     int i = 0;
     if (bool)
       i = 1;
-    return i;
+    return i;*/
+    return false;
   }
 
   private void init(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
@@ -113,21 +120,21 @@ public class SecondArc extends View
     {
       TypedArray localTypedArray = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.SeekArc, paramInt, 0);
       if (localTypedArray.getDrawable(0) != null);
-      this.mMax = localTypedArray.getInteger(2, this.mMax);
-      this.mProgress = localTypedArray.getInteger(5, this.mProgress);
-      this.mProgressWidth = (int)localTypedArray.getDimension(3, this.mProgressWidth);
-      this.mArcWidth = (int)localTypedArray.getDimension(4, this.mArcWidth);
-      this.mStartAngle = localTypedArray.getInt(7, this.mStartAngle);
-      this.mSweepAngle = localTypedArray.getInt(8, this.mSweepAngle);
-      this.mRotation = localTypedArray.getInt(6, this.mRotation);
-      this.mRoundedEdges = localTypedArray.getBoolean(11, this.mRoundedEdges);
-      this.mTouchInside = localTypedArray.getBoolean(12, this.mTouchInside);
-      this.mClockwise = localTypedArray.getBoolean(13, this.mClockwise);
-      i = localTypedArray.getColor(9, i);
-      j = localTypedArray.getColor(10, j);
+      this.mMax = localTypedArray.getInteger(R.styleable.SeekArc_maxs, this.mMax);
+      this.mProgress = localTypedArray.getInteger(R.styleable.SeekArc_progresss, this.mProgress);
+      this.mProgressWidth = (int)localTypedArray.getDimension(R.styleable.SeekArc_progressWidth, this.mProgressWidth);
+      this.mArcWidth = (int)localTypedArray.getDimension(R.styleable.SeekArc_arcWidth, this.mArcWidth);
+      this.mStartAngle = localTypedArray.getInt(R.styleable.SeekArc_startAngle, this.mStartAngle);
+      this.mSweepAngle = localTypedArray.getInt(R.styleable.SeekArc_sweepAngle, this.mSweepAngle);//8
+      this.mRotation = localTypedArray.getInt(R.styleable.SeekArc_rotation, this.mRotation);
+      this.mRoundedEdges = localTypedArray.getBoolean(R.styleable.SeekArc_roundEdges, this.mRoundedEdges);//11
+      this.mTouchInside = localTypedArray.getBoolean(R.styleable.SeekArc_touchInside, this.mTouchInside);
+      this.mClockwise = localTypedArray.getBoolean(R.styleable.SeekArc_clockwise, this.mClockwise);
+      i = localTypedArray.getColor(R.styleable.SeekArc_arcColor, i);
+      j = localTypedArray.getColor(R.styleable.SeekArc_progressColor, j);
       localTypedArray.recycle();
     }
-    int k;
+    /*int k;
     int m;
     label284: int n;
     label305: int i1;
@@ -189,6 +196,47 @@ public class SecondArc extends View
       break label321;
       i2 = this.mStartAngle;
       break label340;
+    }*/
+
+    if (this.mProgress > this.mMax)
+    {
+      this.mProgress = this.mMax;
+      if (this.mProgress >= 0)
+        this.mProgress = 0;
+
+      if (this.mSweepAngle <= 360)
+        this.mSweepAngle = 360;
+
+      if (this.mSweepAngle >= 0)
+        this.mSweepAngle = 0;
+
+      if (this.mStartAngle <= 360)
+        this.mSweepAngle = 0;
+
+      if (this.mStartAngle >= 0)
+        this.mStartAngle = 0;
+    }else {
+      this.mStartAngle = 0;
+      this.mArcPaint = new Paint();
+      this.mArcPaint.setColor(i);
+      this.mArcPaint.setAntiAlias(true);
+      this.mArcPaint.setStyle(Paint.Style.STROKE);
+      this.mArcPaint.setStrokeWidth(this.mProgressWidth);
+      this.mProgressPaint = new Paint();
+      this.mProgressPaint.setColor(j);
+      this.mProgressPaint.setAntiAlias(true);
+      this.mProgressPaint.setStyle(Paint.Style.STROKE);
+      this.mProgressPaint.setStrokeWidth(this.mProgressWidth);
+      this.mSunPaint = new Paint();
+      this.mSunPaint.setColor(j);
+      this.mSunPaint.setAntiAlias(true);
+      this.mSunPaint.setStyle(Paint.Style.STROKE);
+      this.mSunPaint.setStrokeWidth(2 * this.mProgressWidth);
+      if (this.mRoundedEdges)
+      {
+        this.mArcPaint.setStrokeCap(Paint.Cap.ROUND);
+        this.mProgressPaint.setStrokeCap(Paint.Cap.ROUND);
+      }
     }
   }
 

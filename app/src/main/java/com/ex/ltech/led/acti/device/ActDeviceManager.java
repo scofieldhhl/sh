@@ -2,9 +2,6 @@ package com.ex.ltech.led.acti.device;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,17 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
-import com.ex.ltech.led.my_view.MLImageView;
-import com.ex.ltech.led.utils.BitmapUtils;
-import com.ex.ltech.led.utils.FileUtil;
-import com.ex.ltech.led.utils.UriUtil;
 import com.ex.ltech.led.vo.DeviceVo;
 import com.soundcloud.android.crop.Crop;
 
@@ -32,7 +23,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import io.xlink.wifi.js.bean.Device;
+
 
 public class ActDeviceManager extends MyBaseActivity {
     int SHOT_REQ_CODE = 1;
@@ -41,7 +32,7 @@ public class ActDeviceManager extends MyBaseActivity {
     private CmdDateBussiness cmdDateBussiness;
     String curMacAddress;
     File currentFile;
-    private ArrayList<Device> devices = new ArrayList();
+//    private ArrayList<Device> devices = new ArrayList();
     private boolean isShare;
     private ListView lv_acti_device_manager;
     private Pattern pattern = Pattern.compile("^([a-z]|[A-Z]|[0-9]|[⺀-鿿]){3,}|@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?|[wap.]{4}|[www.]{4}|[blog.]{5}|[bbs.]{4}|[.com]{4}|[.cn]{3}|[.net]{4}|[.org]{4}|[http://]{7}|[ftp://]{6}$");
@@ -55,13 +46,13 @@ public class ActDeviceManager extends MyBaseActivity {
     }
 
     private void handleCrop(int paramInt, Intent paramIntent) {
-        if (paramInt == -1) {
+        /*if (paramInt == -1) {
             Bitmap localBitmap = BitmapUtils.autoZoomInBM(BitmapUtils.getBitmapFromUri(this, Crop.getOutput(paramIntent)), 300.0D, 300.0D);
             UriUtil.getRealFilePath(this, paramIntent.getData());
             String str = Environment.getExternalStorageDirectory() + "/ltech/led/image" + "/" + System.currentTimeMillis() + ".jpg";
             FileUtil.saveMyBitmap(str, localBitmap, "/ltech/led/image");
             UserFerences.getUserFerences(this).putValue(this.curMacAddress + "devicePicPath", str);
-        }
+        }*/
     }
 
     private void init() {
@@ -113,7 +104,7 @@ public class ActDeviceManager extends MyBaseActivity {
 
     protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent) {
         super.onActivityResult(paramInt1, paramInt2, paramIntent);
-        if ((-1 == paramInt2) && (paramInt1 == this.SHOT_REQ_CODE)) {
+        /*if ((-1 == paramInt2) && (paramInt1 == this.SHOT_REQ_CODE)) {
             new Thread() {
                 public void run() {
                     super.run();
@@ -136,7 +127,7 @@ public class ActDeviceManager extends MyBaseActivity {
             }
                     .start();
             return;
-        }
+        }*/
         /*if ((paramInt1 == 9162) && (paramInt2 == -1))
             beginCrop(paramIntent.getData());
         while (true) {
@@ -162,10 +153,10 @@ public class ActDeviceManager extends MyBaseActivity {
     }
 
     class Adt extends BaseAdapter {
-        public List<Device> devices;
+//        public List<Device> devices;
         private Activity pct;
 
-        public Adt(Activity activity, ArrayList<Device> arg2) {
+        /*public Adt(Activity activity, ArrayList<Device> arg2) {
             this.pct = activity;
             this.devices = arg2;
         }
@@ -176,6 +167,16 @@ public class ActDeviceManager extends MyBaseActivity {
 
         public Object getItem(int paramInt) {
             return this.devices.get(paramInt);
+        }*/
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return null;
         }
 
         public long getItemId(int paramInt) {
@@ -184,10 +185,10 @@ public class ActDeviceManager extends MyBaseActivity {
 
         public View getView(int paramInt, View paramView, ViewGroup paramViewGroup) {
             Holder localHolder = null;
-            Device localDevice = null;
+            /*Device localDevice = null;
             String str1;
             String str2;
-            /*if (paramView == null) {
+            if (paramView == null) {
                 localHolder = new Holder();
                 ActDeviceManager.this.getLayoutInflater();
                 paramView = LayoutInflater.from(ActDeviceManager.this).inflate(R.layout.item_act_device_manager, null);
@@ -425,11 +426,11 @@ public class ActDeviceManager extends MyBaseActivity {
         }
 
         class Holder {
-            MLImageView iv_act_device_rename;
+            /*MLImageView iv_act_device_rename;
             TextView tv_act_device_del;
             TextView tv_act_device_name;
             TextView tv_act_device_rename;
-            TextView tv_act_device_share;
+            TextView tv_act_device_share;*/
 
             Holder() {
             }

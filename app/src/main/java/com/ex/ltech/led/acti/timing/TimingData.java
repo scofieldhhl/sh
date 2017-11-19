@@ -2,13 +2,14 @@ package com.ex.ltech.led.acti.timing;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
-import java.io.PrintStream;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,7 +64,7 @@ public class TimingData
 
   public List<TimingVo> getTimingVos4Sd()
   {
-    String str = this.settingGetter.getString(DeviceListActivity.deviceMacAddress + timingDataKey, "");
+    /*String str = this.settingGetter.getString(DeviceListActivity.deviceMacAddress + timingDataKey, "");
     try
     {
       localObject = (List)this.gson.fromJson(str, new TypeToken()
@@ -81,7 +82,8 @@ public class TimingData
         localJsonSyntaxException.printStackTrace();
         Object localObject = null;
       }
-    }
+    }*/
+    return null;
   }
 
   public void saveCacheVos(TimingVo paramTimingVo)
