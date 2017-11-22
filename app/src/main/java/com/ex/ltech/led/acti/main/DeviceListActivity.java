@@ -19,6 +19,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,11 +33,6 @@ import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.device.ActSetting;
 import com.ex.ltech.led.acti.device.AtCfg1Activity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
-import com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout;
-import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenu;
-import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuCreator;
-import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuItem;
-import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView;
 import com.ex.ltech.led.utils.BitmapUtils;
 import com.ex.ltech.led.utils.LogTool;
 import com.ex.ltech.led.utils.StringUtils;
@@ -102,7 +98,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                 }
             } else {
         isLayoutRefreshing = false;
-                DeviceListActivity.this.mRefreshLayout.refreshFinish(0);
+//                DeviceListActivity.this.mRefreshLayout.refreshFinish(0);
                 isLayoutRefreshing = false;
             }
 
@@ -117,13 +113,16 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     CmdDateBussiness cmdDateBussiness = new CmdDateBussiness(this, "0000");
     private ConnectDeviceListener connectDeviceListener = new ConnectDeviceListener() {
         public void onConnectDevice(XDevice paramXDevice, int paramInt) {
-            /*int i = 1;
+            LogTool.d("paramInt : " + paramInt + " paramXDevice:" + paramXDevice.getMacAddress()
+            + "  paramXDevice.getProductId():"+paramXDevice.getProductId());
+            int i = 1;
             if (!DeviceListActivity.this.isOnResume) {
-
+                return;
             }else {
                 if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getProductId() == null) ||
-                (paramXDevice.getMacAddress().length() == 0) || (paramXDevice.getProductId().length() == 0))
-                    continue;
+                (paramXDevice.getMacAddress().length() == 0)
+                        || (paramXDevice.getProductId().length() == 0))
+                    return;
                 switch (paramInt) {
                     default:
                         XlinkUtils.shortTips("连接设备失败，其他错误码:" + paramInt);
@@ -131,20 +130,21 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                     case 0:
                         DeviceListActivity.netStats = 0;
                         if (!DeviceListActivity.this.isOnResume)
-                            continue;
+                            return;
                         DeviceListActivity.isOnePointFive = false;
                         DeviceManage.getInstance().updateDevice(paramXDevice);
                         DeviceListActivity.deviceMacAddress = paramXDevice.getMacAddress();
                         DeviceListActivity.devicePid = paramXDevice.getProductId();
                         if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0))
-                            continue;
+                            return;
                         XlinkUtils.shortTips("正在局域网控制设备(" + paramXDevice.getMacAddress() + ")");
                         XlinkAgent.getInstance().sendProbe(paramXDevice);
-                        if ((paramXDevice.getProductId().equals("3864ebbb24cf4cab9d3ce823a0cfe93f") | paramXDevice.getProductId().equals("160fa2af1948f800160fa2af1948f801"))) {
+                        if ((paramXDevice.getProductId().equals("3864ebbb24cf4cab9d3ce823a0cfe93f") |
+                                paramXDevice.getProductId().equals("160fa2af1948f800160fa2af1948f801"))) {
                             Intent localIntent8 = new Intent(DeviceListActivity.this, Main.class);
                             DeviceListActivity.this.startActivity(localIntent8);
                         }
-                        if ((paramXDevice.getProductId().equals("fc02a10aec1c46b8922630f6acd15ed6") | paramXDevice.getProductId().equals("160fa2b3051a03e9160fa2b3051ac601"))) {
+                        /*if ((paramXDevice.getProductId().equals("fc02a10aec1c46b8922630f6acd15ed6") | paramXDevice.getProductId().equals("160fa2b3051a03e9160fa2b3051ac601"))) {
                             Intent localIntent9 = new Intent(DeviceListActivity.this, com.ex.ltech.ct.AtColor.class);
                             DeviceListActivity.this.startActivity(localIntent9);
                         }
@@ -158,8 +158,8 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                                 continue;
                             if (UserFerences.getUserFerences(DeviceListActivity.this).getValue("GateWayIdKey" + paramXDevice.getMacAddress()).length() != 0)
                                 break label602;
-                        }
-                        while (true) {
+                        }*/
+                        /*while (true) {
                             try {
                                 DeviceListActivity.this.setDeviceItem(paramXDevice);
                                 DeviceListActivity.this.setDeviceItem(paramXDevice);
@@ -202,14 +202,10 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                         if (!(paramXDevice.getProductId().equals("160fa2afd1a7f600160fa2afd1a7f601") | paramXDevice.getProductId().equals("160fa2b2db6403e9160fa2b2db646801")))
                             continue;
                         Intent localIntent12 = new Intent(DeviceListActivity.this, NewHongWaiMain.class);
-                        DeviceListActivity.this.startActivity(localIntent12);
-                        return;
+                        DeviceListActivity.this.startActivity(localIntent12);*/
+                        break;
                     case 1:
-                        label602:
-                        label629:
-                        label635:
-                        DeviceListActivity.netStats = i;
-                        label664:
+                        /*DeviceListActivity.netStats = i;
                         if ((!DeviceListActivity.this.isOnResume) || (paramXDevice.getMacAddress() == null) || (paramXDevice.getProductId() == null) || (paramXDevice.getMacAddress().length() == 0) || (paramXDevice.getProductId().length() == 0))
                             continue;
                         DeviceListActivity.isOnePointFive = false;
@@ -248,7 +244,8 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                                 continue;
                             if (UserFerences.getUserFerences(DeviceListActivity.this).getValue("GateWayIdKey" + paramXDevice.getMacAddress()).length() != 0)
                                 break label1239;
-                        }
+                        }*/
+                        break;
                     case 102:
                         XlinkUtils.shortTips("设备认证失败");
                         break;
@@ -266,16 +263,16 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                         break;
                 }
             }
-            while (true) {
+            /*while (true) {
                 try {
                     DeviceListActivity.this.setDeviceItem(paramXDevice);
                     DeviceListActivity.this.setDeviceItem(paramXDevice);
-                    DeviceListActivity.this.handler.postDelayed(new Runnable() {
-                                                                    public void run() {
-                                                                        Intent localIntent = new Intent(DeviceListActivity.this, AtMain.class);
-                                                                        DeviceListActivity.this.startActivity(localIntent);
-                                                                    }
-                                                                }
+                    handler.postDelayed(new Runnable() {
+                                public void run() {
+                                    Intent localIntent = new Intent(DeviceListActivity.this, AtMain.class);
+                                    DeviceListActivity.this.startActivity(localIntent);
+                                }
+                            }
                             , 500L);
                     UserFerences.getUserFerences(DeviceListActivity.this).putValue("GateWayMacIdKey", paramXDevice.getMacAddress());
                     if (!paramXDevice.getProductId().equals("df9725268da14c08ba806ec5a69edbf6"))
@@ -332,8 +329,9 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     };
 //    private LocationAndWeatherBusiness locationAndWeatherBusiness;
     int loopTime = 0;
-    private SwipeMenuListView lv;
-    private PullToRefreshLayout mRefreshLayout;
+//    private SwipeMenuListView lv;
+    private ListView lv;
+//    private PullToRefreshLayout mRefreshLayout;
     private View popView;
     List<String> recDataList = new ArrayList();
     RelativeLayout rl_act_new;
@@ -358,6 +356,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                                                             }
                                                         }
                     , 200L);
+            deviceListAdapter.notifyDataSetChanged();
         }
     };
     private int screenWidth;
@@ -376,8 +375,8 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         Crop.of(paramUri, Uri.fromFile(new File(getCacheDir(), "cropped"))).asSquare().start(this);
     }
 
-    /*private void connectDevice(Device paramDevice) {
-        int i = XlinkAgent.getInstance().connectDevice(paramDevice.getXDevice(), this.connectDeviceListener);
+    private void connectDevice(Device paramDevice) {
+        int i = XlinkAgent.getInstance().connectDevice(paramDevice.getXDevice(), connectDeviceListener);
         if (i != 0) ;
         switch (i) {
             case -10:
@@ -387,18 +386,24 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
             case -5:
             default:
             case -4:
-                do
+                /*do
                     return;
                 while (!XlinkUtils.isConnected());
                 int j = SharedPreferencesUtil.queryIntValue("appId").intValue();
                 String str = SharedPreferencesUtil.queryValue("authKey", "");
                 XlinkAgent.getInstance().start();
                 XlinkAgent.getInstance().login(j, str);
-                return;
+                return;*/
             case -6:
+                if(!XlinkUtils.isConnected()){
+                    int j = SharedPreferencesUtil.queryIntValue("appId").intValue();
+                    String str = SharedPreferencesUtil.queryValue("authKey", "");
+                    XlinkAgent.getInstance().start();
+                    XlinkAgent.getInstance().login(j, str);
+                }
         }
         XlinkAgent.getInstance().initDevice(paramDevice.getXDevice());
-    }*/
+    }
 
     private void connetAndgetInfo4device(int paramInt) {
         /*XlinkAgent.getInstance().connectDevice(((Device) this.devices.get(paramInt)).getXDevice(), new ConnectDeviceListener(paramInt) {
@@ -437,9 +442,10 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         this.tv_act_new_main_wendu_max_min = ((TextView) findViewById(R.id.tv_act_new_main_wendu_1));
         this.tv_act_new_main_wendu = ((TextView) findViewById(R.id.tv_act_new_main_wendu_2));
         this.tv_act_new_main_city = ((TextView) findViewById(R.id.tv_act_new_main_city));
-        this.lv = ((SwipeMenuListView) findViewById(R.id.tv_act_new_main));
+//        this.lv = ((SwipeMenuListView) findViewById(R.id.tv_act_new_main));
+        this.lv = ((ListView) findViewById(R.id.tv_act_new_main));
         this.lv.setDividerHeight(0);
-        this.lv.setMenuCreator(new SwipeMenuCreator() {
+        /*this.lv.setMenuCreator(new SwipeMenuCreator() {
             public void create(SwipeMenu paramSwipeMenu) {
                 SwipeMenuItem localSwipeMenuItem = new SwipeMenuItem(DeviceListActivity.this.getApplicationContext());
                 localSwipeMenuItem.setBackground(new ColorDrawable(DeviceListActivity.this.getResources().getColor(R.color.color5)));
@@ -447,11 +453,11 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                 localSwipeMenuItem.setIcon(R.mipmap.ci_del_btn);
                 paramSwipeMenu.addMenuItem(localSwipeMenuItem);
             }
-        });
-        this.lv.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
+        });*/
+        /*this.lv.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             public boolean onMenuItemClick(int paramInt1, SwipeMenu paramSwipeMenu, int paramInt2) {
                 if (paramInt2 == 0) {
-                    /*if ((paramInt2 == 0) && (((Device) DeviceListActivity.this.devices.get(paramInt1)).getXDevice().getProductId()
+                    if ((paramInt2 == 0) && (((Device) DeviceListActivity.this.devices.get(paramInt1)).getXDevice().getProductId()
                             .equalsIgnoreCase("160fa2b1d84e03e9160fa2b1d84eaa01"))) {
                         RoomsBusiness localRoomsBusiness = new RoomsBusiness(DeviceListActivity.this);
                         localRoomsBusiness.putData4ClassName(((Device) DeviceListActivity.this.devices.get(paramInt1)).getMacAddress(), localRoomsBusiness.getDefaultHome());
@@ -463,9 +469,9 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                     DeviceManage.getInstance().removeDevice(((Device) DeviceListActivity.this.devices.get(paramInt1)).getMacAddress());
                     DeviceListActivity.this.devices.remove(paramInt1);
                     DeviceListActivity.this.reSortDeviceData(DeviceListActivity.this.devices);
-                    DeviceListActivity.this.deviceListAdapter.notifyDataSetChanged();*/
+                    DeviceListActivity.this.deviceListAdapter.notifyDataSetChanged();
                 } else {
-                   /*  XlinkAgent.getInstance().sendPipeData(((Device) DeviceListActivity.this.devices.get(paramInt1)).getXDevice(),
+                     XlinkAgent.getInstance().sendPipeData(((Device) DeviceListActivity.this.devices.get(paramInt1)).getXDevice(),
                             DeviceListActivity.this.cmdDateBussiness.sendUpdataWifiCmd(), new SendPipeListener() {
                                 public void onSendLocalPipeData(XDevice paramXDevice, int paramInt1, int paramInt2) {
                                 }
@@ -483,11 +489,11 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                                     Toast.makeText(DeviceListActivity.this.getApplicationContext(), "onSuccess", Toast.LENGTH_SHORT).show();
                                 }
 
-                            });*/
+                            });
                 }
                 return true;
             }
-            });
+            });*/
         this.rl_act_new = ((RelativeLayout) findViewById(R.id.rl_act_new));
         getLayoutInflater();
         this.popView = LayoutInflater.from(this).inflate(R.layout.col_act_pop, null);
@@ -496,7 +502,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         this.bottomPopWin.setOutsideTouchable(true);
         this.bottomPopWin.setTouchable(true);
         this.bottomPopWin.setBackgroundDrawable(new ColorDrawable(0));
-        this.mRefreshLayout = ((PullToRefreshLayout) findViewById(R.id.refresh_view));
+//        this.mRefreshLayout = ((PullToRefreshLayout) findViewById(R.id.refresh_view));
     }
 
     private void handleCrop(int paramInt, Intent paramIntent) {
@@ -524,15 +530,15 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         this.lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> paramAdapterView, View paramView, int paramInt, long paramLong) {
                 try {
-                    /*DeviceListActivity.this.handler.removeCallbacks(DeviceListActivity.this.LoopDeviceListRunnable);
-                    DeviceListActivity.this.connectDevice((Device) DeviceListActivity.this.devices.get(paramInt));
-                    TextView localTextView1 = (TextView) (TextView) paramView.findViewById(R.id.tv_device_name);
-                    TextView localTextView2 = (TextView) (TextView) paramView.findViewById(R.id.tv_status);
+                    handler.removeCallbacks(LoopDeviceListRunnable);
+                    connectDevice(devices.get(paramInt));
+                    TextView localTextView1 = (TextView) paramView.findViewById(R.id.tv_device_name);
+                    TextView localTextView2 = (TextView) paramView.findViewById(R.id.tv_status);
                     DeviceListActivity.dname = localTextView1.getText().toString();
                     SharedPreferencesUtil.keepShared("dStatus", localTextView2.getText().toString());
                     SharedPreferencesUtil.keepShared("dname", DeviceListActivity.dname);
-                    SharedPreferencesUtil.keepShared("dMacAddress", ((Device) DeviceListActivity.this.devices.get(paramInt)).getMacAddress());*/
-                    return;
+                    SharedPreferencesUtil.keepShared("dMacAddress",
+                            (devices.get(paramInt)).getMacAddress());
                 } catch (Exception localException) {
                     localException.printStackTrace();
                 }
@@ -597,7 +603,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                 }
             }
         });
-        this.mRefreshLayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
+        /*this.mRefreshLayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
             public void onLoadMore(PullToRefreshLayout paramPullToRefreshLayout) {
             }
 
@@ -613,7 +619,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                             .start();
                 }
             }
-        });
+        });*/
     }
 
     private void scan() {

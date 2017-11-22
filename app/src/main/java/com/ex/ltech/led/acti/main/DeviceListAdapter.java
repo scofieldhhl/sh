@@ -11,7 +11,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.ex.ltech.led.R;
-import com.ex.ltech.led.acti.mode.ColorSeletedView;
 import com.ex.ltech.led.my_view.MLImageView;
 import com.ex.ltech.led.vo.CtSceneVo;
 import com.ex.ltech.led.vo.ModeVo;
@@ -108,7 +107,7 @@ public class DeviceListAdapter extends BaseAdapter
     Device device = devices.get(paramInt);
     holder.off_line_lay = (ImageView)convertView.findViewById(R.id.off_line_lay);
     holder.space = (ImageView)convertView.findViewById(R.id.space);
-    holder.rgbStatus.setText(device.getState());
+//    holder.rgbStatus.setText(device.getState());
     holder.tv_device_name.setText(device.getName());
     holder.tv_online_status.setText(String.valueOf(device.isOnline()));
 
@@ -159,7 +158,8 @@ public class DeviceListAdapter extends BaseAdapter
   {
     MLImageView iv_device;
     ImageView off_line_lay;
-    ColorSeletedView rgbColor;
+//    ColorSeletedView rgbColor;
+View rgbColor;
     TextView rgbStatus;
     ImageView space;
     TextView tv_device_name;

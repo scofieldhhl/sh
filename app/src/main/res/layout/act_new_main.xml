@@ -112,7 +112,7 @@
             android:textColor="#ffffffff" />
     </RelativeLayout>
 
-    <com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <!--<com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/refresh_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -124,6 +124,7 @@
             android:id="@+id/tv_act_new_main"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_below="@id/rl_act_new_main"
             android:background="@color/white"
             android:cacheColorHint="#00000000"
             android:divider="@color/gray"
@@ -131,5 +132,16 @@
             android:listSelector="#00000000" />
 
         <include layout="@layout/load_more" />
-    </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>
+    </com.ex.ltech.led.my_view.pullfresh.PullToRefreshLayout>-->
+
+    <ListView
+        android:id="@+id/tv_act_new_main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_act_new_main"
+        android:background="@color/white"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/gray"
+        android:dividerHeight="1.0dip"
+        android:listSelector="#00000000" />
 </RelativeLayout>

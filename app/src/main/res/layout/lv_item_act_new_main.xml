@@ -47,7 +47,15 @@
             android:background="@mipmap/device_light"
             melove:shape_type="round" />
 
-        <com.ex.ltech.led.my_view.ColorSeletedView
+        <!--<com.ex.ltech.led.my_view.ColorSeletedView
+            android:id="@+id/iv_mode"
+            android:layout_width="20.0dip"
+            android:layout_height="20.0dip"
+            android:layout_below="@id/tv_device_name"
+            android:layout_marginTop="10.0dip"
+            android:layout_toRightOf="@id/iv_device" />-->
+
+        <View
             android:id="@+id/iv_mode"
             android:layout_width="20.0dip"
             android:layout_height="20.0dip"
