@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/ws/scofield/git/ltech/sh_temp/fragmentmaster/src/main/assets"/><source path="/Users/ws/scofield/git/ltech/sh_temp/fragmentmaster/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/ws/scofield/git/ltech/sh_temp/fragmentmaster/src/debug/assets"/></dataSet></merger>
