@@ -24,6 +24,7 @@ import java.util.Scanner;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
 
 public class ActRegisterActivity extends MyBaseActivity
 {
@@ -113,7 +114,7 @@ public class ActRegisterActivity extends MyBaseActivity
 
   @BindView(R.id.verify_time)
   TextView verifyTime;
-//  RegVo vo;
+  RegVo vo;
 
   private String randomCode()
   {
@@ -139,29 +140,30 @@ public class ActRegisterActivity extends MyBaseActivity
 
   private void reg2Server()
   {
-    /*this.vo = new RegVo();
+    this.vo = new RegVo();
     this.vo.setName("LT");
     this.vo.setUid(this.etPhone.getText().toString());
     this.vo.setPwd(this.etActLogPsd.getText().toString());
     UserFerences.getUserFerences(this).putValue("user", this.vo.getUid());
     UserFerences.getUserFerences(this).putValue("userPsd", this.vo.getPwd());
-    SharedPreferencesUtil.keepShared("COMPANY_ID", HttpManage.COMPANY_ID);
+//    SharedPreferencesUtil.keepShared("COMPANY_ID", HttpManage.COMPANY_ID);
     SharedPreferencesUtil.keepShared("EMAIL_ID", this.vo.getUid());
     SharedPreferencesUtil.keepShared("PASSWD_ID", this.psd);
-    HttpAgent.getInstance().onRegister(this.vo.getUid(), this.vo.getName(), this.vo.getPwd(), new TextHttpResponseHandler()
+    /*HttpAgent.getInstance().onRegister(this.vo.getUid(), this.vo.getName(), this.vo.getPwd(), new TextHttpResponseHandler()
     {
-      public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
-      {
+
+      @Override
+      public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
         ActRegisterActivity.this.toast(R.string.net_no_ok);
       }
 
-      public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
-      {
+      @Override
+      public void onSuccess(int i, Header[] headers, String s) {
         try
         {
-          JSONObject localJSONObject1 = new JSONObject(paramString);
-          int i = localJSONObject1.getInt("status");
-          if (i == 200)
+          JSONObject localJSONObject1 = new JSONObject(s);
+          int response = localJSONObject1.getInt("status");
+          if (response == 200)
           {
             JSONObject localJSONObject2 = localJSONObject1.getJSONObject("user");
             SharedPreferencesUtil.keepShared("appId", localJSONObject2.getInt("id"));
@@ -171,7 +173,7 @@ public class ActRegisterActivity extends MyBaseActivity
             ActRegisterActivity.this.finish();
             return;
           }
-          if (i == 201)
+          if (response == 201)
           {
             ActRegisterActivity.this.toast(R.string.reged);
             return;
@@ -182,6 +184,7 @@ public class ActRegisterActivity extends MyBaseActivity
           localJSONException.printStackTrace();
         }
       }
+
     });*/
   }
 

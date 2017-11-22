@@ -7,9 +7,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ex.ltech.led.Global;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.MyBaseActivity;
-import com.ex.ltech.led.my_view.SecondArc;
 import com.hiflying.smartlink.ISmartLinker;
 import com.hiflying.smartlink.OnSmartLinkListener;
 import com.hiflying.smartlink.SmartLinkedModule;
@@ -49,10 +49,7 @@ public class AtCfg4Activity extends MyBaseActivity
                 localAtCfg4Activity.timerTime = (-1 + localAtCfg4Activity.timerTime);
                 AtCfg4Activity.this.timeHandler.postDelayed(AtCfg4Activity.this.runnable, 1000L);
                 AtCfg4Activity.this.second.setText(AtCfg4Activity.this.timerTime + "");
-            }
-            /*while (true) {
-                AtCfg4Activity.this.sbActOutletLed.setProgressSweep(360 * (30 - AtCfg4Activity.this.timerTime) / 30);
-                return;
+            }else {
                 AtCfg4Activity.this.timerTime = 30;
                 AtCfg4Activity.this.second.setText(AtCfg4Activity.this.timerTime + "");
                 AtCfg4Activity.this.info.setText(R.string.cfging_time_failde);
@@ -62,15 +59,16 @@ public class AtCfg4Activity extends MyBaseActivity
                 AtCfg4Activity.this.ivBottomRight.setVisibility(View.VISIBLE);
                 isconncting = false;
                 AtCfg4Activity.this.timeHandler.removeCallbacks(AtCfg4Activity.this.runnable);
-                AtCfg4Activity.this.sbActOutletLed.setProgressSweep(0);
+//                AtCfg4Activity.this.sbActOutletLed.setProgressSweep(0);
                 AtCfg4Activity.this.ivCfgOk.setVisibility(View.GONE);
                 AtCfg4Activity.this.smallSsecond.setVisibility(View.GONE);
                 AtCfg4Activity.this.second.setVisibility(View.GONE);
                 AtCfg4Activity.this.ivCfgNoOk.setVisibility(View.VISIBLE);
-            }*/
+            }
+//            AtCfg4Activity.this.sbActOutletLed.setProgressSweep(360 * (30 - AtCfg4Activity.this.timerTime) / 30);
         }
     };
-    private SecondArc sbActOutletLed;
+//    private SecondArc sbActOutletLed;
     private TextView second;
     private TextView smallSsecond;
     Handler timeHandler = new Handler() {
@@ -85,17 +83,19 @@ public class AtCfg4Activity extends MyBaseActivity
     }
 
     public void onClick(View paramView) {
-        /*switch (paramView.getId()) {
+        switch (paramView.getId()) {
             default:
             case R.id.device_connet:
-                do {
+                if (this.cfgState.equals("ok")) {
+                    setResult(Global.net_config_ok);
+                    finish();
                     return;
-                    if (this.cfgState.equals("cfging")) {
-                        this.mSnifferSmartLinker.stop();
-                        finish();
-                    }
-                    if (!this.cfgState.equals("timeout"))
-                        continue;
+                }
+                if (this.cfgState.equals("cfging")) {
+                    this.mSnifferSmartLinker.stop();
+                    finish();
+                }
+                if (!this.cfgState.equals("timeout")){
                     startSmartLink();
                     startNewSL();
                     this.cfgState = "cfging";
@@ -105,26 +105,23 @@ public class AtCfg4Activity extends MyBaseActivity
                     this.second.setVisibility(View.VISIBLE);
                     this.ivCfgNoOk.setVisibility(View.GONE);
                 }
-                while (!this.cfgState.equals("ok"));
-                setResult(Global.net_config_ok);
-                finish();
-                return;
+                break;
             case R.id.iv_bottom_left:
                 finish();
-                return;
+                break;
             case R.id.iv_bottom_right:
         }
         this.smallSsecond.setVisibility(View.VISIBLE);
         this.second.setVisibility(View.VISIBLE);
         this.ivCfgNoOk.setVisibility(View.GONE);
-        startSmartLink();*/
+        startSmartLink();
     }
 
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         setContentView(R.layout.at_cfg4);
         ButterKnife.bind(this);
-        this.sbActOutletLed = ((SecondArc) findViewById(R.id.sb_act_outlet_led));
+//        this.sbActOutletLed = ((SecondArc) findViewById(R.id.sb_act_outlet_led));
         this.second = ((TextView) findViewById(R.id.second));
         this.smallSsecond = ((TextView) findViewById(R.id.small_second));
         findViewById(R.id.device_connet).setOnClickListener(this);
@@ -164,7 +161,7 @@ public class AtCfg4Activity extends MyBaseActivity
                         AtCfg4Activity.this.deviceConnet.setBackgroundResource(R.mipmap.network_finish);
                         isconncting = false;
                         AtCfg4Activity.this.timeHandler.removeCallbacks(AtCfg4Activity.this.runnable);
-                        AtCfg4Activity.this.sbActOutletLed.setProgressSweep(0);
+//                        AtCfg4Activity.this.sbActOutletLed.setProgressSweep(0);
                         AtCfg4Activity.this.ivCfgOk.setVisibility(View.VISIBLE);
                         AtCfg4Activity.this.ivCfgNoOk.setVisibility(View.GONE);
                         AtCfg4Activity.this.smallSsecond.setVisibility(View.GONE);
@@ -186,7 +183,7 @@ public class AtCfg4Activity extends MyBaseActivity
                         AtCfg4Activity.this.ivBottomRight.setVisibility(View.VISIBLE);
                         isconncting = false;
                         AtCfg4Activity.this.timeHandler.removeCallbacks(AtCfg4Activity.this.runnable);
-                        AtCfg4Activity.this.sbActOutletLed.setProgressSweep(0);
+//                        AtCfg4Activity.this.sbActOutletLed.setProgressSweep(0);
                         AtCfg4Activity.this.ivCfgOk.setVisibility(View.GONE);
                         AtCfg4Activity.this.smallSsecond.setVisibility(View.GONE);
                         AtCfg4Activity.this.second.setVisibility(View.GONE);

@@ -8,13 +8,23 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.ex.ltech.led.MyApp;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.main.DeviceListActivity;
+import com.ex.ltech.led.utils.LogTool;
+import com.loopj.android.http.TextHttpResponseHandler;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.xlink.wifi.js.http.HttpAgent;
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
+import io.xlink.wifi.js.util.XlinkUtils;
 
 public class ActLoginActivity extends MyBaseActivity
 {
@@ -133,61 +143,49 @@ public class ActLoginActivity extends MyBaseActivity
 
   public void log(View paramView)
   {
-    /*int i = 1;
     this.phone = this.etActLogPhone.getText().toString().trim();
     this.psd = this.etActLogPsd.getText().toString().trim();
-    int j;
     if ((this.phone.indexOf("@") != -1) || (isMobileNO(this.phone)))
     {
-      j = i;
       if (this.psd.length() <= 5)
-        break label107;
+        toast(R.string.input_ok_phone);
     }
-    while (true)
+    HttpAgent.getInstance().getAppId(this.phone, this.psd, new TextHttpResponseHandler()
     {
-      if ((j & i) == 0)
-        break label112;
-      HttpAgent.getInstance().getAppId(this.phone, this.psd, new TextHttpResponseHandler()
+      public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
       {
-        public void onFailure(int paramInt, Header[] paramArrayOfHeader, String paramString, Throwable paramThrowable)
-        {
-          ActLoginActivity.this.toast(R.string.net_no_ok);
-        }
+        ActLoginActivity.this.toast(R.string.net_no_ok);
+      }
 
-        public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
+      public void onSuccess(int paramInt, Header[] paramArrayOfHeader, String paramString)
+      {
+        LogTool.d("onSuccess : " + paramString );//onSuccess : {"user":{"id":950902743,"key":"220fa2b3f38c5400"},"status":200}
+        try
         {
-          try
+          JSONObject localJSONObject1 = new JSONObject(paramString);
+          if (localJSONObject1.getInt("status") != 200)
           {
-            JSONObject localJSONObject1 = new JSONObject(paramString);
-            if (localJSONObject1.getInt("status") != 200)
-            {
-              ActLoginActivity.this.toast(2131100277);
-              return;
-            }
-            JSONObject localJSONObject2 = localJSONObject1.getJSONObject("user");
-            UserFerences.getUserFerences(ActLoginActivity.this.getApplicationContext()).putValue("user", ActLoginActivity.this.phone);
-            SharedPreferencesUtil.keepShared("appId", localJSONObject2.getInt("id"));
-            SharedPreferencesUtil.keepShared("authKey", localJSONObject2.getString("key"));
-            MyApp.getApp().setAppid(localJSONObject2.getInt("id"));
-            MyApp.getApp().setAuth(localJSONObject2.getString("key"));
-            ActLoginActivity.this.goAct(DeviceListActivity.class);
-            ActLoginActivity.this.finish();
+            ActLoginActivity.this.toast(R.string.psd_error);
             return;
           }
-          catch (JSONException localJSONException)
-          {
-            localJSONException.printStackTrace();
-            XlinkUtils.shortTips("用户信息，json解析错误");
-          }
+          JSONObject localJSONObject2 = localJSONObject1.getJSONObject("user");
+          UserFerences.getUserFerences(ActLoginActivity.this.getApplicationContext()).putValue("user", ActLoginActivity.this.phone);
+          SharedPreferencesUtil.keepShared("appId", localJSONObject2.getInt("id"));
+          SharedPreferencesUtil.keepShared("authKey", localJSONObject2.getString("key"));
+          MyApp.getApp().setAppid(localJSONObject2.getInt("id"));
+          MyApp.getApp().setAuth(localJSONObject2.getString("key"));
+          ActLoginActivity.this.goAct(DeviceListActivity.class);
+          ActLoginActivity.this.finish();
+          return;
         }
-      });
-      return;
-      j = 0;
-      break;
-      label107: i = 0;
-    }
-    label112: toast(R.string.input_ok_phone);*/
-    ActLoginActivity.this.goAct(DeviceListActivity.class);
+        catch (JSONException localJSONException)
+        {
+          localJSONException.printStackTrace();
+          XlinkUtils.shortTips("用户信息，json解析错误");
+        }
+      }
+    });
+
   }
 
   protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)

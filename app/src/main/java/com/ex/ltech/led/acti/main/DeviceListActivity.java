@@ -1,9 +1,12 @@
 package com.ex.ltech.led.acti.main;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +17,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -23,6 +27,7 @@ import android.widget.Toast;
 import com.ex.ltech.WifiReceiver;
 import com.ex.ltech.led.MyApp;
 import com.ex.ltech.led.R;
+import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.device.ActSetting;
 import com.ex.ltech.led.acti.device.AtCfg1Activity;
@@ -33,13 +38,25 @@ import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuCreator;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuItem;
 import com.ex.ltech.led.my_view.swipemenulistview.SwipeMenuListView;
 import com.ex.ltech.led.utils.BitmapUtils;
+import com.ex.ltech.led.utils.LogTool;
+import com.ex.ltech.led.utils.StringUtils;
 import com.fragmentmaster.app.MasterActionBarActivity;
+import com.loopj.android.http.TextHttpResponseHandler;
 import com.soundcloud.android.crop.Crop;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.xlink.wifi.js.bean.Device;
+import io.xlink.wifi.js.http.HttpAgent;
+import io.xlink.wifi.js.manage.DeviceManage;
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
+import io.xlink.wifi.js.util.XlinkUtils;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
@@ -47,6 +64,7 @@ import io.xlink.wifi.sdk.bean.EventNotify;
 import io.xlink.wifi.sdk.listener.ConnectDeviceListener;
 import io.xlink.wifi.sdk.listener.ScanDeviceListener;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
+import io.xlink.wifi.sdk.listener.SetDeviceAccessKeyListener;
 import io.xlink.wifi.sdk.listener.XlinkNetListener;
 
 public class DeviceListActivity extends MasterActionBarActivity implements View.OnClickListener {
@@ -57,7 +75,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     public static int netStats;
     Runnable Heartbeat = new Runnable() {
         public void run() {
-            /*DeviceListActivity.this.handler.removeCallbacks(this);
+            DeviceListActivity.this.handler.removeCallbacks(this);
             try {
                 byte[] arrayOfByte = {102};
                 XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
@@ -67,13 +85,10 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                     }
                 });
                 DeviceListActivity.this.handler.postDelayed(DeviceListActivity.this.Heartbeat, 8000L);
-                return;
             } catch (Exception localException) {
-                while (true) {
                     localException.printStackTrace();
                     DeviceListActivity.this.handler.postDelayed(DeviceListActivity.this.Heartbeat, 8000L);
-                }
-            }*/
+            }
         }
     };
     Runnable LoopDeviceListRunnable = new Runnable() {
@@ -86,9 +101,9 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                     DeviceListActivity.this.handler.postDelayed(DeviceListActivity.this.LoopDeviceListRunnable, 300L);
                 }
             } else {
-//        DeviceListActivity.access$202(DeviceListActivity.this, false);
+        isLayoutRefreshing = false;
                 DeviceListActivity.this.mRefreshLayout.refreshFinish(0);
-//        DeviceListActivity.access$202(DeviceListActivity.this, false);
+                isLayoutRefreshing = false;
             }
 
         }
@@ -281,12 +296,12 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     private File currentFile;
     int dCount;
     private DeviceListAdapter deviceListAdapter;
-//    private ArrayList<Device> devices = new ArrayList();
+    private ArrayList<Device> devices = new ArrayList();
     AlertDialog dialog;
     Handler handler = new Handler() {
         public void handleMessage(Message paramMessage) {
             super.handleMessage(paramMessage);
-//            DeviceListActivity.access$202(DeviceListActivity.this, false);
+            isLayoutRefreshing = false;
             if (paramMessage.what != 0)
                 Toast.makeText(DeviceListActivity.this.getApplicationContext(), DeviceListActivity.this.getString(R.string.no_find_device), Toast.LENGTH_SHORT).show();
         }
@@ -324,7 +339,8 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     RelativeLayout rl_act_new;
     private ScanDeviceListener scanListener = new ScanDeviceListener() {
         public void onGotDeviceByScan(XDevice paramXDevice) {
-            /*DeviceManage.getInstance().addDevice(paramXDevice);
+            LogTool.d("onGotDeviceByScan");
+            DeviceManage.getInstance().addDevice(paramXDevice);
             XlinkAgent.getInstance().setDeviceAccessKey(paramXDevice, 8888, new SetDeviceAccessKeyListener() {
                 public void onSetLocalDeviceAccessKey(XDevice paramXDevice, int paramInt1, int paramInt2) {
                     if (DeviceListActivity.this.isOnResume)
@@ -333,14 +349,15 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
             });
             paramXDevice.getDeviceId();
             DeviceListActivity.this.devices.clear();
-//            DeviceListActivity.access$202(DeviceListActivity.this, false);
+            isLayoutRefreshing = false;
+            LogTool.d("size :" + DeviceManage.getInstance().getDevices().size());
             DeviceListActivity.this.devices.addAll(DeviceManage.getInstance().getDevices());
             DeviceManage.getInstance().saveDevices(DeviceListActivity.this.devices);
             DeviceListActivity.this.handler.postDelayed(new Runnable() {
                                                             public void run() {
                                                             }
                                                         }
-                    , 200L);*/
+                    , 200L);
         }
     };
     private int screenWidth;
@@ -504,103 +521,99 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
 
     private void init() {
         this.business = new Business(this);
-        /*this.locationAndWeatherBusiness = new LocationAndWeatherBusiness(this);
-        this.locationAndWeatherBusiness.setpHandler(this.locatAndWeatherHandler);
         this.lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> paramAdapterView, View paramView, int paramInt, long paramLong) {
                 try {
-                    DeviceListActivity.this.handler.removeCallbacks(DeviceListActivity.this.LoopDeviceListRunnable);
+                    /*DeviceListActivity.this.handler.removeCallbacks(DeviceListActivity.this.LoopDeviceListRunnable);
                     DeviceListActivity.this.connectDevice((Device) DeviceListActivity.this.devices.get(paramInt));
                     TextView localTextView1 = (TextView) (TextView) paramView.findViewById(R.id.tv_device_name);
                     TextView localTextView2 = (TextView) (TextView) paramView.findViewById(R.id.tv_status);
                     DeviceListActivity.dname = localTextView1.getText().toString();
                     SharedPreferencesUtil.keepShared("dStatus", localTextView2.getText().toString());
                     SharedPreferencesUtil.keepShared("dname", DeviceListActivity.dname);
-                    SharedPreferencesUtil.keepShared("dMacAddress", ((Device) DeviceListActivity.this.devices.get(paramInt)).getMacAddress());
+                    SharedPreferencesUtil.keepShared("dMacAddress", ((Device) DeviceListActivity.this.devices.get(paramInt)).getMacAddress());*/
                     return;
                 } catch (Exception localException) {
                     localException.printStackTrace();
                 }
             }
         });
-        setWeatherView();*/
-        /*String str = UserFerences.getUserFerences(this).spFerences.getString("/ltech/led/mainTitle", "");
+        String str = UserFerences.getUserFerences(this).spFerences.getString("/ltech/led/mainTitle", "");
         if (!str.equals("")) {
             int i = BitmapUtils.getExifOrientation(str);
-            if ((i != 90) && (i != 180) && (i != 270))
+            /*if ((i != 90) && (i != 180) && (i != 270))
                 break label184;
             new Thread(str) {
                 public void run() {
                     super.run();
-                    Bitmap localBitmap1 = BitmapUtils.zoomOutBM(BitmapFactory.decodeFile(this.val$titleBgPath), BitmapUtils.dp2px(DeviceListActivity.this.getApplicationContext(), 220.0F));
+                    Bitmap localBitmap1 = BitmapUtils.zoomOutBM(BitmapFactory.decodeFile(this.val$titleBgPath),
+                            BitmapUtils.dp2px(DeviceListActivity.this.getApplicationContext(), 220.0F));
                     int i = BitmapUtils.getExifOrientation(this.val$titleBgPath);
                     Matrix localMatrix = new Matrix();
                     localMatrix.postRotate(i);
-                    Bitmap localBitmap2 = Bitmap.createBitmap(localBitmap1, 0, 0, localBitmap1.getWidth(), localBitmap1.getHeight(), localMatrix, false);
-                    DeviceListActivity.this.runOnUiThread(new Runnable(localBitmap2) {
+                    final Bitmap localBitmap2 = Bitmap.createBitmap(localBitmap1, 0, 0,
+                            localBitmap1.getWidth(), localBitmap1.getHeight(), localMatrix, false);
+                    DeviceListActivity.this.runOnUiThread(new Runnable() {
                         public void run() {
-                            DeviceListActivity.this.iv_act_new_main.setImageBitmap(this.val$bitmap);
+                            DeviceListActivity.this.iv_act_new_main.setImageBitmap(localBitmap2);
                         }
                     });
                 }
             }
-                    .start();
-        }*/
-        /*while (true) {
-            reSortDeviceData(this.devices);
-            this.deviceListAdapter = new DeviceListAdapter(this, this.devices);
-            this.lv.setAdapter(this.deviceListAdapter);
-            this.deviceListAdapter.setOnFreshDevice(new DeviceListAdapter.OnFreshDevice() {
-                public void OnClick(int paramInt) {
-                    DeviceListActivity.this.itemPosi = paramInt;
-                    DeviceListActivity.this.dialog = ProgressDialog.show(DeviceListActivity.this, "", DeviceListActivity.this.getString(R.string.get_d_info), false);
-                    DeviceListActivity.this.dialog.setCancelable(true);
-                    DeviceListActivity.this.dialog.show();
-                    DeviceListActivity.this.isGetDeviceOk = false;
-                    try {
-                        XlinkAgent.getInstance().connectDevice(((Device) DeviceListActivity.this.devices.get(paramInt)).getXDevice(),
-                                new ConnectDeviceListener(paramInt) {
-                            public void onConnectDevice(XDevice paramXDevice, int paramInt) {
-                                if ((DeviceListActivity.this.dialog != null) && (DeviceListActivity.this.dialog.isShowing()))
-                                    DeviceListActivity.this.dialog.dismiss();
-                                if ((paramInt == 1) || (paramInt == 0))
-                                    try {
-                                        DeviceListActivity.this.setDeviceItem(itemPosi);
-                                        return;
-                                    } catch (Exception localException) {
-                                        localException.printStackTrace();
-                                        return;
-                                    }
-                                Toast.makeText(DeviceListActivity.this.getApplicationContext(), DeviceListActivity.this.getString(R.string.load_fail), Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        return;
-                    } catch (Exception localException) {
-                        localException.printStackTrace();
-                    }
-                }
-            });
-            this.mRefreshLayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
-                public void onLoadMore(PullToRefreshLayout paramPullToRefreshLayout) {
-                }
-
-                public void onRefresh(PullToRefreshLayout paramPullToRefreshLayout) {
-                    if (!DeviceListActivity.this.isLayoutRefreshing) {
-                        DeviceListActivity.this.refreshAction();
-                        System.out.println("onRefresh" + Thread.currentThread().getId());
-                        new Thread() {
-                            public void run() {
-                                super.run();
-                            }
-                        }
-                                .start();
-                    }
-                }
-            });
-            return;
-            label184:
+                    .start();*/
+        }else {
             this.iv_act_new_main.setImageBitmap(BitmapFactory.decodeFile(str));
-        }*/
+        }
+        reSortDeviceData(devices);
+        this.deviceListAdapter = new DeviceListAdapter(this, this.devices);
+        this.lv.setAdapter(this.deviceListAdapter);
+        this.deviceListAdapter.setOnFreshDevice(new DeviceListAdapter.OnFreshDevice() {
+            public void OnClick(int paramInt) {
+                DeviceListActivity.this.itemPosi = paramInt;
+                DeviceListActivity.this.dialog = ProgressDialog.show(DeviceListActivity.this, "", DeviceListActivity.this.getString(R.string.get_d_info), false);
+                DeviceListActivity.this.dialog.setCancelable(true);
+                DeviceListActivity.this.dialog.show();
+                DeviceListActivity.this.isGetDeviceOk = false;
+                try {
+                    XlinkAgent.getInstance().connectDevice(((Device) DeviceListActivity.this.devices.get(paramInt)).getXDevice(),
+                            new ConnectDeviceListener() {
+                                public void onConnectDevice(XDevice paramXDevice, int paramInt) {
+                                    if ((DeviceListActivity.this.dialog != null) && (DeviceListActivity.this.dialog.isShowing()))
+                                        DeviceListActivity.this.dialog.dismiss();
+                                    if ((paramInt == 1) || (paramInt == 0))
+                                        try {
+                                            DeviceListActivity.this.setDeviceItem(itemPosi);
+                                            return;
+                                        } catch (Exception localException) {
+                                            localException.printStackTrace();
+                                            return;
+                                        }
+                                    Toast.makeText(DeviceListActivity.this.getApplicationContext(), DeviceListActivity.this.getString(R.string.load_fail), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                    return;
+                } catch (Exception localException) {
+                    localException.printStackTrace();
+                }
+            }
+        });
+        this.mRefreshLayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
+            public void onLoadMore(PullToRefreshLayout paramPullToRefreshLayout) {
+            }
+
+            public void onRefresh(PullToRefreshLayout paramPullToRefreshLayout) {
+                if (!DeviceListActivity.this.isLayoutRefreshing) {
+                    DeviceListActivity.this.refreshAction();
+                    System.out.println("onRefresh" + Thread.currentThread().getId());
+                    new Thread() {
+                        public void run() {
+                            super.run();
+                        }
+                    }
+                            .start();
+                }
+            }
+        });
     }
 
     private void scan() {
@@ -612,7 +625,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     }
 
     private void scanDevice() {
-        XlinkAgent.getInstance().scanDeviceByProductId("160fa2b1d84e03e9160fa2b1d84eaa01", this.scanListener);
+        int value = XlinkAgent.getInstance().scanDeviceByProductId("160fa2b1d84e03e9160fa2b1d84eaa01", this.scanListener);
         XlinkAgent.getInstance().scanDeviceByProductId("3864ebbb24cf4cab9d3ce823a0cfe93f", this.scanListener);
         XlinkAgent.getInstance().scanDeviceByProductId("160fa2af1948f800160fa2af1948f801", this.scanListener);
         XlinkAgent.getInstance().scanDeviceByProductId("8e28d6ebd1634ecf86161997912b895e", this.scanListener);
@@ -624,7 +637,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         XlinkAgent.getInstance().scanDeviceByProductId("160fa2b3051a03e9160fa2b3051ac601", this.scanListener);
     }
 
-    private void sdkLogin() {
+    private void sdkLogin() {//TODO
         XlinkAgent.getInstance().addXlinkListener(new XlinkNetListener() {
             public void onDataPointUpdate(XDevice paramXDevice, List<DataPoint> paramList, int paramInt) {
             }
@@ -633,17 +646,18 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
             }
 
             public void onDisconnect(int paramInt) {
-                Log.e("TAG", "login code" + paramInt);
+                LogTool.e("login code" + paramInt);
             }
 
             public void onEventNotify(EventNotify paramEventNotify) {
             }
 
             public void onLocalDisconnect(int paramInt) {
-                Log.e("TAG", "login code" + paramInt);
+                LogTool.e("login code" + paramInt);
             }
 
             public void onLogin(int paramInt) {
+                LogTool.d("onLogin" + paramInt);
                 DeviceListActivity.this.runOnUiThread(new Runnable() {
                     public void run() {
                         DeviceListActivity.this.refreshAction();
@@ -652,8 +666,39 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
             }
 
             public void onRecvPipeData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte) {
-                /*while (true) {
-                    String str;
+                String str;
+                try {
+                    if (!DeviceListActivity.this.isOnResume)
+                        return;
+                    str = StringUtils.btye2Str(paramArrayOfByte);
+                    LogTool.d("onRecvPipeData" + str + " XDevice :" + paramXDevice.getMacAddress());
+                    for(int i = 0; i < DeviceListActivity.this.recDataList.size(); i++){
+                        if (str.equalsIgnoreCase((String) DeviceListActivity.this.recDataList.get(i)))
+                            DeviceListActivity.this.recDataList.add(str);
+                    }
+
+                    if (paramXDevice.getProductId().equals("160fa2b1d84e03e9160fa2b1d84eaa01")) {
+                        if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0)){
+
+                        }else {
+                            DeviceListActivity.this.business.savaOneZeroFiveData(str, paramXDevice.getMacAddress());
+                            DeviceListActivity.this.isGetDeviceOk = true;
+                            DeviceListActivity.this.reSortDeviceData(DeviceListActivity.this.devices);
+                            DeviceListActivity.this.deviceListAdapter.notifyDataSetChanged();
+                        }
+
+                    }
+                } catch (Exception localException) {
+                    localException.printStackTrace();
+                    return;
+                }
+                if ((str.indexOf("66BB") == -1) || (str.indexOf("EB") == -1) || (paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0)){
+
+                }else
+                    DeviceListActivity.this.business.saveDeviceInfo4Device(str, paramXDevice.getMacAddress());
+
+
+                    /*String str;
                     try {
                         if (!DeviceListActivity.this.isOnResume)
                             return;
@@ -681,8 +726,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                     }
                     if ((str.indexOf("66BB") == -1) || (str.indexOf("EB") == -1) || (paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0))
                         break;
-                    DeviceListActivity.this.business.saveDeviceInfo4Device(str, paramXDevice.getMacAddress());
-                }*/
+                    DeviceListActivity.this.business.saveDeviceInfo4Device(str, paramXDevice.getMacAddress());*/
             }
 
             public void onRecvPipeSyncData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte) {
@@ -728,9 +772,9 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     }
 
     private void setDeviceListOfflineData() {
-        /*for (int i = 0; i < this.devices.size(); i++)
+        for (int i = 0; i < this.devices.size(); i++)
             ((Device) this.devices.get(i)).setIsOnline(false);
-        reSortDeviceData(this.devices);*/
+        reSortDeviceData(this.devices);
     }
 
     private void setWeatherView() {
@@ -773,7 +817,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     }
 
     private void updataLvStatus() {
-//        reSortDeviceData(this.devices);
+        reSortDeviceData(this.devices);
         this.deviceListAdapter.notifyDataSetChanged();
         System.out.println("updataLvStatus" + Thread.currentThread().getId());
     }
@@ -787,14 +831,16 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
 
     public void getAppid() {
         /*HttpAgent.getInstance().getAppId(this.id, this.id, new TextHttpResponseHandler() {
+
+
             @Override
-            public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString, Throwable throwable) {
+            public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
                 XlinkAgent.getInstance().addXlinkListener(com.ex.ltech.MyApp.getApp());
                 XlinkAgent.getInstance().start();
             }
 
             @Override
-            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString) {
+            public void onSuccess(int i, Header[] headers, String responseString) {
                 try {
                     JSONObject localJSONObject1 = new JSONObject(responseString);
                     if (localJSONObject1.getInt("status") != 200)
@@ -880,21 +926,21 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         setContentView(R.layout.act_new_main);
         findV();
         init();
-//        this.devices.addAll(DeviceManage.getInstance().getDevices());
+        this.devices.addAll(DeviceManage.getInstance().getDevices());
         setDeviceListOfflineData();
         MyApp.getApp().auth = true;
         this.tm = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE));
-//        this.appid = SharedPreferencesUtil.queryIntValue(this, "appId").intValue();
-//        this.authKey = SharedPreferencesUtil.queryValue(this, "authKey", "");
-        /*if (isHaveAppid())
+        this.appid = SharedPreferencesUtil.queryIntValue("appId").intValue();
+        this.authKey = SharedPreferencesUtil.queryValue("authKey", "");
+        if (isHaveAppid())
             sdkLogin();
         else {
             UserFerences.getUserFerences(this).putValue("isLog", Boolean.valueOf(true));
             this.handler.postDelayed(new Runnable() {
                                          public void run() {
-                                             DeviceListActivity.this.locationAndWeatherBusiness.canGetWeather = true;
+                                            /* DeviceListActivity.this.locationAndWeatherBusiness.canGetWeather = true;
                                              if (UserFerences.getUserFerences(DeviceListActivity.this).spFerences.getBoolean("isZh", false))
-                                                 DeviceListActivity.this.locationAndWeatherBusiness.startLocat();
+                                                 DeviceListActivity.this.locationAndWeatherBusiness.startLocat();*/
                                              DeviceListActivity.this.wifiReceiver = new WifiReceiver();
                                              IntentFilter localIntentFilter = new IntentFilter();
                                              localIntentFilter.addAction("android.net.wifi.STATE_CHANGE");
@@ -905,7 +951,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                                      }
                     , 1000L);
             registerUser();
-        }*/
+        }
     }
 
     protected void onDestroy() {
@@ -940,7 +986,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
         this.screenWidth = this.rl_act_new.getWidth();
     }
 
-    public void reSortDeviceData() {
+    public void reSortDeviceData(List<Device> paramList) {
 //    public void reSortDeviceData(List<Device> paramList) {
         /*ArrayList localArrayList1 = new ArrayList();
         ArrayList localArrayList2 = new ArrayList();
@@ -974,19 +1020,20 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
     }
 
     public void registerUser() {
-        /*this.id = XlinkUtils.MD5(this.tm.getDeviceId());
+        this.id = XlinkUtils.MD5(this.tm.getDeviceId());
         HttpAgent.getInstance().onRegister(this.id, this.id, this.id, new TextHttpResponseHandler() {
+
             @Override
-            public void onFailure(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString, Throwable throwable) {
+            public void onFailure(int i, Header[] headers, String s, Throwable throwable) {
 
             }
 
             @Override
-            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, String responseString) {
+            public void onSuccess(int i, Header[] headers, String responseString) {
                 try {
                     JSONObject localJSONObject1 = new JSONObject(responseString);
-                    int i = localJSONObject1.getInt("status");
-                    if (i == 200) {
+                    int value = localJSONObject1.getInt("status");
+                    if (value== 200) {
                         JSONObject localJSONObject2 = localJSONObject1.getJSONObject("user");
                         DeviceListActivity.this.appid = localJSONObject2.getInt("id");
                         DeviceListActivity.this.authKey = localJSONObject2.getString("key");
@@ -995,7 +1042,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                         DeviceListActivity.this.sdkLogin();
                         return;
                     }
-                    if (i == 201) {
+                    if (value == 201) {
                         DeviceListActivity.this.getAppid();
                         return;
                     }
@@ -1003,8 +1050,7 @@ public class DeviceListActivity extends MasterActionBarActivity implements View.
                     localJSONException.printStackTrace();
                 }
             }
-
-        });*/
+        });
     }
 
     public void seletedPic(View paramView) {

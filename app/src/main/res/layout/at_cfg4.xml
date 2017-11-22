@@ -7,7 +7,7 @@
 
     <include layout="@layout/acti_title_view" />
 
-    <com.ex.ltech.led.my_view.SecondArc
+    <!--<com.ex.ltech.led.my_view.SecondArc
         android:id="@+id/sb_act_outlet_led"
         android:layout_width="220.0dip"
         android:layout_height="220.0dip"
@@ -22,7 +22,7 @@
         seekarc:startAngle="180"
         seekarc:sweepAngle="360"
         seekarc:thumb="@drawable/seek_arc_control_selector"
-        seekarc:touchInside="true" />
+        seekarc:touchInside="true" />-->
 
     <TextView
         android:id="@+id/second"

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/ws/scofield/git/ltech/sh_temp/fragmentmaster-appcompat/build/intermediates/res/merged/androidTest/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/ws/.android/build-cache/d58beac9ef23250872aab0cd9e5434ecab28c6c6/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/ws/scofield/git/ltech/sh_temp/fragmentmaster-appcompat/build/intermediates/res/merged/androidTest/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/ws/.android/build-cache/d58beac9ef23250872aab0cd9e5434ecab28c6c6/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]

@@ -51,19 +51,19 @@ public class SecondArc extends View
   public SecondArc(Context paramContext)
   {
     super(paramContext);
-    init(paramContext, null, 0);
+    init(paramContext, null);
   }
 
   public SecondArc(Context paramContext, AttributeSet paramAttributeSet)
   {
     super(paramContext, paramAttributeSet);
-    init(paramContext, paramAttributeSet, 2130772155);
+    init(paramContext, paramAttributeSet);
   }
 
   public SecondArc(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
   {
     super(paramContext, paramAttributeSet, paramInt);
-    init(paramContext, paramAttributeSet, paramInt);
+    init(paramContext, paramAttributeSet);
   }
 
   private int getProgressForAngle(double paramDouble)
@@ -109,7 +109,7 @@ public class SecondArc extends View
     return false;
   }
 
-  private void init(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
+  private void init(Context paramContext, AttributeSet paramAttributeSet)
   {
     Resources localResources = getResources();
     float f = paramContext.getResources().getDisplayMetrics().density;
@@ -118,7 +118,7 @@ public class SecondArc extends View
     this.mProgressWidth = (int)(f * this.mProgressWidth);
     if (paramAttributeSet != null)
     {
-      TypedArray localTypedArray = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.SeekArc, paramInt, 0);
+      TypedArray localTypedArray = paramContext.obtainStyledAttributes(paramAttributeSet, R.styleable.SeekArc);
       if (localTypedArray.getDrawable(0) != null);
       this.mMax = localTypedArray.getInteger(R.styleable.SeekArc_maxs, this.mMax);
       this.mProgress = localTypedArray.getInteger(R.styleable.SeekArc_progresss, this.mProgress);

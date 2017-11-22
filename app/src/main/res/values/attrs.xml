@@ -227,7 +227,6 @@
         <attr name="roundEdges" format="boolean" />
         <attr name="touchInside" format="boolean" />
         <attr name="clockwise" format="boolean" />
-        <attr name="seekArcStyle" format="reference" />
     </declare-styleable>
     <attr name="buttonSize" format="reference">
         <enum name="icon_only" value="2" />

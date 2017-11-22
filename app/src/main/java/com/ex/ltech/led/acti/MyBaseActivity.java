@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
 import com.ex.ltech.led.R;
 import com.indris.material.RippleView;
 
@@ -46,6 +47,7 @@ public class MyBaseActivity extends Activity
   private TextView tv_title_device_name;
   private TextView tv_title_view_edit;
   private TextView tv_title_view_title;
+  public RequestQueue mQueue;
 
   protected void goAct(Class paramClass)
   {
