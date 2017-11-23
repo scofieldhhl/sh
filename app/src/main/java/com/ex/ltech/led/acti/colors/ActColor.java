@@ -1,6 +1,7 @@
 package com.ex.ltech.led.acti.colors;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,11 +20,13 @@ import android.widget.ToggleButton;
 
 import com.ex.ltech.led.BaseBusiness;
 import com.ex.ltech.led.R;
+import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.my_view.MySeekBar;
 import com.indris.material.RippleView;
+import com.skydoves.colorpickerview.ColorListener;
 import com.skydoves.colorpickerview.ColorPickerView;
 import com.soundcloud.android.crop.Crop;
 
@@ -103,6 +106,22 @@ public class ActColor extends MyBaseActivity
     localLayoutParams.addRule(12);
     this.rl_acti_color_parent.addView(this.sonView, localLayoutParams);
     this.color_picker_view = ((ColorPickerView)findViewById(R.id.color_picker_view));
+    this.color_picker_view.setColorListener(new ColorListener() {
+      @Override
+      public void onColorSelected(int color) {
+        /*red = (color & 0xff0000) >> 16;
+        green = (color & 0x00ff00) >> 8;
+        blue = (color & 0x0000ff);*/
+        red = Color.red(color);
+        green = Color.green(color);
+        blue = Color.blue(color);
+        /*red = paramInt1;
+        green = paramInt2;
+        blue = paramInt3;*/
+        bright = 255;
+        manager.postTask(bussiness.getColorCmd(210, bright, red, green, blue, 0));
+      }
+    });
 //    this.color_picker_view.setOnColorChangedListener(this);
     this.btn_acti_color_son_light_1 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_1));
     this.btn_acti_color_son_light_2 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_2));
@@ -140,9 +159,9 @@ public class ActColor extends MyBaseActivity
     this.business = new Business(this);
     this.baseBusiness = new BaseBusiness(this);
     this.popY = (1470 * getWindowManager().getDefaultDisplay().getHeight() / 1920);
-    /*this.bussiness = new CmdDateBussiness(this, Main.deviceVo.getPwd());
+    this.bussiness = new CmdDateBussiness(this, Main.deviceVo.getPwd());
     this.manager = SocketManager.instance();
-    this.manager.ip = Main.deviceVo.getIp();*/
+    this.manager.ip = Main.deviceVo.getIp();
   }
 
   private void setListener()
@@ -161,7 +180,7 @@ public class ActColor extends MyBaseActivity
     setViewTitle();
     setMenuBackgroundRes(R.mipmap.device_ic);
     setTiTleTextRes(R.string.color);
-//    setDeviceTextRes(Main.deviceVo.getDeviceName());
+    setDeviceTextRes(Main.deviceVo.getDeviceName());
   }
 
   public void addPanel(View paramView)
@@ -405,7 +424,7 @@ public class ActColor extends MyBaseActivity
     , 400L);*/
   }
 
-  /*public void onColorChange(int paramInt)
+  public void onColorChange(int paramInt)
   {
     this.sb_color_acti_1.setProgressColor(paramInt);
   }
@@ -421,7 +440,7 @@ public class ActColor extends MyBaseActivity
     this.blue = paramInt3;
     this.bright = 255;
     this.manager.postTask(this.bussiness.getColorCmd(210, this.bright, paramInt1, paramInt2, paramInt3, 0));
-  }*/
+  }
 
   protected void onCreate(Bundle paramBundle)
   {

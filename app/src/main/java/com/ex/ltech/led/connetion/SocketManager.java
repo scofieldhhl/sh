@@ -3,12 +3,18 @@ package com.ex.ltech.led.connetion;
 import android.os.AsyncTask;
 import android.os.Handler;
 
+import com.ex.ltech.led.utils.LogTool;
+import com.ex.ltech.led.utils.StringUtils;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import io.xlink.wifi.js.manage.DeviceManage;
 import io.xlink.wifi.sdk.XDevice;
+import io.xlink.wifi.sdk.XlinkAgent;
+import io.xlink.wifi.sdk.listener.ConnectDeviceListener;
 import io.xlink.wifi.sdk.listener.SendPipeListener;
 
 public class SocketManager
@@ -101,16 +107,17 @@ public class SocketManager
 
   public void sendData(byte[] paramArrayOfByte)
   {
-    /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+    XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
     DeviceManage.getInstance();
     int i = localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), paramArrayOfByte, this.sendPipeListener);
-    System.out.println("sendData = " + StringUtils.btye2Str3(paramArrayOfByte));
+    LogTool.d("sendData = " + StringUtils.btye2Str3(paramArrayOfByte));
     if (i < 0)
       XlinkAgent.getInstance().connectDevice(DeviceManage.getxDevice(), "8888", new ConnectDeviceListener()
       {
         public void onConnectDevice(XDevice paramXDevice, int paramInt)
         {
-          int i = 1;
+          LogTool.d("paramInt :" + paramInt + " paramXDevice:" + paramXDevice.getMacAddress());
+          /*int i = 1;
           int j;
           if (paramInt == 0)
           {
@@ -125,9 +132,9 @@ public class SocketManager
             j = 0;
             break;
             label28: i = 0;
-          }
+          }*/
         }
-      });*/
+      });
   }
 
   public void setpHandler(Handler paramHandler)

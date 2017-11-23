@@ -19,6 +19,7 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.ex.ltech.hongwai.StringUtil;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.colors.ActColor;
@@ -28,11 +29,14 @@ import com.ex.ltech.led.acti.music.ActiMusic;
 import com.ex.ltech.led.acti.timing.act.ActTiming;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
+import com.ex.ltech.led.utils.LogTool;
 import com.ex.ltech.led.utils.StringUtils;
 import com.ex.ltech.led.vo.DeviceVo;
 
 import java.util.List;
 
+import io.xlink.wifi.js.manage.DeviceManage;
+import io.xlink.wifi.js.util.SharedPreferencesUtil;
 import io.xlink.wifi.sdk.XDevice;
 import io.xlink.wifi.sdk.XlinkAgent;
 import io.xlink.wifi.sdk.bean.DataPoint;
@@ -117,13 +121,13 @@ public class Main extends TabActivity {
     private int tempSonActHeightWithouTitle;
     Runnable timeOutThread = new Runnable() {
         public void run() {
-            /*if (Main.this.isRespTimeOut) {
+            if (Main.this.isRespTimeOut) {
                 Main.this.handler.removeCallbacks(Main.this.timeOutThread);
                 Main.this.handler.postDelayed(Main.this.timeOutThread, 1000L);
                 XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
                 DeviceManage.getInstance();
                 localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getAllOnOffCmd(160), Main.this.mySendPipeListener);
-            }*/
+            }
         }
     };
     TelephonyManager tpm;
@@ -297,7 +301,7 @@ public class Main extends TabActivity {
                     , 1100L);
             return;*/
         }
-        /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+        XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
         DeviceManage.getInstance();
         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getAllOnOffCmd(160), this.mySendPipeListener);
         this.handler.postDelayed(new Runnable() {
@@ -307,7 +311,7 @@ public class Main extends TabActivity {
                                          localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getAllOnOffCmd(160), Main.this.mySendPipeListener);
                                      }
                                  }
-                , 100L);*/
+                , 100L);
     }
 
     public void allOn(View paramView) {
@@ -331,7 +335,7 @@ public class Main extends TabActivity {
                                      }
                     , 800L);*/
         }
-        /*XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
+        XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
         DeviceManage.getInstance();
         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getAllOnOffCmd(161), this.mySendPipeListener);
         this.handler.postDelayed(new Runnable() {
@@ -341,7 +345,7 @@ public class Main extends TabActivity {
                                          localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getAllOnOffCmd(161), Main.this.mySendPipeListener);
                                      }
                                  }
-                , 100L);*/
+                , 100L);
     }
 
     public int dip2px(int paramInt) {
@@ -365,28 +369,29 @@ public class Main extends TabActivity {
     protected void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
         deviceVo.setIp("");
-//        deviceVo.setDeviceName(SharedPreferencesUtil.queryValue("dname"));
-//        deviceVo.setMacAddress(SharedPreferencesUtil.queryValue("dMacAddress"));
+        deviceVo.setDeviceName(SharedPreferencesUtil.queryValue("dname"));
+        deviceVo.setMacAddress(SharedPreferencesUtil.queryValue("dMacAddress"));
         setContentView(R.layout.app_main);
         findView();
         changeTabItemBG(0);
         this.socketManager = SocketManager.instance();
         this.cmdDateBussiness = new CmdDateBussiness(this, "0000");
 //        bindService(new Intent(this, ServicePlayer.class), this.mServiceConnection, Context.BIND_AUTO_CREATE);
-        /*if (SharedPreferencesUtil.queryValue("dStatus").equals(getString(R.string.off_device))) {
+        if (SharedPreferencesUtil.queryValue("dStatus").equals(getString(R.string.off_device))) {
             this.iv_act_main_all_on.setVisibility(View.GONE);
             this.act_gray_layer.setVisibility(View.VISIBLE);
-        }*/
-//        StringUtil.byte2Hexstr(this.cmdDateBussiness.getDeviceOnOffInfoCmd());
+        }
+        StringUtil.byte2Hexstr(this.cmdDateBussiness.getDeviceOnOffInfoCmd());
         XlinkAgent.getInstance().addXlinkListener(this.myXlinkNetListener);
         XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
-//        DeviceManage.getInstance();
-        /*localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getDeviceOnOffInfoCmd(), this.mySendPipeListener);
+        DeviceManage.getInstance();
+        localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), this.cmdDateBussiness.getDeviceOnOffInfoCmd(), this.mySendPipeListener);
         this.handler.postDelayed(new Runnable() {
                                      public void run() {
                                          XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
                                          DeviceManage.getInstance();
-                                         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.getDeviceOnOffInfoCmd(), Main.this.mySendPipeListener);
+                                         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(),
+                                                 cmdDateBussiness.getDeviceOnOffInfoCmd(), mySendPipeListener);
                                      }
                                  }
                 , 100L);
@@ -394,7 +399,8 @@ public class Main extends TabActivity {
                                      public void run() {
                                          XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
                                          DeviceManage.getInstance();
-                                         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.checkRgbwDeviceVersionCmd(), Main.this.mySendPipeListener);
+                                         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(),
+                                                 cmdDateBussiness.checkRgbwDeviceVersionCmd(), mySendPipeListener);
                                      }
                                  }
                 , 300L);
@@ -402,10 +408,11 @@ public class Main extends TabActivity {
                                      public void run() {
                                          XlinkAgent localXlinkAgent = XlinkAgent.getInstance();
                                          DeviceManage.getInstance();
-                                         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(), Main.this.cmdDateBussiness.checkRgbwDeviceVersionCmd(), Main.this.mySendPipeListener);
+                                         localXlinkAgent.sendPipeData(DeviceManage.getxDevice(),
+                                                 cmdDateBussiness.checkRgbwDeviceVersionCmd(), mySendPipeListener);
                                      }
                                  }
-                , 600L);*/
+                , 600L);
     }
 
     protected void onDestroy() {
@@ -496,40 +503,208 @@ public class Main extends TabActivity {
         }
     }
 
-    class MyXlinkNetListener
-            implements XlinkNetListener {
+    class MyXlinkNetListener implements XlinkNetListener {
         MyXlinkNetListener() {
         }
 
         public void onDataPointUpdate(XDevice paramXDevice, List<DataPoint> paramList, int paramInt) {
+            LogTool.d("onDataPointUpdate");
         }
 
         public void onDeviceStateChanged(XDevice paramXDevice, int paramInt) {
+            LogTool.d("onDeviceStateChanged");
         }
 
         public void onDisconnect(int paramInt) {
+            LogTool.d("onDisconnect");
         }
 
         public void onEventNotify(EventNotify paramEventNotify) {
+            LogTool.d("onEventNotify");
         }
 
         public void onLocalDisconnect(int paramInt) {
+            LogTool.d("onLocalDisconnect");
         }
 
         public void onLogin(int paramInt) {
+            LogTool.d("onLogin");
         }
 
         public void onRecvPipeData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte) {
+            LogTool.d("onRecvPipeData");
+            /*Main.this.isRespTimeOut = false;
+            if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0)){
+                return;
+            }
+            if ((!paramXDevice.getMacAddress().equalsIgnoreCase(DeviceListActivity.deviceMacAddress)) || (Main.this.isDestroy))
+                return;
+            String str1 = StringUtils.btye2Str(paramArrayOfByte);
+            LogTool.d("main onRecvPipeData      " + StringUtils.btye2Str(paramArrayOfByte));
+            Activity localActivity2 = null;
+            if ((str1.length() == 18) && ((str1.indexOf("AAEB") != -1) || (str1.indexOf("DDEB") != -1) || (str1.indexOf("CCEB") != -1)))
+            {
+                if (str1.substring(12, 14).equals("01"))
+                {
+                    Main.this.iv_act_main_all_on.setVisibility(View.VISIBLE);
+                    Main.this.act_gray_layer.setVisibility(View.GONE);
+                    Main.access$202(Main.this, false);
+                }
+                if (str1.substring(12, 14).equals("00"))
+                {
+                    Main.this.iv_act_main_all_on.setVisibility(View.GONE);
+                    Main.this.act_gray_layer.setVisibility(View.VISIBLE);
+                    Main.access$202(Main.this, true);
+                }
+                if (str1.substring(14, 16).equalsIgnoreCase("DD"))
+                {
+                    SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgbw");
+                    Main.canAddRcOrPanel = true;
+                    localActivity2 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
+                    if ((localActivity2 == null) || (!(localActivity2 instanceof ActColor)));
+                }
+            }
+            try
+            {
+                ((ActColor)localActivity2).showRgbwSeekBarStatus();
+                if (str1.substring(14, 16).equalsIgnoreCase("CC"))
+                {
+                    SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgb");
+                    Main.canAddRcOrPanel = true;
+
+                }
+            }
+            catch (Exception localException2)
+            {
+                localException2.printStackTrace();
+            }
+            String str3 = null;
+            String str2 = null;
+            int j = -1;
+            int k = -1;
+            try
+            {
+                str2 = str1.substring(22, 24);
+                switch (str2.hashCode())
+                {
+                    case 1537:
+                        if (i <= Integer.parseInt(Main.this.softVersion))
+                            continue;
+                        Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
+                        return;
+                    case 1538:
+                    case 1539:
+                    case 1540:
+                }
+
+                if (str2.equals("01"))
+                    j = 0;
+
+                if (str2.equals("02"))
+                    j = 1;
+
+                if (str2.equals("03"))
+                    j = 2;
+
+                if (str2.equals("04"))
+                    j = 3;
+            }
+            catch (NumberFormatException localNumberFormatException)
+            {
+                localNumberFormatException.printStackTrace();
+            }
+            try
+            {
+
+                Activity localActivity1;
+                localActivity1 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
+                if ((localActivity1 == null) || (!(localActivity1 instanceof ActColor)));
+                ((ActColor)localActivity1).showRgbSeekBarStatus();
+                if ((str1.length() == 18) && (str1.indexOf("FDEB device updata status return") != -1))
+                    str3 = str1.substring(12, 14);
+                switch (str3.hashCode())
+                {
+                    default:
+
+                    case 1536:
+                    case 1537:
+                    case 1538:
+                    case 1539:
+                }
+
+                if (str3.equals("00"))
+                    k = 0;
+                if (str3.equals("01"))
+                    k = 1;
+
+                if (str3.equals("02"))
+                    k = 2;
+
+                if (str3.equals("03"))
+                    k = 3;
+            }
+            catch (Exception localException1)
+            {
+                localException1.printStackTrace();
+            }
+
+
+            switch (k)
+            {
+                default:
+                    if ((str1.indexOf("FE") == -1) || (str1.length() < 80))
+                        continue;
+                    Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
+                    Main.this.softVersion = Main.this.softVersion.replace(".", "");
+                    Main.this.softVersion = Main.this.softVersion.substring(4, Main.this.softVersion.length());
+                    if (Main.this.softVersion.equals("000000"))
+                    {
+                        Main.this.softVersion = "0";
+                        i = 1;
+                    }
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+            }
+
+
+
+                continue;
+                Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_FILE_NAME);
+                continue;
+                Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_75_FILE_NAME);
+                continue;
+                Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_800FILE_NAME);
+                continue;
+                Main.this.beginUpdata(SynProgram2Device.WIFI_101_DMX4_UP_V0);
+                continue;
+                Main.this.softVersion = Main.this.softVersion.replaceFirst("^0*", "");
+                continue;
+            int i = -1;
+            switch (j)
+            {
+                default:
+                case 0:
+                    i = -2;
+                case 1:
+                    i = -2;
+                case 2:
+                    i = -2;
+                case 3:
+                    i = -2;
+            }*/
+
+
       /*Main.this.isRespTimeOut = false;
-      if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0));
-      while (true)
-      {
-        return;
+      if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0)){
+          return;
+      }
         if ((!paramXDevice.getMacAddress().equalsIgnoreCase(DeviceListActivity.deviceMacAddress)) || (Main.this.isDestroy))
-          continue;
+          return;
         String str1 = StringUtils.btye2Str(paramArrayOfByte);
-        System.out.println("main onRecvPipeData      " + StringUtils.btye2Str(paramArrayOfByte));
-        Activity localActivity2;
+        LogTool.d("main onRecvPipeData      " + StringUtils.btye2Str(paramArrayOfByte));
+        Activity localActivity2 = null;
         if ((str1.length() == 18) && ((str1.indexOf("AAEB") != -1) || (str1.indexOf("DDEB") != -1) || (str1.indexOf("CCEB") != -1)))
         {
           if (str1.substring(12, 14).equals("01"))
@@ -690,8 +865,7 @@ public class Main extends TabActivity {
             case 3:
             }
           }
-        }
-      }*/
+        }*/
         }
 
         public void onRecvPipeSyncData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte) {
