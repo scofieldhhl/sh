@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -25,6 +26,7 @@ import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.my_view.MySeekBar;
+import com.ex.ltech.led.utils.LogTool;
 import com.indris.material.RippleView;
 import com.skydoves.colorpickerview.ColorListener;
 import com.skydoves.colorpickerview.ColorPickerView;
@@ -33,7 +35,9 @@ import com.soundcloud.android.crop.Crop;
 import java.io.File;
 
 public class ActColor extends MyBaseActivity
-  implements View.OnClickListener, SeekBar.OnSeekBarChangeListener, MySeekBar.onMySBtouchListener
+  implements View.OnClickListener, SeekBar.OnSeekBarChangeListener,
+        MySeekBar.onMySBtouchListener
+//        ,ColorPickerView.OnColorChangedListener
 {
   int SHOT_REQ_CODE = 1;
   private BaseBusiness baseBusiness;
@@ -106,23 +110,38 @@ public class ActColor extends MyBaseActivity
     localLayoutParams.addRule(12);
     this.rl_acti_color_parent.addView(this.sonView, localLayoutParams);
     this.color_picker_view = ((ColorPickerView)findViewById(R.id.color_picker_view));
-    this.color_picker_view.setColorListener(new ColorListener() {
+//    this.color_picker_view.setOnColorChangedListener(this);
+    color_picker_view.setColorListener(new ColorListener() {
       @Override
       public void onColorSelected(int color) {
-        /*red = (color & 0xff0000) >> 16;
-        green = (color & 0x00ff00) >> 8;
-        blue = (color & 0x0000ff);*/
         red = Color.red(color);
         green = Color.green(color);
         blue = Color.blue(color);
-        /*red = paramInt1;
-        green = paramInt2;
-        blue = paramInt3;*/
         bright = 255;
         manager.postTask(bussiness.getColorCmd(210, bright, red, green, blue, 0));
       }
     });
-//    this.color_picker_view.setOnColorChangedListener(this);
+    findViewById(R.id.v_touch).setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View view, MotionEvent event) {
+        switch(event.getAction()){
+          case MotionEvent.ACTION_DOWN:
+            LogTool.d("---action down-----");
+            LogTool.d("起始位置为："+"("+event.getX()+" , "+event.getY()+")");
+            break;
+          case MotionEvent.ACTION_MOVE:
+            LogTool.d("---action move-----");
+            LogTool.d("移动中坐标为："+"("+event.getX()+" , "+event.getY()+")");
+            break;
+          case MotionEvent.ACTION_UP:
+            System.out.println("---action up-----");
+            LogTool.d("最后位置为："+"("+event.getX()+" , "+event.getY()+")");
+        }
+        LogTool.d("位置为："+"("+event.getX()+" , "+event.getY()+")");
+        color_picker_view.setSelectorPoint((int)event.getX(), (int)event.getY());
+        return true;
+      }
+    });
     this.btn_acti_color_son_light_1 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_1));
     this.btn_acti_color_son_light_2 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_2));
     this.btn_acti_color_son_light_3 = ((Button)this.sonView.findViewById(R.id.btn_acti_color_son_light_3));
@@ -139,6 +158,16 @@ public class ActColor extends MyBaseActivity
     this.bottomPopWin.setOutsideTouchable(true);
     this.bottomPopWin.setTouchable(true);
     this.bottomPopWin.setBackgroundDrawable(new ColorDrawable(0));
+  }
+
+  /**
+   * moving selector's points (x, y)
+   * @param v
+   */
+  public void points(View v) {
+    int x = (int)(Math.random() * 600) + 100;
+    int y = (int)(Math.random() * 400) + 150;
+    color_picker_view.setSelectorPoint(x, y);
   }
 
   private void handleCrop(int paramInt, Intent paramIntent)

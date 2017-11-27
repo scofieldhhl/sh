@@ -93,21 +93,20 @@ public class ModeGridViewAdapter extends BaseAdapter
               j = this.pct.getResources().getColor(R.color.white);
       }
       paramView.setBackgroundColor(j);*/
-      this.bmsIndex = (1 + this.bmsIndex);
 
       localHolder.iv_acti_scene_list_item_4.setOnClickListener(new View.OnClickListener() {
           public void onClick(View paramView) {
-              ModeGridViewAdapter.this.moreSeletedListener.onMoreSeleted(bmsIndex);
+              ModeGridViewAdapter.this.moreSeletedListener.onMoreSeleted(paramInt);
           }
       });
       localHolder.iv_acti_scene_list_item_5.setOnClickListener(new View.OnClickListener() {
           public void onClick(View paramView) {
-              ModeGridViewAdapter.this.singleSeletedListener.onSingleSeleted(bmsIndex);
+              ModeGridViewAdapter.this.singleSeletedListener.onSingleSeleted(paramInt);
           }
       });
       localHolder.iv_acti_scene_list_item_5.setOnLongClickListener(new View.OnLongClickListener() {
           public boolean onLongClick(View paramView) {
-              ModeGridViewAdapter.this.singleSeletedListener.onLongClick(bmsIndex);
+              ModeGridViewAdapter.this.singleSeletedListener.onLongClick(paramInt);
               return false;
           }
       });

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -13,9 +14,11 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.utils.BitmapUtils;
+import com.ex.ltech.led.utils.LogTool;
 import com.ex.ltech.led.vo.TouchArea;
 
 import java.util.ArrayList;
@@ -29,6 +32,7 @@ public class ColorPickerView extends View
   private Paint bitmapPaint;
   BitmapFactory.Options bmOptions;
   private int brightness;
+  private Bitmap colorBM1;
   private Bitmap colorBM;
   private Bitmap colorTitleBM;
   private Context context;
@@ -90,7 +94,7 @@ public class ColorPickerView extends View
   private int sacleBmX;
   private int sacleBmY;
   private int seletedPickerIndex = -1;
-  private Bitmap sellPhoneBm = null;
+  private Bitmap sellPhoneBm = null;//设置的照片
   public Bitmap shotBM;
   public Bitmap shotBm4SellPhone;
   private boolean show;
@@ -137,58 +141,45 @@ public class ColorPickerView extends View
 
   private void changePaintColor(int paramInt1, int paramInt2)
   {
-    /*int j = -16777216;
+    LogTool.d("changePaintColor");
+    int j = -16777216;
     Paint localPaint1 = this.glassPaint;
+    if (paramInt1 > 128)
+     j = -1;
+//    localPaint1.setColor(j);
+    Paint localPaint5 = this.textPaint1;
     if (paramInt1 > 128);
-    for (int m = j; ; m = -1)
+      j = -1;
+    localPaint5.setColor(j);
+    Paint localPaint4 = this.textPaint2;
+    if (paramInt1 > 128);
+      j = -1;
+    localPaint4.setColor(j);
+
+    Paint localPaint3 = this.textPaint3;
+    if (paramInt1 > 128);
+    j = -1;
+      localPaint3.setColor(j);
+
+    Paint localPaint2 = this.textPaint4;
+    if (paramInt1 > 128);
+      j = -1;
+    localPaint2.setColor(j);
+
+    /*switch (paramInt2 + 1)
     {
-      localPaint1.setColor(m);
-      switch (paramInt2 + 1)
-      {
       default:
         return;
       case 1:
       case 2:
       case 3:
       case 4:
-      }
-    }
-    Paint localPaint5 = this.textPaint1;
-    if (paramInt1 > 128);
-    while (true)
-    {
-      localPaint5.setColor(j);
-      return;
-      j = -1;
-    }
-    Paint localPaint4 = this.textPaint2;
-    if (paramInt1 > 128);
-    while (true)
-    {
-      localPaint4.setColor(j);
-      return;
-      j = -1;
-    }
-    Paint localPaint3 = this.textPaint3;
-    if (paramInt1 > 128);
-    while (true)
-    {
-      localPaint3.setColor(j);
-      return;
-      j = -1;
-    }
-    Paint localPaint2 = this.textPaint4;
-    if (paramInt1 > 128);
-    while (true)
-    {
-      localPaint2.setColor(j);
-      return;
-      j = -1;
     }*/
   }
 
   private void cleanShot()
   {
+    LogTool.d("cleanShot");
     this.isGlassShow = false;
     this.shotBM = null;
     invalidate();
@@ -222,76 +213,71 @@ public class ColorPickerView extends View
 
   private void handleActionMove(int paramInt1, int paramInt2)
   {
-    /*int j;
+    int j;
     int m;
     int n;
-    int i1;
+    this.i = (1 + this.i);
+    int i1 = this.i;
     if (this.seletedPickerIndex != -1)
     {
       hidePikerOnGlassOpen(paramInt1 - this.pikerBMWidth / 2 + this.width, paramInt2 - this.pikerBMHeight / 2, this.seletedPickerIndex);
       this.mCurrentX = paramInt1;
       this.mCurrentY = paramInt2;
-      if (paramInt2 < this.glassRadius / 2)
-        break label255;
-      this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2 - this.glassRadius / 2);
-      this.brightness = getBrightness(paramInt1, paramInt2 - this.glassRadius / 2);
-      j = Color.red(this.curPikerColor);
-      m = Color.green(this.curPikerColor);
-      n = Color.blue(this.curPikerColor);
-      changePaintColor(this.brightness, this.seletedPickerIndex);
-      this.i = (1 + this.i);
-      i1 = this.i;
-      if (!Main.myService.getIsPlay())
-        break label281;
-    }
-    label281: for (int i2 = 20; ; i2 = 3)
-    {
-      if (i1 % i2 == 0)
-      {
-        this.listener.onColorChange(this.curPikerColor);
-        this.listener.onColorChange(j, m, n);
-        this.listener.onColorChange(j, m, n, this.brightness);
-        this.listener.onBrightnessChange(this.brightness);
+      if (paramInt2 > this.glassRadius / 2){
+        this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2 - this.glassRadius / 2);
+        this.brightness = getBrightness(paramInt1, paramInt2 - this.glassRadius / 2);
+        j = Color.red(this.curPikerColor);
+        m = Color.green(this.curPikerColor);
+        n = Color.blue(this.curPikerColor);
+        changePaintColor(this.brightness, this.seletedPickerIndex);
+        int i2 = 3;
+        if (i1 % i2 == 0)
+        {
+          this.listener.onColorChange(this.curPikerColor);
+          this.listener.onColorChange(j, m, n);
+          this.listener.onColorChange(j, m, n, this.brightness);
+          this.listener.onBrightnessChange(this.brightness);
+        }
       }
-      this.actionMoveTime = (1 + this.actionMoveTime);
-      if (this.actionMoveTime > 2)
-        this.isActionMove = true;
-      invalidate();
-      return;
-      label255: this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2);
+
+      /*if (!Main.myService.getIsPlay())
+        break label281;*/
+    }else{
+      this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2);
       this.brightness = getBrightness(paramInt1, paramInt2);
-      break;
-    }*/
+    }
+    this.actionMoveTime = (1 + this.actionMoveTime);
+    if (this.actionMoveTime > 2)
+      this.isActionMove = true;
+    invalidate();
   }
 
   private void handleActionUp(int paramInt1, int paramInt2)
   {
-    /* if (this.seletedPickerIndex != -1)
-    {
+    if (this.seletedPickerIndex != -1){
       this.actionMoveTime = 0;
       showPikerOnGlassClose(paramInt1 - this.pikerBMWidth / 2, paramInt2 - this.pikerBMHeight / 2, this.seletedPickerIndex);
       onPikerUp(paramInt1, paramInt2, this.seletedPickerIndex);
       invalidate();
       updatePikerAndGroupArea(paramInt1 - this.pikerBMWidth / 2, paramInt2 - this.pikerBMHeight / 2, this.seletedPickerIndex);
       changePaintColor(getBrightness(paramInt1 + this.pikerBMWidth / 2, paramInt2 + this.pikerBMHeight / 2), this.seletedPickerIndex);
-      if (paramInt2 < this.glassRadius / 2)
-        break label247;
-      this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2 - this.glassRadius / 2);
+      if (paramInt2 > this.glassRadius / 2)
+        this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2 - this.glassRadius / 2);
+    }else{
+      this.brightness = getBrightness(paramInt1, paramInt2 - this.glassRadius / 2);
+      this.brightness = getBrightness(paramInt1, paramInt2);
+      this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2);
     }
-    for (this.brightness = getBrightness(paramInt1, paramInt2 - this.glassRadius / 2); ; this.brightness = getBrightness(paramInt1, paramInt2))
-    {
-      int j = Color.red(this.curPikerColor);
-      int m = Color.green(this.curPikerColor);
-      int n = Color.blue(this.curPikerColor);
-      this.listener.onColorChange(this.curPikerColor);
-      this.listener.onColorChange(j, m, n);
-      this.listener.onColorChange(j, m, n, this.brightness);
-      this.listener.onBrightnessChange(this.brightness);
-      onTouchPointUp(paramInt1, paramInt2);
-      invalidate();
-      return;
-      label247: this.curPikerColor = this.currentBM.getPixel(paramInt1, paramInt2);
-    }*/
+
+    int j = Color.red(this.curPikerColor);
+    int m = Color.green(this.curPikerColor);
+    int n = Color.blue(this.curPikerColor);
+    this.listener.onColorChange(this.curPikerColor);
+    this.listener.onColorChange(j, m, n);
+    this.listener.onColorChange(j, m, n, this.brightness);
+    this.listener.onBrightnessChange(this.brightness);
+    onTouchPointUp(paramInt1, paramInt2);
+    invalidate();
   }
 
   private void hidePikerOnGlassOpen(int paramInt1, int paramInt2, int paramInt3)
@@ -317,6 +303,7 @@ public class ColorPickerView extends View
 
   private void init()
   {
+    LogTool.d("init");
     if (!this.show)
       return;
     this.bmOptions = new BitmapFactory.Options();
@@ -351,7 +338,9 @@ public class ColorPickerView extends View
     this.glassPaint = new Paint();
     this.glassPaint.setAntiAlias(true);
     this.glassPaint.setTextSize(50.0F);
+    LogTool.d("currentBM:" + String.valueOf(currentBM == null) + String.valueOf(currentBM.isRecycled()));
     sacaleColorBM();
+    LogTool.d("currentBM:" + String.valueOf(currentBM == null) + String.valueOf(currentBM.isRecycled()));
     this.distance = this.groupBM.getHeight();
     initTouchArea();
     initBitmapShader();
@@ -478,28 +467,27 @@ public class ColorPickerView extends View
 
   private void sacaleColorBM()
   {
-    /*Matrix localMatrix = new Matrix();
+    Matrix localMatrix = new Matrix();
     WindowManager localWindowManager = (WindowManager)getContext().getSystemService(Context.WINDOW_SERVICE);
-    this.width = localWindowManager.getDefaultDisplay().getWidth();
-    this.height = localWindowManager.getDefaultDisplay().getHeight();
-    this.glassRadius = (this.width / 6);
-    this.glassRadius = (3 * this.pikerBMHeight);
+    width = localWindowManager.getDefaultDisplay().getWidth();
+    height = localWindowManager.getDefaultDisplay().getHeight();
+    glassRadius = (width / 6);
+    glassRadius = (3 * pikerBMHeight);
     float f1;
     float f2;
-    if (this.width > this.colorBM.getWidth())
-    {
-      f1 = this.width / this.colorBM.getWidth();
-      if (this.height <= this.pActHeight)
-        f2 = (this.pActHeight - getTop()) / this.colorBM.getHeight();
-    }else{
-      localMatrix.postScale(f1, f2);
-      this.colorTitleBM = Bitmap.createBitmap(this.colorTitleBM, 0, 0, this.colorTitleBM.getWidth(), this.colorTitleBM.getHeight(), localMatrix, true);
-      this.colorBM = Bitmap.createBitmap(this.colorBM, 0, 0, this.colorBM.getWidth(), this.colorBM.getHeight(), localMatrix, true);
-      return;
-      f1 = this.width / this.colorBM.getWidth();
-      break;
-      label216: f2 = this.colorBM.getHeight() / (this.pActHeight - getTop());
-    }*/
+    if (width > colorBM.getWidth())
+      f1 = 1.0f * width / colorBM.getWidth();
+    else
+      f1 = 1.0f * width / colorBM.getWidth();
+    if (height <= this.pActHeight)
+      f2 = 1.0f * (pActHeight - getTop()) / colorBM.getHeight();
+    else
+      f2 = 1.0f * colorBM.getHeight() / (pActHeight - getTop());
+    localMatrix.postScale(f1, f2);
+    colorTitleBM = Bitmap.createBitmap(colorTitleBM, 0, 0,
+            colorTitleBM.getWidth(), colorTitleBM.getHeight(), localMatrix, true);
+    colorBM = Bitmap.createBitmap(colorBM, 0, 0,
+            colorBM.getWidth(), colorBM.getHeight(), localMatrix, true);
   }
 
   private void saveShotBm4SellPhone()
@@ -613,11 +601,11 @@ public class ColorPickerView extends View
 
   protected void onDraw(Canvas paramCanvas)
   {
+    LogTool.d("onDraw");
     super.onDraw(paramCanvas);
     if (isInEditMode())
       return;
-    if (this.sellPhoneBm != null)
-    {
+    if (this.sellPhoneBm != null){
       this.currentBM = this.shotBm4SellPhone;
       paramCanvas.drawBitmap(this.colorTitleBM, 0.0F, 0.0F, this.bitmapPaint);
       paramCanvas.drawBitmap(this.sellPhoneBm, 0.0F, this.colorTitleBM.getHeight(), this.bitmapPaint);
@@ -642,38 +630,38 @@ public class ColorPickerView extends View
       paramCanvas.clipPath(this.mPath);
       paramCanvas.translate(this.sacleBmX, this.sacleBmY);
       paramCanvas.drawBitmap(this.shotBM, this.mMatrix, this.bitmapPaint);
-      /*if (this.sacleBmX >= 0)
-        break label538;
-      if (this.sacleBmY >= 0)
-        break label489;*/
-      paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, Math.abs(this.sacleBmY) - (this.glassPikerBM.getHeight() - this.glassRadius));
-    }else {
-      /*if (!this.isGroupSeleted)
-        paramCanvas.drawBitmap(this.bigGroupBM, 0.0F, 0.0F, this.bitmapPaint);
-      else*/
-        paramCanvas.drawBitmap(this.currentBM, 0.0F, 0.0F, this.bitmapPaint);
+      if (sacleBmX >= 0 && this.sacleBmY >= 0)
+        paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, Math.abs(this.sacleBmY) - (this.glassPikerBM.getHeight() - this.glassRadius));
+    }else{
+    if (this.isGroupSeleted)
+      paramCanvas.drawBitmap(this.bigGroupBM, 0.0F, 0.0F, this.bitmapPaint);
+    else{
+      LogTool.d("currentBM:" + String.valueOf(currentBM == null) + String.valueOf(currentBM.isRecycled()) +
+              " bitmapPaint:" + String.valueOf(bitmapPaint == null));
+      paramCanvas.drawBitmap(currentBM, 0.0F, 0.0F, bitmapPaint);
       this.currentBM = this.colorBM;
-      if (this.isActionDown)
-      {
-        this.isActionDown = false;
-        paramCanvas.drawBitmap(this.pikerBM, this.pickerPonit2.x, this.pickerPonit2.y, this.bitmapPaint);
-        return;
-      }
-      if (this.isActionMove)
-      {
-        paramCanvas.drawBitmap(this.pikerBM, this.pickerPonit2.x, this.pickerPonit2.y, this.bitmapPaint);
-        onTouchPointUp(this.pickerPonit2.x, this.pickerPonit2.y);
-        System.out.println("简单画");
-      }
+    }
+    if (this.isActionDown){
+      this.isActionDown = false;
+      paramCanvas.drawBitmap(this.pikerBM, this.pickerPonit2.x, this.pickerPonit2.y, this.bitmapPaint);
+    }else if (this.isActionMove){
+      paramCanvas.drawBitmap(this.pikerBM, this.pickerPonit2.x, this.pickerPonit2.y, this.bitmapPaint);
+      onTouchPointUp(this.pickerPonit2.x, this.pickerPonit2.y);
+      System.out.println("简单画");
+    }else {
       moveThumb(paramCanvas, this.targetX, this.targetY);
       System.out.println("动画画");
-      paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
-      if (this.sacleBmY < 0)
-      {
-        paramCanvas.translate(this.glassRadius - this.glassPikerBM.getWidth() / 2 - this.sacleBmX, Math.abs(this.sacleBmY) - (this.glassPikerBM.getHeight() - this.glassRadius));
-      }
-      paramCanvas.translate(this.glassRadius - this.glassPikerBM.getWidth() / 2 - this.sacleBmX, -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
     }
+    paramCanvas.translate(Math.abs(this.sacleBmX) + this.glassRadius - this.glassPikerBM.getWidth() / 2, -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
+    if (this.sacleBmY < 0)
+    {
+      paramCanvas.translate(this.glassRadius - this.glassPikerBM.getWidth() / 2 - this.sacleBmX,
+              Math.abs(this.sacleBmY) - (this.glassPikerBM.getHeight() - this.glassRadius));
+    }else {
+      paramCanvas.translate(this.glassRadius - this.glassPikerBM.getWidth() / 2 - this.sacleBmX,
+              -this.sacleBmY - (this.glassPikerBM.getHeight() - this.glassRadius));
+    }
+  }
     paramCanvas.drawBitmap(this.glassPikerBM, 0.0F, 0.0F, this.bitmapPaint);
     paramCanvas.translate(this.glassPikerBM.getWidth() / 2, 9 * this.glassPikerBM.getHeight() / 23);
     this.textPaint.setColor(this.curPikerColor);

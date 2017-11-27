@@ -11,6 +11,7 @@ import android.widget.SeekBar;
 import com.ex.ltech.led.R;
 import com.ex.ltech.led.acti.Main;
 import com.ex.ltech.led.acti.MyBaseActivity;
+import com.ex.ltech.led.utils.LogTool;
 import com.ex.ltech.led.vo.ModeVo;
 import com.indris.material.RippleView;
 
@@ -66,6 +67,7 @@ public class ActMode extends MyBaseActivity
             }
 
             public void onSingleSeleted(int paramInt) {
+                LogTool.d("onSingleSeleted: " + paramInt);
                 ModeVo localModeVo;
                 if (ActMode.this.isLongClick)
                     ActMode.this.isLongClick = false;

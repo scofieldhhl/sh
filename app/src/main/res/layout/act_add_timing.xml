@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff9f9f9"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/acti_title_view"
+        android:background="#fff9f9f9" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50.0dip"
+        android:paddingBottom="5.0dip">
+
+        <com.ex.ltech.led.my_view.MyTimePickerView
+            android:id="@+id/tp_act_add_timing_hour"
+            android:layout_width="40.0dip"
+            android:layout_height="250.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5.0dip"
+            android:layout_toRightOf="@id/tp_act_add_timing_hour"
+            android:text="@string/hour"
+            android:textColor="#fffe5f33"
+            android:textSize="15.0sp"
+            android:textStyle="bold" />
+
+        <com.ex.ltech.led.my_view.MyTimePickerView
+            android:id="@+id/tp_act_add_timing_min"
+            android:layout_width="40.0dip"
+            android:layout_height="250.0dip"
+            android:layout_marginLeft="80.0dip"
+            android:layout_toRightOf="@id/tp_act_add_timing_hour" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5.0dip"
+            android:layout_toRightOf="@id/tp_act_add_timing_min"
+            android:text="@string/minite"
+            android:textColor="#fffe5f33"
+            android:textSize="15.0sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="50.0dip"
+        android:background="@color/c2" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="150.0dip"
+        android:background="@color/gray" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="200.0dip"
+        android:background="@color/gray" />
+
+    <ImageView
+        android:id="@+id/iv_act_add_timing_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginTop="300.0dip"
+        android:background="@color/c1" />
+
+    <ImageView
+        android:id="@+id/tv_act_add_timing_on"
+        android:layout_width="70.0dip"
+        android:layout_height="70.0dip"
+        android:layout_below="@id/iv_act_add_timing_line"
+        android:layout_marginLeft="80.0dip"
+        android:layout_marginTop="20.0dip"
+        android:background="@mipmap/ic_on"
+        android:onClick="open" />
+
+    <ImageView
+        android:id="@+id/tv_act_add_timing_off"
+        android:layout_width="70.0dip"
+        android:layout_height="70.0dip"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/iv_act_add_timing_line"
+        android:layout_marginRight="80.0dip"
+        android:layout_marginTop="20.0dip"
+        android:background="@mipmap/ic_off"
+        android:onClick="close" />
+
+    <ImageView
+        android:id="@+id/iv_act_add_timing_line2"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@id/tv_act_add_timing_off"
+        android:layout_marginTop="20.0dip"
+        android:background="@color/gray" />
+
+    <RelativeLayout
+        android:id="@+id/rl_act_add_timing_1"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_below="@id/iv_act_add_timing_line2"
+        android:gravity="center_vertical"
+        android:paddingRight="10.0dip">
+
+        <ImageView
+            android:id="@+id/iv_act_add_timing_1"
+            android:layout_width="25.0dip"
+            android:layout_height="25.0dip"
+            android:layout_marginLeft="15.0dip"
+            android:background="@mipmap/ic_mode" />
+
+        <TextView
+            android:id="@+id/tv_act_add_timing_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/iv_act_add_timing_1"
+            android:text="@string/mode"
+            android:textColor="#ff111111"
+            android:textSize="20.0sp" />
+
+        <com.ex.ltech.led.my_view.ColorSeletedView
+            android:id="@+id/cv_act_add_timing_mode"
+            android:layout_width="30.0dip"
+            android:layout_height="30.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginTop="3.0dip"
+            android:text="@string/mode"
+            android:textColor="#ff111111"
+            android:textSize="20.0sp" />
+
+        <ImageView
+            android:id="@+id/iv_act_add_timing_go1"
+            android:layout_width="10.0dip"
+            android:layout_height="25.0dip"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/next_ic" />
+
+        <TextView
+            android:id="@+id/tv_act_add_timing_mode_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20.0dip"
+            android:layout_toLeftOf="@id/iv_act_add_timing_go1"
+            android:textColor="#ff9b9b9b"
+            android:textSize="20.0sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@id/rl_act_add_timing_1"
+        android:background="@color/gray" />
+
+    <RelativeLayout
+        android:id="@+id/rl_act_add_timing_2"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_below="@id/rl_act_add_timing_1"
+        android:gravity="center_vertical"
+        android:paddingRight="10.0dip">
+
+        <ImageView
+            android:id="@+id/iv_act_add_timing_2"
+            android:layout_width="25.0dip"
+            android:layout_height="25.0dip"
+            android:layout_marginLeft="15.0dip"
+            android:background="@mipmap/ic_repeat" />
+
+        <TextView
+            android:id="@+id/tv_act_add_timing_repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/iv_act_add_timing_2"
+            android:text="@string/repeat"
+            android:textColor="#ff111111"
+            android:textSize="20.0sp" />
+
+        <ImageView
+            android:id="@+id/iv_act_add_timing_go2"
+            android:layout_width="10.0dip"
+            android:layout_height="25.0dip"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/next_ic" />
+
+        <TextView
+            android:id="@+id/tv_act_add_timing_repeat_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20.0dip"
+            android:layout_toLeftOf="@id/iv_act_add_timing_go2"
+            android:text="@string/once"
+            android:textColor="#ff9b9b9b"
+            android:textSize="20.0sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@id/rl_act_add_timing_2"
+        android:background="@color/c1" />
+
+    <RelativeLayout
+        android:id="@+id/rl_act_add_timing_3"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_below="@id/rl_act_add_timing_2"
+        android:padding="10.0dip"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_act_add_timing_3"
+            android:layout_width="30.0dip"
+            android:layout_height="30.0dip"
+            android:layout_marginLeft="10.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@id/iv_act_add_timing_3"
+            android:text="123"
+            android:textColor="#ff111111"
+            android:textSize="20.0sp" />
+
+        <ImageView
+            android:id="@+id/iv_act_add_timing_go3"
+            android:layout_width="10.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:background="@mipmap/next_ic" />
+
+        <TextView
+            android:id="@+id/tv_act_add_timing_aphal_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10.0dip"
+            android:layout_toLeftOf="@id/iv_act_add_timing_go3"
+            android:text="123"
+            android:textColor="#ff9b9b9b"
+            android:textSize="20.0sp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_below="@id/rl_act_add_timing_3"
+        android:background="@color/gray" />
+</RelativeLayout>

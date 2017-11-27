@@ -671,6 +671,55 @@ public class ModeBusiness
 
   public void sendSingleMode(int paramInt)
   {
+    ArrayList localArrayList = new ArrayList();
+    byte b = 17;
+    if (this.modes.size() < 16)
+    {
+      for (int j = 0; j < -1 + this.modes.size(); j++){
+        ModeVo localModeVo = this.modes.get(j);
+        switch (localModeVo.getSpeed())
+        {
+          default:
+          case 1:
+            b = 17;
+            break;
+          case 2:
+            b = 18;
+            break;
+          case 3:
+            b = 19;
+            break;
+          case 4:
+            b = 20;
+            break;
+          case 5:
+            b = 21;
+            break;
+          case 6:
+            b = 22;
+            break;
+          case 7:
+            b = 23;
+            break;
+          case 8:
+            b = 24;
+            break;
+        }
+        localArrayList.add(Byte.valueOf(b));
+      }
+    }else {
+      localArrayList.add(Byte.valueOf(b));
+    }
+    String str = "";
+    List localList = this.modes;
+    for(int k = 15; k > -1; k--){
+      if ((k > -1 + localList.size()) || (!((ModeVo)localList.get(k)).isSingleSeleted()))
+        str = str + "0";
+      else
+        str = str + "1";
+    }
+    System.out.println("Test the fucking send      538     sendSingleMode " + str);
+    this.socketManager.postTask(this.cmdDateBussiness.getMoreSeletedModeCmd(str, localArrayList, 177));
     /*ArrayList localArrayList = new ArrayList();
     int i;
     int j;

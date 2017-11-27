@@ -58,7 +58,7 @@
             android:thumb="@mipmap/thumb_2" />
     </LinearLayout>
 
-    <com.ex.ltech.led.my_view.ColorPickerView
+    <com.skydoves.colorpickerview.ColorPickerView
         android:id="@+id/color_picker_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

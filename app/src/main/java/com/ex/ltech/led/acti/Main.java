@@ -27,6 +27,7 @@ import com.ex.ltech.led.acti.main.DeviceListActivity;
 import com.ex.ltech.led.acti.mode.ActMode;
 import com.ex.ltech.led.acti.music.ActiMusic;
 import com.ex.ltech.led.acti.timing.act.ActTiming;
+import com.ex.ltech.led.acti.timing.newRgb.ActNewRgbTiming;
 import com.ex.ltech.led.connetion.CmdDateBussiness;
 import com.ex.ltech.led.connetion.SocketManager;
 import com.ex.ltech.led.utils.LogTool;
@@ -224,7 +225,7 @@ public class Main extends TabActivity {
             this.act_gray_layer = ((RelativeLayout) findViewById(R.id.act_gray_layer));
             this.iv_act_main_all_on = ((ImageButton) findViewById(R.id.iv_act_main_all_on));
 //            this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActNewRgbTiming.class)).setIndicator(localView5));
-            this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActNull.class)).setIndicator(localView5));
+            this.tabHost.addTab(this.tabHost.newTabSpec("time").setContent(new Intent(this, ActNewRgbTiming.class)).setIndicator(localView5));
         }
     }
 
@@ -533,127 +534,107 @@ public class Main extends TabActivity {
 
         public void onRecvPipeData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte) {
             LogTool.d("onRecvPipeData");
-            /*Main.this.isRespTimeOut = false;
-            if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0)){
-                return;
+            Main.this.isRespTimeOut = false;
+          if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0))
+            return;
+        if ((!paramXDevice.getMacAddress().equalsIgnoreCase(DeviceListActivity.deviceMacAddress))
+                || (Main.this.isDestroy))
+          return;
+        String str1 = StringUtils.btye2Str(paramArrayOfByte);
+        System.out.println("main onRecvPipeData      " + StringUtils.btye2Str(paramArrayOfByte));
+        Activity localActivity2;
+        if ((str1.length() == 18) && ((str1.indexOf("AAEB") != -1) || (str1.indexOf("DDEB") != -1) || (str1.indexOf("CCEB") != -1)))
+        {
+          if (str1.substring(12, 14).equals("01"))
+          {
+            iv_act_main_all_on.setVisibility(View.VISIBLE);
+            act_gray_layer.setVisibility(View.GONE);
+              isOnAllOff = false;
+          }
+          if (str1.substring(12, 14).equals("00"))
+          {
+            iv_act_main_all_on.setVisibility(View.GONE);
+            act_gray_layer.setVisibility(View.VISIBLE);
+              isOnAllOff = true;
+          }
+          if (str1.substring(14, 16).equalsIgnoreCase("DD"))
+          {
+            SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgbw");
+            Main.canAddRcOrPanel = true;
+            localActivity2 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
+            if ((localActivity2 != null) && ((localActivity2 instanceof ActColor))){
+                ((ActColor)localActivity2).showRgbwSeekBarStatus();
             }
-            if ((!paramXDevice.getMacAddress().equalsIgnoreCase(DeviceListActivity.deviceMacAddress)) || (Main.this.isDestroy))
-                return;
-            String str1 = StringUtils.btye2Str(paramArrayOfByte);
-            LogTool.d("main onRecvPipeData      " + StringUtils.btye2Str(paramArrayOfByte));
-            Activity localActivity2 = null;
-            if ((str1.length() == 18) && ((str1.indexOf("AAEB") != -1) || (str1.indexOf("DDEB") != -1) || (str1.indexOf("CCEB") != -1)))
-            {
-                if (str1.substring(12, 14).equals("01"))
-                {
-                    Main.this.iv_act_main_all_on.setVisibility(View.VISIBLE);
-                    Main.this.act_gray_layer.setVisibility(View.GONE);
-                    Main.access$202(Main.this, false);
-                }
-                if (str1.substring(12, 14).equals("00"))
-                {
-                    Main.this.iv_act_main_all_on.setVisibility(View.GONE);
-                    Main.this.act_gray_layer.setVisibility(View.VISIBLE);
-                    Main.access$202(Main.this, true);
-                }
-                if (str1.substring(14, 16).equalsIgnoreCase("DD"))
-                {
-                    SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgbw");
-                    Main.canAddRcOrPanel = true;
-                    localActivity2 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
-                    if ((localActivity2 == null) || (!(localActivity2 instanceof ActColor)));
-                }
-            }
+          }
             try
             {
-                ((ActColor)localActivity2).showRgbwSeekBarStatus();
                 if (str1.substring(14, 16).equalsIgnoreCase("CC"))
                 {
+                    Activity localActivity1;
                     SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgb");
                     Main.canAddRcOrPanel = true;
-
+                    localActivity1 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
+                    if ((localActivity1 != null) && ((localActivity1 instanceof ActColor))){
+                        ((ActColor)localActivity1).showRgbSeekBarStatus();
+                    }
                 }
             }
             catch (Exception localException2)
             {
                 localException2.printStackTrace();
             }
-            String str3 = null;
-            String str2 = null;
-            int j = -1;
-            int k = -1;
+        }
+
             try
             {
-                str2 = str1.substring(22, 24);
-                switch (str2.hashCode())
-                {
-                    case 1537:
-                        if (i <= Integer.parseInt(Main.this.softVersion))
-                            continue;
-                        Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
-                        return;
-                    case 1538:
-                    case 1539:
-                    case 1540:
-                }
-
-                if (str2.equals("01"))
-                    j = 0;
-
-                if (str2.equals("02"))
-                    j = 1;
-
-                if (str2.equals("03"))
-                    j = 2;
-
-                if (str2.equals("04"))
-                    j = 3;
-            }
-            catch (NumberFormatException localNumberFormatException)
-            {
-                localNumberFormatException.printStackTrace();
-            }
-            try
-            {
-
-                Activity localActivity1;
-                localActivity1 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
-                if ((localActivity1 == null) || (!(localActivity1 instanceof ActColor)));
-                ((ActColor)localActivity1).showRgbSeekBarStatus();
-                if ((str1.length() == 18) && (str1.indexOf("FDEB device updata status return") != -1))
+                String str3;
+                int k = 0;
+                if ((str1.length() == 18) && (str1.indexOf("FDEB device updata status return") != -1)){
                     str3 = str1.substring(12, 14);
-                switch (str3.hashCode())
-                {
-                    default:
+                    switch (str3.hashCode())
+                    {
+                        default:
+                            break;
+                        case 1536:
+                            if (str3.equals("00"))
+                                k = -1;
+                            break;
+                        case 1537:
+                            if (str3.equals("01"))
+                                k = 1;
+                            break;
+                        case 1538:
+                            if (str3.equals("02"))
+                                k = 2;
+                            break;
+                        case 1539:
+                            if (str3.equals("03"))
+                                k = 3;
+                            break;
+                    }
 
-                    case 1536:
-                    case 1537:
-                    case 1538:
-                    case 1539:
+                    /*switch (k)
+                    {
+                        default:
+                        case 0:
+                            Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_FILE_NAME);
+                            break;
+                        case 1:
+                            Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_75_FILE_NAME);
+                            break;
+                        case 2:
+                            Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_800FILE_NAME);
+                            break;
+                        case 3:
+                            Main.this.beginUpdata(SynProgram2Device.WIFI_101_DMX4_UP_V0);
+                            break;
+                    }*/
                 }
 
-                if (str3.equals("00"))
-                    k = 0;
-                if (str3.equals("01"))
-                    k = 1;
-
-                if (str3.equals("02"))
-                    k = 2;
-
-                if (str3.equals("03"))
-                    k = 3;
-            }
-            catch (Exception localException1)
-            {
-                localException1.printStackTrace();
-            }
-
-
-            switch (k)
-            {
-                default:
-                    if ((str1.indexOf("FE") == -1) || (str1.length() < 80))
-                        continue;
+                if ((str1.indexOf("FE") != -1) && (str1.length() < 80)){
+                    String str2;
+                    int j = -1;
+                    int i = -2;
                     Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
                     Main.this.softVersion = Main.this.softVersion.replace(".", "");
                     Main.this.softVersion = Main.this.softVersion.substring(4, Main.this.softVersion.length());
@@ -661,211 +642,65 @@ public class Main extends TabActivity {
                     {
                         Main.this.softVersion = "0";
                         i = 1;
+                        try
+                        {
+                            str2 = str1.substring(22, 24);
+                            switch (str2.hashCode())
+                            {
+                                case 1537:
+                                    if (str2.equals("01"))
+                                        j = 0;
+                                    break;
+                                case 1538:
+                                    if (str2.equals("02"))
+                                    j = 1;
+                                    break;
+                                case 1539:
+                                    if (str2.equals("03"))
+                                        j = 2;
+                                    break;
+                                case 1540:
+                                    if (str2.equals("04"))
+                                        j = 3;
+                                    break;
+                            }
+
+                        }
+                        catch (NumberFormatException localNumberFormatException)
+                        {
+                            localNumberFormatException.printStackTrace();
+                            return;
+                        }
+                        switch (j)
+                        {
+                            default:
+
+                            case 0:
+                                i = -2;
+                                break;
+                            case 1:
+                                i = -2;
+                                break;
+                            case 2:
+                                i = -2;
+                                break;
+                            case 3:
+                                i = -2;
+                                break;
+                        }
+                        if (i <= Integer.parseInt(Main.this.softVersion))
+                            Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
+                        else
+                            Main.this.softVersion = Main.this.softVersion.replaceFirst("^0*", "");
                     }
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-            }
-
-
-
-                continue;
-                Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_FILE_NAME);
-                continue;
-                Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_75_FILE_NAME);
-                continue;
-                Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_800FILE_NAME);
-                continue;
-                Main.this.beginUpdata(SynProgram2Device.WIFI_101_DMX4_UP_V0);
-                continue;
-                Main.this.softVersion = Main.this.softVersion.replaceFirst("^0*", "");
-                continue;
-            int i = -1;
-            switch (j)
-            {
-                default:
-                case 0:
-                    i = -2;
-                case 1:
-                    i = -2;
-                case 2:
-                    i = -2;
-                case 3:
-                    i = -2;
-            }*/
-
-
-      /*Main.this.isRespTimeOut = false;
-      if ((paramXDevice.getMacAddress() == null) || (paramXDevice.getMacAddress().length() == 0)){
-          return;
-      }
-        if ((!paramXDevice.getMacAddress().equalsIgnoreCase(DeviceListActivity.deviceMacAddress)) || (Main.this.isDestroy))
-          return;
-        String str1 = StringUtils.btye2Str(paramArrayOfByte);
-        LogTool.d("main onRecvPipeData      " + StringUtils.btye2Str(paramArrayOfByte));
-        Activity localActivity2 = null;
-        if ((str1.length() == 18) && ((str1.indexOf("AAEB") != -1) || (str1.indexOf("DDEB") != -1) || (str1.indexOf("CCEB") != -1)))
-        {
-          if (str1.substring(12, 14).equals("01"))
-          {
-            Main.this.iv_act_main_all_on.setVisibility(View.VISIBLE);
-            Main.this.act_gray_layer.setVisibility(View.GONE);
-            Main.access$202(Main.this, false);
-          }
-          if (str1.substring(12, 14).equals("00"))
-          {
-            Main.this.iv_act_main_all_on.setVisibility(View.GONE);
-            Main.this.act_gray_layer.setVisibility(View.VISIBLE);
-            Main.access$202(Main.this, true);
-          }
-          if (str1.substring(14, 16).equalsIgnoreCase("DD"))
-          {
-            SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgbw");
-            Main.canAddRcOrPanel = true;
-            localActivity2 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
-            if ((localActivity2 == null) || (!(localActivity2 instanceof ActColor)));
-          }
-        }
-        try
-        {
-          ((ActColor)localActivity2).showRgbwSeekBarStatus();
-          if (str1.substring(14, 16).equalsIgnoreCase("CC"))
-          {
-            SharedPreferencesUtil.keepShared(DeviceListActivity.deviceMacAddress + "lampType", "rgb");
-            Main.canAddRcOrPanel = true;
-            localActivity1 = Main.this.getLocalActivityManager().getActivity(Main.this.tabHost.getCurrentTabTag());
-            if ((localActivity1 == null) || (!(localActivity1 instanceof ActColor)));
-          }
-        }
-        catch (Exception localException2)
-        {
-          try
-          {
-            Activity localActivity1;
-            ((ActColor)localActivity1).showRgbSeekBarStatus();
-            if ((str1.length() == 18) && (str1.indexOf("FDEB device updata status return") != -1))
-              str3 = str1.substring(12, 14);
-            switch (str3.hashCode())
-            {
-            default:
-              k = -1;
-              switch (k)
-              {
-              default:
-                if ((str1.indexOf("FE") == -1) || (str1.length() < 80))
-                  continue;
-                Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
-                Main.this.softVersion = Main.this.softVersion.replace(".", "");
-                Main.this.softVersion = Main.this.softVersion.substring(4, Main.this.softVersion.length());
-                if (Main.this.softVersion.equals("000000"))
-                {
-                  Main.this.softVersion = "0";
-                  i = 1;
-                  try
-                  {
-                    str2 = str1.substring(22, 24);
-                    switch (str2.hashCode())
-                    {
-                    case 1537:
-                      if (i <= Integer.parseInt(Main.this.softVersion))
-                        continue;
-                      Main.this.softVersion = StringUtils.bytesStr2WordStr(str1.substring(48, 72));
-                      return;
-                    case 1538:
-                    case 1539:
-                    case 1540:
-                    }
-                  }
-                  catch (NumberFormatException localNumberFormatException)
-                  {
-                    localNumberFormatException.printStackTrace();
-                    return;
-                  }
-                  localException2 = localException2;
-                  localException2.printStackTrace();
                 }
-              case 0:
-              case 1:
-              case 2:
-              case 3:
-              }
-            case 1536:
-            case 1537:
-            case 1538:
-            case 1539:
+
+
             }
-          }
-          catch (Exception localException1)
-          {
-            while (true)
+            catch (Exception localException1)
             {
-              String str3;
-              String str2;
-              localException1.printStackTrace();
-              continue;
-              if (!str3.equals("00"))
-                continue;
-              int k = 0;
-              continue;
-              if (!str3.equals("01"))
-                continue;
-              k = 1;
-              continue;
-              if (!str3.equals("02"))
-                continue;
-              k = 2;
-              continue;
-              if (!str3.equals("03"))
-                continue;
-              k = 3;
-              continue;
-              Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_FILE_NAME);
-              continue;
-              Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_75_FILE_NAME);
-              continue;
-              Main.this.beginUpdata(SynProgram2Device.ONE_PIONT_ONE_800FILE_NAME);
-              continue;
-              Main.this.beginUpdata(SynProgram2Device.WIFI_101_DMX4_UP_V0);
-              continue;
-              Main.this.softVersion = Main.this.softVersion.replaceFirst("^0*", "");
-              continue;
-              if (!str2.equals("01"))
-                break;
-              j = 0;
-              break label974;
-              if (!str2.equals("02"))
-                break;
-              j = 1;
-              break label974;
-              if (!str2.equals("03"))
-                break;
-              j = 2;
-              break label974;
-              boolean bool = str2.equals("04");
-              if (!bool)
-                break;
-              j = 3;
-              break label974;
-              int i = -2;
-              continue;
-              i = -2;
-              continue;
-              i = -2;
-              continue;
-              i = -2;
+                localException1.printStackTrace();
             }
-            int j = -1;
-            label974: switch (j)
-            {
-            default:
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-            }
-          }
-        }*/
         }
 
         public void onRecvPipeSyncData(short paramShort, XDevice paramXDevice, byte[] paramArrayOfByte) {

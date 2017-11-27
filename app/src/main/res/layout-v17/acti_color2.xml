@@ -67,12 +67,18 @@
         android:layout_height="match_parent"
         android:layout_below="@id/ll_acti_color" />-->
     <com.skydoves.colorpickerview.ColorPickerView
-        android:id="@+id/colorPickerView"
+        android:id="@+id/color_picker_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/ll_acti_color"
         app:palette="@mipmap/piccolor"
-        app:selector="@mipmap/area_1" />
+        app:selector="@mipmap/area_2" />
+    <View
+        android:id="@+id/v_touch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_acti_color"
+        android:onClick="points"/>
     <Button
         android:id="@+id/btn_acti_color_op_photo"
         android:layout_width="40.0dip"

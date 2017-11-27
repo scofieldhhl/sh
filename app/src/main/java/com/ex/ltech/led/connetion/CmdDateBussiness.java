@@ -743,6 +743,33 @@ public class CmdDateBussiness
 
   public byte[] getMoreSeletedModeCmd(String paramString, List<Byte> paramList, int paramInt)
   {
+    byte[] arrayOfByte = new byte[29];
+    arrayOfByte[0] = 102;
+    arrayOfByte[1] = -69;
+    arrayOfByte[2] = (byte)cmdCount;
+    arrayOfByte[3] = -64;
+    arrayOfByte[4] = this.pwd12;
+    arrayOfByte[5] = this.pwd34;
+    arrayOfByte[6] = 18;
+    arrayOfByte[7] = 20;
+    arrayOfByte[8] = 32;
+    arrayOfByte[9] = (byte)paramInt;
+    handModeNumSeleted(paramString);
+    arrayOfByte[10] = (byte)this.realModeNum;
+    arrayOfByte[11] = (byte)this.frontModeNum;
+
+    for(int i = 12; i < 28; i++){
+      if (i - 12 < paramList.size())
+        arrayOfByte[i] = ((Byte)paramList.get(i - 12)).byteValue();
+      else
+        arrayOfByte[i] = 0;
+    }
+    arrayOfByte[28] = -21;
+    if (cmdCount > 255)
+      cmdCount = 0;
+    cmdCount = 1 + cmdCount;
+    Main.lastSendCmd = Main.modeCmd;
+    return arrayOfByte;
     /*byte[] arrayOfByte = new byte[29];
     arrayOfByte[0] = 102;
     arrayOfByte[1] = -69;
@@ -775,7 +802,6 @@ public class CmdDateBussiness
     cmdCount = 1 + cmdCount;
     Main.lastSendCmd = Main.modeCmd;
     return arrayOfByte;*/
-    return null;
   }
 
   public byte[] getMusicCmd(boolean paramBoolean, int paramInt)
