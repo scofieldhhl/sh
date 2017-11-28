@@ -10,11 +10,14 @@ import com.ex.ltech.led.R;
 import com.ex.ltech.led.UserFerences;
 import com.ex.ltech.led.acti.MyBaseActivity;
 import com.ex.ltech.led.acti.timing.TimingBussines;
+import com.ex.ltech.led.acti.timing.TimingData;
 import com.ex.ltech.led.my_view.ColorSeletedView;
 import com.ex.ltech.led.my_view.MyTimePickerView;
 import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ActAddTiming extends MyBaseActivity
@@ -51,14 +54,15 @@ public class ActAddTiming extends MyBaseActivity
   private void getMyIntent()
   {
     Intent localIntent = getIntent();
-    /*if (localIntent != null)
+    if (localIntent != null)
     {
       this.lastActItemPosi = localIntent.getIntExtra("itemPosi", -1);
       if (this.lastActItemPosi == -1)
-        break label341;
+        return;
       try
       {
-        this.vo = ((TimingVo)TimingData.getInstance(this).getTimingVos4Sd().get(this.lastActItemPosi));
+        String str3;
+        this.vo = TimingData.getInstance(this).getTimingVos4Sd().get(this.lastActItemPosi);
         String[] arrayOfString = this.vo.getTime().split(":");
         this.hour = arrayOfString[0];
         this.min = arrayOfString[1];
@@ -67,24 +71,7 @@ public class ActAddTiming extends MyBaseActivity
         List localList = this.vo.getShotNameDays();
         str3 = "";
         for (int i = 0; i < localList.size(); i++)
-          str3 = str3 + (String)localList.get(i) + "\t\t";
-      }
-      catch (Exception localException1)
-      {
-        String str3;
-        while (true)
-        {
-          localException1.printStackTrace();
-          try
-          {
-            this.vo = ((TimingVo)TimingData.getInstance(this).getTimingVos4Sd().get(this.lastActItemPosi));
-          }
-          catch (Exception localException2)
-          {
-            localException2.printStackTrace();
-            finish();
-          }
-        }
+          str3 = str3 + localList.get(i) + "\t\t";
         this.tv_act_add_timing_mode_status.setText(this.vo.getModeName());
         this.tv_act_add_timing_repeat_status.setText(str3);
         if (this.vo.getType() == 1)
@@ -98,19 +85,21 @@ public class ActAddTiming extends MyBaseActivity
           this.cv_act_add_timing_mode.setVisibility(View.GONE);
           this.tv_act_add_timing_mode_status.setVisibility(View.VISIBLE);
         }
-        if (this.vo.isOffDevice())
-          break label335;
+        if (!this.vo.isOffDevice())
+          open(null);
+        else
+          close(null);
       }
-      open(null);
+      catch (Exception localException1)
+      {
+          localException1.printStackTrace();
+          finish();
+      }
     }
-    else
-    {
-      return;
-    }
-    label335: close(null);
-    return;
-    label341: this.tp_act_add_timing_hour.setSelected(Integer.parseInt(new SimpleDateFormat("HH").format(Long.valueOf(System.currentTimeMillis()))));
-    this.tp_act_add_timing_min.setSelected(Integer.parseInt(new SimpleDateFormat("mm").format(Long.valueOf(System.currentTimeMillis()))));
+    this.tp_act_add_timing_hour.setSelected(Integer.parseInt(
+            new SimpleDateFormat("HH").format(Long.valueOf(System.currentTimeMillis()))));
+    this.tp_act_add_timing_min.setSelected(Integer.parseInt(
+            new SimpleDateFormat("mm").format(Long.valueOf(System.currentTimeMillis()))));
     this.vo = new TimingVo();
     TimingVo localTimingVo = this.vo;
     StringBuilder localStringBuilder1 = new StringBuilder();
@@ -124,7 +113,7 @@ public class ActAddTiming extends MyBaseActivity
     localArrayList.add(getString(R.string.once));
     this.vo.setShotNameDays(localArrayList);
     this.vo.setSwich(true);
-    open(null);*/
+    open(null);
   }
 
   private void init()
@@ -136,22 +125,22 @@ public class ActAddTiming extends MyBaseActivity
 
   private void setListener()
   {
-    /*this.rl_act_add_timing_1.setOnClickListener(this);
+    this.rl_act_add_timing_1.setOnClickListener(this);
     this.rl_act_add_timing_2.setOnClickListener(this);
     this.tp_act_add_timing_hour.setOnSelectListener(new MyTimePickerView.onSelectListener()
     {
       public void onSelect(String paramString)
       {
-        ActAddTiming.access$002(ActAddTiming.this, paramString);
+        hour = paramString;
       }
     });
     this.tp_act_add_timing_min.setOnSelectListener(new MyTimePickerView.onSelectListener()
     {
       public void onSelect(String paramString)
       {
-        ActAddTiming.access$102(ActAddTiming.this, paramString);
+        min = paramString;
       }
-    });*/
+    });
   }
 
   public void close(View paramView)
@@ -258,12 +247,14 @@ public class ActAddTiming extends MyBaseActivity
       if (this.lightStatus.equals(getString(R.string.off_device)))
       {
         this.vo.setIsOffDevice(true);
-        if (this.tv_act_add_timing_repeat_status.getText().toString().indexOf(getString(R.string.once)) == -1)
-          break label395;
-        ArrayList localArrayList = new ArrayList();
-        localArrayList.add(getString(R.string.once));
-        this.vo.setShotNameDays(localArrayList);
-        this.vo.setIsJustOnce(true);
+        if (this.tv_act_add_timing_repeat_status.getText().toString().indexOf(
+                getString(R.string.once)) != -1){
+          ArrayList localArrayList = new ArrayList();
+          localArrayList.add(getString(R.string.once));
+          this.vo.setShotNameDays(localArrayList);
+          this.vo.setIsJustOnce(true);
+        }
+
         if (DateFmtUtil.getTime4HHmm(this.vo.getTime()) <= System.currentTimeMillis())
           break label371;
         this.vo.setJustOnceCurrentTime(DateFmtUtil.getTime4HHmm(this.vo.getTime()));
@@ -325,8 +316,3 @@ public class ActAddTiming extends MyBaseActivity
     setEditTextRes(R.string.finish, getResources().getColor(R.color.color1));
   }
 }
-
-/* Location:           E:\android逆向助手2——2\com.ex.ltech.led_1.9.7_197_dex2jar.jar
- * Qualified Name:     com.ex.ltech.led.acti.timing.act.ActAddTiming
- * JD-Core Version:    0.6.0
- */

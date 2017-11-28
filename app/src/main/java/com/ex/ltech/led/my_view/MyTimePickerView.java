@@ -44,22 +44,21 @@ public class MyTimePickerView extends View
   {
     public void handleMessage(Message paramMessage)
     {
-      /*if (Math.abs(MyTimePickerView.this.mMoveLen) < 2.0F)
+      if (Math.abs(MyTimePickerView.this.mMoveLen) < 2.0F)
       {
-        MyTimePickerView.access$002(MyTimePickerView.this, 0.0F);
+        mMoveLen = 0.0F;
         if (MyTimePickerView.this.mTask != null)
         {
-          MyTimePickerView.this.mTask.cancel();
-          MyTimePickerView.access$102(MyTimePickerView.this, null);
-          MyTimePickerView.this.performSelect();
+          mTask.cancel();
+          mTask = null;
+          performSelect();
         }
-      }
-      while (true)
+      }else
       {
-        MyTimePickerView.this.invalidate();
-        return;
-        MyTimePickerView.access$002(MyTimePickerView.this, MyTimePickerView.this.mMoveLen - 2.0F * (MyTimePickerView.this.mMoveLen / Math.abs(MyTimePickerView.this.mMoveLen)));
-      }*/
+        mMoveLen =  MyTimePickerView.this.mMoveLen -
+                2.0F * (MyTimePickerView.this.mMoveLen / Math.abs(MyTimePickerView.this.mMoveLen));
+      }
+      MyTimePickerView.this.invalidate();
     }
   };
   private String value;

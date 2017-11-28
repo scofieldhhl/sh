@@ -11,7 +11,10 @@ import android.widget.Button;
 import android.widget.SeekBar;
 
 import com.ex.ltech.led.R;
+import com.ex.ltech.led.acti.timing.fragment.ColorFragment;
 import com.ex.ltech.led.acti.timing.fragment.ModeFragment;
+import com.ex.ltech.led.fragment.FragmentPageAdapter;
+import com.ex.ltech.led.my_view.NoScrollViewPager;
 import com.ex.ltech.led.vo.TimingVo;
 import com.google.gson.Gson;
 import com.indris.material.RippleView;
@@ -26,11 +29,11 @@ public class ActMode extends FragmentActivity
   private Button btn_acti_mode_menu;
   private RippleView btn_acti_timing_mode_col;
   private RippleView btn_acti_timing_mode_mode;
-//  private ColorFragment fragmentTimingColor;
+  private ColorFragment fragmentTimingColor;
   Gson gs = new Gson();
   private LayoutInflater layoutInflater;
   private List<Fragment> mFragments = new ArrayList();
-//  private NoScrollViewPager mVPFragments;
+  private NoScrollViewPager mVPFragments;
   private ModeFragment modeFragment;
   private int pagerCurrent = 0;
   private TimingVo vo;
@@ -55,7 +58,7 @@ public class ActMode extends FragmentActivity
 
   private void initViewPager()
   {
-    /*this.mVPFragments = ((NoScrollViewPager)findViewById(R.id.pager2));
+    this.mVPFragments = ((NoScrollViewPager)findViewById(R.id.pager2));
     this.mVPFragments.setOnPageChangeListener(this);
     this.mVPFragments.setOffscreenPageLimit(3);
     this.layoutInflater = LayoutInflater.from(this);
@@ -64,7 +67,7 @@ public class ActMode extends FragmentActivity
     this.mFragments.add(this.modeFragment);
     this.mFragments.add(this.fragmentTimingColor);
     this.mVPFragments.setAdapter(new FragmentPageAdapter(getSupportFragmentManager(), this.mFragments));
-    this.mVPFragments.setNoScroll(true);*/
+    this.mVPFragments.setNoScroll(true);
   }
 
   private void pagerChange(int paramInt)
@@ -202,6 +205,6 @@ public class ActMode extends FragmentActivity
   {
     super.onWindowFocusChanged(paramBoolean);
     sonActHeightWithouTitle = findViewById(R.id.rl_act_timing_mode).getHeight();
-//    this.fragmentTimingColor.setPactHeight();
+    this.fragmentTimingColor.setPactHeight();
   }
 }

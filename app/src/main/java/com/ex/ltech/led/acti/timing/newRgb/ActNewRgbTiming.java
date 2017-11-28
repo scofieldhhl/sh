@@ -52,13 +52,13 @@ public class ActNewRgbTiming extends MyBaseActivity
         SwipeMenuItem localSwipeMenuItem1 = new SwipeMenuItem(ActNewRgbTiming.this.getApplicationContext());
         localSwipeMenuItem1.setBackground(new ColorDrawable(Color.rgb(201, 201, 206)));
         localSwipeMenuItem1.setWidth(ActNewRgbTiming.this.bussines.dp2px(60));
-        localSwipeMenuItem1.setIcon(2130903303);
+        localSwipeMenuItem1.setIcon(R.mipmap.ic_edit_pressed);
         localSwipeMenuItem1.setTitleColor(-1);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem1);
         SwipeMenuItem localSwipeMenuItem2 = new SwipeMenuItem(ActNewRgbTiming.this.getApplicationContext());
         localSwipeMenuItem2.setBackground(new ColorDrawable(ActNewRgbTiming.this.getResources().getColor(R.color.color5)));
         localSwipeMenuItem2.setWidth(ActNewRgbTiming.this.bussines.dp2px(70));
-        localSwipeMenuItem2.setIcon(2130903138);
+        localSwipeMenuItem2.setIcon(R.mipmap.ci_del_btn);
         paramSwipeMenu.addMenuItem(localSwipeMenuItem2);
       }
     });

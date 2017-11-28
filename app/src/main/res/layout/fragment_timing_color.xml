@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffe5e5e5"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_acti_timing_fragment_colcolor"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:background="@mipmap/brightness" />
+
+        <com.ex.ltech.led.my_view.MySeekBar
+            android:id="@+id/msb_color_acti_timing_fragment_col"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:background="@mipmap/white_light" />
+
+        <SeekBar
+            android:id="@+id/sb_acti_timing_fragment_col"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_weight="1.0"
+            android:indeterminate="false"
+            android:max="100"
+            android:maxHeight="2.0dip"
+            android:minHeight="5.0dip"
+            android:progress="30"
+            android:progressDrawable="@drawable/seekbar_style"
+            android:thumb="@mipmap/thumb_2" />
+    </LinearLayout>
+
+    <com.ex.ltech.led.my_view.SimpleColorPickerView
+        android:id="@+id/cp_acti_timing_fragment_col"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/ll_acti_timing_fragment_colcolor" />
+</RelativeLayout>

@@ -70,6 +70,7 @@ public class ColorSeletedView extends View
         this.circleColorPaint.setColor(((Integer)this.colors.get(i)).intValue());
         paramCanvas.drawCircle(20 + i * this.circleWidth, 20.0F, 18.0F, this.circleColorPaint);
       }
+    paramCanvas.save();
     paramCanvas.restore();
   }
 
